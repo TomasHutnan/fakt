@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 17 packs / 414 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 18 packs / 454 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
@@ -75,7 +75,7 @@ src/content/      pack types and validation (shared by build script and importer
 src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
 src/ui/           Preact screens, storage, Slovak texts (sk.ts), demo states for the gallery
 src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
-scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper)
+scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper), dano-drevo-counts (word counts from subtitles)
 docs/             research report
 notes/            symlink to the owner's Obsidian vault (ignored, never commit)
 reference/        owner's reference material (never commit)
