@@ -14,7 +14,7 @@ questions:
     correct:
       - { text: Voda, čo ma drží nad vodou, why: Jeden z najväčších evergreenov kapely. }
       - { text: Tanečnice z Lúčnice, why: Patrí k najznámejším hitom Elánu. }
-      - { text: Kráľovná bielych tenisiek, why: Klasika z repertoára Jožu Ráža a spol. }
+      - { text: Kráľovná bielych tenisiek, why: Klasika z repertoára Joža Ráža a spol. }
       - { text: Neviem byť sám, why: Jedna z najhranejších balád kapely. }
       - { text: Stužková, why: Hymna každého maturitného ročníka. }
       - { text: Amnestia na neveru, why: S touto piesňou sa Elán v roku 1993 pokúsil dostať na Eurovíziu. }
@@ -41,7 +41,7 @@ questions:
       - { text: Juraj Farkaš, why: Zakladateľ, gitarista a spevák; v kapele do roku 1985. }
       - { text: Zdeno Baláž, why: Zakladajúci bubeník. }
       - { text: Ján Baláž, why: Sólový gitarista, v kapele od roku 1981. }
-      - { text: Fero Turák, why: Trubkár, spevák a huslista, v kapele v rokoch 1975 až 1980. }
+      - { text: Fero Turák, why: Klávesista, trubkár, spevák a huslista, v kapele v rokoch 1975 až 1980 a 1990 až 1991. }
       - { text: Peter Farnbauer, why: Gitarista a klávesista, v kapele od roku 1990. }
       - { text: Henry Tóth, why: Gitarista, v kapele v rokoch 2003 až 2013. }
     wrong:
@@ -49,7 +49,7 @@ questions:
       - { text: Pavol Habera, why: Spevák skupiny Team. }
       - { text: Miro Žbirka, why: Spevák Modusu a sólista. }
       - { text: Richard Müller, why: Sólový spevák, nie člen Elánu. }
-      - { text: Dežo Ursiny, why: Hudobník skupiny Modus. }
+      - { text: Dežo Ursiny, why: Hudobník, nie člen Elánu. }
       - { text: Mário Kollár, why: Spevák Desmodu. }
 
   - id: kontrafakt-albumy
@@ -68,7 +68,7 @@ questions:
       - { text: Bengoro, why: Sólový album Rytmusa z roku 2006. }
       - { text: Fenomen, why: Sólový album Rytmusa z roku 2011. }
       - { text: Precedens, why: Sólový album Ega z roku 2017. }
-      - { text: Nový človek, why: Debut Majk Spirita. }
+      - { text: Nový človek, why: Debut Majka Spirita. }
       - { text: Buldozér, why: Sólový album Separa. }
       - { text: Kral, why: Rytmusov sólový album z roku 2009. }
 
@@ -140,16 +140,16 @@ questions:
 
   - id: imt-smile-clenovia
     type: pick
-    prompt: Kto z týchto hudobníkov bol členom IMT Smile?
+    prompt: Kto z týchto hudobníkov bol alebo je členom IMT Smile?
     difficulty: 3
     source: https://sk.wikipedia.org/wiki/IMT_Smile
     asOf: "2026-11"
     correct:
-      - { text: Katarína Knechtová, why: Bola speváčkou IMT Smile do roku 1997, potom odišla do Pehy. }
+      - { text: Katarína Knechtová, why: Bola speváčkou IMT Smile do roku 1998, potom odišla do Pehy. }
       - { text: Peter Bič, why: Po odchode z kapely v roku 2010 založil Peter Bič Project. }
       - { text: Martin Valihora, why: Bubeník, ktorý neskôr hral aj so svetovými jazzovými menami. }
       - { text: Martin Migaš, why: Bol členom kapely v minulosti. }
-      - { text: Mário Gapa Garbera, why: Bol členom kapely v minulosti. }
+      - { text: Mário Gapa Garbera, why: Saxofonista, ktorý v kapele hral. }
       - { text: Ivan Tásler, why: Spevák, gitarista a zakladateľ kapely. }
       - { text: Miro Tásler, why: Klávesista a zakladateľ; názov vznikol z iniciálok bratov. }
     wrong:
@@ -172,7 +172,7 @@ questions:
       - { text: Max Jason Mai, why: V roku 2012 s Don't Close Your Eyes; v semifinále skončil posledný, s 22 bodmi. }
       - { text: Marcel Palonder, why: V roku 1996 s piesňou Kým nás máš. }
       - { text: Katarína Hasprová, why: V roku 1998 s piesňou Modlitba. }
-      - { text: Kamil Mikulčík a Nela Pocisková, why: Návrat po desiatich rokoch, v roku 2009 s piesňou Leť tmou. }
+      - { text: Kamil Mikulčík a Nela Pocisková, why: Návrat po jedenástich rokoch, v roku 2009 s piesňou Leť tmou. }
       - { text: Tublatanka, why: Debut Slovenska v roku 1994 s piesňou Nekonečná pieseň. }
     wrong:
       - { text: Horkýže Slíže, why: Na Eurovízii nikdy nevystúpili. }
@@ -196,14 +196,14 @@ questions:
       - { text: Smej sa duša moja, why: Z roku 2016. }
       - { text: Len tak sa stíšim, why: Z roku 2019. }
       - { text: Oslobodená, why: Z roku 2020. }
-      - { text: Premena, why: Z roku 2024; SOZA ho ocenila ako najúspešnejší slovenský album roka. }
+      - { text: Premena, why: Z roku 2024; SOZA ho ocenila ako najúspešnejší zvukový nosič roka. }
     wrong:
       - { text: Zodiak, why: Album Kataríny Knechtovej z roku 2008. }
       - { text: Veci sa menia, why: Album Tiny z roku 2009. }
       - { text: Chillin, why: Album Tiny z roku 2006. }
       - { text: Mať srdce, why: Album Kristíny z roku 2017. }
       - { text: Snívanky, why: Album Kristíny z roku 2020. }
-      - { text: Where I belong, why: Album Celeste Buckingham z roku 2013. }
+      - { text: Where I Belong, why: Album Celeste Buckingham z roku 2013. }
 
   - id: pbp-albumy
     type: pick
@@ -245,7 +245,7 @@ questions:
       - { text: Egotron, why: Sólový album Ega z roku 2020. }
       - { text: Fenomen, why: Sólový album Rytmusa. }
       - { text: Krstný otec, why: Sólový album Rytmusa z roku 2016. }
-      - { text: Nový človek, why: Debut Majk Spirita. }
+      - { text: Nový človek, why: Debut Majka Spirita. }
       - { text: Kral, why: Sólový album Rytmusa z roku 2009. }
 
   - id: no-name-piesne
@@ -258,7 +258,7 @@ questions:
       - { text: Ty a tvoja sestra, why: Úspešný singel z albumu Počkám si na zázrak. }
       - { text: Ďakujem, že si, why: Singel z albumu Počkám si na zázrak. }
       - { text: Kto dokáže, why: Singel z roku 2017 s Karlom Gottom. }
-      - { text: Ženušky, why: Duet s Lucie Bílou z albumu Nový album. }
+      - { text: Ženušky, why: Duet s Luciou Bílou z albumu Nový album. }
       - { text: Elity, why: Vyšla k 25. výročiu kapely v roku 2021. }
     wrong:
       - { text: Nepoznám, why: Hit IMT Smile. }
@@ -279,7 +279,7 @@ questions:
       - { text: Say It Loud (Peter Bič Project), why: Debut skupiny z roku 2012. }
       - { text: Vyzliecť si človeka (Sima Martausová), why: Debut Simy z roku 2012. }
       - { text: Buldozér (Separ), why: Vyšiel 31. októbra 2012. }
-      - { text: Don't Look Back (Celeste Buckingham), why: Vyšiel 20. apríla 2012, keď mala sedemnásť. }
+      - { text: Don't Look Back (Celeste Buckingham), why: Vyšiel 20. apríla 2012, krátko pred jej sedemnástymi narodeninami. }
       - { text: Na slnečnej strane sveta (Kristína), why: Tretí album speváčky. }
       - { text: Rodina (IMT Smile), why: Album z roku 2012. }
       - { text: St. Mary Huana Ganja (Horkýže Slíže), why: Album z roku 2012. }
@@ -290,7 +290,7 @@ questions:
       - { text: S.E.X.Y. (Tina), why: Album z roku 2011. }
       - { text: Iný rozmer (Desmod), why: Album z roku 2011. }
       - { text: Dobrý deň, to som ja (Sima Martausová), why: Vyšiel až v roku 2013. }
-      - { text: Where I belong (Celeste Buckingham), why: Druhý album, z roku 2013. }
+      - { text: Where I Belong (Celeste Buckingham), why: Druhý album, z roku 2013. }
       - { text: Navždy (Kontrafakt), why: Album z roku 2013. }
       - { text: Pirát (Separ), why: Vyšiel v marci 2014. }
 
@@ -323,6 +323,7 @@ questions:
     prompt: Ktoré dvojice umelecké meno a občianske meno sú správne?
     difficulty: 1
     source: https://sk.wikipedia.org/wiki/Majk_Spirit
+    note: Údaje sú podľa článkov na slovenskej Wikipédii o jednotlivých interpretoch.
     correct:
       - { text: Rytmus je Patrik Vrbovský, why: Narodil sa 3. januára 1977 v Kroměříži. }
       - { text: Majk Spirit je Michal Dušička, why: Narodil sa v Bratislave v roku 1984. }
@@ -448,8 +449,8 @@ questions:
     correct: { text: Tina, why: Príbeh z albumu Veci sa menia sa stal veľkým rádiovým hitom. }
     wrong:
       - { text: Kristína, why: Kristína nahrala napríklad Vráť mi tie hviezdy. }
-      - { text: Celeste Buckingham, why: S Majk Spiritom nahrala Ja a ty a I Was Wrong. }
-      - { text: Katarína Knechtová, why: Spievala v IMT Smile a Peha. }
+      - { text: Celeste Buckingham, why: S Majkom Spiritom nahrala Ja a ty a I Was Wrong. }
+      - { text: Katarína Knechtová, why: Spievala v skupinách IMT Smile a Peha. }
     difficulty: 1
     source: https://sk.wikipedia.org/wiki/Rytmus_(raper)
 
