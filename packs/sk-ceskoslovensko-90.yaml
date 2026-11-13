@@ -1,0 +1,536 @@
+id: sk-ceskoslovensko-90
+title: Československo a 90. roky
+description: Nežná revolúcia, rozdelenie štátu, večerníčky, koruna, autá a hity deväťdesiatych rokov.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: nezna-revolucia-1989
+    type: pick
+    prompt: Ktoré z týchto udalostí alebo hnutí priamo patria k Nežnej revolúcii v novembri a decembri 1989?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Nežná_revolúcia
+    correct:
+      - text: Verejnosť proti násiliu (VPN)
+        why: Navrhli ju 19. novembra 1989 a formálne vznikla 20. novembra v Bratislave ako hlavné občianske hnutie na Slovensku.
+      - text: Občianske fórum (OF)
+        why: Založili ho 19. novembra 1989 v pražskom Činohernom klube okolo Václava Havla.
+      - text: generálny štrajk 27. novembra
+        why: Dvojhodinový štrajk od poludnia sa konal po celom Československu.
+      - text: zásah na Národnej triede v Prahe
+        why: Tvrdé potlačenie študentského pochodu 17. novembra odštartovalo celú revolúciu.
+      - text: zrušenie vedúcej úlohy KSČ v ústave
+        why: Federálne zhromaždenie vypustilo článok 4 ústavy 29. novembra 1989.
+      - text: zvolenie Václava Havla za prezidenta
+        why: Poslanci ho zvolili 29. decembra 1989, deň po zvolení Alexandra Dubčeka za predsedu parlamentu.
+    wrong:
+      - text: Sviečková manifestácia v Bratislave
+        why: Odohrala sa už 25. marca 1988, vyše poldruha roka pred Nežnou revolúciou.
+      - text: zverejnenie Charty 77
+        why: Občianska iniciatíva vznikla už na prelome rokov 1976 a 1977.
+      - text: prvé slobodné parlamentné voľby
+        why: Konali sa až 8. a 9. júna 1990.
+      - text: vznik Českej a Slovenskej Federatívnej Republiky
+        why: Názov ČSFR začal platiť až v apríli 1990 po takzvanej pomlčkovej vojne.
+      - text: schválenie Ústavy Slovenskej republiky
+        why: Slovenská národná rada ju prijala až 1. septembra 1992.
+      - text: kolkovanie československých bankoviek
+        why: Prebehlo až v roku 1993 pri rozdelení spoločnej meny.
+
+  - id: rozdelenie-csfr-1993
+    type: pick
+    prompt: Čo platilo pri rozdelení Česko-Slovenska k 1. januáru 1993 a v prvých mesiacoch samostatnosti?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Rozdelenie_Česko-Slovenska
+    correct:
+      - text: "federálny majetok sa delil najmä v pomere 2 : 1"
+        why: Hnuteľný a finančný majetok sa delil približne podľa počtu obyvateľov v prospech Česka.
+      - text: spoločná mena prežila štát o necelých šesť týždňov
+        why: Menová odluka nastala až 8. februára 1993, dovtedy ešte platila spoločná koruna.
+      - text: staré bankovky sa najprv lepili kolkami
+        why: Československé bankovky od 20 do 1 000 Kčs dostali slovenský kolok, kým prišli nové.
+      - text: Slovensko prijali do OSN ešte v januári 1993
+        why: Členským štátom Organizácie Spojených národov sa stalo 19. januára 1993.
+      - text: prvým prezidentom SR sa stal Michal Kováč
+        why: Zvolil ho parlament vo februári 1993 a do úradu nastúpil 2. marca 1993.
+    wrong:
+      - text: o rozdelení štátu rozhodli občania v referende
+        why: Žiadne referendum sa nekonalo, zánik federácie odhlasovalo Federálne zhromaždenie.
+      - text: "koruna slovenská a česká začínali v kurze 2 : 1"
+        why: "Pri štarte 8. februára 1993 mali obe meny rovnakú hodnotu 1 : 1."
+      - text: kolkovali sa aj všetky halierové mince
+        why: Kolky sa lepili iba na papierové bankovky, mince sa nekolkovali.
+      - text: Slovensko vstúpilo do NATO hneď v roku 1993
+        why: Členom NATO sa stalo až v marci 2004.
+      - text: prvého prezidenta SR zvolili občania v priamej voľbe
+        why: Michala Kováča volili poslanci, prvá priama voľba prezidenta prišla až v roku 1999.
+      - text: slovenská koruna platila presne 10 rokov
+        why: V obehu bola takmer 16 rokov, až do konca roka 2008.
+
+  - id: prezidenti-a-premieri-90
+    type: pick
+    prompt: Ktorí z týchto politikov pôsobili v 90. rokoch (1990 – 1999) ako prezidenti alebo premiéri Česko-Slovenska či Slovenska?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_predsedov_vlády_Slovenska
+    correct:
+      - text: Václav Havel
+        why: Bol prezidentom ČSFR až do svojej abdikácie v júli 1992.
+      - text: Michal Kováč
+        why: Prvý prezident samostatného Slovenska v rokoch 1993 až 1998.
+      - text: Rudolf Schuster
+        why: V máji 1999 vyhral prvú priamu voľbu a stal sa prezidentom SR.
+      - text: Vladimír Mečiar
+        why: V 90. rokoch stál na čele troch slovenských vlád.
+      - text: Ján Čarnogurský
+        why: Bol predsedom vlády Slovenska od apríla 1991 do júna 1992.
+      - text: Jozef Moravčík
+        why: Viedol dočasnú vládu od marca do decembra 1994.
+      - text: Mikuláš Dzurinda
+        why: Predsedom vlády SR sa stal po voľbách v októbri 1998.
+    wrong:
+      - text: Alexander Dubček
+        why: Po roku 1989 bol predsedom Federálneho zhromaždenia, nie prezidentom ani premiérom.
+      - text: Ivan Gašparovič
+        why: V 90. rokoch pôsobil vo vrcholnej politike ako poslanec a predseda parlamentu, prezidentom sa stal až v roku 2004.
+      - text: Robert Fico
+        why: Prvýkrát sa stal premiérom až po voľbách v roku 2006.
+      - text: František Mikloško
+        why: Bol predsedom Slovenskej národnej rady, nie predsedom vlády.
+      - text: Pavol Hrušovský
+        why: Viedol Národnú radu SR, premiérom ani prezidentom nebol.
+      - text: Ján Slota
+        why: V 90. rokoch pôsobil ako poslanec a primátor Žiliny, nie ako premiér.
+
+  - id: animovane-postavicky-cs
+    type: pick
+    prompt: Ktoré z týchto animovaných postavičiek alebo seriálov vznikli pôvodne v Československu?
+    difficulty: 1
+    source: https://cs.wikipedia.org/wiki/Seznam_večerníčků
+    correct:
+      - text: Rumcajs
+        why: Zbojníka z lesa Řáholec vymyslel Václav Čtvrtek a nakreslil Radek Pilař.
+      - text: Krtko
+        why: Svetoznámu postavičku vytvoril Zdeněk Miler už v roku 1957.
+      - text: Pat a Mat
+        why: Dvoch nešikovných kutilov vymysleli Lubomír Beneš a Vladimír Jiránek.
+      - text: Bob a Bobek
+        why: Králiky z klobúka, seriál pre Večerníček z roku 1979.
+      - text: Maxipes Fík
+        why: Seriál z roku 1976 o obrovskom psovi a dievčatku Áji.
+      - text: Maťko a Kubko
+        why: Slovenský seriál Pásli ovce valasi z roku 1972 rozprával Jozef Kroner.
+      - text: Jurošík
+        why: Slovenský seriál o dobrom zbojníkovi z roku 1991 rozprával Stano Dančiak.
+      - text: Křemílek a Vochomůrka
+        why: Lesní škriatkovia z českého večerníčka, rozprávala Jiřina Bohdalová.
+    wrong:
+      - text: Bolek a Lolek
+        why: Obľúbený seriál o dvoch bratoch vznikol v Poľsku.
+      - text: Včielka Maja
+        why: Animovaný seriál z roku 1975 vznikol v japonsko-nemeckej produkcii.
+      - text: No, počkaj!
+        why: Naháňačky Vlka a Zajaca vznikli v Sovietskom zväze.
+      - text: Šmolkovia
+        why: Modré postavičky vymyslel Belgičan Peyo a seriál produkovali v USA.
+      - text: Máša a medveď
+        why: Ruský 3D animovaný seriál začal vznikať až v roku 2009.
+
+  - id: ceskoslovenske-filmy-do-1992
+    type: pick
+    prompt: Ktoré z týchto filmov vznikli ešte pred rozdelením Československa (do konca roka 1992)?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Kategória:Československé_filmy
+    correct:
+      - text: S tebou mě baví svět
+        why: Komédia Marie Poledňákovej vznikla v roku 1982.
+      - text: Pásla kone na betóne
+        why: Kultový film Štefana Uhera s Milkou Zimkovou vznikol v roku 1982.
+      - text: Tisícročná včela
+        why: Veľkofilm Juraja Jakubiska o rodine Pichandovcov vznikol v roku 1983.
+      - text: Vesničko má středisková
+        why: Komédia Jiřího Menzela z roku 1985 získala nomináciu na Oscara.
+      - text: Fontána pre Zuzanu
+        why: Prvý diel hudobného filmu Dušana Rapoša vznikol v polovici 80. rokov.
+      - text: Obecná škola
+        why: Snímka Jana a Zdeňka Svěrákovcov z roku 1991 bola nominovaná na Oscara.
+      - text: Tankový prapor
+        why: Filmová adaptácia knihy Josefa Škvoreckého vznikla v roku 1991.
+    wrong:
+      - text: Fontána pre Zuzanu 2
+        why: Pokračovanie s Paľom Haberom prišlo do kín až v roku 1993.
+      - text: Záhrada
+        why: Poetický slovenský film Martina Šulíka vznikol v roku 1995.
+      - text: Kolja
+        why: Oscarový český film Jana Svěráka vznikol v roku 1996.
+      - text: Pelíšky
+        why: Hoci sa odohrávajú koncom 60. rokov, Jan Hřebejk ich nakrútil až v roku 1999.
+      - text: Samotáři
+        why: Generačná komédia Davida Ondříčka mala premiéru v roku 2000.
+      - text: Pupendo
+        why: Retrosnímka z prostredia normalizácie prišla do kín až v roku 2003.
+
+  - id: ceskoslovenske-serialy-do-1992
+    type: pick
+    prompt: Ktoré z týchto televíznych seriálov vznikli v Československu pred rokom 1993?
+    difficulty: 1
+    source: https://cs.wikipedia.org/wiki/Kategorie:Československé_televizní_seriály
+    correct:
+      - text: Arabela
+        why: Rozprávkový seriál Václava Vorlíčka s čarovným prsteňom vznikol na prelome 70. a 80. rokov.
+      - text: Nemocnica na kraji mesta
+        why: Seriál Jaroslava Dietla s primárom Sovou vysielali od roku 1978.
+      - text: Spadla z oblakov
+        why: Slovenský detský sci-fi seriál o Majke z planéty Gurun vznikol koncom 70. rokov.
+      - text: Bambuľkine dobrodružstvá
+        why: Príbehy malej Bambuľky a deda Jozefa vznikli v 80. rokoch.
+      - text: Chalupári
+        why: Dedinská komédia s Jiřím Sovákom a Josefom Kemrom je z roku 1975.
+      - text: Návštěvníci
+        why: Sci-fi seriál o výprave z roku 2484 do roku 1984 nakrútili v roku 1983.
+      - text: Sanitka
+        why: Dramatický seriál z prostredia pražskej záchranky vznikol v roku 1984.
+    wrong:
+      - text: Hospoda
+        why: Český krčmový sitkom vysielala televízia Nova v rokoch 1996 a 1997.
+      - text: Četnické humoresky
+        why: Prvorepubliková kriminálna dráma sa začala vysielať až po roku 2000.
+      - text: Susedia
+        why: Sitkom s Lászlóm a Františkom odštartoval na Markíze v roku 2006.
+      - text: Panelák
+        why: Slovenský seriál sa začal vysielať na TV JOJ v roku 2008.
+      - text: Zdivočelá země
+        why: Historický seriál podľa Jiřího Stránského vznikol až v roku 1997.
+      - text: Ordinácia v ružovej záhrade
+        why: Dlhoročný seriál z nemocničného prostredia mal premiéru v roku 2007.
+
+  - id: auta-skoda-tatra-do-1999
+    type: pick
+    prompt: Ktoré z týchto modelov áut vyrábali značky Škoda alebo Tatra ešte pred rokom 2000?
+    difficulty: 2
+    source: https://cs.wikipedia.org/wiki/Škoda_Auto
+    correct:
+      - text: Škoda 120
+        why: Legendárny model s motorom vzadu schádzal z liniek v rokoch 1976 až 1990.
+      - text: Škoda Favorit
+        why: Prvý moderný hatchback značky s predným pohonom sa vyrábal od konca 80. rokov.
+      - text: Škoda Forman
+        why: Verzia kombi odvodená od Favoritu vznikala v rokoch 1990 až 1995.
+      - text: Škoda Felicia
+        why: Priamy nástupca Favoritu už pod taktovkou Volkswagenu sa vyrábal od roku 1994.
+      - text: Škoda Octavia (novodobá)
+        why: Prvá novodobá generácia prišla na trh v roku 1996.
+      - text: Tatra 603
+        why: Aerodynamická limuzína s osemvalcom vzadu sa vyrábala v rokoch 1956 až 1975.
+      - text: Tatra 613
+        why: Reprezentačná limuzína s dizajnom štúdia Vignale vznikala od roku 1974.
+    wrong:
+      - text: Škoda Roomster
+        why: Rodinné viacúčelové auto sa začalo vyrábať až v roku 2006.
+      - text: Škoda Yeti
+        why: Prvé moderné SUV značky prišlo do výroby v roku 2009.
+      - text: Škoda Citigo
+        why: Najmenšie mestské auto značky sa začalo vyrábať na jeseň 2011.
+      - text: Tatra Phoenix
+        why: Ťažký nákladný model s kabínou DAF odštartoval výrobu v roku 2011.
+      - text: Trabant 601
+        why: Vyrábali ho vo východnom Nemecku v závode Sachsenring, nie v Československu.
+      - text: Wartburg 353
+        why: Tento dvojtakt vznikal v nemeckom Eisenachu, nie u značiek Škoda či Tatra.
+
+  - id: bankovky-slovenskej-koruny
+    type: pick
+    prompt: Ktoré historické osobnosti alebo diela boli vyobrazené na obehových bankovkách slovenskej koruny (1993 – 2008)?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovenská_koruna
+    correct:
+      - text: knieža Pribina
+        why: Zdobilo najmenšiu 20-korunovú bankovku spolu s Nitrianskym hradom.
+      - text: svätí Cyril a Metod
+        why: Vierozvestci boli na 50-korunáčke spolu s dražovským kostolíkom.
+      - text: Madona z oltára Majstra Pavla v Levoči
+        why: Na 100-korunáčke bola spolu s motívom Levoče.
+      - text: Anton Bernolák
+        why: Prvý kodifikátor spisovnej slovenčiny patril na 200-korunovú bankovku s Trnavou.
+      - text: Ľudovít Štúr
+        why: Jeho portrét bol na 500-korunáčke spolu s Bratislavským hradom.
+      - text: Andrej Hlinka
+        why: Zdobil 1000-korunovú bankovku.
+      - text: Milan Rastislav Štefánik
+        why: Bol na najvyššej 5000-korunovej bankovke spolu s mohylou na Bradle.
+    wrong:
+      - text: Pavol Országh Hviezdoslav
+        why: Bol na československej 10-korunáčke z roku 1986, na slovenských bankovkách nie.
+      - text: Jan Amos Komenský
+        why: Objavil sa na československej 20-korunáčke a českej dvestokorunáčke, nie na slovenskej.
+      - text: Juraj Jánošík
+        why: Zbojník na žiadnej obehovej bankovke slovenskej koruny nebol.
+      - text: Tomáš Garrigue Masaryk
+        why: Prvý československý prezident je na českej 5000-korunáčke, nie na slovenskej.
+      - text: Božena Němcová
+        why: Spisovateľka bola motívom českej 500-korunáčky, nie slovenskej meny.
+      - text: Alexander Dubček
+        why: Hoci je významnou osobnosťou dejín, na slovenskej korunovej bankovke nebol.
+
+  - id: debutove-albumy-90
+    type: pick
+    prompt: Ktoré z týchto slovenských kapiel alebo interpretov vydali svoj debutový štúdiový album v 90. rokoch (1990 – 1999)?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/IMT_Smile
+    correct:
+      - text: IMT Smile
+        why: Debut Klik-klak s hitom Nepoznám vyšiel v roku 1997 (hit nahrali v roku 1996).
+      - text: Iné Kafe
+        why: Punkrocková kapela odštartovala prvým štúdiovým albumom Vitaj! v roku 1998.
+      - text: Jana Kirschner
+        why: Rovnomenný debut vydala v polovici 90. rokov, album V cudzom meste prišlo až v roku 1999.
+      - text: Hex
+        why: Debut Ježiš Kristus nosí krátke nohavice vyšiel v roku 1992.
+      - text: No Name
+        why: Prvý album No Name vydali v roku 1998.
+      - text: Gladiator
+        why: Metalový debut Designation im vyšiel v roku 1992.
+      - text: Horkýže Slíže
+        why: Prvý oficiálny album V rámci oného vydali v roku 1997.
+      - text: Peha
+        why: Prešovská kapela debutovala albumom Niečo sa chystá v roku 1999.
+    wrong:
+      - text: Desmod
+        why: Prvý album 001 vyšiel až v roku 2000.
+      - text: Elán
+        why: Legendárny debut Ôsmy svetadiel vydali už v roku 1981.
+      - text: Tublatanka
+        why: Svoj rovnomenný prvý album vydala skupina už v roku 1985.
+
+  - id: hracky-pred-1989
+    type: pick
+    prompt: Ktoré z týchto hračiek alebo sladkostí sa v Československu vyrábali či predávali už pred rokom 1989?
+    difficulty: 1
+    source: https://cs.wikipedia.org/wiki/Igráček
+    correct:
+      - text: Igráček
+        why: Prvá postavička murára z družstva IGRA vznikla už v roku 1976.
+      - text: stavebnica Merkur
+        why: Kovová stavebnica so skrutkami a maticami sa u nás vyrába od čias prvej republiky.
+      - text: stavebnica Seva
+        why: Plastová polytechnická stavebnica zo Semíl vznikla koncom 70. rokov.
+      - text: céčka
+        why: Plastové písmená C spôsobili v Československu zberateľský ošiaľ v 80. rokoch.
+      - text: žuvačka Pedro
+        why: Žuvačku s chlapcom v sombrére začali vyrábať v roku 1968.
+      - text: plyšový Mončiči
+        why: Japonská opička z roku 1974 sa v 80. rokoch zháňala najmä v Tuzexe.
+    wrong:
+      - text: Tamagotchi
+        why: Vreckové elektronické zvieratko od firmy Bandai vyšlo až v roku 1996.
+      - text: Furby
+        why: Interaktívnu chlpatú hračku predstavili v USA až v roku 1998.
+      - text: zberateľské karty Pokémon
+        why: Prvá edícia kartovej hry vyšla v Japonsku až v októbri 1996.
+      - text: Beyblade
+        why: Zápasnícke točiace sa káčy vznikli v Japonsku až v roku 1999.
+      - text: konzola PlayStation
+        why: Prvý PlayStation uviedlo Sony v Japonsku až v decembri 1994.
+      - text: hra The Sims
+        why: Prvý diel simulátora života vyšiel až vo februári 2000.
+
+  - id: hokej-lillehammer-1994
+    type: pick
+    prompt: Ktorí z týchto hokejistov boli na súpiske Slovenska na prvej olympiáde samostatnej krajiny v Lillehammeri 1994?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Slovakia_at_the_1994_Winter_Olympics
+    correct:
+      - text: Peter Šťastný
+        why: Bol kapitánom historicky prvého olympijského tímu samostatného Slovenska.
+      - text: Žigmund Pálffy
+        why: Bol najproduktívnejším hráčom slovenského tímu (3 góly a 7 asistencií).
+      - text: Miroslav Šatan
+        why: Vtedy 19-ročný útočník patril k mladým tvárám tímu trénera Júliusa Šuplera.
+      - text: Róbert Petrovický
+        why: Útočník bol na súpiske trénera Júliusa Šuplera.
+      - text: Oto Haščák
+        why: Útočník bol na súpiske pre Lillehammer 1994.
+      - text: Róbert Švehla
+        why: Obranca patril k oporám slovenského výberu.
+      - text: Jaromír Dragan
+        why: Bol jedným z brankárov, spolu s Eduardom Hartmannom a Miroslavom Michalekom.
+    wrong:
+      - text: Pavol Demitra
+        why: Na súpiske pre Lillehammer 1994 nefiguroval.
+      - text: Marián Hossa
+        why: V čase olympiády mal necelých 15 rokov.
+      - text: Zdeno Chára
+        why: V čase Lillehammeru mal 16 rokov a na olympiáde ešte neštartoval.
+      - text: Ľubomír Višňovský
+        why: V roku 1994 mal 17 rokov a do olympijského výberu sa ešte nedostal.
+      - text: Jozef Stümpel
+        why: Na súpiske pre Lillehammer 1994 nefiguroval.
+      - text: Marián Gáborík
+        why: Počas ZOH 1994 mal iba 11 rokov.
+
+  - id: pocitace-a-hry-80-90
+    type: pick
+    prompt: Ktoré z týchto počítačov, konzol alebo hier vyšli ešte pred koncom 90. rokov (do roku 1999 vrátane)?
+    difficulty: 3
+    source: https://cs.wikipedia.org/wiki/Didaktik
+    correct:
+      - text: Didaktik Gama
+        why: Klon ZX Spectra zo Skalice uviedli na trh v roku 1987.
+      - text: Didaktik M
+        why: Kompaktnejší nástupca z výroby v Skalici sa objavil v roku 1990.
+      - text: Commodore 64
+        why: Jeden z najpredávanejších domácich počítačov všetkých čias vyšiel v roku 1982.
+      - text: Atari 800XL
+        why: Populárny domáci počítač radu XL sa začal predávať v roku 1983.
+      - text: Doom
+        why: Prelomová strieľačka od id Software vyšla v decembri 1993.
+      - text: Prince of Persia
+        why: Pôvodná 2D plošinovka Jordana Mechnera vyšla v roku 1989.
+      - text: Wolfenstein 3D
+        why: Priekopnícka strieľačka z pohľadu prvej osoby vyšla v roku 1992.
+    wrong:
+      - text: PlayStation 2
+        why: Druhá generácia konzoly Sony vyšla až v roku 2000.
+      - text: Xbox
+        why: Prvá herná konzola od Microsoftu sa objavila až v novembri 2001.
+      - text: The Sims
+        why: Simulátor každodenného života vyšiel vo februári 2000.
+      - text: World of Warcraft
+        why: Masívna online hra od Blizzardu odštartovala v novembri 2004.
+      - text: Minecraft
+        why: Verejne vyšiel až v roku 2009 a plná verzia nasledovala v roku 2011.
+      - text: "Grand Theft Auto: Vice City"
+        why: Hra zasadená do 80. rokov vyšla až v októbri 2002.
+
+  - id: poradie-udalosti-89-99
+    type: order
+    prompt: Zoraď tieto udalosti z rokov 1989 až 1999 od najstaršej po najnovšiu.
+    direction: asc
+    unit: rok
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Dejiny_Slovenska
+    items:
+      - { text: Nežná revolúcia, value: 1989 }
+      - { text: prvé slobodné parlamentné voľby po páde režimu, value: 1990 }
+      - { text: vznik samostatnej Slovenskej republiky, value: 1993 }
+      - { text: začiatok vysielania TV Markíza, value: 1996 }
+      - { text: prvá priama voľba prezidenta SR, value: 1999 }
+
+  - id: poradie-bankovky-sk
+    type: order
+    prompt: Zoraď tieto osobnosti podľa hodnoty slovenskej korunovej bankovky, na ktorej boli, od najmenšej po najväčšiu.
+    direction: asc
+    unit: Sk
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Slovenská_koruna
+    items:
+      - { text: knieža Pribina, value: 20 }
+      - { text: svätí Cyril a Metod, value: 50 }
+      - { text: Anton Bernolák, value: 200 }
+      - { text: Ľudovít Štúr, value: 500 }
+      - { text: Milan Rastislav Štefánik, value: 5000 }
+
+  - id: poradie-auta-roky
+    type: order
+    prompt: Zoraď tieto modely áut Tatra a Škoda podľa roku spustenia sériovej výroby od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://cs.wikipedia.org/wiki/Škoda_Favorit
+    items:
+      - { text: Tatra 603, value: 1956 }
+      - { text: Škoda 120, value: 1976 }
+      - { text: Škoda Favorit, value: 1987 }
+      - { text: Škoda Felicia, value: 1994 }
+      - { text: Škoda Fabia, value: 1999 }
+
+  - id: poradie-filmy-roky
+    type: order
+    prompt: Zoraď tieto známe československé, slovenské a české filmy podľa roku uvedenia v kinách od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://cs.wikipedia.org/wiki/Obecná_škola
+    items:
+      - { text: Pásla kone na betóne, value: 1982 }
+      - { text: Vesničko má středisková, value: 1985 }
+      - { text: Obecná škola, value: 1991 }
+      - { text: Záhrada, value: 1995 }
+      - { text: Pelíšky, value: 1999 }
+
+  - id: rok-markiza
+    type: number
+    prompt: V ktorom roku začala vysielať prvá slovenská súkromná celoplošná televízia Markíza?
+    answer: 1996
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Vysielanie odštartovala 31. augusta 1996 zo Záhorskej Bystrice.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/TV_Markíza
+
+  - id: martikan-vek-atlanta
+    type: number
+    prompt: Koľko rokov mal vodný slalomár Michal Martikán, keď v Atlante 1996 získal prvé olympijské zlato pre samostatné Slovensko?
+    answer: 17
+    unit: rokov
+    scale: linear
+    tolerance: 1
+    why: Zlato v disciplíne C1 vyhral len dva mesiace po svojich 17. narodeninách.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Michal_Martikán
+
+  - id: cena-skoda-favorit-1988
+    type: number
+    prompt: Koľko Kčs stála Škoda Favorit 136 L pri uvedení do predaja v roku 1988?
+    answer: 84600
+    unit: Kčs
+    scale: log
+    tolerance: 0.1
+    why: Pri vtedajšej priemernej mzde okolo 3 070 Kčs to bolo takmer 28 mesačných platov.
+    difficulty: 2
+    source: https://www.skoda-storyboard.com/en/press-releases/skoda-favorit-1987-1994-the-dawn-of-the-modern-era/
+
+  - id: obyvatelia-sr-1993
+    type: number
+    prompt: Približne koľko obyvateľov malo Slovensko v roku svojho vzniku (1993)?
+    answer: 5300000
+    unit: obyvateľov
+    scale: log
+    tolerance: 0.05
+    asOf: "2026-11"
+    why: Slovensko malo v roku 1993 približne 5,3 milióna obyvateľov.
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Demografia_Slovenska
+
+  - id: oscar-film-90
+    type: choice
+    prompt: Ktorý z týchto českých alebo slovenských filmov 90. rokov získal Oscara za najlepší cudzojazyčný film?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Kolja
+    correct:
+      text: Kolja
+      why: Snímka Jana Svěráka so Zdeňkom Svěrákom v hlavnej úlohe vyhrala Oscara v marci 1997.
+    wrong:
+      - text: Obecná škola
+        why: Na Oscara bola nominovaná, no sošku nezískala.
+      - text: Záhrada
+        why: Film Martina Šulíka na Oscara nedosiahol.
+      - text: Pelíšky
+        why: Kultová komédia z roku 1999 si získala divákov, Oscara však nevyhrala.
+
+  - id: cecka-povod
+    type: choice
+    prompt: Na čo sa pôvodne vyrábali legendárne plastové „céčka“, ktoré deti v 80. rokoch zbierali a spájali do retiazok?
+    difficulty: 2
+    source: https://cs.wikipedia.org/wiki/Céčka
+    correct:
+      text: ako súčasti závesov do okien a dverí
+      why: Boli to súčiastky plastových závesov, z ktorých sa stal detský fenomén.
+    wrong:
+      - text: ako zberateľské žetóny k žuvačkám Pedro
+        why: Pedro bola len žuvačka, céčka k nej nepatrili.
+      - text: ako plastové sponky do školských zošitov
+        why: Na spínanie papierov ani zošitov neboli určené.
+      - text: ako náhradné spojky do stavebnice Seva
+        why: So stavebnicou Seva nemali nič spoločné.

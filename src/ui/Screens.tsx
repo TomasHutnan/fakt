@@ -27,6 +27,7 @@ export function Home(props: {
   onResume: () => void;
   onPacks: () => void;
   onSettings: () => void;
+  onRules: () => void;
 }) {
   return (
     <div class="screen screen--home">
@@ -52,6 +53,9 @@ export function Home(props: {
         </button>
         <button type="button" class="btn btn--block" onClick={props.onPacks}>
           {sk.packs}
+        </button>
+        <button type="button" class="btn btn--block" onClick={props.onRules}>
+          {sk.rules}
         </button>
         <button type="button" class="btn btn--block" onClick={props.onSettings}>
           {sk.settings}
@@ -416,6 +420,24 @@ export function SettingsScreen(props: {
             </button>
           )}
         </fieldset>
+      </div>
+    </div>
+  );
+}
+
+export function Rules({ onBack }: { onBack: () => void }) {
+  return (
+    <div class="screen screen--rules">
+      <TopBar title={sk.rules} onBack={onBack} />
+      <div class="stack rules">
+        {sk.rulesSections.map((sec) => (
+          <section class="field">
+            <h2 class="field__label">{sec.title}</h2>
+            {sec.body.map((t) => (
+              <p>{t}</p>
+            ))}
+          </section>
+        ))}
       </div>
     </div>
   );

@@ -7,11 +7,11 @@ import { DEMO_PACK, demoState, type DemoScreen } from "./demo.ts";
 import { Designs } from "./Designs.tsx";
 import { Game } from "./Game.tsx";
 import { loadBuiltInPacks } from "./packs.ts";
-import { Home, Packs, SettingsScreen, Setup } from "./Screens.tsx";
+import { Home, Packs, Rules, SettingsScreen, Setup } from "./Screens.tsx";
 import { sk } from "./sk.ts";
 import { clearAll, KEYS, load, save } from "./storage.ts";
 
-type Screen = "home" | "setup" | "game" | "packs" | "settings" | "designs";
+type Screen = "home" | "setup" | "game" | "packs" | "settings" | "designs" | "rules";
 
 const params = new URLSearchParams(location.search);
 const demo = params.get("demo") as DemoScreen | null;
@@ -87,6 +87,8 @@ export function App() {
   if (loadError && !builtIn) return <div class="screen screen--loading"><p class="error">{sk.loadError}</p></div>;
 
   switch (screen) {
+    case "rules":
+      return <Rules onBack={() => setScreen("home")} />;
     case "game":
       if (game)
         return (
@@ -180,6 +182,7 @@ export function App() {
         setScreen("packs");
       }}
       onSettings={() => setScreen("settings")}
+      onRules={() => setScreen("rules")}
     />
   );
 }

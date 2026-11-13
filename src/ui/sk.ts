@@ -7,6 +7,30 @@ export const sk = {
   resume: "Pokračovať v hre",
   packs: "Balíčky otázok",
   settings: "Nastavenia",
+  rules: "Ako sa hrá",
+  rulesSections: [
+    {
+      title: "Klasika",
+      body: [
+        "Každá karta má otázku a desať možností. Pravdivé sú dve až osem z nich.",
+        "Na ťahu ťukáš na možnosti, o ktorých si myslíš, že sú pravdivé. Prvá správna je za 1 bod, druhá za 2, tretia za 3 a tak ďalej.",
+        "Kedykoľvek môžeš povedať stop a body si vziať. Ak ťukneš na nesprávnu, body z tejto karty prepadnú.",
+        "Potom podáš telefón ďalšiemu. Každý hrá tú istú kartu sám, kým to nevidia ostatní.",
+        "Po poslednom hráčovi sa ukážu všetky odpovede aj s vysvetlením.",
+      ],
+    },
+    {
+      title: "Mix",
+      body: [
+        "Okrem výberu prídu aj iné karty: zoradiť položky podľa hodnoty, tipnúť číslo alebo vybrať jednu zo štyroch.",
+        "Pri čísle vyhráva najbližší tip. Kto je presne, dostane bonus.",
+      ],
+    },
+    {
+      title: "Koniec hry",
+      body: ["Hrá sa 10 kôl alebo do zvoleného počtu bodov. Kolo sa vždy dohrá, aby mal každý rovnako ťahov."],
+    },
+  ],
   designs: "Vzhľady",
   back: "Späť",
   questionsInPacks: (q: number, p: number) => `${q} ${plural(q, "otázka", "otázky", "otázok")} v ${p} ${plural(p, "balíčku", "balíčkoch", "balíčkoch")}`,
