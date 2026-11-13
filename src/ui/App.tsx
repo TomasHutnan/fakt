@@ -34,7 +34,22 @@ export function App() {
   useEffect(() => {
     if (demo) return;
     loadBuiltInPacks()
-      .then(setBuiltIn)
+      .then((list) => {
+        setBuiltIn(list);
+        // Packs added since the last visit get their default (on unless adult),
+        // even when the player has already changed the selection.
+        const known = load<string[] | null>(KEYS.knownPacks, null);
+        const saved = load<string[] | null>(KEYS.enabledPacks, null);
+        if (saved && known) {
+          const added = list.filter((p) => !known.includes(p.id) && !p.adult && !saved.includes(p.id));
+          if (added.length) {
+            const ids = [...saved, ...added.map((p) => p.id)];
+            setEnabled(ids);
+            save(KEYS.enabledPacks, ids);
+          }
+        }
+        save(KEYS.knownPacks, list.map((p) => p.id));
+      })
       .catch(() => setLoadError(true));
   }, []);
 

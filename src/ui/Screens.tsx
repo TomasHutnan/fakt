@@ -282,6 +282,15 @@ export function Packs(props: {
                   {imported && <span class="badge">{sk.imported}</span>}
                 </span>
                 {p.description && <span class="pack__desc">{p.description}</span>}
+                {p.warnings && p.warnings.length > 0 && (
+                  <span class="pack__warnings" aria-label={sk.contentWarnings}>
+                    {p.warnings.map((w) => (
+                      <span class="badge badge--warning" key={w}>
+                        {sk.warningNames[w]}
+                      </span>
+                    ))}
+                  </span>
+                )}
                 <span class="pack__meta">
                   {sk.questionsCount(p.questions.length)} · {p.lang.toUpperCase()}
                   {p.license !== "CC0-1.0" ? ` · ${p.license}` : ""}

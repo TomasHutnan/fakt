@@ -3,6 +3,7 @@ title: Alkohol a drogy
 description: Pálenky, pivo, víno, prohibícia a zákony – kvíz pre dospelých, ktorí vedia, čo pijú.
 lang: sk
 adult: true
+warnings: [drugs]
 version: 1
 questions:
   # ---------- PICK ----------

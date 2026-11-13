@@ -38,6 +38,8 @@ export const KEYS = {
   settings: "settings",
   players: "players",
   enabledPacks: "enabledPacks",
+  /** Built-in pack ids seen on the last visit, to switch on packs added later. */
+  knownPacks: "knownPacks",
   seen: "seen",
   imported: "imported",
   design: "design",

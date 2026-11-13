@@ -68,6 +68,9 @@ export interface ChoiceQuestion extends QuestionBase {
 export type Question = PickQuestion | OrderQuestion | NumberQuestion | ChoiceQuestion;
 export type QuestionType = Question["type"];
 
+export const CONTENT_WARNINGS = ["vulgar", "sexual", "drugs", "dark-humor", "racism", "abuse"] as const;
+export type ContentWarning = (typeof CONTENT_WARNINGS)[number];
+
 export interface Pack {
   id: string;
   title: string;
@@ -77,6 +80,8 @@ export interface Pack {
   /** SPDX id, default CC0-1.0 */
   license: string;
   adult: boolean;
+  /** Content warnings shown on the pack, see CONTENT_WARNINGS. */
+  warnings?: ContentWarning[];
   version: number;
   author?: string;
   questions: Question[];
@@ -90,6 +95,7 @@ export interface PackMeta {
   lang: string;
   license: string;
   adult: boolean;
+  warnings?: ContentWarning[];
   version: number;
   count: number;
   counts: Record<QuestionType, number>;

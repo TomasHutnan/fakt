@@ -101,6 +101,7 @@
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
 }
 .order-list--dragging { cursor: grabbing; }
+:where(.pack__warnings) { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
 :where(.q__results-title) { font-size: 1rem; font-weight: 600; margin-top: 8px; }
 
 :where(.number-input) { display: flex; flex-direction: column; gap: 10px; }

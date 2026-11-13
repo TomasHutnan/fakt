@@ -272,6 +272,12 @@ describe("validator", () => {
     expect(res.errors.join("\n")).toMatch(/why/);
     expect(res.errors.join("\n")).toMatch(/10 možností/);
   });
+  it("accepts known content warnings and rejects unknown ones", () => {
+    expect(validatePack({ ...pack, warnings: ["vulgar", "racism"] }).pack?.warnings).toEqual(["vulgar", "racism"]);
+    expect(validatePack({ ...pack, warnings: ["gore"] }).pack).toBeNull();
+    expect(validatePack(pack).pack?.warnings).toBeUndefined();
+  });
+
   it("warns about stale asOf", () => {
     const res = validatePack(
       { ...pack, questions: [{ ...pack.questions[3], asOf: "2019" }] },

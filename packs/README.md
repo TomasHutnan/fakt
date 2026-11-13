@@ -13,6 +13,8 @@ description: Ryby, huby, štíty, jaskyne a zvieratá.
 lang: sk                  # sk | cs | en
 license: CC0-1.0          # optional, default CC0-1.0
 adult: false              # true = labelled 18+ and off by default
+warnings: [vulgar, racism]  # optional content warnings shown on the pack: vulgar, sexual, drugs,
+                          # dark-humor, racism, abuse. Use them on adult packs so players know what they switch on.
 version: 1
 questions: [...]
 ```

@@ -1,4 +1,4 @@
-import type { Difficulty, Option, OrderItem, Pack, Question } from "./types.ts";
+import { CONTENT_WARNINGS, type ContentWarning, type Difficulty, type Option, type OrderItem, type Pack, type Question } from "./types.ts";
 
 // Validation shared by scripts/build-packs.ts and the in-app importer.
 // Messages are Slovak because the importer shows them to players.
@@ -34,6 +34,9 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const license = str(input.license) ?? "CC0-1.0";
   const adult = input.adult === undefined ? false : input.adult;
   if (typeof adult !== "boolean") err("adult", "musí byť true alebo false");
+  const cw = input.warnings === undefined ? [] : input.warnings;
+  if (!Array.isArray(cw) || cw.some((w) => !(CONTENT_WARNINGS as readonly unknown[]).includes(w)))
+    err("warnings", `musí byť zoznam z: ${CONTENT_WARNINGS.join(", ")}`);
   const version = input.version === undefined ? 1 : input.version;
   if (!Number.isInteger(version)) err("version", "musí byť celé číslo");
 
@@ -69,6 +72,7 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   if (description) pack.description = description;
   const author = str(input.author);
   if (author) pack.author = author;
+  if (Array.isArray(cw) && cw.length) pack.warnings = [...new Set(cw as ContentWarning[])];
   return { pack, errors, warnings };
 }
 

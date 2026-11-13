@@ -115,6 +115,15 @@ export const sk = {
   // packs
   adult: "18+",
   adultHint: "Pre dospelých. Predvolene vypnuté.",
+  contentWarnings: "Upozornenie na obsah",
+  warningNames: {
+    vulgar: "vulgarizmy",
+    sexual: "sex",
+    drugs: "drogy",
+    "dark-humor": "čierny humor",
+    racism: "rasizmus",
+    abuse: "zneužívanie",
+  } as Record<string, string>,
   questionsCount: (n: number) => `${n} ${plural(n, "otázka", "otázky", "otázok")}`,
   imported: "Importovaný",
   importPack: "Importovať balíček",
