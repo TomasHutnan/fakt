@@ -1,0 +1,490 @@
+id: sk-dano-drevo
+title: Dano Drevo
+description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor, 18+.
+lang: sk
+adult: true
+version: 1
+questions:
+  - id: dd-postavy-komnata
+    type: pick
+    prompt: "Dano Drevo a tajomná komnata: ktoré dvojice „postava z Dana Dreva – postava z Harryho Pottera“ sedia?"
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 00:03:12, 00:09:00, 00:20:06, 01:16:12, 02:19:41)"
+    note: Priradenie vychádza z úlohy postavy v deji paródie.
+    correct:
+      - { text: Peder – Ron Weasley, why: "Danov ryšavý kamarát, ktorého všetci volajú „ryšavé prasa“." }
+      - { text: Kim – Hermiona Grangerová, why: "Najmúdrejšia z trojice; uvarí lekvár a nakoniec z nej je kôň." }
+      - { text: Starý Jano – Albus Dumbledore, why: "„Som na tejto škole riaditeľom,“ pripomína Danovi na konci filmu." }
+      - { text: Janko Španiel – škriatok Dobby, why: "„Moje meno je Janko Španiel,“ predstaví sa hneď na začiatku v Danovej izbe." }
+      - { text: Profesor Poslušný – Hagrid, why: "Býva v chatrči pri Rokforte a zdraví všetkých „Dobré ráno, inžinieri!“." }
+      - { text: Profesor Pipík – Gilderoy Lockhart, why: "Rozdáva vlastné knihy, napríklad Hybnosť telies, a po kúzle stratí pamäť." }
+      - { text: Ľudo Kolman – Severus Snape, why: "Prísny profesor, ktorý chce chlapcov za trest oholiť a hrá Travian." }
+      - { text: Paťo Synek – bazilisk, why: "Had, ktorý sa skrýva pod školou a vraždí študentov Rokfortu." }
+      - { text: Ctibor – Ginny Weasleyová, why: "Pederova sestra, ktorú unesú do Tajomnej komnaty." }
+      - { text: Braňo Mojsej – Lucius Malfoy, why: "Stanov otec; na konci sa vyhlási za Jankovho pána, kým Janko nedostane ponožku." }
+    wrong:
+      - { text: Starý Jano – Severus Snape, why: "Starý Jano je riaditeľ, teda Dumbledore." }
+      - { text: Ľudo Kolman – Albus Dumbledore, why: "Kolman je Snape; riaditeľom je Starý Jano." }
+      - { text: Profesor Pipík – Hagrid, why: "Hagrid je Poslušný; Pipík je samoľúby Lockhart." }
+      - { text: Stano – Ron Weasley, why: "Stano je „biele prasa“ Draco Malfoy, syn Braňa Mojseja." }
+      - { text: Kim – Ginny Weasleyová, why: "Ginny je Ctibor, Pederova sestra." }
+      - { text: Janko Španiel – Draco Malfoy, why: "Janko je škriatok Dobby, ktorý ťahá Dana do Rokfortu." }
+
+  - id: dd-postavy-turnaj
+    type: pick
+    prompt: "Dano Drevo a turnaj Mekyho Žbirku: ktoré dvojice „postava z Dana Dreva – postava z Harryho Pottera“ sedia?"
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:02:37, 00:09:01, 00:39:08, 00:45:00, 01:31:22, 02:15:13)"
+    note: Priradenie vychádza z úlohy postavy v deji paródie.
+    correct:
+      - { text: Meky Žbirka – Lord Voldemort, why: "Po páde do vane s kyselinou v Patinciach potrebuje novú tvár a vráti sa rituálom." }
+      - { text: Chvostnatý Gábor – Viktor Krum, why: "Hviezda maďarského tímu zo Stredy nad Bodrogom, fanúšikovia mu skandujú „Gábor!“." }
+      - { text: Zuzana de Merde – Fleur Delacourová, why: "Súťažiaca z francúzskej dedinky Chevance." }
+      - { text: Šaňo Fekete – Cedric Diggory, why: "Súťažiaci, ktorý zomrie na konci labyrintu a dlží Danovi 16 eur." }
+      - { text: Jozef Šlota – Alastor Moody, why: "Nový profesor zákerných kúziel; jeho podobu si požičal Jerguš Gombit." }
+      - { text: Jerguš Gombit – Barty Crouch mladší, why: "Prezlečený za Šlotu celý čas pomáhal Mekymu. „Kde je pravý Jozef Šlota?“" }
+      - { text: Vajcomíra Gombitová – Rita Skeeterová, why: "Novinárka bulvárneho denníka Nota bene, kde si „všetko prekrútia“." }
+      - { text: Robo Kazík – Sirius Black, why: "Zjaví sa Danovi v krbe a varuje ho pred Žbirkom." }
+      - { text: MUDr. Igor Patkaň – Peter Pettigrew, why: "Mekyho verný pomocník; patkaň je potkan, ako Červochvost." }
+      - { text: Madam Brigitte de Fecalie – madam Maximová, why: "Vedie francúzsku výpravu a s Poslušným si vymieňajú lahôdky." }
+    wrong:
+      - { text: Meky Žbirka – Albus Dumbledore, why: "Riaditeľom je stále Starý Jano; Meky je ten, ktorý sa vracia." }
+      - { text: Chvostnatý Gábor – Cedric Diggory, why: "Cedric je Šaňo Fekete; Gábor je Krum." }
+      - { text: Šaňo Fekete – Viktor Krum, why: "Krum je Chvostnatý Gábor." }
+      - { text: Robo Kazík – Lord Voldemort, why: "Kazík je dobrák v krbe, teda Sirius." }
+      - { text: Vajcomíra Gombitová – Fleur Delacourová, why: "Vajcomíra je novinárka, Fleur je Zuzana de Merde." }
+      - { text: Jozef Šlota – Bartemius Crouch starší, why: "Koordinátor turnaja, ktorý sa stratí, je Vasil." }
+
+  - id: dd-hlasky-komnata
+    type: pick
+    prompt: Ktoré z týchto hlášok zaznejú v prvom filme, Dano Drevo a tajomná komnata?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, časy pri možnostiach)"
+    correct:
+      - { text: "Dobré ráno, inžinieri!", why: "Profesor Poslušný, 00:16:52." }
+      - { text: "Ja som dreva a nie chlap", why: "Dano sa bráni, prečo nechce ísť do Rokfortu, 00:06:20." }
+      - { text: "Ta ja nie som opravár", why: "Dano strýkovi, ktorý chce, aby opravil skriňu rozbitú Jankom, 00:06:06." }
+      - { text: "Lekáreň na srdcovocievne choroby!", why: "Dano sa pomýli pri tabletkách Stop wind 2000, 00:14:59." }
+      - { text: "To je urážka koňa", why: "Odpoveď na „Ty kôň“ v hádke Stana a Kim, 00:39:16." }
+      - { text: "Ja mám ešte hodinu logopédie", why: "Koktajúci Janko Španiel sa ponáhľa, 00:05:01." }
+      - { text: "Synek je na Rokforte", why: "Varovanie Janka Španiela a neskôr hlas zo steny." }
+    wrong:
+      - { text: "Celkom rád odpisujem vodomery", why: "Dano Šlotovi v Turnaji Mekyho Žbirku, 00:53:47." }
+      - { text: "Dračí trus, Brigita", why: "Poslušný v Turnaji, 00:47:54." }
+      - { text: "Hovnová pomazánka zdarma!", why: "Turnaj Mekyho Žbirku, príchod do Rokfortu, 00:15:50." }
+      - { text: "Vyluhuj cikulu v harmančeku", why: "Riešenie hádanky zo zlatého vajca v Turnaji, 01:25:35." }
+      - { text: "Snaž sa dnes udržať svoje slipky čisté, Drevo", why: "Stano v Turnaji Mekyho Žbirku, 00:08:01." }
+      - { text: "Jožko Vajda!", why: "Smrtiace kúzlo z Turnaja Mekyho Žbirku." }
+
+  - id: dd-postavy-v-komnate
+    type: pick
+    prompt: Ktoré z týchto postáv sa objavia v prvom filme, Dano Drevo a tajomná komnata?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky)"
+    correct:
+      - { text: Adam Lieskovský, why: "Fanúšik s fotoaparátom, ktorý skamenie, 00:33:40." }
+      - { text: Sárosima, why: "Odutý duch na babských hajzloch, 01:04:02." }
+      - { text: pavúk Dávid, why: "Paťov kamarát z mladosti, býva v lese, 01:45:36." }
+      - { text: Červený vrabec, why: "Vták, ktorý zhorí v pracovni Starého Jana a neskôr vyklove Paťovi oči." }
+      - { text: Rudolf a Michal, why: "Stanovi kumpáni, na ktorých sa Dano s Pedrom premenia lekvárom." }
+      - { text: Ondrej Golonka, why: "Priateľ Starého Jana, ktorý rozpráva o olympiáde v Grenobli, 01:39:05." }
+      - { text: profesorka Nogeranča, why: "Učí presádzať „malé svine, čo hnusne kvília“, 00:31:32." }
+      - { text: DiskoMiňo, why: "Sárosimin bývalý frajer a hlavný záporák filmu." }
+    wrong:
+      - { text: Robo Kazík, why: "Zjaví sa v krbe až v Turnaji Mekyho Žbirku." }
+      - { text: Šaňo Fekete, why: "Súťažiaci z Turnaja Mekyho Žbirku." }
+      - { text: Vajcomíra Gombitová, why: "Novinárka z Turnaja Mekyho Žbirku." }
+      - { text: Maroš, why: "Záhadná postava druhého filmu; „Kto je to ten Maroš?“ ostane navždy záhadou." }
+      - { text: drak Rastík, why: "Drak z prvej disciplíny Turnaja, bratranec Paťa Syneka." }
+      - { text: DJ László, why: "Moderátor rádia Európa 2 v úvode Turnaja Mekyho Žbirku." }
+
+  - id: dd-janko-ziadost
+    type: choice
+    prompt: Čo chce škriatok Janko Španiel od Dana na začiatku prvého filmu?
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 00:03:19–00:07:13)"
+    correct: { text: Aby určite prišiel do Rokfortu, why: "„Ta Synek je na Rokforte, ta musíš prísť.“ Presný opak Dobbyho." }
+    wrong:
+      - { text: Aby do Rokfortu nechodil, why: "To chcel Dobby v origináli; Janko Dana do Rokfortu naopak ťahá." }
+      - { text: Aby mu dal ponožku, why: "Ponožku dostane Janko až na konci, od Braňa Mojseja." }
+      - { text: Aby mu vrátil listy od Starého Jana, why: "Listy má naopak Janko a nechce ich Danovi dať." }
+
+  - id: dd-tabletky-letax
+    type: choice
+    prompt: Ako sa volajú tabletky, ktoré v prvom filme nahrádzajú letaxový prášok?
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 00:13:27, 01:09:39)"
+    correct: { text: Stop wind 2000, why: "Tabletky na zastavenie vetrov; s nimi sa ide do Lekárne na tráviace problémy." }
+    wrong:
+      - { text: Stop wind 3000, why: "Na tie mu ich podľa Dana zamenil Pederov otec cestou na Rokfort." }
+      - { text: Sirius Black, why: "Čierne uhlie na trávenie, ktoré si Dano objedná v Turnaji Mekyho Žbirku." }
+      - { text: Celaskon, why: "Za šumivý celaskon pokladala Ctibor tabletky, ktoré ju uspali." }
+
+  - id: dd-komnata-vstup
+    type: choice
+    prompt: Čím sa v paródii otvára vstup do Tajomnej komnaty?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 01:53:21, 01:58:28)"
+    correct: { text: Moldavskou pesničkou zaspievanou od srdca, why: "Dano zaspieva „Maja hí, maja hó, maja há“." }
+    wrong:
+      - { text: Hadou rečou, why: "Tak to bolo v origináli; Dano hadou rečou nehovorí." }
+      - { text: Pesničkou Biely kvet, why: "Žbirkov hit patrí do druhého filmu." }
+      - { text: Ľudovkou Pod horou, pod horou, why: "Tá znie v aute cestou na Rokfort." }
+
+  - id: dd-inzinieri
+    type: choice
+    prompt: Kto v prvom filme víta Dana a jeho kamarátov slovami „Dobré ráno, inžinieri!“?
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 00:16:52, 00:40:13, 01:34:39)"
+    correct: { text: Profesor Poslušný, why: "Paródia Hagrida; aj na rozlúčku hovorí „Majte sa, inžinieri“." }
+    wrong:
+      - { text: Profesor Pipík, why: "Pipík radšej začína hodinu vtipom." }
+      - { text: Starý Jano, why: "Riaditeľ má k Danovi oveľa dôvernejšie oslovenia." }
+      - { text: Ľudo Kolman, why: "Kolman chlapcov namiesto pozdravu hneď chce oholiť." }
+
+  - id: dd-prave-meno
+    type: choice
+    prompt: Aké je pravé meno DiskoMiňa Pipéša, za ktorým sa skrýva Tom Riddle?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 02:07:22–02:08:08)"
+    correct: { text: Domino Kišpépy, why: "Prešmyčka mena DiskoMiňo Pipéš, ako Tom Marvoloso Riddle a Lord Voldemort." }
+    wrong:
+      - { text: Paťo Synek, why: "To je had, ktorému DiskoMiňo slúži." }
+      - { text: Igor Patkaň, why: "Plastický chirurg z Turnaja Mekyho Žbirku." }
+      - { text: Dominik Pipéš, why: "Vymyslené meno; Pipéš je podľa Pedra a DiskoMiňa staromaďarské priezvisko." }
+
+  - id: dd-jozko-vajda
+    type: choice
+    prompt: Ako sa v Turnaji Mekyho Žbirku volá najsmrteľnejšie zo zákerných kúziel, paródia na Avada Kedavra?
+    difficulty: 1
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:27:14–00:27:28)"
+    correct: { text: Jožko Vajda, why: "Vraj si ho natrénoval Meky Žbirka na svojich neprajníkov." }
+    wrong:
+      - { text: Tortúra, why: "Aj to je zákerné kúzlo, no „len“ mučí, ako Crucio." }
+      - { text: Abra-Synek-Bubák, why: "Kúzlo zo súboja v prvom filme." }
+      - { text: Simcharabachatamsofer, why: "Kúzlo Mc. Mlynarčíkovej na premenu kury na pohár." }
+
+  - id: dd-geri-gabor
+    type: choice
+    prompt: Ktorý maďarský spevák sa na Slovensku preslávil vďaka úvodu filmu Dano Drevo a turnaj Mekyho Žbirku?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Geri_G%C3%A1bor
+    correct: { text: Geri Gábor, why: "Jeho pieseň Alma a fa alatt hrá vo filme fiktívny DJ László na rádiu Európa 2." }
+    wrong:
+      - { text: Chvostnatý Gábor, why: "To je hviezda maďarského tímu vo filme, nie spevák." }
+      - { text: DJ László, why: "Fiktívny moderátor, ktorý pieseň vo filme púšťa." }
+      - { text: Gábor Presser, why: "Známy maďarský skladateľ, no vo filme nespieva." }
+
+  - id: dd-tvorba-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o vzniku Dana Dreva sú pravdivé?
+    difficulty: 2
+    source: "https://refresher.cz/33400-Peter-Popluhar-alias-Dano-Drevo-Mainstream-krajiny-nemusim-radsej-pojdem-do-Malawi-Rozhovor; https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu; https://www.startitup.sk/_peter-popluhar-slovensky-youtuber-ktory-chce-zabavat-cely-svet/; https://cs.wikipedia.org/wiki/Peter_Popluh%C3%A1r"
+    correct:
+      - { text: Hlavným autorom je Peter Popluhár, why: "Na Hithite vystupuje ako autor projektu a známy je aj ako PPPeter." }
+      - { text: Prvý diel paroduje Tajomnú komnatu, why: "„Prvý part Dana Dreva bol z Tajomnej komnaty a bolo to naozaj otrasne.“" }
+      - { text: Na začiatku dabovali traja kamaráti, why: "Peter a dvaja kamaráti nadabovali prvé štyri minúty filmu." }
+      - { text: Tvorcovia mali na začiatku 14 rokov, why: "„Mali sme vtedy štrnásť,“ hovorí Popluhár pre Refresher." }
+      - { text: Pôvodne bol určený pre asi 30 spolužiakov, why: "„Dano Drevo bol pôvodne projekt určený len pre 30 ľudí z mojej triedy.“" }
+      - { text: Dabovalo sa doma v obývačke, why: "U Petra doma, a jeho mama bola neďaleko." }
+      - { text: Dokončenie druhého filmu sa financovalo cez Hithit, why: "Kampaň v roku 2015 vyzbierala viac ako dvojnásobok cieľa." }
+      - { text: Posledný diel vyšiel v máji 2016, why: "Uvádza to česká Wikipédia o Petrovi Popluhárovi." }
+    wrong:
+      - { text: Prvý diel paroduje Ohnivú čašu, why: "Ohnivá čaša prišla na rad až v Turnaji Mekyho Žbirku." }
+      - { text: Začínali ako dvadsaťroční vysokoškoláci, why: "Mali štrnásť rokov." }
+      - { text: Kampaň na Hithite nedosiahla cieľ, why: "Skončila na 240 % cieľa." }
+      - { text: Z YouTube zarobili na Danovi Drevovi milióny, why: "Podľa Hithitu z YouTube „nezarobili ani cent“." }
+      - { text: Popluhár pochádza z Košíc, why: "Narodil sa v roku 1993 v Bratislave." }
+      - { text: Druhý film paroduje Väzňa z Azkabanu, why: "Turnaj Mekyho Žbirku paroduje Ohnivú čašu." }
+
+  - id: dd-popluhar
+    type: pick
+    prompt: Čo platí o Petrovi Popluhárovi, autorovi Dana Dreva?
+    difficulty: 3
+    source: https://cs.wikipedia.org/wiki/Peter_Popluh%C3%A1r
+    correct:
+      - { text: Narodil sa v roku 1993 v Bratislave, why: "Uvádza to česká Wikipédia." }
+      - { text: Na YouTube ho poznajú aj ako PPPeter, why: "Kanál dnes pod týmto názvom založil v októbri 2015." }
+      - { text: Napísal knihu Kde všade som (ne)zomrel, why: "Autobiografia z roku 2018." }
+      - { text: Napísal knihu Ako (ne)prežiť mladosť, why: "Zbierka poviedok z roku 2021." }
+      - { text: Natočil reláciu PPPíter v Afrike pre RTVS, why: "Rok 2018; pôvodne ju mala vysielať iná televízia." }
+      - { text: Vyšiel na Kilimandžáro za necelých 25 hodín, why: "Video zverejnil v auguste 2021; výstup trval 24 hodín a 42 minút." }
+    wrong:
+      - { text: Vydal kuchárku Zavárame na chalupe, why: "To je výhra z Turnaja Mekyho Žbirku, nie jeho kniha." }
+      - { text: Nadaboval oficiálnu slovenskú verziu Harryho Pottera, why: "Dabing robil len do vlastnej paródie." }
+      - { text: Kanál PPPeter je v maďarčine, why: "Kanál PPPeter je zameraný na anglicky hovoriacich divákov." }
+      - { text: Narodil sa v Brne, why: "Narodil sa v Bratislave; v Brne podľa Refresheru neskôr žil." }
+      - { text: Kanál PPPíter založil už v roku 2010, why: "Kanál PPPíter pre česko-slovenských divákov vznikol až v decembri 2017." }
+
+  - id: dd-synek-fakty
+    type: pick
+    prompt: Čo sa vo filmoch o Danovi Drevovi hovorí o hadovi Paťovi Synekovi?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:17:40, 00:49:24–00:50:37, 02:10:35); Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:48:36)"
+    correct:
+      - { text: Prišiel na Rokfort v roku 1200 pred letopočtom, why: "Tvrdí to profesorka Mc. Mlynarčíková." }
+      - { text: Kedysi bol pekný a obľúbený mládenec, why: "„Baby po ňom leteli“, kým nezmutoval a nenarástol mu chvost." }
+      - { text: Jeho kamarátom bol pavúk Dávid, why: "Dávid sa tiež zmutoval na tlstého pavúka." }
+      - { text: Naposledy vraždil pred 50 rokmi, why: "Prichádza vraj v nepravidelných intervaloch." }
+      - { text: Obete prehĺta vcelku, why: "„Je to had a obete prehĺta vcelku.“" }
+      - { text: Má 61 chromozómov, why: "Spomína sa pri stretnutí s Poslušným a znova na Pipíkovej hodine." }
+      - { text: Jeho bratranec je drak Rastík, why: "Rastislav Synek z prvej disciplíny Turnaja Mekyho Žbirku." }
+      - { text: Oči mu vyklove Červený vrabec, why: "„Vták jeden skurvený, oči mi prišiel vyšklbať!“" }
+    wrong:
+      - { text: Prišiel na Rokfort v roku 1820, why: "V roku 1820 sa vraj v Tajomnej komnate konali olympijské hry." }
+      - { text: Zabil ho Ľudo Kolman, why: "Paťa zdolá Dano." }
+      - { text: Je to v skutočnosti drak, why: "Je to had; drak je až jeho bratranec Rastík." }
+      - { text: Jeho obľúbeným jedlom sú karpatské slizniaky, why: "Slizniaky s močom moldavských ošípaných miluje Poslušný." }
+      - { text: Oslepil ho pavúk Dávid, why: "Oči mu vyklove Červený vrabec." }
+
+  - id: dd-kim
+    type: pick
+    prompt: Čo všetko sa v oboch filmoch stane Kim?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:40:33, 00:51:40, 01:03:20, 01:36:04, 02:26:51); Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:00:09–00:00:27, 01:24:37)"
+    correct:
+      - { text: Hovorí o sebe, že je kôň, why: "„Ja viem, že som kôň!“ Na konci je z nej anglický teplokrovník." }
+      - { text: Postihne ju ilorexia a mení sa na robota Ile, why: "Choroba, ktorá vraj postihuje najmä kone." }
+      - { text: Uvarí lekvár na premenu chlapcov, why: "Paródia mnoholičového elixíru; prísada sú chlpy Rudolfa a Michala." }
+      - { text: Operuje ju profesor Pipík, why: "Nožom, ktorým si predtým natieral horčicu na chlieb." }
+      - { text: Spadne z rebríka na hrable v Hrochoti, why: "Pri brigáde si nabodne hrdlo; operácia trvá 260 hodín." }
+      - { text: Má doživotne poškodené hlasivky, why: "Preto jej všetci v Turnaji nadávajú do „rockerov“." }
+      - { text: Začne brať mužské hormóny, why: "„Bude zo mňa Štefan.“ Dano jej na konci povie „Jasné, Števko“." }
+    wrong:
+      - { text: Otehotnie s Pedrom, why: "To na konci prvého filmu oznamujú o profesorke Nogeranči." }
+      - { text: Vyhrá Turnaj Mekyho Žbirku, why: "Kim do turnaja vôbec nejde." }
+      - { text: Chodí s DiskoMiňom, why: "DiskoMiňo bol frajer Sárosimy." }
+      - { text: Zabije pavúka Dávida, why: "K Dávidovi idú Dano s Pedrom a utečú." }
+      - { text: Stane sa riaditeľkou Rokfortu, why: "Riaditeľom ostáva Starý Jano." }
+
+  - id: dd-poslusny-vykony
+    type: pick
+    prompt: Akými neuveriteľnými výkonmi sa chváli profesor Poslušný?
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata (titulky, 00:17:09–00:17:14, 00:40:05, 00:40:49–00:40:55, 01:08:10, 01:39:32, 01:54:45, 02:01:33)"
+    correct:
+      - { text: Vyhral triatlon bez obličiek, why: "„Ja som v tvojom veku vyhral triatlon bez obličiek.“" }
+      - { text: Vyhral slalom bez nohy, why: "Hneď po triatlone, Dano ho nazve multitalentom." }
+      - { text: Vyhral súťaž vo vzpieraní so zlomenými kosťami, why: "So zlomenými vretennými kosťami." }
+      - { text: Získal Stanley Cup ochrnutý, why: "Tak utešuje Kim, ktorú Stano nazval koňom." }
+      - { text: Za jeho čias hľadali slimákov kvôli hladu, why: "Utešuje tak grcajúceho Pedra." }
+    wrong:
+      - { text: Má diplom za usmrtenie 12 anakónd holými nohami, why: "Tým sa chváli profesor Pipík." }
+      - { text: Má päť vysokoškolských titulov, why: "To tvrdí o sebe profesor Pipík." }
+      - { text: Vyštudoval serpentológiu, why: "Tým sa chváli Pipík pri súboji s Kolmanom." }
+      - { text: Dal Rusom hetrik v Innsbrucku, why: "To rozpráva Ondrej Golonka." }
+      - { text: Zabehol maratón bez pľúc, why: "Vymyslené; aj na Poslušného priveľa." }
+      - { text: Vyhral Veľkú Pardubickú, why: "Tú Poslušný predpovedá Kim, lebo krásne erdží." }
+
+  - id: dd-pipik
+    type: pick
+    prompt: Čo platí o profesorovi Pipíkovi?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:19:22, 00:58:03, 01:04:30, 01:36:11–01:36:20, 01:55:41, 02:02:40, 02:18:22)"
+    correct:
+      - { text: Daruje Danovi svoju knihu Hybnosť telies, why: "„Danovi knihy, ktorým nikto nechápe, sám som ich napísal.“" }
+      - { text: Tvrdí každému, že je lekár, why: "„Jasné, že nie, ale každému to hovorí.“" }
+      - { text: Rád začína hodinu vtipom, why: "Napríklad vtipom na klop-klop, ktorý si nepamätá." }
+      - { text: Pri Kiminej operácii jej v čreve zabudne zrkadlo, why: "Zrkadlo ostalo v jej tenkom čreve." }
+      - { text: Chce utiecť do Mozambiku kvôli ebole, why: "Potom tvrdí, že ho potrebuje Nigéria, Ázia aj Austrália." }
+      - { text: Po kúzle začne hovoriť po nemecky, why: "„Guten Tag.“ Peder si myslí, že po španielsky." }
+      - { text: Vyhlasuje sa za Güntera Schweinsteigera, why: "Preto nemôže dokončiť Kiminu operáciu." }
+    wrong:
+      - { text: Je riaditeľom Rokfortu, why: "Riaditeľom je Starý Jano." }
+      - { text: Býva v chatrči pri škole, why: "V chatrči býva Poslušný." }
+      - { text: Hrá Travian v 14. najlepšej aliancii, why: "To je Ľudo Kolman." }
+      - { text: Učí presádzanie kvíliacich svíň, why: "To učí profesorka Nogeranča." }
+      - { text: Je otcom Stana, why: "Stanovým otcom je Braňo Mojsej." }
+
+  - id: dd-turnaj-vyhry
+    type: pick
+    prompt: Čo sa v Turnaji Mekyho Žbirku sľubuje alebo rozdáva ako výhra?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:20:12–00:20:16, 00:33:09–00:33:13, 00:55:31–00:55:39); Dano Drevo a tajomná komnata (titulky, 00:32:00, 02:20:31)"
+    correct:
+      - { text: Žbirkov podpis, why: "Súčasť hlavnej ceny." }
+      - { text: Kniha Zavárame na chalupe, why: "Hlavná cena; Dano ju chce, lebo mu vykypeli egreše." }
+      - { text: "10 000 forintov", why: "Tretia časť hlavnej ceny." }
+      - { text: Poltársky ozdobný válov, why: "Od sponzora, skrachovaných Poltárskych sklární; vo finále ho treba nájsť v bludisku." }
+      - { text: Poukaz do komárňanského secondhandu Gizela, why: "Pre každého, kto prežije drakov; „majú tam kombinézy, gamaše“." }
+    wrong:
+      - { text: Klobúk Starého Jana, why: "Ten Danovi ponúka riaditeľ na konci prvého filmu, a nie za turnaj." }
+      - { text: Päť kíl sena, why: "To dostala Kim za odpoveď na hodine v prvom filme." }
+      - { text: Slzy afgánskych polosirôt, why: "Tie predáva Ľudo Kolman, štyri eurá za fľaštičku." }
+      - { text: Zlatý slávik, why: "Ocenenie sa spomína, no výhrou turnaja nie je." }
+      - { text: Celoročné predplatné Nota bene, why: "Bulvár Vajcomíry Gombitovej vraj kupujú najmä bezdomovci." }
+      - { text: Balenie Stop wind 2000, why: "Tabletky z prvého filmu." }
+
+  - id: dd-turnaj-ulohy
+    type: pick
+    prompt: Ktoré úlohy musia súťažiaci splniť v Turnaji Mekyho Žbirku?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:56:40–00:56:48, 01:31:33–01:31:38, 01:51:35–01:51:42); Dano Drevo a tajomná komnata (titulky, 00:53:11)"
+    correct:
+      - { text: Získať od draka zlaté vajce, why: "Dano dostane Rastislava Syneka, bratranca hada Paťa." }
+      - { text: Vyriešiť hádanku zo zlatého vajca, why: "Inak nepostúpia; vajce treba otvoriť v harmančekovej vode." }
+      - { text: Vyslobodiť človeka zo stredu Ipeľského rybníka, why: "„Človeka s nízkou hodnotou“; vydržať treba desať minút pod vodou." }
+      - { text: V bludisku nájsť Poltársky ozdobný válov, why: "A dotknúť sa ho prštekom." }
+    wrong:
+      - { text: Na metle chytiť žltú guľu, why: "To je „olympiáda“ z prvého filmu." }
+      - { text: Uvariť lekvár na premenu, why: "Lekvár varila Kim v prvom filme." }
+      - { text: Zaspievať moldavskú pesničku od srdca, why: "Tak sa otvárala Tajomná komnata." }
+      - { text: Odpísať všetky vodomery na Rokforte, why: "Dano to robí rád, ale disciplína to nie je." }
+      - { text: Zjesť dračí trus, why: "Dračí trus si na večeru dávajú Poslušný a Brigita." }
+      - { text: Zatancovať valčík s Ctiborom, why: "Ples sa koná, no disciplínou turnaja nie je." }
+
+  - id: dd-ritual-prisady
+    type: pick
+    prompt: Čo patrí k Arabskému rituálu znovuzrodenia, ktorým sa Meky Žbirka vráti s novou tvárou?
+    difficulty: 3
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 01:49:28–01:49:43, 02:00:15–02:01:20)"
+    correct:
+      - { text: Slzy afgánskych polosirôt, why: "Kolman ich Mekymu predal 70 litrov." }
+      - { text: Bravčová kosť ohlodaná Ivanou Christovou, why: "Paródia kosti otca." }
+      - { text: Ruka plastického chirurga, why: "Paródia mäsa sluhu; plastickým chirurgom je Mekyho pomocník Igor Patkaň." }
+      - { text: Krv krásavca, ktorého tvár si Meky privlastní, why: "Tou je, samozrejme, Dano." }
+      - { text: Gulášový kotol, why: "Do neho sa krv vykvapká." }
+    wrong:
+      - { text: Chlpy Rudolfa a Michala, why: "To bola prísada do Kiminho lekváru v prvom filme." }
+      - { text: Vrabcove slzy smútku, why: "Tie Dana liečia v prvom filme." }
+      - { text: Zub Paťa Syneka, why: "Ten Dano vpichol do knihy, aby zničil DiskoMiňa." }
+      - { text: Pot kazašských prasných svíň, why: "To si Poslušný dáva do vlasov." }
+      - { text: Harmančekový čaj, why: "Ten pomohol pri hádanke zo zlatého vajca." }
+      - { text: Stop wind 2000, why: "Tabletky z prvého filmu." }
+
+  - id: dd-mena-dana
+    type: pick
+    prompt: Ako všelijako skomolia Danovo meno v Turnaji Mekyho Žbirku?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:40:15, 00:40:42, 00:42:48, 01:31:31, 01:37:18, 01:50:39–01:50:43)"
+    correct:
+      - { text: Dano Črevo, why: "Novinárka Vajcomíra Gombitová v rozhovore." }
+      - { text: Dano Vedro, why: "Vajcomíra znova, o pár sekúnd neskôr." }
+      - { text: Dano Jebo, why: "Titulok článku v Nota bene a neskôr aj komentátor." }
+      - { text: Dandy Drevo, why: "Komentátor pri disciplíne v rybníku." }
+      - { text: Jánoš Drevoš, why: "Komentátor, keď si myslí, že sa Dano utopil." }
+      - { text: Jano Jebo, why: "Komentátor sa „opraví“ pred finále." }
+    wrong:
+      - { text: Dano Kôň, why: "Koňom je Kim." }
+      - { text: Dano Brvno, why: "Vymyslené." }
+      - { text: Dano Triesko, why: "Vymyslené." }
+      - { text: Dano Pipík, why: "Pipík je profesor z prvého filmu." }
+      - { text: Dano Hrášok, why: "Vymyslené, hoci dusený hrášok má vo filme katastrofálne následky." }
+
+  - id: dd-dej-komnata
+    type: order
+    prompt: Zoraď udalosti filmu Dano Drevo a tajomná komnata od najskoršej.
+    direction: asc
+    unit: minúta filmu
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, časy pri položkách)"
+    items:
+      - { text: Janko Španiel sa zjaví v Danovej izbe, value: 3, label: "00:03", why: "„Moje meno je Janko Španiel.“" }
+      - { text: Cesta do Lekárne na tráviace problémy, value: 14, label: "00:14", why: "Dano sa pomýli a skončí v Lekárni na srdcovocievne choroby." }
+      - { text: Auto pristane v bútľavej vŕbe, value: 27, label: "00:27", why: "„Stará bútľava vŕba kovačevičova.“" }
+      - { text: Súboj Pipíka s Ľudom Kolmanom, value: 65, label: "01:05", why: "Hneď potom sa v súboji stretnú Dano a Stano." }
+      - { text: Dano s Pedrom sa premenia na Rudolfa a Michala, value: 81, label: "01:21", why: "Lekvár im zmení aj hlasy." }
+      - { text: Návšteva pavúka Dávida, value: 105, label: "01:45", why: "Dávid im dá hádanku o maku na poli." }
+      - { text: Vstup do Tajomnej komnaty, value: 118, label: "01:58", why: "Cez umývadlo na babských hajzloch." }
+
+  - id: dd-dej-turnaj
+    type: order
+    prompt: Zoraď udalosti filmu Dano Drevo a turnaj Mekyho Žbirku od najskoršej.
+    direction: asc
+    unit: minúta filmu
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, časy pri položkách)"
+    items:
+      - { text: Majstrovstvá sveta vo vajcohode, value: 9, label: "00:09", why: "Íri bez kapitána proti Maďarom zo Stredy nad Bodrogom." }
+      - { text: Vhadzovanie lístkov do modrastého plamienka, value: 22, label: "00:22", why: "S prezývkou, nie s menom." }
+      - { text: Losovanie súťažiacich cez telefón od Mekyho, value: 31, label: "00:31", why: "Meky sa „nemohol dostaviť“." }
+      - { text: Robo Kazík sa zjaví v krbe, value: 43, label: "00:43", why: "Varuje Dana pred Žbirkom." }
+      - { text: Súboj s drakom Rastíkom, value: 58, label: "00:58", why: "Dano mu ujde na metle." }
+      - { text: Rokfortský ples, value: 77, label: "01:17", why: "Ples je „30. februára“." }
+      - { text: Disciplína v Ipeľskom rybníku, value: 91, label: "01:31", why: "Bubák dal Danovi namiesto trávy oregano." }
+      - { text: Finále v labyrinte, value: 110, label: "01:50", why: "Hľadá sa Poltársky ozdobný válov." }
+
+  - id: dd-hithit-odmeny
+    type: order
+    prompt: Zoraď odmeny z kampane Dana Dreva na Hithite od najlacnejšej.
+    direction: asc
+    unit: €
+    difficulty: 3
+    source: https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu
+    items:
+      - { text: Meno v záverečných titulkoch, value: 3, why: "Kúpilo si ju 53 ľudí." }
+      - { text: "Video: čo sa s postavami stalo o päť rokov", value: 6, why: "Spolu s menom v titulkoch; kúpilo si ju 74 ľudí." }
+      - { text: Pozvánka na premiéru v Bratislave, value: 10, why: "Najobľúbenejšia odmena, 139 podporovateľov." }
+      - { text: Pozvánka na afterparty, value: 20 }
+      - { text: Originálne tričko Dano Drevo, value: 25 }
+      - { text: Jedlo alebo drink s hlavným dabérom, value: 100, why: "Využilo ju päť ľudí." }
+      - { text: Nahrať repliku pri dabingu, value: 200, why: "Kúpili si ju dvaja." }
+
+  - id: dd-casova-os
+    type: order
+    prompt: Zoraď udalosti okolo Dana Dreva a jeho autora od najskoršej.
+    direction: asc
+    difficulty: 3
+    source: "https://refresher.cz/33400-Peter-Popluhar-alias-Dano-Drevo-Mainstream-krajiny-nemusim-radsej-pojdem-do-Malawi-Rozhovor; https://cs.wikipedia.org/wiki/Peter_Popluh%C3%A1r; https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu"
+    items:
+      - { text: Vyjde prvý diel Dana Dreva, value: 2007, label: "2007", why: "Paródia na Tajomnú komnatu." }
+      - { text: Popluhár založí kanál dnes známy ako PPPeter, value: 2015.8, label: "október 2015" }
+      - { text: Skončí sa kampaň na Hithite, value: 2015.98, label: "25. 12. 2015", why: "5 284 € od 363 ľudí." }
+      - { text: Vyjde posledný diel série, value: 2016.4, label: "máj 2016" }
+      - { text: Vyjde kniha Kde všade som (ne)zomrel, value: 2018, label: "2018" }
+      - { text: Video o výstupe na Kilimandžáro za 24 hodín, value: 2021.6, label: "august 2021" }
+
+  - id: dd-chromozomy
+    type: number
+    prompt: Koľko chromozómov má podľa prvého filmu had Paťo Synek?
+    answer: 61
+    unit: chromozómov
+    scale: linear
+    tolerance: 3
+    why: "„…a Synek má 61 chromozómov.“ Pre porovnanie, človek ich má 46."
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata (titulky, 00:17:40, 00:37:12)"
+
+  - id: dd-operacia-kim
+    type: number
+    prompt: Koľko hodín trvala Kimina operácia po páde na hrable?
+    answer: 260
+    unit: hodín
+    scale: log
+    tolerance: 0.15
+    why: "Zázračne jej odstránila retardáciu, no hlasivky má poškodené doživotne."
+    difficulty: 3
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:00:05–00:00:27)"
+
+  - id: dd-sano-dlh
+    type: number
+    prompt: Koľko eur dlžil Šaňo Fekete Danovi?
+    answer: 16
+    unit: €
+    scale: linear
+    tolerance: 2
+    why: "Sľúbil ich vrátiť „zajtra aj s úrokmi“; Dano si na ne šetril na operáciu očí."
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 01:57:51, 02:10:17)"
+
+  - id: dd-hithit-suma
+    type: number
+    prompt: Koľko eur vyzbierali tvorcovia na Hithite na dokončenie Turnaja Mekyho Žbirku? Cieľ bol 2 200 €.
+    answer: 5284
+    unit: €
+    scale: log
+    tolerance: 0.1
+    why: "Prispelo 363 ľudí, už za prvých 24 hodín sa vyzbieralo 2 700 €."
+    difficulty: 2
+    source: https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu
+
+  - id: dd-prvy-diel-rok
+    type: number
+    prompt: V ktorom roku vyšiel prvý diel Dana Dreva?
+    answer: 2007
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: "Popluhár mal vtedy so spolužiakmi štrnásť; prvý diel paroduje Tajomnú komnatu."
+    difficulty: 2
+    source: https://refresher.cz/33400-Peter-Popluhar-alias-Dano-Drevo-Mainstream-krajiny-nemusim-radsej-pojdem-do-Malawi-Rozhovor

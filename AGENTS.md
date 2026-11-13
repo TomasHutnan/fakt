@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`, owner to choose), 16 packs / 384 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: owner picks a design; more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 17 packs / 414 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
@@ -28,7 +28,7 @@ v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack form
 - Content: packs are drafted by one model and fact-checked by the other (Gemini checks Claude packs, Claude checks Gemini packs) before merge. Writers must not use facts they did not see in a source this session. Tip for sk.wikipedia: percent-encode diacritics or use `https://sk.wikipedia.org/w/index.php?search=<term>`.
 - Checks: `npm test`, `npm run packs:check`, `npm run build`; UI smoke test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots of designs: `node scripts/screenshots.ts <dir> [designId…]`.
 - Commits are made with `-c commit.gpgsign=false` when the owner is away (GPG pinentry cannot be answered unattended); the owner may re-sign.
-- `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it.
+- `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it. Reading it as a source is fine (the Dano Drevo pack cites the films' subtitles with timestamps).
 
 ## Rules for agents
 
@@ -53,7 +53,7 @@ v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack form
 ## Decisions (2026-11-13)
 
 - **Play**: v1 is one phone passed around, with a hand-over screen between players showing only "pass to <name>, tap to continue" (integral to v1). Network play is v3 and only together with a big-screen host view (Jackbox style), same room. No remote play.
-- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting.
+- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting. Answers are shown to each player right after their turn by default (setting: everyone after the round). Order cards are dragged.
 - **Other modes**: Solo run, Mix, Teams (v1); Daily card (v2); Everyone at once, Guess and bet (v3, big screen). Bluff and typed list recall are dropped.
 - **Input**: tap options or type a **number** (year, amount). Never free-text typing. Number guesses: closeness-based scoring solo, ranked points in multiplayer.
 - **Formats v1**: pick the true ones, put in order, number guess, one of four. "Which is more" in v2. No pictures/audio in the first year.
