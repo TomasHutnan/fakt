@@ -1,0 +1,677 @@
+id: sk-doprava-technika
+title: Doprava a technika
+description: Slovenské automobilky, železnice, tunely, bratislavské mosty a MHD, vynálezy, IT firmy a história techniky.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: vw-bratislava-modely
+    type: pick
+    prompt: Ktoré z týchto áut sa sériovo vyrábali alebo vyrábajú v bratislavskom závode Volkswagen Slovakia?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [autá, Bratislava]
+    source: https://sk.wikipedia.org/wiki/Volkswagen_Slovakia
+    correct:
+      - text: Volkswagen Touareg
+        why: V Bratislave sa vyrába od roku 2002.
+      - text: Porsche Cayenne
+        why: Aj toto luxusné SUV schádza z bratislavských liniek od roku 2002.
+      - text: Audi Q7
+        why: Prvé Audi v Bratislave, výroba sa rozbehla v roku 2006.
+      - text: Audi Q8
+        why: Do bratislavského portfólia pribudlo v roku 2017.
+      - text: Škoda Superb
+        why: Superb Combi aj sedan sa dnes vyrábajú v Bratislave.
+      - text: Volkswagen Passat
+        why: Passat Variant bol v Bratislave už od roku 1992.
+      - text: "Volkswagen up!"
+        why: Mestské miniauto sa tu vyrábalo od roku 2011 do konca roka 2023.
+      - text: Volkswagen Golf
+        why: Golf patril k modelom, ktoré závod vyrábal po Passate v 90. rokoch.
+    wrong:
+      - text: Volkswagen Tiguan
+        why: Nie je medzi modelmi, ktoré článok o závode uvádza.
+      - text: Audi A4
+        why: Z Audi sa v Bratislave vyrábajú Q7 a Q8, A4 medzi modelmi závodu nie je.
+      - text: Porsche 911
+        why: Z Porsche sa v Bratislave vyrába Cayenne, 911 medzi modelmi závodu nie je.
+      - text: Volkswagen Transporter
+        why: Nie je medzi modelmi, ktoré článok o závode uvádza.
+
+  - id: auta-ostatne-zavody-sk
+    type: pick
+    prompt: Ktoré z týchto modelov áut sa sériovo vyrábali alebo vyrábajú v závodoch v Trnave, Žiline alebo Nitre?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [autá, priemysel]
+    source: https://sk.wikipedia.org/wiki/Kia_Slovakia
+    correct:
+      - text: Kia Sportage
+        why: Päťka Sportage sa vyrába v Kia Slovakia pri Žiline.
+      - text: Kia Ceed
+        why: Ceed v rôznych karosériách schádza z žilinského závodu.
+      - text: Kia XCeed
+        why: Crossover XCeed vyrába žilinská Kia, aj v plug-in hybridnej verzii.
+      - text: Citroën C3
+        why: V trnavskom závode Stellantis sa vyrába nový C3, aj elektrický ë-C3.
+      - text: Peugeot 208
+        why: V Trnave sa vyrábal do októbra 2023, potom výrobu presunuli do Španielska a Maroka.
+      - text: Land Rover Defender
+        why: Nitriansky závod Jaguar Land Rover ho vyrába spolu s modelom Discovery.
+      - text: Land Rover Discovery
+        why: Nitriansky závod JLR rozbehol v októbri 2018.
+    wrong:
+      - text: Hyundai Tucson
+        why: Žilinský závod vyrába značku Kia, nie Hyundai.
+      - text: Hyundai i30
+        why: Žilinský závod vyrába značku Kia, nie Hyundai.
+      - text: Suzuki Vitara
+        why: Nie je medzi modelmi z trnavského, žilinského ani nitrianskeho závodu.
+      - text: Peugeot 3008
+        why: Trnava vyrába Citroën C3, 3008 medzi modelmi závodu nie je.
+      - text: Range Rover Evoque
+        why: Nitra vyrába len Defender a Discovery.
+      - text: Opel Corsa
+        why: Nie je medzi modelmi z trnavského závodu.
+
+  - id: mesta-trolejbusy
+    type: pick
+    prompt: V ktorých z týchto slovenských miest premávajú trolejbusy mestskej hromadnej dopravy?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [MHD, trolejbusy]
+    source: https://sk.wikipedia.org/wiki/Trolejbusová_doprava_v_Prešove
+    correct:
+      - text: Bratislava
+        why: Najviac trolejbusov na Slovensku jazdí práve v hlavnom meste.
+      - text: Prešov
+        why: Prešovský trolejbusový systém z roku 1962 je druhý najstarší na Slovensku.
+      - text: Žilina
+        why: Trolejbusy tu jazdia od roku 1994, je to najmladšia sieť u nás.
+      - text: Banská Bystrica
+        why: Trolejbusy jazdia na viacerých linkách, napríklad 1, 2, 4, 6, 7 a 8.
+    wrong:
+      - text: Trnava
+        why: Mestskú dopravu zabezpečujú autobusy, trolejbusy tu nejazdia.
+      - text: Nitra
+        why: Nitrianska MHD je autobusová, trolejbusy tu nejazdia.
+      - text: Trenčín
+        why: V meste jazdia len autobusy.
+      - text: Martin
+        why: Martinská MHD je autobusová.
+      - text: Poprad
+        why: V meste jazdia autobusy MHD, trolejbusy nie.
+      - text: Zvolen
+        why: Trolejbusy tu nejazdia, mestskú dopravu zabezpečujú autobusy.
+      - text: Prievidza
+        why: Miestnu MHD zabezpečujú autobusy.
+
+  - id: bratislava-elektricky-mc
+    type: pick
+    prompt: Ktorými z týchto bratislavských mestských častí prechádzajú linky električiek?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [Bratislava, MHD, električky]
+    source: https://sk.wikipedia.org/wiki/Električková_doprava_v_Bratislave
+    correct:
+      - text: Staré Mesto
+        why: Električky jazdia cez centrum, napríklad linka 1 okolo Hlavnej stanice.
+      - text: Nové Mesto
+        why: Linka 4 tadiaľ prechádza cez stanicu Nové Mesto.
+      - text: Ružinov
+        why: Linka 9 tu končí na zastávke Astronomická.
+      - text: Rača
+        why: Linka 3 vedie do Rače, ku konečnej Komisárky.
+      - text: Karlova Ves
+        why: Linka 9 končí v Karlovej Vsi na zastávke Kútiky.
+      - text: Dúbravka
+        why: Linka 4 končí v Dúbravke, Pri kríži.
+      - text: Petržalka
+        why: Linka 3 vedie cez Starý most do Petržalky, na konečnú Južné mesto.
+    wrong:
+      - text: Vrakuňa
+        why: Električková trať do Vrakune nevedie.
+      - text: Podunajské Biskupice
+        why: Električky tu nejazdia.
+      - text: Devínska Nová Ves
+        why: Električkové koľajnice tam nevedú, hoci tam stojí veľký závod.
+      - text: Lamač
+        why: Električky tu nejazdia.
+      - text: Vajnory
+        why: Električky tu nejazdia.
+      - text: Záhorská Bystrica
+        why: Električky tu nejazdia.
+      - text: Devín
+        why: Električky tu nejazdia.
+
+  - id: mosty-cez-dunaj-bratislava
+    type: pick
+    prompt: Ktoré z týchto mostov v Bratislave vedú cez Dunaj?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [Bratislava, mosty, Dunaj]
+    source: https://sk.wikipedia.org/wiki/Zoznam_mostov_v_Bratislave
+    correct:
+      - text: Most SNP
+        why: Zavesený most z roku 1972 je jediný bratislavský most bez piliera v prúde Dunaja.
+      - text: Starý most
+        why: Pôvodný Most Františka Jozefa z roku 1890, dnes prestavaný pre električky, chodcov a cyklistov.
+      - text: Most Apollo
+        why: Otvorili ho v roku 2005; oceľovú konštrukciu zmontovanú na brehu otočili cez rieku.
+      - text: Prístavný most
+        why: Dvojposchodový most nesie diaľnicu D1 a železničnú trať.
+      - text: Most Lanfranconi
+        why: Diaľničný most na D2, otvorený v roku 1992; názov sa dlho písal ako Lafranconi.
+      - text: Lužný most
+        why: Diaľničný most na obchvate D4 otvorili 26. septembra 2021.
+    wrong:
+      - text: Cyklomost slobody
+        why: Vedie cez rieku Moravu do Rakúska.
+      - text: Most Márie Valérie
+        why: Preklenuje Dunaj, ale spája Štúrovo s maďarským Ostrihomom.
+      - text: Alžbetin most
+        why: Spája Komárno s maďarským Komáromom, nie Bratislavu.
+      - text: Medveďovský most
+        why: Je pri obci Medveďov na južnom Slovensku.
+      - text: Kolonádový most
+        why: Stojí v Piešťanoch a vedie cez Váh.
+
+  - id: tunely-v-prevadzke
+    type: pick
+    prompt: Ktoré z týchto cestných a diaľničných tunelov na Slovensku sú už v prevádzke?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [diaľnice, tunely]
+    source: https://sk.wikipedia.org/wiki/Zoznam_cestných_tunelov_na_Slovensku
+    correct:
+      - text: Višňové
+        why: Najdlhší slovenský cestný tunel na D1 odovzdali do užívania 22. decembra 2025.
+      - text: Branisko
+        why: Tunel na D1 medzi Beharovcami a Širokým je v prevádzke.
+      - text: Čebrať
+        why: Tunel na D1 medzi Hubovou a Ivachnovou je v prevádzke.
+      - text: Sitina
+        why: Mestský tunel na D2 v Bratislave medzi Poliankami a Mlynskou dolinou.
+      - text: Ovčiarsko
+        why: Tunel na D1 pri Žiline medzi Hričovským Podhradím a Lietavskou Lúčkou.
+      - text: Považský Chlmec
+        why: Tunel na D3 pri Žiline medzi Strážovom a Brodnom.
+      - text: Prešov
+        why: Tunel na D1 pri Prešove (západ – juh) je v prevádzke.
+      - text: Bikoš
+        why: Tunel na severnom obchvate Prešova, R4, je v prevádzke.
+      - text: Horelica
+        why: Tunel na D3 pri Čadci, 605 metrov dlhý.
+    wrong:
+      - text: Karpaty
+        why: Plánovaný takmer jedenásťkilometrový tunel na D4 pod Malými Karpatmi zatiaľ nestojí.
+      - text: Korbeľka
+        why: Plánovaný tunel na D1 medzi Turanmi a Hubovou.
+      - text: Havran
+        why: Plánovaný tunel na D1 medzi Turanmi a Hubovou.
+      - text: Soroška
+        why: Plánovaný tunel na R2 pri Rožňave sa zatiaľ nestavia.
+      - text: Okruhliak
+        why: Tunel na severnom obchvate Prešova, R4, je zatiaľ vo výstavbe.
+
+  - id: zeleznice-historicke
+    type: pick
+    prompt: Ktoré z týchto úzkorozchodných alebo horských železníc premávajú na Slovensku?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [železnice, história]
+    source: https://sk.wikipedia.org/wiki/Čiernohronská_železnica
+    correct:
+      - text: Tatranská elektrická železnica
+        why: Metrová horská dráha v Tatrách, prvý úsek otvorili v decembri 1908.
+      - text: Ozubnicová železnica Štrba – Štrbské Pleso
+        why: Zubačka bola v prevádzke už od roku 1896, po pauze ju obnovili v 70. rokoch.
+      - text: Čiernohronská železnica
+        why: Lesná úzkorozchodná železnica na Horehroní vozí turistov.
+      - text: Košická detská historická železnica
+        why: Úzkorozchodná dráha v Čermeľskej doline pri Košiciach.
+      - text: Historická lesná úvraťová železnica Vychylovka
+        why: Úvraťová trať, na ktorej vlak mení smer jazdy cikcakom.
+      - text: Oravská lesná železnica
+        why: Turistická úzkorozchodná dráha v oravských lesoch.
+      - text: Trenčianska elektrická železnica
+        why: Úzkorozchodná električka z Trenčianskej Teplej do Trenčianskych Teplíc.
+    wrong:
+      - text: Jindřichohradecká úzkokolejka
+        why: Úzkorozchodná dráha v južných Čechách.
+      - text: Osoblažská úzkokolejka
+        why: Úzkorozchodná dráha v českom Slezsku pri Osoblahe.
+      - text: Mladějovská úzkokolejka
+        why: Úzkorozchodná dráha v Česku.
+      - text: Zillertalbahn
+        why: Úzkorozchodná železnica v rakúskom Tirolsku.
+      - text: Semmeringbahn
+        why: Slávna horská trať na zozname UNESCO leží v Rakúsku.
+
+  - id: kosicko-bohuminska-draha
+    type: pick
+    prompt: Ktoré z týchto slovenských miest ležia priamo na hlavnej trase historickej Košicko-bohumínskej železnice?
+    difficulty: 3
+    tags: [železnice, história]
+    source: https://sk.wikipedia.org/wiki/Košicko-bohumínska_železnica
+    correct:
+      - text: Košice
+        why: Východný koniec trate, ktorú dokončili v roku 1872.
+      - text: Spišská Nová Ves
+        why: Úsek Spišská Nová Ves – Kysak otvorili v marci 1872.
+      - text: Poprad
+        why: Úsek Žilina – Poprad otvorili v decembri 1871.
+      - text: Liptovský Mikuláš
+        why: Leží na trase medzi Žilinou a Popradom.
+      - text: Ružomberok
+        why: Leží na trase medzi Žilinou a Popradom.
+      - text: Vrútky
+        why: Leží na trase medzi Žilinou a Ružomberkom.
+      - text: Žilina
+        why: Úsek Český Těšín – Žilina otvorili v januári 1871.
+      - text: Čadca
+        why: Trať viedla z Bohumína cez Jablunkovský priesmyk a Čadcu do Žiliny.
+    wrong:
+      - text: Bratislava
+        why: Leží na západe, mimo trasy Bohumín – Žilina – Košice.
+      - text: Trnava
+        why: Leží na západe, mimo trasy KBŽ.
+      - text: Nitra
+        why: Leží mimo trasy KBŽ.
+      - text: Trenčín
+        why: Leží na Považí južne od Žiliny, mimo trasy KBŽ.
+      - text: Banská Bystrica
+        why: Leží mimo trasy KBŽ.
+      - text: Zvolen
+        why: Leží mimo trasy KBŽ.
+      - text: Michalovce
+        why: Leží na východe, ale mimo trasy KBŽ.
+
+  - id: slovenske-tech-firmy
+    type: pick
+    prompt: Ktoré z týchto známych technologických alebo softvérových firiem vznikli na Slovensku?
+    difficulty: 1
+    tags: [IT, firmy]
+    source: https://sk.wikipedia.org/wiki/ESET
+    correct:
+      - text: ESET
+        why: Antivírusová firma z Bratislavy, oficiálne založená v roku 1992.
+      - text: Sygic
+        why: Offline navigácia z Bratislavy, vznikla v roku 2004.
+      - text: Slido
+        why: Slovenský nástroj na ankety a otázky pre publikum na konferenciách.
+      - text: Pixel Federation
+        why: Bratislavské herné štúdio známe hrami Diggy's Adventure a TrainStation 2.
+      - text: Photoneo
+        why: Bratislavská firma zameraná na 3D videnie pre roboty.
+      - text: Innovatrics
+        why: Bratislavská firma zameraná na biometriu, najmä tvár a odtlačky prstov.
+    wrong:
+      - text: Avast
+        why: Antivírus z Prahy.
+      - text: AVG
+        why: Pôvodne česká bezpečnostná firma z Brna.
+      - text: JetBrains
+        why: Tvorcovia IntelliJ IDEA a PyCharmu pochádzajú z Prahy.
+      - text: Kiwi.com
+        why: Vyhľadávač leteniek vznikol v Brne ako Skypicker.
+      - text: Prusa Research
+        why: Výrobca 3D tlačiarní z Prahy.
+      - text: Seznam.cz
+        why: Český internetový portál a vyhľadávač.
+      - text: Bolt
+        why: Estónska dopravná a donášková aplikácia.
+
+  - id: vynalezy-slovensko
+    type: pick
+    prompt: Ktoré z týchto technických vynálezov alebo strojov vytvorili vynálezcovia zo Slovenska (alebo pôsobiaci na dnešnom Slovensku)?
+    difficulty: 2
+    tags: [vynálezy, história]
+    source: https://sk.wikipedia.org/wiki/Štefan_Banič
+    correct:
+      - text: letecký padák
+        why: Rodák zo Smoleníc Štefan Banič získal na padák americký patent v roku 1914.
+      - text: motorový vrtuľník
+        why: Ján Bahýľ zo Zvolenskej Slatiny získal v roku 1895 patent na vrtuľník s benzínovým motorom.
+      - text: bezdrôtová telegrafia
+        why: Kňaz Jozef Murgaš z Tajova získal v USA v roku 1904 dva patenty na bezdrôtovú telegrafiu.
+      - text: teória parných a plynových turbín
+        why: Liptovskomikulášsky rodák Aurel Stodola, profesor v Zürichu, je zakladateľom tejto teórie.
+      - text: šachový automat Turek
+        why: Bratislavčan Wolfgang Kempelen ním ohúril Európu, no šachy hral skrytý človek.
+      - text: banský vodostĺpcový čerpací stroj
+        why: Jozef Karol Hell ho postavil v roku 1749 v banskoštiavnických baniach.
+      - text: lietajúce auto AirCar
+        why: Slovenský konštruktér Štefan Klein získal v januári 2022 osvedčenie letovej spôsobilosti od slovenského Dopravného úradu.
+    wrong:
+      - text: lodná skrutka
+        why: Patent z roku 1827 si podal Josef Ressel, český lesník a vynálezca.
+      - text: mäkké kontaktné šošovky
+        why: Vynašiel ich český chemik Otto Wichterle v 50. a 60. rokoch 20. storočia.
+      - text: dynamit
+        why: Patentoval ho v roku 1867 švédsky chemik Alfred Nobel.
+      - text: parný rušeň
+        why: Prvý fungujúci rušeň na koľajniciach postavil v roku 1804 Brit Richard Trevithick.
+
+  - id: dopravne-prostriedky-cssr
+    type: pick
+    prompt: Ktoré z týchto áut, motoriek, autobusov alebo lietadiel sa vyrábali v Československu?
+    difficulty: 1
+    tags: [autá, história]
+    source: https://sk.wikipedia.org/wiki/Babetta
+    correct:
+      - text: moped Babetta
+        why: Vyvinuli a vyrábali ho v Považských strojárňach v Považskej Bystrici, neskôr v Kolárove.
+      - text: motorka Jawa 50 Pionier
+        why: Legendárna značka Jawa je česká.
+      - text: trojkolka Velorex
+        why: Československá trojkolka s rúrkovým rámom.
+      - text: nákladné auto Praga V3S
+        why: Najznámejší model značky Praga, prezývaný „vejtrieska“.
+      - text: Tatra 603
+        why: Limuzína, ktorú predstavili na československej strojárskej výstave v roku 1956.
+      - text: autobus Karosa
+        why: Karosa pochádza z Vysokého Mýta.
+      - text: lietadlo L-410 Turbolet
+        why: Malé dopravné lietadlo z Kunovíc, vyrobilo sa ich vyše 1 200.
+    wrong:
+      - text: Trabant
+        why: Vyrábala ho firma Sachsenring v nemeckom Zwickau (NDR).
+      - text: Wartburg
+        why: Východonemecké auto z NDR.
+      - text: Dacia 1300
+        why: Rumunské auto vyrábané na základe licencie Renaultu 12.
+      - text: Lada Žiguli
+        why: Sovietske auto VAZ 2101 podľa Fiatu 124.
+      - text: Fiat 126p (Maluch)
+        why: Poľský licenčný Fiat 126p.
+
+  - id: elektronika-cssr
+    type: pick
+    prompt: Ktoré z týchto značiek spotrebnej elektroniky a domácich spotrebičov pochádzajú zo Slovenska alebo z Česka?
+    difficulty: 2
+    tags: [technika, história]
+    source: https://sk.wikipedia.org/wiki/Calex
+    correct:
+      - text: Calex
+        why: Značka chladničiek zo Zlatých Moraviec, hlavný československý výrobca chladničiek.
+      - text: Tatramat
+        why: Značka bojlerov a práčok z Popradu.
+      - text: Tesla
+        why: Československá značka elektroniky, mala aj slovenský závod v Stropkove.
+      - text: ETA
+        why: Česká značka domácich spotrebičov.
+      - text: Meopta
+        why: Český výrobca optiky z Přerova, v minulosti aj fotoaparátov a projektorov.
+    wrong:
+      - text: Gorenje
+        why: Slovinský výrobca spotrebičov.
+      - text: Iskra
+        why: Elektrotechnická firma z Kranja v Slovinsku.
+      - text: Unitra
+        why: Poľské združenie výrobcov spotrebnej elektroniky.
+      - text: Videoton
+        why: Maďarská firma zo Székesfehérváru.
+      - text: Orion
+        why: Maďarský výrobca elektroniky z 50. rokov.
+
+  - id: slovenske-aerolinky
+    type: pick
+    prompt: Ktoré z týchto leteckých spoločností mali alebo majú svoje sídlo na Slovensku?
+    difficulty: 3
+    asOf: "2026-11"
+    tags: [letectvo, história]
+    source: https://en.wikipedia.org/wiki/List_of_defunct_airlines_of_Slovakia
+    correct:
+      - text: SkyEurope Airlines
+        why: Slovenská nízkonákladovka, fungovala v rokoch 2001 – 2009.
+      - text: Danube Wings
+        why: Slovenský regionálny dopravca, lietal v rokoch 2008 – 2013.
+      - text: Air Slovakia
+        why: Slovenská charterová aerolinka z rokov 1993 – 2010.
+      - text: Go2Sky
+        why: Slovenská charterová aerolinka z rokov 2013 – 2020.
+      - text: Tatra Air
+        why: Slovenská aerolinka z rokov 1992 – 1999.
+      - text: Seagle Air
+        why: Slovenská aerolinka z rokov 1995 – 2009.
+    wrong:
+      - text: České aerolínie (ČSA)
+        why: Český dopravca so sídlom v Prahe.
+      - text: Smartwings
+        why: Česká letecká skupina so sídlom v Prahe.
+      - text: Wizz Air
+        why: Maďarská nízkonákladová spoločnosť.
+      - text: Ryanair
+        why: Írsky nízkonákladový dopravca.
+      - text: Malév
+        why: Maďarský národný dopravca, ktorý skončil v roku 2012.
+      - text: Austrian Airlines
+        why: Rakúska spoločnosť so sídlom pri Viedni.
+      - text: LOT
+        why: Poľský národný dopravca.
+
+  - id: technika-pred-2000
+    type: pick
+    prompt: Ktoré z týchto známych technológií alebo služieb sa objavili ešte pred rokom 2000?
+    difficulty: 1
+    tags: [technika, história]
+    source: https://en.wikipedia.org/wiki/SMS
+    correct:
+      - text: prvá SMS správa
+        why: Neil Papworth ju poslal 3. decembra 1992 s textom Merry Christmas.
+      - text: formát MP3
+        why: Vznikol začiatkom 90. rokov, príponu .mp3 zvolili 14. júla 1995.
+      - text: disk DVD
+        why: Philips a Sony ho predstavili v januári 1995, v Japonsku vyšiel 1. novembra 1996.
+      - text: štandard Wi-Fi
+        why: Prvá verzia protokolu 802.11 vyšla v roku 1997, názov Wi-Fi sa používa od roku 1999.
+      - text: technológia Bluetooth
+        why: Hlavný vývoj sa začal v roku 1994, verzia 1.0 vyšla v roku 1999.
+      - text: Internet Explorer
+        why: Prvá verzia vyšla 24. augusta 1995.
+      - text: vyhľadávač Google
+        why: Larry Page a Sergey Brin založili Google 4. septembra 1998.
+      - text: prvý PlayStation
+        why: V Japonsku vyšiel 3. decembra 1994.
+    wrong:
+      - text: Wikipédia
+        why: Spustili ju 15. januára 2001.
+      - text: Facebook
+        why: Mark Zuckerberg ho spustil 4. februára 2004 na Harvarde ako TheFacebook.
+      - text: YouTube
+        why: Vznikol vo februári 2005, prvé video pribudlo 23. apríla 2005.
+      - text: prvý iPhone
+        why: Steve Jobs ho predstavil 9. januára 2007.
+      - text: Spotify
+        why: Spustili ho 7. októbra 2008.
+      - text: operačný systém Android
+        why: Prvé komerčné vydanie Android 1.0 prišlo 23. septembra 2008.
+      - text: ChatGPT
+        why: Vyšiel 30. novembra 2022.
+
+  - id: stavby-pred-1918
+    type: pick
+    prompt: Ktoré z týchto dopravných stavieb na Slovensku vznikli už pred rokom 1918 (za čias Rakúsko-Uhorska)?
+    difficulty: 2
+    tags: [doprava, história]
+    source: https://sk.wikipedia.org/wiki/Konská_železnica
+    correct:
+      - text: bratislavská konská železnica
+        why: Prvá konská železnica na Slovensku (Bratislava – Svätý Jur) začala jazdiť v roku 1840.
+      - text: Starý most v Bratislave
+        why: Pôvodný Most Františka Jozefa otvorili v roku 1890.
+      - text: Košicko-bohumínska železnica
+        why: Celú trať dokončili v roku 1872.
+      - text: ozubnicová železnica na Štrbské Pleso
+        why: Otvorili ju v roku 1896.
+      - text: Tatranská elektrická železnica
+        why: Prvý úsek otvorili v decembri 1908.
+      - text: Most Márie Valérie v Štúrove
+        why: Most medzi Štúrovom a Ostrihomom dokončili v roku 1895.
+    wrong:
+      - text: Most SNP v Bratislave
+        why: Otvorili ho až 26. augusta 1972.
+      - text: Prístavný most v Bratislave
+        why: Stavali sa 1977 – 1985.
+      - text: Most Apollo v Bratislave
+        why: Otvorili ho v roku 2005.
+      - text: Lužný most v Bratislave
+        why: Otvorili ho v roku 2021.
+      - text: Tunel Višňové
+        why: Do užívania ho odovzdali v decembri 2025.
+
+  # ---------------------------------------------------------------- order
+  - id: tunely-dlzka
+    type: order
+    prompt: Zoraď slovenské cestné tunely od najdlhšieho.
+    direction: desc
+    unit: m
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [diaľnice, tunely]
+    source: https://sk.wikipedia.org/wiki/Zoznam_cestných_tunelov_na_Slovensku
+    items:
+      - { text: Tunel Višňové, value: 7520 }
+      - { text: Tunel Branisko, value: 4975 }
+      - { text: Tunel Čebrať, value: 3619 }
+      - { text: Tunel Ovčiarsko, value: 2367 }
+      - { text: Tunel Sitina, value: 1440 }
+      - { text: Tunel Horelica, value: 605 }
+
+  - id: mosty-bratislava-rok
+    type: order
+    prompt: Zoraď bratislavské mosty cez Dunaj od najstaršieho (podľa roku otvorenia alebo dokončenia).
+    direction: asc
+    unit: rok
+    difficulty: 3
+    tags: [Bratislava, mosty]
+    source: https://sk.wikipedia.org/wiki/Zoznam_mostov_v_Bratislave
+    items:
+      - { text: Starý most (Most Františka Jozefa), value: 1890 }
+      - { text: Most SNP, value: 1972 }
+      - { text: Prístavný most, value: 1985 }
+      - { text: Most Lanfranconi, value: 1992 }
+      - { text: Most Apollo, value: 2005 }
+      - { text: Lužný most, value: 2021 }
+
+  - id: slovenske-tech-milniky-rok
+    type: order
+    prompt: Zoraď tieto slovenské technické a dopravné míľniky od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [vynálezy, história]
+    source: https://sk.wikipedia.org/wiki/Štefan_Banič
+    items:
+      - { text: prvá konská železnica na Slovensku, value: 1840 }
+      - { text: patent padáka Štefana Baniča, value: 1914 }
+      - { text: otvorenie Mosta SNP v Bratislave, value: 1972 }
+      - { text: založenie firmy ESET, value: 1992 }
+      - { text: otvorenie Mosta Apollo v Bratislave, value: 2005 }
+      - { text: osvedčenie letovej spôsobilosti pre AirCar, value: 2022 }
+
+  - id: technika-novinky-rok
+    type: order
+    prompt: Zoraď tieto známe technologické novinky z každodenného života od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [technika, história]
+    source: https://en.wikipedia.org/wiki/SMS
+    items:
+      - { text: prvá SMS správa, value: 1992 }
+      - { text: prvá herná konzola PlayStation, value: 1994 }
+      - { text: spustenie Wikipédie, value: 2001 }
+      - { text: spustenie YouTube, value: 2005 }
+      - { text: predstavenie prvého iPhonu, value: 2007 }
+      - { text: spustenie ChatGPT, value: 2022 }
+
+  # ---------------------------------------------------------------- number
+  - id: vyroba-aut-slovensko-2025
+    type: number
+    prompt: Približne koľko motorových vozidiel sa vyrobilo na Slovensku v roku 2025?
+    answer: 1070000
+    unit: vozidiel
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: Podľa predbežných údajov ZAP SR sa v roku 2025 vyrobilo 1,07 milióna vozidiel, v roku 2024 to bolo 993-tisíc.
+    difficulty: 1
+    tags: [autá, priemysel]
+    source: https://www.teraz.sk/ekonomika/zap-v-roku-2025-v-sr-pocet-vyrobenych/933034-clanok.html
+
+  - id: most-snp-vyska
+    type: number
+    prompt: Koľko metrov meria celková výška Mosta SNP v Bratislave (od základov po vrchol pylóna)?
+    answer: 95
+    unit: m
+    scale: linear
+    tolerance: 10
+    why: Podľa Wikipédie má celková výška 95 metrov; samotný pylón meria 84,6 metra.
+    difficulty: 2
+    tags: [Bratislava, mosty]
+    source: https://sk.wikipedia.org/wiki/Most_SNP
+
+  - id: tunel-visnove-dlzka
+    type: number
+    prompt: Koľko metrov meria najdlhší slovenský diaľničný tunel Višňové?
+    answer: 7520
+    unit: m
+    scale: linear
+    tolerance: 300
+    asOf: "2026-11"
+    why: Tunel na D1 otvorili v decembri 2025; zdroje uvádzajú 7 445 až 7 520 metrov.
+    difficulty: 3
+    tags: [diaľnice, tunely]
+    source: https://sk.wikipedia.org/wiki/Tunel_Višňové
+
+  - id: konska-zeleznica-rok
+    type: number
+    prompt: V ktorom roku spustili prvú konskú železnicu na Slovensku (z Bratislavy do Svätého Jura)?
+    answer: 1840
+    unit: rok
+    scale: linear
+    tolerance: 5
+    why: Prvý úsek z Bratislavy do Svätého Jura začal fungovať v roku 1840, do roku 1846 ho predĺžili cez Trnavu do Serede.
+    difficulty: 3
+    tags: [železnice, história]
+    source: https://sk.wikipedia.org/wiki/Konská_železnica
+
+  # ---------------------------------------------------------------- choice
+  - id: murgas-vynalez
+    type: choice
+    prompt: Ktorý slovenský vynálezca získal v USA v roku 1904 patenty na bezdrôtovú telegrafiu (predchodca rádia)?
+    difficulty: 1
+    tags: [vynálezy, história]
+    source: https://sk.wikipedia.org/wiki/Jozef_Murgaš
+    correct:
+      text: Jozef Murgaš
+      why: Kňaz z Tajova, ktorý pôsobil v USA.
+    wrong:
+      - text: Štefan Banič
+        why: Zostrojil a v USA si dal patentovať letecký padák.
+      - text: Ján Bahýľ
+        why: Konštruktér zo Zvolenskej Slatiny, ktorý navrhol motorový vrtuľník.
+      - text: Aurel Stodola
+        why: Svetoznámy profesor v Zürichu, priekopník parných a plynových turbín.
+
+  - id: gabcikovo-komory
+    type: choice
+    prompt: Akým spôsobom prekonávajú riečne lode výškový rozdiel na Vodnom diele Gabčíkovo na Dunaji?
+    difficulty: 2
+    tags: [Dunaj, lodná doprava]
+    source: https://sk.wikipedia.org/wiki/Gabčíkovo_(vodné_dielo)
+    correct:
+      text: Cez plavebné komory dlhé 275 metrov
+      why: Komory (34 × 275 m) umožňujú lodiam prekonať výškový rozdiel 16 až 23,3 metra.
+    wrong:
+      - text: Po koľajovom lodnom výťahu na suchu
+        why: V Gabčíkove sa používajú plavebné komory.
+      - text: Cez umelé kaskádové pereje bez stavidiel
+        why: V Gabčíkove sa používajú plavebné komory.
+      - text: Podzemným tunelom popod hrádzu elektrárne
+        why: V Gabčíkove sa používajú plavebné komory.
