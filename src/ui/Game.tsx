@@ -408,6 +408,7 @@ function TurnReveal({ state }: { state: GameState }) {
   // Only reachable with revealEach off from a game saved before that setting existed: show nothing.
   if (!s.settings.revealEach) return <TurnEnd state={s} />;
   const r = s.results[s.results.length - 1];
+  if (!r) return <TurnEnd state={s} />;
   // Ranked number scoring needs everyone's guess, so points come after the round.
   const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
   const title =
@@ -455,7 +456,7 @@ function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
             const m = optionMark(o.correct, i === chosen, true);
             return (
               <li>
-                <button type="button" class={`opt${m.cls}`} disabled aria-pressed={i === chosen}>
+                <button type="button" class={`opt${m.cls}`} disabled>
                   <span class="opt__text">{tie(o.text)}</span>
                   {m.label && <span class="visually-hidden">{` — ${m.label}`}</span>}
                   <span class="opt__why">{tie(o.why)}</span>
@@ -475,11 +476,9 @@ function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
             const should = card.solution.indexOf(item) + 1;
             return (
               <li class={`order-item ${right ? "order-item--right" : "order-item--off"}`}>
-                <span class="order-item__rank">
-                  {pos + 1}
-                  <span class="order-item__mark" aria-hidden="true">{right ? "✓" : "✗"}</span>
-                </span>
+                <span class="order-item__rank">{pos + 1}</span>
                 <span class="order-item__text">
+                  <span class="order-item__mark" aria-hidden="true">{right ? "✓ " : "✗ "}</span>
                   {tie(card.items[item].text)}
                   <span class="visually-hidden">{` — ${right ? sk.correctMark : sk.shouldBe(should)}`}</span>
                 </span>
@@ -503,8 +502,8 @@ function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
             <div class="number-input__row">
               <input
                 class="input number-input__field"
-                disabled
-                aria-label={sk.numberPlaceholder}
+                readOnly
+                aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
                 value={a.type === "number" && a.value != null ? formatNumber(a.value) : ""}
               />
               {card.unit && <span class="number-input__unit">{card.unit}</span>}

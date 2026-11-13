@@ -434,6 +434,5 @@
   [data-design="smalt"] .btn:active:not(:disabled) { transform: none; }
 }
 
-/* Right answer the player did not pick: plain plate with a green rim and green ink. */
-[data-design="smalt"] .options--answered .opt.opt--missed { --pl: var(--plate); --rc: var(--green); --pi: var(--green); background: var(--pl); color: var(--pi); }
-[data-design="smalt"] .options--answered .opt.opt--missed .opt__why { color: var(--plate-ink); }
+/* Right answer the player did not pick: plain plate with a green rim (the ✓ marks it; ink stays readable in dark mode). */
+[data-design="smalt"] .options--answered .opt.opt--missed { --pl: var(--plate); --rc: var(--green); --pi: var(--plate-ink); background: var(--pl); color: var(--pi); }
