@@ -1,0 +1,465 @@
+id: sk-rap-pop
+title: Slovenský rap a pop
+description: Elán, Kontrafakt, Majk Spirit, Horkýže Slíže, Sima a ďalší hitmakeri slovenskej scény.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: elan-hity
+    type: pick
+    prompt: Ktoré z týchto piesní nahral Elán?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Elán_(skupina)
+    correct:
+      - { text: Voda, čo ma drží nad vodou, why: Jeden z najväčších evergreenov kapely. }
+      - { text: Tanečnice z Lúčnice, why: Patrí k najznámejším hitom Elánu. }
+      - { text: Kráľovná bielych tenisiek, why: Klasika z repertoára Jožu Ráža a spol. }
+      - { text: Neviem byť sám, why: Jedna z najhranejších balád kapely. }
+      - { text: Stužková, why: Hymna každého maturitného ročníka. }
+      - { text: Amnestia na neveru, why: S touto piesňou sa Elán v roku 1993 pokúsil dostať na Eurovíziu. }
+      - { text: Kaskadér, why: Ďalší z dlhého radu elánovských hitov. }
+    wrong:
+      - { text: Nepoznám, why: Hit skupiny IMT Smile z albumu Klik-klak. }
+      - { text: Maštaľ, why: Singel Horkýže Slíže z albumu V rámci oného. }
+      - { text: Žily, why: Pieseň, ktorá preslávila No Name aj v Česku. }
+      - { text: Hey Now, why: Najznámejšia pieseň Peter Bič Project. }
+      - { text: Lavíny, why: Desmod za ňu v roku 2008 dostal Zlatého slávika za hit roka. }
+      - { text: Vrany, why: Druhý singel IMT Smile z albumu Klik-klak. }
+      - { text: Horehronie, why: Pieseň Kristíny z Eurovízie 2010. }
+      - { text: Gilotína, why: Pieseň Horkýže Slíže. }
+
+  - id: elan-clenovia
+    type: pick
+    prompt: Ktorí z týchto hudobníkov boli alebo sú členmi Elánu?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Elán_(skupina)
+    asOf: "2026-11"
+    correct:
+      - { text: Jožo Ráž, why: Basgitarista a spevák, v kapele od založenia v roku 1968. }
+      - { text: Vašo Patejdl, why: Klávesista a spevák; v kapele bol do roku 1985 a potom v rokoch 1996 až 2023. }
+      - { text: Juraj Farkaš, why: Zakladateľ, gitarista a spevák; v kapele do roku 1985. }
+      - { text: Zdeno Baláž, why: Zakladajúci bubeník. }
+      - { text: Ján Baláž, why: Sólový gitarista, v kapele od roku 1981. }
+      - { text: Fero Turák, why: Trubkár, spevák a huslista, v kapele v rokoch 1975 až 1980. }
+      - { text: Peter Farnbauer, why: Gitarista a klávesista, v kapele od roku 1990. }
+      - { text: Henry Tóth, why: Gitarista, v kapele v rokoch 2003 až 2013. }
+    wrong:
+      - { text: Martin Ďurinda, why: Líder Tublatanky. }
+      - { text: Pavol Habera, why: Spevák skupiny Team. }
+      - { text: Miro Žbirka, why: Spevák Modusu a sólista. }
+      - { text: Richard Müller, why: Sólový spevák, nie člen Elánu. }
+      - { text: Dežo Ursiny, why: Hudobník skupiny Modus. }
+      - { text: Mário Kollár, why: Spevák Desmodu. }
+
+  - id: kontrafakt-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydal Kontrafakt ako skupina?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Kontrafakt_(hudobná_skupina)
+    asOf: "2026-11"
+    correct:
+      - { text: E.R.A., why: Debutový album z roku 2004. }
+      - { text: Bozk na rozlúčku, why: Vyšiel v roku 2007. }
+      - { text: Navždy, why: Z roku 2013, s hitmi Stokujeme vonku a JBMNT. }
+      - { text: Real Newz, why: Z roku 2019. }
+      - { text: KF ako Rolls, why: Z roku 2021. }
+    wrong:
+      - { text: Bengoro, why: Sólový album Rytmusa z roku 2006. }
+      - { text: Fenomen, why: Sólový album Rytmusa z roku 2011. }
+      - { text: Precedens, why: Sólový album Ega z roku 2017. }
+      - { text: Nový človek, why: Debut Majk Spirita. }
+      - { text: Buldozér, why: Sólový album Separa. }
+      - { text: Kral, why: Rytmusov sólový album z roku 2009. }
+
+  - id: majk-spirit-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydal Majk Spirit ako sólista?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Majk_Spirit
+    asOf: "2026-11"
+    correct:
+      - { text: Nový človek, why: Debut z roku 2011. }
+      - { text: Ypsilon Black, why: Vyšiel 31. marca 2015. }
+      - { text: Ypsilon White, why: Vyšiel len o päť týždňov po Black, 5. mája 2015. }
+      - { text: Nie som tu náhodou, why: Z decembra 2018. }
+      - { text: PLAYLI5T, why: Z roku 2023, vyšiel iba digitálne. }
+    wrong:
+      - { text: Kvalitný materiál, why: Album skupiny H16 z roku 2006, nie sólový. }
+      - { text: Čísla nepustia, why: Album skupiny H16 z roku 2008. }
+      - { text: Rýmy, hudba a boh, why: Album skupiny H16 z roku 2013. }
+      - { text: Sila, why: Album skupiny H16 z roku 2016. }
+      - { text: Fenomen, why: Sólový album Rytmusa. }
+      - { text: Pancier, why: Sólový album Separa z roku 2017. }
+      - { text: Krstný otec, why: Sólový album Rytmusa z roku 2016. }
+
+  - id: hs-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydali Horkýže Slíže?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Horkýže_Slíže
+    asOf: "2026-11"
+    correct:
+      - { text: V rámci oného, why: Debut z roku 1997 so singlom Maštaľ. }
+      - { text: Vo štvorici po opici, why: Vyšiel v roku 1998. }
+      - { text: Ja chaču tebja, why: Album z roku 2000. }
+      - { text: Festival Chorobná, why: Z roku 2001, obsahuje Lístok na Mars. }
+      - { text: Kýže sliz, why: Z roku 2002, je na ňom Malá Žužu aj Vlak. }
+      - { text: Alibaba a 40 krátkych songov, why: Z roku 2003; pokračovanie vyšlo až v roku 2021. }
+      - { text: Ukáž tú tvoju ZOO, why: Z roku 2007. }
+      - { text: Pustite Karola, why: Z roku 2017. }
+    wrong:
+      - { text: Klik-klak, why: Debut IMT Smile. }
+      - { text: Skupinová terapia, why: Album Desmodu z roku 2004. }
+      - { text: Hodina slovenčiny, why: Album Elánu z roku 1985. }
+      - { text: Say It Loud, why: Debut Peter Bič Project. }
+      - { text: Slová do tmy, why: Album No Name z roku 2003. }
+      - { text: Hlava má sedem otvorov, why: Album IMT Smile z roku 2008. }
+
+  - id: desmod-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydal Desmod?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Desmod
+    asOf: "2026-11"
+    correct:
+      - { text: Derylov svet, why: Album z roku 2003. }
+      - { text: Skupinová terapia, why: Album z roku 2004. }
+      - { text: Uhol pohľadu, why: Z roku 2006, je na ňom cover Karola Duchoňa V dolinách. }
+      - { text: Kyvadlo, why: Album z roku 2007. }
+      - { text: Vitajte na konci sveta, why: Album z roku 2010. }
+      - { text: Molekuly zvuku, why: Album z roku 2017. }
+    wrong:
+      - { text: Hodina pravdy, why: Album Elánu z roku 1997. }
+      - { text: Valec, why: Album IMT Smile z roku 1998. }
+      - { text: Exotica, why: Album IMT Smile z roku 2004. }
+      - { text: Labyrint, why: Album Peter Bič Project z roku 2019. }
+      - { text: Počkám si na zázrak, why: Album No Name z roku 2000. }
+      - { text: Ukáž tú tvoju ZOO, why: Album Horkýže Slíže z roku 2007. }
+      - { text: Zodiak, why: Debut Kataríny Knechtovej po odchode z Pehy. }
+
+  - id: imt-smile-clenovia
+    type: pick
+    prompt: Kto z týchto hudobníkov bol členom IMT Smile?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/IMT_Smile
+    asOf: "2026-11"
+    correct:
+      - { text: Katarína Knechtová, why: Bola speváčkou IMT Smile do roku 1997, potom odišla do Pehy. }
+      - { text: Peter Bič, why: Po odchode z kapely v roku 2010 založil Peter Bič Project. }
+      - { text: Martin Valihora, why: Bubeník, ktorý neskôr hral aj so svetovými jazzovými menami. }
+      - { text: Martin Migaš, why: Bol členom kapely v minulosti. }
+      - { text: Mário Gapa Garbera, why: Bol členom kapely v minulosti. }
+      - { text: Ivan Tásler, why: Spevák, gitarista a zakladateľ kapely. }
+      - { text: Miro Tásler, why: Klávesista a zakladateľ; názov vznikol z iniciálok bratov. }
+    wrong:
+      - { text: Vašo Patejdl, why: Klávesista Elánu. }
+      - { text: Peter Hrivňák Kuko, why: Spevák Horkýže Slíže. }
+      - { text: Igor Timko, why: Spevák No Name z Košíc. }
+      - { text: Mário Kollár, why: Spevák Desmodu. }
+      - { text: Majk Spirit, why: Raper, s IMT Smile nehral. }
+      - { text: Peter Cmorík, why: Víťaz SuperStar 2005 až 2006. }
+
+  - id: eurovizia-sk
+    type: pick
+    prompt: Kto z týchto interpretov reprezentoval Slovensko na Eurovízii?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovakia_in_the_Eurovision_Song_Contest
+    asOf: "2026-11"
+    correct:
+      - { text: Kristína, why: V Osle 2010 spievala Horehronie a skončila v semifinále šestnásta. }
+      - { text: Twiins, why: V roku 2011 s piesňou I'm Still Alive. }
+      - { text: Max Jason Mai, why: V roku 2012 s Don't Close Your Eyes; v semifinále skončil posledný, s 22 bodmi. }
+      - { text: Marcel Palonder, why: V roku 1996 s piesňou Kým nás máš. }
+      - { text: Katarína Hasprová, why: V roku 1998 s piesňou Modlitba. }
+      - { text: Kamil Mikulčík a Nela Pocisková, why: Návrat po desiatich rokoch, v roku 2009 s piesňou Leť tmou. }
+      - { text: Tublatanka, why: Debut Slovenska v roku 1994 s piesňou Nekonečná pieseň. }
+    wrong:
+      - { text: Horkýže Slíže, why: Na Eurovízii nikdy nevystúpili. }
+      - { text: Desmod, why: Na Eurovízii nikdy nevystúpili. }
+      - { text: No Name, why: Na Eurovízii nikdy nevystúpili. }
+      - { text: Peter Bič Project, why: Slovensko s nimi na Eurovíziu nikdy nešlo. }
+      - { text: IMT Smile, why: Slovensko s nimi na Eurovíziu nikdy nešlo. }
+      - { text: Majk Spirit, why: Slovensko na Eurovíziu nikdy nereprezentoval. }
+      - { text: Kontrafakt, why: Slovensko na Eurovíziu nikdy nereprezentovali. }
+
+  - id: sima-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydala Sima Martausová?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Sima_Martausová
+    asOf: "2026-11"
+    correct:
+      - { text: Vyzliecť si človeka, why: Debut z roku 2012. }
+      - { text: Dobrý deň, to som ja, why: Z roku 2013, získal dvojitú platinu. }
+      - { text: Na pravom poludní, why: Z roku 2014. }
+      - { text: Smej sa duša moja, why: Z roku 2016. }
+      - { text: Len tak sa stíšim, why: Z roku 2019. }
+      - { text: Oslobodená, why: Z roku 2020. }
+      - { text: Premena, why: Z roku 2024; SOZA ho ocenila ako najúspešnejší slovenský album roka. }
+    wrong:
+      - { text: Zodiak, why: Album Kataríny Knechtovej z roku 2008. }
+      - { text: Veci sa menia, why: Album Tiny z roku 2009. }
+      - { text: Chillin, why: Album Tiny z roku 2006. }
+      - { text: Mať srdce, why: Album Kristíny z roku 2017. }
+      - { text: Snívanky, why: Album Kristíny z roku 2020. }
+      - { text: Where I belong, why: Album Celeste Buckingham z roku 2013. }
+
+  - id: pbp-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydal Peter Bič Project?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Peter_Bič_Project
+    asOf: "2026-11"
+    correct:
+      - { text: Say It Loud, why: Debut z roku 2012, so singlom Hey Now. }
+      - { text: Just a Story, why: Z roku 2015. }
+      - { text: Dream, why: Z roku 2017. }
+      - { text: Labyrint, why: Z roku 2019. }
+      - { text: Hlava, why: Z roku 2021. }
+      - { text: Stále ťa má niekto rád, why: Najnovší štúdiový album, z roku 2025. }
+    wrong:
+      - { text: Hlava má sedem otvorov, why: Album IMT Smile z roku 2008, odkiaľ Bič pochádza. }
+      - { text: Rodina, why: Album IMT Smile z roku 2012. }
+      - { text: Na ceste 1979, why: Album IMT Smile z roku 2015. }
+      - { text: Kyvadlo, why: Album Desmodu. }
+      - { text: Don't Look Back, why: Debut Celeste Buckingham. }
+
+  - id: separ-albumy
+    type: pick
+    prompt: Ktoré z týchto albumov vydal Separ, sólovo alebo s DMS?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Separ
+    asOf: "2026-11"
+    correct:
+      - { text: Buldozér, why: Sólový debut z roku 2012. }
+      - { text: Pirát, why: Z roku 2014, je na ňom Bublina s Tinou. }
+      - { text: Pancier, why: Z roku 2017. }
+      - { text: Flowdemort, why: Z roku 2023, podľa Separovej prezývky. }
+      - { text: Čo sa stalo?!, why: Album DMS z roku 2011. }
+      - { text: MMXV, why: Album DMS z decembra 2015. }
+      - { text: MDMS, why: Album DMS z roku 2019. }
+      - { text: HUHU, why: Album DMS z roku 2021. }
+    wrong:
+      - { text: Precedens, why: Sólový album Ega z roku 2017. }
+      - { text: Egotron, why: Sólový album Ega z roku 2020. }
+      - { text: Fenomen, why: Sólový album Rytmusa. }
+      - { text: Krstný otec, why: Sólový album Rytmusa z roku 2016. }
+      - { text: Nový človek, why: Debut Majk Spirita. }
+      - { text: Kral, why: Sólový album Rytmusa z roku 2009. }
+
+  - id: no-name-piesne
+    type: pick
+    prompt: Ktoré z týchto piesní nahrali No Name?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/No_Name
+    correct:
+      - { text: Žily, why: Pieseň, ktorá kapelu preslávila aj v Česku. }
+      - { text: Ty a tvoja sestra, why: Úspešný singel z albumu Počkám si na zázrak. }
+      - { text: Ďakujem, že si, why: Singel z albumu Počkám si na zázrak. }
+      - { text: Kto dokáže, why: Singel z roku 2017 s Karlom Gottom. }
+      - { text: Ženušky, why: Duet s Lucie Bílou z albumu Nový album. }
+      - { text: Elity, why: Vyšla k 25. výročiu kapely v roku 2021. }
+    wrong:
+      - { text: Nepoznám, why: Hit IMT Smile. }
+      - { text: Maštaľ, why: Hit Horkýže Slíže. }
+      - { text: Hey Now, why: Hit Peter Bič Project. }
+      - { text: Lavíny, why: Hit Desmodu. }
+      - { text: Pár dní, why: Pieseň Desmodu, ocenená Aurelom v roku 2005. }
+      - { text: Horehronie, why: Pieseň Kristíny z Eurovízie. }
+
+  - id: albumy-2012
+    type: pick
+    prompt: Ktoré z týchto albumov vyšli v roku 2012?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Peter_Bič_Project
+    asOf: "2026-11"
+    note: Roky vydania sú podľa slovenskej Wikipédie jednotlivých interpretov.
+    correct:
+      - { text: Say It Loud (Peter Bič Project), why: Debut skupiny z roku 2012. }
+      - { text: Vyzliecť si človeka (Sima Martausová), why: Debut Simy z roku 2012. }
+      - { text: Buldozér (Separ), why: Vyšiel 31. októbra 2012. }
+      - { text: Don't Look Back (Celeste Buckingham), why: Vyšiel 20. apríla 2012, keď mala sedemnásť. }
+      - { text: Na slnečnej strane sveta (Kristína), why: Tretí album speváčky. }
+      - { text: Rodina (IMT Smile), why: Album z roku 2012. }
+      - { text: St. Mary Huana Ganja (Horkýže Slíže), why: Album z roku 2012. }
+      - { text: Tajomstvá (Katarína Knechtová), why: Sólový album z roku 2012. }
+    wrong:
+      - { text: Nový človek (Majk Spirit), why: Vyšiel v novembri 2011. }
+      - { text: Fenomen (Rytmus), why: Vyšiel v decembri 2011. }
+      - { text: S.E.X.Y. (Tina), why: Album z roku 2011. }
+      - { text: Iný rozmer (Desmod), why: Album z roku 2011. }
+      - { text: Dobrý deň, to som ja (Sima Martausová), why: Vyšiel až v roku 2013. }
+      - { text: Where I belong (Celeste Buckingham), why: Druhý album, z roku 2013. }
+      - { text: Navždy (Kontrafakt), why: Album z roku 2013. }
+      - { text: Pirát (Separ), why: Vyšiel v marci 2014. }
+
+  - id: albumy-2019
+    type: pick
+    prompt: Ktoré z týchto albumov vyšli v roku 2019?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Kontrafakt_(hudobná_skupina)
+    asOf: "2026-11"
+    note: Roky vydania sú podľa slovenskej Wikipédie jednotlivých interpretov.
+    correct:
+      - { text: Real Newz (Kontrafakt), why: Prvý album Kontrafaktu po šiestich rokoch. }
+      - { text: Najvyšší čas (Elán), why: Posledný štúdiový album Elánu zatiaľ. }
+      - { text: Labyrint (Peter Bič Project), why: Štvrtý album skupiny. }
+      - { text: Len tak sa stíšim (Sima Martausová), why: Album z roku 2019. }
+      - { text: MDMS (DMS), why: Album DMS z leta 2019. }
+    wrong:
+      - { text: Nie som tu náhodou (Majk Spirit), why: Vyšiel v decembri 2018. }
+      - { text: Budeme to stále my (IMT Smile), why: Album z roku 2018. }
+      - { text: Prepáčte (DMS), why: Album z roku 2018. }
+      - { text: Dream (Peter Bič Project), why: Album z roku 2017. }
+      - { text: Svety (Katarína Knechtová), why: Album z roku 2020. }
+      - { text: Oslobodená (Sima Martausová), why: Album z roku 2020. }
+      - { text: Egotron (Ego), why: Album z roku 2020. }
+      - { text: KF ako Rolls (Kontrafakt), why: Album z roku 2021. }
+      - { text: Hlava (Peter Bič Project), why: Album z roku 2021. }
+
+  - id: obcianske-mena
+    type: pick
+    prompt: Ktoré dvojice umelecké meno a občianske meno sú správne?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Majk_Spirit
+    correct:
+      - { text: Rytmus je Patrik Vrbovský, why: Narodil sa 3. januára 1977 v Kroměříži. }
+      - { text: Majk Spirit je Michal Dušička, why: Narodil sa v Bratislave v roku 1984. }
+      - { text: Separ je Michael Kmeť, why: Bratislavský raper, prezývaný aj FlowDemort. }
+      - { text: Ego je Michal Straka, why: Rodák z Lučenca a absolvent práva. }
+      - { text: Tina je Martina Csillaghová, why: Rodáčka z Prešova, narodená 11. marca 1984. }
+      - { text: Kristína je Kristína Peláková, why: Rodáčka zo Svidníka. }
+    wrong:
+      - { text: Majk Spirit je Michal Straka, why: Straka je občianske meno Ega. }
+      - { text: Separ je Michal Vrbovský, why: Vrbovský je priezvisko Rytmusa; Separ je Michael Kmeť. }
+      - { text: Rytmus je Patrik Straka, why: Rytmus je Patrik Vrbovský. }
+      - { text: Ego je Michael Kmeť, why: Kmeť je občianske meno Separa. }
+      - { text: Tina je Martina Peláková, why: Peláková je priezvisko Kristíny. }
+      - { text: Kristína je Kristína Csillaghová, why: Csillaghová je priezvisko Tiny. }
+
+  - id: elan-albumy-poradie
+    type: order
+    prompt: Zoraď albumy Elánu od najstaršieho po najnovší.
+    direction: asc
+    unit: rok vydania
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Elán_(skupina)
+    items:
+      - { text: Ôsmy svetadiel, value: 1981 }
+      - { text: Hodina slovenčiny, value: 1985 }
+      - { text: Rabaka, value: 1989 }
+      - { text: Hodina pravdy, value: 1997 }
+      - { text: Tretie oko, value: 2003 }
+      - { text: Anjelska daň, value: 2010 }
+
+  - id: rytmus-albumy-poradie
+    type: order
+    prompt: Zoraď sólové albumy Rytmusa od najstaršieho po najnovší.
+    direction: asc
+    unit: rok vydania
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Rytmus_(raper)
+    items:
+      - { text: Bengoro, value: 2006 }
+      - { text: Kral, value: 2009 }
+      - { text: Fenomen, value: 2011 }
+      - { text: Krstný otec, value: 2016 }
+      - { text: Bengoro II, value: 2023 }
+
+  - id: eurovizia-poradie
+    type: order
+    prompt: Zoraď slovenských eurovíznych reprezentantov podľa roku, v ktorom súťažili, od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Slovakia_in_the_Eurovision_Song_Contest
+    items:
+      - { text: Tublatanka, value: 1994 }
+      - { text: Marcel Palonder, value: 1996 }
+      - { text: Katarína Hasprová, value: 1998 }
+      - { text: Kristína, value: 2010 }
+      - { text: Twiins, value: 2011 }
+      - { text: Max Jason Mai, value: 2012 }
+
+  - id: hs-albumy-poradie
+    type: order
+    prompt: Zoraď albumy Horkýže Slíže od najstaršieho po najnovší.
+    direction: asc
+    unit: rok vydania
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Horkýže_Slíže
+    items:
+      - { text: V rámci oného, value: 1997 }
+      - { text: Ja chaču tebja, value: 2000 }
+      - { text: Kýže sliz, value: 2002 }
+      - { text: Ukáž tú tvoju ZOO, value: 2007 }
+      - { text: St. Mary Huana Ganja, value: 2012 }
+      - { text: Pustite Karola, value: 2017 }
+
+  - id: elan-zalozenie
+    type: number
+    prompt: V ktorom roku vznikol Elán?
+    answer: 1968
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Kapela z Bratislavy je takmer o desaťročie staršia než jej prvý album Ôsmy svetadiel z roku 1981.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Elán_(skupina)
+
+  - id: elan-pocet-albumov
+    type: number
+    prompt: Koľko štúdiových albumov vydal Elán od debutu Ôsmy svetadiel (1981) po Najvyšší čas (2019)?
+    answer: 15
+    unit: albumov
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Podľa slovenskej Wikipédie je to pätnásť štúdiových albumov.
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Elán_(skupina)
+
+  - id: rytmus-narodenie
+    type: number
+    prompt: V ktorom roku sa narodil Rytmus?
+    answer: 1977
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Patrik Vrbovský sa narodil v Kroměříži, vtedy v Československu.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Rytmus_(raper)
+
+  - id: hs-zalozenie
+    type: number
+    prompt: V ktorom roku vznikli Horkýže Slíže v Nitre?
+    answer: 1992
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Podľa slovenskej Wikipédie vznikli 4. novembra 1992 a prvý oficiálny album vydali až v roku 1997.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Horkýže_Slíže
+
+  - id: tina-pribeh
+    type: choice
+    prompt: S ktorou speváčkou nahral Rytmus rádiový hit Príbeh z roku 2009?
+    correct: { text: Tina, why: Príbeh z albumu Veci sa menia sa stal veľkým rádiovým hitom. }
+    wrong:
+      - { text: Kristína, why: Kristína nahrala napríklad Vráť mi tie hviezdy. }
+      - { text: Celeste Buckingham, why: S Majk Spiritom nahrala Ja a ty a I Was Wrong. }
+      - { text: Katarína Knechtová, why: Spievala v IMT Smile a Peha. }
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Rytmus_(raper)
+
+  - id: superstar-prvy-rocnik
+    type: choice
+    prompt: Kto vyhral prvý ročník súťaže Slovensko hľadá SuperStar v rokoch 2004 až 2005?
+    correct: { text: Katarína Koščová, why: Vyhrala prvú sériu, ktorú vysielala STV. }
+    wrong:
+      - { text: Martina Šindlerová, why: Skončila druhá v prvom ročníku. }
+      - { text: Mária Bundová, why: Skončila druhá v druhom ročníku. }
+      - { text: Dominika Mirgová, why: Skončila druhá v treťom ročníku. }
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/SuperStar_Search_Slovakia

@@ -1,0 +1,156 @@
+/* Základ — the reference design. System fonts, paper background, bottle green.
+   Every rule is scoped to :root[data-design="zaklad"]. */
+
+:root[data-design="zaklad"] {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --ink: #1b1d1c;
+  --muted: #5d625f;
+  --line: #d8d6ce;
+  --accent: #1f5c4a;
+  --accent-ink: #ffffff;
+  --good: #1d7445;
+  --good-bg: #e2f1e7;
+  --bad: #b2362a;
+  --bad-bg: #f8e3df;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-design="zaklad"] {
+    --bg: #141716;
+    --surface: #1d2120;
+    --ink: #ebece9;
+    --muted: #a3a9a5;
+    --line: #333836;
+    --accent: #7fc9ae;
+    --accent-ink: #0f1a16;
+    --good: #7fd29f;
+    --good-bg: #183424;
+    --bad: #f39184;
+    --bad-bg: #3d1d19;
+    color-scheme: dark;
+  }
+}
+
+[data-design="zaklad"] body { background: var(--bg); color: var(--ink); font: 16px/1.45 var(--font); }
+[data-design="zaklad"] a { color: var(--accent); }
+[data-design="zaklad"] :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Brand */
+[data-design="zaklad"] .brand__mark {
+  width: 56px; height: 56px; border-radius: 14px; background: var(--ink); color: var(--bg);
+  display: grid; place-items: center; font: 700 34px/1 Georgia, serif;
+}
+[data-design="zaklad"] .brand__name { font-size: 44px; font-weight: 750; letter-spacing: -0.02em; line-height: 1; }
+[data-design="zaklad"] .brand__tagline { color: var(--muted); }
+[data-design="zaklad"] .home__stats { color: var(--muted); font-size: 14px; }
+
+/* Buttons */
+[data-design="zaklad"] .btn {
+  border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); font-weight: 600;
+}
+[data-design="zaklad"] .btn:hover:not(:disabled) { border-color: var(--muted); }
+[data-design="zaklad"] .btn--primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+[data-design="zaklad"] .btn--primary:hover:not(:disabled) { filter: brightness(1.08); border-color: var(--accent); }
+[data-design="zaklad"] .btn--ghost { background: transparent; border-color: transparent; color: var(--accent); }
+[data-design="zaklad"] .btn--danger { background: var(--bad); border-color: var(--bad); color: #fff; }
+[data-design="zaklad"] .btn:disabled { opacity: 0.45; }
+
+/* Top bar */
+[data-design="zaklad"] .topbar { border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+[data-design="zaklad"] .topbar__title { font-size: 15px; font-weight: 700; }
+[data-design="zaklad"] .topbar__meta { color: var(--muted); font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .scorestrip__item { padding: 2px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 13px; }
+[data-design="zaklad"] .scorestrip__item--active { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+[data-design="zaklad"] .scorestrip__score { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Hand-over */
+[data-design="zaklad"] .handover { background: var(--ink); color: var(--bg); }
+[data-design="zaklad"] .handover__round, [data-design="zaklad"] .handover__label { font-size: 15px; opacity: 0.75; }
+[data-design="zaklad"] .handover__name { font-size: clamp(40px, 12vw, 72px); font-weight: 750; letter-spacing: -0.02em; line-height: 1.05; }
+[data-design="zaklad"] .handover__hint { margin-top: 24px; font-size: 14px; opacity: 0.6; }
+
+/* Question */
+[data-design="zaklad"] .q__meta { font-size: 13px; color: var(--muted); }
+[data-design="zaklad"] .q__pack { font-weight: 700; color: var(--accent); }
+[data-design="zaklad"] .q__player { font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+[data-design="zaklad"] .q__prompt { font-size: 23px; line-height: 1.25; font-weight: 700; text-wrap: balance; }
+[data-design="zaklad"] .q__hint, [data-design="zaklad"] .q__note, [data-design="zaklad"] .q__source { color: var(--muted); font-size: 14px; }
+[data-design="zaklad"] .turnbar { font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .turnbar__points { font-size: 20px; font-weight: 750; }
+[data-design="zaklad"] .turnbar__next, [data-design="zaklad"] .turnbar__count { color: var(--muted); font-size: 14px; }
+
+[data-design="zaklad"] .opt {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-weight: 600;
+}
+[data-design="zaklad"] button.opt:hover:not(:disabled) { border-color: var(--accent); }
+[data-design="zaklad"] .opt--correct { background: var(--good-bg); border-color: var(--good); }
+[data-design="zaklad"] .opt--wrong { background: var(--bad-bg); border-color: var(--bad); }
+[data-design="zaklad"] .opt:disabled { opacity: 1; }
+[data-design="zaklad"] .options--reveal .opt--wrong { background: var(--surface); border-color: var(--line); }
+[data-design="zaklad"] .options--reveal .opt--wrong .opt__text { color: var(--muted); }
+[data-design="zaklad"] .options--reveal .opt--correct .opt__text::before { content: "✓ "; color: var(--good); }
+[data-design="zaklad"] .opt__why { font-weight: 400; font-size: 13px; color: var(--muted); }
+[data-design="zaklad"] .opt__who { font-size: 12px; font-weight: 700; color: var(--accent); }
+
+[data-design="zaklad"] .verdict__title { font-size: 26px; font-weight: 750; }
+[data-design="zaklad"] .verdict--busted .verdict__title { color: var(--bad); }
+[data-design="zaklad"] .verdict--complete .verdict__title, [data-design="zaklad"] .verdict--banked .verdict__title { color: var(--good); }
+[data-design="zaklad"] .verdict__detail { color: var(--muted); }
+
+[data-design="zaklad"] .order-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+[data-design="zaklad"] .order-item__rank { font-weight: 750; color: var(--accent); font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .order-item__text { font-weight: 600; }
+[data-design="zaklad"] .order-item__value { font-variant-numeric: tabular-nums; color: var(--muted); }
+[data-design="zaklad"] .order-item__why { font-size: 13px; color: var(--muted); }
+
+[data-design="zaklad"] .input {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+[data-design="zaklad"] .number-input__field { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .number-input__unit { color: var(--muted); }
+[data-design="zaklad"] .number-reveal__label { color: var(--muted); font-size: 13px; }
+[data-design="zaklad"] .number-reveal__value { font-size: 34px; font-weight: 750; font-variant-numeric: tabular-nums; }
+
+[data-design="zaklad"] .results { border-top: 1px solid var(--line); padding-top: 12px; }
+[data-design="zaklad"] .result__name { font-weight: 700; }
+[data-design="zaklad"] .result__detail { color: var(--muted); font-size: 14px; }
+[data-design="zaklad"] .result__points { font-weight: 750; font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .result--scored .result__points { color: var(--good); }
+
+/* Game over */
+[data-design="zaklad"] .over__label { color: var(--muted); }
+[data-design="zaklad"] .over__title { font-size: 36px; font-weight: 750; letter-spacing: -0.02em; line-height: 1.1; }
+[data-design="zaklad"] .score-row { padding: 10px 12px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+[data-design="zaklad"] .score-row--leader { border-color: var(--accent); }
+[data-design="zaklad"] .score-row__rank { color: var(--muted); font-variant-numeric: tabular-nums; }
+[data-design="zaklad"] .score-row__name { font-weight: 700; }
+[data-design="zaklad"] .score-row__score { font-weight: 750; font-size: 20px; font-variant-numeric: tabular-nums; }
+
+/* Forms */
+[data-design="zaklad"] .field__label { font-weight: 700; font-size: 14px; }
+[data-design="zaklad"] .field__hint { color: var(--muted); font-size: 14px; }
+[data-design="zaklad"] .segmented__opt { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); font-weight: 600; }
+[data-design="zaklad"] .segmented__opt[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+[data-design="zaklad"] .pack { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+[data-design="zaklad"] .pack--on { border-color: var(--accent); }
+[data-design="zaklad"] .pack__title { font-weight: 700; }
+[data-design="zaklad"] .pack__desc { font-size: 14px; }
+[data-design="zaklad"] .pack__meta { font-size: 13px; color: var(--muted); }
+[data-design="zaklad"] .toggle { accent-color: var(--accent); }
+[data-design="zaklad"] .badge { font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); }
+[data-design="zaklad"] .badge--adult { background: var(--bad); border-color: var(--bad); color: #fff; }
+
+[data-design="zaklad"] .design-choice { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+[data-design="zaklad"] .design-choice[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+[data-design="zaklad"] .design-choice__swatch { border-radius: 50%; border: 1px solid var(--line); }
+[data-design="zaklad"] .design-choice__name { font-weight: 700; }
+[data-design="zaklad"] .design-choice__desc { font-size: 13px; color: var(--muted); }
+
+[data-design="zaklad"] .confirm { background: var(--surface); border: 1px solid var(--bad); border-radius: var(--radius); }
+[data-design="zaklad"] .error { color: var(--bad); }
+[data-design="zaklad"] .notice { color: var(--good); }
+[data-design="zaklad"] .loading { color: var(--muted); }

@@ -1,0 +1,659 @@
+id: sk-sport
+title: Šport
+description: Hokej, futbal, olympijské zlato, tenis a Peter Sagan – slovenský šport od Gotenburgu po Atlantu.
+lang: sk
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: stanley-cup-slovaci
+    type: pick
+    prompt: Ktorí z týchto slovenských hokejistov niekedy vyhrali Stanleyho pohár?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Slovaks_in_the_NHL
+    tags: [hokej, nhl]
+    correct:
+      - text: Marián Hossa
+        why: Tri tituly s Chicagom (2010, 2013, 2015), predtým prehral dve finále s inými tímami.
+      - text: Zdeno Chára
+        why: V roku 2011 ako kapitán Bostonu, prvý Slovák, ktorý dvihol pohár nad hlavu ako kapitán.
+      - text: Miroslav Šatan
+        why: S Pittsburghom 2009, hoci do play-off nastúpil iba deväťkrát.
+      - text: Marián Gáborík
+        why: S Los Angeles Kings 2014; v tom play-off strelil 14 gólov, najviac zo všetkých.
+      - text: Tomáš Kopecký
+        why: Vyhral dvakrát v dvoch rôznych kluboch, 2008 s Detroitom a 2010 s Chicagom.
+      - text: Michal Handzuš
+        why: Pohár získal s Chicagom v roku 2013.
+      - text: Erik Černák
+        why: Obranca Tampy Bay, s ktorou vyhral v rokoch 2020 a 2021.
+    wrong:
+      - text: Peter Bondra
+        why: Vo finále bol raz (1998 s Washingtonom), ale Detroit ich vymetol 4:0.
+      - text: Žigmund Pálffy
+        why: Takmer 700 zápasov v NHL, pohár však nikdy nezdvihol.
+      - text: Juraj Slafkovský
+        why: Zatiaľ nevyhral; bol draftovaný ako jednotka, ale pohár nemá.
+      - text: Pavol Demitra
+        why: Výborný útočník, no Stanleyho pohár mu nikdy nepripadol.
+      - text: Ľubomír Višňovský
+        why: Slovenský obranca s dlhou kariérou v NHL, pohár však nezískal.
+      - text: Šimon Nemec
+        why: Druhý v drafte 2022, pohár v zozname slovenských víťazov nefiguruje.
+
+  - id: ms-hokej-medaily-roky
+    type: pick
+    prompt: V ktorých rokoch získalo Slovensko medailu na majstrovstvách sveta v hokeji?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovakia_men%27s_national_ice_hockey_team
+    asOf: "2026-11"
+    tags: [hokej]
+    correct:
+      - text: "2000"
+        why: Striebro v Petrohrade.
+      - text: "2002"
+        why: Jediné zlato, vo švédskom Göteborgu.
+      - text: "2003"
+        why: Bronz vo Fínsku, rok po zlate.
+      - text: "2012"
+        why: Striebro vo Fínsku a Švédsku, zatiaľ posledná medaila.
+    wrong:
+      - text: "2001"
+        why: Medaila neprišla, hoci tím bol silný.
+      - text: "2004"
+        why: Obhajoba bez medaily.
+      - text: "2005"
+        why: Žiadna medaila.
+      - text: "2008"
+        why: Žiadna medaila.
+      - text: "2009"
+        why: Žiadna medaila.
+      - text: "2010"
+        why: Žiadna medaila na MS (olympijský turnaj vo Vancouveri skončil štvrtým miestom).
+      - text: "2011"
+        why: Slovensko hostilo turnaj v Bratislave a Košiciach, ale medailu nezískalo.
+      - text: "2013"
+        why: Po striebre z roku 2012 žiadna medaila.
+      - text: "2016"
+        why: Žiadna medaila.
+
+  - id: olympijske-zlato-slovaci
+    type: pick
+    prompt: Kto z týchto športovcov získal olympijské zlato v farbách samostatného Slovenska?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Slovakia_at_the_Olympics
+    tags: [olympiada]
+    correct:
+      - text: Michal Martikán
+        why: Kanoista, zlato 1996 ako 17-ročný a potom 2008.
+      - text: Pavol Hochschorner
+        why: Spolu s bratom Petrom trikrát po sebe (2000, 2004, 2008) na C2.
+      - text: Peter Hochschorner
+        why: Trojnásobný olympijský víťaz vo vodnom slalome.
+      - text: Elena Kaliská
+        why: Zlato na K1 v rokoch 2004 aj 2008.
+      - text: Matej Tóth
+        why: Víťaz chôdze na 50 km v Riu 2016, prvá slovenská atletická medaila od vzniku samostatnosti.
+      - text: Anastasiya Kuzmina
+        why: Biatlonistka, rodáčka z Ťumene, tri zlaté medaily (2010, 2014, 2018).
+      - text: Petra Vlhová
+        why: Zlato v slalome na Hrách v Pekingu 2022.
+      - text: Zuzana Rehák-Štefečeková
+        why: Zlato v streleckej disciplíne trap, Tokio 2020.
+      - text: Ladislav Škantár
+        why: Zlato na C2 v Riu 2016 spolu s bratom Petrom.
+    wrong:
+      - text: Peter Sagan
+        why: Olympijskú medailu nikdy nezískal; v Riu 2016 bol na horskom bicykli 35.
+      - text: Marek Hamšík
+        why: Olympijskú medailu nemá.
+      - text: Daniela Hantuchová
+        why: Má štyri tituly v mixe na grandslamoch, olympijskú medailu nie.
+      - text: Dominika Cibulková
+        why: Finalistka Australian Open, no olympijská medaila jej chýba.
+      - text: Zdeno Chára
+        why: Tri olympiády (2006, 2010, 2014) a žiadna medaila.
+      - text: Juraj Slafkovský
+        why: V Pekingu 2022 bol MVP, ale hokejisti vybojovali bronz, nie zlato.
+
+  - id: hamsik-kluby
+    type: pick
+    prompt: Za ktoré z týchto klubov hral Marek Hamšík ako profesionál?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Marek_Ham%C5%A1%C3%ADk
+    tags: [futbal]
+    correct:
+      - text: Slovan Bratislava
+        why: Seniorský debut 2004, potom hneď zamieril do Talianska.
+      - text: Brescia
+        why: V rokoch 2004–2007 ako tínedžer v Serii B.
+      - text: SSC Neapol
+        why: Dlhých 12 rokov (2007–2019), vyhral dva Taliansky pohár.
+      - text: Dalian Professional
+        why: Čínsky klub, kam odišiel v roku 2019.
+      - text: IFK Göteborg
+        why: Krátko v roku 2021 vo Švédsku.
+      - text: Trabzonspor
+        why: Turecký klub v rokoch 2021–2023, tam skončil kariéru.
+    wrong:
+      - text: Inter Miláno
+        why: Hamšík nikdy v Interi nehral.
+      - text: AS Rím
+        why: V Serii A hral iba za Neapol.
+      - text: Lazio Rím
+        why: Netrafené, aj keď sa o ňom často hovorilo.
+      - text: Sampdoria Janov
+        why: Taliansko áno, Sampdoriu nie.
+      - text: Fenerbahçe
+        why: V Turecku hral za Trabzonspor, Fenerbahçe patrilo Škrtelovi.
+      - text: Zenit Petrohrad
+        why: Ruský klub patrí ku Škrtelovej kariére, nie Hamšíkovej.
+
+  - id: skrtel-kluby
+    type: pick
+    prompt: Za ktoré z týchto klubov hral Martin Škrtel?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Martin_%C5%A0krtel
+    tags: [futbal]
+    correct:
+      - text: AS Trenčín
+        why: Rodák z Handlovej začínal v Trenčíne (2001–2004).
+      - text: Zenit Petrohrad
+        why: V rokoch 2004–2008, s Petrohradom vyhral ruskú ligu 2007.
+      - text: Liverpool
+        why: Osem sezón (2008–2016), 320 zápasov a Ligový pohár 2012.
+      - text: Fenerbahçe
+        why: Turecký veľkoklub v rokoch 2016–2019.
+      - text: Atalanta Bergamo
+        why: V roku 2019 podpísal, no nenastúpil ani na jeden zápas.
+      - text: İstanbul Başakşehir
+        why: S ním vyhral tureckú ligu 2019/20.
+      - text: Spartak Trnava
+        why: Návrat na Slovensko, v sezóne 2021/22 vyhral Slovenský pohár.
+    wrong:
+      - text: Everton
+        why: Škrtel hral za Liverpool, jeho miestneho rivala nie.
+      - text: Slovan Bratislava
+        why: Škrtel Bratislavu nikdy nereprezentoval.
+      - text: Sparta Praha
+        why: Do Česka sa nepresunul.
+      - text: Galatasaray
+        why: V Turecku hral za Fenerbahçe a Başakşehir.
+      - text: Dukla Banská Bystrica
+        why: Kariéru začal v Trenčíne.
+      - text: SSC Neapol
+        why: Patrí Hamšíkovi, nie Škrtelovi.
+
+  - id: futbal-turnaje-slovensko
+    type: pick
+    prompt: Na ktorých veľkých turnajoch hralo samostatné Slovensko vo finálovej fáze?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Slovakia_national_football_team
+    tags: [futbal]
+    correct:
+      - text: MS 2010 v Južnej Afrike
+        why: Premiéra na MS; vyradili obhajcu titulu Taliansko.
+      - text: ME 2016 vo Francúzsku
+        why: Postup zo skupiny a prehra 0:3 s Nemeckom v osemfinále.
+      - text: ME 2020 (hrané 2021)
+        why: Skončilo v skupine na treťom mieste.
+      - text: ME 2024 v Nemecku
+        why: V osemfinále podľahlo Anglicku 1:2 po predĺžení.
+    wrong:
+      - text: MS 2014 v Brazílii
+        why: Slovensko sa nekvalifikovalo.
+      - text: MS 2018 v Rusku
+        why: Chýbalo.
+      - text: MS 2022 v Katare
+        why: Chýbalo.
+      - text: ME 2012 v Poľsku a na Ukrajine
+        why: Nepostúpilo.
+      - text: ME 2008 v Rakúsku a Švajčiarsku
+        why: Nepostúpilo.
+      - text: MS 2006 v Nemecku
+        why: Nepostúpilo.
+      - text: ME 2004 v Portugalsku
+        why: Nepostúpilo.
+      - text: MS 1998 vo Francúzsku
+        why: Nepostúpilo.
+
+  - id: hantuchova-uspechy
+    type: pick
+    prompt: Ktoré z týchto úspechov dosiahla Daniela Hantuchová?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Daniela_Hantuchov%C3%A1
+    tags: [tenis]
+    correct:
+      - text: titul v miešanej štvorhre na Wimbledone 2001
+        why: Prvý grandslamový titul.
+      - text: titul v miešanej štvorhre na Australian Open 2002
+        why: Hneď o rok neskôr.
+      - text: titul v miešanej štvorhre na Roland Garros 2005
+        why: Tretí mixový titul.
+      - text: titul v miešanej štvorhre na US Open 2005
+        why: Spolu štyri mixové grandslamy.
+      - text: titul vo Fed Cupe 2002
+        why: S družstvom Slovenska.
+      - text: semifinále dvojhry na Australian Open 2008
+        why: Jej najlepší grandslamový výsledok v singli.
+      - text: svetová pätka v rebríčku
+        why: Najvyššie na 5. mieste od 27. januára 2003.
+    wrong:
+      - text: titul v ženskej štvorhre na Australian Open
+        why: Dve finále (2002, 2009), ani jedno nevyhrala.
+      - text: titul v ženskej štvorhre na Roland Garros
+        why: Finále 2006 prehrala.
+      - text: finále dvojhry na Wimbledone
+        why: Nikdy sa do neho nedostala.
+      - text: miesto svetovej jednotky
+        why: Najlepšie bola piata.
+      - text: olympijská medaila
+        why: Na Hrách 2012 skončila v 3. kole dvojhry.
+
+  - id: cibulkova-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o kariére Dominiky Cibulkovej sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Dominika_Cibulkov%C3%A1
+    tags: [tenis]
+    correct:
+      - text: V roku 2014 hrala finále Australian Open.
+        why: Prehrala s Li Na, ale ako prvá Slovenka sa dostala do grandslamového finále.
+      - text: V roku 2016 vyhrala záverečný Turnaj majsteriek.
+        why: V Singapure vo finále zdolala Kerberovú 6:3, 6:4.
+      - text: Najvyššie bola svetová štvorka.
+        why: Rebríčková pozícia z marca 2017.
+      - text: Na Australian Open 2014 vyradila Radwańskú v semifinále.
+        why: Súperku porazila vo veľkom zápase na ceste do finále.
+      - text: Narodila sa v Bratislave.
+        why: Rok 1989.
+    wrong:
+      - text: Vyhrala grandslamový titul vo dvojhre.
+        why: Zostalo pri finále z roku 2014.
+      - text: Bola svetovou jednotkou.
+        why: Najvyššie dosiahla štvrté miesto.
+      - text: Vo finále Australian Open 2014 porazila Li Na.
+        why: Prehrala 6:7, 0:6.
+      - text: Vo finále Turnaja majsteriek 2016 prehrala s Kerberovou.
+        why: Práve opačne, zvíťazila.
+      - text: Je vysoká viac ako 180 cm.
+        why: Meria okolo 160 cm, čo je na tenis nezvyčajne málo.
+      - text: Získala olympijskú medailu.
+        why: Žiadnu olympijskú medailu nemá.
+
+  - id: chara-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o Zdenovi Chárovi sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Zden%C3%B3_Ch%C3%A1ra
+    tags: [hokej, nhl]
+    correct:
+      - text: Je najvyšším hráčom v histórii NHL.
+        why: Meria 206 cm.
+      - text: V roku 2011 dvihol ako kapitán Stanleyho pohár.
+        why: S Bostonom Bruins.
+      - text: V sezóne 2008/09 vyhral Norrisovu trofej.
+        why: Cena pre najlepšieho obrancu NHL.
+      - text: Narodil sa v Trenčíne.
+        why: Rok 1977.
+      - text: Má rekord v rýchlosti strely 108,8 míľ za hodinu.
+        why: Vyše 175 km/h, nameral to na All-Star víkende 2012.
+      - text: Dvakrát získal striebro na MS.
+        why: V rokoch 2000 a 2012.
+      - text: Kariéru ukončil jednodňovou zmluvou s Bostonom.
+        why: V roku 2022 oznámil koniec ako člen Bruins.
+      - text: Hral aj za Ottawu Senators.
+        why: Okrem Islanders, Bostonu a Washingtonu aj Ottawa.
+    wrong:
+      - text: Získal olympijskú medailu.
+        why: Tri olympiády (2006, 2010, 2014), žiadna medaila.
+      - text: Stal sa majstrom sveta.
+        why: Dve striebra, zlato nikdy.
+      - text: Bol draftovaný v prvom kole.
+        why: V roku 1996 ho vybrali až ako 56. v poradí.
+      - text: Hral za Pittsburgh Penguins.
+        why: Nikdy.
+      - text: Vyhral Stanleyho pohár dvakrát.
+        why: Len jeden, 2011.
+
+  - id: hossa-nhl-kluby
+    type: pick
+    prompt: Za ktoré kluby NHL hral Marián Hossa?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Marian_Hossa
+    tags: [hokej, nhl]
+    correct:
+      - text: Ottawa Senators
+        why: V roku 1997 ho draftovali ako 12. v poradí.
+      - text: Atlanta Thrashers
+        why: Klub, ktorý sa neskôr presťahoval do Winnipegu.
+      - text: Pittsburgh Penguins
+        why: S Pittsburghom prehral finále 2008.
+      - text: Detroit Red Wings
+        why: S Detroitom prehral finále 2009, takže tri finále po sebe s tromi klubmi.
+      - text: Chicago Blackhawks
+        why: Tu získal tri Stanleyho poháre; dres s číslom 81 mu vyradili.
+    wrong:
+      - text: Washington Capitals
+        why: Tam hral Bondra a Chára.
+      - text: Boston Bruins
+        why: Tam hral Chára.
+      - text: Los Angeles Kings
+        why: Tam hral Gáborík a Pálffy.
+      - text: Buffalo Sabres
+        why: Tam hral Šatan.
+      - text: Edmonton Oilers
+        why: Tam hral Šatan.
+      - text: Montreal Canadiens
+        why: Tam hrá Slafkovský.
+
+  - id: sagan-vitazstva
+    type: pick
+    prompt: Ktoré z týchto víťazstiev a úspechov patria Petrovi Saganovi?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_career_achievements_by_Peter_Sagan
+    tags: [cyklistika, sagan]
+    correct:
+      - text: Majstrovstvá sveta v cestných pretekoch
+        why: Tri tituly po sebe, 2015, 2016, 2017.
+      - text: Zelený dres na Tour de France
+        why: Sedemkrát, vrátane 2012–2016, 2018 a 2019.
+      - text: Okolo Flámska
+        why: Víťaz 2016.
+      - text: Paríž–Roubaix
+        why: Víťaz 2018.
+      - text: Gent–Wevelgem
+        why: Trikrát (2013, 2016, 2018).
+      - text: E3 Harelbeke
+        why: Víťaz 2014.
+      - text: Tour of California (celkovo)
+        why: Víťaz 2015.
+    wrong:
+      - text: Miláno–San Remo
+        why: Dvakrát druhý (2013, 2017), nikdy prvý.
+      - text: Liège–Bastogne–Liège
+        why: Tento monument nikdy nejazdil.
+      - text: Strade Bianche
+        why: Druhý bol v rokoch 2013 a 2014.
+      - text: Celkové poradie Tour de France
+        why: Najlepšie skončil 42. v roku 2012.
+      - text: Olympijská medaila
+        why: Žiadnu nemá.
+      - text: Celkové poradie Giro d'Italia
+        why: Bol 92. v roku 2020.
+
+  - id: martikan-olympijske-medaily
+    type: pick
+    prompt: Ktoré z týchto olympijských medailí získal Michal Martikán na C1?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Michal_Martik%C3%A1n
+    tags: [olympiada, kanoe]
+    correct:
+      - text: zlato v Atlante 1996
+        why: Zlato v Atlante, ako 17-ročný.
+      - text: striebro v Sydney 2000
+        why: Zlato sa mu v Sydney vymklo o kúsok.
+      - text: striebro v Aténach 2004
+        why: Tretí rok po sebe na stupni víťazov.
+      - text: zlato v Pekingu 2008
+        why: Druhé zlato, o dvanásť rokov neskôr.
+      - text: bronz v Londýne 2012
+        why: Piata olympijská medaila, zatiaľ jediný vodný slalomár s toľkými.
+    wrong:
+      - text: zlato v Sydney 2000
+        why: V Sydney zlato vyhrali Hochschorneri na C2, Martikán bol druhý.
+      - text: zlato v Aténach 2004
+        why: Tam zlato vzal iný pretekár; Martikán bol druhý.
+      - text: zlato v Londýne 2012
+        why: Tam skončil tretí.
+      - text: striebro v Pekingu 2008
+        why: Tam vyhral.
+      - text: bronz v Atlante 1996
+        why: Tam vyhral zlato.
+      - text: bronz v Pekingu 2008
+        why: Tam vyhral zlato.
+      - text: striebro v Londýne 2012
+        why: Tam skončil tretí.
+
+  - id: mc-2010-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o slovenskom tíme na MS vo futbale 2010 sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2010_FIFA_World_Cup_Group_F
+    tags: [futbal]
+    correct:
+      - text: Slovensko porazilo Taliansko 3:2.
+        why: Taliansko, obhajca titulu, skončilo v skupine posledné.
+      - text: Vittek strelil Taliansku dva góly.
+        why: V 25. a 73. minúte.
+      - text: S Novým Zélandom remizovalo 1:1.
+        why: Novozélanďania vyrovnali až v 93. minúte.
+      - text: Zo skupiny postúpilo so štyrmi bodmi.
+        why: Druhé miesto za Paraguajom.
+      - text: V osemfinále podľahlo Holandsku.
+        why: Skóre 1:2.
+      - text: Kopúnek strelil Taliansku gól v 89. minúte.
+        why: Na 3:1, Taliansko potom znížilo ešte v nadstavenom čase.
+    wrong:
+      - text: Slovensko vyhralo skupinu.
+        why: Skupinu vyhralo Paraguaj s piatimi bodmi.
+      - text: Slovensko porazilo Paraguaj.
+        why: Prehra 0:2.
+      - text: Slovensko prehralo s Novým Zélandom.
+        why: Remíza 1:1.
+      - text: Slovensko zremizovalo s Talianskom.
+        why: Vyhralo 3:2.
+      - text: Slovensko postúpilo do štvrťfinále.
+        why: Skončilo v osemfinále.
+      - text: Vittek strelil Taliansku hetrik.
+        why: Dva góly; tretí strelil Kopúnek.
+      - text: Taliansko obsadilo v skupine druhé miesto.
+        why: Skončilo posledné, s dvoma bodmi.
+
+  - id: ms-2002-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o zlatých hokejových MS 2002 sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2002_IIHF_World_Championship
+    asOf: "2026-11"
+    tags: [hokej]
+    correct:
+      - text: Vo finále Slovensko porazilo Rusko 4:3.
+        why: Finále sa hralo 11. mája 2002.
+      - text: Finále sa hralo v Göteborgu.
+        why: V hale Scandinavium.
+      - text: Bola to prvá slovenská zlatá medaila z MS.
+        why: Prvá a doteraz jediná.
+      - text: Šatan bol najužitočnejším hráčom turnaja.
+        why: 13 bodov (5 gólov a 8 asistencií) v deviatich zápasoch.
+      - text: Bondra strelil 7 gólov.
+        why: Najviac z turnaja a aj víťazný gól.
+      - text: Bronz získalo Švédsko.
+        why: Domáci skončili na treťom mieste.
+    wrong:
+      - text: Vo finále Slovensko porazilo Kanadu.
+        why: Súperom bolo Rusko.
+      - text: Vo finále Slovensko porazilo Česko.
+        why: Súperom bolo Rusko.
+      - text: Finále sa hralo v Štokholme.
+        why: V Göteborgu.
+      - text: Slovensko turnaj usporiadalo.
+        why: Hostiteľom bolo Švédsko.
+      - text: Najproduktívnejším Slovákom bol Pálffy.
+        why: Šatan so 13 bodmi.
+      - text: Bronz získalo Fínsko.
+        why: Fínsko bolo štvrté.
+
+  - id: zoh-2022-hokej
+    type: pick
+    prompt: Ktoré tvrdenia o slovenských hokejistoch na olympiádach sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovakia_men%27s_national_ice_hockey_team
+    asOf: "2026-11"
+    tags: [hokej, olympiada]
+    correct:
+      - text: V Pekingu 2022 získali bronz.
+        why: Ich prvá olympijská hokejová medaila.
+      - text: O bronz v Pekingu porazili Švédsko 4:0.
+        why: Švédi boli favoriti.
+      - text: Slafkovský bol MVP olympijského turnaja 2022.
+        why: Mal vtedy iba 17 rokov.
+      - text: Zlato v Pekingu 2022 získalo Fínsko.
+        why: Vo finále zdolalo Rusov (ROC).
+      - text: Na ZOH 2026 skončili štvrtí.
+        why: Rovnako ako v roku 2010 vo Vancouveri.
+      - text: Vo Vancouveri 2010 skončili štvrtí.
+        why: Hneď pod stupňami víťazov.
+    wrong:
+      - text: Medailu získali už v Naganu 1998.
+        why: V Naganu skončili desiati.
+      - text: V Soči 2014 skončili štvrtí.
+        why: Skončili jedenásti.
+      - text: V Pekingu prehrali zápas o bronz.
+        why: Vyhrali ho.
+      - text: V Pekingu hrali finále s Fínskom.
+        why: Fínsko hralo finále s Rusmi, Slovensko hralo o bronz.
+      - text: V skupine v Pekingu porazili Fínsko.
+        why: Prehrali 2:6.
+
+  # --------------------------------------------------------------- ORDER
+  - id: poradie-olympijske-zlata
+    type: order
+    prompt: Zoraď slovenské olympijské zlaté medaily od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovakia_at_the_Olympics
+    tags: [olympiada]
+    items:
+      - { text: Michal Martikán, kanoe C1 (Atlanta), value: 1996 }
+      - { text: Hochschorneri, kanoe C2 (Sydney), value: 2000 }
+      - { text: Elena Kaliská, kajak K1 (Atény), value: 2004 }
+      - { text: Anastasiya Kuzmina, biatlon šprint (Vancouver), value: 2010 }
+      - { text: Matej Tóth, chôdza 50 km (Rio), value: 2016 }
+      - { text: Petra Vlhová, slalom (Peking), value: 2022 }
+
+  - id: poradie-nhl-body
+    type: order
+    prompt: Zoraď slovenských hokejistov podľa počtu bodov v základnej časti NHL od najviac.
+    direction: desc
+    unit: bodov
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Marian_Hossa
+    tags: [hokej, nhl]
+    items:
+      - { text: Marián Hossa, value: 1134 }
+      - { text: Peter Bondra, value: 892 }
+      - { text: Marián Gáborík, value: 815 }
+      - { text: Miroslav Šatan, value: 735 }
+      - { text: Žigmund Pálffy, value: 713 }
+
+  - id: poradie-narodenie
+    type: order
+    prompt: Zoraď tieto slovenské športové hviezdy podľa roku narodenia od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Peter_Sagan
+    tags: [sport]
+    items:
+      - { text: Zdeno Chára, value: 1977 }
+      - { text: Martin Škrtel, value: 1984 }
+      - { text: Marek Hamšík, value: 1987 }
+      - { text: Dominika Cibulková, value: 1989 }
+      - { text: Peter Sagan, value: 1990 }
+      - { text: Juraj Slafkovský, value: 2004 }
+
+  - id: poradie-draft-nhl
+    type: order
+    prompt: Zoraď slovenských hokejistov podľa toho, ktorý bol v drafte NHL vybraný skôr, od najskôr vybraného.
+    direction: asc
+    unit: celkové poradie
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/2022_NHL_entry_draft
+    tags: [hokej, nhl]
+    items:
+      - { text: Juraj Slafkovský (2022), value: 1 }
+      - { text: Šimon Nemec (2022), value: 2 }
+      - { text: Marián Gáborík (2000), value: 3 }
+      - { text: Marián Hossa (1997), value: 12 }
+      - { text: Zdeno Chára (1996), value: 56 }
+
+  # -------------------------------------------------------------- NUMBER
+  - id: cislo-rok-zlata-ms
+    type: number
+    prompt: V ktorom roku Slovensko vyhralo majstrovstvá sveta v hokeji?
+    answer: 2002
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Vo finále v Göteborgu zdolalo Rusko 4:3, zatiaľ jediný raz.
+    asOf: "2026-11"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/2002_IIHF_World_Championship
+    tags: [hokej]
+
+  - id: cislo-hamsik-zapasy
+    type: number
+    prompt: Koľko zápasov odohral Marek Hamšík za slovenskú reprezentáciu?
+    answer: 138
+    unit: zápasov
+    scale: log
+    tolerance: 0.08
+    why: Je aj rekordný strelec reprezentácie s 26 gólmi.
+    asOf: "2026-11"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Marek_Ham%C5%A1%C3%ADk
+    tags: [futbal]
+
+  - id: cislo-bondra-goly
+    type: number
+    prompt: Koľko gólov strelil Peter Bondra v základnej časti NHL?
+    answer: 503
+    unit: gólov
+    scale: log
+    tolerance: 0.07
+    why: Dvakrát bol najlepším strelcom NHL (1994/95 a 1997/98), do Hokejovej siene slávy v Toronte ho však neuviedli.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Peter_Bondra
+    tags: [hokej, nhl]
+
+  - id: cislo-sagan-etapy
+    type: number
+    prompt: Koľko etáp na Tour de France vyhral Peter Sagan?
+    answer: 12
+    unit: etáp
+    scale: linear
+    tolerance: 1
+    why: Prvé tri vyhral v roku 2012, naposledy 2019; k tomu sedem zelených dresov.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_career_achievements_by_Peter_Sagan
+    tags: [cyklistika, sagan]
+
+  # -------------------------------------------------------------- CHOICE
+  - id: davis-cup-2005-finale
+    type: choice
+    prompt: S ktorým súperom hralo Slovensko v roku 2005 v Bratislave finále Davisovho pohára?
+    correct:
+      text: Chorvátsko
+      why: Chorváti vyhrali 3:2 a získali svoj prvý Davis Cup; Hrbatý vyhral obe svoje dvojhry.
+    wrong:
+      - { text: Argentína, why: "Vo finále 2005 nehrala." }
+      - { text: Rusko, why: "Vo finále 2005 nehralo." }
+      - { text: Česko, why: "Vo finále 2005 nehralo." }
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2005_Davis_Cup
+    tags: [tenis]
+
+  - id: hamsik-neapol
+    type: choice
+    prompt: V ktorom klube strávil Marek Hamšík dvanásť rokov, od 2007 do 2019?
+    correct:
+      text: SSC Neapol
+      why: S Neapolom vyhral dva talianske poháre (2012, 2014).
+    wrong:
+      - { text: Brescia, why: "Tam hral v rokoch 2004–2007." }
+      - { text: Trabzonspor, why: "Tam hral v rokoch 2021–2023." }
+      - { text: Dalian Professional, why: "Tam hral v rokoch 2019–2021." }
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Marek_Ham%C5%A1%C3%ADk
+    tags: [futbal]

@@ -1,0 +1,658 @@
+id: adult-alkohol-drogy
+title: Alkohol a drogy
+description: Pálenky, pivo, víno, prohibícia a zákony – kvíz pre dospelých, ktorí vedia, čo pijú.
+lang: sk
+adult: true
+version: 1
+questions:
+  # ---------- PICK ----------
+  - id: destilaty
+    type: pick
+    prompt: Ktoré z týchto nápojov vznikajú destiláciou, teda sú to pálenky či liehoviny?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Destilát
+    correct:
+      - text: borovička
+        why: Je to destilát z plodov borievky obyčajnej.
+      - text: slivovica
+        why: Destilát zo skvasených sliviek, pitná sila 40 až 55 %.
+      - text: tequila
+        why: Destiluje sa z modrého agáve.
+      - text: vodka
+        why: Najčastejšie sa destiluje z obilia alebo zemiakov.
+      - text: rum
+        why: Destiluje sa z cukrovej trstiny alebo z melasy.
+      - text: whisky
+        why: Destilát zo sladu a obilnín, dozrieva v sudoch.
+      - text: gin
+        why: Destilát ochutený hlavne borievkou.
+    wrong:
+      - text: sake
+        why: Je to kvasený ryžový nápoj, nie pálenka.
+      - text: pivo
+        why: Len kvasí, nedestiluje sa.
+      - text: víno
+        why: Kvasený hroznový mušt, bez destilácie.
+      - text: medovina
+        why: Kvasený med, nie pálenka.
+      - text: jablkový cider
+        why: Kvasený jablkový mušt. Až jeho destilát je calvados.
+      - text: šampanské
+        why: Sekt a šampanské sú kvasené vína, aj keď šumivé.
+
+  - id: vek-18-rokov
+    type: pick
+    prompt: V ktorých krajinách je zákonný vek na kúpu alkoholu 18 rokov?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Legal_drinking_age
+    correct:
+      - text: Slovensko
+        why: Alkohol môžeš legálne kúpiť od 18.
+      - text: Česko
+        why: Kúpiť od 18; samotné pitie zákon vekom neobmedzuje.
+      - text: Taliansko
+        why: Aj tu 18 rokov.
+      - text: Rusko
+        why: Alkohol sa predáva od 18 rokov.
+      - text: Maďarsko
+        why: Rovnako 18.
+      - text: Spojené kráľovstvo
+        why: V Anglicku, Walese, Škótsku aj Severnom Írsku je to 18.
+      - text: Brazília
+        why: Predaj alkoholu mladším je trestný čin.
+      - text: Mexiko
+        why: Tequila legálne od 18.
+    wrong:
+      - text: USA
+        why: Vo všetkých štátoch je to 21 rokov.
+      - text: Japonsko
+        why: Vek plnoletosti sa v roku 2022 znížil na 18, ale alkohol zostal od 20.
+      - text: Island
+        why: Kúpiť alkohol môžeš až od 20.
+      - text: Thajsko
+        why: Zákonný vek je 20 rokov.
+      - text: Kazachstan
+        why: Tu je hranica 21 rokov.
+      - text: Južná Kórea
+        why: Vek 19 rokov, počíta sa podľa roku narodenia, nie dňa.
+
+  - id: konope-legalne
+    type: pick
+    prompt: Kde je podľa zákona rekreačná konope pre dospelých výslovne legálna (držba alebo pestovanie)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Legality_of_cannabis_by_country
+    correct:
+      - text: Nemecko
+        why: Od 1. apríla 2024 smú dospelí držať a pestovať obmedzené množstvo.
+      - text: Malta
+        why: V EÚ prvá, od decembra 2021.
+      - text: Luxembursko
+        why: Legalizované od júla 2023, predaj v obchodoch však nikdy nezačal.
+      - text: Česko
+        why: Od 1. januára 2026 pre dospelých 21+, vrátane domáceho pestovania.
+      - text: Kanada
+        why: Od 17. októbra 2018, v celej krajine.
+      - text: Uruguaj
+        why: Prvá krajina sveta, od decembra 2013.
+    wrong:
+      - text: Holandsko
+        why: Technicky je to stále nelegálne, coffeeshopy len tolerujú.
+      - text: Francúzsko
+        why: Nelegálne, bežne sa dáva pokuta 200 eur.
+      - text: Maďarsko
+        why: Rekreačne nelegálne.
+      - text: Taliansko
+        why: Dekriminalizované, no hrozia pokuty a odobratie dokladov.
+      - text: USA (federálne)
+        why: Niektoré štáty ju povolili, ale federálne zostáva zakázaná.
+
+  - id: vinohradnicke-oblasti
+    type: pick
+    prompt: Ktoré z týchto názvov sú oficiálne slovenské vinohradnícke oblasti?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovak_wine
+    correct:
+      - text: Malokarpatská
+        why: Najbližšie k Bratislave, pod Malými Karpatmi.
+      - text: Južnoslovenská
+        why: Z juhu pochádza väčšina slovenského vína.
+      - text: Nitrianska
+        why: Jedna zo šiestich oficiálnych oblastí.
+      - text: Stredoslovenská
+        why: Oblasť okolo Hrontu a Ipľa.
+      - text: Východoslovenská
+        why: Vinice pri Košiciach a Michalovciach.
+      - text: Tokajská
+        why: Najznámejšia vo svete, sladké botrytické vína.
+    wrong:
+      - text: Záhorská
+        why: Samostatná vinohradnícka oblasť to nie je.
+      - text: Tatranská
+        why: V Tatrách vinič nerastie, také oblasť neexistuje.
+      - text: Považská
+        why: Takáto vinohradnícka oblasť nie je.
+      - text: Spišská
+        why: Spiš pozná borovičku, nie vinice.
+      - text: Oravská
+        why: Na Orave sa víno nepestuje.
+      - text: Liptovská
+        why: Liptov je horský a pivný, vinice tam nie sú.
+      - text: Gemerská
+        why: Také členenie vinohradov neexistuje.
+      - text: Bratislavská
+        why: Bratislavské vinice patria do Malokarpatskej oblasti.
+
+  - id: pivovary-mesta
+    type: pick
+    prompt: Ktoré dvojice slovenskej pivovarskej značky a mesta, kde sa pivo varí, sú správne?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Beer_in_Slovakia
+    correct:
+      - text: Zlatý Bažant – Hurbanovo
+        why: Pivovar vznikol v 60. rokoch, od 1995 patrí Heinekenu.
+      - text: Šariš – Veľký Šariš
+        why: Pivovar pri Prešove postavili v roku 1964.
+      - text: Urpiner – Banská Bystrica
+        why: Pivárske tradície tu siahajú až do roku 1501.
+      - text: ERB – Banská Štiavnica
+        why: Remeselný pivovar banského inžiniera Eduarda Radu z roku 2010.
+    wrong:
+      - text: Šariš – Prešov
+        why: Pivovar je v neďalekom Veľkom Šariši.
+      - text: Šariš – Košice
+        why: Pivovar stojí vo Veľkom Šariši pri Prešove.
+      - text: Zlatý Bažant – Trnava
+        why: Varí sa v Hurbanove na juhu Slovenska.
+      - text: Zlatý Bažant – Šurany
+        why: Zlatý Bažant sa varí v Hurbanove.
+      - text: Urpiner – Zvolen
+        why: Urpiner je z Banskej Bystrice.
+      - text: Urpiner – Banská Štiavnica
+        why: Mesto s pivovarom ERB, nie Urpiner.
+      - text: ERB – Banská Bystrica
+        why: ERB sídli v Banskej Štiavnici.
+      - text: ERB – Zvolen
+        why: ERB sa varí v Banskej Štiavnici.
+
+  - id: absint-pravda
+    type: pick
+    prompt: Ktoré tvrdenia o absinte sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Absinthe
+    correct:
+      - text: Švajčiarsko ho zakázalo v roku 1910
+        why: Po vražde rodiny Lanfrayovcov a referende z roku 1908.
+      - text: Vo Švajčiarsku je opäť legálny od 1. marca 2005
+        why: Zákaz tam bol dokonca zapísaný v ústave.
+      - text: Historicky mal 45 až 74 % alkoholu
+        why: Niektoré českého typu majú až 89,9 %.
+      - text: Prezývali ho zelená víla
+        why: Francúzi mu hovorili la fée verte.
+      - text: Správne destilovaný obsahuje len stopy thujónu
+        why: Thujón sa obviňoval z halucinácií, no tie spôsobovali skôr prímesi a lacný lieh.
+      - text: Podpaľovanie cukru vymysleli české firmy v 90. rokoch
+        why: S tradičným francúzskym rituálom nemá nič spoločné.
+      - text: Tradične sa riedi 3 až 5 dielmi vody
+        why: Pri riedení sa pravý absint zakalí.
+      - text: Český absint sa po pridaní vody nezakalí
+        why: Je to skôr palinkový bitter bez anízu.
+    wrong:
+      - text: Spôsobuje halucinácie vďaka thujónu
+        why: Priame dôkazy o halucinogénnom účinku chýbajú.
+      - text: Podpaľovanie cukru je pôvodný francúzsky rituál z 19. storočia
+        why: Je to novodobý vynález z 90. rokov.
+      - text: Vo Švajčiarsku je zakázaný dodnes
+        why: Zákaz padol v roku 2005.
+      - text: USA ho zakázali v roku 2007
+        why: Zakázaný bol od 1912, v roku 2007 ho naopak povolili.
+      - text: Belgicko ho zakázalo a zákaz platí dodnes
+        why: Belgicko zákaz z roku 1906 zrušilo k 1. januáru 2005.
+      - text: Typický absint má okolo 20 % alkoholu
+        why: Bežne má dvoj- až trojnásobok.
+
+  - id: opica-mytus
+    type: pick
+    prompt: Ktoré tvrdenia o opici (kocovine) sú podľa dostupných štúdií pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hangover
+    correct:
+      - text: Tmavé destiláty bývajú pre opicu horšie než vodka
+        why: Bourbon má asi 37-krát viac kongenerov než vodka.
+      - text: Poradie nápojov nehrá rolu
+        why: Pri rovnakej hladine alkoholu je opica rovnaká, či už pivo pred vínom, alebo naopak.
+      - text: Káva opicu nelieči
+        why: Kofeín môže spomaliť rehydratáciu.
+      - text: Opica môže trvať aj vyše 24 hodín
+        why: Najhoršia býva, keď alkohol v krvi klesne k nule.
+      - text: Voda môže zmierniť smäd a bolesť hlavy
+        why: Opicu však výrazne neskráti.
+      - text: Ďalší drink ráno opicu len odloží
+        why: Pitie „klin klinom“ symptómy len oddiali.
+      - text: Neexistuje overený liek na opicu
+        why: Jediná spoľahlivá prevencia je nepiť alebo piť málo.
+    wrong:
+      - text: Pivo pred vínom, opica nebude
+        why: Rozhoduje celkové množstvo alkoholu, nie poradie.
+      - text: Silná káva opicu spoľahlivo vylieči
+        why: Podľa štúdií nie, môže ju dokonca zhoršiť.
+      - text: Tmavé destiláty sú pre opicu šetrnejšie než vodka
+        why: Je to opačne, obsahujú viac kongenerov.
+      - text: Sauna opicu vypotí
+        why: Je to dokonca potenciálne nebezpečné.
+      - text: Vitamín B6 spoľahlivo zabráni opici
+        why: Štúdie nepreukázali významný účinok.
+      - text: Opica vždy zmizne do ôsmich hodín
+        why: Môže trvať aj vyše 24 hodín.
+      - text: Ďalšia dávka ráno opicu vylieči
+        why: Len odsunie problémy a môže viesť k závislosti.
+
+  - id: slovenske-napoje
+    type: pick
+    prompt: Ktoré z týchto nápojov sú slovenské?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Tatratea
+    correct:
+      - text: Tatratea
+        why: Vyrába ju Karloff v Kežmarku, od roku 2002, od 17 do 72 % alkoholu.
+      - text: Demänovka
+        why: Bylinný likér, bitter má 38 %, sladká 33 %.
+      - text: Spišská borovička
+        why: Chránené zemepisné označenie zo Starej Ľubovne.
+      - text: Inovecká borovička
+        why: Jeden z piatich chránených názvov borovičky.
+      - text: Liptovská borovička
+        why: Tiež chránený názov slovenskej borovičky.
+      - text: Slovenská borovička Juniperus
+        why: Piaty chránený názov v EÚ.
+    wrong:
+      - text: Becherovka
+        why: Bylinný likér z Karlových Varov v Česku.
+      - text: Jägermeister
+        why: Nemecký bylinný likér z Wolfenbüttelu.
+      - text: Unicum
+        why: Maďarský horký bylinný likér.
+      - text: Fernet Branca
+        why: Taliansky bitter z Milána.
+      - text: Metaxa
+        why: Grécka brandy.
+
+  - id: prohibicia-usa
+    type: pick
+    prompt: Ktoré tvrdenia o prohibícii v USA sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Prohibition_in_the_United_States
+    correct:
+      - text: Celoštátne sa začala 17. januára 1920
+        why: Vtedy vstúpil do platnosti Volsteadov zákon.
+      - text: Skončila 21. dodatkom z 5. decembra 1933
+        why: Je to jediný dodatok ústavy, ktorý zrušil iný dodatok.
+      - text: Volsteadov zákon prešiel napriek vetu prezidenta Wilsona
+        why: Kongres veto prelomil v októbri 1919.
+      - text: Lekári mohli predpisovať alkohol
+        why: Jeden doktor vraj napísal 475 receptov na whisky za deň.
+      - text: Omšové víno bolo povolené
+        why: Náboženské použitie zákon pripúšťal.
+      - text: Dodatok ratifikovalo 46 zo 48 štátov
+        why: Pridať sa nechceli Connecticut a Rhode Island.
+      - text: Pivo s 3,2 % sa vrátilo už v marci 1933
+        why: Cullen–Harrisonov zákon vrátil pivo ešte pred úplným zrušením prohibície.
+      - text: V New Yorku bolo okolo roku 1925 desaťtisíce podzemných barov (speakeasy)
+        why: Odhady sa pohybujú od 30 000 do 100 000.
+    wrong:
+      - text: Zrušil ju krach burzy v roku 1929
+        why: Zrušenie prišlo až v roku 1933.
+      - text: Zákon podpísal prezident Wilson
+        why: Wilson ho vetoval.
+      - text: Platila len v južných štátoch
+        why: Bola celoštátna.
+      - text: Trvala 33 rokov
+        why: Od 1920 do 1933, teda 13 rokov.
+      - text: Ratifikovali ju všetky štáty
+        why: Connecticut a Rhode Island ju odmietli.
+      - text: Rozhodol o nej prezidentský dekrét
+        why: Ústavný dodatok prešiel Kongresom a štátmi.
+
+  - id: stupne-piva
+    type: pick
+    prompt: Ktoré tvrdenia o stupňovitosti piva (10°, 12°) sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Beer_in_Slovakia
+    correct:
+      - text: Meria sa v stupňoch Plato
+        why: Ide o množstvo rozpustených látok pred kvasením.
+      - text: Desiatka nemá 10 % alkoholu
+        why: Väčšina slovenských pív má 3,8 až 5 %.
+      - text: Stupne nehovoria nič o farbe piva
+        why: Tmavá desiatka aj svetlá dvanástka existujú.
+      - text: Dvanástka má pôvodnú hustotu približne 1048
+        why: Desiatka okolo 1040.
+      - text: Stupne naznačujú, koľko alkoholu pivo približne bude mať
+        why: Viac extraktu pred kvasením, viac alkoholu po ňom.
+      - text: Väčšina slovenských pív má 3,8 až 5 % alkoholu
+        why: Vyššie stupne neznamenajú rovnaké percentá.
+    wrong:
+      - text: Dvanástka má 12 % alkoholu
+        why: Má okolo 5 %.
+      - text: Čím vyššie stupne, tým tmavšie pivo
+        why: Stupne sa farby netýkajú.
+      - text: Desiatka je vždy svetlá, dvanástka vždy tmavá
+        why: Farba s číslom nesúvisí.
+      - text: Stupne udávajú teplotu, pri ktorej sa pivo čapuje
+        why: Udávajú extrakt pôvodnej mladiny.
+      - text: Slovenské pivá majú bežne 8 až 10 % alkoholu
+        why: Typicky 3,8 až 5 %.
+      - text: Stupne sú na pive len marketingový údaj
+        why: Je to normovaná veličina.
+
+  - id: pivne-fakty
+    type: pick
+    prompt: Ktoré z týchto tvrdení o pive sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pilsner_Urquell
+    correct:
+      - text: Prvý Pilsner Urquell sa čapoval 11. novembra 1842
+        why: Na Martinských trhoch v Plzni.
+      - text: Uvaril ho bavorský sládok Josef Groll
+        why: Plzenskí mešťania si ho najali, lebo ich pivo bolo zlé.
+      - text: Pilsner Urquell bol prvý svetlý ležiak
+        why: Zlatá farba a čistota boli vtedy novinkou.
+      - text: Guinness Draught má okolo 4,1 až 4,3 %
+        why: Je to slabšie než väčšina ľudí čaká.
+      - text: Zlatý Bažant bol prvé plechovkové pivo vo východnej Európe
+        why: V plechovkách sa plnil od roku 1971.
+      - text: Mass na Oktoberfeste je jeden liter
+        why: Je to ťažký pohár s ušami.
+      - text: Guinness World Records vznikli ako marketing Guinnessu
+        why: Nápad mal šéf pivovaru Hugh Beaver.
+    wrong:
+      - text: Pilsner Urquell sa prvýkrát uvaril v Budějoviciach
+        why: V Plzni, Budějovice majú Budvar.
+      - text: Prvý svetlý ležiak vznikol v Dubline
+        why: Dublin je domovom stoutu.
+      - text: Guinness Draught má okolo 10 % alkoholu
+        why: Má štyri celé niečo.
+      - text: Zlatý Bažant vznikol v 19. storočí
+        why: Pivovar v Hurbanove začal variť v roku 1969.
+      - text: Josef Groll bol plzenský rodák
+        why: Bol to Bavor.
+      - text: Mass na Oktoberfeste má pol litra
+        why: Má celý liter.
+      - text: Oktoberfest sa konal aj počas pandémie v roku 2020
+        why: V rokoch 2020 a 2021 sa zrušil.
+      - text: Pilsner Urquell má okolo 7 % alkoholu
+        why: Má 4,4 %.
+
+  - id: oktoberfest-pivovary
+    type: pick
+    prompt: Ktoré pivovary smú variť pivo pre Oktoberfest v Mníchove?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Oktoberfest
+    correct:
+      - text: Augustiner
+        why: Jeden zo šiestich mníchovských pivovarov.
+      - text: Hacker-Pschorr
+        why: Druhý z mníchovskej šestky.
+      - text: Löwenbräu
+        why: Pivovar s levom v logu.
+      - text: Paulaner
+        why: Patrí k najznámejším.
+      - text: Spaten
+        why: Ďalší z mníchovských pivovarov.
+      - text: Hofbräu München
+        why: Tiež jeden zo šiestich.
+    wrong:
+      - text: Erdinger
+        why: Je z mesta Erding pri Mníchove, nie z Mníchova.
+      - text: Weihenstephan
+        why: Z Freisingu, nie Mníchov.
+      - text: Beck's
+        why: Z Brém.
+      - text: Warsteiner
+        why: Zo Sauerlandu, nie Mníchov.
+      - text: Krombacher
+        why: Nemecký, ale z iného regiónu.
+      - text: Bitburger
+        why: Z mesta Bitburg v Porýní-Falcku.
+      - text: Radeberger
+        why: Zo Saska.
+
+  - id: borovicka-pravda
+    type: pick
+    prompt: Ktoré tvrdenia o borovičke sú pravdivé?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Borovička_(destilát)
+    correct:
+      - text: Vyrába sa z plodov borievky obyčajnej
+        why: Nie z borovice, ako napovedá názov.
+      - text: Typicky má 37,5 % alkoholu
+        why: Je to bežná sila pálenky.
+      - text: Spišská borovička má chránené zemepisné označenie
+        why: Spojené so Starou Ľubovňou.
+      - text: Inovecká borovička je chránený názov
+        why: Jeden z piatich v EÚ.
+      - text: Liptovská borovička je chránený názov
+        why: Tiež jeden z piatich.
+      - text: Borovičkári pochádzali z Trenčianska a Bielych Karpát
+        why: Boli to obchodníci s borovičkou.
+      - text: Medzinárodný deň borovičky je 24. júna
+        why: Aj taký sviatok existuje.
+    wrong:
+      - text: Vyrába sa z borovicových šišiek
+        why: Slovo „borovička“ môže byť aj šiška, nápoj je však z borievky.
+      - text: Názov Slovenská borovička môže použiť aj česká pálenica
+        why: Len výrobky zo Slovenska.
+      - text: Typicky má okolo 60 % alkoholu
+        why: Okolo 37,5 %.
+      - text: Spišská borovička sa vyrába v Poprade
+        why: Vo Starej Ľubovni.
+      - text: Tatranská borovička je chránený názov
+        why: Chránených je päť iných.
+      - text: Vyrába sa z ihličia borovice lesnej
+        why: Z plodov borievky.
+
+  - id: slivovica-pravda
+    type: pick
+    prompt: Ktoré tvrdenia o slivovici sú pravdivé?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Slivovica
+    correct:
+      - text: Prvý zakalený destilát sa volá luter
+        why: Opakovaným pálením sa zahusťuje a čistí.
+      - text: Pálenica ju ráta s 60 až 75 % a riedi vodou
+        why: Na pitných 40 až 55 %.
+      - text: Najlepšia dozrieva v dubových alebo nerezových sudoch
+        why: Staršia je lepšia.
+      - text: Vyrába sa aj v Rakúsku, Česku a bývalej Juhoslávii
+        why: Nie je to len slovenský nápoj.
+      - text: Zmes lihu a esencie sa nemá volať slivovica
+        why: Pravá musí byť z fermentovaných sliviek.
+      - text: Vo výrobe sa niekedy používajú dovezené slivky
+        why: Sú sladšie a lacnejšie.
+    wrong:
+      - text: Vyrába sa z jabĺk
+        why: Z jabĺk je calvados.
+      - text: Pije sa neriedená, približne 75 %
+        why: Riedi sa na 40 až 55 %.
+      - text: Vyrába sa len v Srbsku
+        why: Vyrába sa aj inde.
+      - text: Luter je číry 96 % lieh
+        why: Je zakalený a slabší.
+      - text: Čím mladšia, tým lepšia
+        why: Staršia je cenenejšia.
+      - text: Typicky má okolo 20 %
+        why: Pitná sila 40 až 55 %.
+
+  - id: pripitky
+    type: pick
+    prompt: Ktoré tvrdenia o prípitkoch sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Toast_(honor)
+    correct:
+      - text: Škandinávske skål doslova znamená miska
+        why: Odkazuje na staršie pitné nádoby.
+      - text: Taliansky cin cin napodobňuje zvuk pohárov
+        why: Je to onomatopoja.
+      - text: Japonské kanpai doslova znamená vypi do dna
+        why: Skoro ako náš „do dna“.
+      - text: Nemecké prost pochádza z latinského prosit
+        why: Znamená „nech to prospeje“.
+      - text: V Nemecku sa pri prípitku pozerá do očí
+        why: Inak vraj hrozí sedem rokov smoly.
+      - text: V Royal Navy sa nikdy nepripíja vodou
+        why: Oslávenec by vraj skončil vo vodnom hrobe.
+      - text: Írske sláinte znamená zdravie
+        why: Podobne ako naše na zdravie.
+    wrong:
+      - text: Cinkanie vzniklo, aby sa pri otrave zmiešali nápoje
+        why: Skutočný dôkaz tohto pôvodu neexistuje.
+      - text: Kanpai znamená dlhý život
+        why: Je to vypi do dna.
+      - text: Salud je taliansky prípitok
+        why: Je španielsky, taliansky je cin cin.
+      - text: Prost je pôvodom ruské slovo
+        why: Z latinského prosit.
+      - text: V Royal Navy sa najradšej pripíja vodou
+        why: Je to zlá predzvesť.
+
+  # ---------- ORDER ----------
+  - id: order-sila-napojov
+    type: order
+    prompt: Zoraď nápoje podľa maximálnej sily alkoholu od najsilnejšieho.
+    direction: desc
+    unit: "% alk."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Absinthe
+    items:
+      - { text: Český absint (najsilnejšie kúsky), value: 89.9 }
+      - { text: Tatratea (najsilnejší variant), value: 72 }
+      - { text: Demänovka bitter, value: 38 }
+      - { text: Demänovka sladká, value: 33 }
+      - { text: Víno (typicky), value: 13.5 }
+      - { text: Pilsner Urquell, value: 4.4 }
+
+  - id: order-roky-pivo
+    type: order
+    prompt: Zoraď udalosti od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Prohibition_in_the_United_States
+    items:
+      - { text: Arthur Guinness si prenajíma pivovar v Dubline, value: 1759 }
+      - { text: Prvý Oktoberfest, value: 1810 }
+      - { text: Prvé čapovanie plzenského ležiaka, value: 1842 }
+      - { text: Švajčiarsko zakazuje absint, value: 1910 }
+      - { text: Začiatok prohibície v USA, value: 1920 }
+      - { text: Koniec prohibície v USA, value: 1933 }
+
+  - id: order-pivo-na-hlavu
+    type: order
+    prompt: Zoraď krajiny podľa spotreby piva na obyvateľa od najvyššej.
+    direction: desc
+    unit: l/rok
+    difficulty: 2
+    asOf: "2024"
+    note: Údaje z rokov 2019 až 2024 podľa tabuľky na Wikipédii.
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_beer_consumption_per_capita
+    items:
+      - { text: Česko, value: 126.0 }
+      - { text: Rakúsko, value: 107.8 }
+      - { text: Nemecko, value: 99.0 }
+      - { text: Írsko, value: 92.9 }
+      - { text: Slovensko, value: 76.1 }
+
+  - id: order-alkohol-na-hlavu
+    type: order
+    prompt: Zoraď krajiny podľa spotreby čistého alkoholu na obyvateľa od najvyššej.
+    direction: desc
+    unit: l/rok
+    difficulty: 3
+    asOf: "2019"
+    note: Údaje WHO, trojročný priemer 2017 až 2019.
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_alcohol_consumption_per_capita
+    items:
+      - { text: Rumunsko, value: 17.0 }
+      - { text: Česko, value: 13.3 }
+      - { text: Nemecko, value: 12.2 }
+      - { text: Rakúsko, value: 12.0 }
+      - { text: Slovensko, value: 10.5 }
+
+  # ---------- NUMBER ----------
+  - id: guinness-najom
+    type: number
+    prompt: Na koľko rokov si Arthur Guinness prenajal dublinský pivovar St James's Gate?
+    answer: 9000
+    unit: rokov
+    scale: log
+    tolerance: 0.15
+    why: Nájom stál 45 libier ročne a podpísal sa 31. decembra 1759.
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Guinness
+
+  - id: absint-legalny-ch
+    type: number
+    prompt: V ktorom roku sa vo Švajčiarsku absint opäť stal legálnym?
+    answer: 2005
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Zákaz platil od 1910, od 1. marca 2005 sa smie opäť vyrábať.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Absinthe
+
+  - id: cesko-pivo-na-hlavu
+    type: number
+    prompt: Koľko litrov piva ročne vypije priemerný Čech?
+    answer: 126
+    unit: litrov
+    scale: log
+    tolerance: 0.1
+    asOf: "2024"
+    why: Česko je dlhodobo svetová jednotka v pití piva na hlavu.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_beer_consumption_per_capita
+
+  - id: oktoberfest-litre
+    type: number
+    prompt: Koľko litrov piva sa vypilo na mníchovskom Oktoberfeste v roku 2023?
+    answer: 7400000
+    unit: litrov
+    scale: log
+    tolerance: 0.2
+    asOf: "2023"
+    why: Prišlo rekordných 7,2 milióna ľudí.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Oktoberfest
+
+  # ---------- CHOICE ----------
+  - id: nemecko-vek-pivo
+    type: choice
+    prompt: Od koľkých rokov si v Nemecku môže mladý človek sám kúpiť pivo a víno?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Legal_drinking_age
+    correct:
+      text: "16"
+      why: Pivo, víno a cider od 16, destiláty od 18; v sprievode rodiča už od 14.
+    wrong:
+      - { text: "14", why: Platí len v sprievode rodiča alebo opatrovníka. }
+      - { text: "18", why: To je hranica pre destiláty. }
+      - { text: "21", why: Taká hranica je v USA. }
+
+  - id: alkohol-na-hlavu-top
+    type: choice
+    prompt: Ktorá krajina mala podľa WHO najvyššiu spotrebu čistého alkoholu na obyvateľa?
+    difficulty: 3
+    asOf: "2019"
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_alcohol_consumption_per_capita
+    correct:
+      text: Rumunsko
+      why: 17 litrov čistého alkoholu ročne na človeka nad 15 rokov.
+    wrong:
+      - { text: Česko, why: Tretie s 13,3 litra. }
+      - { text: Nemecko, why: Piate s 12,2 litra. }
+      - { text: Lotyšsko, why: Štvrté s 13,1 litra. }

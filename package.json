@@ -1,0 +1,29 @@
+{
+  "name": "fakt",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run packs && vite",
+    "build": "npm run packs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "packs": "node scripts/build-packs.ts",
+    "packs:check": "node scripts/build-packs.ts --check",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "preact": "^11.2.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^26.6.6",
+    "playwright": "^1.65.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.1.0"
+  }
+}

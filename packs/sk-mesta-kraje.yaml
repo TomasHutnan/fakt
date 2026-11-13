@@ -1,0 +1,483 @@
+id: sk-mesta-kraje
+title: Mestá a kraje
+description: Slovenské mestá, kraje, rieky, značky áut, kúpele a hraničné prechody.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: susedia-slovenska
+    type: pick
+    prompt: S ktorými krajinami má Slovensko spoločnú pozemnú hranicu?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Slovakia
+    tags: [hranice]
+    correct:
+      - { text: Česko, why: Do roku 1993 sme boli jeden štát. }
+      - { text: Poľsko, why: Hranica vedie hlavne po horách, napríklad cez Tatry. }
+      - { text: Ukrajina, why: Najvýchodnejší sused, prechod je pri Vyšnom Nemeckom. }
+      - { text: Maďarsko, why: Dlhá južná hranica, veľká časť vedie po Dunaji a Ipli. }
+      - { text: Rakúsko, why: Susedí priamo s Bratislavou. }
+    wrong:
+      - { text: Rumunsko, why: Medzi nami sú Maďarsko alebo Ukrajina. }
+      - { text: Slovinsko, why: Medzi nami leží Rakúsko alebo Maďarsko. }
+      - { text: Nemecko, why: Je to blízko, ale medzi nami leží Rakúsko a Česko. }
+      - { text: Chorvátsko, why: Spoločnú hranicu nemáme, leží medzi nami Maďarsko. }
+      - { text: Srbsko, why: Medzi nami a Srbskom leží Maďarsko. }
+      - { text: Bielorusko, why: Priamo nesusedí, je za Poľskom alebo Ukrajinou. }
+      - { text: Litva, why: Je to ďaleko, medzi nami je Poľsko. }
+      - { text: Moldavsko, why: Je za Ukrajinou. }
+
+  - id: sidla-krajov
+    type: pick
+    prompt: Ktoré z týchto miest sú sídlom samosprávneho kraja?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Regions_of_Slovakia
+    tags: [kraje]
+    correct:
+      - { text: Bratislava, why: Hlavné mesto je zároveň sídlom najmenšieho kraja. }
+      - { text: Trnava, why: Sídlo Trnavského kraja, nie Piešťany ani Dunajská Streda. }
+      - { text: Trenčín, why: Má najmenej obyvateľov spomedzi ôsmich krajov. }
+      - { text: Nitra, why: Sídlo kraja je v Nitre, nie v Nových Zámkoch. }
+      - { text: Žilina, why: Nie Martin, hoci Martin je v tom istom kraji. }
+      - { text: Banská Bystrica, why: Sídlo najväčšieho kraja podľa rozlohy. }
+      - { text: Prešov, why: Sídlo najľudnatejšieho kraja, nie Poprad. }
+      - { text: Košice, why: Druhé najväčšie mesto Slovenska. }
+    wrong:
+      - { text: Martin, why: Deviate najväčšie mesto, no krajské sídlo je Žilina. }
+      - { text: Poprad, why: Desiate najväčšie mesto, ale sídlo kraja je Prešov. }
+      - { text: Zvolen, why: V Banskobystrickom kraji je sídlo v Banskej Bystrici. }
+      - { text: Michalovce, why: Krajské sídlo je v Košiciach. }
+      - { text: Komárno, why: V Nitrianskom kraji sídli Nitra. }
+      - { text: Piešťany, why: V Trnavskom kraji je sídlo v Trnave. }
+      - { text: Prievidza, why: V Trenčianskom kraji je sídlo v Trenčíne. }
+
+  - id: mesta-na-vahu
+    type: pick
+    prompt: Ktoré z týchto miest ležia na rieke Váh?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/V%C3%A1h
+    tags: [rieky]
+    correct:
+      - { text: Žilina, why: Váh preteká cez celé mesto. }
+      - { text: Trenčín, why: Váh preteká pod trenčianskym hradom. }
+      - { text: Piešťany, why: Kúpeľný ostrov leží priamo na Váhu. }
+      - { text: Ružomberok, why: Mesto leží na hornom toku Váhu. }
+      - { text: Liptovský Mikuláš, why: Pri meste je vodná nádrž Liptovská Mara. }
+      - { text: Hlohovec, why: Mesto na strednom toku Váhu. }
+      - { text: Šaľa, why: Váh ju oddeľuje od Sereďe. }
+      - { text: Komárno, why: Váh sa tu vlieva do Dunaja. }
+    wrong:
+      - { text: Nitra, why: Má vlastnú rieku Nitru, ktorá sa do Váhu vlieva až pri Komárne. }
+      - { text: Zvolen, why: Leží na Hrone. }
+      - { text: Prešov, why: Leží na Torysi, ktorá je na východe. }
+      - { text: Banská Bystrica, why: Leží na Hrone. }
+      - { text: Poprad, why: Leží na rieke Poprad, ktorá tečie do Baltského mora. }
+      - { text: Trnava, why: Leží na malej Trnávke, nie na Váhu. }
+      - { text: Nové Zámky, why: Leží na Nitre, ďaleko od Váhu. }
+
+  - id: mesta-v-presovskom-kraji
+    type: pick
+    prompt: Ktoré z týchto miest ležia v Prešovskom kraji?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    tags: [kraje]
+    correct:
+      - { text: Poprad, why: Po Prešove najväčšie mesto kraja, má vyše 48 000 obyvateľov. }
+      - { text: Bardejov, why: Jeho historické centrum je od roku 2000 v zozname UNESCO. }
+      - { text: Humenné, why: Mesto na rieke Laborec. }
+      - { text: Levoča, why: Spolu so Spišským hradom je v zozname UNESCO. }
+      - { text: Kežmarok, why: Má drevený artikulárny kostol zapísaný do UNESCO. }
+      - { text: Snina, why: Je pod Vihorlatom neďaleko hraníc s Ukrajinou. }
+      - { text: Stará Ľubovňa, why: Mesto pod hradom neďaleko poľskej hranice. }
+      - { text: Medzilaborce, why: Je tu múzeum moderného umenia rodiny Warholovcov. }
+    wrong:
+      - { text: Spišská Nová Ves, why: Leží na Spiši, ale v Košickom kraji. }
+      - { text: Michalovce, why: Je v Košickom kraji. }
+      - { text: Rožňava, why: Je v Košickom kraji. }
+      - { text: Trebišov, why: Je v Košickom kraji. }
+      - { text: Liptovský Mikuláš, why: Je v Žilinskom kraji. }
+      - { text: Rimavská Sobota, why: Je v Banskobystrickom kraji. }
+      - { text: Revúca, why: Je v Banskobystrickom kraji. }
+
+  - id: mesta-v-zilinskom-kraji
+    type: pick
+    prompt: Ktoré z týchto miest ležia v Žilinskom kraji?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    tags: [kraje]
+    correct:
+      - { text: Martin, why: Má vyše 50 000 obyvateľov, hoci krajské sídlo je Žilina. }
+      - { text: Čadca, why: Mesto na Kysuciach, blízko hraníc s Českom a Poľskom. }
+      - { text: Ružomberok, why: Mesto na Váhu v Liptove. }
+      - { text: Liptovský Mikuláš, why: Najväčšie mesto Liptova. }
+      - { text: Dolný Kubín, why: Mesto na Orave. }
+      - { text: Námestovo, why: Mesto na Orave pri Oravskej priehrade. }
+      - { text: Turčianske Teplice, why: Je v Turci, nie v Trenčianskom kraji. }
+      - { text: Bytča, why: Mesto na Váhu medzi Žilinou a Považskou Bystricou. }
+    wrong:
+      - { text: Považská Bystrica, why: Hoci je blízko Žiliny, patrí do Trenčianskeho kraja. }
+      - { text: Púchov, why: Je v Trenčianskom kraji. }
+      - { text: Prievidza, why: Je v Trenčianskom kraji. }
+      - { text: Brezno, why: Je v Banskobystrickom kraji. }
+      - { text: Zvolen, why: Je v Banskobystrickom kraji. }
+      - { text: Poprad, why: Je v Prešovskom kraji. }
+
+  - id: mesta-v-kosickom-kraji
+    type: pick
+    prompt: Ktoré z týchto miest ležia v Košickom kraji?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    tags: [kraje]
+    correct:
+      - { text: Michalovce, why: Mesto na Zemplíne s vyše 34 000 obyvateľmi. }
+      - { text: Spišská Nová Ves, why: Leží na Spiši, ale patrí do Košického kraja. }
+      - { text: Rožňava, why: Mesto na Gemeri. }
+      - { text: Trebišov, why: Mesto na Zemplíne. }
+      - { text: Gelnica, why: Tento okres je v Košickom kraji. }
+      - { text: Moldava nad Bodvou, why: Mesto pri maďarskej hranici. }
+      - { text: Sobrance, why: Mesto pri ukrajinských hraniciach. }
+    wrong:
+      - { text: Poprad, why: Leží na Spiši, ale patrí do Prešovského kraja. }
+      - { text: Humenné, why: Je v Prešovskom kraji. }
+      - { text: Levoča, why: Je v Prešovskom kraji. }
+      - { text: Revúca, why: Je v Banskobystrickom kraji. }
+      - { text: Rimavská Sobota, why: Je v Banskobystrickom kraji. }
+      - { text: Stropkov, why: Je v Prešovskom kraji. }
+      - { text: Snina, why: Je v Prešovskom kraji. }
+
+  - id: mesta-v-trenciansku
+    type: pick
+    prompt: Ktoré z týchto miest ležia v Trenčianskom kraji?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    tags: [kraje]
+    correct:
+      - { text: Trenčín, why: Krajské sídlo má vyše 54 000 obyvateľov. }
+      - { text: Prievidza, why: Najväčšie mesto na Hornej Nitre. }
+      - { text: Považská Bystrica, why: Má vyše 36 000 obyvateľov. }
+      - { text: Púchov, why: Mesto na Váhu neďaleko českých hraníc. }
+      - { text: Myjava, why: Mesto na západe Slovenska pri českých hraniciach. }
+      - { text: Bojnice, why: Je známe hradom aj zoologickou záhradou. }
+      - { text: Nové Mesto nad Váhom, why: Mesto na Váhu. }
+      - { text: Partizánske, why: Vzniklo ako továrenské mesto. }
+    wrong:
+      - { text: Skalica, why: Je v Trnavskom kraji. }
+      - { text: Piešťany, why: Je v Trnavskom kraji, hoci je blízko Trenčína. }
+      - { text: Turčianske Teplice, why: Je v Žilinskom kraji. }
+      - { text: Topoľčany, why: Je v Nitrianskom kraji. }
+      - { text: Zvolen, why: Je v Banskobystrickom kraji. }
+      - { text: Čadca, why: Je v Žilinskom kraji. }
+
+  - id: mesta-na-nitre
+    type: pick
+    prompt: Ktoré z týchto miest ležia na rieke Nitra?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Nitra_(rieka)
+    tags: [rieky]
+    correct:
+      - { text: Prievidza, why: Najväčšie mesto na Hornej Nitre. }
+      - { text: Partizánske, why: Mesto na strednej Nitre. }
+      - { text: Topoľčany, why: Mesto pod Tribečom na rieke Nitra. }
+      - { text: Nitra, why: Rieka dala meno mestu aj kraju. }
+      - { text: Šurany, why: Mesto na dolnom toku. }
+      - { text: Nové Zámky, why: Mesto na dolnom toku Nitry. }
+    wrong:
+      - { text: Levice, why: Leží na Hrone. }
+      - { text: Trnava, why: Leží na Trnávke. }
+      - { text: Zvolen, why: Leží na Hrone. }
+      - { text: Žilina, why: Leží na Váhu. }
+      - { text: Zlaté Moravce, why: Leží na Žitave. }
+      - { text: Hlohovec, why: Leží na Váhu. }
+      - { text: Banská Bystrica, why: Leží na Hrone. }
+
+  - id: mesta-na-hrone
+    type: pick
+    prompt: Ktoré z týchto miest ležia na rieke Hron?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Hron
+    tags: [rieky]
+    correct:
+      - { text: Brezno, why: Mesto v hornom Pohroní. }
+      - { text: Banská Bystrica, why: Hron preteká priamo mestom. }
+      - { text: Zvolen, why: Mesto na strednom Hrone. }
+      - { text: Žiar nad Hronom, why: Meno mesta nesie rieku. }
+      - { text: Žarnovica, why: Mesto v Pohronskej doline. }
+      - { text: Levice, why: Mesto na dolnom Hrone. }
+      - { text: Štúrovo, why: Hron tu ústi do Dunaja. }
+    wrong:
+      - { text: Lučenec, why: Leží pri Ipli a Ondrejovskom potoku. }
+      - { text: Prievidza, why: Leží na Nitre. }
+      - { text: Rimavská Sobota, why: Leží na Rimave. }
+      - { text: Trenčín, why: Leží na Váhu. }
+      - { text: Poprad, why: Leží na rieke Poprad. }
+      - { text: Ružomberok, why: Leží na Váhu. }
+      - { text: Krupina, why: Leží na Krupinici. }
+
+  - id: kupelne-mesta
+    type: pick
+    prompt: Ktoré z týchto miest sú známe kúpeľmi?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_spa_towns_in_Slovakia
+    tags: [kupele]
+    correct:
+      - { text: Piešťany, why: Kúpeľný ostrov a barlička sú symbolmi slovenských kúpeľov. }
+      - { text: Trenčianske Teplice, why: Má tureckú kúpeľňu Hammam Sina. }
+      - { text: Rajecké Teplice, why: Kúpele v Rajeckej doline pri Žiline. }
+      - { text: Turčianske Teplice, why: Kúpeľné mesto v Turci. }
+      - { text: Dudince, why: Okolo 1 400 obyvateľov, patrí k najmenším mestám Slovenska. }
+      - { text: Sliač, why: Kúpele Sliač sú neďaleko Zvolena. }
+      - { text: Bojnice, why: Kúpele aj hrad v jednom meste. }
+    wrong:
+      - { text: Žilina, why: Žilina je dopravná križovatka, nie kúpeľné mesto. }
+      - { text: Nitra, why: Nitra je mesto s hradom, nie kúpeľmi. }
+      - { text: Trnava, why: Trnave sa hovorí Malý Rím, kúpele tam nie sú. }
+      - { text: Banská Štiavnica, why: Banícke mesto, nie kúpeľné. }
+      - { text: Považská Bystrica, why: Priemyselné mesto na Váhu. }
+      - { text: Lučenec, why: Mesto na juhu s textilnou tradíciou, nie kúpeľmi. }
+
+  - id: unesco-mesta
+    type: pick
+    prompt: Ktoré z týchto miest alebo osád majú na svojom území pamiatku zapísanú v zozname UNESCO?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_Slovakia
+    tags: [unesco]
+    correct:
+      - { text: Banská Štiavnica, why: Zapísaná v roku 1993 spolu s technickými pamiatkami okolia. }
+      - { text: Bardejov, why: Ochranná rezervácia, zapísaná v roku 2000. }
+      - { text: Levoča, why: Zapísaná spolu so Spišským hradom. }
+      - { text: Kežmarok, why: Drevený artikulárny kostol je v zozname UNESCO. }
+      - { text: Tvrdošín, why: Drevený kostol Všetkých svätých je v zozname UNESCO. }
+      - { text: Vlkolínec, why: Osada pri Ružomberku je od roku 1993 v zozname UNESCO. }
+    wrong:
+      - { text: Kremnica, why: Mincovňa je tam od roku 1328, ale UNESCO to nezapísalo. }
+      - { text: Trenčín, why: Má slávny hrad, no nie je v zozname UNESCO. }
+      - { text: Košice, why: Dóm svätej Alžbety nie je v zozname UNESCO. }
+      - { text: Nitra, why: Nitriansky hrad nie je v zozname UNESCO. }
+      - { text: Prešov, why: Staré mesto nie je v zozname UNESCO. }
+      - { text: Zvolen, why: Zvolenský zámok nie je v zozname UNESCO. }
+
+  - id: hranicne-prechody-madarsko
+    type: pick
+    prompt: Ktoré z týchto hraničných prechodov vedú do Maďarska?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_hraničných_prechodov_na_Slovensku
+    tags: [hranice]
+    correct:
+      - { text: Štúrovo, why: Cez Dunaj ide most do Ostrihomu. }
+      - { text: Komárno, why: Most cez Dunaj do maďarského Komárna. }
+      - { text: Slovenské Nové Mesto, why: Cez rieku Ronyva do Sátoraljaújhely. }
+      - { text: Milhosť, why: Vedie do Tornyosnémeti. }
+      - { text: Čunovo, why: Prechod je pri Rajke. }
+    wrong:
+      - { text: Jarovce, why: Vedie do Rakúska. }
+      - { text: Brodské, why: Vedie do Česka. }
+      - { text: Skalité, why: Vedie do Poľska. }
+      - { text: Vyšné Nemecké, why: Vedie na Ukrajinu. }
+      - { text: Mosty u Jablunkova, why: Vedie do Česka. }
+      - { text: Petržalka, why: Vedie do Rakúska. }
+
+  - id: evc-okresy
+    type: pick
+    prompt: Ktoré dvojice zo značky a mesta sú správne? (Pôvodné okresné EČV pred rokom 2023.)
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Slovakia
+    tags: [evc]
+    correct:
+      - { text: SN – Spišská Nová Ves, why: Snina má SV. }
+      - { text: SV – Snina, why: Svidník má SK. }
+      - { text: PP – Poprad, why: Prvé písmená mesta. }
+      - { text: RK – Ružomberok, why: Prvé písmená mesta. }
+      - { text: LM – Liptovský Mikuláš, why: Prvé písmená mesta. }
+      - { text: KK – Kežmarok, why: Prvé písmená mesta. }
+      - { text: BJ – Bardejov, why: Nie BR, tá patrí Breznu. }
+    wrong:
+      - { text: BR – Bardejov, why: BR patrí Breznu. }
+      - { text: ZV – Žilina, why: ZV patrí Zvolenu, Žilina mala ZA. }
+      - { text: NZ – Nitra, why: NZ patrí Novým Zámkom. }
+      - { text: MT – Michalovce, why: MT patrí Martinu, Michalovce mali MI. }
+      - { text: PB – Prešov, why: PB patrí Považskej Bystrici, Prešov mal PO. }
+      - { text: TN – Trnava, why: TN patrí Trenčínu, Trnava mala TT. }
+      - { text: LC – Levice, why: LC patrí Lučencu, Levice mali LV. }
+      - { text: SK – Skalica, why: SK patrí Svidníku, Skalica mala SI. }
+
+  - id: mesta-v-nitrianskom-kraji
+    type: pick
+    prompt: Ktoré z týchto miest ležia v Nitrianskom kraji?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    tags: [kraje]
+    correct:
+      - { text: Nitra, why: Krajské mesto má vyše 75 000 obyvateľov. }
+      - { text: Nové Zámky, why: Má vyše 35 000 obyvateľov. }
+      - { text: Komárno, why: Mesto na sútoku Váhu a Dunaja. }
+      - { text: Levice, why: Mesto na Hrone. }
+      - { text: Šaľa, why: Mesto na Váhu. }
+      - { text: Topoľčany, why: Mesto v podhorí Tribeča. }
+      - { text: Štúrovo, why: Mesto na Dunaji oproti Ostrihomu. }
+      - { text: Šahy, why: Leží blízko Ipľa, no patrí do Nitrianskeho kraja. }
+    wrong:
+      - { text: Dunajská Streda, why: Je v Trnavskom kraji. }
+      - { text: Galanta, why: Je v Trnavskom kraji. }
+      - { text: Piešťany, why: Je v Trnavskom kraji. }
+      - { text: Senec, why: Je v Bratislavskom kraji. }
+      - { text: Fiľakovo, why: Je v Banskobystrickom kraji. }
+      - { text: Lučenec, why: Je v Banskobystrickom kraji. }
+      - { text: Hlohovec, why: Je v Trnavskom kraji. }
+
+  - id: viac-ako-30-tisic
+    type: pick
+    prompt: Ktoré z týchto miest mali koncom roka 2025 viac ako 30 000 obyvateľov?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    asOf: "2025-12"
+    tags: [obyvatelia]
+    correct:
+      - { text: Martin, why: Má vyše 50 000 obyvateľov. }
+      - { text: Poprad, why: Má asi 48 000 obyvateľov. }
+      - { text: Prievidza, why: Má asi 42 000 obyvateľov. }
+      - { text: Zvolen, why: Má asi 38 700 obyvateľov. }
+      - { text: Nové Zámky, why: Má asi 35 600 obyvateľov. }
+      - { text: Michalovce, why: Má asi 34 900 obyvateľov. }
+      - { text: Spišská Nová Ves, why: Má asi 34 000 obyvateľov. }
+      - { text: Komárno, why: Má asi 31 600 obyvateľov. }
+    wrong:
+      - { text: Liptovský Mikuláš, why: Má asi 29 700 obyvateľov. }
+      - { text: Bardejov, why: Má asi 29 500 obyvateľov. }
+      - { text: Humenné, why: Má asi 29 200 obyvateľov. }
+      - { text: Piešťany, why: Má asi 26 100 obyvateľov. }
+      - { text: Ružomberok, why: Má asi 26 100 obyvateľov. }
+      - { text: Lučenec, why: Má asi 24 400 obyvateľov. }
+
+  - id: poradie-najvacsie-mesta
+    type: order
+    prompt: Zoraď mestá podľa počtu obyvateľov od najväčšieho.
+    direction: desc
+    unit: obyvateľov
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    asOf: "2025-12"
+    items:
+      - { text: Prešov, value: 81223 }
+      - { text: Žilina, value: 79873 }
+      - { text: Nitra, value: 75301 }
+      - { text: Banská Bystrica, value: 73054 }
+      - { text: Trnava, value: 63184 }
+      - { text: Trenčín, value: 54104 }
+
+  - id: poradie-stredne-mesta
+    type: order
+    prompt: Zoraď mestá podľa počtu obyvateľov od najväčšieho.
+    direction: desc
+    unit: obyvateľov
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+    asOf: "2025-12"
+    items:
+      - { text: Martin, value: 50153 }
+      - { text: Poprad, value: 48034 }
+      - { text: Prievidza, value: 41959 }
+      - { text: Zvolen, value: 38747 }
+      - { text: Považská Bystrica, value: 36690 }
+      - { text: Nové Zámky, value: 35628 }
+
+  - id: poradie-kraje-rozloha
+    type: order
+    prompt: Zoraď kraje podľa rozlohy od najväčšieho.
+    direction: desc
+    unit: km²
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Regions_of_Slovakia
+    items:
+      - { text: Banskobystrický kraj, value: 9454 }
+      - { text: Prešovský kraj, value: 8973 }
+      - { text: Žilinský kraj, value: 6808 }
+      - { text: Košický kraj, value: 6754 }
+      - { text: Nitriansky kraj, value: 6344 }
+      - { text: Trenčiansky kraj, value: 4502 }
+
+  - id: poradie-kraje-obyvatelia
+    type: order
+    prompt: Zoraď kraje podľa počtu obyvateľov od najľudnatejšieho.
+    direction: desc
+    unit: obyvateľov
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Regions_of_Slovakia
+    asOf: "2025"
+    items:
+      - { text: Prešovský kraj, value: 810075 }
+      - { text: Košický kraj, value: 777933 }
+      - { text: Bratislavský kraj, value: 739635 }
+      - { text: Žilinský kraj, value: 684190 }
+      - { text: Nitriansky kraj, value: 661995 }
+      - { text: Banskobystrický kraj, value: 607581 }
+
+  - id: obyvatelia-kosice
+    type: number
+    prompt: Koľko obyvateľov mali Košice koncom roka 2025?
+    answer: 222286
+    unit: obyvateľov
+    scale: log
+    tolerance: 0.05
+    asOf: "2025-12"
+    why: Druhé najväčšie mesto Slovenska, od Bratislavy ich delí viac ako 250 000 ľudí.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+
+  - id: obyvatelia-banska-bystrica
+    type: number
+    prompt: Koľko obyvateľov mala Banská Bystrica koncom roka 2025?
+    answer: 73054
+    unit: obyvateľov
+    scale: log
+    tolerance: 0.08
+    asOf: "2025-12"
+    why: Je šieste najväčšie mesto Slovenska.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
+
+  - id: pocet-okresov
+    type: number
+    prompt: Na koľko okresov je rozdelené Slovensko?
+    answer: 79
+    unit: okresov
+    scale: linear
+    tolerance: 3
+    asOf: "2026"
+    why: Slovensko má 79 okresov a 8 krajov.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_municipalities_and_towns_in_Slovakia
+
+  - id: pocet-obci
+    type: number
+    prompt: Koľko obcí (vrátane miest) je na Slovensku?
+    answer: 2891
+    unit: obcí
+    scale: log
+    tolerance: 0.05
+    asOf: "2026"
+    why: Priemerná obec má asi 1 900 obyvateľov.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_municipalities_and_towns_in_Slovakia
+
+  - id: rieka-banska-bystrica
+    type: choice
+    prompt: Ktorá rieka preteká Banskou Bystricou?
+    correct: { text: Hron, why: Hron pramení pri Telgárte a tečie cez Brezno, Banskú Bystricu a Zvolen. }
+    wrong:
+      - { text: Váh, why: Váh preteká Žilinou a Trenčínom. }
+      - { text: Nitra, why: Nitra preteká Prievidzou a Nitrou. }
+      - { text: Hornád, why: Hornád preteká Košicami. }
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hron
+
+  - id: bratislava-susedia
+    type: choice
+    prompt: S ktorými dvoma štátmi hraničí Bratislava priamo svojím územím?
+    correct: { text: Rakúsko a Maďarsko, why: Podľa Wikipédie je jediné hlavné mesto, ktoré hraničí s dvoma štátmi. }
+    wrong:
+      - { text: Rakúsko a Česko, why: S Českom Bratislava nehraničí, najbližší prechod je až v Brodskom. }
+      - { text: Maďarsko a Ukrajina, why: Ukrajina je na opačnom konci krajiny. }
+      - { text: Poľsko a Rakúsko, why: Poľsko je ďaleko na severe. }
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Bratislava

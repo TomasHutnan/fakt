@@ -1,0 +1,680 @@
+id: sk-priroda
+title: Slovenská príroda
+description: Ryby, huby, štíty, jaskyne, plesá, tajchy a zvieratá slovenskej prírody.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: ryby-povodne
+    type: pick
+    prompt: Ktoré z týchto rýb patria medzi pôvodné druhy našich riek a jazier?
+    difficulty: 2
+    tags: [ryby]
+    source: https://sk.wikipedia.org/wiki/Hlavátka_podunajská
+    correct:
+      - text: hlavátka podunajská
+        why: Najväčšia lososovitá ryba Európy; žije v Dunaji a jeho prítokoch.
+      - text: pstruh potočný
+        why: Typická ryba horských potokov, zlatá s červenými bodkami.
+      - text: lipeň tymiánový
+        why: Latinský názov pripomína tymián, lebo čerstvo chytený vraj tak vonia.
+      - text: sumec veľký
+        why: Náš najväčší sladkovodný dravec; môže mať vyše dvoch metrov.
+      - text: šťuka obyčajná
+        why: Číha v trstine a vie sa v okamihu vymrštiť za korisťou.
+      - text: mrena obyčajná
+        why: Rybári ju poznajú podľa fúzov, žije v prúdivých úsekoch riek.
+      - text: lieň sliznatý
+        why: Má jemné šupiny pokryté hlienom; kedysi sa verilo, že lieči iné ryby.
+      - text: jeseter malý
+        why: Sterlet, nenápadný príbuzný jesetera; v Dunaji prežíva, no je kriticky ohrozený.
+    wrong:
+      - text: pstruh dúhový
+        why: Zo Severnej Ameriky, k nám ho priniesli na chov a športový výlov.
+      - text: amur biely
+        why: Pôvodom z Ďalekého východu, vysádzaný proti zarastaniu vôd.
+      - text: tolstolobik biely
+        why: Ázijský filtrátor, k nám ho priniesli na zarybňovanie nádrží.
+      - text: sumček hnedý
+        why: Americký prišelec, ktorý sa udomácnil v stojatých vodách.
+      - text: slnečnica pestrá
+        why: Farebná ryba z Ameriky, ušla z akvárií a záhradných jazierok.
+
+  - id: huby-jedle
+    type: pick
+    prompt: Ktoré z týchto húb sú jedlé?
+    difficulty: 1
+    tags: [huby]
+    source: https://sk.wikipedia.org/wiki/Jedlé_huby
+    correct:
+      - text: hríb smrekový
+        why: Kráľ húb, v kuchyni aj v hubárskych príbehoch.
+      - text: kuriatko jedlé
+        why: Žltá líška, ktorá je len zriedka červivá.
+      - text: masliak obyčajný
+        why: Pred varením sa mu zvykne zlupovať slizká pokožka.
+      - text: kozák brezový
+        why: Rastie pod brezami a po uvarení tmavne.
+      - text: hliva ustricovitá
+        why: Rastie na kmeňoch stromov a dnes sa aj pestuje.
+      - text: pečiarka poľná
+        why: Divá príbuzná šampiňónov z obchodu.
+    wrong:
+      - text: muchotrávka zelená
+        why: Smrteľne jedovatá; jedna huba stačí na vážnu otravu.
+      - text: muchotrávka tigrovaná
+        why: Jedovatá, často ju hubári mýlia s jedlou muchotrávkou šedivkou.
+      - text: muchotrávka červená
+        why: Ikonická huba z rozprávok a jedovatá.
+      - text: hríb satanský
+        why: Pekne vyzerá, ale jedovatý; po rozrezaní modrie.
+      - text: pečiarka žltnúca
+        why: Voňavá ako šampiňón, no po varení zapácha po fenole a spôsobí zažívacie ťažkosti.
+      - text: závojenka olovová
+        why: Vábivo voňa po múke, ale patrí medzi najčastejšie príčiny otráv.
+      - text: hríb žlčový
+        why: Nie je jedovatý, ale je neznesiteľne horký a jedno jedlo skazí.
+
+  - id: cicavce-divo
+    type: pick
+    prompt: Ktoré z týchto cicavcov žijú voľne na Slovensku?
+    difficulty: 1
+    tags: [zvieratá]
+    source: https://sk.wikipedia.org/wiki/Zoznam_cicavcov_Slovenska
+    correct:
+      - text: medveď hnedý
+        why: Karpaty sú jeho veľké útočisko v strednej Európe.
+      - text: rys ostrovid
+        why: Najväčšia mačkovitá šelma Európy a pritom výnimočne plachá.
+      - text: vlk dravý
+        why: Po desaťročiach prenasledovania sa vrátil do našich hôr.
+      - text: mačka divá
+        why: Nie je to zdomácnená mačka, má hrubší chvost s tupým koncom.
+      - text: vydra riečna
+        why: Dokáže plávať pod vodou a ryby loví aj v zime.
+      - text: kamzík vrchovský
+        why: Tatranský poddruh žije vo vysokých polohách Tatier.
+      - text: svišť vrchovský
+        why: Hvizdom varuje celú kolóniu a prespí celú zimu.
+      - text: syseľ obyčajný
+        why: Malý hlodavec otvorených lúk a pasienkov, na Slovensku je veľmi ohrozený.
+    wrong:
+      - text: sob polárny
+        why: Žije v tundre severnej Európy a Ruska.
+      - text: rys iberský
+        why: Najohrozenejšia mačka sveta, žije na Pyrenejskom polostrove.
+      - text: kamzík pyrenejský
+        why: Tak ako názov hovorí, patrí Pyrenejom.
+      - text: medveď čierny
+        why: Baribal žije v Severnej Amerike.
+      - text: bizón americký
+        why: Symbol prérií, nie karpatských lesov.
+      - text: vlk hrivnatý
+        why: Dlhonohý lesný vlk z Južnej Ameriky.
+
+  - id: nepovodne-zivocichy
+    type: pick
+    prompt: Ktoré z týchto cicavcov nie sú na Slovensku pôvodné a dostali sa k nám vďaka človeku?
+    difficulty: 2
+    tags: [zvieratá, invázne]
+    source: https://invaznedruhy.sopsr.sk/
+    correct:
+      - text: ondatra pižmová
+        why: Z Ameriky ju do Európy priniesli kvôli kožušine a utiekla z fariem.
+      - text: norok americký
+        why: Utečenec z kožušinových fariem, ohrozuje pôvodné druhy.
+      - text: medvedík čistotný
+        why: Mýval z Ameriky; v Európe sa rozšíril z chovov.
+      - text: psík medvedíkovitý
+        why: Východoázijský príbuzný líšky, vypúšťaný do lesov kvôli kožušine.
+      - text: nutria riečna
+        why: Juhoamerický hlodavec rozšírený z chovov.
+      - text: muflón lesný
+        why: Divá ovca pôvodom z Korziky a Sardínie.
+      - text: daniel škvrnitý
+        why: Pôvodne zo stredomoria, do našich parkov a obôr ho priniesli pre ozdobu a lov.
+    wrong:
+      - text: jazvec lesný
+        why: Pôvodný obyvateľ našich lesov, ryje rozsiahle podzemné nory.
+      - text: vydra riečna
+        why: Pôvodná šelma vodných tokov.
+      - text: bobor vodný
+        why: Pôvodný, v 19. storočí vyhubený a späť sa vrátil.
+      - text: hranostaj
+        why: Pôvodný, v zime má biely kabát.
+      - text: srnec lesný
+        why: Pôvodný, jedna z našich najbežnejších zveri.
+      - text: plch sivý
+        why: Pôvodný hlodavec, ktorý prespí väčšinu roka.
+
+  - id: vtaky-hniezdia
+    type: pick
+    prompt: Ktoré z týchto vtákov hniezdia na Slovensku?
+    difficulty: 2
+    tags: [vtáky]
+    source: https://sk.wikipedia.org/wiki/Zoznam_vtákov_Slovenska
+    correct:
+      - text: orol skalný
+        why: Hniezdi v horách, napríklad v Tatrách a na Muránskej planine.
+      - text: bocian čierny
+        why: Opak bociana bieleho; plachý, hniezdi v hlbokých lesoch.
+      - text: výr skalný
+        why: Najväčšia sova Európy, s rozpätím krídel okolo dvoch metrov.
+      - text: tetrov hlucháň
+        why: V období toku nepočuje, čo sa deje okolo, odtiaľ jeho meno.
+      - text: dudok chochlatý
+        why: Exotický vtáčik s chocholom hniezdi aj v našich južných sadoch.
+      - text: rybárik riečny
+        why: Modrozelený drahokam brehov riek.
+      - text: včelárik zlatý
+        why: Farebný juhoeurópsky druh, ktorý hniezdi v pieskových brehoch.
+    wrong:
+      - text: plameniak ružový
+        why: Na Slovensku len občas zablúdi, hniezdi v južnej Európe.
+      - text: pelikán kučeravý
+        why: Občas zaletí k nám, hniezdi až na Balkáne.
+      - text: albatros túlavý
+        why: Oceánsky vták, na Slovensku ho nikto nezažije.
+      - text: tučniak cisársky
+        why: Žije len v Antarktíde.
+      - text: orol bielohlavý
+        why: Americký symbol, v Európe v prírode nežije.
+      - text: kondor andský
+        why: Obyvateľ Ánd v Južnej Amerike.
+      - text: kolibrík
+        why: Žijú len v Amerike.
+
+  - id: stromy-povodne
+    type: pick
+    prompt: Ktoré z týchto drevín rastú na Slovensku odpradávna a sú pôvodné?
+    difficulty: 2
+    tags: [stromy]
+    source: https://sk.wikipedia.org/wiki/Zoznam_drevín_Slovenska
+    correct:
+      - text: buk lesný
+        why: Najrozšírenejší listnatý strom našich lesov.
+      - text: jedľa biela
+        why: Má ploché ihlice s dvoma bielymi pásikmi a šišky stoja vzpriamene.
+      - text: borovica limbová
+        why: Limba rastie vo vysokých polohách Tatier a vydrží aj poriadnu zimu.
+      - text: tis obyčajný
+        why: Pomalý ihličnan; jedovaté je takmer všetko okrem červeného obalu semien.
+      - text: lipa malolistá
+        why: Strom slovenských dedín, z jej kvetov sa robí čaj.
+      - text: javor horský
+        why: Hrebienky aj pohorie majú v názve; je to strom hôr.
+      - text: jaseň štíhly
+        why: Pôvodný strom lužných lesov a rokliniek.
+      - text: hrab obyčajný
+        why: Veľmi tvrdé drevo, v lesoch rastie často spolu s dubom.
+    wrong:
+      - text: agát biely
+        why: Pôvodom zo Severnej Ameriky, k nám sa dostal v 17. storočí.
+      - text: pagaštan konský
+        why: Z Balkánu; ozdoba parkov a aleja.
+      - text: pajaseň žliazkatý
+        why: Z Číny, dnes agresívna inváznička.
+      - text: orech čierny
+        why: Z Ameriky, vysádzaný pre cenné drevo.
+      - text: douglaska tisolistá
+        why: Zo Severnej Ameriky, vysádza sa v lesnom hospodárstve.
+      - text: ginko dvojlaločné
+        why: Čínsky pamätník dinosaurov, u nás len v parkoch.
+
+  - id: jaskyne-unesco
+    type: pick
+    prompt: Ktoré z týchto jaskýň sú súčasťou lokality UNESCO Jaskyne Aggteleckého a Slovenského krasu?
+    difficulty: 3
+    tags: [jaskyne, UNESCO]
+    source: https://slovakia.travel/en/unesco-natural-heritage
+    correct:
+      - text: Domica
+        why: Nadväzuje na maďarskú jaskyňu Baradla, jedna z najvýznamnejších krasových jaskýň.
+      - text: Ochtinská aragonitová jaskyňa
+        why: Jedna z mála aragonitových jaskýň sveta, s vzácnymi kryštálmi.
+      - text: Gombasecká jaskyňa
+        why: Je známa jemnými brčkovými stalaktitmi.
+      - text: Jasovská jaskyňa
+        why: Najstaršia sprístupnená jaskyňa Slovenska; pre turistov ju otvorili v roku 1846.
+      - text: Krásnohorská jaskyňa
+        why: Obsahuje najvyšší známy stalagmit na svete.
+      - text: Dobšinská ľadová jaskyňa
+        why: Do zoznamu UNESCO pribudla až v roku 2000.
+      - text: Silická ľadnica
+        why: Ľad sa v nej drží celoročne, hoci leží v nízkej nadmorskej výške.
+    wrong:
+      - text: Demänovská jaskyňa slobody
+        why: Najnavštevovanejšia jaskyňa, ale nie je v zozname UNESCO.
+      - text: Belianska jaskyňa
+        why: Najbližšie k Tatrám, no vo svetovom dedičstve nie je.
+      - text: Bystrianska jaskyňa
+        why: Je pri Nízkych Tatrách, v zozname UNESCO nie je.
+      - text: Harmanecká jaskyňa
+        why: Je pri Banskej Bystrici, nie v Slovenskom krase.
+      - text: Važecká jaskyňa
+        why: Leží pri Tatrách, nie v Slovenskom krase.
+      - text: Driny
+        why: Jediná sprístupnená jaskyňa v Malých Karpatoch.
+      - text: Bojnická hradná jaskyňa
+        why: Je priamo pod bojnickým zámkom.
+
+  - id: narodne-parky
+    type: pick
+    prompt: Ktoré z týchto chránených území na Slovensku majú štatút národného parku?
+    difficulty: 1
+    tags: [chránené územia]
+    source: https://en.wikipedia.org/wiki/National_parks_of_Slovakia
+    correct:
+      - text: Tatranský národný park
+        why: Najstarší, vznikol v roku 1949.
+      - text: Pieniny
+        why: Najmenší národný park Slovenska; splavujú sa tam plte po Dunajci.
+      - text: Nízke Tatry
+        why: Najrozsiahlejší národný park Slovenska.
+      - text: Malá Fatra
+        why: Jánošíkove diery a Rozsutec nájdete práve tu.
+      - text: Veľká Fatra
+        why: Najmladší národný park spolu so Slovenským krasom (2002).
+      - text: Slovenský raj
+        why: Rokliny so rebríkmi a lávkami.
+      - text: Muránska planina
+        why: Planina vo viacerých okresoch, kde žijú divé koníky.
+      - text: Poloniny
+        why: Východné Slovensko, s pralesmi pri ukrajinských hraniciach.
+      - text: Slovenský kras
+        why: Planiny plné jaskýň pri hraniciach s Maďarskom.
+    wrong:
+      - text: CHKO Poľana
+        why: Chránená krajinná oblasť (a biosférická rezervácia), nie národný park.
+      - text: CHKO Biele Karpaty
+        why: Chránená krajinná oblasť na hranici s Českom.
+      - text: CHKO Štiavnické vrchy
+        why: Chránená krajinná oblasť, nie národný park.
+      - text: CHKO Strážovské vrchy
+        why: Chránená krajinná oblasť, nie národný park.
+      - text: CHKO Malé Karpaty
+        why: Chránená krajinná oblasť pri Bratislave.
+      - text: CHKO Kysuce
+        why: Chránená krajinná oblasť, nie národný park.
+
+  - id: tajchy-stiavnica
+    type: pick
+    prompt: Ktoré z týchto vodných plôch sú tajchy pri Banskej Štiavnici?
+    difficulty: 2
+    tags: [vody, tajchy]
+    source: https://slovakia.travel/en/tajchy-of-banska-stiavnica
+    correct:
+      - text: Počúvadlianske jazero
+        why: Najväčší tajch, dnes obľúbené kúpalisko.
+      - text: Ottergrundské jazero
+        why: Najvyššie položený tajch, vo výške 939 m n. m.
+      - text: Veľká Richňavská
+        why: Jeden z najznámejších tajchov v lese nad mestom.
+      - text: Klinger
+        why: Umelá banícka nádrž v Štiavnických vrchoch.
+      - text: Evička
+        why: Jeden z tajchov v Štiavnických vrchoch.
+      - text: Vindšachta
+        why: Ďalší z banských tajchov v okolí mesta.
+    wrong:
+      - text: Oravská priehrada
+        why: Veľká priehrada z 20. storočia, žiaden banícky tajch.
+      - text: Liptovská Mara
+        why: Veľká priehrada na Váhu.
+      - text: Zemplínska šírava
+        why: Rozsiahla nádrž na východe.
+      - text: Domaša
+        why: Priehrada pri Vranove nad Topľou.
+      - text: Ružín
+        why: Priehrada na Hornáde pri Košiciach.
+      - text: Palcmanská Maša
+        why: Priehrada v Slovenskom raji.
+
+  - id: plesa-tatry
+    type: pick
+    prompt: Ktoré z týchto vodných plôch ležia vo Vysokých Tatrách?
+    difficulty: 1
+    tags: [vody, plesá]
+    source: https://sk.wikipedia.org/wiki/Veľké_Hincovo_pleso
+    correct:
+      - text: Štrbské pleso
+        why: Morénové jazero, okolo ktorého vyrástlo celé stredisko.
+      - text: Popradské pleso
+        why: Východisko turistov na Rysy a do Mengusovskej doliny.
+      - text: Skalnaté pleso
+        why: V dlhom suchu aj vyschne.
+      - text: Veľké Hincovo pleso
+        why: Najväčšie a najhlbšie pleso na slovenskej strane Tatier.
+      - text: Zelené pleso
+        why: Leží pod Kežmarským štítom, na brehu stojí chata.
+      - text: Batizovské pleso
+        why: Stojí pod Batizovským štítom.
+    wrong:
+      - text: Morské oko
+        why: Je vo Vihorlatských vrchoch, pri hraniciach s Ukrajinou.
+      - text: Počúvadlianske jazero
+        why: Umelé jazero pri Banskej Štiavnici.
+      - text: Zemplínska šírava
+        why: Umelá nádrž na východe, nie horské pleso.
+      - text: Oravská priehrada
+        why: Najväčšia vodná plocha Slovenska, 35 km2.
+      - text: Palcmanská Maša
+        why: Nádrž v Slovenskom raji.
+      - text: Liptovská Mara
+        why: Priehrada pod Tatrami, nie tatranské pleso.
+
+  - id: pritoky-vahu
+    type: pick
+    prompt: Ktoré z týchto riek sú prítokmi Váhu?
+    difficulty: 2
+    tags: [rieky]
+    source: https://sk.wikipedia.org/wiki/Váh
+    correct:
+      - text: Orava
+        why: Spája sa s Váhom pri Kraľovanoch.
+      - text: Kysuca
+        why: Do Váhu ústi pri Žiline.
+      - text: Belá
+        why: Tečie z Tatier do Váhu v Liptove.
+      - text: Turiec
+        why: Zbiera vody turčianskej kotliny.
+      - text: Rajčianka
+        why: Pretekajú ňou Rajec a Rajecké Teplice.
+      - text: Revúca
+        why: Z Veľkej Fatry do Váhu.
+      - text: Ľubochnianka
+        why: Z hôr Veľkej Fatry.
+    wrong:
+      - text: Hron
+        why: Pramení pod Kráľovou hoľou a ústí do Dunaja pri Štúrove.
+      - text: Hornád
+        why: Odteká do Maďarska, kde sa vlieva do Sajó a cez Tisu do Dunaja.
+      - text: Poprad
+        why: Poprad ide cez poľský Dunajec do Baltiku, nie do Čierneho mora.
+      - text: Ipeľ
+        why: Ústi priamo do Dunaja.
+      - text: Laborec
+        why: Tečie východom do Latorice a Bodrogu.
+      - text: Torysa
+        why: Pretekajú ňou Prešov a ústi do Hornádu.
+      - text: Ondava
+        why: Spolu s Latoricou vytvára Bodrog.
+
+  - id: mineralky-sk
+    type: pick
+    prompt: Ktoré z týchto minerálnych vôd pochádzajú zo Slovenska?
+    difficulty: 1
+    tags: [minerálky]
+    source: https://www.noviny.sk/slovensko/544534-najznamejsou-mineralkou-u-slovakov-je-znacka-budis
+    correct:
+      - text: Budiš
+        why: Najznámejšia slovenská minerálka, z vrtu pri obci Budiš.
+      - text: Santovka
+        why: Prameň je pri Dudinciach.
+      - text: Salvator
+        why: Pramení pri Lipovciach neďaleko Prešova.
+      - text: Kláštorná
+        why: Z vrtu pri Kláštore pod Znievom.
+      - text: Fatra
+        why: Minerálka z Turčianskej kotliny.
+    wrong:
+      - text: Mattoni
+        why: Pramení v Kyselke v Česku.
+      - text: Vincentka
+        why: Je z Luhačovíc na Morave.
+      - text: Poděbradka
+        why: Z českých Poděbrad.
+      - text: Gerolsteiner
+        why: Nemecká minerálka z Eifelu.
+      - text: Borjomi
+        why: Gruzínska minerálka.
+      - text: Radenska
+        why: Slovinská minerálka.
+
+  - id: pohoria-sk
+    type: pick
+    prompt: Ktoré z týchto pohorí ležia aspoň sčasti na území Slovenska?
+    difficulty: 1
+    tags: [hory]
+    source: https://sk.wikipedia.org/wiki/Geomorfologické_členenie_Slovenska
+    correct:
+      - text: Vtáčnik
+        why: Pohorie v Hornonitrianskej kotline.
+      - text: Tribeč
+        why: Leží nad Nitrou.
+      - text: Kremnické vrchy
+        why: Pohorie pri Kremnici s lyžiarskym strediskom Skalka.
+      - text: Slanské vrchy
+        why: Sopečné pohorie pri Prešove a Košiciach.
+      - text: Poľana
+        why: Zhasnutý vulkán nad Zvolenom a Detvou.
+      - text: Strážovské vrchy
+        why: Pohorie nad stredným Považím.
+      - text: Biele Karpaty
+        why: Pohorie na hranici s Českom.
+      - text: Štiavnické vrchy
+        why: Sopečné pohorie s Banskou Štiavnicou.
+    wrong:
+      - text: Šumava
+        why: Je v Česku, pri hraniciach s Nemeckom a Rakúskom.
+      - text: Krkonoše
+        why: Najvyššie hory Česka s Sněžkou.
+      - text: Jeseníky
+        why: Pohorie na Morave a v Sliezsku.
+      - text: Bieszczady
+        why: Poľské pohorie pri slovenskej hranici.
+      - text: Mátra
+        why: Najvyššie pohorie Maďarska.
+      - text: Retezat
+        why: Rumunské Karpaty.
+
+  - id: stity-vysoke-tatry
+    type: pick
+    prompt: Ktoré z týchto vrcholov ležia vo Vysokých Tatrách?
+    difficulty: 2
+    tags: [hory]
+    source: https://sk.wikipedia.org/wiki/Vysoké_Tatry
+    correct:
+      - text: Gerlachovský štít
+        why: Najvyšší vrchol Slovenska, 2 655 m n. m.
+      - text: Lomnický štít
+        why: Dá sa naň vyviezť lanovkou.
+      - text: Ľadový štít
+        why: Stojí blízko Lomnického štítu.
+      - text: Slavkovský štít
+        why: Dominanta nad Starým Smokovcom.
+      - text: Kriváň
+        why: Symbol Slovenska.
+      - text: Rysy
+        why: Hraničný vrchol, jeden z najnavštevovanejších tatranských štítov.
+      - text: Kežmarský štít
+        why: Zdvíha sa nad Zeleným plesom.
+    wrong:
+      - text: Ďumbier
+        why: Najvyšší vrch Nízkych Tatier.
+      - text: Chopok
+        why: Dominanta Nízkych Tatier.
+      - text: Veľký Rozsutec
+        why: Malá Fatra.
+      - text: Kráľova hoľa
+        why: Nízke Tatry.
+      - text: Bystrá
+        why: Najvyšší vrch Západných Tatier, nie Vysokých.
+      - text: Sitno
+        why: Dominanta Štiavnických vrchov.
+
+  - id: vahy-priehrady
+    type: pick
+    prompt: Ktoré z týchto vodných nádrží ležia priamo na toku Váhu?
+    difficulty: 3
+    tags: [vody]
+    source: https://sk.wikipedia.org/wiki/Váh
+    correct:
+      - text: Liptovská Mara
+        why: Najväčšia slovenská priehrada podľa objemu.
+      - text: Hričov
+        why: Pri Žiline.
+      - text: Sĺňava
+        why: Pri Piešťanoch, kde Váh tvorí obľúbenú vodnú plochu.
+      - text: Kráľová
+        why: Pri Šali.
+      - text: Madunice
+        why: Pri Hlohovci.
+      - text: Nosice
+        why: Pri Považskej Bystrici.
+    wrong:
+      - text: Oravská priehrada
+        why: Je na Orave, ktorá do Váhu ústi až pod ňou.
+      - text: Zemplínska šírava
+        why: Je na východe Slovenska, nie na Váhu.
+      - text: Domaša
+        why: Leží na Ondave.
+      - text: Ružín
+        why: Leží na Hornáde.
+      - text: Palcmanská Maša
+        why: Leží na Hnilci.
+
+  # ---------------------------------------------------------------- order
+  - id: najvyssie-stity
+    type: order
+    prompt: Zoraď vrchy od najvyššieho.
+    direction: desc
+    unit: m n. m.
+    difficulty: 2
+    tags: [hory]
+    source: https://sk.wikipedia.org/wiki/Zoznam_najvyšších_vrchov_Slovenska
+    items:
+      - { text: Gerlachovský štít, value: 2655 }
+      - { text: Lomnický štít, value: 2634 }
+      - { text: Rysy, value: 2503 }
+      - { text: Kriváň, value: 2494 }
+      - { text: Ďumbier, value: 2046 }
+      - { text: Chopok, value: 2024 }
+
+  - id: rieky-dlzka
+    type: order
+    prompt: Zoraď rieky od najdlhšej (celková dĺžka toku).
+    direction: desc
+    unit: km
+    difficulty: 2
+    tags: [rieky]
+    source: https://en.wikipedia.org/wiki/List_of_rivers_of_Slovakia
+    items:
+      - { text: Váh, value: 403 }
+      - { text: Hron, value: 298 }
+      - { text: Ipeľ, value: 232.5 }
+      - { text: Nitra, value: 197 }
+      - { text: Poprad, value: 169 }
+
+  - id: np-rok
+    type: order
+    prompt: Zoraď národné parky od najstaršieho (rok vyhlásenia).
+    direction: asc
+    unit: rok
+    difficulty: 3
+    tags: [chránené územia]
+    source: https://en.wikipedia.org/wiki/National_parks_of_Slovakia
+    items:
+      - { text: Tatranský národný park, value: 1949 }
+      - { text: Pieniny, value: 1967 }
+      - { text: Nízke Tatry, value: 1978 }
+      - { text: Malá Fatra, value: 1988 }
+      - { text: Poloniny, value: 1997 }
+      - { text: Slovenský kras, value: 2002 }
+
+  - id: plesa-vyska
+    type: order
+    prompt: Zoraď tatranské plesá od najnižšie položeného.
+    direction: asc
+    unit: m n. m.
+    difficulty: 3
+    tags: [vody, plesá]
+    source: https://sk.wikipedia.org/wiki/Skalnaté_pleso
+    items:
+      - { text: Štrbské pleso, value: 1346 }
+      - { text: Popradské pleso, value: 1494 }
+      - { text: Skalnaté pleso, value: 1754 }
+      - { text: Veľké Hincovo pleso, value: 1946 }
+
+  # ---------------------------------------------------------------- number
+  - id: pocet-np
+    type: number
+    prompt: Koľko národných parkov je na Slovensku?
+    answer: 9
+    unit: národných parkov
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Od roku 1949 (Tatry) do 2002 (Veľká Fatra a Slovenský kras).
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/National_parks_of_Slovakia
+
+  - id: hincovo-hlbka
+    type: number
+    prompt: Aké hlboké je najhlbšie tatranské pleso Veľké Hincovo?
+    answer: 53.7
+    unit: m
+    scale: linear
+    tolerance: 5
+    why: Najhlbšie a zároveň najväčšie pleso na slovenskej strane Tatier.
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Veľké_Hincovo_pleso
+
+  - id: vah-dlzka
+    type: number
+    prompt: Aký dlhý je Váh, najdlhšia slovenská rieka?
+    answer: 403
+    unit: km
+    scale: log
+    tolerance: 0.1
+    why: Vzniká spojením Čierneho a Bieleho Váhu a pri Komárne ústi do Dunaja.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Váh
+
+  - id: tanap-rok
+    type: number
+    prompt: V ktorom roku vznikol Tatranský národný park, prvý národný park na Slovensku?
+    answer: 1949
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Účinnosť získal 1. januára 1949.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/National_parks_of_Slovakia
+
+  # ---------------------------------------------------------------- choice
+  - id: najdlhsia-jaskyna
+    type: choice
+    prompt: Ktorý z týchto jaskynných systémov je najdlhší na Slovensku?
+    difficulty: 2
+    tags: [jaskyne]
+    source: https://www.ssj.sk/en/clanok/197-demanovske-caves
+    correct:
+      text: Demänovský jaskynný systém
+      why: V Nízkych Tatrách, jeho zmapované chodby majú viac ako 40 km.
+    wrong:
+      - text: Belianská jaskyňa
+        why: Jej turistická trasa je len okolo kilometra.
+      - text: Dobšinská ľadová jaskyňa
+        why: Ľadová výplň je známa, ale priestory sú malé.
+      - text: Domica
+        why: Slovenská časť je krátka, väčšina systému je v Maďarsku.
+
+  - id: najvacsia-otrava
+    type: choice
+    prompt: Ktorá huba má na svedomí najviac smrteľných otráv hubami?
+    difficulty: 1
+    tags: [huby]
+    source: https://en.wikipedia.org/wiki/Amanita_phalloides
+    correct:
+      text: muchotrávka zelená
+      why: Jej jedy ničia pečeň a prvé príznaky prídu až po hodinách.
+    wrong:
+      - text: muchotrávka červená
+        why: Jedovatá, no smrteľná otrava je veľmi vzácna.
+      - text: hríb satanský
+        why: Jedovatý, no smrteľná otrava je veľmi vzácna.
+      - text: hríb žlčový
+        why: Je nejedlý pre horkosť, nie jedovatý.
