@@ -1,0 +1,581 @@
+id: sk-skolske-minimum
+title: Školské minimum
+description: Povinné čítanie, štúrovci, vybrané slová, pády, vzorce, periodická tabuľka a zemepis. Všetko, čo sme sa v škole učili a napoly zabudli.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------- pick ----------
+  - id: pseudonymy-spisovatelov
+    type: pick
+    prompt: "Ktoré dvojice pseudonymu a skutočného mena spisovateľa sú správne?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Ivan_Krasko
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Andrej_Sládkovič, Jozef_Gregor_Tajovský, Ladislav_Nádaši-Jégé, Svetozár_Hurban-Vajanský, Pavol_Országh_Hviezdoslav, Martin_Kukučín, Timrava."
+    tags: [literatúra, pseudonymy]
+    correct:
+      - { text: "Ivan Krasko – Ján Botto", why: "Áno, volal sa rovnako ako štúrovský básnik Ján Botto, autor Smrti Jánošíkovej." }
+      - { text: "Andrej Sládkovič – Andrej Braxatoris", why: "Autor Maríny písal pod pseudonymom, rodné meno mal Braxatoris." }
+      - { text: "Jozef Gregor Tajovský – Jozef Gregor", why: "Prídomok Tajovský má podľa rodnej obce Tajov." }
+      - { text: "Jégé – Ladislav Nádaši", why: "Lekár z Dolného Kubína, autor Adama Šangalu." }
+      - { text: "Vajanský – Svetozár Hurban", why: "Syn štúrovca Jozefa Miloslava Hurbana." }
+      - { text: "Hviezdoslav – Pavol Országh", why: "Rodák z Vyšného Kubína, povolaním právnik." }
+      - { text: "Martin Kukučín – Matej Bencúr", why: "Rodák z Jasenovej, povolaním lekár, zakladateľ modernej slovenskej prózy." }
+      - { text: "Timrava – Božena Slančíková", why: "Pochádzala z Polichna, písala aj ako Teta z Polichna." }
+    wrong:
+      - { text: "Ivan Krasko – Matej Bencúr", why: "Matej Bencúr je Martin Kukučín." }
+      - { text: "Andrej Sládkovič – Ján Kalinčiak", why: "Kalinčiak bol iný štúrovec, autor Reštavrácie, a písal pod vlastným menom." }
+      - { text: "Martin Kukučín – Jozef Gregor", why: "Jozef Gregor je Tajovský." }
+      - { text: "Timrava – Terézia Vansová", why: "Vansová bola iná spisovateľka; Timrava sa volala Božena Slančíková." }
+      - { text: "Hviezdoslav – Andrej Braxatoris", why: "Braxatoris je Sládkovič, Hviezdoslav sa volal Pavol Országh." }
+      - { text: "Jozef Gregor Tajovský – Ladislav Nádaši", why: "Nádaši je Jégé." }
+
+  - id: diela-autori
+    type: pick
+    prompt: "Ktoré dvojice diela a autora z povinného čítania sú správne?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Martin_Kukučín
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Timrava, Jozef_Cíger-Hronský, Jozef_Gregor_Tajovský, Samo_Chalupka, Ján_Botto, Ján_Kalinčiak, Milo_Urban, Margita_Figuli, Ladislav_Nádaši-Jégé, Janko_Jesenský, Ivan_Krasko, Andrej_Sládkovič, Pavol_Országh_Hviezdoslav, Svetozár_Hurban-Vajanský."
+    tags: [literatúra, povinné čítanie]
+    correct:
+      - { text: "Dom v stráni – Martin Kukučín", why: "Román z ostrova Brač, kde Kukučín roky lekárčil." }
+      - { text: "Ťapákovci – Timrava", why: "Novela z roku 1914." }
+      - { text: "Jozef Mak – Jozef Cíger Hronský", why: "Román vyšiel v roku 1933." }
+      - { text: "Maco Mlieč – Jozef Gregor Tajovský", why: "Próza z roku 1903." }
+      - { text: "Mor ho! – Samo Chalupka", why: "Historický spev z roku 1864 o Slovanoch v boji proti Rimanom." }
+      - { text: "Smrť Jánošíkova – Ján Botto", why: "Najúspešnejšie dielo najmladšieho štúrovského básnika." }
+      - { text: "Reštavrácia – Ján Kalinčiak", why: "Humoreska z roku 1860." }
+      - { text: "Živý bič – Milo Urban", why: "Román z roku 1927, prvý diel Urbanovej trilógie z Hornej Oravy." }
+      - { text: "Tri gaštanové kone – Margita Figuli", why: "Novela z roku 1940." }
+      - { text: "Adam Šangala – Jégé", why: "Historický román z roku 1923." }
+      - { text: "Demokrati – Janko Jesenský", why: "Jeho najrozsiahlejšia próza, v roku 1980 sfilmovaná." }
+    wrong:
+      - { text: "Jozef Mak – Martin Kukučín", why: "Jozefa Maka napísal Jozef Cíger Hronský." }
+      - { text: "Neprebudený – Timrava", why: "Neprebudeného napísal Martin Kukučín v roku 1886." }
+      - { text: "Statky-zmätky – Janko Jesenský", why: "Hru Statky-zmätky napísal Jozef Gregor Tajovský." }
+      - { text: "Smrť Jánošíkova – Samo Chalupka", why: "Chalupka napísal Mor ho!, Jánošíka pochoval Ján Botto." }
+      - { text: "Marína – Pavol Országh Hviezdoslav", why: "Marínu napísal Andrej Sládkovič." }
+      - { text: "Hájnikova žena – Andrej Sládkovič", why: "Hájnikova žena je Hviezdoslavova." }
+      - { text: "Živý bič – Margita Figuli", why: "Živý bič je od Mila Urbana." }
+      - { text: "Suchá ratolesť – Ján Kalinčiak", why: "Suchú ratolesť napísal Svetozár Hurban-Vajanský." }
+
+  - id: sturovci
+    type: pick
+    prompt: "Kto z týchto ľudí patril k štúrovcom?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Štúrovci
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Ján_Botto, Pavol_Országh_Hviezdoslav, Martin_Kukučín, Ivan_Krasko, Anton_Bernolák, Janko_Jesenský, sk.wikipedia.org/wiki/Ľudovít_Štúr."
+    tags: [štúrovci, literatúra]
+    correct:
+      - { text: "Jozef Miloslav Hurban", why: "Spolu so Štúrom a Hodžom jadro štúrovskej generácie." }
+      - { text: "Michal Miloslav Hodža", why: "Tretí z trojice, ktorá dala dokopy spisovnú slovenčinu." }
+      - { text: "Andrej Sládkovič", why: "Autor Maríny a Detvana." }
+      - { text: "Janko Kráľ", why: "Romantický básnik štúrovskej generácie." }
+      - { text: "Ján Botto", why: "Najmladší štúrovský básnik, autor Smrti Jánošíkovej." }
+      - { text: "Samo Chalupka", why: "Autor Mor ho!, tiež štúrovec." }
+      - { text: "Janko Matúška", why: "Autor textu Nad Tatrou sa blýska." }
+      - { text: "Ján Kalinčiak", why: "Prozaik štúrovskej generácie, autor Reštavrácie." }
+      - { text: "Samo Tomášik", why: "Básnik štúrovskej generácie, menej známy, ale patrí sem." }
+    wrong:
+      - { text: "Anton Bernolák", why: "Narodil sa v roku 1762 a zomrel v roku 1813, ešte pred Štúrovým narodením (1815)." }
+      - { text: "Ján Hollý", why: "Bernolákovec; štúrovci ho v roku 1843 navštívili na Dobrej Vode po požehnanie." }
+      - { text: "Pavol Országh Hviezdoslav", why: "Narodil sa v roku 1849, keď štúrovci už mali to najdôležitejšie za sebou." }
+      - { text: "Martin Kukučín", why: "Narodil sa v roku 1860, je to realista." }
+      - { text: "Ivan Krasko", why: "Narodil sa v roku 1876, patrí k moderne." }
+      - { text: "Janko Jesenský", why: "Narodil sa v roku 1874, tiež patrí k moderne." }
+
+  - id: vybrane-slova
+    type: pick
+    prompt: "V ktorých slovách patrí na miesto podčiarkovníka y alebo ý?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Vybrané_slová
+    note: "Ďalšie zdroje - pravopis nesprávnych možností overený v Pravidlách slovenského pravopisu (slovnik.aktuality.sk/pravopis)."
+    tags: [pravopis, vybrané slová]
+    correct:
+      - { text: "kop_to", why: "Kopyto je vybrané slovo po p." }
+      - { text: "p_žamo", why: "Pyžamo je vybrané slovo po p, áno, aj to sme sa učili." }
+      - { text: "r_ža", why: "Ryža je vybrané slovo po r." }
+      - { text: "br_ndza", why: "Bryndza je vybrané slovo po r, aj keď sa to na prvý pohľad nezdá." }
+      - { text: "kor_tnačka", why: "Korytnačka patrí k vybraným slovám po r ako koryto." }
+      - { text: "šm_kľavka", why: "Šmykľavka je vybrané slovo po m." }
+      - { text: "v_žla", why: "Vyžla, plemeno psa, je vybrané slovo po v." }
+      - { text: "s_seľ", why: "Syseľ je vybrané slovo po s." }
+      - { text: "hm_z", why: "Hmyz je vybrané slovo po m." }
+      - { text: "jaz_k", why: "Jazyk je vybrané slovo po z." }
+      - { text: "M_java", why: "Myjava je medzi vybranými slovami po m." }
+    wrong:
+      - { text: "b_cykel", why: "Bicykel je cudzie slovo a píše sa s mäkkým i." }
+      - { text: "p_vnica", why: "Pivnica sa píše s i, pivo tiež." }
+      - { text: "s_rup", why: "Sirup s i, so syrom nemá nič spoločné." }
+      - { text: "v_dlička", why: "Vidlička s i, ako vidly." }
+      - { text: "z_ma", why: "Zima s mäkkým i." }
+      - { text: "r_bezľa", why: "Ríbezľa s dlhým í, prišla z nemeckého Ribisel, nie od ryby." }
+      - { text: "m_sa", why: "Misa s i, myš by v nej bola s y." }
+
+  - id: slovne-druhy-ohybne
+    type: pick
+    prompt: "Ktoré slovné druhy sú ohybné?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovný_druh
+    tags: [gramatika, slovné druhy]
+    correct:
+      - { text: podstatné mená, why: "Skloňujú sa, menia pád aj číslo." }
+      - { text: prídavné mená, why: "Skloňujú sa a stupňujú." }
+      - { text: zámená, why: "Ja, mňa, mne... skloňujú sa." }
+      - { text: číslovky, why: "Dvaja, dvoch, dvom... aj číslovky sa skloňujú." }
+      - { text: slovesá, why: "Časujú sa, teda menia osobu, číslo aj čas." }
+    wrong:
+      - { text: príslovky, why: "Prvý z piatich neohybných slovných druhov." }
+      - { text: predložky, why: "Neohybné, vždy rovnaké: na, v, pod." }
+      - { text: spojky, why: "Neohybné: a, ale, lebo." }
+      - { text: častice, why: "Neohybné: nech, vraj, áno." }
+      - { text: citoslovcia, why: "Neohybné: au, hop, bum." }
+
+  - id: prvocisla
+    type: pick
+    prompt: "Ktoré z týchto čísel sú prvočísla?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Prvočíslo
+    tags: [matematika]
+    correct:
+      - { text: "2", why: "Jediné párne prvočíslo." }
+      - { text: "13", why: "Delí sa len jednotkou a sebou samým." }
+      - { text: "29", why: "Prvočíslo, hoci vyzerá podozrivo." }
+      - { text: "31", why: "Prvočíslo." }
+      - { text: "37", why: "Prvočíslo." }
+      - { text: "41", why: "Prvočíslo." }
+      - { text: "53", why: "Prvočíslo." }
+      - { text: "61", why: "Prvočíslo." }
+      - { text: "89", why: "Prvočíslo." }
+      - { text: "97", why: "Najväčšie prvočíslo menšie ako 100." }
+    wrong:
+      - { text: "1", why: "Jednotka nie je ani prvočíslo, ani zložené číslo." }
+      - { text: "9", why: "3 × 3." }
+      - { text: "21", why: "3 × 7." }
+      - { text: "27", why: "3 × 9." }
+      - { text: "49", why: "7 × 7." }
+      - { text: "51", why: "3 × 17, klasická pasca." }
+      - { text: "57", why: "3 × 19, ďalšia klasická pasca." }
+      - { text: "87", why: "3 × 29." }
+      - { text: "91", why: "7 × 13, vyzerá ako prvočíslo, ale nie je." }
+
+  - id: velicina-jednotka
+    type: pick
+    prompt: "Ktoré dvojice fyzikálnej veličiny a jej jednotky sú správne?"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/SI_derived_unit
+    tags: [fyzika, jednotky]
+    correct:
+      - { text: "sila – newton", why: "Newton (N) je jednotka sily aj tiaže." }
+      - { text: "energia – joule", why: "Joule (J) meria energiu, prácu aj teplo." }
+      - { text: "výkon – watt", why: "Watt (W) je joule za sekundu." }
+      - { text: "tlak – pascal", why: "Pascal (Pa) je newton na meter štvorcový." }
+      - { text: "elektrické napätie – volt", why: "Volt (V)." }
+      - { text: "elektrický odpor – ohm", why: "Ohm (Ω)." }
+      - { text: "frekvencia – hertz", why: "Hertz (Hz) je počet kmitov za sekundu." }
+      - { text: "elektrický náboj – coulomb", why: "Coulomb (C)." }
+    wrong:
+      - { text: "sila – pascal", why: "Pascal meria tlak, sila sa meria v newtonoch." }
+      - { text: "výkon – joule", why: "Joule je energia, výkon je watt." }
+      - { text: "elektrické napätie – ohm", why: "Ohm je odpor, napätie je volt." }
+      - { text: "tlak – newton", why: "Newton je sila; tlak je sila na plochu, teda pascal." }
+      - { text: "frekvencia – watt", why: "Watt je výkon, frekvencia je hertz." }
+      - { text: "elektrický náboj – volt", why: "Volt je napätie, náboj je coulomb." }
+      - { text: "energia – hertz", why: "Hertz je frekvencia, energia je joule." }
+
+  - id: znacky-prvkov
+    type: pick
+    prompt: "Ktoré dvojice chemickej značky a prvku sú správne?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Periodická_tabuľka_prvkov
+    note: "Ďalšie zdroje - en.wikipedia.org/wiki/Chemical_symbol."
+    tags: [chémia, periodická tabuľka]
+    correct:
+      - { text: "Na – sodík", why: "Z novolatinského natrium." }
+      - { text: "K – draslík", why: "Z latinského kalium." }
+      - { text: "Fe – železo", why: "Z latinského ferrum." }
+      - { text: "Ag – striebro", why: "Z latinského argentum." }
+      - { text: "Au – zlato", why: "Z latinského aurum." }
+      - { text: "Hg – ortuť", why: "Z latinského hydrargyrum." }
+      - { text: "Pb – olovo", why: "Z latinského plumbum." }
+      - { text: "Cu – meď", why: "Latinsky cuprum, odtiaľ aj značka." }
+      - { text: "W – volfrám", why: "Volfrám má značku W, protónové číslo 74." }
+    wrong:
+      - { text: "S – sodík", why: "S je síra, sodík je Na." }
+      - { text: "Ag – argón", why: "Argón je Ar, Ag je striebro." }
+      - { text: "Si – síra", why: "Si je kremík, síra je S." }
+      - { text: "Sn – striebro", why: "Sn je cín, striebro je Ag." }
+      - { text: "Mg – mangán", why: "Mg je horčík, mangán je Mn." }
+      - { text: "P – draslík", why: "P je fosfor, draslík je K." }
+      - { text: "Co – meď", why: "Co je kobalt, meď je Cu." }
+      - { text: "Ca – uhlík", why: "Ca je vápnik, uhlík je C." }
+
+  - id: chemicke-vzorce
+    type: pick
+    prompt: "Ktoré dvojice chemického vzorca a látky sú správne?"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Dictionary_of_chemical_formulas
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Chlorid_sodný."
+    tags: [chémia]
+    correct:
+      - { text: "H₂O – voda", why: "Dva vodíky a jeden kyslík." }
+      - { text: "CO₂ – oxid uhličitý", why: "Ten, čo vydychujeme a rastliny ho spotrebúvajú." }
+      - { text: "CH₄ – metán", why: "Hlavná zložka zemného plynu." }
+      - { text: "H₂SO₄ – kyselina sírová", why: "Klasika z hodín chémie." }
+      - { text: "HCl – kyselina chlorovodíková", why: "Vodný roztok chlorovodíka." }
+      - { text: "C₆H₁₂O₆ – glukóza", why: "Hroznový cukor, vzniká pri fotosyntéze." }
+      - { text: "CaCO₃ – uhličitan vápenatý", why: "Vápenec, krieda, mramor aj vodný kameň." }
+      - { text: "C₂H₅OH – etanol", why: "Alkohol, ktorý je v pive aj vo víne." }
+    wrong:
+      - { text: "H₂O₂ – voda", why: "H₂O₂ je peroxid vodíka, ten nepite." }
+      - { text: "CO – oxid uhličitý", why: "CO je jedovatý oxid uhoľnatý." }
+      - { text: "HNO₃ – kyselina sírová", why: "HNO₃ je kyselina dusičná." }
+      - { text: "CH₄ – etanol", why: "CH₄ je metán, etanol je C₂H₅OH." }
+      - { text: "CaCO₃ – kuchynská soľ", why: "Soľ je chlorid sodný, CaCO₃ je vápenec." }
+      - { text: "C₆H₁₂O₆ – oxid uhličitý", why: "To je glukóza, oxid uhličitý je CO₂." }
+
+  - id: vzorce
+    type: pick
+    prompt: "Ktoré z týchto školských vzorcov sú správne?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Pytagorova_veta
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Ohmov_zákon, sk.wikipedia.org/wiki/Kruh, sk.wikipedia.org/wiki/Tlak, en.wikipedia.org/wiki/Newton%27s_laws_of_motion, en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence."
+    tags: [matematika, fyzika]
+    correct:
+      - { text: "a² + b² = c² (Pytagorova veta)", why: "Platí pre pravouhlý trojuholník, c je prepona." }
+      - { text: "U = R · I (Ohmov zákon)", why: "Napätie je odpor krát prúd." }
+      - { text: "S = π · r² (obsah kruhu)", why: "Pí er na druhú." }
+      - { text: "O = 2 · π · r (obvod kruhu)", why: "Dva pí er." }
+      - { text: "F = m · a (druhý Newtonov zákon)", why: "Sila je hmotnosť krát zrýchlenie." }
+      - { text: "p = F / S (tlak)", why: "Tlak je sila na plochu." }
+      - { text: "E = m · c² (Einstein)", why: "Ekvivalencia hmotnosti a energie z roku 1905." }
+    wrong:
+      - { text: "a + b = c² (Pytagorova veta)", why: "Na druhú sú všetky tri strany: a² + b² = c²." }
+      - { text: "U = R / I (Ohmov zákon)", why: "U = R · I, delí sa až pri výpočte odporu R = U / I." }
+      - { text: "S = 2 · π · r (obsah kruhu)", why: "To je obvod; obsah je π · r²." }
+      - { text: "F = m / a (druhý Newtonov zákon)", why: "Sila je m · a, nie podiel." }
+      - { text: "p = F · S (tlak)", why: "Tlak je F / S; čím väčšia plocha, tým menší tlak." }
+      - { text: "E = m · c (Einstein)", why: "Rýchlosť svetla je na druhú." }
+
+  - id: hmyz
+    type: pick
+    prompt: "Ktoré z týchto živočíchov sú hmyz?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Článkonožce
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Hmyz, Mravcovité, Blanokrídlovce, Motýle, Chrobáky, sk.wikipedia.org/wiki/Kliešte."
+    tags: [biológia]
+    correct:
+      - { text: mravec, why: "Mravcovité patria do radu blanokrídlovce." }
+      - { text: včela, why: "Blanokrídly hmyz so šiestimi nohami." }
+      - { text: motýľ, why: "Motýle sú rad hmyzu s úplnou premenou." }
+      - { text: roháč, why: "Najväčší chrobák Slovenska, chrobáky sú asi najväčší rad hmyzu." }
+      - { text: vážka, why: "Vážky sú samostatný rad hmyzu." }
+      - { text: podenka, why: "Podenky sú tiež rad hmyzu." }
+      - { text: mucha, why: "Dvojkrídlovce sú hmyz." }
+    wrong:
+      - { text: pavúk, why: "Pavúkovec, nie hmyz." }
+      - { text: škorpión, why: "Tiež pavúkovec." }
+      - { text: kliešť, why: "Kliešte sú pavúkovce, nie hmyz." }
+      - { text: rak, why: "Kôrovec z radu desaťnožce." }
+      - { text: stonožka, why: "Patrí medzi viacnôžky, má oveľa viac ako šesť nôh." }
+      - { text: mnohonôžka, why: "Tiež viacnôžka." }
+
+  - id: fotosynteza
+    type: pick
+    prompt: "Čo platí o fotosyntéze?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Fotosyntéza
+    tags: [biológia]
+    correct:
+      - { text: "prebieha v chloroplastoch", why: "Svetelná fáza na membránach tylakoidov, temnostná v stróme." }
+      - { text: "rastlina pri nej spotrebúva oxid uhličitý", why: "CO₂ sa zabudováva do organických látok." }
+      - { text: "rastlina pri nej spotrebúva vodu", why: "Voda je spolu s CO₂ surovinou." }
+      - { text: "uvoľňuje sa pri nej kyslík", why: "Vďaka nej máme čo dýchať." }
+      - { text: "vzniká pri nej glukóza", why: "Hroznový cukor, ktorý si rastlina uloží alebo spotrebuje." }
+      - { text: "zdrojom energie je svetlo", why: "Svetlo je primárny zdroj energie fotosyntézy." }
+    wrong:
+      - { text: "prebieha v mitochondriách", why: "V mitochondriách prebieha dýchanie, fotosyntéza v chloroplastoch." }
+      - { text: "rastlina pri nej spotrebúva kyslík", why: "Naopak, kyslík pri nej vzniká." }
+      - { text: "uvoľňuje sa pri nej oxid uhličitý", why: "Naopak, oxid uhličitý sa pri nej spotrebúva." }
+      - { text: "vzniká pri nej dusík", why: "Produktmi sú glukóza a kyslík." }
+      - { text: "zdrojom energie je teplo z pôdy", why: "Energiu dodáva svetlo." }
+
+  - id: hymna
+    type: pick
+    prompt: "Čo platí o piesni Nad Tatrou sa blýska?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Nad_Tatrou_sa_blýska
+    note: "Ďalší zdroj - sk.wikipedia.org/wiki/Janko_Matúška."
+    tags: [hymna, štúrovci]
+    correct:
+      - { text: "text napísal Janko Matúška", why: "Štúrovec, ktorý ju napísal ako študent." }
+      - { text: "vznikla v roku 1844", why: "Po tom, ako Štúra zbavili miesta na bratislavskom lýceu." }
+      - { text: "vznikla na nápev ľudovej piesne Kopala studienku", why: "Ľudovú pieseň odporučil sám Matúška." }
+      - { text: "spievali ju študenti, ktorí na protest odišli z bratislavského lýcea", why: "Vo výprave smerovali do Levoče." }
+      - { text: "štátnou hymnou Slovenska je od 1. januára 1993", why: "Od vzniku samostatnej republiky." }
+      - { text: "oficiálnu hymnu tvoria prvé dve strofy", why: "Ostatné sa pri štátnych príležitostiach nespievajú." }
+      - { text: "od roku 1918 bola jej prvá strofa súčasťou československej hymny", why: "Spájala sa s českou piesňou Kde domov můj." }
+    wrong:
+      - { text: "text napísal Ľudovít Štúr", why: "Napísal ho Janko Matúška." }
+      - { text: "text napísal Samo Chalupka", why: "Chalupka napísal Mor ho!, hymnu Janko Matúška." }
+      - { text: "vznikla v roku 1918", why: "Vtedy sa stala súčasťou československej hymny, napísaná bola v roku 1844." }
+      - { text: "študenti s ňou odchádzali do Prahy", why: "Výprava smerovala do Levoče." }
+      - { text: "oficiálnu hymnu tvoria všetky jej strofy", why: "Len prvé dve." }
+      - { text: "melódia je pôvodná skladba, nie ľudová pieseň", why: "Vychádza z ľudovej piesne Kopala studienku." }
+
+  - id: marina
+    type: pick
+    prompt: "Čo platí o Maríne, básni Andreja Sládkoviča?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Mar%C3%ADna_(Sl%C3%A1dkovi%C4%8D)
+    note: "Ďalší zdroj - sk.wikipedia.org/wiki/Andrej_Sládkovič."
+    tags: [literatúra, povinné čítanie]
+    correct:
+      - { text: "knižne vyšla v roku 1846", why: "Napísal ju v zime 1844, knižne vyšla o dva roky neskôr v Pešti." }
+      - { text: "má 291 strof", why: "286 desaťveršových a 5 osemveršových." }
+      - { text: "inšpiráciou bola Mária Pišlová", why: "Sládkovič sa do nej zaľúbil v roku 1839." }
+      - { text: "spája sa s Banskou Štiavnicou", why: "Na dome Márie Pišlovej je tam pamätná tabuľa." }
+      - { text: "skutočná Marína si vzala bohatého perníkara", why: "Na želanie matky sa vydala za perníkara, nie za básnika." }
+      - { text: "uvádza sa ako najdlhšia ľúbostná báseň na svete", why: "Podľa World Record Academy." }
+    wrong:
+      - { text: "knižne vyšla v roku 1886", why: "Knižne vyšla v roku 1846 v Pešti, o 40 rokov skôr." }
+      - { text: "má 30 strof", why: "Má ich 291, teda okolo 2 900 veršov." }
+      - { text: "Marína sa za Sládkoviča nakoniec vydala", why: "Vydala sa za perníkara." }
+      - { text: "spája sa s Levočou", why: "Spája sa s Banskou Štiavnicou." }
+      - { text: "je to divadelná hra v próze", why: "Je to lyrická báseň vo veršoch." }
+      - { text: "je pokračovaním Detvana", why: "Detvan vznikol až v roku 1853." }
+
+  - id: krajne-body-slovenska
+    type: pick
+    prompt: "Ktoré tvrdenia o zemepise Slovenska sú pravdivé?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Geografia_Slovenska
+    note: "Ďalší zdroj - sk.wikipedia.org/wiki/Poprad_(rieka)."
+    tags: [zemepis]
+    correct:
+      - { text: "najjužnejší bod je v obci Patince", why: "Pri Dunaji neďaleko Komárna." }
+      - { text: "najvýchodnejší bod je vrch Kremenec pri Novej Sedlici", why: "Vrchol má 1 221 m; najvýchodnejšie miesto je trojmedzie s Poľskom a Ukrajinou (1 207,7 m)." }
+      - { text: "najsevernejší bod je vrch Beskydok pri Oravskej Polhore", why: "Vysoký 1 169 m." }
+      - { text: "najzápadnejší bod je na rieke Morava pri Záhorskej Vsi", why: "Uprostred toku Moravy." }
+      - { text: "najnižší bod je pri Kline nad Bodrogom", why: "Vo výške 94 m n. m." }
+      - { text: "najdlhšou riekou je Váh", why: "Meria 403 km." }
+      - { text: "rieka Poprad odvádza vodu do Baltského mora", why: "Cez Dunajec a Vislu." }
+    wrong:
+      - { text: "najjužnejší bod je v Štúrove", why: "Najjužnejšie sú Patince." }
+      - { text: "najvýchodnejší bod je v Čiernej nad Tisou", why: "Najvýchodnejší je Kremenec pri Novej Sedlici." }
+      - { text: "najsevernejší bod je na vrchole Rysov", why: "Najsevernejší je Beskydok na Orave." }
+      - { text: "najnižší bod je pri Komárne", why: "Najnižší je pri Kline nad Bodrogom." }
+      - { text: "najdlhšou riekou je Hron", why: "Najdlhší je Váh." }
+      - { text: "rieka Hron odvádza vodu do Baltského mora", why: "Hron tečie do Dunaja; do Baltu ide len Poprad, Dunajec a ich prítoky." }
+
+  # ---------- order ----------
+  - id: poradie-padov
+    type: order
+    prompt: "Zoraď pády podľa ich tradičného čísla, od prvého pádu."
+    direction: asc
+    unit: pád
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/P%C3%A1d_(jazykoveda)
+    tags: [gramatika, pády]
+    note: "Lokál je 6. a inštrumentál 7. pád, lebo 5. pádom bol vokatív."
+    items:
+      - { text: nominatív, value: 1 }
+      - { text: genitív, value: 2 }
+      - { text: datív, value: 3 }
+      - { text: akuzatív, value: 4 }
+      - { text: lokál, value: 6 }
+      - { text: inštrumentál, value: 7 }
+
+  - id: predpony-si
+    type: order
+    prompt: "Zoraď predpony jednotiek od najväčšieho násobku."
+    direction: desc
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Metric_prefix
+    tags: [fyzika, jednotky]
+    items:
+      - { text: "tera (T)", value: 1000000000000 }
+      - { text: "giga (G)", value: 1000000000 }
+      - { text: "mega (M)", value: 1000000 }
+      - { text: "kilo (k)", value: 1000 }
+      - { text: "centi (c)", value: 0.01 }
+      - { text: "mili (m)", value: 0.001 }
+      - { text: "mikro (μ)", value: 0.000001 }
+      - { text: "nano (n)", value: 0.000000001 }
+
+  - id: poradie-diel
+    type: order
+    prompt: "Zoraď diela podľa roku, keď prvýkrát vyšli (aj časopisecky), od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Mar%C3%ADna_(Sl%C3%A1dkovi%C4%8D)
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Ján_Botto, Samo_Chalupka, Pavol_Országh_Hviezdoslav, Timrava, Milo_Urban, Jozef_Cíger-Hronský, Margita_Figuli."
+    tags: [literatúra]
+    items:
+      - { text: "Marína (Sládkovič)", value: 1846 }
+      - { text: "Smrť Jánošíkova (Botto)", value: 1862 }
+      - { text: "Mor ho! (Chalupka)", value: 1864 }
+      - { text: "Hájnikova žena (Hviezdoslav)", value: 1884 }
+      - { text: "Ťapákovci (Timrava)", value: 1914 }
+      - { text: "Živý bič (Urban)", value: 1927 }
+      - { text: "Jozef Mak (Hronský)", value: 1933 }
+      - { text: "Tri gaštanové kone (Figuli)", value: 1940 }
+
+  - id: velka-morava-udalosti
+    type: order
+    prompt: "Zoraď udalosti z čias Veľkej Moravy od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Veľká_Morava
+    tags: [veľká morava, dejepis]
+    items:
+      - { text: "Mojmír I. vyhnal Pribinu z Nitry", value: 833 }
+      - { text: "Konštantín a Metod prišli na Veľkú Moravu", value: 863 }
+      - { text: "Pápež Hadrián II. schválil staroslovienčinu v liturgii", value: 868 }
+      - { text: "Metod zomrel", value: 885 }
+      - { text: "Bitky pri Bratislave a koniec ústrednej moci Veľkej Moravy", value: 907 }
+
+  - id: protonove-cisla
+    type: order
+    prompt: "Zoraď prvky podľa protónového čísla, od najmenšieho."
+    direction: asc
+    unit: protónové číslo
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Periodická_tabuľka_prvkov
+    tags: [chémia, periodická tabuľka]
+    items:
+      - { text: vodík, value: 1 }
+      - { text: hélium, value: 2 }
+      - { text: uhlík, value: 6 }
+      - { text: kyslík, value: 8 }
+      - { text: sodík, value: 11 }
+      - { text: železo, value: 26 }
+      - { text: zlato, value: 79 }
+      - { text: olovo, value: 82 }
+
+  # ---------- number ----------
+  - id: rok-memoranda
+    type: number
+    prompt: "V ktorom roku prijali v Martine Memorandum národa slovenského?"
+    answer: 1861
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Prijali ho 6. – 7. júna 1861 a žiadalo Hornouhorské slovenské okolie."
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Memorandum_národa_slovenského
+    tags: [dejepis, buditelia]
+
+  - id: najnizsi-bod
+    type: number
+    prompt: "V akej nadmorskej výške leží najnižší bod Slovenska pri Kline nad Bodrogom?"
+    answer: 94
+    unit: m n. m.
+    scale: log
+    tolerance: 0.1
+    why: "Asi 94 m n. m. (94,3 m) v katastri obce Klin nad Bodrogom; najvyšší je Gerlachovský štít s 2 654,4 m n. m."
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Klin_nad_Bodrogom
+    note: "Ďalší zdroj - sk.wikipedia.org/wiki/Geografia_Slovenska."
+    tags: [zemepis]
+
+  - id: rychlost-svetla
+    type: number
+    prompt: "Koľko kilometrov za sekundu prejde svetlo vo vákuu?"
+    answer: 299792
+    unit: km/s
+    scale: log
+    tolerance: 0.05
+    why: "Presne 299 792 458 m/s; zo Slnka k nám svetlo letí asi 8,3 minúty."
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Speed_of_light
+    tags: [fyzika, konštanty]
+
+  - id: sucet-uhlov-trojuholnika
+    type: number
+    prompt: "Koľko stupňov je súčet vnútorných uhlov trojuholníka?"
+    answer: 180
+    unit: °
+    scale: linear
+    tolerance: 1
+    why: "V rovinnej (euklidovskej) geometrii vždy 180°, nech je trojuholník akýkoľvek."
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Trojuholník
+    tags: [matematika]
+
+  - id: marina-verse
+    type: number
+    prompt: "Koľko veršov má Sládkovičova Marína?"
+    answer: 2900
+    unit: veršov
+    scale: log
+    tolerance: 0.1
+    why: "291 strof, spolu okolo 2 900 veršov; uvádza sa ako najdlhšia ľúbostná báseň na svete."
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Mar%C3%ADna_(Sl%C3%A1dkovi%C4%8D)
+    tags: [literatúra]
+
+  - id: skupiny-periodickej-tabulky
+    type: number
+    prompt: "Koľko skupín (stĺpcov) má periodická tabuľka prvkov?"
+    answer: 18
+    unit: skupín
+    scale: linear
+    tolerance: 1
+    why: "18 skupín a 7 periód (riadkov)."
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Periodická_tabuľka_prvkov
+    tags: [chémia, periodická tabuľka]
+
+  # ---------- choice ----------
+  - id: vokativ
+    type: choice
+    prompt: "Ktorý pád sa kedysi rátal ako 5. pád, ale dnes ho väčšinou za samostatný pád nepovažujeme?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/P%C3%A1d_(jazykoveda)
+    tags: [gramatika, pády]
+    correct: { text: vokatív, why: "Oslovenie (Pane!, Bože!); preto lokál zostal 6. a inštrumentál 7. pádom." }
+    wrong:
+      - { text: lokál, why: "Lokál je 6. pád a samostatným pádom stále je." }
+      - { text: inštrumentál, why: "Inštrumentál je 7. pád: s kým, s čím." }
+      - { text: genitív, why: "Genitív je 2. pád: koho, čoho." }
+
+  - id: rieka-do-baltu
+    type: choice
+    prompt: "Ktorá z týchto slovenských riek odvádza vodu do Baltského mora?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Poprad_(rieka)
+    tags: [zemepis]
+    correct: { text: Poprad, why: "Vlieva sa do Dunajca v Poľsku, ten do Visly a tá do Baltu." }
+    wrong:
+      - { text: Hornád, why: "Do Baltu odvádzajú vodu len Poprad, Dunajec a ich prítoky; Hornád patrí k Čiernemu moru." }
+      - { text: Hron, why: "Vlieva sa do Dunaja, teda smer Čierne more." }
+      - { text: Ondava, why: "Patrí do povodia Bodrogu a k Čiernemu moru, nie k Baltu." }
+
+  - id: newtonov-zakon-sily
+    type: choice
+    prompt: "Ako sa nazýva Newtonov zákon, ktorý vyjadruje vzťah F = m · a?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Newtonove_pohybové_zákony
+    note: "Ďalšie zdroje - sk.wikipedia.org/wiki/Zákon_zachovania_energie."
+    tags: [fyzika]
+    correct: { text: zákon sily, why: "Druhý Newtonov zákon; Newton ho publikoval v Principiách v roku 1687." }
+    wrong:
+      - { text: zákon zotrvačnosti, why: "To je prvý zákon: teleso bez pôsobenia síl ostáva v pokoji alebo rovnomernom pohybe." }
+      - { text: zákon akcie a reakcie, why: "To je tretí zákon." }
+      - { text: zákon zachovania energie, why: "Nie je medzi tromi Newtonovými zákonmi; na všetky formy energie ho v roku 1847 rozšíril Helmholtz." }
+
+  - id: prepona
+    type: choice
+    prompt: "Ako sa volá najdlhšia strana pravouhlého trojuholníka, oproti pravému uhlu?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Trojuholník
+    tags: [matematika]
+    correct: { text: prepona, why: "V Pytagorovej vete je to c." }
+    wrong:
+      - { text: odvesna, why: "Odvesny sú dve kratšie strany, ktoré zvierajú pravý uhol." }
+      - { text: ťažnica, why: "Ťažnica spája vrchol so stredom protiľahlej strany, nie je to strana." }
+      - { text: výška, why: "Výška je kolmica z vrcholu, nie strana trojuholníka." }
