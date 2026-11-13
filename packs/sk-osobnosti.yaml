@@ -1,0 +1,467 @@
+id: sk-osobnosti
+title: Slovenské osobnosti
+description: Vynálezcovia, spisovatelia, maliari, speváci, športovci, prezidenti a ďalší Slováci doma aj vo svete.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: prezidenti-sr
+    type: pick
+    prompt: Kto z týchto ľudí bol od roku 1993 zvoleným prezidentom Slovenskej republiky?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Zoznam_prezidentov_Slovenska
+    correct:
+      - { text: "Michal Kováč", why: "Prvý prezident samostatného Slovenska, v úrade od 2. marca 1993 do 2. marca 1998." }
+      - { text: "Rudolf Schuster", why: "Prezidentom bol 1999 – 2004, po prvej priamej voľbe hlavy štátu." }
+      - { text: "Ivan Gašparovič", why: "Jediný prezident, ktorý bol zvolený dvakrát: 2004 a 2009, spolu desať rokov." }
+      - { text: "Andrej Kiska", why: "Prezidentom bol od 15. júna 2014 do 15. júna 2019." }
+      - { text: "Zuzana Čaputová", why: "Prvá prezidentka Slovenska, v úrade 2019 – 2024." }
+      - { text: "Peter Pellegrini", why: "Úrad prevzal 15. júna 2024; jeho mandát sa má skončiť v roku 2029." }
+    wrong:
+      - { text: "Robert Fico", why: "Je predsedom vlády, prezidentom Slovenska nikdy nebol." }
+      - { text: "Iveta Radičová", why: "Bola predsedníčkou vlády, nie prezidentkou." }
+      - { text: "Igor Matovič", why: "Bol predsedom vlády, prezidentom nikdy nebol." }
+      - { text: "Eduard Heger", why: "Bol predsedom vlády, prezidentom nikdy nebol." }
+      - { text: "Alexander Dubček", why: "Viedol Federálne zhromaždenie, ale prezidentom nebol." }
+      - { text: "Gustáv Husák", why: "Bol prezidentom Československa, nie Slovenskej republiky." }
+
+  - id: dvojeurove-pametne-mince
+    type: pick
+    prompt: Ktoré z týchto tém sa objavili na slovenských pamätných dvojeurových minciach?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A9_euromince
+    correct:
+      - { text: "1150. výročie misie Cyrila a Metoda", why: "Minca z roku 2013 pripomína príchod vierozvestcov na Veľkú Moravu." }
+      - { text: "200. výročie narodenia Ľudovíta Štúra", why: "Jedna z dvoch slovenských pamätných dvojeuroviek z roku 2015 (druhá pripomínala 30. výročie vlajky EÚ)." }
+      - { text: "550. výročie Academie Istropolitany", why: "Minca z roku 2017 pripomína prvú univerzitu na území Slovenska." }
+      - { text: "100. výročie úmrtia Milana Rastislava Štefánika", why: "Minca z roku 2019." }
+      - { text: "100. výročie narodenia Alexandra Dubčeka", why: "Minca z roku 2021." }
+      - { text: "Košický medzinárodný maratón", why: "Minca z roku 2024 oslavuje sto rokov najstaršieho maratónu v Európe." }
+      - { text: "Prvé predsedníctvo Slovenska v Rade EÚ", why: "Minca z roku 2016." }
+      - { text: "25. výročie samostatného Slovenska", why: "Minca z roku 2018." }
+    wrong:
+      - { text: "175. výročie narodenia Hviezdoslava", why: "Básnik sa na slovenskej pamätnej dvojeurovke zatiaľ neobjavil." }
+      - { text: "25. výročie letu Ivana Bellu do vesmíru", why: "Let na Mir z roku 1999 mincu nedostal." }
+      - { text: "100. výročie vzniku Československa", why: "V roku 2018 vyšla minca k výročiu samostatného Slovenska, nie ČSR." }
+      - { text: "150. výročie narodenia Štefana Baniča", why: "Baniča pripomína strieborná desaťeurová minca z roku 2020, nie dvojeurovka." }
+      - { text: "Vstup Slovenska do NATO", why: "Dvojeurovka z roku 2014 patrí vstupu do EÚ, nie do NATO." }
+
+  - id: osobnosti-na-bankovkach
+    type: pick
+    prompt: Ktoré osobnosti sa objavili na slovenských korunových bankovkách po roku 1993?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_koruna
+    correct:
+      - { text: "knieža Pribina", why: "Bol na dvadsaťkorune; vládol v Nitre." }
+      - { text: "Svätý Cyril a Metod", why: "Slovanskí vierozvestcovia zdobili päťdesiatku." }
+      - { text: "Anton Bernolák", why: "Autor prvej kodifikácie slovenčiny bol na dvojstovke." }
+      - { text: "Ľudovít Štúr", why: "Kodifikátor súčasnej spisovnej slovenčiny bol na päťstovke." }
+      - { text: "Andrej Hlinka", why: "Na tisícke bol kňaz a politik." }
+      - { text: "Milan Rastislav Štefánik", why: "Astronóm a generál zdobil najvyššiu bankovku, päťtisícku." }
+    wrong:
+      - { text: "Pavol Országh Hviezdoslav", why: "Medzi bankovkami slovenskej koruny sa nenachádza." }
+      - { text: "Alexander Dubček", why: "Na korunovej bankovke nebol, má však dvojeurovú mincu." }
+      - { text: "Juraj Jánošík", why: "Zbojník sa na bankovke neobjavil." }
+      - { text: "Martin Kukučín", why: "Spisovateľ sa na žiadnej slovenskej bankovke nenachádzal." }
+      - { text: "Ján Kollár", why: "Medzi osobnosťami slovenských korunových bankoviek nefiguruje." }
+      - { text: "Milan Hodža", why: "Politik a jazykovedec nebol na žiadnej bankovke." }
+
+  - id: vynalezcovia-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o slovenských vynálezcoch a vedcoch sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/%C5%A0tefan_Bani%C4%8D
+    correct:
+      - { text: "Štefan Banič získal v USA patent na padák", why: "Patent č. 1 108 484 mu udelili 25. augusta 1914." }
+      - { text: "Jozef Murgaš bol kňaz, maliar a priekopník bezdrôtovej telegrafie", why: "V roku 1904 dostal dva americké patenty na bezdrôtový telegraf." }
+      - { text: "Ján Bahýľ postavil vrtuľník Avion", why: "Patentové privilégium na vrtuľník dostal v roku 1895, Avion postavil v roku 1901." }
+      - { text: "Wolfgang Kempelen sa narodil v Bratislave", why: "Preslávil ho šachový automat Turek a hovoriaci stroj." }
+      - { text: "Aurel Stodola dlhé roky učil na ETH v Zürichu", why: "Považuje sa za zakladateľa teórie parných a plynových turbín." }
+      - { text: "Stodola s chirurgom Sauerbruchom vyvinul pohyblivú umelú ruku", why: "Volá sa Stodolova ruka a vznikla v roku 1915." }
+      - { text: "Štefan Anián Jedlík zostrojil zariadenie na výrobu sódovej vody", why: "Bol benediktínsky kňaz a fyzik, pochádzal zo Zemného." }
+    wrong:
+      - { text: "Štefan Banič svoj padák vyskúšal na streche mrakodrapu v Londýne", why: "Slávny test sa tradične spája s Washingtonom, nie s Londýnom." }
+      - { text: "Jozef Murgaš žil a zomrel v Chicagu", why: "Od roku 1896 žil vo Wilkes-Barre v Pensylvánii a tam aj zomrel." }
+      - { text: "Ján Bahýľ sa narodil v Bratislave", why: "Narodil sa v Zvolenskej Slatine." }
+      - { text: "Wolfgang Kempelen zomrel v Bratislave", why: "Zomrel vo Viedni v roku 1804." }
+      - { text: "Aurel Stodola pôsobil celý život na univerzite v Prahe", why: "Učil v Zürichu, kde aj zomrel." }
+      - { text: "Štefan Banič sa po návrate z USA usadil v Bratislave", why: "Vrátil sa do rodnej obce Neštich pri Smoleniciach." }
+
+  - id: dielo-hviezdoslava
+    type: pick
+    prompt: Ktoré z týchto diel napísal Pavol Országh Hviezdoslav?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Hviezdoslav
+    correct:
+      - { text: "Hájnikova žena", why: "Epická báseň o tragickej láske, jedno z jeho najznámejších diel." }
+      - { text: "Krvavé sonety", why: "Cyklus z čias prvej svetovej vojny." }
+      - { text: "Gábor Vlkolinský", why: "Epická báseň a aj jeho vlastný literárny hrdina." }
+      - { text: "Ežo Vlkolinský", why: "Epos o hrdinovi z rodu Vlkolinských." }
+      - { text: "Bútora a Čútora", why: "Rozprávková veršovaná epika." }
+      - { text: "Sen Šalamúnov", why: "Biblická poézia Pavla Országha." }
+      - { text: "Herodes a Herodias", why: "Dráma v jeho tvorbe." }
+      - { text: "Letorosty", why: "Lyrický cyklus básní." }
+    wrong:
+      - { text: "Ťapákovci", why: "Novela Timravy z roku 1914." }
+      - { text: "Dom v stráni", why: "Román Martina Kukučína." }
+      - { text: "Zvony", why: "Zbierka Milana Rúfusa z roku 1968." }
+      - { text: "Skúsenosť", why: "Novela Timravy z roku 1902." }
+      - { text: "Mať volá", why: "Kukučínov román o chorvátskych vysťahovalcoch v Čile." }
+      - { text: "Stôl chudobných", why: "Zbierka Milana Rúfusa z roku 1972." }
+      - { text: "Keď báčik z Chochoľova umrie", why: "Poviedka Martina Kukučína z roku 1890." }
+      - { text: "Až dozrieme", why: "Debut Milana Rúfusa z roku 1956." }
+
+  - id: spisovatelia-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o slovenských spisovateľoch sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Martin_Kukučín
+    correct:
+      - { text: "Martin Kukučín bol povolaním lekár", why: "Vlastným menom Matej Bencúr, bol lekárom na Brači aj v Čile." }
+      - { text: "Kukučín pracoval ako lekár v Selci na ostrove Brač", why: "Na Brači strávil roky 1893 – 1906 a odtiaľ je námet Domu v stráni." }
+      - { text: "Kukučín napokon žil v čilskom meste Punta Arenas", why: "Do Čile sa vysťahoval v roku 1908." }
+      - { text: "Timrava sa vlastným menom volala Božena Slančíková", why: "Narodila sa v Polichne a bola spoluzakladateľkou slovenského feminizmu." }
+      - { text: "Timrava napísala novelu Ťapákovci", why: "Vyšla v roku 1914." }
+      - { text: "Milan Rúfus debutoval zbierkou Až dozrieme", why: "Zbierka vyšla v roku 1956." }
+      - { text: "Rúfus bol viackrát nominovaný na Nobelovu cenu za literatúru", why: "Pomenovali po ňom aj asteroid (33158) Rúfus." }
+      - { text: "Rúfus preložil Ibsenovho Peera Gynta", why: "Prekladal aj Jesenina, Lermontova a žalmy zo Starého zákona." }
+    wrong:
+      - { text: "Martin Kukučín bol právnik a sudca", why: "Právnikom a sudcom bol Hviezdoslav." }
+      - { text: "Kukučín zomrel v Čile", why: "Zomrel v chorvátskom Pakraci v roku 1928." }
+      - { text: "Timrava sa vlastným menom volala Terézia Vansová", why: "Vlastné meno Timravy je Božena Slančíková." }
+      - { text: "Timrava sa narodila v Martine", why: "Narodila sa v Polichne a zomrela v Lučenci." }
+      - { text: "Milan Rúfus sa narodil v Martine", why: "Narodil sa v Závažnej Porube." }
+      - { text: "Milan Rúfus zomrel v roku 2015", why: "Zomrel 11. januára 2009 v Bratislave." }
+
+  - id: stefanik-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o Milanovi Rastislavovi Štefánikovi sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Milan_Rast%C3%ADslav_%C5%A0tef%C3%A1nik
+    correct:
+      - { text: "Narodil sa v Košariskách", why: "Dnes sú súčasťou Slovenska, vtedy to bolo Uhorsko." }
+      - { text: "Bol astronóm", why: "V Paríži pracoval na observatóriu v Meudone." }
+      - { text: "Na Tahiti išiel pozorovať Halleyho kométu", why: "V Papeete bol od apríla 1910 asi desať mesiacov." }
+      - { text: "Za prvej svetovej vojny slúžil ako vojenský pilot", why: "Pilotný diplom získal v Chartres v roku 1915." }
+      - { text: "Dosiahol hodnosť brigádneho generála francúzskej armády", why: "Zároveň bol diplomatom a politikom." }
+      - { text: "Bol nositeľom Čestnej légie", why: "Stal sa jej rytierom (1914), dôstojníkom (1917) a veliteľom (1919)." }
+      - { text: "Zomrel pri páde lietadla neďaleko Ivanky pri Dunaji", why: "Stalo sa tak 4. mája 1919 pri návrate do vlasti." }
+      - { text: "Je na päťtisícovej korune a dvojeurovej minci", why: "Dvojeurovka vyšla v roku 2019 k stému výročiu jeho smrti." }
+    wrong:
+      - { text: "Zomrel pri autonehode", why: "Zomrel pri havárii lietadla Caproni." }
+      - { text: "Stal sa prvým prezidentom Československa", why: "Bol ministrom vojny, nie prezidentom." }
+      - { text: "Na Tahiti išiel pozorovať zatmenie Slnka", why: "Na Tahiti šiel v roku 1910 pozorovať Halleyho kométu; zatmenie Slnka pozoroval až v roku 1911 na ostrove Vavau." }
+      - { text: "Narodil sa v Martine", why: "Narodil sa v Košariskách." }
+      - { text: "Zomrel v Paríži v roku 1925", why: "Zomrel v roku 1919 pri Ivanke pri Dunaji." }
+      - { text: "Celý život pracoval na observatóriu v Greenwichi", why: "Pôsobil najmä v Meudone pri Paríži." }
+
+  - id: narodeny-v-bratislave
+    type: pick
+    prompt: Kto z týchto ľudí sa narodil v Bratislave?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Hana_Hegerov%C3%A1
+    correct:
+      - { text: "Hana Hegerová", why: "Narodila sa 20. októbra 1931 a stala sa šansoniérkou." }
+      - { text: "Miro Žbirka", why: "Narodil sa 21. októbra 1952, zomrel v Prahe." }
+      - { text: "Július Satinský", why: "Narodil sa 20. augusta 1941." }
+      - { text: "Wolfgang Kempelen", why: "Narodil sa v roku 1734, vtedy ešte v Prešporku." }
+      - { text: "Ján Andrej Segner", why: "Narodil sa v roku 1704, neskôr bol profesorom v Göttingene a Halle." }
+      - { text: "Filip Lenard", why: "Nositeľ Nobelovej ceny za fyziku z roku 1905." }
+    wrong:
+      - { text: "Milan Lasica", why: "Rodák zo Zvolena." }
+      - { text: "Zdeno Chára", why: "Narodil sa v Trenčíne." }
+      - { text: "Marián Hossa", why: "Rodák zo Starej Ľubovne." }
+      - { text: "Peter Sagan", why: "Narodil sa v Žiline." }
+      - { text: "Petra Vlhová", why: "Narodila sa v Liptovskom Mikuláši." }
+      - { text: "Alexander Dubček", why: "Narodil sa v Uhrovci." }
+      - { text: "Ľudovít Fulla", why: "Maliar sa narodil v Ružomberku." }
+      - { text: "Ivan Bella", why: "Narodil sa v Brezne." }
+
+  - id: warhol-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o Andym Warholovi sú pravdivé?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Andy_Warhol
+    correct:
+      - { text: "Narodil sa v Pittsburghu", why: "Vlastným menom sa volal Andrew Warhola." }
+      - { text: "Jeho rodičia pochádzali z Mikovej", why: "Dedina leží v okrese Stropkov." }
+      - { text: "Rodičia boli rusínskej národnosti", why: "Do USA prišli z Rakúsko-Uhorska." }
+      - { text: "Viedol umeleckú dielňu Factory", why: "V šesťdesiatych rokoch sa tam točili aj filmy." }
+      - { text: "Manažoval skupinu The Velvet Underground", why: "Začal v roku 1965." }
+      - { text: "V roku 1968 ho postrelila Valerie Solanas", why: "Úplne sa z toho nikdy nezotavil." }
+      - { text: "Zomrel v New Yorku po operácii žlčníka", why: "Stalo sa tak 22. februára 1987." }
+      - { text: "Jeho múzeum stojí v Medzilaborciach", why: "Založili ho v roku 1991, asi 15 km od Mikovej." }
+    wrong:
+      - { text: "Narodil sa v Bratislave", why: "Na svet prišiel v Pittsburghu v Pensylvánii." }
+      - { text: "Jeho rodičia pochádzali z Košíc", why: "Pochádzali z dediny Miková." }
+      - { text: "Zomrel v roku 1997", why: "Zomrel v roku 1987." }
+      - { text: "Manažoval skupinu The Beatles", why: "Manažoval The Velvet Underground." }
+      - { text: "Postrelil ho fanúšik pred jeho domom v Pittsburghu", why: "V roku 1968 ho v New Yorku postrelila Valerie Solanas." }
+      - { text: "Jeho múzeum je v Prešove", why: "Múzeum stojí v Medzilaborciach." }
+
+  - id: hudba-a-humor-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o slovenských hudobníkoch a humoristoch sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Miro_%C5%BDbirka
+    correct:
+      - { text: "Miro Žbirka bol spoluzakladateľom skupiny Modus", why: "S Modusom vyhral v roku 1977 Zlatú bratislavskú lyru." }
+      - { text: "Žbirka bol prvý Slovák, ktorý získal Zlatého slávika", why: "Stalo sa to v roku 1982." }
+      - { text: "Marika Gombitová naspievala pieseň Vyznanie", why: "Anketa Hit storočia ju v roku 2007 vyhlásila za víťaza." }
+      - { text: "Hana Hegerová vystupovala v parížskej Olympii", why: "Bolo to v rokoch 1967 – 1969." }
+      - { text: "Hegerová získala v Sopotoch cenu za pieseň „Zlá neděle“", why: "Stalo sa tak v roku 1962." }
+      - { text: "Lasica a Satinský hrali od roku 1968 v Divadle na korze", why: "Divadlo zrušili začiatkom 70. rokov a obaja dostali zákaz." }
+      - { text: "Július Satinský podpísal Antichartu", why: "Dokument z roku 1977 podpísal aj Lasica." }
+      - { text: "Milan Lasica hral doktora Vlacha vo filme Saturnin", why: "Film vznikol v roku 1994." }
+    wrong:
+      - { text: "Miro Žbirka zomrel v Bratislave", why: "Zomrel v Prahe 10. novembra 2021." }
+      - { text: "Marika Gombitová mala vážnu autonehodu v roku 1999", why: "Autonehoda sa stala 30. novembra 1980." }
+      - { text: "Hana Hegerová sa narodila v Prahe", why: "Narodila sa v Bratislave." }
+      - { text: "Július Satinský zomrel v roku 2021", why: "Zomrel už v roku 2002." }
+      - { text: "Divadlo na korze sídlilo v Košiciach", why: "Sídlilo v Bratislave." }
+      - { text: "Pieseň „Zlá neděle“ preslávila Marika Gombitová", why: "Pieseň je spojená s Hanou Hegerovou." }
+
+  - id: sportovci-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o slovenských športovcoch sú pravdivé?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Peter_Sagan
+    correct:
+      - { text: "Peter Sagan bol majstrom sveta v cestnej cyklistike v rokoch 2015, 2016 a 2017", why: "Trikrát za sebou vyhral dúhový dres." }
+      - { text: "Sagan vyhral Paríž – Roubaix", why: "Triumfoval v roku 2018." }
+      - { text: "Sagan sedemkrát vyhral bodovaciu súťaž na Tour de France", why: "Zelený dres mal v rokoch 2012 – 2016, 2018 a 2019." }
+      - { text: "Petra Vlhová získala olympijské zlato v slalome", why: "V Pekingu 2022." }
+      - { text: "Vlhová vyhrala celkové hodnotenie Svetového pohára", why: "V sezóne 2020/21 ako prvá Slovenka." }
+      - { text: "Zdeno Chára je najvyšší hráč, aký kedy hral v NHL", why: "Meria približne 206 – 207 cm (podľa zdroja)." }
+      - { text: "Chára vyhral Stanleyho pohár v roku 2011 s Bostonom", why: "Ako prvý Slovák bol kapitánom víťazného tímu." }
+      - { text: "Marián Hossa získal trikrát Stanleyho pohár", why: "Vždy s Chicagom: 2010, 2013 a 2015." }
+      - { text: "Anastasiya Kuzminová priniesla Slovensku prvé zimné olympijské zlato", why: "Vyhrala šprint v biatlone vo Vancouveri 2010." }
+    wrong:
+      - { text: "Sagan bol majstrom sveta v rokoch 2014 a 2018", why: "Dúhový dres mal v rokoch 2015 až 2017." }
+      - { text: "Sagan vyhral Okolo Flámska v roku 2018", why: "Vyhral ho v roku 2016, Paríž – Roubaix v roku 2018." }
+      - { text: "Vlhová vyhrala zlato v obrovskom slalome na olympiáde v Pekingu", why: "V Pekingu zvíťazila v slalome." }
+      - { text: "Chára vyhral Stanleyho pohár s Ottawou", why: "Vyhral ho s Bostonom." }
+      - { text: "Hossa sa narodil v Bratislave", why: "Narodil sa v Starej Ľubovni." }
+      - { text: "Kuzminová sa narodila v Žiline", why: "Narodila sa v ruskom Ťumeni." }
+
+  - id: spisovna-slovencina-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o vzniku spisovnej slovenčiny sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr
+    correct:
+      - { text: "Anton Bernolák bol rímskokatolícky kňaz", why: "Kodifikoval prvú spisovnú slovenčinu." }
+      - { text: "Bernolák vydal Grammatica Slavica v roku 1790", why: "Bola to prvá normatívna gramatika slovenčiny." }
+      - { text: "Bernolákova norma vychádzala z trnavského nárečia", why: "Preto sa jej hovorí aj bernolákovčina." }
+      - { text: "Ľudovít Štúr navrhol spisovný jazyk na základe stredoslovenských nárečí", why: "Návrh predstavil v roku 1843." }
+      - { text: "Štúr bol šéfredaktorom novín Slovenskje národňje novini", why: "Vychádzali od roku 1845." }
+      - { text: "Štúr zomrel po náhodnom výstrele pri love", why: "Postrelil sa v decembri 1855 a zomrel 12. januára 1856 v Modre." }
+      - { text: "Štúr sa narodil v Uhrovci", why: "V rovnakej obci sa narodil aj Alexander Dubček." }
+    wrong:
+      - { text: "Bernolák bol evanjelický farár", why: "Bol rímskokatolícky kňaz a farár v Nových Zámkoch." }
+      - { text: "Bernolákova gramatika vyšla v roku 1843", why: "Vyšla v roku 1790; rok 1843 patrí Štúrovmu návrhu." }
+      - { text: "Bernolákova norma vychádzala zo stredoslovenčiny", why: "Opierala sa o trnavské nárečie." }
+      - { text: "Štúr zomrel v súboji", why: "Zomrel po nešťastnej príhode pri love." }
+      - { text: "Štúr sa narodil v Trnave", why: "Narodil sa v Uhrovci." }
+      - { text: "Štúr zomrel v roku 1893", why: "Zomrel v roku 1856." }
+
+  - id: dubcek-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o Alexandrovi Dubčekovi sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Alexander_Dub%C4%8Dek
+    correct:
+      - { text: "Narodil sa v Uhrovci", why: "Narodil sa 27. novembra 1921." }
+      - { text: "Časť detstva prežil v Kirgizsku", why: "Rodina odišla v roku 1925 so spolkom Interhelpo do Biškeku (vtedy Frunze)." }
+      - { text: "V januári 1968 sa stal prvým tajomníkom ÚV KSČ", why: "Viedol reformy pražskej jari." }
+      - { text: "V apríli 1969 ho vystriedal Gustáv Husák", why: "Husák nastolil normalizáciu." }
+      - { text: "Po novembri 1989 sa stal predsedom Federálneho zhromaždenia", why: "Funkciu zastával do roku 1992." }
+      - { text: "Zomrel po autonehode na diaľnici D1 pri Humpolci", why: "Nehoda sa stala v septembri 1992, zomrel 7. novembra." }
+      - { text: "Zomrel v Prahe", why: "Zomrel v nemocnici po dvoch operáciách." }
+      - { text: "Je na slovenskej dvojeurovej minci", why: "Minca z roku 2021 pripomína sté výročie jeho narodenia." }
+    wrong:
+      - { text: "Narodil sa v Bratislave", why: "Narodil sa v Uhrovci, rovnako ako Štúr." }
+      - { text: "Detstvo prežil v Rakúsku", why: "Detstvo prežil v Kirgizsku a v Gorkom." }
+      - { text: "V roku 1969 vystriedal Husáka", why: "Bolo to naopak: Husák vystriedal Dubčeka." }
+      - { text: "Zomrel na rakovinu", why: "Zomrel následkom zranení po autonehode." }
+      - { text: "Bol prezidentom Československa", why: "Viedol parlament, nie štát." }
+      - { text: "Je na päťstovke", why: "Na päťstovke je Ľudovít Štúr." }
+
+  - id: ivan-bella-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o Ivanovi Bellovi, prvom Slovákovi vo vesmíre, sú pravdivé?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Ivan_Bella
+    correct:
+      - { text: "Narodil sa v Brezne", why: "Narodil sa 21. mája 1964." }
+      - { text: "Vo vesmíre bol vo februári 1999", why: "Štartoval 20. februára a pristál 28. februára." }
+      - { text: "Letel na lodi Sojuz TM-29", why: "Misia sa volala Mir-Štefánik." }
+      - { text: "Pracoval na orbitálnej stanici Mir", why: "Bol členom 27. hlavnej expedície." }
+      - { text: "Let trval skoro osem dní", why: "Presne 7 dní, 21 hodín a 56 minút." }
+      - { text: "Pôvodne bol stíhací pilot", why: "Lietal na MiG-21 a Su-22." }
+      - { text: "Je brigádnym generálom", why: "Povýšila ho prezidentka Čaputová v roku 2021." }
+      - { text: "Je po ňom pomenovaný asteroid", why: "Asteroid 22901 Ivanbella dostal meno v roku 2001." }
+    wrong:
+      - { text: "Narodil sa v Prešove", why: "Narodil sa v Brezne." }
+      - { text: "Do vesmíru letel na americkom raketoplane", why: "Letel na ruskej lodi Sojuz." }
+      - { text: "Pracoval na Medzinárodnej vesmírnej stanici", why: "Pracoval na ruskej stanici Mir." }
+      - { text: "Vo vesmíre strávil viac ako tri mesiace", why: "Let trval menej ako osem dní." }
+      - { text: "Do vesmíru letel v roku 1989", why: "Letel v roku 1999." }
+      - { text: "Pôvodne bol lekár", why: "Bol stíhací pilot." }
+
+  - id: maliari-tvrdenia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o maliaroch Ľudovítovi Fullovi a Martinovi Benkovi sú pravdivé?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/%C4%BDudov%C3%ADt_Fulla
+    correct:
+      - { text: "Fulla sa narodil v Ružomberku", why: "V rodnom meste je aj pochovaný a má tam galériu." }
+      - { text: "Fulla maľoval obraz Pieseň a práca", why: "Vznikol v rokoch 1934 – 1935." }
+      - { text: "Pieseň a práca získala Grand Prix na svetovej výstave v Paríži v roku 1937", why: "Neskôr ju pretkali ako tapisériu." }
+      - { text: "Tapisériu Pieseň a práca ocenili zlatou medailou na Expo 1958 v Bruseli", why: "Fulla bol priekopník slovenskej tapisérie." }
+      - { text: "Fulla ilustroval rozprávky Pavla Dobšinského", why: "Napríklad Popolvára a Zakliaty zámok." }
+      - { text: "Fulla namaľoval Jánošíka na bielom koni", why: "Obraz vznikol v roku 1948." }
+      - { text: "Martin Benka sa narodil v Kostolišti", why: "Narodil sa v roku 1888." }
+      - { text: "Benka si postavil asi trinásť huslí", why: "Niektoré sú kubistické a sú v múzeu v Martine." }
+      - { text: "Benka bol esperantista", why: "Kreslil aj esperantské pohľadnice." }
+    wrong:
+      - { text: "Fulla sa narodil v Martine", why: "Rodisko je Ružomberok." }
+      - { text: "Pieseň a práca dostala Grand Prix na výstave v Bruseli v roku 1937", why: "Grand Prix bola z Paríža; Brusel bol až v roku 1958." }
+      - { text: "Fulla zomrel v Ružomberku", why: "Zomrel v Bratislave, pochovaný je v Ružomberku." }
+      - { text: "Pieseň a práca je dielo Martina Benku", why: "Autorom je Ľudovít Fulla." }
+      - { text: "Benka postavil asi trinásť sôch", why: "Postavil asi trinásť huslí." }
+      - { text: "Benka sa narodil v Ružomberku", why: "Narodil sa v Kostolišti." }
+
+  - id: poradie-spisovatelia-narodenie
+    type: order
+    prompt: Zoraď slovenských jazykovedcov a spisovateľov podľa roku narodenia od najstaršieho.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Hviezdoslav
+    items:
+      - { text: "Anton Bernolák", value: 1762 }
+      - { text: "Ľudovít Štúr", value: 1815 }
+      - { text: "Pavol Országh Hviezdoslav", value: 1849 }
+      - { text: "Martin Kukučín", value: 1860 }
+      - { text: "Timrava", value: 1867 }
+      - { text: "Milan Rúfus", value: 1928 }
+
+  - id: poradie-prezidenti
+    type: order
+    prompt: Zoraď prezidentov Slovenskej republiky podľa nástupu do úradu od najstaršieho.
+    direction: asc
+    unit: rok nástupu
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Zoznam_prezidentov_Slovenska
+    items:
+      - { text: "Michal Kováč", value: 1993 }
+      - { text: "Rudolf Schuster", value: 1999 }
+      - { text: "Ivan Gašparovič", value: 2004 }
+      - { text: "Andrej Kiska", value: 2014 }
+      - { text: "Zuzana Čaputová", value: 2019 }
+      - { text: "Peter Pellegrini", value: 2024 }
+
+  - id: poradie-vedci-narodenie
+    type: order
+    prompt: Zoraď vedcov a vynálezcov spojených so Slovenskom podľa roku narodenia od najstaršieho.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Aurel_Stodola
+    items:
+      - { text: "Ján Andrej Segner", value: 1704 }
+      - { text: "Maximilián Hell", value: 1720 }
+      - { text: "Wolfgang Kempelen", value: 1734 }
+      - { text: "Štefan Anián Jedlík", value: 1800 }
+      - { text: "Jozef Maximilián Petzval", value: 1807 }
+      - { text: "Aurel Stodola", value: 1859 }
+      - { text: "Jozef Murgaš", value: 1864 }
+      - { text: "Štefan Banič", value: 1870 }
+
+  - id: poradie-hudba-sport-narodenie
+    type: order
+    prompt: Zoraď tieto slovenské osobnosti podľa roku narodenia od najstaršej.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Miro_%C5%BDbirka
+    items:
+      - { text: "Hana Hegerová", value: 1931 }
+      - { text: "Milan Lasica", value: 1940 }
+      - { text: "Miro Žbirka", value: 1952 }
+      - { text: "Marika Gombitová", value: 1956 }
+      - { text: "Zdeno Chára", value: 1977 }
+      - { text: "Peter Sagan", value: 1990 }
+      - { text: "Petra Vlhová", value: 1995 }
+
+  - id: bella-rok-letu
+    type: number
+    prompt: V ktorom roku letel Ivan Bella na stanicu Mir?
+    answer: 1999
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Štartoval 20. februára 1999 na lodi Sojuz TM-29 a pristál o osem dní neskôr.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Ivan_Bella
+
+  - id: warhol-rok-narodenia
+    type: number
+    prompt: V ktorom roku sa narodil Andy Warhol, syn rodičov z Mikovej?
+    answer: 1928
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Narodil sa 6. augusta 1928 v Pittsburghu ako Andrew Warhola.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Andy_Warhol
+
+  - id: chara-vyska
+    type: number
+    prompt: Koľko centimetrov meria Zdeno Chára, najvyšší hráč v histórii NHL?
+    answer: 207
+    unit: cm
+    scale: linear
+    tolerance: 4
+    why: Meria približne 206 – 207 cm (zdroje sa líšia o centimeter), takže prečnieva nad väčšinu súperov aj spoluhráčov.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Zdeno_Ch%C3%A1ra
+
+  - id: stur-rok-umrtia
+    type: number
+    prompt: V ktorom roku zomrel Ľudovít Štúr po nešťastnej príhode pri love?
+    answer: 1856
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Postrelil sa v decembri 1855 a 12. januára 1856 zomrel v Modre vo veku 40 rokov.
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr
+
+  - id: padak-patent
+    type: choice
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/%C5%A0tefan_Bani%C4%8D
+    prompt: Ktorý Slovák získal v roku 1914 americký patent na padák?
+    correct: { text: "Štefan Banič", why: "Padák vyskúšal skokom z 15-poschodovej budovy vo Washingtone." }
+    wrong:
+      - { text: "Jozef Murgaš", why: "Bol priekopníkom bezdrôtovej telegrafie." }
+      - { text: "Ján Bahýľ", why: "Navrhol motorový vrtuľník." }
+      - { text: "Aurel Stodola", why: "Je zakladateľom teórie parných a plynových turbín." }
+
+  - id: bankovka-5000
+    type: choice
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_koruna
+    prompt: Kto bol zobrazený na slovenskej päťtisícovej korune?
+    correct: { text: "Milan Rastislav Štefánik", why: "Bola to najvyššia nominálna hodnota slovenskej koruny." }
+    wrong:
+      - { text: "Ľudovít Štúr", why: "Bol na päťstovke." }
+      - { text: "Anton Bernolák", why: "Bol na dvojstovke." }
+      - { text: "Andrej Hlinka", why: "Bol na tisícke." }
