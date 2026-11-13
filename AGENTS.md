@@ -20,7 +20,7 @@ Goals, in the owner's words:
 Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
 
 - Built: Classic and Mix modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, vibration/sound settings, import, offline PWA.
-- Content: **23 packs / 604 questions** (8 adult). Target 1,000.
+- Content: **23 packs / 604 questions** (6 adult). Target 1,000.
 - Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
 
@@ -40,7 +40,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - Offload simple, mechanical tasks (page fetches, searches, bulk conversions) to cheaper models/subagents.
 - Do not copy question text, names, artwork or visual identity from Chytrák, Smart10/Desítka or any other quiz product. Mechanics may be reused; content and identity must be original.
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
-- Every question needs a `source`; time-sensitive facts need `asOf`; every option needs a one-line `why`. Language-model facts are checked against the source before merge.
+- Every question needs a `source`; time-sensitive facts need `asOf`; every pick/choice option (and every number question) needs a one-line `why`; order items should have one. Language-model facts are checked against the source before merge.
 - **Nothing hateful or untrue**, also in spicy packs. Quotes of real people verbatim as printed by a reliable source; no claims of wrongdoing beyond the source.
 - Anything crude goes into an 18+ pack with `warnings`: non-adult packs switch on automatically for existing players.
 - Question content is primarily Slovak (Czech acceptable). Code, comments and docs are in English.
