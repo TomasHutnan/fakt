@@ -545,6 +545,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
 /** Whether the current round is the last one (scores so far plus this card's points for a target game). */
 function isFinalRound(s: GameState): boolean {
   if (s.settings.target != null) {
+    if (s.deckPos >= s.deck.length - 1) return true;
     if (s.phase === "reveal") return s.players.some((p) => p.score >= s.settings.target!);
     const pending = scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
     return s.players.some((p, i) => p.score + s.results.reduce((n, r, j) => n + (r.player === i ? pending[j] : 0), 0) >= s.settings.target!);
