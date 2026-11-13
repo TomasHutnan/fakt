@@ -17,14 +17,14 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`, owner to choose), 10 packs / 246 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: owner picks a design; more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`, owner to choose), 16 packs / 384 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: owner picks a design; more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
 ## Workflow
 
 - Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule, 2026-11-13). Run it with `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt> <out>`; the prompt asks for findings and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS.
-- `agy` must run through `scripts/agy-readonly.py` (read-only allow-list). Do not run agy with `--dangerously-skip-permissions`; Gemini returns text (e.g. YAML) and Claude writes the files.
+- `agy` must run through `scripts/agy-readonly.py` (read-only allow-list). Do not run agy with `--dangerously-skip-permissions`; Gemini returns text (e.g. YAML) and Claude writes the files. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
 - Content: packs are drafted by one model and fact-checked by the other (Gemini checks Claude packs, Claude checks Gemini packs) before merge. Writers must not use facts they did not see in a source this session. Tip for sk.wikipedia: percent-encode diacritics or use `https://sk.wikipedia.org/w/index.php?search=<term>`.
 - Checks: `npm test`, `npm run packs:check`, `npm run build`; UI smoke test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots of designs: `node scripts/screenshots.ts <dir> [designId…]`.
 - Commits are made with `-c commit.gpgsign=false` when the owner is away (GPG pinentry cannot be answered unattended); the owner may re-sign.
