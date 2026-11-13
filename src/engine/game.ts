@@ -23,6 +23,8 @@ export interface Settings {
   target: number | null;
   wipe: WipeRule;
   showCorrectCount: boolean;
+  /** Show the answer to each player right after their turn instead of to everyone after the round. */
+  revealEach: boolean;
   difficulties: number[];
   packIds: string[];
 }
@@ -33,6 +35,7 @@ export const DEFAULT_SETTINGS: Settings = {
   target: null,
   wipe: "always",
   showCorrectCount: false,
+  revealEach: true,
   difficulties: [1, 2, 3],
   packIds: [],
 };
@@ -176,63 +179,71 @@ export function reduce(s: GameState, a: Action, packs: Pack[]): GameState {
       const found = picks.filter((i) => s.card.type === "pick" && s.card.options[i].correct).length;
       const status = !opt.correct ? "busted" : found === s.card.correctCount ? "complete" : "playing";
       const answer: Answer = { type: "pick", picks, status };
-      return status === "playing" ? { ...s, answer } : finishTurn({ ...s, answer });
+      return status === "playing" ? { ...s, answer } : finishTurn({ ...s, answer }, packs);
     }
 
     case "bank":
       if (s.phase !== "play" || s.answer?.type !== "pick" || s.answer.status !== "playing") return s;
-      return finishTurn({ ...s, answer: { ...s.answer, status: "banked" } });
+      return finishTurn({ ...s, answer: { ...s.answer, status: "banked" } }, packs);
 
     case "submitOrder":
       if (s.phase !== "play" || s.card.type !== "order") return s;
-      return finishTurn({ ...s, answer: { type: "order", arrangement: a.arrangement } });
+      return finishTurn({ ...s, answer: { type: "order", arrangement: a.arrangement } }, packs);
 
     case "submitNumber":
       if (s.phase !== "play" || s.card.type !== "number" || !Number.isFinite(a.value)) return s;
-      return finishTurn({ ...s, answer: { type: "number", value: a.value } });
+      return finishTurn({ ...s, answer: { type: "number", value: a.value } }, packs);
 
     case "submitChoice":
       if (s.phase !== "play" || s.card.type !== "choice") return s;
       if (a.option < 0 || a.option >= s.card.options.length) return s;
-      return finishTurn({ ...s, answer: { type: "choice", option: a.option } });
+      return finishTurn({ ...s, answer: { type: "choice", option: a.option } }, packs);
 
-    case "endTurn": {
-      if (s.phase !== "turnEnd") return s;
-      if (!isLastTurn(s)) {
-        return { ...s, turn: s.turn + 1, phase: "handover", answer: initialAnswer(s.card) };
-      }
-      return reveal(s);
-    }
+    case "endTurn":
+      return s.phase === "turnEnd" ? advance(s, packs) : s;
 
-    case "nextRound": {
-      if (s.phase !== "reveal") return s;
-      const played = [...s.played, s.card.key];
-      if (isGameOver(s)) return { ...s, played, phase: "over" };
-      // Skip keys whose question disappeared (e.g. an imported pack was removed).
-      let pos = s.deckPos + 1;
-      let card: Card | null = null;
-      while (pos < s.deck.length && !(card = cardFor(s.deck[pos], packs, s.seed, pos))) pos++;
-      if (!card) return { ...s, played, phase: "over" };
-      const round = s.round + 1;
-      return {
-        ...s,
-        played,
-        deckPos: pos,
-        round,
-        card,
-        order: roundOrder(s.players.length, round),
-        turn: 0,
-        phase: s.players.length > 1 ? "handover" : "play",
-        answer: initialAnswer(card),
-        results: [],
-      };
-    }
+    case "nextRound":
+      return s.phase === "reveal" ? nextRound(s, packs) : s;
   }
 }
 
-function finishTurn(s: GameState): GameState {
+/** After a turn: hand over to the next player, or close the round. */
+function advance(s: GameState, packs: Pack[]): GameState {
+  if (!isLastTurn(s)) return { ...s, turn: s.turn + 1, phase: "handover", answer: initialAnswer(s.card) };
+  const r = reveal(s);
+  // Alone and already shown the answer: the round summary adds nothing, go straight on.
+  return s.settings.revealEach && s.players.length === 1 ? nextRound(r, packs) : r;
+}
+
+function nextRound(s: GameState, packs: Pack[]): GameState {
+  const played = [...s.played, s.card.key];
+  if (isGameOver(s)) return { ...s, played, phase: "over" };
+  // Skip keys whose question disappeared (e.g. an imported pack was removed).
+  let pos = s.deckPos + 1;
+  let card: Card | null = null;
+  while (pos < s.deck.length && !(card = cardFor(s.deck[pos], packs, s.seed, pos))) pos++;
+  if (!card) return { ...s, played, phase: "over" };
+  const round = s.round + 1;
+  return {
+    ...s,
+    played,
+    deckPos: pos,
+    round,
+    card,
+    order: roundOrder(s.players.length, round),
+    turn: 0,
+    phase: s.players.length > 1 ? "handover" : "play",
+    answer: initialAnswer(card),
+    results: [],
+  };
+}
+
+function finishTurn(s: GameState, packs: Pack[]): GameState {
   const result: TurnResult = { player: currentPlayer(s), answer: s.answer!, points: 0 };
-  return { ...s, phase: "turnEnd", results: [...s.results, result] };
+  const next: GameState = { ...s, phase: "turnEnd", results: [...s.results, result] };
+  // Pick turns always end on their own screen (the picks were already shown).
+  // Other formats skip it unless the answer is shown to each player.
+  return s.card.type === "pick" || s.settings.revealEach ? next : advance(next, packs);
 }
 
 function reveal(s: GameState): GameState {

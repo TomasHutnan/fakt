@@ -385,6 +385,18 @@ export function SettingsScreen(props: {
         />
         <p class="field__hint">{sk.showCorrectCountHint}</p>
 
+        <Segmented<string>
+          id="reveal-each"
+          label={sk.revealEach}
+          value={s.revealEach ? "on" : "off"}
+          options={[
+            { value: "on", label: sk.revealEachOn },
+            { value: "off", label: sk.revealEachOff },
+          ]}
+          onChange={(v) => props.onSettings({ ...s, revealEach: v === "on" })}
+        />
+        <p class="field__hint">{sk.revealEachHint}</p>
+
         <fieldset class="field">
           <legend class="field__label">{sk.seenCount(props.seenCount)}</legend>
           <button

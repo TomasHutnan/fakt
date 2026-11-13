@@ -92,7 +92,15 @@
   display: grid; grid-template-columns: 2em 1fr auto; align-items: center; gap: 4px 10px; padding: 8px 10px;
 }
 :where(.order-item__controls) { display: flex; gap: 6px; }
-:where(.order-item__why) { grid-column: 2 / -1; }
+:where(.order-item__why, .order-item .opt__who) { grid-column: 2 / -1; }
+/* Drag to reorder: the row follows the pointer (transform set from Game.tsx). */
+.order-item--draggable { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.order-item--drag {
+  position: relative; z-index: 2; cursor: grabbing;
+  background: var(--paper, var(--plate, var(--panel, var(--surface, var(--bg, Canvas)))));
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
+}
+.order-list--dragging { cursor: grabbing; }
 
 :where(.number-input) { display: flex; flex-direction: column; gap: 10px; }
 :where(.number-input__row) { display: flex; align-items: center; gap: 10px; }

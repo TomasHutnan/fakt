@@ -193,6 +193,51 @@ describe("game flow", () => {
     expect(s.phase).toBe("over");
   });
 
+  it("shows each player the answer after their turn when revealEach is on", () => {
+    const choiceOnly: Pack = { ...pack, questions: pack.questions.filter((q) => q.type === "choice") };
+    let s = newGame({
+      players: ["A", "B"],
+      settings: { ...DEFAULT_SETTINGS, mode: "mix", packIds: ["test"], revealEach: true },
+      packs: [choiceOnly],
+      seen: new Set(),
+      seed: 1,
+    })!;
+    s = reduce(s, { type: "continue" }, [choiceOnly]);
+    s = reduce(s, { type: "submitChoice", option: 0 }, [choiceOnly]);
+    expect(s.phase).toBe("turnEnd");
+    s = reduce(s, { type: "endTurn" }, [choiceOnly]);
+    expect(s.phase).toBe("handover");
+  });
+
+  it("skips the turn-end screen for non-pick cards when revealEach is off", () => {
+    const choiceOnly: Pack = { ...pack, questions: pack.questions.filter((q) => q.type === "choice") };
+    let s = newGame({
+      players: ["A", "B"],
+      settings: { ...DEFAULT_SETTINGS, mode: "mix", packIds: ["test"], revealEach: false },
+      packs: [choiceOnly],
+      seen: new Set(),
+      seed: 1,
+    })!;
+    s = reduce(s, { type: "continue" }, [choiceOnly]);
+    s = reduce(s, { type: "submitChoice", option: 0 }, [choiceOnly]);
+    expect(s.phase).toBe("handover");
+    s = reduce(s, { type: "continue" }, [choiceOnly]);
+    s = reduce(s, { type: "submitChoice", option: 1 }, [choiceOnly]);
+    expect(s.phase).toBe("reveal");
+    expect(s.results).toHaveLength(2);
+  });
+
+  it("goes straight to the next round when playing alone with revealEach on", () => {
+    let s = play(5, ["A"], { rounds: 3, revealEach: true });
+    if (s.card.type !== "pick") throw new Error();
+    s = reduce(s, { type: "pick", option: s.card.options.findIndex((o) => o.correct) }, [pack]);
+    s = reduce(s, { type: "bank" }, [pack]);
+    s = reduce(s, { type: "endTurn" }, [pack]);
+    expect(s.phase).toBe("play");
+    expect(s.round).toBe(2);
+    expect(s.players[0].score).toBe(1);
+  });
+
   it("returns null when nothing matches", () => {
     expect(newGame({ players: ["A"], settings: { ...DEFAULT_SETTINGS, packIds: [] }, packs: [pack], seen: new Set(), seed: 1 })).toBeNull();
   });

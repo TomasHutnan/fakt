@@ -13,7 +13,7 @@ export interface DesignMeta {
   themeColorDark?: string;
 }
 
-export const DEFAULT_DESIGN = "zaklad";
+export const DEFAULT_DESIGN = "kartoteka";
 
 const metas = import.meta.glob<DesignMeta>("./*/meta.ts", { eager: true, import: "default" });
 import.meta.glob("./*/design.css", { eager: true });

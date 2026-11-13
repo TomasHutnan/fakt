@@ -1,10 +1,11 @@
 import { createContext, type ComponentChildren } from "preact";
-import { useContext, useEffect, useMemo, useState } from "preact/hooks";
+import { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "preact/hooks";
 import type { Card, ChoiceCard, NumberCard, OrderCard, PickCard } from "../engine/cards.ts";
 import { formatNumber } from "../engine/cards.ts";
 import {
   currentPlayer,
   isLastTurn,
+  scoreCard,
   standings,
   type Action,
   type Answer,
@@ -151,6 +152,9 @@ function PickTurn({
         {state.settings.showCorrectCount && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && answer.picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
+      {over && state.settings.revealEach ? (
+        <CardAnswer card={card} results={state.results.slice(-1)} names={() => sk.you} />
+      ) : (
       <ul class="options">
         {card.options.map((o, i) => {
           const picked = answer.picks.includes(i);
@@ -172,6 +176,7 @@ function PickTurn({
           );
         })}
       </ul>
+      )}
       {over ? (
         <TurnEnd state={state}>
           <p class={`verdict verdict--${answer.status}`}>
@@ -187,6 +192,7 @@ function PickTurn({
             )}
             {answer.status === "complete" && <span class="verdict__detail">{sk.pointsNow(points)}</span>}
           </p>
+          {state.settings.revealEach && <CardFoot card={card} />}
         </TurnEnd>
       ) : (
         <div class="actions">
@@ -219,7 +225,20 @@ function TurnEnd({ state, children }: { state: GameState; children?: ComponentCh
 
 function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameState; dispatch: (a: Action) => void }) {
   const [arr, setArr] = useState(() => card.items.map((_, i) => i));
+  const [drag, setDrag] = useState<{ item: number; y: number } | null>(null);
+  const list = useRef<HTMLOListElement>(null);
+  const grab = useRef(0);
   useEffect(() => setArr(card.items.map((_, i) => i)), [card.key, state.turn]);
+  const items = () => Array.from(list.current?.children ?? []) as HTMLElement[];
+  // Place the dragged row under the finger; runs after the DOM has the new order.
+  useLayoutEffect(() => {
+    for (const el of items()) el.style.transform = "";
+    if (!drag) return;
+    const el = items()[arr.indexOf(drag.item)];
+    if (el) el.style.transform = `translateY(${drag.y - el.offsetTop}px)`;
+  });
+  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
+
   const move = (pos: number, d: number) => {
     const to = pos + d;
     if (to < 0 || to >= arr.length) return;
@@ -227,31 +246,73 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
     [next[pos], next[to]] = [next[to], next[pos]];
     setArr(next);
   };
-  if (state.phase === "turnEnd") return <Saved state={state} />;
+
+  // Pointer drag (mouse and touch). The dragged row follows the finger;
+  // the others reorder as its centre crosses their midpoints.
+  const onDown = (e: PointerEvent, item: number) => {
+    if (e.button !== 0 || (e.target as HTMLElement).closest("button")) return;
+    const el = e.currentTarget as HTMLElement;
+    const top = list.current!.getBoundingClientRect().top;
+    grab.current = e.clientY - top - el.offsetTop;
+    el.setPointerCapture(e.pointerId);
+    setDrag({ item, y: el.offsetTop });
+  };
+  const onMove = (e: PointerEvent) => {
+    if (!drag || !list.current) return;
+    const y = e.clientY - list.current.getBoundingClientRect().top - grab.current;
+    const els = items();
+    const from = arr.indexOf(drag.item);
+    const h = els[from]?.offsetHeight ?? 0;
+    const centre = y + h / 2;
+    let to = 0;
+    els.forEach((el, i) => {
+      if (i !== from && el.offsetTop + el.offsetHeight / 2 < centre) to++;
+    });
+    if (to !== from) {
+      const next = arr.filter((x) => x !== drag.item);
+      next.splice(to, 0, drag.item);
+      setArr(next);
+    }
+    setDrag({ item: drag.item, y });
+  };
+  const onUp = () => setDrag(null);
+
   return (
     <>
-      <p class="q__hint">{sk.orderHint(card.direction)}</p>
-      <ol class="order-list">
-        {arr.map((item, pos) => (
-          <li class="order-item" key={item}>
-            <span class="order-item__rank">{pos + 1}</span>
-            <span class="order-item__text">{tie(card.items[item].text)}</span>
-            <span class="order-item__controls">
-              <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${card.items[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
-                ↑
-              </button>
-              <button
-                type="button"
-                class="btn btn--icon"
-                aria-label={`${sk.moveDown}: ${card.items[item].text}`}
-                disabled={pos === arr.length - 1}
-                onClick={() => move(pos, 1)}
-              >
-                ↓
-              </button>
-            </span>
-          </li>
-        ))}
+      <p class="q__hint">
+        {sk.orderHint(card.direction)} {sk.dragHint}
+      </p>
+      <ol class={`order-list${drag ? " order-list--dragging" : ""}`} ref={list}>
+        {arr.map((item, pos) => {
+          const dragging = drag?.item === item;
+          return (
+            <li
+              class={`order-item order-item--draggable${dragging ? " order-item--drag" : ""}`}
+              key={item}
+              onPointerDown={(e) => onDown(e, item)}
+              onPointerMove={onMove}
+              onPointerUp={onUp}
+              onPointerCancel={onUp}
+            >
+              <span class="order-item__rank">{pos + 1}</span>
+              <span class="order-item__text">{tie(card.items[item].text)}</span>
+              <span class="order-item__controls">
+                <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${card.items[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  class="btn btn--icon"
+                  aria-label={`${sk.moveDown}: ${card.items[item].text}`}
+                  disabled={pos === arr.length - 1}
+                  onClick={() => move(pos, 1)}
+                >
+                  ↓
+                </button>
+              </span>
+            </li>
+          );
+        })}
       </ol>
       <div class="actions">
         <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "submitOrder", arrangement: arr })}>
@@ -275,7 +336,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
     setRaw("");
     setError(false);
   }, [card.key, state.turn]);
-  if (state.phase === "turnEnd") return <Saved state={state} />;
+  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
   const submit = (e: Event) => {
     e.preventDefault();
     const v = parseNumber(raw);
@@ -311,7 +372,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
 }
 
 function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameState; dispatch: (a: Action) => void }) {
-  if (state.phase === "turnEnd") return <Saved state={state} />;
+  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
   return (
     <ul class="options options--choice">
       {card.options.map((o, i) => (
@@ -325,101 +386,92 @@ function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameSt
   );
 }
 
-function Saved({ state }: { state: GameState }) {
+/** Turn end for order, number and choice when answers are shown to each player. */
+function TurnReveal({ state }: { state: GameState }) {
+  const s = state;
+  const r = s.results[s.results.length - 1];
+  // Ranked number scoring needs everyone's guess, so points come after the round.
+  const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
+  const title =
+    s.card.type === "choice"
+      ? points
+        ? sk.correctTitle
+        : sk.busted
+      : s.card.type === "order"
+        ? describe(s.card, r)
+        : s.card.type === "number"
+          ? sk.yourGuess(describe(s.card, r))
+          : "";
   return (
-    <TurnEnd state={state}>
-      <p class="verdict verdict--saved">
-        <strong class="verdict__title">{sk.answerSaved}</strong>
-        {!isLastTurn(state) && <span class="verdict__detail">{sk.answerSavedHint}</span>}
+    <TurnEnd state={s}>
+      <CardAnswer card={s.card} results={[r]} names={() => sk.you} />
+      <p class={`verdict verdict--${points ? "complete" : points === 0 ? "busted" : "saved"}`}>
+        <strong class="verdict__title">{title}</strong>
+        <span class="verdict__detail">{points == null ? sk.pointsAfterRound : `+${sk.pointsNow(points)}`}</span>
       </p>
+      <CardFoot card={s.card} />
     </TurnEnd>
   );
 }
 
-function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) => void }) {
-  const s = state;
-  const card = s.card;
-  const over = useMemo(() => {
-    if (s.settings.target != null) return s.players.some((p) => p.score >= s.settings.target!);
-    return s.round >= Math.min(s.settings.rounds, s.deck.length);
-  }, [s]);
-  const names = (pred: (r: TurnResult) => boolean) =>
-    s.results.filter(pred).map((r) => s.players[r.player].name);
-  const multi = s.players.length > 1;
-
-  return (
-    <section class={`q q--reveal q--${card.type}`}>
-      <CardHead card={card} />
-      <h1 class="q__prompt">{tie(card.prompt)}</h1>
-
-      {card.type === "pick" && (
-        <ul class="options options--reveal">
+/** The solution of a card; `names` labels who chose each option. */
+function CardAnswer({ card, results, names }: { card: Card; results: TurnResult[]; names: (r: TurnResult) => string }) {
+  const who = (pred: (r: TurnResult) => boolean) => results.filter(pred).map(names);
+  switch (card.type) {
+    case "pick":
+    case "choice":
+      return (
+        <ul class={`options options--reveal${card.type === "choice" ? " options--choice" : ""}`}>
           {card.options.map((o, i) => {
-            const who = names((r) => r.answer.type === "pick" && r.answer.picks.includes(i));
+            const w = who((r) =>
+              r.answer.type === "pick" ? r.answer.picks.includes(i) : r.answer.type === "choice" && r.answer.option === i,
+            );
             return (
               <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
                 <span class="opt__text">{tie(o.text)}</span>
                 <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>
                 <span class="opt__why">{tie(o.why)}</span>
-                {multi && who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
+                {w.length > 0 && <span class="opt__who">{w.join(", ")}</span>}
               </li>
             );
           })}
         </ul>
-      )}
-
-      {card.type === "choice" && (
-        <ul class="options options--reveal options--choice">
-          {card.options.map((o, i) => {
-            const who = names((r) => r.answer.type === "choice" && r.answer.option === i);
-            return (
-              <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
-                <span class="opt__text">{tie(o.text)}</span>
-                <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>
-                <span class="opt__why">{tie(o.why)}</span>
-                {who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
-              </li>
-            );
-          })}
-        </ul>
-      )}
-
-      {card.type === "order" && (
+      );
+    case "order":
+      return (
         <ol class="order-list order-list--reveal">
-          {card.solution.map((item, pos) => (
-            <li class="order-item">
-              <span class="order-item__rank">{pos + 1}</span>
-              <span class="order-item__text">{tie(card.items[item].text)}</span>
-              <span class="order-item__value">{card.items[item].label}</span>
-              {card.items[item].why && <span class="order-item__why">{card.items[item].why}</span>}
-            </li>
-          ))}
+          {card.solution.map((item, pos) => {
+            const w = who((r) => r.answer.type === "order" && r.answer.arrangement[pos] === item);
+            return (
+              <li class="order-item">
+                <span class="order-item__rank">{pos + 1}</span>
+                <span class="order-item__text">{tie(card.items[item].text)}</span>
+                <span class="order-item__value">{card.items[item].label}</span>
+                {card.items[item].why && <span class="order-item__why">{tie(card.items[item].why!)}</span>}
+                {w.length > 0 && <span class="opt__who">{w.join(", ")} ✓</span>}
+              </li>
+            );
+          })}
         </ol>
-      )}
-
-      {card.type === "number" && (
+      );
+    case "number":
+      return (
         <div class="number-reveal">
           <span class="number-reveal__label">{sk.correctAnswer}</span>
           <strong class="number-reveal__value">
             {formatNumber(card.answer)}
             {card.unit ? ` ${card.unit}` : ""}
           </strong>
-          <span class="number-reveal__why">{card.why}</span>
+          <span class="number-reveal__why">{tie(card.why)}</span>
         </div>
-      )}
+      );
+  }
+}
 
-      {card.note && <p class="q__note">{card.note}</p>}
-
-      <ul class="results">
-        {s.results.map((r) => (
-          <li class={`result${r.points > 0 ? " result--scored" : ""}`}>
-            <span class="result__name">{s.players[r.player].name}</span>
-            <span class="result__detail">{describe(card, r)}</span>
-            <span class="result__points">+{r.points}</span>
-          </li>
-        ))}
-      </ul>
-
+function CardFoot({ card }: { card: Card }) {
+  return (
+    <>
+      {card.note && <p class="q__note">{tie(card.note)}</p>}
       <p class="q__source">
         {sk.source}:{" "}
         {/^https?:\/\//.test(card.source) ? (
@@ -430,6 +482,46 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
           card.source
         )}
       </p>
+    </>
+  );
+}
+
+function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) => void }) {
+  const s = state;
+  const card = s.card;
+  const over = useMemo(() => {
+    if (s.settings.target != null) return s.players.some((p) => p.score >= s.settings.target!);
+    return s.round >= Math.min(s.settings.rounds, s.deck.length);
+  }, [s]);
+  const multi = s.players.length > 1;
+  // Each player already saw the answer on their turn: the round ends with scores only.
+  const full = !s.settings.revealEach;
+
+  return (
+    <section class={`q q--reveal q--${card.type}`}>
+      <CardHead card={card} />
+      <h1 class="q__prompt">{tie(card.prompt)}</h1>
+
+      {full && (
+        <CardAnswer
+          card={card}
+          results={card.type === "pick" && !multi ? [] : s.results}
+          names={(r) => s.players[r.player].name}
+        />
+      )}
+
+      {!full && <h2 class="q__results-title">{sk.results}</h2>}
+      <ul class="results">
+        {s.results.map((r) => (
+          <li class={`result${r.points > 0 ? " result--scored" : ""}`}>
+            <span class="result__name">{s.players[r.player].name}</span>
+            <span class="result__detail">{describe(card, r)}</span>
+            <span class="result__points">+{r.points}</span>
+          </li>
+        ))}
+      </ul>
+
+      {full && <CardFoot card={card} />}
 
       <div class="actions">
         <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "nextRound" })}>
