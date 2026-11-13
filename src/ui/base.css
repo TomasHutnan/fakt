@@ -196,3 +196,17 @@
   background: color-mix(in srgb, var(--accent, currentColor) 12%, transparent);
 }
 :where(.review .btn--small) { align-self: flex-start; }
+
+/* Answer drawn in place on the grid the player used (per-turn reveal). */
+.options--answered .opt.opt--missed { background: transparent; border-style: dashed; color: inherit; }
+/* Designs that put light text on the filled "correct" cell: the missed cell has no fill, so use the page text colour. */
+.options--answered .opt.opt--missed .opt__text,
+.options--answered .opt.opt--missed .opt__why { color: inherit; }
+.options--answered .opt.opt--rest { opacity: 0.6; }
+.options--answered .opt.opt--rest .opt__why { opacity: 0.9; }
+:where(.options--answered .opt) { justify-content: flex-start; }
+:where(.order-item__mark) { margin-left: 4px; font-weight: 700; }
+:where(.order-item--right .order-item__mark) { color: var(--good, green); }
+:where(.order-item--off .order-item__mark) { color: var(--bad, crimson); }
+:where(.order-item__should) { grid-column: 2 / -1; font-size: 0.85em; color: var(--bad, crimson); }
+:where(.order-list--answered .order-item) { grid-template-columns: 3em 1fr auto; }

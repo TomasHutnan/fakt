@@ -365,3 +365,8 @@
 [data-design="zvyraznovac"] .error { color: var(--ink); font-weight: 600; padding-left: 10px; border-left: 3px solid var(--ink); }
 [data-design="zvyraznovac"] .notice { color: var(--ink-2); padding-left: 10px; border-left: 3px solid var(--hl); }
 [data-design="zvyraznovac"] .loading { font: italic 400 18px/1.4 var(--serif); color: var(--muted); }
+
+/* Right answer the player did not pick: a thin marker stroke under the word instead of a full swipe. */
+[data-design="zvyraznovac"] .options--answered .opt--missed .opt__text {
+  background: linear-gradient(transparent 68%, var(--hl) 68%, var(--hl) 92%, transparent 92%);
+}
