@@ -1,0 +1,458 @@
+id: sk-jazyk
+title: Slovenčina a nárečia
+description: Písmená, pravopis, prevzaté slová, nárečia a rozdiely oproti češtine.
+lang: sk
+version: 1
+questions:
+  # ---------- pick ----------
+  - id: abeceda-pismena
+    type: pick
+    prompt: "Ktoré z týchto znakov sú samostatné písmená slovenskej abecedy?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_abeceda
+    tags: [abeceda]
+    correct:
+      - { text: ä, why: "Tretie písmeno abecedy, hovorovo „široké e“." }
+      - { text: ô, why: "Číta sa [uo] a v abecede je 29. v poradí." }
+      - { text: ĺ, why: "Dlhé el, spolu s ŕ sú jediné spoluhlásky s dĺžňom." }
+      - { text: ŕ, why: "Dlhé er, slabikotvorné r." }
+      - { text: ch, why: "Je jedno písmeno a v abecede stojí hneď za h." }
+      - { text: dz, why: "Dvojznak, ale samostatné písmeno abecedy." }
+      - { text: dž, why: "Dvojznak, ale samostatné písmeno abecedy." }
+      - { text: q, why: "Patrí k 26 základným latinským písmenám, používa sa v cudzích slovách (aquapark)." }
+      - { text: x, why: "Základné latinské písmeno, napr. v slove xylofón." }
+    wrong:
+      - { text: ia, why: "Je to len spojenie písmen, nie písmeno abecedy." }
+      - { text: ie, why: "Je to len spojenie písmen, nie písmeno abecedy." }
+      - { text: iu, why: "Je to len spojenie písmen, nie písmeno abecedy." }
+      - { text: ě, why: "České písmeno, v slovenčine nie je." }
+      - { text: ř, why: "České písmeno, v slovenčine nie je." }
+      - { text: ů, why: "České písmeno, v slovenčine nie je." }
+      - { text: ö, why: "V slovenskej abecede nie je, objaví sa len v cudzích menách." }
+
+  - id: cs-sk-ine-vyznam
+    type: pick
+    prompt: "Ktoré slová sa v češtine píšu a čítajú rovnako (alebo takmer rovnako), ale znamenajú niečo iné?"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Czech%E2%80%93Slovak_languages
+    tags: [čeština, falošní priatelia]
+    correct:
+      - { text: horký, why: "Slovensky chuť (česky hořký), česky horký je „horúci“." }
+      - { text: chudý, why: "Slovensky „štíhly“, česky „chudobný“." }
+      - { text: pivnica, why: "Slovensky pivnica, česky pivnice je krčma." }
+      - { text: syrový, why: "Slovensky „ako zo syra“, česky „surový“." }
+      - { text: spraviť, why: "Slovensky „urobiť“, česky spravit je „opraviť“." }
+      - { text: stávka, why: "Slovensky „stávka“ pri hre, česky stávka je štrajk." }
+      - { text: kapusta, why: "Česky je kapusta len savojská kapusta." }
+    wrong:
+      - { text: voda, why: "V oboch jazykoch znamená to isté." }
+      - { text: strom, why: "V oboch jazykoch znamená to isté." }
+      - { text: škola, why: "V oboch jazykoch znamená to isté." }
+      - { text: kniha, why: "V oboch jazykoch znamená to isté." }
+
+  - id: cs-ine-slovo
+    type: pick
+    prompt: "Pri ktorých slovenských slovách Česi povedia pre ten istý pojem úplne iné slovo?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/%C4%8Ce%C5%A1tina
+    tags: [čeština]
+    correct:
+      - { text: mačka, why: "Česky kočka." }
+      - { text: bozkať, why: "Česky líbat." }
+      - { text: plť, why: "Česky vor." }
+      - { text: ťava, why: "Česky velbloud." }
+      - { text: korytnačka, why: "Česky želva." }
+      - { text: poľovník, why: "Česky myslivec." }
+      - { text: cencúľ, why: "Česky rampouch." }
+      - { text: kaleráb, why: "Česky kedlubna." }
+      - { text: jeseň, why: "Česky podzim." }
+    wrong:
+      - { text: žena, why: "V češtine rovnako, tiež žena." }
+      - { text: ruka, why: "V češtine rovnako, tiež ruka." }
+      - { text: voda, why: "V češtine rovnako, tiež voda." }
+      - { text: škola, why: "V češtine rovnako, tiež škola." }
+
+  - id: madarsky-povod
+    type: pick
+    prompt: "Ktoré z týchto slov prišli do slovenčiny z maďarčiny?"
+    difficulty: 2
+    source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_Hungarian
+    tags: [výpožičky, maďarčina]
+    correct:
+      - { text: topánka, why: "Z maďarského topánka, doložené už v 18. storočí." }
+      - { text: kefa, why: "Maďarské kefe, pôvodne z osmanskej turečtiny." }
+      - { text: vekňa, why: "Z maďarského vekni, regionálne slovo." }
+      - { text: ceruza, why: "Cez maďarčinu z latinského cerussa, olovnatá beloba." }
+      - { text: čižma, why: "Z osmanskej turečtiny cez srbochorvátčinu a maďarčinu." }
+      - { text: hurka, why: "Maďarské hurka, odvodené od húr, črevo." }
+      - { text: šarkan, why: "Maďarské sárkány." }
+      - { text: korbáč, why: "Maďarské korbács." }
+    wrong:
+      - { text: marhuľa, why: "Z nemeckého Marille." }
+      - { text: knedľa, why: "Z nemeckého Knödel." }
+      - { text: karfiol, why: "Z nemeckého Karfiol, ktoré vzniklo z talianskeho cavolfiore." }
+      - { text: hobeľ, why: "Z nemeckého Hobel." }
+      - { text: vaňa, why: "Z nemeckého Wanne." }
+      - { text: žirafa, why: "Z talianskeho giraffa." }
+
+  - id: nemecky-povod
+    type: pick
+    prompt: "Ktoré z týchto slov máme z nemčiny?"
+    difficulty: 1
+    source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_German
+    tags: [výpožičky, nemčina]
+    correct:
+      - { text: marhuľa, why: "Z nemeckého Marille, pôvodne „arménske ovocie“." }
+      - { text: ríbezľa, why: "Z nemeckého Ribisel." }
+      - { text: špargľa, why: "Z nemeckého Spargel, pôvodom z gréčtiny." }
+      - { text: knedľa, why: "Z nemeckého Knödel." }
+      - { text: hobeľ, why: "Z nemeckého Hobel, doložené v 17. storočí." }
+      - { text: karfiol, why: "Z nemeckého Karfiol, to z talianskeho cavolfiore." }
+      - { text: vaňa, why: "Z nemeckého Wanne, pôvodne z latinčiny." }
+    wrong:
+      - { text: topánka, why: "Z maďarského topánka." }
+      - { text: ceruza, why: "Cez maďarčinu z latinčiny." }
+      - { text: čižma, why: "Cez maďarčinu z turečtiny." }
+      - { text: kefa, why: "Z maďarského kefe." }
+      - { text: hroch, why: "Z češtiny, kde ho vymyslel Jan Svatopluk Presl." }
+      - { text: mrož, why: "Z ruského morž, to zo saamčiny." }
+
+  - id: cesky-povod
+    type: pick
+    prompt: "Ktoré z týchto slov sa do slovenčiny dostali z češtiny?"
+    difficulty: 3
+    source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_Czech
+    tags: [výpožičky, čeština]
+    correct:
+      - { text: diaľnica, why: "Z českého dálnice, zloženého z „dlhý“ a silnice." }
+      - { text: hroch, why: "České slovo, ktoré vytvoril Jan Svatopluk Presl." }
+      - { text: príbeh, why: "Z českého příběh." }
+      - { text: pravítko, why: "Z českého pravítko." }
+      - { text: kremík, why: "Z českého křemík, v slovenčine doložené až v 20. storočí." }
+      - { text: vzduch, why: "Do slovenčiny z češtiny, tá ho má z ruštiny; nahradil staršie povetrie." }
+    wrong:
+      - { text: kefír, why: "Z ruského kefir." }
+      - { text: mrož, why: "Z ruského morž." }
+      - { text: žirafa, why: "Z talianskeho giraffa." }
+      - { text: korzo, why: "Z talianskeho corso." }
+      - { text: marhuľa, why: "Z nemeckého Marille." }
+      - { text: topánka, why: "Z maďarského topánka." }
+
+  - id: taliansky-povod
+    type: pick
+    prompt: "Ktoré z týchto slov prišli do slovenčiny z taliančiny?"
+    difficulty: 2
+    source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_Italian
+    tags: [výpožičky, taliančina]
+    correct:
+      - { text: žirafa, why: "Z talianskeho giraffa, pôvodne z arabčiny." }
+      - { text: balkón, why: "Z talianskeho balcone, pôvodne germánske slovo „trám“." }
+      - { text: korzo, why: "Z talianskeho corso, prechádzka po hlavnej ulici." }
+      - { text: pizza, why: "Priamo z taliančiny." }
+      - { text: piano, why: "Z taliančiny." }
+      - { text: flauta, why: "Z taliančiny." }
+      - { text: nokturno, why: "Z taliančiny." }
+    wrong:
+      - { text: maják, why: "Z ruského majak." }
+      - { text: kefír, why: "Z ruského kefir." }
+      - { text: diaľnica, why: "Z českého dálnice." }
+      - { text: topánka, why: "Z maďarského topánka." }
+      - { text: marhuľa, why: "Z nemeckého Marille." }
+      - { text: ceruza, why: "Cez maďarčinu z latinčiny." }
+
+  - id: rusky-povod
+    type: pick
+    prompt: "Ktoré z týchto slov sa do slovenčiny dostali z ruštiny?"
+    difficulty: 2
+    source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_Russian
+    tags: [výpožičky, ruština]
+    correct:
+      - { text: maják, why: "Z ruského majak." }
+      - { text: kefír, why: "Z ruského kefir, v slovenčine doložené v 20. storočí." }
+      - { text: mrož, why: "Z ruského morž, ktoré je pôvodom saamské." }
+      - { text: boršč, why: "Z ruštiny." }
+      - { text: kolchoz, why: "Z ruského kolchoz, skratky z kollektivnoje chozjajstvo." }
+      - { text: azbuka, why: "Z ruského azbuka." }
+      - { text: matrioška, why: "Z ruského matrjoška." }
+    wrong:
+      - { text: hroch, why: "Z češtiny." }
+      - { text: diaľnica, why: "Z češtiny." }
+      - { text: žirafa, why: "Z taliančiny." }
+      - { text: balkón, why: "Z taliančiny." }
+      - { text: topánka, why: "Z maďarčiny." }
+      - { text: knedľa, why: "Z nemčiny." }
+
+  - id: slang-slova
+    type: pick
+    prompt: "Ktoré z týchto slov sa podľa slovníka radia k slangu?"
+    difficulty: 1
+    source: https://en.wiktionary.org/wiki/Category:Slovak_slang
+    tags: [slang]
+    correct:
+      - { text: matika, why: "Skrátené z matematika." }
+      - { text: mekáč, why: "McDonald's, skrátené a s príponou -áč." }
+      - { text: šprt, why: "Priveľmi usilovný žiak." }
+      - { text: lóve, why: "Peniaze, slovo z rómčiny." }
+      - { text: dovi, why: "Skrátené z dovidenia." }
+      - { text: profík, why: "Odborník, z profesionál." }
+      - { text: cieľovka, why: "Cieľová skupina, najmä v marketingu." }
+    wrong:
+      - { text: dovidenia, why: "Spisovné rozlúčenie, z neho vzniklo dovi." }
+      - { text: matematika, why: "Spisovný názov predmetu." }
+      - { text: hovoriť, why: "Bežné spisovné sloveso." }
+      - { text: jeseň, why: "Spisovné pomenovanie ročného obdobia." }
+      - { text: poľovník, why: "Spisovné slovo." }
+
+  - id: nareczia-vyznam
+    type: pick
+    prompt: "Ktoré z týchto nárečových slov majú správny význam?"
+    difficulty: 3
+    source: https://www.teraz.sk/magazin/dialektologicka-aj-narecia-su-dedi/724916-clanok.html
+    tags: [nárečia]
+    correct:
+      - { text: "perašín = petržlen", why: "Nárečové slovo z Oravy." }
+      - { text: "pôľky = egreše", why: "Nárečový názov egrešov." }
+      - { text: "hafiry = čučoriedky", why: "Aj jafury, a hafirovica je čučoriedkovica." }
+      - { text: "repa = zemiaky", why: "V časti Oravy sa takto volajú zemiaky." }
+      - { text: "bandurky = zemiaky", why: "Ďalší nárečový názov zemiakov." }
+      - { text: "krumple = zemiaky", why: "Ďalší nárečový názov zemiakov." }
+      - { text: "kalap = klobúk", why: "Na východe sa klobúk volá kalap, z maďarčiny." }
+      - { text: "širák = klobúk", why: "Ľudový názov klobúka." }
+    wrong:
+      - { text: "perašín = paradajka", why: "Perašín je petržlen." }
+      - { text: "hafiry = egreše", why: "Hafiry sú čučoriedky." }
+      - { text: "pôľky = čučoriedky", why: "Pôľky sú egreše." }
+      - { text: "kalap = topánka", why: "Kalap je klobúk." }
+      - { text: "širák = opasok", why: "Širák je klobúk." }
+      - { text: "bandurky = čučoriedky", why: "Bandurky sú zemiaky." }
+      - { text: "krumple = egreše", why: "Krumple sú zemiaky." }
+
+  - id: vychod-nareczie
+    type: pick
+    prompt: "Ktoré dvojice východoslovenského tvaru a spisovného slova sú správne?"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Eastern_Slovak_dialects
+    tags: [nárečia, východ]
+    correct:
+      - { text: "dzeci = deti", why: "Východniari mäkčia d na dz." }
+      - { text: "dzevec = deväť", why: "Číslovka deväť znie dzevec." }
+      - { text: "robic = robiť", why: "Infinitív sa končí na -c." }
+      - { text: "Ďura = Juraj", why: "Východniarska podoba mena Juraj." }
+      - { text: "ce = ťa", why: "Zámená ma, ťa, sa znejú me, ce, še." }
+      - { text: "muha = mucha", why: "Tak sa hovorí napríklad v Above." }
+    wrong:
+      - { text: "dzevec = desať", why: "Dzevec je deväť." }
+      - { text: "robic = rozprávať", why: "Robic je robiť." }
+      - { text: "Ďura = Ján", why: "Ďura je Juraj." }
+      - { text: "še = ma", why: "Še je zámeno sa." }
+      - { text: "muha = osa", why: "Muha je mucha." }
+      - { text: "dzeci = dievčatá", why: "Dzeci sú deti." }
+
+  - id: pravopis-y
+    type: pick
+    prompt: "Ktoré z týchto slov sa píšu s y alebo ý?"
+    difficulty: 1
+    source: https://www.startitup.sk/na-banalnej-doplnovacke-y-i-zlyha-vacsina-slovakov/
+    tags: [pravopis]
+    correct:
+      - { text: rytier, why: "Vybrané slovo po r." }
+      - { text: lysý, why: "Slovo, v ktorom sa po l píše y." }
+      - { text: pytliak, why: "Vybrané slovo po p." }
+      - { text: zvyk, why: "Vybrané slovo po v." }
+      - { text: sýty, why: "Vybrané slovo po s." }
+      - { text: rým, why: "Vybrané slovo po r." }
+      - { text: Bytča, why: "Mesto, vybrané slovo po b." }
+      - { text: sychravý, why: "Vybrané slovo po s." }
+    wrong:
+      - { text: Rím, why: "Hlavné mesto Talianska sa píše s i." }
+      - { text: dobiť, why: "Ako zbiť sa píše s i, s y je dobyť, teda zmocniť sa." }
+      - { text: zaľúbení, why: "Nominatív množného čísla prídavných mien má i." }
+      - { text: mi, why: "Je to tvar zámena ja, s y sa píše len zámeno my." }
+
+  - id: pravopis-ae
+    type: pick
+    prompt: "Ktoré z týchto slov sú napísané správne?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/%C3%84
+    tags: [pravopis, ä]
+    correct:
+      - { text: mäso, why: "Ä sa píše po m." }
+      - { text: pamäť, why: "Po m sa píše ä." }
+      - { text: deväť, why: "Po v sa píše ä." }
+      - { text: svätý, why: "Po v sa píše ä." }
+      - { text: väzeň, why: "Po v sa píše ä." }
+      - { text: hovädo, why: "Po v sa píše ä." }
+      - { text: opäť, why: "Po p sa píše ä." }
+      - { text: späť, why: "Po p sa píše ä." }
+    wrong:
+      - { text: meso, why: "Správne mäso." }
+      - { text: pamet, why: "Správne pamäť." }
+      - { text: devet, why: "Správne deväť." }
+      - { text: vezeň, why: "Správne väzeň." }
+      - { text: hovedo, why: "Správne hovädo." }
+
+  - id: sk-bez-cs
+    type: pick
+    prompt: "Ktoré písmená alebo dvojznaky má slovenčina, ale čeština nie?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/%C4%8Ce%C5%A1tina
+    tags: [čeština, abeceda]
+    correct:
+      - { text: ä, why: "V češtine nie je." }
+      - { text: ô, why: "V češtine nie je." }
+      - { text: ĺ, why: "V češtine nie je." }
+      - { text: ľ, why: "V češtine nie je." }
+      - { text: ŕ, why: "V češtine nie je." }
+      - { text: dz, why: "V češtine nie je." }
+      - { text: dž, why: "V češtine nie je." }
+    wrong:
+      - { text: ř, why: "České písmeno, v slovenčine nie je." }
+      - { text: ě, why: "České písmeno, v slovenčine nie je." }
+      - { text: ů, why: "České písmeno, v slovenčine nie je." }
+      - { text: č, why: "Majú ho obe abecedy." }
+      - { text: š, why: "Majú ho obe abecedy." }
+      - { text: ď, why: "Majú ho obe abecedy." }
+      - { text: ť, why: "Majú ho obe abecedy." }
+
+  - id: abeceda-tvrdenia
+    type: pick
+    prompt: "Ktoré tvrdenia o slovenskej abecede sú pravdivé?"
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_abeceda
+    tags: [abeceda]
+    correct:
+      - { text: "ch sa radí v abecede za h", why: "Je jedno písmeno a stojí hneď za h." }
+      - { text: "ä je tretie písmeno abecedy", why: "Hneď za á." }
+      - { text: "ž je posledné písmeno abecedy", why: "Abeceda sa končí písmenom ž." }
+      - { text: "q, w a x patria medzi základné latinské písmená v abecede", why: "Používajú sa v cudzích slovách." }
+      - { text: "dz a dž sú písmená abecedy", why: "Dvojznaky, ktoré sa počítajú ako jedno písmeno." }
+    wrong:
+      - { text: "ia je samostatné písmeno abecedy", why: "Ia, ie, iu sú len spojenia písmen." }
+      - { text: "ch sa radí v abecede medzi c a č", why: "Ch je až za h." }
+      - { text: "ŕ stojí v abecede pred r", why: "Ŕ stojí hneď za r." }
+      - { text: "ä je posledné písmeno abecedy", why: "Ä je tretie písmeno." }
+      - { text: "q, w a x v abecede nie sú", why: "Sú medzi 26 základnými latinskými písmenami." }
+      - { text: "dz a dž sa v abecede nepočítajú", why: "Počítajú sa." }
+
+  # ---------- order ----------
+  - id: poradie-pismen
+    type: order
+    prompt: "Zoraď písmená podľa poradia v slovenskej abecede od začiatku."
+    direction: asc
+    unit: ". miesto"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_abeceda
+    items:
+      - { text: ä, value: 3 }
+      - { text: ch, value: 16 }
+      - { text: ĺ, value: 22 }
+      - { text: ô, value: 29 }
+      - { text: ŕ, value: 33 }
+
+  - id: poradie-kodifikacia
+    type: order
+    prompt: "Zoraď udalosti okolo štúrovskej slovenčiny od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Dejiny_sloven%C4%8Diny
+    items:
+      - { text: "Rozhodnutie o novom spisovnom jazyku (14. februára)", value: 1843 }
+      - { text: "Oficiálne uznanie štúrovskej slovenčiny na prvom zasadaní Tatrína", value: 1844 }
+      - { text: "Kompromisná reforma (októbrové stretnutie)", value: 1851 }
+      - { text: "Vznik Matice slovenskej", value: 1863 }
+
+  - id: poradie-pravopis
+    type: order
+    prompt: "Zoraď vydania Pravidiel slovenského pravopisu od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Pravidl%C3%A1_slovensk%C3%A9ho_pravopisu
+    items:
+      - { text: "Pravidlá: Vážny (prvé vydanie)", value: 1931 }
+      - { text: "Pravidlá: Peciar", value: 1953 }
+      - { text: "Pravidlá: Kačala a kol. (prvé vydanie)", value: 1991 }
+      - { text: "Pravidlá: Kačala a kol. (neskoršie vydanie)", value: 2013 }
+
+  - id: poradie-predstur
+    type: order
+    prompt: "Zoraď jazykové pamiatky a gramatiky na Slovensku od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Dejiny_sloven%C4%8Diny
+    items:
+      - { text: "Preklad Lutherovho katechizmu vydaný v Bardejove", value: 1581 }
+      - { text: "Krmanovo vydanie Biblie v biblickej češtine", value: 1722 }
+      - { text: "Doležalova Grammatica Slavico-Bohemica", value: 1746 }
+      - { text: "Hattalova Krátka mluvnica slovenská", value: 1852 }
+
+  # ---------- number ----------
+  - id: pocet-pismen
+    type: number
+    prompt: "Koľko písmen má slovenská abeceda (ch, dz a dž sa rátajú ako jedno)?"
+    answer: 46
+    unit: písmen
+    scale: linear
+    tolerance: 2
+    why: "Je v nej 26 základných latinských písmen a 20 ďalších, napríklad s mäkčeňmi a dĺžňami."
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_abeceda
+
+  - id: pocet-modifikovanych
+    type: number
+    prompt: "Z 26 základných latinských písmen vychádza slovenská abeceda. Koľko ďalších písmen a dvojznakov má navyše?"
+    answer: 20
+    unit: písmen
+    scale: linear
+    tolerance: 2
+    why: "Spolu je v abecede 46 písmen, z toho 20 upravených alebo zložených."
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_abeceda
+
+  - id: rok-nauka-reci
+    type: number
+    prompt: "V ktorom roku vyšla Štúrova Náuka reči Slovenskej s pravidlami spisovnej slovenčiny?"
+    answer: 1846
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Pravidlá štúrovskej slovenčiny vyšli o tri roky po rozhodnutí z roku 1843."
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Dejiny_sloven%C4%8Diny
+
+  - id: pocet-hovoriacich
+    type: number
+    prompt: "Koľko ľudí na svete má slovenčinu ako materinský jazyk?"
+    answer: 5000000
+    unit: ľudí
+    scale: log
+    tolerance: 0.2
+    asOf: "2021"
+    why: "Okolo päť miliónov rodených hovoriacich a dva milióny ďalších, ktorí ju ovládajú ako druhý jazyk."
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Slovak_language
+
+  # ---------- choice ----------
+  - id: pismeno-iba-sk
+    type: choice
+    prompt: "Ktoré z týchto písmen existuje v slovenčine, ale v češtine nie?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/%C4%8Ce%C5%A1tina
+    correct: { text: ô, why: "Číta sa [uo], v češtine ho nenájdeš." }
+    wrong:
+      - { text: ř, why: "České písmeno, v slovenčine nie je." }
+      - { text: ů, why: "České písmeno, v slovenčine nie je." }
+      - { text: ě, why: "České písmeno, v slovenčine nie je." }
+
+  - id: zaklad-spisovnej
+    type: choice
+    prompt: "Na ktorých nárečiach stojí spisovná slovenčina od Štúrovej kodifikácie?"
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Stredoslovensk%C3%A9_n%C3%A1re%C4%8Dia
+    correct: { text: stredoslovenských, why: "Štúr si vybral stredoslovenské nárečia, ktoré tvoria základ dodnes." }
+    wrong:
+      - { text: východoslovenských, why: "Východoslovenské nárečia sú samostatná skupina." }
+      - { text: západoslovenských, why: "Základom štúrovskej slovenčiny nebolo západné nárečie." }
+      - { text: dolnozemských, why: "Dolnozemské nárečia sa používajú mimo Slovenska." }
