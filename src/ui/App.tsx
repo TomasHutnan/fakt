@@ -219,6 +219,9 @@ function loadGame(): GameState | null {
     typeof g.turn === "number" &&
     g.turn >= 0 &&
     g.turn < g.order.length &&
+    g.order.every((i) => Number.isInteger(i) && i >= 0 && i < g.players!.length) &&
+    typeof g.deckPos === "number" &&
+    Array.isArray(g.played) &&
     typeof g.round === "number" &&
     Array.isArray(g.deck) &&
     Array.isArray(g.results) &&

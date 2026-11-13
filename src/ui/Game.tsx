@@ -165,7 +165,7 @@ function PickTurn({
                 onClick={() => dispatch({ type: "pick", option: i })}
               >
                 <span class="opt__text">{tie(o.text)}</span>
-                {picked && <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>}
+                {picked && <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>}
                 {picked && <span class="opt__why">{tie(o.why)}</span>}
               </button>
             </li>
@@ -359,7 +359,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
             return (
               <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
                 <span class="opt__text">{tie(o.text)}</span>
-                <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>
+                <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>
                 <span class="opt__why">{tie(o.why)}</span>
                 {multi && who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
               </li>
@@ -375,7 +375,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
             return (
               <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
                 <span class="opt__text">{tie(o.text)}</span>
-                <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>
+                <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>
                 <span class="opt__why">{tie(o.why)}</span>
                 {who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
               </li>

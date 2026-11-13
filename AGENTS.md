@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype in progress on branch `feat/v1-prototype` (2026-11-13): engine, pack format, Preact UI, design gallery, 8+ packs. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`, owner to choose), 10 packs / 246 questions, every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: owner picks a design; more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
