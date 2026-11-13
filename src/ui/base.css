@@ -203,8 +203,6 @@
 /* Designs that put light text on the filled "correct" cell: the missed cell has no fill, so use the page text colour. */
 .options--answered .opt.opt--missed .opt__text,
 .options--answered .opt.opt--missed .opt__why { color: inherit; }
-.options--answered .opt.opt--rest { opacity: 0.6; }
-.options--answered .opt.opt--rest .opt__why { opacity: 0.9; }
 :where(.options--answered .opt) { justify-content: flex-start; }
 :where(.order-item__mark) { font-weight: 700; }
 :where(.order-item__should) { grid-column: 2 / -1; font-size: 0.85em; font-style: italic; }

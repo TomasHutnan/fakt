@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 20 packs / 514 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 23 packs / 604 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
