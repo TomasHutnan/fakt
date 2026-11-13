@@ -322,16 +322,16 @@ questions:
 
   - id: hity-90-rokov
     type: pick
-    prompt: Ktoré z týchto svetových hitov vyšli ako single v 90. rokoch (1990 – 1999)?
+    prompt: Ktoré z týchto svetových hitov vyšli pôvodne ako singel v 90. rokoch (1990 – 1999)?
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Smells_Like_Teen_Spirit
     correct:
       - text: Nirvana – Smells Like Teen Spirit
-        why: Vyšla ako single 10. septembra 1991.
+        why: Vyšla ako singel 10. septembra 1991.
       - text: R.E.M. – Losing My Religion
-        why: Vyšla ako single 19. februára 1991.
+        why: Vyšla ako singel 19. februára 1991.
       - text: Oasis – Wonderwall
-        why: Vyšla ako single 30. októbra 1995.
+        why: Vyšla ako singel 30. októbra 1995.
       - text: Spice Girls – Wannabe
         why: Debutový singel Spice Girls vyšiel v roku 1996.
       - text: Aqua – Barbie Girl
