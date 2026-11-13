@@ -9,6 +9,8 @@ export interface DesignMeta {
   description: string;
   /** Colour for the browser toolbar / PWA theme. */
   themeColor: string;
+  /** Optional toolbar colour when the design is in dark mode. */
+  themeColorDark?: string;
 }
 
 export const DEFAULT_DESIGN = "zaklad";
@@ -24,6 +26,8 @@ export function applyDesign(id: string): string {
   const meta = DESIGNS.find((d) => d.id === id) ?? DESIGNS.find((d) => d.id === DEFAULT_DESIGN) ?? DESIGNS[0];
   if (!meta) return id;
   document.documentElement.dataset.design = meta.id;
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", meta.themeColor);
+  const dark = typeof matchMedia === "function" && matchMedia("(prefers-color-scheme: dark)").matches;
+  const color = dark && meta.themeColorDark ? meta.themeColorDark : meta.themeColor;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
   return meta.id;
 }

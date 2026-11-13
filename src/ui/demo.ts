@@ -75,9 +75,13 @@ export const DEMO_PACK: Pack = {
   ],
 };
 
-export type DemoScreen = "home" | "setup" | "handover" | "play" | "order" | "number" | "choice" | "busted" | "reveal" | "over";
+export type DemoScreen =
+  | "home" | "setup" | "rules" | "packs" | "settings"
+  | "handover" | "play" | "order" | "number" | "choice" | "busted" | "reveal" | "over";
 
-export const DEMO_SCREENS: DemoScreen[] = ["home", "setup", "handover", "play", "busted", "order", "number", "reveal", "over"];
+export const DEMO_SCREENS: DemoScreen[] = [
+  "home", "setup", "handover", "play", "busted", "order", "number", "choice", "reveal", "over", "packs", "settings", "rules",
+];
 
 const players = ["Zuzka", "Maroš", "Ivka"];
 

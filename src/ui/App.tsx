@@ -191,6 +191,6 @@ function initialScreen(): Screen {
   if (location.hash === "#designs") return "designs";
   if (!demo) return "home";
   if (demo === "home") return "home";
-  if (demo === "setup") return "setup";
+  if (demo === "setup" || demo === "packs" || demo === "settings" || demo === "rules") return demo;
   return "game";
 }

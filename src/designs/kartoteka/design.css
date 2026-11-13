@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
+
+/* Kartotéka — library catalogue cards on a cool grey desk.
+   Paper cards with a red heading rule and faint blue ruling, typewriter
+   metadata, blue-ink accent, red pencil for wrong, green tick for right.
+   Dark mode: blueprint paper with light ink.
+   Every rule is scoped to [data-design="kartoteka"]. */
+
+:root[data-design="kartoteka"] {
+  --desk: #e2e6ea;
+  --paper: #fbfcfd;
+  --paper-2: #f2f5f8;
+  --ink: #1b2430;
+  --muted: #535e6b;
+  --edge: #c3cbd4;
+  --rule: #d3deea;
+  --head-rule: #d27a74;
+  --accent: #23508f;
+  --accent-ink: #fbfcfd;
+  --good: #1f6b37;
+  --good-bg: #eaf4ec;
+  --bad: #b02a22;
+  --bad-bg: #fbeceb;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --r: 3px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-design="kartoteka"] {
+    --desk: #0c1f3a;
+    --paper: #12305a;
+    --paper-2: #173a6a;
+    --ink: #eaf1fa;
+    --muted: #aec2db;
+    --edge: #2f5384;
+    --rule: #1f4475;
+    --head-rule: #e88f86;
+    --accent: #a8cbff;
+    --accent-ink: #0c1f3a;
+    --good: #93e0a8;
+    --good-bg: #163f3a;
+    --bad: #ffa59b;
+    --bad-bg: #3d2a45;
+    color-scheme: dark;
+  }
+}
+
+[data-design="kartoteka"] body {
+  background: var(--desk);
+  color: var(--ink);
+  font: 17px/1.45 var(--serif);
+  font-optical-sizing: auto;
+}
+[data-design="kartoteka"] a { color: var(--accent); text-underline-offset: 3px; }
+[data-design="kartoteka"] :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Brand (home): the title card of the catalogue ---------- */
+[data-design="kartoteka"] .screen--home { gap: 28px; }
+[data-design="kartoteka"] .brand {
+  position: relative;
+  background:
+    linear-gradient(var(--head-rule), var(--head-rule)) 0 64px / 100% 2px no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px) 0 66px / 100% calc(100% - 66px) no-repeat,
+    var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: var(--r);
+  padding: 14px 18px 22px;
+  gap: 0;
+}
+[data-design="kartoteka"] .brand__mark {
+  position: absolute; top: 12px; right: 16px;
+  font: 500 13px/1 var(--mono); color: var(--muted);
+  border: 1px solid var(--edge); border-radius: 2px;
+  padding: 5px 7px;
+}
+[data-design="kartoteka"] .brand__mark::before { content: "č. "; }
+[data-design="kartoteka"] .brand__name {
+  font: 700 56px/50px var(--serif);
+  letter-spacing: -0.02em;
+  height: 50px;
+  margin-bottom: 2px;
+}
+[data-design="kartoteka"] .brand__tagline {
+  font-size: 19px; line-height: 32px; color: var(--ink);
+}
+[data-design="kartoteka"] .home__stats { color: var(--muted); font: 13px/1.5 var(--mono); text-align: center; }
+
+/* ---------- Buttons: typewriter labels ---------- */
+[data-design="kartoteka"] .btn {
+  font: 500 15px/1.2 var(--mono);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: var(--r);
+  min-height: 50px;
+}
+[data-design="kartoteka"] .btn:hover:not(:disabled) { border-color: var(--accent); }
+[data-design="kartoteka"] .btn:active:not(:disabled) { transform: translateY(1px); }
+[data-design="kartoteka"] .btn--primary {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600;
+}
+[data-design="kartoteka"] .btn--primary:hover:not(:disabled) { border-color: var(--ink); }
+[data-design="kartoteka"] .btn--ghost {
+  background: transparent; border-color: transparent; color: var(--accent);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;
+}
+[data-design="kartoteka"] .btn--ghost:hover:not(:disabled) { border-color: transparent; text-decoration-thickness: 2px; }
+[data-design="kartoteka"] .btn--danger { background: var(--bad); border-color: var(--bad); color: var(--paper); }
+[data-design="kartoteka"] .btn--small { min-height: 44px; font-size: 14px; }
+[data-design="kartoteka"] .btn--icon { min-width: 44px; min-height: 44px; font-size: 18px; }
+[data-design="kartoteka"] .btn:disabled { opacity: 0.4; }
+
+/* ---------- Top bar ---------- */
+[data-design="kartoteka"] .topbar { padding-bottom: 4px; }
+[data-design="kartoteka"] .topbar__title { font: 600 14px/1.3 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] h1.topbar__title { font: 700 24px/1.2 var(--serif); color: var(--ink); }
+[data-design="kartoteka"] .topbar__back { padding-left: 4px; }
+[data-design="kartoteka"] .topbar__quit { color: var(--muted); }
+[data-design="kartoteka"] .topbar__meta { font: 500 14px/1.3 var(--mono); color: var(--ink); }
+[data-design="kartoteka"] .scorestrip { gap: 4px 6px; }
+[data-design="kartoteka"] .scorestrip__item {
+  font: 400 13px/1 var(--mono); color: var(--muted);
+  padding: 7px 9px 6px;
+  background: var(--paper-2);
+  border: 1px solid var(--edge); border-bottom-color: transparent;
+  border-radius: 4px 4px 0 0;
+  box-shadow: inset 0 -1px 0 var(--edge);
+}
+[data-design="kartoteka"] .scorestrip__item--active {
+  background: var(--paper); color: var(--ink); box-shadow: inset 0 -2px 0 var(--accent);
+}
+[data-design="kartoteka"] .scorestrip__item--active .scorestrip__name { font-weight: 600; }
+[data-design="kartoteka"] .scorestrip__score { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ---------- Hand-over: one catalogue card held out across the table ---------- */
+[data-design="kartoteka"] .handover {
+  position: relative; isolation: isolate;
+  background: var(--desk); color: var(--ink);
+  gap: 6px;
+}
+[data-design="kartoteka"] .handover::before {
+  content: ""; position: absolute; z-index: -1;
+  inset: 0; margin: auto;
+  width: min(calc(100% - 32px), 500px);
+  height: min(calc(100% - 64px), 560px);
+  border: 1px solid var(--edge); border-radius: var(--r);
+  background:
+    radial-gradient(circle at 50% calc(100% - 34px), var(--desk) 0 9px, var(--edge) 9px 10px, transparent 10.5px),
+    linear-gradient(var(--head-rule), var(--head-rule)) 0 72px / 100% 2px no-repeat,
+    var(--paper);
+}
+[data-design="kartoteka"] .handover__round {
+  font: 500 14px/1 var(--mono); color: var(--muted);
+  position: absolute; top: calc(50% - min(calc(50% - 32px), 280px) + 30px); left: 0; right: 0;
+}
+[data-design="kartoteka"] .handover__label { font: 400 20px/1.3 var(--serif); color: var(--muted); }
+[data-design="kartoteka"] .handover__name {
+  font: 700 clamp(48px, 15vw, 84px)/1.02 var(--serif);
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  max-width: min(calc(100vw - 72px), 440px);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  padding: 0 12px 6px;
+  border-bottom: 1px solid var(--rule);
+  min-width: min(calc(100vw - 72px), 300px);
+}
+[data-design="kartoteka"] .handover__hint {
+  font: 400 13px/1.3 var(--mono); color: var(--muted);
+  position: absolute; left: 0; right: 0;
+  bottom: calc(50% - min(calc(50% - 32px), 280px) + 64px);
+}
+[data-design="kartoteka"] .handover:focus-visible { outline-offset: -8px; }
+
+/* ---------- Question: the card ---------- */
+[data-design="kartoteka"] .q {
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: var(--r);
+  padding: 0 14px 16px;
+  gap: 12px;
+}
+[data-design="kartoteka"] .q__meta {
+  font: 400 12.5px/1.3 var(--mono); color: var(--muted);
+  margin: 0 -14px; padding: 12px 14px 9px;
+  border-bottom: 2px solid var(--head-rule);
+  gap: 4px 14px;
+}
+[data-design="kartoteka"] .q__pack { color: var(--ink); font-weight: 600; margin-right: auto; }
+[data-design="kartoteka"] .q__difficulty::before { letter-spacing: 1px; margin-right: 6px; color: var(--accent); }
+[data-design="kartoteka"] .q__difficulty--1::before { content: "●○○"; }
+[data-design="kartoteka"] .q__difficulty--2::before { content: "●●○"; }
+[data-design="kartoteka"] .q__difficulty--3::before { content: "●●●"; }
+[data-design="kartoteka"] .q__asof { flex-basis: 100%; }
+[data-design="kartoteka"] .q__player {
+  font: 600 14px/1.2 var(--mono); color: var(--accent); margin-bottom: -6px;
+}
+[data-design="kartoteka"] .q__player::before { content: "Hrá: "; color: var(--muted); font-weight: 400; }
+[data-design="kartoteka"] .q__prompt {
+  font: 600 23px/34px var(--serif);
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+  background: repeating-linear-gradient(to bottom, transparent 0 33px, var(--rule) 33px 34px);
+  padding-bottom: 2px;
+}
+[data-design="kartoteka"] .q__hint { font: 400 13.5px/1.4 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .q__note { font-size: 15px; color: var(--muted); font-style: italic; }
+[data-design="kartoteka"] .q__source { font: 400 12.5px/1.5 var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+
+/* Pick turn bar */
+[data-design="kartoteka"] .turnbar {
+  font-family: var(--mono); font-variant-numeric: tabular-nums;
+  gap: 4px 14px;
+}
+[data-design="kartoteka"] .turnbar__points { font-size: 20px; font-weight: 600; color: var(--ink); }
+[data-design="kartoteka"] .turnbar__next, [data-design="kartoteka"] .turnbar__count { font-size: 13px; color: var(--muted); }
+
+/* ---------- Options: slips on the card ---------- */
+[data-design="kartoteka"] .options { gap: 6px; }
+[data-design="kartoteka"] .opt {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: 2px;
+  min-height: 54px;
+  padding: 8px 10px 9px;
+  font: 600 17px/1.22 var(--serif);
+  color: var(--ink);
+  hyphens: auto;
+}
+[data-design="kartoteka"] button.opt:hover:not(:disabled) { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+[data-design="kartoteka"] button.opt:active:not(:disabled) { background: var(--paper-2); }
+[data-design="kartoteka"] .opt:disabled { opacity: 1; cursor: default; }
+[data-design="kartoteka"] button.opt:disabled:not(.opt--correct):not(.opt--wrong) { color: var(--muted); border-style: dashed; }
+[data-design="kartoteka"] button.opt--correct, [data-design="kartoteka"] button.opt--wrong { justify-content: flex-start; }
+[data-design="kartoteka"] .opt__text { display: block; }
+[data-design="kartoteka"] .opt__why { font: 400 13.5px/1.35 var(--serif); color: var(--muted); hyphens: auto; }
+[data-design="kartoteka"] .opt__who { font: 500 12px/1.3 var(--mono); color: var(--accent); }
+
+/* Marks: green tick, red pencil cross */
+[data-design="kartoteka"] .opt--correct,
+[data-design="kartoteka"] .opt--wrong { padding-left: 32px; }
+[data-design="kartoteka"] .opt--correct::before,
+[data-design="kartoteka"] .opt--wrong::before {
+  position: absolute; left: 8px; top: 7px;
+  font: 700 21px/1 var(--serif);
+}
+[data-design="kartoteka"] .opt--correct::before { content: "✓"; color: var(--good); transform: rotate(-6deg); }
+[data-design="kartoteka"] .opt--wrong::before { content: "✗"; color: var(--bad); transform: rotate(4deg); }
+
+[data-design="kartoteka"] .opt--correct { background: var(--good-bg); border-color: var(--good); }
+[data-design="kartoteka"] .opt--wrong { background: var(--bad-bg); border-color: var(--bad); }
+[data-design="kartoteka"] .opt--wrong .opt__text {
+  text-decoration: line-through; text-decoration-color: var(--bad); text-decoration-thickness: 2px;
+}
+
+/* Reveal: entries written straight onto the ruled card */
+[data-design="kartoteka"] .options--reveal { gap: 0; border-top: 1px solid var(--rule); }
+[data-design="kartoteka"] .options--reveal .opt {
+  background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0;
+  padding: 10px 2px 10px 30px; min-height: 0; gap: 3px;
+}
+[data-design="kartoteka"] .options--reveal .opt::before { left: 2px; top: 9px; }
+[data-design="kartoteka"] .options--reveal .opt--wrong .opt__text {
+  text-decoration: none; color: var(--muted); font-weight: 400;
+}
+[data-design="kartoteka"] .options--reveal .opt--correct .opt__text { color: var(--ink); }
+
+/* ---------- Verdicts ---------- */
+[data-design="kartoteka"] .turnend { gap: 14px; }
+[data-design="kartoteka"] .verdict {
+  border-top: 2px solid var(--head-rule); padding-top: 10px;
+}
+[data-design="kartoteka"] .verdict__title { font: 700 26px/1.15 var(--serif); }
+[data-design="kartoteka"] .verdict__title::before { margin-right: 8px; }
+[data-design="kartoteka"] .verdict--busted { border-top-color: var(--bad); }
+[data-design="kartoteka"] .verdict--busted .verdict__title { color: var(--bad); }
+[data-design="kartoteka"] .verdict--busted .verdict__title::before { content: "✗"; }
+[data-design="kartoteka"] .verdict--banked, [data-design="kartoteka"] .verdict--complete { border-top-color: var(--good); }
+[data-design="kartoteka"] .verdict--banked .verdict__title,
+[data-design="kartoteka"] .verdict--complete .verdict__title { color: var(--good); }
+[data-design="kartoteka"] .verdict--banked .verdict__title::before,
+[data-design="kartoteka"] .verdict--complete .verdict__title::before { content: "✓"; }
+[data-design="kartoteka"] .verdict--saved { border-top-color: var(--accent); }
+[data-design="kartoteka"] .verdict--saved .verdict__title { color: var(--accent); }
+[data-design="kartoteka"] .verdict__detail { font: 400 14px/1.4 var(--mono); color: var(--muted); }
+
+/* ---------- Order ---------- */
+[data-design="kartoteka"] .order-list { gap: 6px; }
+[data-design="kartoteka"] .order-item {
+  background: var(--paper); border: 1px solid var(--edge); border-radius: 2px;
+  padding: 6px 6px 6px 10px; grid-template-columns: 1.6em 1fr auto;
+}
+[data-design="kartoteka"] .order-item__rank { font: 600 16px/1 var(--mono); color: var(--accent); }
+[data-design="kartoteka"] .order-item__text { font: 600 17px/1.25 var(--serif); }
+[data-design="kartoteka"] .order-item__controls { gap: 4px; }
+[data-design="kartoteka"] .order-item__controls .btn { background: var(--paper-2); }
+[data-design="kartoteka"] .order-list--reveal { gap: 0; border-top: 1px solid var(--rule); }
+[data-design="kartoteka"] .order-list--reveal .order-item {
+  background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0;
+  padding: 10px 2px; align-items: baseline;
+}
+[data-design="kartoteka"] .order-item__value { font: 500 14px/1.3 var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
+[data-design="kartoteka"] .order-item__why { font: 400 13.5px/1.35 var(--serif); color: var(--muted); }
+
+/* ---------- Number ---------- */
+[data-design="kartoteka"] .input {
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--edge); border-bottom: 2px solid var(--accent); border-radius: 2px 2px 0 0;
+  font: 400 17px/1.3 var(--serif);
+}
+[data-design="kartoteka"] .input::placeholder { color: var(--muted); opacity: 1; }
+[data-design="kartoteka"] .input:focus-visible { outline-offset: 0; }
+[data-design="kartoteka"] .number-input__field {
+  font: 600 28px/1.2 var(--mono); min-height: 60px; font-variant-numeric: tabular-nums;
+  background: var(--paper-2);
+}
+[data-design="kartoteka"] .number-input__unit { font: 500 16px/1.2 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .number-reveal { border-top: 1px solid var(--rule); padding-top: 10px; }
+[data-design="kartoteka"] .number-reveal__label { font: 400 13px/1.3 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .number-reveal__value {
+  font: 600 38px/1.1 var(--mono); color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+}
+[data-design="kartoteka"] .number-reveal__why { font-size: 15px; color: var(--muted); }
+
+/* ---------- Results: a borrowing log at the foot of the card ---------- */
+[data-design="kartoteka"] .results {
+  gap: 0; border-top: 2px solid var(--head-rule); padding-top: 2px;
+}
+[data-design="kartoteka"] .result { padding: 7px 0; border-bottom: 1px solid var(--rule); }
+[data-design="kartoteka"] .result__name { font-weight: 600; }
+[data-design="kartoteka"] .result__detail { font: 400 13px/1.35 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .result__points { font: 600 18px/1 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+[data-design="kartoteka"] .result--scored .result__points { color: var(--good); }
+
+/* ---------- Game over: the final card ---------- */
+[data-design="kartoteka"] .screen--over { gap: 24px; }
+[data-design="kartoteka"] .over__label { font: 500 14px/1.3 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .over__title { font: 700 40px/1.08 var(--serif); letter-spacing: -0.01em; word-spacing: 0.04em; text-wrap: balance; }
+[data-design="kartoteka"] .scoreboard {
+  gap: 0;
+  background: var(--paper); border: 1px solid var(--edge); border-radius: var(--r);
+  padding: 0 14px 6px;
+}
+[data-design="kartoteka"] .score-row {
+  padding: 12px 0 10px; border-bottom: 1px solid var(--rule); grid-template-columns: 2em 1fr auto;
+}
+[data-design="kartoteka"] .score-row:last-child { border-bottom: 0; }
+[data-design="kartoteka"] .score-row--leader { border-bottom: 2px solid var(--head-rule); }
+[data-design="kartoteka"] .score-row__rank { font: 500 14px/1 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .score-row__name { font: 600 19px/1.2 var(--serif); }
+[data-design="kartoteka"] .score-row--leader .score-row__name { font-size: 24px; font-weight: 700; }
+[data-design="kartoteka"] .score-row__score { font: 600 20px/1 var(--mono); font-variant-numeric: tabular-nums; }
+[data-design="kartoteka"] .score-row--leader .score-row__score { color: var(--accent); font-size: 26px; }
+
+/* ---------- Forms ---------- */
+[data-design="kartoteka"] .field__label { font: 600 14px/1.3 var(--mono); color: var(--ink); margin-bottom: 8px; }
+[data-design="kartoteka"] .field__hint { font-size: 15px; color: var(--muted); }
+[data-design="kartoteka"] .segmented { gap: 0; }
+[data-design="kartoteka"] .segmented__opt {
+  font: 500 14px/1.2 var(--mono); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--edge); border-radius: 0;
+  margin-left: -1px; min-height: 46px;
+}
+[data-design="kartoteka"] .segmented__opt:first-child { border-radius: var(--r) 0 0 var(--r); margin-left: 0; }
+[data-design="kartoteka"] .segmented__opt:last-child { border-radius: 0 var(--r) var(--r) 0; }
+[data-design="kartoteka"] .segmented__opt[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600;
+  position: relative; z-index: 1;
+}
+[data-design="kartoteka"] .segmented__opt[aria-pressed="true"] + .segmented__opt[aria-pressed="true"] {
+  box-shadow: inset 1px 0 0 color-mix(in srgb, var(--accent-ink) 45%, var(--accent));
+}
+[data-design="kartoteka"] .segmented__opt:focus-visible { position: relative; z-index: 2; }
+[data-design="kartoteka"] .player-row .btn--icon { background: transparent; border-color: transparent; color: var(--muted); }
+[data-design="kartoteka"] .screen--setup .row--between { font-size: 16px; }
+
+/* ---------- Packs: index cards with a tab when filed in ---------- */
+[data-design="kartoteka"] .pack-list { gap: 8px; }
+[data-design="kartoteka"] .pack {
+  background: var(--paper); border: 1px solid var(--edge); border-radius: var(--r);
+  padding: 12px 14px 12px 16px;
+}
+[data-design="kartoteka"] .pack--on { box-shadow: inset 4px 0 0 var(--accent); border-color: var(--accent); }
+[data-design="kartoteka"] .pack__title { font: 700 18px/1.25 var(--serif); }
+[data-design="kartoteka"] .pack__desc { font-size: 15px; line-height: 1.4; color: var(--ink); }
+[data-design="kartoteka"] .pack__meta { font: 400 12.5px/1.4 var(--mono); color: var(--muted); }
+[data-design="kartoteka"] .toggle { accent-color: var(--accent); width: 26px; height: 26px; margin: 9px; }
+[data-design="kartoteka"] .badge {
+  font: 500 11px/1 var(--mono); padding: 3px 5px; border: 1px solid var(--edge); border-radius: 2px; color: var(--muted);
+}
+[data-design="kartoteka"] .badge--adult { border-color: var(--bad); color: var(--bad); }
+
+/* ---------- Settings: design list ---------- */
+[data-design="kartoteka"] .design-list { gap: 6px; }
+[data-design="kartoteka"] .design-choice {
+  background: var(--paper); border: 1px solid var(--edge); border-radius: var(--r); min-height: 56px;
+}
+[data-design="kartoteka"] .design-choice:hover { border-color: var(--accent); }
+[data-design="kartoteka"] .design-choice[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+[data-design="kartoteka"] .design-choice__swatch { border-radius: 2px; border: 1px solid var(--edge); }
+[data-design="kartoteka"] .design-choice__name { font: 700 17px/1.25 var(--serif); }
+[data-design="kartoteka"] .design-choice[aria-pressed="true"] .design-choice__name::after { content: " ✓"; color: var(--accent); }
+[data-design="kartoteka"] .design-choice__desc { font-size: 14px; line-height: 1.35; color: var(--muted); }
+
+/* ---------- Misc ---------- */
+[data-design="kartoteka"] .confirm {
+  background: var(--paper); border: 1px solid var(--bad); border-top-width: 3px; border-radius: var(--r);
+}
+[data-design="kartoteka"] .error { color: var(--bad); font-size: 15px; }
+[data-design="kartoteka"] .notice { color: var(--good); font-size: 15px; }
+[data-design="kartoteka"] .loading { font: 400 14px/1.4 var(--mono); color: var(--muted); }
+
+/* Rules: one card per section */
+[data-design="kartoteka"] .rules { gap: 12px; }
+[data-design="kartoteka"] .rules .field {
+  background: var(--paper); border: 1px solid var(--edge); border-radius: var(--r);
+  padding: 0 14px 14px; gap: 8px;
+}
+[data-design="kartoteka"] .rules .field__label {
+  margin: 0 -14px 4px; padding: 11px 14px 8px; border-bottom: 2px solid var(--head-rule);
+}
+
+/* Turn bar number and finished-turn card states */
+[data-design="kartoteka"] .turnbar__num { font-size: 26px; font-weight: 600; color: var(--accent); }
+[data-design="kartoteka"] .turnbar__unit { font-size: 15px; font-weight: 500; color: var(--ink); }
+[data-design="kartoteka"] .q--busted { border-color: var(--bad); box-shadow: inset 0 3px 0 var(--bad); }
+[data-design="kartoteka"] .q--busted .turnbar__num { color: var(--bad); }
+[data-design="kartoteka"] .q--banked,
+[data-design="kartoteka"] .q--complete { border-color: var(--good); box-shadow: inset 0 3px 0 var(--good); }
+[data-design="kartoteka"] .q--banked .turnbar__num,
+[data-design="kartoteka"] .q--complete .turnbar__num { color: var(--good); }

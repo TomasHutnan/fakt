@@ -16,6 +16,9 @@ const LABELS: Record<DemoScreen, string> = {
   choice: "Jedna zo štyroch",
   reveal: "Výsledky kola",
   over: "Koniec",
+  packs: "Balíčky",
+  settings: "Nastavenia",
+  rules: "Pravidlá",
 };
 
 export function Designs({ onBack }: { onBack: () => void }) {
