@@ -1,0 +1,640 @@
+id: svet-geografia
+title: Svet a zemepis
+description: Hlavné mestá, susedia, rieky, vrchy, vlajky, meny a slávne pamiatky z celého sveta.
+lang: sk
+version: 1
+questions:
+  - id: hlavne-mesta-miesanie
+    type: pick
+    prompt: Ktoré z týchto miest sú hlavnými mestami svojich štátov?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_national_capitals
+    correct:
+      - text: Canberra
+        why: Hlavné mesto Austrálie; vzniklo ako kompromis medzi rivalmi Sydney a Melbourne.
+      - text: Ankara
+        why: Hlavné mesto Turecka, nie Istanbul.
+      - text: Brasília
+        why: Hlavné mesto Brazílie, nie Rio de Janeiro.
+      - text: Bern
+        why: Švajčiarsko má Bern ako de facto hlavné mesto, nie Zürich ani Ženevu.
+      - text: Abuja
+        why: Hlavné mesto Nigérie; najväčšie mesto Lagos to nie je.
+      - text: Astana
+        why: Hlavné mesto Kazachstanu, nie bývalé Almaty.
+      - text: Dodoma
+        why: Hlavné mesto Tanzánie; Dar es Salaam je bývalé hlavné mesto.
+    wrong:
+      - text: Sydney
+        why: Najväčšie mesto Austrálie, ale hlavné je Canberra.
+      - text: Melbourne
+        why: Austrálske mesto, ale hlavné mesto je Canberra.
+      - text: Istanbul
+        why: Najväčšie mesto Turecka, hlavné je Ankara.
+      - text: Rio de Janeiro
+        why: Brazílske mesto, hlavné mesto je Brasília.
+      - text: Zürich
+        why: Najväčšie švajčiarske mesto, hlavné je Bern.
+      - text: Lagos
+        why: Najväčšie mesto Nigérie, hlavné je Abuja.
+      - text: Almaty
+        why: Bývalé hlavné mesto Kazachstanu, dnes je ním Astana.
+      - text: Dar es Salaam
+        why: Bývalé hlavné mesto Tanzánie; dnes je ním Dodoma.
+
+  - id: susedia-nemecka
+    type: pick
+    prompt: S ktorými štátmi má Nemecko spoločnú pozemnú hranicu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Germany
+    correct:
+      - text: Dánsko
+        why: Jediná pozemná hranica pevninského Dánska je práve s Nemeckom (cez Grónsko má od roku 2022 hranicu aj s Kanadou).
+      - text: Poľsko
+        why: Hranica vedie hlavne po Odre a Nise.
+      - text: Česko
+        why: Spoločná hranica na východe.
+      - text: Rakúsko
+        why: Hranica na juhovýchode.
+      - text: Švajčiarsko
+        why: Hranica na juhu, pri Bodamskom jazere.
+      - text: Francúzsko
+        why: Na západe, veľká časť hranice vedie po Rýne.
+      - text: Luxembursko
+        why: Malé veľkovojvodstvo na západe.
+      - text: Belgicko
+        why: Hranica na západe.
+      - text: Holandsko
+        why: Hranica na severozápade.
+    wrong:
+      - text: Taliansko
+        why: S Nemeckom nesusedí, medzi nimi leží Rakúsko a Švajčiarsko.
+      - text: Maďarsko
+        why: Nesusedí, medzi nimi je Rakúsko.
+      - text: Slovensko
+        why: Nesusedí, medzi nami je Česko a Rakúsko.
+      - text: Švédsko
+        why: Od Nemecka ho delí Baltské more.
+      - text: Slovinsko
+        why: Nesusedí, medzi nimi je Rakúsko.
+      - text: Lichtenštajnsko
+        why: Nemecko s ním nemá spoločnú hranicu, oddeľuje ich Rakúsko a Švajčiarsko.
+
+  - id: susedia-madarska
+    type: pick
+    prompt: S ktorými štátmi susedí Maďarsko?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Hungary
+    correct:
+      - text: Rakúsko
+        why: Hranica na západe.
+      - text: Slovensko
+        why: Hranica na severe.
+      - text: Ukrajina
+        why: Krátka hranica na severovýchode.
+      - text: Rumunsko
+        why: Hranica na východe a juhovýchode.
+      - text: Srbsko
+        why: Hranica na juhu.
+      - text: Chorvátsko
+        why: Hranica na juhozápade.
+      - text: Slovinsko
+        why: Krátka hranica na juhozápade.
+    wrong:
+      - text: Česko
+        why: Maďarsko s Českom nesusedí, medzi nimi leží Slovensko a Rakúsko.
+      - text: Poľsko
+        why: Nesusedí, medzi nimi je Slovensko.
+      - text: Bulharsko
+        why: Nesusedí, medzi nimi je Rumunsko a Srbsko.
+      - text: Bosna a Hercegovina
+        why: Nesusedí, medzi nimi leží Chorvátsko a Srbsko.
+      - text: Moldavsko
+        why: Nesusedí, medzi nimi je Rumunsko.
+      - text: Taliansko
+        why: Nesusedí, medzi nimi je Slovinsko.
+
+  - id: dunaj-hlavne-mesta
+    type: pick
+    prompt: Ktoré hlavné mestá ležia priamo na Dunaji?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Danube
+    correct:
+      - text: Viedeň
+        why: Dunaj preteká rakúskou metropolou.
+      - text: Bratislava
+        why: Dunaj preteká slovenským hlavným mestom.
+      - text: Budapešť
+        why: Dunaj preteká maďarským hlavným mestom.
+      - text: Belehrad
+        why: Dunaj preteká srbským hlavným mestom.
+    wrong:
+      - text: Praha
+        why: Dunaj ním nepreteká.
+      - text: Záhreb
+        why: Chorvátsko sa Dunaja dotýka, ale hlavné mesto na ňom neleží.
+      - text: Sofia
+        why: Bulharsko hraničí s Dunajom, no Sofia je ďaleko od neho.
+      - text: Bukurešť
+        why: Rumunsko má Dunaj na hranici, hlavné mesto nie.
+      - text: Kyjev
+        why: Dunaj ním nepreteká; Dneper preteká Kyjevom.
+      - text: Ľubľana
+        why: Dunaj ním nepreteká.
+      - text: Varšava
+        why: Dunaj ním nepreteká.
+      - text: Berlín
+        why: Dunaj ním nepreteká.
+      - text: Paríž
+        why: Dunaj ním nepreteká.
+      - text: Rím
+        why: Dunaj ním nepreteká.
+
+  - id: vnutrozemske-staty-europy
+    type: pick
+    prompt: Ktoré európske štáty nemajú prístup k moru?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Landlocked_country
+    correct:
+      - text: Slovensko
+        why: Slovensko nemá pobrežie, je vnútrozemské.
+      - text: Rakúsko
+        why: Vnútrozemský štát.
+      - text: Maďarsko
+        why: Vnútrozemský štát.
+      - text: Švajčiarsko
+        why: Vnútrozemský štát.
+      - text: Luxembursko
+        why: Malý štát bez pobrežia.
+      - text: Srbsko
+        why: Vnútrozemský štát.
+      - text: Moldavsko
+        why: Vnútrozemský štát.
+      - text: Severné Macedónsko
+        why: Vnútrozemská krajina na Balkáne.
+      - text: Bielorusko
+        why: Veľká vnútrozemská krajina východnej Európy.
+    wrong:
+      - text: Slovinsko
+        why: Má krátke pobrežie Jadranu.
+      - text: Chorvátsko
+        why: Má dlhé pobrežie Jadranu.
+      - text: Bulharsko
+        why: Má pobrežie Čierneho mora.
+      - text: Rumunsko
+        why: Má pobrežie Čierneho mora.
+      - text: Albánsko
+        why: Má pobrežie Jadranu.
+      - text: Čierna Hora
+        why: Má pobrežie Jadranu.
+
+  - id: ostrovne-staty
+    type: pick
+    prompt: Ktoré z týchto štátov sú ostrovné štáty?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_island_countries
+    correct:
+      - text: Malta
+        why: Ostrovný štát v Stredozemnom mori.
+      - text: Island
+        why: Ostrovný štát v Atlantiku.
+      - text: Madagaskar
+        why: Ostrovný štát pri pobreží Afriky.
+      - text: Srí Lanka
+        why: Ostrov pri južnom cípe Indie.
+      - text: Filipíny
+        why: Ostrovný štát v juhovýchodnej Ázii.
+      - text: Japonsko
+        why: Štát na súostroví vo východnej Ázii.
+      - text: Kuba
+        why: Ostrovný štát v Karibiku.
+      - text: Fidži
+        why: Súostrovie v Tichom oceáne.
+    wrong:
+      - text: Dánsko
+        why: Väčšina krajiny leží na polostrove Jutsko, takže nejde o ostrovný štát.
+      - text: Malajzia
+        why: Časť krajiny leží na ázijskej pevnine, nie je to ostrovný štát.
+      - text: Taliansko
+        why: Hlavná časť krajiny je na Apeninskom polostrove.
+      - text: Grécko
+        why: Má množstvo ostrovov, ale hlavná časť je na pevnine.
+
+  - id: najvacsie-krajiny-prva-sestka
+    type: pick
+    prompt: Ktoré štáty patria medzi šesť najrozľahlejších na svete?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
+    correct:
+      - text: Rusko
+        why: S viac ako 17 miliónmi km2 je najväčšie.
+      - text: Kanada
+        why: Druhý najväčší štát sveta.
+      - text: Čína
+        why: Tretia najväčšia podľa tohto zdroja.
+      - text: USA
+        why: Štvrté miesto podľa tohto zdroja.
+      - text: Brazília
+        why: Piaty najväčší štát sveta.
+      - text: Austrália
+        why: Šiesty najväčší štát sveta.
+    wrong:
+      - text: India
+        why: Siedma, má však omnoho viac obyvateľov.
+      - text: Argentína
+        why: Ôsma najväčšia na svete.
+      - text: Kazachstan
+        why: Deviaty najväčší štát sveta.
+      - text: Alžírsko
+        why: Desiaty najväčší štát sveta.
+      - text: Konžská demokratická republika
+        why: Jedenásty najväčší štát sveta.
+      - text: Saudská Arábia
+        why: Dvanásta najväčšia na svete.
+      - text: Mexiko
+        why: Trinásty štát na svete.
+      - text: Indonézia
+        why: Štrnásta, aj keď je rozložená na tisíckach ostrovov.
+
+  - id: stredoeuropsky-cas
+    type: pick
+    prompt: Ktoré krajiny používajú rovnaký čas ako Slovensko, teda stredoeurópsky?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Time_in_Europe
+    correct:
+      - text: Nemecko
+        why: Stredoeurópsky čas používa celé.
+      - text: Poľsko
+        why: Rovnaký čas ako Slovensko.
+      - text: Taliansko
+        why: Rovnaký čas ako my.
+      - text: Španielsko (pevnina)
+        why: Používa stredoeurópsky čas, hoci leží ďaleko na západ.
+      - text: Nórsko
+        why: Stredoeurópsky čas.
+      - text: Chorvátsko
+        why: Rovnaký čas ako Slovensko.
+      - text: Dánsko
+        why: Stredoeurópsky čas.
+      - text: Maďarsko
+        why: Rovnaký čas ako Slovensko.
+    wrong:
+      - text: Portugalsko
+        why: Pevninské Portugalsko používa západoeurópsky čas, o hodinu menej.
+      - text: Veľká Británia
+        why: Používa greenwichský čas, o hodinu menej.
+      - text: Írsko
+        why: Používa západoeurópsky čas.
+      - text: Fínsko
+        why: Východoeurópsky čas, o hodinu viac.
+      - text: Grécko
+        why: Východoeurópsky čas, o hodinu viac.
+      - text: Rumunsko
+        why: Východoeurópsky čas, o hodinu viac.
+      - text: Island
+        why: Používa západoeurópsky čas a letný čas nemá.
+    asOf: "2026-11"
+
+  - id: krajiny-s-eurom
+    type: pick
+    prompt: Ktoré z týchto štátov používajú ako oficiálnu menu euro?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Eurozone
+    asOf: "2026-11"
+    correct:
+      - text: Slovinsko
+        why: Euro zaviedlo v roku 2007.
+      - text: Chorvátsko
+        why: Euro zaviedlo od 1. januára 2023.
+      - text: Bulharsko
+        why: Euro zaviedlo od 1. januára 2026.
+      - text: Fínsko
+        why: Medzi zakladajúcimi štátmi eurozóny od roku 1999.
+      - text: Írsko
+        why: Medzi zakladajúcimi štátmi eurozóny.
+      - text: Grécko
+        why: Euro zaviedlo v roku 2001.
+      - text: Estónsko
+        why: Euro zaviedlo v roku 2011.
+      - text: Malta
+        why: Euro zaviedla v roku 2008.
+      - text: Cyprus
+        why: Euro zaviedol v roku 2008.
+    wrong:
+      - text: Švédsko
+        why: Je v EÚ, ale vlastnú menu si ponechalo.
+      - text: Dánsko
+        why: Má formálnu výnimku a drží korunu.
+      - text: Poľsko
+        why: Platí zlotým.
+      - text: Česko
+        why: Platí českou korunou.
+      - text: Maďarsko
+        why: Platí forintom.
+      - text: Rumunsko
+        why: Je v EÚ, ale euro ešte nemá.
+
+  - id: seversky-kriz
+    type: pick
+    prompt: Ktoré štáty majú na vlajke takzvaný severský kríž, teda posunutý kríž, ktorého rameno je bližšie k žrdi?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Nordic_cross_flag
+    correct:
+      - text: Dánsko
+        why: Severský kríž.
+      - text: Fínsko
+        why: Severský kríž.
+      - text: Island
+        why: Severský kríž.
+      - text: Nórsko
+        why: Severský kríž.
+      - text: Švédsko
+        why: Severský kríž.
+    wrong:
+      - text: Švajčiarsko
+        why: Kríž má, ale symetrický a na štvorcovej vlajke.
+      - text: Grécko
+        why: Nie je to severský kríž.
+      - text: Veľká Británia
+        why: Union Jack zložený z viacerých krížov, ale nejde o severský kríž.
+      - text: Estónsko
+        why: Modro-čierno-biela vodorovná trikolóra.
+      - text: Holandsko
+        why: Červeno-bielo-modrá vodorovná trikolóra.
+      - text: Rakúsko
+        why: Červeno-bielo-červená vodorovná vlajka.
+      - text: Poľsko
+        why: Biela a červená vodorovná vlajka.
+
+  - id: pamiatky-v-azii
+    type: pick
+    prompt: Ktoré z týchto slávnych stavieb stoja v Ázii?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Angkor_Wat
+    correct:
+      - text: Tádž Mahal
+        why: Stojí v Agre v Indii; šáh Džahán ho dal postaviť ako hrobku pre manželku.
+      - text: Angkor Wat
+        why: Chrámový komplex v Kambodži, ktorý je aj na kambodžskej vlajke.
+      - text: Petra
+        why: Mesto Nabatejcov v Jordánsku; Západ ho objavil až v roku 1812.
+      - text: Zakázané mesto
+        why: Cisársky palác v Pekingu, tradične sa hovorí o 9 999 miestnostiach.
+      - text: Burdž Chalífa
+        why: Najvyššia budova sveta stojí v Dubaji.
+    wrong:
+      - text: Machu Picchu
+        why: Inkské mesto v Peru.
+      - text: Chichén Itzá
+        why: Mayské mesto v Mexiku.
+      - text: Socha Krista Spasiteľa
+        why: Stojí v Rio de Janeiro v Brazílii.
+      - text: Veľká sfinga
+        why: Stojí v egyptskej Gíze; chýbajúci nos jej nevystrelil Napoleon.
+      - text: Sagrada Família
+        why: Barcelonský chrám sa stavia od roku 1882.
+      - text: Aténska akropola
+        why: Stojí v Aténach, v Grécku.
+      - text: Brandenburská brána
+        why: Stojí v Berlíne; Napoleon z nej odviezol štvorzáprah.
+
+  - id: exonyma-nemecke-mesta
+    type: pick
+    prompt: Ktoré z týchto slovenských názvov označujú mestá v Nemecku?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Mn%C3%ADchov
+    correct:
+      - text: Mníchov
+        why: Hlavné mesto Bavorska, nemecky München.
+      - text: Norimberg
+        why: Mesto v Bavorsku.
+      - text: Drážďany
+        why: Leží v Sasku.
+      - text: Kolín nad Rýnom
+        why: Leží na Rýne, nemecky Köln.
+      - text: Brémy
+        why: Prístavné mesto na rieke Vezera (nem. Weser).
+    wrong:
+      - text: Viedeň
+        why: Hlavné mesto Rakúska.
+      - text: Benátky
+        why: Talianske mesto v regióne Veneto.
+      - text: Štrasburg
+        why: Mesto vo Francúzsku.
+      - text: Ženeva
+        why: Mesto vo Švajčiarsku.
+      - text: Bazilej
+        why: Švajčiarske mesto na Rýne.
+      - text: Turín
+        why: Hlavné mesto Piemontu v Taliansku.
+      - text: Janov
+        why: Mesto na severe Talianska.
+      - text: Míchov
+        why: Obec v Česku, v okrese Blansko; od Mníchova ju delí jediné písmeno a jedna krajina.
+
+  - id: staty-stan
+    type: pick
+    prompt: Ktoré štáty majú slovenský názov končiaci na -stan?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/-stan
+    correct:
+      - text: Afganistan
+        why: Štát s názvom končiacim na -stan.
+      - text: Pakistan
+        why: Štát s názvom končiacim na -stan.
+      - text: Kazachstan
+        why: Štát s názvom končiacim na -stan.
+      - text: Uzbekistan
+        why: Stredoázijský štát.
+      - text: Tadžikistan
+        why: Stredoázijský štát.
+    wrong:
+      - text: Mongolsko
+        why: Názov nekončí na -stan.
+      - text: Azerbajdžan
+        why: Názov nekončí na -stan.
+      - text: Arménsko
+        why: Po arménsky sa volá Hayastan, ale po slovensky Arménsko.
+      - text: Irán
+        why: Názov nekončí na -stan.
+      - text: Irak
+        why: Názov nekončí na -stan.
+      - text: Nepál
+        why: Názov nekončí na -stan.
+      - text: Bangladéš
+        why: Názov nekončí na -stan.
+
+  - id: rovnik-staty
+    type: pick
+    prompt: Cez ktoré štáty prechádza rovník po súši?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Equator
+    correct:
+      - text: Ekvádor
+        why: Rovník prechádza jeho územím.
+      - text: Kolumbia
+        why: Rovník prechádza cez Kolumbiu.
+      - text: Brazília
+        why: Rovník prechádza cez Brazíliu.
+      - text: Gabon
+        why: Rovník vedie cez Gabon.
+      - text: Uganda
+        why: Rovník prechádza cez Ugandu.
+      - text: Keňa
+        why: Rovník prechádza cez Keňu.
+      - text: Somálsko
+        why: Rovník prechádza cez Somálsko.
+      - text: Indonézia
+        why: Rovník prechádza cez Indonéziu.
+    wrong:
+      - text: Nigéria
+        why: Rovník ňou po súši neprechádza.
+      - text: Tanzánia
+        why: Rovník ňou po súši neprechádza.
+      - text: Peru
+        why: Rovník ňou po súši neprechádza.
+      - text: Venezuela
+        why: Rovník ňou po súši neprechádza.
+      - text: Etiópia
+        why: Rovník ňou po súši neprechádza.
+      - text: Filipíny
+        why: Rovník ňou po súši neprechádza.
+      - text: Madagaskar
+        why: Rovník ňou po súši neprechádza.
+
+  - id: poradie-vrcholy
+    type: order
+    prompt: Zoraď tieto vrcholy od najvyššieho.
+    direction: desc
+    unit: m n. m.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Seven_Summits
+    items:
+      - { text: Aconcagua, value: 6961 }
+      - { text: Denali, value: 6194 }
+      - { text: Kilimandžáro, value: 5895 }
+      - { text: Elbrus, value: 5642 }
+      - { text: Vinson, value: 4892 }
+
+  - id: poradie-rozloha
+    type: order
+    prompt: Zoraď štáty od najrozľahlejšieho.
+    direction: desc
+    unit: km2
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
+    items:
+      - { text: Rusko, value: 17098246 }
+      - { text: Brazília, value: 8510346 }
+      - { text: Austrália, value: 7741220 }
+      - { text: India, value: 3287263 }
+      - { text: Argentína, value: 2780400 }
+
+  - id: poradie-rieky
+    type: order
+    prompt: Zoraď európske rieky od najdlhšej.
+    direction: desc
+    unit: km
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Volga
+    items:
+      - { text: Volga, value: 3531 }
+      - { text: Dunaj, value: 2850 }
+      - { text: Dneper, value: 2201 }
+      - { text: Rýn, value: 1233 }
+
+  - id: poradie-oceany
+    type: order
+    prompt: Zoraď oceány od najväčšieho.
+    direction: desc
+    unit: mil. km2
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Ocean
+    items:
+      - { text: Tichý oceán, value: 168.7 }
+      - { text: Atlantický oceán, value: 85.1 }
+      - { text: Indický oceán, value: 70.6 }
+      - { text: Južný oceán, value: 22.0 }
+      - { text: Severný ľadový oceán, value: 15.6 }
+
+  - id: obyvatelia-japonsko
+    type: number
+    prompt: Koľko obyvateľov má Japonsko?
+    answer: 124000000
+    unit: obyvateľov
+    scale: log
+    tolerance: 0.05
+    asOf: "2023"
+    why: Podľa odhadu OSN za rok 2023 zhruba 124 miliónov.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)
+
+  - id: obyvatelia-nemecko
+    type: number
+    prompt: Koľko obyvateľov má Nemecko?
+    answer: 84500000
+    unit: obyvateľov
+    scale: log
+    tolerance: 0.05
+    asOf: "2023"
+    why: Podľa odhadu OSN za rok 2023 približne 84,5 milióna, čo je najviac v EÚ.
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)
+
+  - id: casove-pasma-rusko
+    type: number
+    prompt: Koľko časových pásiem má Rusko?
+    answer: 11
+    unit: pásiem
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Od UTC+2 po UTC+12, dokopy 11 pásiem.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Time_in_Russia
+
+  - id: clenovia-osn
+    type: number
+    prompt: Koľko členských štátov má Organizácia Spojených národov?
+    answer: 193
+    unit: štátov
+    scale: linear
+    tolerance: 5
+    asOf: "2026-11"
+    why: OSN má 193 členských štátov.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Member_states_of_the_United_Nations
+
+  - id: vyska-burdz-chalifa
+    type: number
+    prompt: Aká vysoká je Burdž Chalífa v Dubaji, najvyššia budova sveta, v metroch?
+    answer: 828
+    unit: m
+    scale: linear
+    tolerance: 20
+    asOf: "2026-11"
+    why: Architektonická výška je 828 m, s anténou takmer 830 m.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Burj_Khalifa
+
+  - id: choice-machu-picchu
+    type: choice
+    prompt: V ktorej krajine leží inkské mesto Machu Picchu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Machu_Picchu
+    correct: { text: Peru, why: Leží v regióne Cusco, asi 80 km severozápadne od mesta Cusco. }
+    wrong:
+      - { text: Bolívia, why: Susedí s Peru, ale Machu Picchu v nej neleží. }
+      - { text: Ekvádor, why: Inkovia tu tiež vládli, ale Machu Picchu je inde. }
+      - { text: Čile, why: Inkská ríša sem zasahovala, no Machu Picchu v Čile nie je. }
+
+  - id: choice-vlajka-taliansko
+    type: choice
+    prompt: Ktorý štát má vlajku zloženú z troch zvislých pruhov, zeleného, bieleho a červeného, bez akéhokoľvek znaku?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Flag_of_Italy
+    correct: { text: Taliansko, why: Zvislá trikolóra od roku 1946, inšpirovaná francúzskou. }
+    wrong:
+      - { text: Maďarsko, why: Má červeno-bielo-zelenú vlajku, ale pruhy sú vodorovné. }
+      - { text: Mexiko, why: Pruhy sú rovnaké, no v strede má štátny znak s orlom. }
+      - { text: Írsko, why: Zvislé pruhy, ale zelená, biela a oranžová. }
