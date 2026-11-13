@@ -17,16 +17,23 @@ Goals, in the owner's words:
 
 ## Status
 
-Decisions made and v1 planned (2026-11-13). No game code yet.
+v1 prototype in progress on branch `feat/v1-prototype` (2026-11-13): engine, pack format, Preact UI, design gallery, 8+ packs. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below.
 
-- **v1 plan**: `notes/V1 Plan.md` — scope, rules, pack format, architecture, milestones. Start there.
-- Remaining questions: `notes/Open Questions.md` (Classic turn structure, points per pick, options per card, game length, first 8 packs, visual direction; non-blocking: per-pack licence exceptions, repo visibility). The v1 plan uses the recommended defaults until answered.
-- Report: `docs/research-report.html` (research from 2026-11-12, written before the decisions; where it disagrees with this file or the notes, they win).
+- Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
+
+## Workflow
+
+- Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule, 2026-11-13). Run it with `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt> <out>`; the prompt asks for findings and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS.
+- `agy` must run through `scripts/agy-readonly.py` (read-only allow-list). Do not run agy with `--dangerously-skip-permissions`; Gemini returns text (e.g. YAML) and Claude writes the files.
+- Content: packs are drafted by one model and fact-checked by the other (Gemini checks Claude packs, Claude checks Gemini packs) before merge. Writers must not use facts they did not see in a source this session. Tip for sk.wikipedia: percent-encode diacritics or use `https://sk.wikipedia.org/w/index.php?search=<term>`.
+- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI smoke test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots of designs: `node scripts/screenshots.ts <dir> [designId…]`.
+- Commits are made with `-c commit.gpgsign=false` when the owner is away (GPG pinentry cannot be answered unattended); the owner may re-sign.
+- `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it.
 
 ## Rules for agents
 
 - `notes/` is a symlink into the owner's separate Obsidian vault. You may read and edit the Markdown there. **Never commit it, never `git add` it, never remove it from `.gitignore`.** The owner manages that vault separately.
-- Commit and push only when asked. The owner is setting up the GitHub remote.
+- Commits on feature branches are allowed; merge to `main` and push only after a passing Hydrogen review (see Workflow). Remote: `origin` = github.com/TomasHutnan/fakt (public).
 - Offload simple, mechanical tasks (page fetches, searches, bulk conversions) to cheaper models/subagents.
 - Do not copy question text, names, artwork or visual identity from Chytrák, Smart10/Desítka or any other quiz product. Mechanics may be reused; content and identity must be original.
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
@@ -46,7 +53,7 @@ Decisions made and v1 planned (2026-11-13). No game code yet.
 ## Decisions (2026-11-13)
 
 - **Play**: v1 is one phone passed around, with a hand-over screen between players showing only "pass to <name>, tap to continue" (integral to v1). Network play is v3 and only together with a big-screen host view (Jackbox style), same room. No remote play.
-- **Classic mode**: many options per card with a **variable** number of true options; pick one or bank; wrong pick wipes the card's points. Wipe rule ("first wrong pick free" vs "always wipes") is a setting.
+- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting.
 - **Other modes**: Solo run, Mix, Teams (v1); Daily card (v2); Everyone at once, Guess and bet (v3, big screen). Bluff and typed list recall are dropped.
 - **Input**: tap options or type a **number** (year, amount). Never free-text typing. Number guesses: closeness-based scoring solo, ranked points in multiplayer.
 - **Formats v1**: pick the true ones, put in order, number guess, one of four. "Which is more" in v2. No pictures/audio in the first year.
@@ -60,15 +67,16 @@ Decisions made and v1 planned (2026-11-13). No game code yet.
 - **Licence**: code MIT, packs CC0 by default. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
 - **App store**: keep possible as long as it does not limit the web version (PWA -> TWA/Capacitor).
 
-## Proposed repo layout
+## Repo layout
 
 ```
-packs/            question packs (source)
-src/engine/       game rules, pure functions, tested
-src/content/      pack schema, validation, card derivation
-src/ui/           components and screens
-src/transport/    local, p2p, relay
-scripts/          content generators (Wikidata etc.), validation
-docs/             reports
-notes/            symlink to Obsidian vault (ignored, never commit)
+packs/            question packs (YAML source, CC0) + README with format and writing guide
+src/content/      pack types and validation (shared by build script and importer)
+src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
+src/ui/           Preact screens, storage, Slovak texts (sk.ts), demo states for the gallery
+src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
+scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper)
+docs/             research report
+notes/            symlink to the owner's Obsidian vault (ignored, never commit)
+reference/        owner's reference material (never commit)
 ```
