@@ -17,7 +17,7 @@ questions:
       - text: Zdeno Chára
         why: V roku 2011 ako kapitán Bostonu, prvý Slovák, ktorý dvihol pohár nad hlavu ako kapitán.
       - text: Miroslav Šatan
-        why: S Pittsburghom 2009, hoci do play-off nastúpil iba deväťkrát.
+        why: S Pittsburghom v roku 2009.
       - text: Marián Gáborík
         why: S Los Angeles Kings 2014; v tom play-off strelil 14 gólov, najviac zo všetkých.
       - text: Tomáš Kopecký
@@ -92,7 +92,7 @@ questions:
       - text: Elena Kaliská
         why: Zlato na K1 v rokoch 2004 aj 2008.
       - text: Matej Tóth
-        why: Víťaz chôdze na 50 km v Riu 2016, prvá slovenská atletická medaila od vzniku samostatnosti.
+        why: Víťaz chôdze na 50 km v Riu 2016.
       - text: Anastasiya Kuzmina
         why: Biatlonistka, rodáčka z Ťumene, tri zlaté medaily (2010, 2014, 2018).
       - text: Petra Vlhová
@@ -100,7 +100,7 @@ questions:
       - text: Zuzana Rehák-Štefečeková
         why: Zlato v streleckej disciplíne trap, Tokio 2020.
       - text: Ladislav Škantár
-        why: Zlato na C2 v Riu 2016 spolu s bratom Petrom.
+        why: Zlato na C2 v Riu 2016 spolu s bratrancom Petrom.
     wrong:
       - text: Peter Sagan
         why: Olympijskú medailu nikdy nezískal; v Riu 2016 bol na horskom bicykli 35.
@@ -127,7 +127,7 @@ questions:
       - text: Brescia
         why: V rokoch 2004–2007 ako tínedžer v Serii B.
       - text: SSC Neapol
-        why: Dlhých 12 rokov (2007–2019), vyhral dva Taliansky pohár.
+        why: Dlhých 12 rokov (2007–2019), vyhral dva talianske poháre.
       - text: Dalian Professional
         why: Čínsky klub, kam odišiel v roku 2019.
       - text: IFK Göteborg
@@ -163,8 +163,6 @@ questions:
         why: Osem sezón (2008–2016), 320 zápasov a Ligový pohár 2012.
       - text: Fenerbahçe
         why: Turecký veľkoklub v rokoch 2016–2019.
-      - text: Atalanta Bergamo
-        why: V roku 2019 podpísal, no nenastúpil ani na jeden zápas.
       - text: İstanbul Başakşehir
         why: S ním vyhral tureckú ligu 2019/20.
       - text: Spartak Trnava
@@ -284,7 +282,7 @@ questions:
     type: pick
     prompt: Ktoré tvrdenia o Zdenovi Chárovi sú pravdivé?
     difficulty: 1
-    source: https://en.wikipedia.org/wiki/Zden%C3%B3_Ch%C3%A1ra
+    source: https://en.wikipedia.org/wiki/Zdeno_Ch%C3%A1ra
     tags: [hokej, nhl]
     correct:
       - text: Je najvyšším hráčom v histórii NHL.
@@ -295,7 +293,7 @@ questions:
         why: Cena pre najlepšieho obrancu NHL.
       - text: Narodil sa v Trenčíne.
         why: Rok 1977.
-      - text: Má rekord v rýchlosti strely 108,8 míľ za hodinu.
+      - text: Má rekord NHL v rýchlosti strely 108,8 míľ za hodinu.
         why: Vyše 175 km/h, nameral to na All-Star víkende 2012.
       - text: Dvakrát získal striebro na MS.
         why: V rokoch 2000 a 2012.
@@ -356,7 +354,7 @@ questions:
       - text: Majstrovstvá sveta v cestných pretekoch
         why: Tri tituly po sebe, 2015, 2016, 2017.
       - text: Zelený dres na Tour de France
-        why: Sedemkrát, vrátane 2012–2016, 2018 a 2019.
+        why: Sedemkrát (2012–2016, 2018 a 2019).
       - text: Okolo Flámska
         why: Víťaz 2016.
       - text: Paríž–Roubaix
@@ -393,11 +391,11 @@ questions:
       - text: striebro v Sydney 2000
         why: Zlato sa mu v Sydney vymklo o kúsok.
       - text: striebro v Aténach 2004
-        why: Tretí rok po sebe na stupni víťazov.
+        why: Tretia olympiáda po sebe na stupni víťazov.
       - text: zlato v Pekingu 2008
         why: Druhé zlato, o dvanásť rokov neskôr.
       - text: bronz v Londýne 2012
-        why: Piata olympijská medaila, zatiaľ jediný vodný slalomár s toľkými.
+        why: Piata olympijská medaila, na piatych hrách po sebe (1996–2012).
     wrong:
       - text: zlato v Sydney 2000
         why: V Sydney zlato vyhrali Hochschorneri na C2, Martikán bol druhý.
@@ -435,7 +433,7 @@ questions:
         why: Na 3:1, Taliansko potom znížilo ešte v nadstavenom čase.
     wrong:
       - text: Slovensko vyhralo skupinu.
-        why: Skupinu vyhralo Paraguaj s piatimi bodmi.
+        why: Skupinu vyhral Paraguaj s piatimi bodmi.
       - text: Slovensko porazilo Paraguaj.
         why: Prehra 0:2.
       - text: Slovensko prehralo s Novým Zélandom.
@@ -504,8 +502,8 @@ questions:
       - text: Vo Vancouveri 2010 skončili štvrtí.
         why: Hneď pod stupňami víťazov.
     wrong:
-      - text: Medailu získali už v Naganu 1998.
-        why: V Naganu skončili desiati.
+      - text: Medailu získali už v Nagane 1998.
+        why: V Nagane skončili desiati.
       - text: V Soči 2014 skončili štvrtí.
         why: Skončili jedenásti.
       - text: V Pekingu prehrali zápas o bronz.
@@ -538,7 +536,7 @@ questions:
     direction: desc
     unit: bodov
     difficulty: 3
-    source: https://en.wikipedia.org/wiki/Marian_Hossa
+    source: https://en.wikipedia.org/wiki/List_of_Slovaks_in_the_NHL
     tags: [hokej, nhl]
     items:
       - { text: Marián Hossa, value: 1134 }
