@@ -37,7 +37,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Czech%E2%80%93Slovak_languages
     tags: [čeština, falošní priatelia]
     correct:
-      - { text: horký, why: "Slovensky chuť (česky hořký), česky horký je „horúci“." }
+      - { text: horký, why: "Slovensky horká chuť (česky hořký), česky horký je „horúci“." }
       - { text: chudý, why: "Slovensky „štíhly“, česky „chudobný“." }
       - { text: pivnica, why: "Slovensky pivnica, česky pivnice je krčma." }
       - { text: syrový, why: "Slovensky „ako zo syra“, česky „surový“." }
@@ -124,7 +124,7 @@ questions:
     source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_Czech
     tags: [výpožičky, čeština]
     correct:
-      - { text: diaľnica, why: "Z českého dálnice, zloženého z „dlhý“ a silnice." }
+      - { text: diaľnica, why: "Z českého dálnice, zloženého z „dálný“ (ďaleký) a silnice." }
       - { text: hroch, why: "České slovo, ktoré vytvoril Jan Svatopluk Presl." }
       - { text: príbeh, why: "Z českého příběh." }
       - { text: pravítko, why: "Z českého pravítko." }
@@ -266,7 +266,7 @@ questions:
     wrong:
       - { text: Rím, why: "Hlavné mesto Talianska sa píše s i." }
       - { text: dobiť, why: "Ako zbiť sa píše s i, s y je dobyť, teda zmocniť sa." }
-      - { text: zaľúbení, why: "Nominatív množného čísla prídavných mien má i." }
+      - { text: zaľúbení, why: "Životné prídavné mená mužského rodu majú v nominatíve množného čísla í (zaľúbení muži)." }
       - { text: mi, why: "Je to tvar zámena ja, s y sa píše len zámeno my." }
 
   - id: pravopis-ae

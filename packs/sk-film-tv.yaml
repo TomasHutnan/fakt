@@ -305,6 +305,7 @@ questions:
     type: pick
     prompt: Kto z nich vyhral slovenskú reláciu Let's Dance alebo SuperStar?
     difficulty: 2
+    asOf: "2025"
     note: "Ďalší zdroj pre SuperStar: https://sk.wikipedia.org/wiki/Slovensko_h%C4%BEad%C3%A1_SuperStar"
     source: https://en.wikipedia.org/wiki/Let%27s_Dance_(Slovak_TV_series)
     correct:
