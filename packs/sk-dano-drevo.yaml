@@ -224,7 +224,7 @@ questions:
     correct:
       - { text: Prišiel na Rokfort v roku 1200 pred letopočtom, why: "Tvrdí to profesorka Mc. Mlynarčíková." }
       - { text: Kedysi bol pekný a obľúbený mládenec, why: "„Baby po ňom leteli“, kým nezmutoval a nenarástol mu chvost." }
-      - { text: Jeho kamarátom bol pavúk Dávid, why: "Dávid sa tiež zmutoval na tlstého pavúka." }
+      - { text: Jeho kamarátom bol pavúk Dávid, why: "Dávid tiež zmutoval na tlstého pavúka." }
       - { text: Naposledy vraždil pred 50 rokmi, why: "Prichádza vraj v nepravidelných intervaloch." }
       - { text: Obete prehĺta vcelku, why: "„Je to had a obete prehĺta vcelku.“" }
       - { text: Má 61 chromozómov, why: "Spomína sa pri stretnutí s Poslušným a znova na Pipíkovej hodine." }
@@ -369,7 +369,7 @@ questions:
       - { text: Dano Brvno, why: "Vymyslené." }
       - { text: Dano Triesko, why: "Vymyslené." }
       - { text: Dano Pipík, why: "Pipík je profesor z prvého filmu." }
-      - { text: Dano Hrášok, why: "Vymyslené, hoci dusený hrášok má vo filme katastrofálne následky." }
+      - { text: Dano Hrášok, why: "Vymyslené, hoci dusený hrášok mal v prvom filme katastrofálne následky." }
 
   - id: dd-dej-komnata
     type: order
@@ -381,7 +381,7 @@ questions:
     items:
       - { text: Janko Španiel sa zjaví v Danovej izbe, value: 3, label: "00:03", why: "„Moje meno je Janko Španiel.“" }
       - { text: Cesta do Lekárne na tráviace problémy, value: 14, label: "00:14", why: "Dano sa pomýli a skončí v Lekárni na srdcovocievne choroby." }
-      - { text: Auto pristane v bútľavej vŕbe, value: 27, label: "00:27", why: "„Stará bútľava vŕba kovačevičova.“" }
+      - { text: Auto pristane v bútľavej vŕbe, value: 27, label: "00:27", why: "„Stará bútľavá vŕba kovačevičova.“" }
       - { text: Súboj Pipíka s Ľudom Kolmanom, value: 65, label: "01:05", why: "Hneď potom sa v súboji stretnú Dano a Stano." }
       - { text: Dano s Pedrom sa premenia na Rudolfa a Michala, value: 81, label: "01:21", why: "Lekvár im zmení aj hlasy." }
       - { text: Návšteva pavúka Dávida, value: 105, label: "01:45", why: "Dávid im dá hádanku o maku na poli." }
@@ -412,13 +412,13 @@ questions:
     difficulty: 3
     source: https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu
     items:
-      - { text: Meno v záverečných titulkoch, value: 3, why: "Kúpilo si ju 53 ľudí." }
+      - { text: Meno v záverečných titulkoch, value: 3, why: "Túto odmenu si kúpilo 53 ľudí." }
       - { text: "Video: čo sa s postavami stalo o päť rokov", value: 6, why: "Spolu s menom v titulkoch; kúpilo si ju 74 ľudí." }
       - { text: Pozvánka na premiéru v Bratislave, value: 10, why: "Najobľúbenejšia odmena, 139 podporovateľov." }
       - { text: Pozvánka na afterparty, value: 20 }
       - { text: Originálne tričko Dano Drevo, value: 25 }
-      - { text: Jedlo alebo drink s hlavným dabérom, value: 100, why: "Využilo ju päť ľudí." }
-      - { text: Nahrať repliku pri dabingu, value: 200, why: "Kúpili si ju dvaja." }
+      - { text: Jedlo alebo drink s hlavným dabérom, value: 100, why: "Túto odmenu využilo päť ľudí." }
+      - { text: Nahrať repliku pri dabingu, value: 200, why: "Túto odmenu si kúpili dvaja." }
 
   - id: dd-casova-os
     type: order
