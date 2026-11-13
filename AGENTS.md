@@ -6,7 +6,7 @@ Context for AI agents and new sessions. Keep this file short and current; update
 
 ## What this is
 
-A free, non-monetized knowledge quiz game for playing alone or with a group of friends. Website first (ideally fully static), maybe an app later. Inspired by playing https://chytrak.eu/ with friends, which has too few questions, no custom question sets, and sells extra questions.
+A free, non-monetized knowledge quiz game for playing alone or with a group of friends on one phone passed around. Static website (PWA), maybe an app later. Inspired by playing https://chytrak.eu/ with friends, which has too few questions, no custom question sets, and sells extra questions.
 
 Goals, in the owner's words:
 
@@ -15,57 +15,55 @@ Goals, in the owner's words:
 - Not too obscure. A wrong answer should still be something to laugh about.
 - Packs can be switched off if a topic does not interest the group.
 
-## Status
+## Status (2026-11-13)
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 23 packs / 604 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
+Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
 
-- Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
+- Built: Classic and Mix modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, vibration/sound settings, import, offline PWA.
+- Content: **23 packs / 604 questions** (6 adult). Target 1,000.
+- Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
+- Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
 
 ## Workflow
 
-- Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule, 2026-11-13). Run it with `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt> <out>`; the prompt asks for findings and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS.
-- `agy` must run through `scripts/agy-readonly.py` (read-only allow-list). Do not run agy with `--dangerously-skip-permissions`; Gemini returns text (e.g. YAML) and Claude writes the files. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
-- Content: packs are drafted by one model and fact-checked by the other (Gemini checks Claude packs, Claude checks Gemini packs) before merge. Writers must not use facts they did not see in a source this session. Tip for sk.wikipedia: percent-encode diacritics or use `https://sk.wikipedia.org/w/index.php?search=<term>`.
-- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI smoke test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots of designs: `node scripts/screenshots.ts <dir> [designId…]`.
+- Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule). Write the prompt to a file (`docs/.review-<name>.prompt`, deleted afterwards) and run `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt-file> <out-file>`; the prompt asks for `severity file:line — issue` lines and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS. Check findings before acting: Gemini is often wrong.
+- `agy` runs only through `scripts/agy-readonly.py` (read-only allow-list), never with `--dangerously-skip-permissions`. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
+- **Content pipeline**: a Claude subagent drafts a pack from sources it opens itself → Gemini Hydrogen fact-checks → the writer verifies each finding against a source and applies only confirmed ones (drops what can't be settled) → Hydrogen re-review to PASS → merge. WebFetch returns a model summary, so check numbers against the raw page. Long runs hit the usage limit: resume the same agent afterwards rather than starting over.
+- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
 - Commits are made with `-c commit.gpgsign=false` when the owner is away (GPG pinentry cannot be answered unattended); the owner may re-sign.
-- `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it. Reading it as a source is fine (the Dano Drevo pack cites the films' subtitles with timestamps).
 
 ## Rules for agents
 
-- `notes/` is a symlink into the owner's separate Obsidian vault. You may read and edit the Markdown there. **Never commit it, never `git add` it, never remove it from `.gitignore`.** The owner manages that vault separately.
-- Commits on feature branches are allowed; merge to `main` and push only after a passing Hydrogen review (see Workflow). Remote: `origin` = github.com/TomasHutnan/fakt (public).
+- `notes/` is a symlink into the owner's separate Obsidian vault. You may read and edit the Markdown there. **Never commit it, never `git add` it, never remove it from `.gitignore`.**
+- `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it. Reading it as a source is fine.
+- Commits on feature branches are allowed; merge to `main` and push only after a passing Hydrogen review. Remote: `origin` = github.com/TomasHutnan/fakt (public).
 - Offload simple, mechanical tasks (page fetches, searches, bulk conversions) to cheaper models/subagents.
 - Do not copy question text, names, artwork or visual identity from Chytrák, Smart10/Desítka or any other quiz product. Mechanics may be reused; content and identity must be original.
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
-- Every question needs a `source`. Time-sensitive facts need an `asOf` date. Facts drafted by a language model must be checked against the source before merge.
+- Every question needs a `source`; time-sensitive facts need `asOf`; every pick/choice option (and every number question) needs a one-line `why`; order items should have one. Language-model facts are checked against the source before merge.
+- **Nothing hateful or untrue**, also in spicy packs. Quotes of real people verbatim as printed by a reliable source; no claims of wrongdoing beyond the source.
+- Anything crude goes into an 18+ pack with `warnings`: non-adult packs switch on automatically for existing players.
 - Question content is primarily Slovak (Czech acceptable). Code, comments and docs are in English.
+
+## Decisions (owner, 2026-11-13)
+
+- **Play**: one phone passed around, hand-over screen "pass to <name>, tap to continue". Network play only in v3 with a big-screen host view (Jackbox style), same room; no remote play. A team is simply entered as one player.
+- **Classic**: 10 options, 2–8 true (count hidden; setting shows it). Each player plays the whole card alone. k-th correct pick = k points; bank any time; wrong pick wipes the card (setting: only ends the turn). 10 rounds by default, target score as a setting.
+- **Answers**: shown to each player right after their turn, drawn in place on the grid they answered in (setting: everyone after the round).
+- **Formats**: pick, order (dragged), number guess (closeness solo, ranked in multiplayer), one of four, which is more (derived from order questions in Mix). Never free-text answers; no pictures/audio in the first year.
+- **Later modes**: Everyone at once, Guess and bet (v3). Daily card, Teams, card-level content tags: not now. Bluff, typed list recall: dropped.
+- **Languages**: Slovak UI. Slovak packs first; English packs later, written directly, no translation. Czech allowed.
+- **Content**: adult packs welcome (labelled, off by default, content-warning tags); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
+- **Packs**: YAML in `packs/`, built to per-pack JSON + index with hashes; importer accepts YAML and JSON, stores imports in the browser. Packs CC0 (per-pack `license` allowed); code MIT. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
+- **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
+- **Hosting**: GitHub Pages; a Cloudflare Workers relay only if v3 P2P (Trystero) fails.
+- **Reports/ratings**: owner's prefilled Google Form (`src/ui/links.ts`), not GitHub issues.
+- **App store**: keep possible as long as it does not limit the web version.
 
 ## Key research findings
 
-- **Chytrák**: native app, one device passed around, 1-5 players. 10 options per question, 5 true and 5 false; correct picks add increasing points, a wrong pick wipes the points from that question; play to a target score. Mechanic matches the board game Smart10 (unconfirmed link).
-- **No openly licensed Slovak or Czech trivia pool exists.** Content must be generated, translated or hand-written.
-- **Usable data**: Wikidata (CC0; good for peaks, towns, films, people; cannot answer "species living in Slovakia"), OpenTriviaQA (~49k EN, CC BY-SA 4.0), Open Trivia DB (~5.3k verified EN, CC BY-SA 4.0), Slovak Statistical Office / Eurostat / OWID / GeoNames (CC BY).
-- **Avoid**: The Trivia API (CC BY-NC), Jeopardy/J! Archive dumps, TriviaQA, TMDB, scraped chart or quiz sites.
-- Anything derived from the CC BY-SA sets must stay CC BY-SA 4.0 with attribution.
-- **Static is enough**: ~10k short questions is an estimated 1 MB compressed; ship per-pack JSON, lazy-load, cache with a service worker.
-- **Multiplayer**: pass-and-play needs nothing. Phones can join peer to peer (Trystero over WebRTC) with the host browser as authority. Fallback is a Cloudflare Durable Object relay (free plan) or a relay on the owner's own server. Skip Supabase (free projects pause), CRDT libraries (overkill).
-
-## Decisions (2026-11-13)
-
-- **Play**: v1 is one phone passed around, with a hand-over screen between players showing only "pass to <name>, tap to continue" (integral to v1). Network play is v3 and only together with a big-screen host view (Jackbox style), same room. No remote play.
-- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting. Answers are shown to each player right after their turn by default (setting: everyone after the round). Order cards are dragged. Mix also deals some order questions as "which is more" (two items, 2 points). After a game each card can be rated 👍/👎/⚠️ (stored locally, sent through the owner's prefilled Google Form, no account needed); every answer screen has a per-card report link to the same form. Home offers quick starts (5 and 20 rounds) with the last players; packs show "+N nové" for questions added since the pack list was last opened. Vibration on (setting), sounds off by default.
-- **Other modes**: Solo run, Mix, Teams (v1); Daily card (v2); Everyone at once, Guess and bet (v3, big screen). Bluff and typed list recall are dropped.
-- **Input**: tap options or type a **number** (year, amount). Never free-text typing. Number guesses: closeness-based scoring solo, ranked points in multiplayer.
-- **Formats v1**: pick the true ones, put in order, number guess, one of four. "Which is more" in v2. No pictures/audio in the first year.
-- **Languages**: Slovak UI. Slovak packs first; English packs later for international questions, written directly, **no translation**. Czech packs allowed, low priority.
-- **Content**: packs written by the owner in the repo. Language-model drafts OK; every fact checked against its source; **every option needs an explanation** of why it is right or wrong. Time-sensitive facts kept with `asOf`. Adult packs welcome: labelled, off by default, switched on like any pack. Spicy packs live in the public repo like any other (owner, 2026-11-13); nothing hateful or untrue may go in them. Explanations are one line per option, longer only where really necessary. Kids packs v4+.
-- **Targets**: 200 cards in 8 packs for the first evening, 1,000 before sharing widely.
-- **Data model**: "one fact list, several formats" — a list question stores items (optionally with values) plus decoys; the game derives pick/order/compare cards from it.
-- **Packs**: YAML source in `packs/`, built to per-pack JSON plus an index with content hashes; importer accepts YAML and JSON, stores imports in the browser.
-- **Stack**: TypeScript + Vite + **Preact**, static SPA + PWA. Pure TS engine (state + action -> state), content layer, UI, transport behind `join/send/onMessage`. Decks derived from a shared seed.
-- **Hosting**: GitHub Pages at `fakt.hutnan.dev`. Relay (if P2P fails) on Cloudflare Workers free plan with Durable Objects.
-- **Licence**: code MIT, packs CC0 by default. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
-- **App store**: keep possible as long as it does not limit the web version (PWA -> TWA/Capacitor).
+- **Chytrák**: native app, one device, 1–5 players, 10 options with 5 true, escalating points, wrong pick wipes the question; same mechanic as the board game Smart10.
+- **No openly licensed Slovak or Czech trivia pool exists.** Usable: Wikidata (CC0), Wikipedia/Wikiquote facts, ŠÚ SR / Eurostat / OWID (CC BY). Avoid: The Trivia API (CC BY-NC), Jeopardy dumps, TriviaQA, TMDB, scraped chart or quiz sites.
 
 ## Repo layout
 
@@ -73,7 +71,7 @@ v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack form
 packs/            question packs (YAML source, CC0) + README with format and writing guide
 src/content/      pack types and validation (shared by build script and importer)
 src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
-src/ui/           Preact screens, storage, Slovak texts (sk.ts), demo states for the gallery
+src/ui/           Preact screens, storage, Slovak texts (sk.ts), links (report form), feedback (vibration/sound), demo states
 src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
 scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper), dano-drevo-counts (word counts from subtitles)
 docs/             research report
