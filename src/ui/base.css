@@ -57,10 +57,11 @@
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 48px; padding: 0 18px; text-align: center; text-decoration: none;
 }
-:where(.btn--small) { min-height: 36px; padding: 0 12px; }
+:where(.btn--small) { min-height: 44px; padding: 0 12px; }
 :where(.btn--block) { width: 100%; }
-:where(.btn--icon) { min-height: 40px; min-width: 40px; padding: 0; }
+:where(.btn--icon) { min-height: 44px; min-width: 44px; padding: 0; }
 :where(.file-btn) { cursor: pointer; }
+:where(.file-btn:has(+ input:focus-visible)) { outline: 3px solid currentColor; outline-offset: 2px; }
 
 /* Hand-over: the whole screen is one button */
 :where(.handover) {

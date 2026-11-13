@@ -9,6 +9,7 @@ import { Game } from "./Game.tsx";
 import { loadBuiltInPacks } from "./packs.ts";
 import { Home, Packs, Rules, SettingsScreen, Setup } from "./Screens.tsx";
 import { sk } from "./sk.ts";
+import { validatePack } from "../content/validate.ts";
 import { clearAll, KEYS, load, save } from "./storage.ts";
 
 type Screen = "home" | "setup" | "game" | "packs" | "settings" | "designs" | "rules";
@@ -20,12 +21,12 @@ export function App() {
   const [design, setDesign] = useState(() => applyDesign(params.get("design") ?? load(KEYS.design, DEFAULT_DESIGN)));
   const [builtIn, setBuiltIn] = useState<Pack[] | null>(demo ? [DEMO_PACK] : null);
   const [loadError, setLoadError] = useState(false);
-  const [imported, setImported] = useState<Pack[]>(() => (demo ? [] : load(KEYS.imported, [])));
+  const [imported, setImported] = useState<Pack[]>(() => (demo ? [] : loadImported()));
   const [enabled, setEnabled] = useState<string[] | null>(() => (demo ? ["demo"] : load(KEYS.enabledPacks, null)));
   const [settings, setSettings] = useState<Settings>(() => ({ ...DEFAULT_SETTINGS, ...load(KEYS.settings, {}) }));
   const [players, setPlayers] = useState<string[]>(() => (demo ? ["Zuzka", "Maroš", "Ivka"] : load(KEYS.players, [])));
   const [seen, setSeen] = useState<string[]>(() => (demo ? [] : load(KEYS.seen, [])));
-  const [game, setGame] = useState<GameState | null>(() => (demo ? demoState(demo) : load(KEYS.game, null)));
+  const [game, setGame] = useState<GameState | null>(() => (demo ? demoState(demo) : loadGame()));
   const [screen, setScreen] = useState<Screen>(() => initialScreen());
   const [setupError, setSetupError] = useState<string | null>(null);
   const [packsReturn, setPacksReturn] = useState<Screen>("home");
@@ -47,10 +48,10 @@ export function App() {
   const activeIds = enabledIds.filter((id) => packs.some((p) => p.id === id));
 
   // Persist (never in demo mode, so the gallery cannot overwrite a real game).
-  const persist = (key: string, value: unknown) => {
-    if (!demo) save(key, value);
-  };
-  useEffect(() => persist(KEYS.game, game && game.phase !== "over" ? game : null), [game]);
+  const persist = (key: string, value: unknown): boolean => (demo ? true : save(key, value));
+  useEffect(() => {
+    persist(KEYS.game, game && game.phase !== "over" ? game : null);
+  }, [game]);
 
   const dispatch = (a: Action) => {
     if (!game) return;
@@ -111,10 +112,18 @@ export function App() {
           initialPlayers={players}
           initialSettings={settings}
           error={setupError}
-          onBack={() => setScreen("home")}
+          onBack={() => {
+            setSetupError(null);
+            setScreen("home");
+          }}
           onPacks={() => {
+            setSetupError(null);
             setPacksReturn("setup");
             setScreen("packs");
+          }}
+          onDraft={(names, s) => {
+            setPlayers(names);
+            setSettings(s);
           }}
           onStart={start}
         />
@@ -128,10 +137,11 @@ export function App() {
           onToggle={(id, on) => updateEnabled(on ? [...activeIds, id] : activeIds.filter((x) => x !== id))}
           onSetAll={(on) => updateEnabled(on ? packs.map((p) => p.id) : [])}
           onImport={(p) => {
+            if (builtIn?.some((b) => b.id === p.id)) return sk.importClash(p.id);
             const next = [...imported.filter((x) => x.id !== p.id), p];
             setImported(next);
-            persist(KEYS.imported, next);
             if (!activeIds.includes(p.id)) updateEnabled([...activeIds, p.id]);
+            return persist(KEYS.imported, next) ? null : sk.importNotSaved;
           }}
           onRemoveImported={(id) => {
             const next = imported.filter((x) => x.id !== id);
@@ -175,7 +185,10 @@ export function App() {
       canResume={!!game && game.phase !== "over"}
       questionCount={packs.filter((p) => activeIds.includes(p.id)).reduce((n, p) => n + p.questions.length, 0)}
       packCount={activeIds.length}
-      onNew={() => setScreen("setup")}
+      onNew={() => {
+        setSetupError(null);
+        setScreen("setup");
+      }}
       onResume={() => setScreen("game")}
       onPacks={() => {
         setPacksReturn("home");
@@ -185,6 +198,29 @@ export function App() {
       onRules={() => setScreen("rules")}
     />
   );
+}
+
+/** Imported packs are re-validated on load: storage may hold data from an older build. */
+function loadImported(): Pack[] {
+  const raw = load<unknown>(KEYS.imported, []);
+  if (!Array.isArray(raw)) return [];
+  return raw.map((p) => validatePack(p).pack).filter((p): p is Pack => p !== null);
+}
+
+/** A saved game is only resumed if it has the current shape; otherwise it is dropped. */
+function loadGame(): GameState | null {
+  const g = load<Partial<GameState> | null>(KEYS.game, null);
+  const ok =
+    !!g &&
+    typeof g === "object" &&
+    Array.isArray(g.players) &&
+    Array.isArray(g.deck) &&
+    Array.isArray(g.results) &&
+    typeof g.phase === "string" &&
+    !!g.card &&
+    !!g.settings &&
+    !!g.answer;
+  return ok ? (g as GameState) : null;
 }
 
 function initialScreen(): Screen {

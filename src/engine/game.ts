@@ -45,7 +45,7 @@ export interface Player {
 export type Answer =
   | { type: "pick"; picks: number[]; status: "playing" | "banked" | "busted" | "complete" }
   | { type: "order"; arrangement: number[] }
-  | { type: "number"; value: number }
+  | { type: "number"; value: number | null }
   | { type: "choice"; option: number };
 
 export interface TurnResult {
@@ -147,7 +147,7 @@ function initialAnswer(card: Card): Answer {
     case "order":
       return { type: "order", arrangement: card.items.map((_, i) => i) };
     case "number":
-      return { type: "number", value: NaN };
+      return { type: "number", value: null };
     case "choice":
       return { type: "choice", option: -1 };
   }
@@ -256,7 +256,7 @@ export function scoreCard(card: Card, results: TurnResult[], wipe: WipeRule, pla
         r.answer.type === "choice" && card.options[r.answer.option]?.correct ? POINTS.choice : 0,
       );
     case "number": {
-      const guesses = results.map((r) => (r.answer.type === "number" ? r.answer.value : NaN));
+      const guesses = results.map((r) => (r.answer.type === "number" ? (r.answer.value ?? NaN) : NaN));
       return playerCount > 1 ? numberRankedPoints(card, guesses) : guesses.map((g) => numberSoloPoints(card, g));
     }
   }

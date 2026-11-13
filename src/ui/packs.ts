@@ -31,7 +31,7 @@ export interface ImportResult {
 export async function parsePackFile(name: string, text: string): Promise<ImportResult> {
   let data: unknown;
   try {
-    if (/\.json$/i.test(name) || text.trimStart().startsWith("{")) data = JSON.parse(text);
+    if (/\.json$/i.test(name)) data = JSON.parse(text);
     else {
       const { parse } = await import("yaml");
       data = parse(text);

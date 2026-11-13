@@ -34,6 +34,8 @@ export function Game(props: Props) {
 function GameInner({ state, dispatch, onQuit, onPlayAgain }: Props) {
   const [confirmQuit, setConfirmQuit] = useState(false);
   const s = state;
+  // Close the quit dialog whenever the game moves on.
+  useEffect(() => setConfirmQuit(false), [s.phase, s.round, s.turn]);
   const totalRounds = s.settings.target == null ? Math.max(s.round, Math.min(s.settings.rounds, s.deck.length)) : null;
 
   if (s.phase === "over") return <GameOver state={s} onHome={onQuit} onPlayAgain={onPlayAgain} />;
@@ -162,6 +164,7 @@ function PickTurn({
                 onClick={() => dispatch({ type: "pick", option: i })}
               >
                 <span class="opt__text">{o.text}</span>
+                {picked && <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>}
                 {picked && <span class="opt__why">{o.why}</span>}
               </button>
             </li>
@@ -233,13 +236,13 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
             <span class="order-item__rank">{pos + 1}</span>
             <span class="order-item__text">{card.items[item].text}</span>
             <span class="order-item__controls">
-              <button type="button" class="btn btn--icon" aria-label={sk.moveUp} disabled={pos === 0} onClick={() => move(pos, -1)}>
+              <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${card.items[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
                 ↑
               </button>
               <button
                 type="button"
                 class="btn btn--icon"
-                aria-label={sk.moveDown}
+                aria-label={`${sk.moveDown}: ${card.items[item].text}`}
                 disabled={pos === arr.length - 1}
                 onClick={() => move(pos, 1)}
               >
@@ -267,7 +270,10 @@ export function parseNumber(raw: string): number {
 function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameState; dispatch: (a: Action) => void }) {
   const [raw, setRaw] = useState("");
   const [error, setError] = useState(false);
-  useEffect(() => setRaw(""), [card.key, state.turn]);
+  useEffect(() => {
+    setRaw("");
+    setError(false);
+  }, [card.key, state.turn]);
   if (state.phase === "turnEnd") return <Saved state={state} />;
   const submit = (e: Event) => {
     e.preventDefault();
@@ -284,6 +290,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
           inputMode="decimal"
           autoComplete="off"
           placeholder={sk.numberPlaceholder}
+          aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
           value={raw}
           onInput={(e) => {
             setRaw((e.target as HTMLInputElement).value);
@@ -440,7 +447,7 @@ function describe(card: Card, r: TurnResult): string {
   if (card.type === "order" && a.type === "order") {
     return sk.positions(orderPoints(card, a.arrangement).correctPositions, card.solution.length);
   }
-  if (card.type === "number" && a.type === "number") return sk.numberGuess(formatNumber(a.value));
+  if (card.type === "number" && a.type === "number") return sk.numberGuess(a.value == null ? "–" : formatNumber(a.value));
   if (card.type === "choice" && a.type === "choice") return card.options[a.option]?.text ?? sk.noAnswer;
   return "";
 }

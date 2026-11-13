@@ -154,3 +154,7 @@
 [data-design="zaklad"] .error { color: var(--bad); }
 [data-design="zaklad"] .notice { color: var(--good); }
 [data-design="zaklad"] .loading { color: var(--muted); }
+
+/* Marks during the turn, so correct/wrong does not rely on colour alone. */
+[data-design="zaklad"] .options:not(.options--reveal) .opt--correct .opt__text::before { content: "✓ "; color: var(--good); }
+[data-design="zaklad"] .options:not(.options--reveal) .opt--wrong .opt__text::before { content: "✗ "; color: var(--bad); }

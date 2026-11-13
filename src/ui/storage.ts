@@ -12,12 +12,14 @@ export function load<T>(key: string, fallback: T): T {
   }
 }
 
-export function save(key: string, value: unknown): void {
+/** Returns false when the value could not be stored (storage unavailable or full). */
+export function save(key: string, value: unknown): boolean {
   try {
     if (value === null || value === undefined) localStorage.removeItem(PREFIX + key);
     else localStorage.setItem(PREFIX + key, JSON.stringify(value));
+    return true;
   } catch {
-    /* ignore: storage unavailable or full */
+    return false;
   }
 }
 

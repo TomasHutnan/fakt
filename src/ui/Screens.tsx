@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import type { Pack } from "../content/types.ts";
 import { DEFAULT_SETTINGS, type Mode, type Settings } from "../engine/game.ts";
 import type { WipeRule } from "../engine/scoring.ts";
@@ -100,11 +100,14 @@ export function Setup(props: {
   error: string | null;
   onBack: () => void;
   onPacks: () => void;
+  onDraft: (players: string[], settings: Settings) => void;
   onStart: (players: string[], settings: Settings) => void;
 }) {
   const [players, setPlayers] = useState<string[]>(props.initialPlayers.length ? props.initialPlayers : ["", ""]);
   const [settings, setSettings] = useState<Settings>(props.initialSettings);
   const set = (patch: Partial<Settings>) => setSettings({ ...settings, ...patch });
+  // Keep unsaved edits in App, so visiting the pack list does not lose them.
+  useEffect(() => props.onDraft(players, settings), [players, settings]);
   const names = players.map((p, i) => p.trim() || sk.playerPlaceholder(i + 1));
   const lengthValue = settings.target != null ? `t${settings.target}` : `r${settings.rounds}`;
 
@@ -122,10 +125,11 @@ export function Setup(props: {
           <legend class="field__label">{sk.players}</legend>
           <ul class="player-list">
             {players.map((p, i) => (
-              <li class="player-row">
+              <li class="player-row" key={i}>
                 <input
                   id={`player-${i}`}
                   class="input"
+                  aria-label={sk.playerPlaceholder(i + 1)}
                   value={p}
                   maxLength={24}
                   placeholder={sk.playerPlaceholder(i + 1)}
@@ -231,7 +235,8 @@ export function Packs(props: {
   enabled: string[];
   onToggle: (id: string, on: boolean) => void;
   onSetAll: (on: boolean) => void;
-  onImport: (pack: Pack) => void;
+  /** Returns an error message, or null when the pack was added and saved. */
+  onImport: (pack: Pack) => string | null;
   onRemoveImported: (id: string) => void;
   onBack: () => void;
 }) {
@@ -243,8 +248,13 @@ export function Packs(props: {
     if (!file) return;
     const res = await parsePackFile(file.name, await file.text());
     if (res.pack) {
-      props.onImport(res.pack);
-      setMsg({ ok: true, lines: [sk.importOk(res.pack.title, res.pack.questions.length), ...res.warnings] });
+      const err = props.onImport(res.pack);
+      if (err && !err.startsWith("!")) setMsg({ ok: false, lines: [sk.importFailed, err] });
+      else
+        setMsg({
+          ok: !err,
+          lines: [sk.importOk(res.pack.title, res.pack.questions.length), ...(err ? [err.slice(1)] : []), ...res.warnings],
+        });
     } else setMsg({ ok: false, lines: [sk.importFailed, ...res.errors.slice(0, 12)] });
   };
 
@@ -264,7 +274,7 @@ export function Packs(props: {
           const on = props.enabled.includes(p.id);
           const imported = props.importedIds.includes(p.id);
           return (
-            <li class={`pack${on ? " pack--on" : ""}`}>
+            <li class={`pack${on ? " pack--on" : ""}`} key={p.id}>
               <label class="pack__main" for={`pack-${p.id}`}>
                 <span class="pack__title">
                   {p.title}

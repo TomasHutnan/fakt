@@ -21,11 +21,12 @@ export default defineConfig({
         scope: "./",
         background_color: "#f4f3ef",
         theme_color: "#f4f3ef",
-        icons: [{ src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" }],
+        icons: [{ src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }],
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,json}"],
         navigateFallback: null,
+        ignoreURLParametersMatching: [/.*/],
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.origin === "https://fonts.googleapis.com" || url.origin === "https://fonts.gstatic.com",
