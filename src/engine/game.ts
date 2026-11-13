@@ -1,5 +1,5 @@
 import type { Pack, QuestionType } from "../content/types.ts";
-import { buildDeck, makeCard, type Card } from "./cards.ts";
+import { buildDeck, makeCard, makeCompareCard, type Card } from "./cards.ts";
 import { createRng, type Rng } from "./rng.ts";
 import {
   numberRankedPoints,
@@ -25,6 +25,10 @@ export interface Settings {
   showCorrectCount: boolean;
   /** Show the answer to each player right after their turn instead of to everyone after the round. */
   revealEach: boolean;
+  /** Vibrate on picks (device preference, read from the current settings, not the saved game). */
+  haptics: boolean;
+  /** Short sounds on picks. */
+  sound: boolean;
   difficulties: number[];
   packIds: string[];
 }
@@ -36,6 +40,8 @@ export const DEFAULT_SETTINGS: Settings = {
   wipe: "always",
   showCorrectCount: false,
   revealEach: true,
+  haptics: true,
+  sound: false,
   difficulties: [1, 2, 3],
   packIds: [],
 };
@@ -136,8 +142,17 @@ function cardFor(key: string, packs: Pack[], seed: number, pos: number): Card | 
   const q = pack?.questions.find((x) => x.id === qid);
   if (!pack || !q) return null;
   // Per-card RNG so a resumed game draws the same options.
-  return makeCard(pack, q, createRng(seed + pos * 7919));
+  const rng = createRng(seed + pos * 7919);
+  // Some order questions are played as "which is more" (only in mix mode, the only mode with order cards).
+  if (q.type === "order" && createRng((seed ^ 0x5bd1e995) + pos)() < COMPARE_SHARE) {
+    const c = makeCompareCard(pack, q, rng);
+    if (c) return c;
+  }
+  return makeCard(pack, q, rng);
 }
+
+/** Share of order questions dealt as "which is more" cards. */
+export const COMPARE_SHARE = 0.4;
 
 function roundOrder(n: number, round: number): number[] {
   return Array.from({ length: n }, (_, i) => (i + round - 1) % n);
@@ -264,7 +279,11 @@ export function scoreCard(card: Card, results: TurnResult[], wipe: WipeRule, pla
       return results.map((r) => (r.answer.type === "order" ? orderPoints(card, r.answer.arrangement).points : 0));
     case "choice":
       return results.map((r) =>
-        r.answer.type === "choice" && card.options[r.answer.option]?.correct ? POINTS.choice : 0,
+        r.answer.type === "choice" && card.options[r.answer.option]?.correct
+          ? card.compare
+            ? POINTS.compare
+            : POINTS.choice
+          : 0,
       );
     case "number": {
       const guesses = results.map((r) => (r.answer.type === "number" ? (r.answer.value ?? NaN) : NaN));

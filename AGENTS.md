@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 18 packs / 454 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 20 packs / 514 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
@@ -53,7 +53,7 @@ v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack form
 ## Decisions (2026-11-13)
 
 - **Play**: v1 is one phone passed around, with a hand-over screen between players showing only "pass to <name>, tap to continue" (integral to v1). Network play is v3 and only together with a big-screen host view (Jackbox style), same room. No remote play.
-- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting. Answers are shown to each player right after their turn by default (setting: everyone after the round). Order cards are dragged.
+- **Classic mode**: 10 options per card, 2–8 true (count hidden by default, a setting can show it). Each player plays the whole card alone, then hands over. k-th correct pick is worth k points; bank any time; wrong pick wipes the card's points (setting: only ends the turn). 10 rounds by default, target score as a setting. Answers are shown to each player right after their turn by default (setting: everyone after the round). Order cards are dragged. Mix also deals some order questions as "which is more" (two items, 2 points). After a game each card can be rated 👍/👎/⚠️ (stored locally, sent through the owner's prefilled Google Form, no account needed); every answer screen has a per-card report link to the same form. Home offers quick starts (5 and 20 rounds) with the last players; packs show "+N nové" for questions added since the pack list was last opened. Vibration on (setting), sounds off by default.
 - **Other modes**: Solo run, Mix, Teams (v1); Daily card (v2); Everyone at once, Guess and bet (v3, big screen). Bluff and typed list recall are dropped.
 - **Input**: tap options or type a **number** (year, amount). Never free-text typing. Number guesses: closeness-based scoring solo, ranked points in multiplayer.
 - **Formats v1**: pick the true ones, put in order, number guess, one of four. "Which is more" in v2. No pictures/audio in the first year.

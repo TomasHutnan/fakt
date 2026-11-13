@@ -1,0 +1,515 @@
+id: sk-politicke-hlasky
+title: Politické hlášky
+description: Zľudovené výroky, brepty a trapasy slovenských (a pár česko-slovenských) politikov od roku 1989. Kto to povedal, kedy a pri akej príležitosti? Občas vulgárne, 18+.
+lang: sk
+license: CC0-1.0
+adult: true
+warnings: [vulgar]
+version: 1
+questions:
+  - id: hlasky-danko
+    type: pick
+    prompt: "Ktoré z týchto hlášok povedal Andrej Danko?"
+    difficulty: 1
+    source: "https://www.topky.sk/cl/100535/1827381/Podla-Danka-je-stratifikacia-nemocnic-od-b--SNS-je-za-vystavbu-s-heslom-Nefet-plesen--likviduj-ju- https://echo24.cz/a/SvzBj/dost-jsem-popil-priznal-predseda-parlamentu-ve-vysilani-slovaci-resi-alkohol-u-politiku https://www.webnoviny.sk/danko-vysvetlil-vyrok-o-laske-cloveka-k-cloveku-prekaza-mu-manipulacia-verejnou-mienkou/ https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.noviny.sk/koronavirus/569443-ministerstvo-hospodarstva-ma-nakupit-dalsich-16-milionov-testov https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show"
+    correct:
+      - { text: "Nefeť pleseň", why: "Danko ju povedal v rozhovore a v roku 2019 z nej spravil aj heslo SNS „Nefeť pleseň, likviduj ju!“." }
+      - { text: "Ťažko vládzem, fakt som dosť popil", why: "Rádio Expres, máj 2019, deň po prehre slovenských hokejistov s Kanadou." }
+      - { text: "Žiaden človek nedokáže dať toľko lásky človeku, ako dokáže dať len človek človeku", why: "Odovzdávanie ocenení Spravodliví medzi národmi, január 2017." }
+      - { text: "V živote nepoužívam papier, keď čítam", why: "Denník N túto vetu uviedol medzi Dankovými prerieknutiami vo výbere za rok 2016." }
+      - { text: "Asi by som rozmýšľal skôr, než sa zamyslím", why: "Povedal v pléne v roku 2024; chcel povedať, že sa treba zamyslieť skôr, než niečo povie." }
+      - { text: "Prinášame nové opatrenia, aby čašníci neplatili tringelty", why: "Rok 2024; v skutočnosti chcel tringelty oslobodiť od daní." }
+      - { text: "Nie je nič horšie, ako sa vyzliecť skôr, ako vojdeš do vody", why: "Jeho rada z diskusnej relácie v roku 2024." }
+      - { text: "Trošku sa mám na pozore, keď vidím toľko lásky medzi Eštokom a Kaliňákom", why: "Príhovor na sneme Smeru v roku 2024." }
+    wrong:
+      - { text: "Chcem sa poďakovať Pánu Bohu, lebo bez Pána Boha je všetko márne", why: "Povedal Marian Kotleba po voľbách v marci 2016." }
+      - { text: "Z dlhodobého hľadiska sme všetci mŕtvi", why: "Povedal Richard Sulík v novembri 2020 pri nákupe antigénových testov." }
+      - { text: "My nechceme za šéfa RTS bezdomovca", why: "Povedal minister kultúry Daniel Krajcer v roku 2010." }
+      - { text: "Ježiš, asi preto, lebo je to vzácne", why: "Povedala ministerka kultúry Martina Šimkovičová v roku 2025 o buste z Levoče pripisovanej Donatellovi." }
+      - { text: "Ak jeden ťahá hota a všetci čihi, treba ho zapriahnuť", why: "Povedal premiér Igor Matovič v novembri 2020." }
+
+  - id: hlasky-meciar
+    type: pick
+    prompt: "Ktoré z týchto výrokov povedal Vladimír Mečiar?"
+    difficulty: 2
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://news.refresher.sk/168139-Id-t-haj-l-ci-diablov-syn-Vulgarizmy-ci-facky-padali-v-slovenskom-parlamente-uz-pred-rokmi-Toto-su-najbizarnejsie-momenty https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "Spánombohom, idem od vás, neublížil som, neublížil som žiadnemu z vás", why: "Zaspieval si to na konci rozlúčkového rozhovoru v STV po voľbách 1998." }
+      - { text: "Ostatní ste gágaji, táraji a pre mňa prďúsi", why: "V parlamente v roku 2006, keď sa hovorilo o zrušení jeho amnestií." }
+      - { text: "Všetci ma opustili, aj ministri, aj VPN, len ľud mi zostal", why: "Veta z jeho abdikačného listu z jesene 1990; demisiu potom stiahol." }
+      - { text: "Za ženou mi nechodí a ja prezidentom byť nechcem", why: "Takto v roku 1994 odmietal osobné spory s prezidentom Michalom Kováčom." }
+      - { text: "Ja som navyše skromný človek, stačí mi jedno jedlo denne a náklady na cestovné", why: "Takto pre SME vysvetľoval, ako jeho rodina utiahne náklady na vilu Elektra." }
+      - { text: "A ak by sme, nedajbože, museli ísť do predčasných volieb, tak aby sme boli takí silní, že to prevalcujeme všetko", why: "Zlatá Idka, november 1993, stretnutie s regionálnymi lídrami HZDS." }
+      - { text: "V televízii vyberáme riaditeľa… Takého, čo je nám blízky a sympatický", why: "Tiež zo stretnutia v Zlatej Idke v novembri 1993." }
+    wrong:
+      - { text: "Momentálne je na mape Európy čierna diera, ktorá sa volá Slovensko", why: "Takto Slovensko 90. rokov opísala americká ministerka zahraničia Madeleine Albrightová." }
+      - { text: "Bohužiaľ, zabáva sa na nás celé Slovensko", why: "Povedal Béla Bugár (Most-Híd) v roku 2010 o voľbe generálneho prokurátora." }
+      - { text: "Čas konferencií a chlebíčkov – čo s nimi – sa skončil", why: "Napísal Robert Fico v decembri 2016." }
+      - { text: "Sémantický vesmír, v ktorom sa pohybuje právnik, advokát, je iný ako sémantický vesmír, v ktorom sa pohybuje politik", why: "Povedal Radoslav Procházka pred súdnou radou v roku 2016." }
+      - { text: "Niekedy mám obavy, že by vrátil aj Archimedov zákon", why: "Povedal poslanec SDKÚ Tomáš Galbavý o prezidentovi Gašparovičovi (2010)." }
+      - { text: "Som presvedčený, že koalícia nevznikla ako hrádza proti extrémizmu, ale ako hrádza proti predčasným voľbám", why: "Povedal Radoslav Procházka v auguste 2016." }
+
+  - id: hlasky-fico
+    type: pick
+    prompt: "Ktoré z týchto výrokov povedal Robert Fico?"
+    difficulty: 2
+    source: "https://dennikn.sk/minuta/2232196/ https://www.noviny.sk/politika/170424-podla-fica-su-niektori-novinari-spinave-protislovenske-prostitutky https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://news.refresher.sk/168139-Id-t-haj-l-ci-diablov-syn-Vulgarizmy-ci-facky-padali-v-slovenskom-parlamente-uz-pred-rokmi-Toto-su-najbizarnejsie-momenty https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi"
+    correct:
+      - { text: "To sa tak nerobí, do psej matere", why: "Január 2021, o Pellegriniho zbere podpisov za referendum." }
+      - { text: "Niektorí z vás sú špinavé protislovenské prostitútky", why: "November 2016, novinárom pri podozreniach z predražených zákaziek predsedníctva v Rade EÚ." }
+      - { text: "Odporúčam novinárovi, aby sa nabudúce venoval viac behu, lebo vyzerá ako záchodový pavúk", why: "August 2016, o redaktorovi Markízy Michalovi Kovačičovi." }
+      - { text: "Čas konferencií a chlebíčkov – čo s nimi – sa skončil", why: "Komentár pre Hospodárske noviny, december 2016." }
+      - { text: "Budem tĺcť do médií a budem", why: "Relácia RTVS Sobotné dialógy, koniec novembra 2016." }
+      - { text: "Som predseda vlády Slovenskej republiky a mojou povinnosťou je chrániť mojich ľudí", why: "Takto sa v roku 2016 zastal ministra Lajčáka." }
+      - { text: "My vieme niečo urobiť pre učiteľov, ale očakávam, že aj oni niečo urobia pre štát", why: "Január 2016, počas štrajku učiteľov." }
+    wrong:
+      - { text: "Pred štyrmi rokmi to bol analógový svet, svet kešu", why: "Povedal minister vnútra Robert Kaliňák v máji 2016." }
+      - { text: "Viete, či je to predražené, alebo nepredražené, to až také podstatné nie je", why: "Povedal poslanec Smeru Dušan Jarjabek v novembri 2016." }
+      - { text: "Ostatní ste gágaji, táraji a pre mňa prďúsi", why: "Povedal Vladimír Mečiar v parlamente v roku 2006." }
+      - { text: "A potom sa niekto čuduje Ficovi, že slope", why: "Povedal Igor Matovič na konci roka 2024 o situácii v koalícii." }
+      - { text: "Ja si servítky na Dolinkovú nedávam", why: "Povedal Andrej Danko v roku 2024." }
+      - { text: "Robíme opatrenia, aby tí ľudia pocítili, že tá životná úroveň klesá", why: "Povedal Rudolf Huliak v roku 2024." }
+
+  - id: hlasky-matovic
+    type: pick
+    prompt: "Ktoré z týchto hlášok povedal Igor Matovič?"
+    difficulty: 1
+    source: "https://www.noviny.sk/slovensko/569930-haj-evrybady-ajem-igor-from-slovakia-matovic-zverejnil-neskoro-vecer-video-a-prihovara-sa-v-anglictine-o-plosnom-testovani https://www.noviny.sk/slovensko/592081-reakcia-na-vyrok-igora-matovica-menime-slovensko-na-krym-odkazuje-napis-na-slovenskom-konzulate-v-ukrajine https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://www.noviny.sk/koronavirus/569443-ministerstvo-hospodarstva-ma-nakupit-dalsich-16-milionov-testov https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "Can I go one time, next time?", why: "Takto v roku 2020 na summite v Bruseli poprosil štáb, či môže svoj vstup zopakovať." }
+      - { text: "Zakarpatskú Ukrajinu", why: "Jeho žart v Rádiu Expres (marec 2021) na otázku, čo sľúbil Rusom za Sputnik V; potom sa Ukrajincom ospravedlnil." }
+      - { text: "Mne to je šum a fuk, či som citoval, alebo nie", why: "Rok 2020, keď sa riešila jeho diplomová práca." }
+      - { text: "Ak jeden ťahá hota a všetci čihi, treba ho zapriahnuť", why: "November 2020, o spolupráci v koalícii pri nákupe testov." }
+      - { text: "Ja som išiel medzi dedinami aj 120", why: "V roku 2020 sám priznal, že porušil predpisy; po diaľnici vraj išiel aj 160 – 170." }
+      - { text: "Ty si normálne mešuge", why: "Februárová hádka s Andrejom Dankom v parlamente v roku 2024." }
+      - { text: "A potom sa niekto čuduje Ficovi, že slope", why: "Takto zhrnul koaličné vydieranie na konci roka 2024." }
+    wrong:
+      - { text: "Z dlhodobého hľadiska sme všetci mŕtvi", why: "Povedal Richard Sulík v novembri 2020." }
+      - { text: "Preskakuje ti hlas? Dochádza tabletka?", why: "Toto sa v parlamente v roku 2024 pýtal Andrej Danko práve Matoviča." }
+      - { text: "V súzvuku s CO2 a rastlinka nám pekne rastie", why: "Povedal Rudolf Huliak v roku 2024, keď fúkal cigaretový dym na rastlinu v akváriu." }
+      - { text: "Myslím si, že má dobrý morálny profil", why: "Povedal Robert Kaliňák v septembri 2016 o Radoslavovi Procházkovi." }
+      - { text: "Mám svoje meno, priezvisko a nie som pre nikoho, ani pre pána Matoviča, nejaký hej počkaj", why: "Povedala Anna Belousovová (SNS) v roku 2010, a to práve Matovičovi, ktorý ju nazval Ančou." }
+      - { text: "To sa tak nerobí, do psej matere", why: "Povedal Robert Fico v januári 2021." }
+
+  - id: gasparovic-prerieknutia
+    type: pick
+    prompt: "Ktoré z týchto tvrdení o prerieknutiach prezidenta Ivana Gašparoviča sú pravdivé?"
+    difficulty: 2
+    source: "https://www.noviny.sk/slovensko/102027-prezident-gasparovic-opaet-zatal-organizacia-spojenych-nadorov- https://www.noviny.sk/slovensko/107889-gasparovic-opaet-perlil-tentokrat-mu-urobil-problem-afganistan https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010"
+    correct:
+      - { text: "„Organizáciu spojených nádorov“ vyslovil na tlačovke so slovinským prezidentom Danilom Türkom", why: "Apríl 2012: „…v Organizácii spojených nádorov, názorov, spojených nádor, spojených národov…“" }
+      - { text: "K prerieknutiu o OSN došlo, keď hovoril o vzťahoch Slovenska a Slovinska", why: "Tak to opísal denník Plus JEDEN DEŇ." }
+      - { text: "Ivetu Radičovú pri poverení zostavením vlády nazval podpredsedníčkou Smeru", why: "Rok 2010: „Dostal som rozhodnutie od pani podpredsedníčky Smeru…“ Radičová bola z SDKÚ." }
+      - { text: "Pápeža Benedikta XVI. „premenoval“ na Dominika", why: "Médiá to rátajú medzi jeho najznámejšie jazykové kotrmelce." }
+      - { text: "V prejave na Valnom zhromaždení OSN v roku 2012 mal problém vysloviť slovo Afganistan", why: "Prejav čítal po slovensky pred poloprázdnou sálou." }
+      - { text: "Poslanec Galbavý žartoval, že by Gašparovič vrátil aj Archimedov zákon", why: "Rok 2010, keď prezident vrátil parlamentu zákon o RTS." }
+    wrong:
+      - { text: "„Organizáciu spojených nádorov“ vyslovil v prejave na Valnom zhromaždení OSN", why: "Stalo sa to na tlačovke so slovinským prezidentom; v OSN mal problém s Afganistanom." }
+      - { text: "Pápeža Benedikta XVI. „premenoval“ na Bonifáca", why: "Omylom ho nazval Dominikom." }
+      - { text: "Ivetu Radičovú omylom nazval podpredsedníčkou SNS", why: "Nazval ju podpredsedníčkou Smeru." }
+      - { text: "Prejav na Valnom zhromaždení OSN v roku 2012 predniesol po anglicky", why: "Čítal ho po slovensky, rozumel mu najmä tlmočník." }
+      - { text: "K prerieknutiu o OSN došlo pri rozhovore o vzťahoch Slovenska a Česka", why: "Hovoril o vzťahoch so Slovinskom." }
+      - { text: "Žart o Archimedovom zákone mieril na prezidenta Kisku", why: "Tomáš Galbavý ho povedal v roku 2010 o Gašparovičovi." }
+
+  - id: hlasky-pandemia
+    type: pick
+    prompt: "Ktoré z týchto hlášok zazneli počas pandémie covidu, v rokoch 2020 – 2021?"
+    difficulty: 2
+    source: "https://dennikn.sk/minuta/2313150/ https://www.noviny.sk/slovensko/569930-haj-evrybady-ajem-igor-from-slovakia-matovic-zverejnil-neskoro-vecer-video-a-prihovara-sa-v-anglictine-o-plosnom-testovani https://www.noviny.sk/koronavirus/569443-ministerstvo-hospodarstva-ma-nakupit-dalsich-16-milionov-testov https://www.noviny.sk/slovensko/592081-reakcia-na-vyrok-igora-matovica-menime-slovensko-na-krym-odkazuje-napis-na-slovenskom-konzulate-v-ukrajine https://dennikn.sk/minuta/2232196/ https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://www.startitup.sk/peter-pellegrini-nechce-byt-podrztaska-pribeh-politika-ktory-ma-v-rukach-kluc-k-novej-vlade/ https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi"
+    correct:
+      - { text: "Poď mi ho napraviť, fešáčik", why: "Marian Kotleba, marec 2021, o respirátore pod nosom." }
+      - { text: "Can I go one time, next time?", why: "Igor Matovič na summite v Bruseli, jeseň 2020." }
+      - { text: "Z dlhodobého hľadiska sme všetci mŕtvi", why: "Richard Sulík, november 2020, pri nákupe 16 miliónov antigénových testov." }
+      - { text: "Ak jeden ťahá hota a všetci čihi, treba ho zapriahnuť", why: "Igor Matovič, november 2020." }
+      - { text: "To sa tak nerobí, do psej matere", why: "Robert Fico, január 2021." }
+      - { text: "Mne to je šum a fuk, či som citoval, alebo nie", why: "Igor Matovič, rok 2020." }
+      - { text: "Keďže 52-ročný Sulík domácu úlohu nebol schopný zvládnuť, dal som teda tú istú úlohu mojej 11-ročnej Klárke", why: "Igor Matovič na Facebooku počas sporu so Sulíkom, rok 2020." }
+    wrong:
+      - { text: "Ja nebudem žiadna podržtaška", why: "Peter Pellegrini, rok 2023." }
+      - { text: "Eurofondy priniesli na Slovensko korupciu", why: "Richard Sulík, október 2016." }
+      - { text: "Šéf informačnej služby má pravdepodobne nedostatok informácií", why: "Ľubomír Petrák (Smer) o šéfovi SIS, rok 2010." }
+      - { text: "V súzvuku s CO2 a rastlinka nám pekne rastie", why: "Rudolf Huliak, rok 2024." }
+      - { text: "Ja si servítky na Dolinkovú nedávam", why: "Andrej Danko, rok 2024." }
+
+  - id: hlasky-20-storocie
+    type: pick
+    prompt: "Ktoré z týchto výrokov zazneli ešte v 20. storočí (do roku 1999)?"
+    difficulty: 3
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://ct24.ceskatelevize.cz/clanek/domaci/pravda-a-laska-uz-netahne-proc-se-z-havlova-hesla-stala-nadavka-109453 https://news.refresher.sk/168139-Id-t-haj-l-ci-diablov-syn-Vulgarizmy-ci-facky-padali-v-slovenskom-parlamente-uz-pred-rokmi-Toto-su-najbizarnejsie-momenty https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/ https://www.noviny.sk/politika/170424-podla-fica-su-niektori-novinari-spinave-protislovenske-prostitutky https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "Pravda a láska musí zvítězit nad lží a nenávistí", why: "Václav Havel, Václavské námestie, december 1989." }
+      - { text: "Všetci ma opustili, aj ministri, aj VPN, len ľud mi zostal", why: "Vladimír Mečiar, abdikačný list z jesene 1990." }
+      - { text: "A ak by sme, nedajbože, museli ísť do predčasných volieb, tak aby sme boli takí silní, že to prevalcujeme všetko", why: "Vladimír Mečiar, Zlatá Idka, november 1993." }
+      - { text: "V televízii vyberáme riaditeľa… Takého, čo je nám blízky a sympatický", why: "Vladimír Mečiar, Zlatá Idka, november 1993." }
+      - { text: "Za ženou mi nechodí a ja prezidentom byť nechcem", why: "Vladimír Mečiar o Michalovi Kováčovi, rok 1994." }
+      - { text: "Že sa mi nehanbíte postaviť pred oči, sopliak jeden. Takú vám buchnem, že vás ani Pán Boh nespozná!", why: "Vladimír Mečiar redaktorovi Markízy Dušanovi Valkovi, rok 1997." }
+      - { text: "Spánombohom, idem od vás, neublížil som, neublížil som žiadnemu z vás", why: "Vladimír Mečiar, rozlúčka v STV po voľbách 1998." }
+    wrong:
+      - { text: "Ostatní ste gágaji, táraji a pre mňa prďúsi", why: "Mečiar, ale až v parlamente v roku 2006." }
+      - { text: "Počúvaj, ešte raz sa ma to opýtaš, takú ti jednu je…m, že sa nespamätáš", why: "Mečiar reportérovi JOJ Ľuboslavovi Cholujovi, rok 2002." }
+      - { text: "Kokso – Johnny Cash by nebol v parlamente?", why: "Richard Sulík vo volebnú noc 2010 o tom, či sa SNS dostane do parlamentu." }
+      - { text: "Niektorí z vás sú špinavé protislovenské prostitútky", why: "Robert Fico, rok 2016." }
+      - { text: "Eurofondy priniesli na Slovensko korupciu", why: "Richard Sulík, rok 2016." }
+
+  - id: hlasky-2010
+    type: pick
+    prompt: "Ktoré z týchto výrokov zazneli v roku 2010?"
+    difficulty: 3
+    source: "https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/ https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi"
+    correct:
+      - { text: "Riško, drž balónik a čakaj", why: "Iveta Radičová Richardovi Sulíkovi vo volebnú noc; „Držím,“ odpovedal Sulík." }
+      - { text: "Kokso – Johnny Cash by nebol v parlamente?", why: "Richard Sulík vo volebnú noc, keď sa hovorilo, že SNS sa možno do parlamentu nedostane." }
+      - { text: "Bohužiaľ, zabáva sa na nás celé Slovensko", why: "Béla Bugár (Most-Híd) o voľbe generálneho prokurátora." }
+      - { text: "Niekedy mám obavy, že by vrátil aj Archimedov zákon", why: "Tomáš Galbavý (SDKÚ) o prezidentovi Gašparovičovi." }
+      - { text: "My nechceme za šéfa RTS bezdomovca", why: "Minister kultúry Daniel Krajcer, keď obhajoval vyšší plat šéfa RTS." }
+      - { text: "Vyzerá to tak, že som prehrala", why: "Magda Vášáryová (SDKÚ) po voľbách primátora Bratislavy." }
+      - { text: "Fuj, hovorím fuj", why: "Minister práce Jozef Mihál (SaS) o tom, že si jeho predchodkyňa a bývalá štátna tajomníčka dali platiť poradenské služby." }
+      - { text: "Ja mám dennodenne všetko skúmať?", why: "Minister dopravy Ján Figeľ o konkurze, kde sa uchádzal aj jeho švagor." }
+      - { text: "Šéf informačnej služby má pravdepodobne nedostatok informácií", why: "Poslanec Smeru Ľubomír Petrák o šéfovi SIS Karolovi Mitríkovi." }
+    wrong:
+      - { text: "Ja sa neuchádzam o poverenie pásť mačky", why: "Radoslav Procházka (Sieť) pred voľbami 2016." }
+      - { text: "Pred štyrmi rokmi to bol analógový svet, svet kešu", why: "Robert Kaliňák, rok 2016." }
+      - { text: "Svet pozná len samovyšetrenie prsníkov. Slovensko aj samovyšetrenie daňových podvodov", why: "Miroslav Beblavý, jún 2016." }
+      - { text: "Viete, či je to predražené, alebo nepredražené, to až také podstatné nie je", why: "Dušan Jarjabek (Smer), november 2016." }
+      - { text: "V živote nepoužívam papier, keď čítam", why: "Andrej Danko; Denník N túto vetu zaradil do výberu za rok 2016." }
+      - { text: "Olympiáda v Šamoríne je taká blbosť ako folklórne slávnosti na Marse", why: "Alojz Hlina (SaS), rok 2024." }
+
+  - id: hlasky-2024-2025
+    type: pick
+    prompt: "Ktoré z týchto výrokov zazneli v rokoch 2024 – 2025?"
+    difficulty: 2
+    source: "https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010"
+    correct:
+      - { text: "Viete, čo by vzniklo, keby sme tu mali nulové emisie CO2? … My sa tu zadusíme od kyslíka", why: "Rudolf Huliak v diskusii o klimatických zmenách, rok 2024." }
+      - { text: "V súzvuku s CO2 a rastlinka nám pekne rastie", why: "Rudolf Huliak, 2024, keď v budove NR SR fúkal cigaretový dym na rastlinu v akváriu." }
+      - { text: "Chceme aj takýmto spôsobom prispieť k utrpeniu", why: "Minister zahraničia Juraj Blanár, 2024; chcel pomôcť ľuďom, ktorí znášajú utrpenie." }
+      - { text: "Olympiáda v Šamoríne je taká blbosť ako folklórne slávnosti na Marse", why: "Alojz Hlina (SaS), 2024, o nápade olympijských hier v Šamoríne." }
+      - { text: "Pán Ježiš stratil jedného zo svojich apoštolov. My sme stratili jednu z poslankýň", why: "Milan Majerský (KDH), 2024, po odchode Martiny Holečkovej." }
+      - { text: "Ježiš, asi preto, lebo je to vzácne", why: "Ministerka kultúry Martina Šimkovičová, 2025, prečo odniesli bustu z Levoče." }
+      - { text: "Slováci, my nie sme kukurica", why: "Splnomocnenec vlády Peter Kotlár, marec 2025, o vakcínach." }
+      - { text: "Máme najväčšie Slovenské národné povstanie", why: "Richard Glück (Smer) v relácii TA3, máj 2025." }
+      - { text: "Boj s kriminalitou nie je o tom, že postavíte ku každej horalke policajta", why: "Tibor Gašpar (Smer) v relácii Na telo, november 2025." }
+      - { text: "V nedeľu ideme všetci do kostola, aj my bývalí komunisti", why: "Ján Richter (Smer), september 2025." }
+    wrong:
+      - { text: "Svet pozná len samovyšetrenie prsníkov. Slovensko aj samovyšetrenie daňových podvodov", why: "Miroslav Beblavý, rok 2016." }
+      - { text: "Sémantický vesmír, v ktorom sa pohybuje právnik, advokát, je iný ako sémantický vesmír, v ktorom sa pohybuje politik", why: "Radoslav Procházka pred súdnou radou, rok 2016." }
+      - { text: "My nechceme za šéfa RTS bezdomovca", why: "Daniel Krajcer, rok 2010." }
+      - { text: "Ja mám dennodenne všetko skúmať?", why: "Ján Figeľ, rok 2010." }
+      - { text: "Eurofondy priniesli na Slovensko korupciu", why: "Richard Sulík, rok 2016." }
+      - { text: "Šéf informačnej služby má pravdepodobne nedostatok informácií", why: "Ľubomír Petrák, rok 2010." }
+      - { text: "Hodnoťte nás na základe skutkov. Ak sa nám to nepodarí, prvý poviem, že sme zlyhali", why: "Béla Bugár po voľbách v marci 2016." }
+
+  - id: hlaska-a-kontext
+    type: pick
+    prompt: "Ktoré dvojice „hláška – príležitosť“ sedia?"
+    difficulty: 2
+    source: "https://dennikn.sk/minuta/2313150/ https://www.noviny.sk/slovensko/569930-haj-evrybady-ajem-igor-from-slovakia-matovic-zverejnil-neskoro-vecer-video-a-prihovara-sa-v-anglictine-o-plosnom-testovani https://www.noviny.sk/slovensko/592081-reakcia-na-vyrok-igora-matovica-menime-slovensko-na-krym-odkazuje-napis-na-slovenskom-konzulate-v-ukrajine https://echo24.cz/a/SvzBj/dost-jsem-popil-priznal-predseda-parlamentu-ve-vysilani-slovaci-resi-alkohol-u-politiku https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://www.noviny.sk/politika/170424-podla-fica-su-niektori-novinari-spinave-protislovenske-prostitutky https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "„Poď mi ho napraviť, fešáčik“ – respirátor pod nosom", why: "Kotleba tak v roku 2021 odpovedal novinárovi na výbore pre obranu a bezpečnosť." }
+      - { text: "„Can I go one time, next time?“ – živý vstup na summite v Bruseli", why: "Matovič chcel štáb audiovizuálneho servisu EK poprosiť o zopakovanie." }
+      - { text: "„Zakarpatskú Ukrajinu“ – čo Matovič v žarte sľúbil Rusom za Sputnik V", why: "Relácia Braňa Závodského na Rádiu Expres, marec 2021." }
+      - { text: "„Ťažko vládzem, fakt som dosť popil“ – prehra hokejistov s Kanadou", why: "Danko večer zapíjal smútok po zápase a na druhý deň išiel do Rádia Expres (máj 2019)." }
+      - { text: "„Slováci, my nie sme kukurica“ – analýza vakcín proti covidu", why: "Peter Kotlár tvrdil, že výrobcovia vakcín „narábali s ľuďmi ako s kukuricou“." }
+      - { text: "„Niektorí z vás sú špinavé protislovenské prostitútky“ – podozrenia z predražených zákaziek predsedníctva v Rade EÚ", why: "Fico sa tak v novembri 2016 zastal ministra Lajčáka." }
+      - { text: "„Spánombohom, idem od vás“ – rozlúčka v STV po voľbách 1998", why: "Mečiar si na konci rozhovoru zaspieval." }
+      - { text: "„…vyzerá ako záchodový pavúk“ – redaktor Markízy", why: "Fico tak v auguste 2016 odkázal Michalovi Kovačičovi." }
+    wrong:
+      - { text: "„Poď mi ho napraviť, fešáčik“ – otázka na vilu Elektra", why: "Na Elektru sa novinár pýtal Mečiara; Kotleba reagoval na respirátor." }
+      - { text: "„Can I go one time, next time?“ – rozhovor v Rádiu Expres", why: "Zaznelo to pred kamerou na summite v Bruseli." }
+      - { text: "„Zakarpatskú Ukrajinu“ – summit v Bruseli", why: "Žart zaznel v slovenskom rádiu." }
+      - { text: "„Ťažko vládzem, fakt som dosť popil“ – prehra hokejistov s Fínskom", why: "Slováci vtedy prehrali s Kanadou o jeden gól." }
+      - { text: "„Slováci, my nie sme kukurica“ – dotácie pre poľnohospodárov", why: "Kotlár to povedal o vakcínach proti covidu." }
+      - { text: "„Spánombohom, idem od vás“ – rozlúčka na Markíze", why: "Mečiar sa lúčil v štátnej STV." }
+
+  - id: hlasky-2016-priradenie
+    type: pick
+    prompt: "Rok 2016: ktoré dvojice „politik – výrok“ sú správne?"
+    difficulty: 3
+    source: "https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "Robert Kaliňák – „Pred štyrmi rokmi to bol analógový svet, svet kešu“", why: "Máj 2016, o údajnej platbe v hotovosti v kauze Bašternák." }
+      - { text: "Radoslav Procházka – „Ja sa neuchádzam o poverenie pásť mačky“", why: "Odkaz rozhádaným opozičným kolegom pred voľbami." }
+      - { text: "Miroslav Beblavý – „…Slovensko aj samovyšetrenie daňových podvodov“", why: "Jún 2016, prirovnanie k samovyšetreniu prsníkov." }
+      - { text: "Dušan Jarjabek – „…či je to predražené, alebo nepredražené, to až také podstatné nie je“", why: "November 2016, o podozreniach z predražených zákaziek predsedníctva v Rade EÚ." }
+      - { text: "Andrej Danko – „Neznášam tie žlté vlaky a autobusy“", why: "Marec 2016, o RegioJete; dodal „Radšej mám tie naše.“" }
+      - { text: "Robert Fico – „Čas konferencií a chlebíčkov – čo s nimi – sa skončil“", why: "December 2016, komentár pre Hospodárske noviny." }
+      - { text: "Marian Kotleba – „…bez Pána Boha je všetko márne“", why: "Po voľbách v marci 2016, keď sa ĽSNS prvý raz dostala do parlamentu." }
+    wrong:
+      - { text: "Richard Sulík – „Pred štyrmi rokmi to bol analógový svet, svet kešu“", why: "Výrok patrí Robertovi Kaliňákovi." }
+      - { text: "Andrej Danko – „Sémantický vesmír, v ktorom sa pohybuje právnik…“", why: "Výrok patrí Radoslavovi Procházkovi." }
+      - { text: "Robert Fico – „Neznášam tie žlté vlaky a autobusy“", why: "Výrok patrí Andrejovi Dankovi." }
+      - { text: "Andrej Kiska – „Čas konferencií a chlebíčkov – čo s nimi – sa skončil“", why: "Výrok patrí Robertovi Ficovi." }
+      - { text: "Béla Bugár – „Ja sa neuchádzam o poverenie pásť mačky“", why: "Výrok patrí Radoslavovi Procházkovi." }
+      - { text: "Radoslav Procházka – „…Slovensko aj samovyšetrenie daňových podvodov“", why: "Výrok patrí Miroslavovi Beblavému." }
+
+  - id: meciar-1998
+    type: pick
+    prompt: "Čo platí o predvolebnej kampani HZDS a Mečiarovom odchode v roku 1998?"
+    difficulty: 2
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"
+    correct:
+      - { text: "Diaľničný úsek Horná Streda – Nové Mesto nad Váhom otvárala topmodelka Claudia Schifferová", why: "Pozvalo ju HZDS pred voľbami 1998." }
+      - { text: "Pred voľbami prišiel aj Gérard Depardieu", why: "Medzi hosťami boli aj Ornella Muti a Claudia Cardinale." }
+      - { text: "Bilbordy so sloganom „krajina môjho srdca“ ukazovali v skutočnosti Švajčiarsko", why: "Kampaň pripravila agentúra Donar." }
+      - { text: "Hviezdy neplatilo priamo HZDS, ale Východoslovenské železiarne", why: "Zmluvy neskôr získal týždenník Plus 7 dní." }
+      - { text: "HZDS voľby vyhralo, no premiérom sa stal Mikuláš Dzurinda", why: "Vládu zostavili vtedajšie opozičné strany." }
+      - { text: "Mečiar sa rozlúčil rozhovorom v STV, na konci ktorého si zaspieval", why: "„Poďte, poďme si zaspievať: Spánombohom, idem od vás…“" }
+      - { text: "Pri odchode tvrdil, že mu zostal len malý Opel Corsa a trojizbový byt", why: "O pár mesiacov sa usadil vo vile Elektra v Trenčianskych Tepliciach." }
+    wrong:
+      - { text: "Claudia Schifferová otvárala nový most v Bratislave", why: "Otvárala diaľničný úsek Horná Streda – Nové Mesto nad Váhom." }
+      - { text: "Na bilbordoch „krajina môjho srdca“ boli Vysoké Tatry", why: "Fotka bola zo Švajčiarska." }
+      - { text: "HZDS voľby v roku 1998 prehralo", why: "Vyhralo, no nenašlo partnerov na vládu." }
+      - { text: "Mečiar sa s voličmi rozlúčil na Markíze", why: "Lúčil sa v štátnej STV." }
+      - { text: "Pri odchode tvrdil, že mu zostala len Škoda Favorit", why: "Spomínal Opel Corsa." }
+      - { text: "Zahraničné hviezdy platilo HZDS zo svojho účtu", why: "Podľa zmlúv ich platili Východoslovenské železiarne." }
+
+  - id: hlasky-brepty
+    type: pick
+    prompt: "Ktoré z týchto hlášok boli prerieknutia, keď politik chcel povedať niečo iné?"
+    difficulty: 2
+    source: "https://www.noviny.sk/slovensko/102027-prezident-gasparovic-opaet-zatal-organizacia-spojenych-nadorov- https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.topky.sk/cl/100535/1827381/Podla-Danka-je-stratifikacia-nemocnic-od-b--SNS-je-za-vystavbu-s-heslom-Nefet-plesen--likviduj-ju- https://www.startitup.sk/peter-pellegrini-nechce-byt-podrztaska-pribeh-politika-ktory-ma-v-rukach-kluc-k-novej-vlade/ https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/"
+    correct:
+      - { text: "„…v Organizácii spojených nádorov, názorov…“", why: "Gašparovič myslel Organizáciu spojených národov (2012)." }
+      - { text: "„Dostal som rozhodnutie od pani podpredsedníčky Smeru…“", why: "Gašparovič tak v roku 2010 omylom nazval Ivetu Radičovú z SDKÚ." }
+      - { text: "„Prinášame nové opatrenia, aby čašníci neplatili tringelty“", why: "Danko chcel tringelty oslobodiť od daní (2024)." }
+      - { text: "„Asi by som rozmýšľal skôr, než sa zamyslím“", why: "Danko chcel povedať, že sa treba zamyslieť skôr, než niečo povie." }
+      - { text: "„Chceme aj takýmto spôsobom prispieť k utrpeniu“", why: "Blanár chcel prispieť na pomoc ľuďom, ktorí trpia." }
+      - { text: "„Ja si servítky na Dolinkovú nedávam“", why: "Danko chcel povedať, že si servítku pred ústa nedáva." }
+      - { text: "„Nefeť pleseň“", why: "Topky ju rátali medzi Dankove brepty; neskôr z nej spravil heslo." }
+    wrong:
+      - { text: "„Ja nebudem žiadna podržtaška“", why: "Pellegriniho zámerný odkaz z roku 2023." }
+      - { text: "„Olympiáda v Šamoríne je taká blbosť ako folklórne slávnosti na Marse“", why: "Hlina to myslel presne takto." }
+      - { text: "„Boj s kriminalitou nie je o tom, že postavíte ku každej horalke policajta“", why: "Gašpar to v relácii Na telo myslel vážne ako radu proti krádežiam." }
+      - { text: "„Chcem sa poďakovať Pánu Bohu, lebo bez Pána Boha je všetko márne“", why: "Kotlebovo poďakovanie po voľbách 2016." }
+      - { text: "„Ospravedlňujem sa za menší zádrhel, som po ťažkom obede“", why: "Glück sa tým v relácii TA3 vedome ospravedlňoval za vlastné zaváhanie." }
+      - { text: "„Budem tĺcť do médií a budem“", why: "Fico to v Sobotných dialógoch povedal zámerne." }
+
+  - id: hlasky-v-plene
+    type: pick
+    prompt: "Ktoré z týchto hlášok zazneli priamo na rokovaní Národnej rady?"
+    difficulty: 3
+    source: "https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/"
+    correct:
+      - { text: "Ty si normálne mešuge", why: "Matovič Dankovi počas rokovania vo februári 2024." }
+      - { text: "Preskakuje ti hlas? Dochádza tabletka?", why: "Danko Matovičovi počas tej istej hádky v pléne." }
+      - { text: "Asi by som rozmýšľal skôr, než sa zamyslím", why: "Danko v pléne parlamentu, 2024." }
+      - { text: "Na zdravie", why: "Matovič si v apríli 2025 za hlavným pultíkom nalial z fľaše do štamperlíka a vypil; Danko sa pýtal, či je to alkohol." }
+      - { text: "Medzi nami tu v Národnej rade je jedinou zbraňou slovo", why: "Danko po zvolení za predsedu parlamentu v marci 2016." }
+      - { text: "To ste urobili poslednýkrát, lebo ja vám ukážem prostredník a sa z toho zložíte", why: "Danko poslancovi Michalovi Sabovi v decembrovej rozprave v roku 2025." }
+    wrong:
+      - { text: "Máme najväčšie Slovenské národné povstanie", why: "Glück to povedal v diskusnej relácii TA3." }
+      - { text: "Vy chcete mňa znásilniť", why: "Harabin to povedal moderátorovi relácie Na telo." }
+      - { text: "Keďže 52-ročný Sulík domácu úlohu nebol schopný zvládnuť, dal som teda tú istú úlohu mojej 11-ročnej Klárke", why: "Matovič to napísal na Facebooku." }
+      - { text: "Boj s kriminalitou nie je o tom, že postavíte ku každej horalke policajta", why: "Gašpar to povedal v relácii Na telo." }
+      - { text: "Kokso – Johnny Cash by nebol v parlamente?", why: "Sulík to povedal vo volebnom štábe SDKÚ vo volebnú noc 2010." }
+
+  - id: hlasky-na-novinarov
+    type: pick
+    prompt: "Ktoré z týchto výrokov smerovali na novinárov alebo médiá?"
+    difficulty: 2
+    source: "https://dennikn.sk/minuta/2313150/ https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010"
+    correct:
+      - { text: "Poď mi ho napraviť, fešáčik", why: "Kotleba novinárovi, ktorý ho upozornil na respirátor (2021)." }
+      - { text: "Odporúčam novinárovi, aby sa nabudúce venoval viac behu, lebo vyzerá ako záchodový pavúk", why: "Fico o redaktorovi Markízy Michalovi Kovačičovi (2016)." }
+      - { text: "Budem tĺcť do médií a budem", why: "Fico v relácii Sobotné dialógy (2016)." }
+      - { text: "Že sa mi nehanbíte postaviť pred oči, sopliak jeden. Takú vám buchnem, že vás ani Pán Boh nespozná!", why: "Mečiar redaktorovi Markízy Dušanovi Valkovi (1997)." }
+      - { text: "Počúvaj, ešte raz sa ma to opýtaš, takú ti jednu je…m, že sa nespamätáš", why: "Mečiar reportérovi JOJ, ktorý sa pýtal na peniaze na vilu Elektra (2002)." }
+      - { text: "Vy chcete mňa znásilniť", why: "Štefan Harabin moderátorovi relácie Na telo, keď mu kládol nepríjemné otázky (2024)." }
+    wrong:
+      - { text: "Preskakuje ti hlas? Dochádza tabletka?", why: "Danko sa to pýtal Matoviča v parlamente." }
+      - { text: "Ty si normálne mešuge", why: "Matovič to povedal Dankovi." }
+      - { text: "Mám svoje meno, priezvisko a nie som pre nikoho, ani pre pána Matoviča, nejaký hej počkaj", why: "Belousovová to adresovala Matovičovi." }
+      - { text: "Pán Ježiš stratil jedného zo svojich apoštolov. My sme stratili jednu z poslankýň", why: "Majerský tak komentoval odchod poslankyne z KDH." }
+      - { text: "Hodnoťte nás na základe skutkov. Ak sa nám to nepodarí, prvý poviem, že sme zlyhali", why: "Bugár tak žiadal voličov, aby novú vládu hodnotili podľa skutkov." }
+      - { text: "Trošku sa mám na pozore, keď vidím toľko lásky medzi Eštokom a Kaliňákom", why: "Danko tak žartoval o Eštokovi a Kaliňákovi na sneme Smeru." }
+
+  - id: hlasky-zeny
+    type: pick
+    prompt: "Ktoré z týchto výrokov povedali ženy?"
+    difficulty: 1
+    source: "https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"
+    correct:
+      - { text: "Riško, drž balónik a čakaj", why: "Iveta Radičová, volebná noc 2010." }
+      - { text: "Mám svoje meno, priezvisko a nie som pre nikoho, ani pre pána Matoviča, nejaký hej počkaj", why: "Anna Belousovová (SNS), 2010." }
+      - { text: "Vyzerá to tak, že som prehrala", why: "Magda Vášáryová po voľbách primátora Bratislavy, 2010." }
+      - { text: "Ježiš, asi preto, lebo je to vzácne", why: "Ministerka kultúry Martina Šimkovičová, 2025." }
+      - { text: "Momentálne je na mape Európy čierna diera, ktorá sa volá Slovensko", why: "Americká ministerka zahraničia Madeleine Albrightová o Slovensku 90. rokov." }
+    wrong:
+      - { text: "Bohužiaľ, zabáva sa na nás celé Slovensko", why: "Béla Bugár, 2010." }
+      - { text: "Fuj, hovorím fuj", why: "Jozef Mihál, 2010." }
+      - { text: "Ja mám dennodenne všetko skúmať?", why: "Ján Figeľ, 2010." }
+      - { text: "V nedeľu ideme všetci do kostola, aj my bývalí komunisti", why: "Ján Richter, 2025." }
+      - { text: "Viete, čo by vzniklo, keby sme tu mali nulové emisie CO2? … My sa tu zadusíme od kyslíka", why: "Rudolf Huliak, 2024." }
+      - { text: "Pán Ježiš stratil jedného zo svojich apoštolov. My sme stratili jednu z poslankýň", why: "Milan Majerský, 2024." }
+
+  - id: kto-cierna-diera
+    type: choice
+    prompt: "Kto opísal Slovensko 90. rokov vetou „Momentálne je na mape Európy čierna diera, ktorá sa volá Slovensko“?"
+    difficulty: 2
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"
+    correct: { text: "Madeleine Albrightová", why: "Americká ministerka zahraničia tak komentovala obdobie Mečiarovej vlády 1994 – 1998." }
+    wrong:
+      - { text: "Václav Havel", why: "Výrok patrí Madeleine Albrightovej." }
+      - { text: "Mikuláš Dzurinda", why: "Výrok patrí Madeleine Albrightovej." }
+      - { text: "Michal Kováč", why: "Kováč Mečiara kritizoval v parlamente, no tento výrok patrí Madeleine Albrightovej." }
+
+  - id: klaus-pero
+    type: choice
+    prompt: "Čím sa v apríli 2011 na tlačovke v Čile preslávil český prezident Václav Klaus?"
+    difficulty: 1
+    source: "https://www.noviny.sk/zahranicie/89905-video-prezident-klaus-na-tlacovke-kradol-pero https://seznamzpravy.cz/clanek/domaci-politika-pavel-nechal-chile-svoje-pero-klaus-si-ho-pred-15-lety-odtud-odvezl-304251"
+    correct: { text: "Kamery ho zachytili, ako si vkladá protokolárne pero do vrecka", why: "Video obletelo svet; Pražský hrad tvrdil, že pero dostal ako dar." }
+    wrong:
+      - { text: "Zaspal počas prejavu čilského prezidenta", why: "Preslávilo ho pero, ktoré si vložil do vrecka." }
+      - { text: "Pomýlil si Čile s Argentínou", why: "Preslávilo ho pero, ktoré si vložil do vrecka." }
+      - { text: "Pri podpise mu nepísalo pero a požičal si ho od novinára", why: "Nepísajúce pero mal v Čile v roku 2026 český veľvyslanec; Klaus si v roku 2011 pero vložil do vrecka." }
+
+  - id: havel-pravda-a-laska
+    type: choice
+    prompt: "Kto v decembri 1989 na Václavskom námestí zvolal „Pravda a láska musí zvítězit nad lží a nenávistí“?"
+    difficulty: 1
+    source: "https://ct24.ceskatelevize.cz/clanek/domaci/pravda-a-laska-uz-netahne-proc-se-z-havlova-hesla-stala-nadavka-109453"
+    correct: { text: "Václav Havel", why: "Časom sa heslu niektorí vysmievali a iní ho dokonca používajú ako nadávku." }
+    wrong:
+      - { text: "Alexander Dubček", why: "Heslo patrí Václavovi Havlovi." }
+      - { text: "Václav Klaus", why: "Heslo patrí Václavovi Havlovi." }
+      - { text: "Ján Budaj", why: "Heslo patrí Václavovi Havlovi." }
+
+  - id: matovic-sputnik
+    type: choice
+    prompt: "Čo v marci 2021 v Rádiu Expres žartom odpovedal premiér Igor Matovič na otázku, čo sľúbil Rusom za vakcínu Sputnik V?"
+    difficulty: 1
+    source: "https://www.noviny.sk/slovensko/592081-reakcia-na-vyrok-igora-matovica-menime-slovensko-na-krym-odkazuje-napis-na-slovenskom-konzulate-v-ukrajine"
+    correct: { text: "Zakarpatskú Ukrajinu", why: "Ukrajina žiadala ospravedlnenie a Matovič sa Ukrajincom ospravedlnil na Twitteri." }
+    wrong:
+      - { text: "Vysoké Tatry", why: "Odpovedal „Zakarpatskú Ukrajinu“." }
+      - { text: "Zásoby hokejok", why: "Odpovedal „Zakarpatskú Ukrajinu“." }
+      - { text: "Bratislavský hrad", why: "Odpovedal „Zakarpatskú Ukrajinu“." }
+
+  - id: belousovova-anca
+    type: choice
+    prompt: "Ako v roku 2010 nazval vtedajší poslanec za SaS Igor Matovič poslankyňu SNS Annu Belousovovú, čo ju nahnevalo?"
+    difficulty: 3
+    source: "https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010"
+    correct: { text: "Ančou", why: "„Mám svoje meno, priezvisko a nie som pre nikoho, ani pre pána Matoviča, nejaký hej počkaj.“" }
+    wrong:
+      - { text: "Aničkou", why: "Nazval ju Ančou." }
+      - { text: "Annuškou", why: "Nazval ju Ančou." }
+      - { text: "Belkou", why: "Nazval ju Ančou." }
+
+  - id: gasparovic-osn
+    type: choice
+    prompt: "Ako prezident Ivan Gašparovič v apríli 2012 omylom „premenoval“ Organizáciu spojených národov?"
+    difficulty: 1
+    source: "https://www.noviny.sk/slovensko/102027-prezident-gasparovic-opaet-zatal-organizacia-spojenych-nadorov-"
+    correct: { text: "Organizácia spojených nádorov", why: "Opravil sa cez „názorov“ a „spojených nádor“, až sa dostal k národom." }
+    wrong:
+      - { text: "Organizácia spojených nárokov", why: "Povedal „nádorov“ a „názorov“." }
+      - { text: "Organizácia spojených náhod", why: "Povedal „nádorov“ a „názorov“." }
+      - { text: "Organizácia spojených národností", why: "Povedal „nádorov“ a „názorov“." }
+
+  - id: poradie-hlasky-1
+    type: order
+    prompt: "Zoraď tieto hlášky a momenty podľa roku, keď zazneli, od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: "https://ct24.ceskatelevize.cz/clanek/domaci/pravda-a-laska-uz-netahne-proc-se-z-havlova-hesla-stala-nadavka-109453 https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/ https://www.noviny.sk/slovensko/107889-gasparovic-opaet-perlil-tentokrat-mu-urobil-problem-afganistan https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://echo24.cz/a/SvzBj/dost-jsem-popil-priznal-predseda-parlamentu-ve-vysilani-slovaci-resi-alkohol-u-politiku https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://www.startitup.sk/peter-pellegrini-nechce-byt-podrztaska-pribeh-politika-ktory-ma-v-rukach-kluc-k-novej-vlade/"
+    items:
+      - { text: "Havel: „Pravda a láska musí zvítězit…“", value: 1989, why: "December 1989, Václavské námestie." }
+      - { text: "Mečiar: „…len ľud mi zostal“", value: 1990, why: "Abdikačný list z jesene 1990." }
+      - { text: "Mečiar reportérovi JOJ: „…ešte raz sa ma to opýtaš…“", value: 2002, why: "Otázka na peniaze na vilu Elektra." }
+      - { text: "Radičová: „Riško, drž balónik a čakaj“", value: 2010, why: "Volebná noc v júni 2010." }
+      - { text: "Gašparovič sa v OSN zasekáva na slove Afganistan", value: 2012, why: "Prejav na Valnom zhromaždení OSN, september 2012." }
+      - { text: "Danko: „Neznášam tie žlté vlaky a autobusy“", value: 2016, why: "Marec 2016." }
+      - { text: "Danko: „Ťažko vládzem, fakt som dosť popil“", value: 2019, why: "Máj 2019, po prehre hokejistov s Kanadou." }
+      - { text: "Matovič na Facebooku zadáva Sulíkovu „domácu úlohu“ 11-ročnej Klárke", value: 2020, why: "Rok 2020." }
+      - { text: "Pellegrini: „Ja nebudem žiadna podržtaška“", value: 2023, why: "Rok 2023." }
+
+  - id: poradie-hlasky-2
+    type: order
+    prompt: "Zoraď tieto momenty podľa roku, keď sa stali, od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/ https://www.noviny.sk/slovensko/34277-dzurinda-urazil-ludi https://www.noviny.sk/zahranicie/89905-video-prezident-klaus-na-tlacovke-kradol-pero https://dennikn.sk/634749/25-citatov-ktore-vystizne-ilustruju-politicky-rok-2016/ https://refresher.sk/92222-Ciganikovu-nazval-sluzkou-Penty-Sulika-idiotom-Toto-je-10-najbizarnejsich-vyrokov-Matovica-v-roku-2020 https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show"
+    items:
+      - { text: "Mečiar v Zlatej Idke: „…takí silní, že to prevalcujeme všetko“", value: 1993, why: "November 1993." }
+      - { text: "Mečiar redaktorovi Markízy: „Takú vám buchnem, že vás ani Pán Boh nespozná!“", value: 1997, why: "Rok 1997." }
+      - { text: "Dzurinda: v noci pracujú len zlodeji", value: 2007, why: "Reakcia na mimoriadnu schôdzu zvolanú na 7. hodinu večer, december 2007." }
+      - { text: "Klaus si v Čile vkladá pero do vrecka", value: 2011, why: "Apríl 2011." }
+      - { text: "Procházka: „Ja sa neuchádzam o poverenie pásť mačky“", value: 2016, why: "Pred voľbami v roku 2016." }
+      - { text: "Matovič: „Mne to je šum a fuk, či som citoval, alebo nie“", value: 2020, why: "Rok 2020." }
+      - { text: "Huliak: nulové emisie CO2 a „zadusíme sa od kyslíka“", value: 2024, why: "Rok 2024." }
+      - { text: "Kotlár: „Slováci, my nie sme kukurica“", value: 2025, why: "Marec 2025." }
+
+  - id: poradie-premieri
+    type: order
+    prompt: "Zoraď týchto slovenských premiérov podľa toho, kedy prvý raz nastúpili do funkcie predsedu slovenskej vlády, od najskôr."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    source: "https://sk.wikipedia.org/wiki/Zoznam_predsedov_vlády_Slovenska"
+    items:
+      - { text: "Vladimír Mečiar", value: 1990, why: "Prvý raz v júni 1990, ešte v ČSFR; premiérom bol aj pri vzniku samostatnej republiky." }
+      - { text: "Mikuláš Dzurinda", value: 1998, why: "Od 30. októbra 1998, dve vlády po sebe." }
+      - { text: "Robert Fico", value: 2006, why: "Prvá vláda od 4. júla 2006." }
+      - { text: "Iveta Radičová", value: 2010, why: "Od 8. júla 2010 do apríla 2012." }
+      - { text: "Peter Pellegrini", value: 2018, why: "Od 22. marca 2018." }
+      - { text: "Igor Matovič", value: 2020, why: "Od 21. marca 2020 do 1. apríla 2021." }
+      - { text: "Ľudovít Ódor", value: 2023, why: "Úradnícka vláda od mája do októbra 2023." }
+
+  - id: matovic-dni-premierom
+    type: number
+    prompt: "Koľko dní bol Igor Matovič predsedom vlády?"
+    answer: 374
+    unit: "dní"
+    scale: log
+    tolerance: 0.1
+    why: "Noviny.sk napočítali 374 dní; vládu od neho 1. apríla 2021 prevzal Eduard Heger."
+    difficulty: 2
+    source: "https://www.noviny.sk/slovensko/597245-matovic-bol-premierom-374-dni-takto-vyzerala-jeho-cesta-za-mocou https://sk.wikipedia.org/wiki/Zoznam_predsedov_vlády_Slovenska"
+
+  - id: schifferova-honorar
+    type: number
+    prompt: "Približne koľko korún dostala Claudia Schifferová za to, že v roku 1998 otvárala diaľničný úsek Horná Streda – Nové Mesto nad Váhom?"
+    answer: 3600000
+    unit: "Sk"
+    scale: log
+    tolerance: 0.15
+    why: "Asi 3,6 milióna korún; platili ich Východoslovenské železiarne, nie priamo HZDS."
+    difficulty: 3
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"
+
+  - id: klaus-pero-roky
+    type: number
+    prompt: "Po koľkých rokoch od Klausovej „krádeže“ pera v Čile nechal český prezident Petr Pavel Čilanom svoje vlastné pero?"
+    answer: 15
+    unit: "rokov"
+    scale: linear
+    tolerance: 1
+    why: "Klaus si čilské pero vzal v apríli 2011; Pavel v apríli 2026 nechal na stole svoje vlastné pero po podpise memoránd."
+    difficulty: 2
+    source: "https://seznamzpravy.cz/clanek/domaci-politika-pavel-nechal-chile-svoje-pero-klaus-si-ho-pred-15-lety-odtud-odvezl-304251"
+
+  - id: sas-2010-percenta
+    type: number
+    prompt: "Koľko percent získala SaS vo svojich prvých parlamentných voľbách v roku 2010, keď Radičová radila Sulíkovi držať balónik?"
+    answer: 12
+    unit: "%"
+    scale: linear
+    tolerance: 1
+    why: "Približne 12 percent; Radičová potom zostavila vládu aj so SaS a Sulík sa stal predsedom parlamentu."
+    difficulty: 2
+    source: "https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/"
+
+  - id: rok-spanombohom
+    type: number
+    prompt: "V ktorom roku sa Vladimír Mečiar rozlúčil s voličmi v STV piesňou „Spánombohom, idem od vás“?"
+    answer: 1998
+    unit: "rok"
+    scale: linear
+    tolerance: 1
+    why: "Po voľbách 1998 HZDS síce vyhralo, no vládu zostavil Mikuláš Dzurinda."
+    difficulty: 1
+    source: "https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"

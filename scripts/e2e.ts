@@ -5,6 +5,8 @@ import { chromium, type Page } from "playwright";
 const base = process.argv[2] ?? "http://localhost:4173/";
 const browser = await chromium.launch();
 const errors: string[] = [];
+let compareCards = 0;
+let reportLinks = 0;
 
 async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], revealEach: boolean) {
   await page.goto(base);
@@ -32,6 +34,12 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       continue;
     }
     if (await page.locator(".turnend").count()) {
+      const report = page.locator(".q__source a", { hasText: "Nahlásiť chybu" });
+      if (await report.count()) {
+        const href = (await report.getAttribute("href")) ?? "";
+        if (!/docs\.google\.com\/forms\/.*entry\.395949983=/.test(href)) errors.push(`bad report link: ${href}`);
+        reportLinks++;
+      }
       await page.locator(".turnend .btn--primary").click();
       continue;
     }
@@ -58,7 +66,9 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       continue;
     }
     if (await page.locator(".q--choice").count()) {
-      await page.locator(".q--choice .opt").nth(Math.floor(Math.random() * 4)).click();
+      const opts = page.locator(".q--choice .options button.opt");
+      if (await page.locator(".options--compare").count()) compareCards++;
+      await opts.nth(Math.floor(Math.random() * (await opts.count()))).click();
       continue;
     }
     await page.waitForTimeout(100);
@@ -96,7 +106,26 @@ for (const [mode, players, revealEach] of [
   console.log(`✓ ${mode} with ${players.length} player(s), answers ${revealEach ? "per turn" : "after round"}: ${title}`);
   await page.close();
 }
+// Game over: rate a card, then quick start from Home with the same players.
+{
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  page.on("pageerror", (e) => errors.push(`review: ${e.message}`));
+  await playGame(page, "Klasika", ["Ana", "Bo"], true);
+  await page.locator(".review__btn").first().click();
+  const send = page.locator(".review a.btn");
+  const href = (await send.getAttribute("href")) ?? "";
+  if (!href.includes("entry.295936394=") || !new URL(href).searchParams.get("entry.295936394")?.includes("👍")) errors.push(`bad review link: ${href}`);
+  await page.getByRole("button", { name: "Domov" }).click();
+  await page.getByRole("button", { name: /Rýchla hra/ }).click();
+  if (!(await page.locator(".handover").count())) errors.push("quick start did not start a game");
+  const round = (await page.locator(".handover__round").textContent()) ?? "";
+  if (!round.includes("/ 5")) errors.push(`quick start round label: ${round}`);
+  console.log("✓ review link and quick start");
+  await page.close();
+}
 await browser.close();
+console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}`);
+if (!reportLinks) errors.push("no report link seen");
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

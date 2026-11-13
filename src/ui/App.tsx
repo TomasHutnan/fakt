@@ -5,6 +5,7 @@ import { DEFAULT_SETTINGS, newGame, reduce, type Action, type GameState, type Se
 import { randomSeed } from "../engine/rng.ts";
 import { DEMO_PACK, demoState, type DemoScreen } from "./demo.ts";
 import { Designs } from "./Designs.tsx";
+import { play, type Cue } from "./feedback.ts";
 import { Game } from "./Game.tsx";
 import { loadBuiltInPacks } from "./packs.ts";
 import { Home, Packs, Rules, SettingsScreen, Setup } from "./Screens.tsx";
@@ -30,6 +31,10 @@ export function App() {
   const [screen, setScreen] = useState<Screen>(() => initialScreen());
   const [setupError, setSetupError] = useState<string | null>(null);
   const [packsReturn, setPacksReturn] = useState<Screen>("home");
+  // Built-in question ids per pack as of the last visit to the pack list.
+  const [knownQuestions, setKnownQuestions] = useState<Record<string, string[]> | null>(() =>
+    demo ? null : loadKnownQuestions(),
+  );
 
   useEffect(() => {
     if (demo) return;
@@ -48,6 +53,13 @@ export function App() {
             save(KEYS.enabledPacks, ids);
           }
         }
+        // No question list yet: packs from the last visit count as known (all of them on a first visit),
+        // so packs added since then still show up as new.
+        if (!loadKnownQuestions()) {
+          const all = questionIds(Array.isArray(known) ? list.filter((p) => known.includes(p.id)) : list);
+          setKnownQuestions(all);
+          save(KEYS.knownQuestions, all);
+        }
         save(KEYS.knownPacks, list.map((p) => p.id));
       })
       .catch(() => setLoadError(true));
@@ -57,6 +69,24 @@ export function App() {
     const ids = new Set((builtIn ?? []).map((p) => p.id));
     return [...(builtIn ?? []), ...imported.filter((p) => !ids.has(p.id))];
   }, [builtIn, imported]);
+
+  // Questions added to built-in packs since the pack list was last opened.
+  const fresh = useMemo(() => {
+    const out: Record<string, number> = {};
+    if (!knownQuestions || !builtIn) return out;
+    for (const p of builtIn) {
+      const known = new Set(knownQuestions[p.id] ?? []);
+      const n = p.questions.filter((q) => !known.has(q.id)).length;
+      if (n) out[p.id] = n;
+    }
+    return out;
+  }, [knownQuestions, builtIn]);
+  const markKnown = () => {
+    if (!builtIn || Object.keys(fresh).length === 0) return;
+    const all = questionIds(builtIn);
+    setKnownQuestions(all);
+    persist(KEYS.knownQuestions, all);
+  };
 
   // Default selection: everything except adult packs.
   const enabledIds = enabled ?? packs.filter((p) => !p.adult).map((p) => p.id);
@@ -71,6 +101,8 @@ export function App() {
   const dispatch = (a: Action) => {
     if (!game) return;
     const next = reduce(game, a, packs);
+    const cue = cueFor(game, next, a);
+    if (cue) play(cue, settings);
     if (next.phase === "over" && game.phase !== "over") {
       const all = Array.from(new Set([...seen, ...next.played]));
       setSeen(all);
@@ -79,15 +111,22 @@ export function App() {
     setGame(next);
   };
 
-  const start = (names: string[], s: Settings) => {
+  /** `remember: false` (quick start) plays with one-off settings without saving them as the defaults. */
+  const start = (names: string[], s: Settings, remember = true) => {
     const settingsWithPacks = { ...s, packIds: activeIds };
     const g = newGame({ players: names, settings: settingsWithPacks, packs, seen: new Set(seen), seed: randomSeed() });
-    if (!g) return setSetupError(sk.noQuestions);
+    if (!g) {
+      setSetupError(sk.noQuestions);
+      if (!remember) setScreen("setup");
+      return;
+    }
     setSetupError(null);
     setPlayers(names);
     persist(KEYS.players, names);
-    setSettings(s);
-    persist(KEYS.settings, s);
+    if (remember) {
+      setSettings(s);
+      persist(KEYS.settings, s);
+    }
     setGame(g);
     setScreen("game");
   };
@@ -96,6 +135,8 @@ export function App() {
     setEnabled(ids);
     persist(KEYS.enabledPacks, ids);
   };
+
+  const lastPlayers = players.map((n) => n.trim()).filter(Boolean);
 
   if (screen === "designs") return <Designs onBack={() => setScreen("settings")} />;
 
@@ -116,6 +157,7 @@ export function App() {
               setScreen("home");
             }}
             onPlayAgain={() => setScreen("setup")}
+            packs={packs}
           />
         );
       break;
@@ -149,6 +191,7 @@ export function App() {
           packs={packs}
           importedIds={imported.map((p) => p.id)}
           enabled={activeIds}
+          fresh={fresh}
           onToggle={(id, on) => updateEnabled(on ? [...activeIds, id] : activeIds.filter((x) => x !== id))}
           onSetAll={(on) => updateEnabled(on ? packs.map((p) => p.id) : [])}
           onImport={(p) => {
@@ -164,7 +207,10 @@ export function App() {
             persist(KEYS.imported, next);
             updateEnabled(activeIds.filter((x) => x !== id));
           }}
-          onBack={() => setScreen(packsReturn)}
+          onBack={() => {
+            markKnown();
+            setScreen(packsReturn);
+          }}
         />
       );
     case "settings":
@@ -200,6 +246,9 @@ export function App() {
       canResume={!!game && game.phase !== "over"}
       questionCount={packs.filter((p) => activeIds.includes(p.id)).reduce((n, p) => n + p.questions.length, 0)}
       packCount={activeIds.length}
+      freshCount={activeIds.reduce((n, id) => n + (fresh[id] ?? 0), 0)}
+      lastPlayers={lastPlayers}
+      onQuick={(rounds) => start(lastPlayers, { ...settings, rounds, target: null }, false)}
       onNew={() => {
         setSetupError(null);
         setScreen("setup");
@@ -248,6 +297,29 @@ function loadGame(): GameState | null {
   // Games saved before the per-turn answer setting existed keep the old behaviour.
   if (typeof g.settings!.revealEach !== "boolean") g.settings = { ...g.settings!, revealEach: false };
   return g as GameState;
+}
+
+function questionIds(packs: Pack[]): Record<string, string[]> {
+  return Object.fromEntries(packs.map((p) => [p.id, p.questions.map((q) => q.id)]));
+}
+
+function loadKnownQuestions(): Record<string, string[]> | null {
+  const raw = load<unknown>(KEYS.knownQuestions, null);
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  return Object.values(raw).every(Array.isArray) ? (raw as Record<string, string[]>) : null;
+}
+
+/** Sound/vibration for what the player just saw: picks always, other answers only when shown right away. */
+function cueFor(prev: GameState, next: GameState, a: Action): Cue | null {
+  if (a.type === "pick" && next !== prev && next.answer?.type === "pick") {
+    const st = next.answer.status;
+    return st === "busted" ? "wrong" : st === "complete" ? "done" : "right";
+  }
+  if (a.type === "submitChoice" && next.phase === "turnEnd" && next.card.type === "choice") {
+    const r = next.results[next.results.length - 1];
+    return r?.answer.type === "choice" && next.card.options[r.answer.option]?.correct ? "done" : "wrong";
+  }
+  return null;
 }
 
 function initialScreen(): Screen {

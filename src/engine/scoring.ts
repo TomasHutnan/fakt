@@ -6,6 +6,8 @@ export const POINTS = {
   orderPerPosition: 2,
   orderPerfectBonus: 2,
   choice: 4,
+  /** "Which is more": a coin flip if you know nothing, so worth less. */
+  compare: 2,
   numberSoloMax: 6,
   /** Ranked points for number guesses with 2+ players: 1st, 2nd, 3rd. */
   numberRanked: [5, 3, 1],
