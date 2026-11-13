@@ -1,0 +1,493 @@
+id: veda-vesmir
+title: Veda a vesmír
+description: Vesmír, ľudské telo, chémia, fyzika a slávni vedci.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: vesmir-mesiace
+    type: pick
+    prompt: Ktoré z týchto telies sú mesiace planét Slnečnej sústavy?
+    difficulty: 1
+    tags: [vesmír]
+    source: https://en.wikipedia.org/wiki/List_of_natural_satellites
+    correct:
+      - text: Titan
+        why: Mesiac Saturnu, druhý najväčší mesiac v Slnečnej sústave.
+      - text: Europa
+        why: Jeden z galileovských mesiacov Jupitera.
+      - text: Phobos
+        why: Mesiac Marsu.
+      - text: Ganymedes
+        why: Mesiac Jupitera, najväčší a najhmotnejší mesiac v Slnečnej sústave.
+      - text: Triton
+        why: Mesiac Neptúna s retrográdnou, teda opačnou dráhou.
+      - text: Io
+        why: Jeden z galileovských mesiacov Jupitera.
+    wrong:
+      - text: Pluto
+        why: Trpasličia planéta, ktorá má sama päť mesiacov, vrátane Charona.
+      - text: Ceres
+        why: Trpasličia planéta, ktorá nemá žiadny známy mesiac.
+      - text: Eris
+        why: Trpasličia planéta s mesiacom Dysnomia.
+      - text: Haumea
+        why: Trpasličia planéta s mesiacmi Hiʻiaka a Namaka.
+      - text: Sedna
+        why: Samostatné teleso, nie mesiac planéty; nemá známy mesiac.
+
+  - id: astronauti-na-mesiaci
+    type: pick
+    prompt: Ktorí z týchto astronautov skutočne kráčali po povrchu Mesiaca?
+    difficulty: 2
+    tags: [vesmír, história]
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Apollo_astronauts
+    correct:
+      - text: Neil Armstrong
+        why: Veliteľ Apolla 11, jeden z dvanástich ľudí, ktorí kráčali po Mesiaci.
+      - text: Buzz Aldrin
+        why: Pristál na Mesiaci s Apollom 11.
+      - text: Pete Conrad
+        why: Pristál na Mesiaci s Apollom 12.
+      - text: Alan Bean
+        why: Pristál na Mesiaci s Apollom 12.
+      - text: Alan Shepard
+        why: Veliteľ Apolla 14 a s vekom 47 rokov najstarší človek, ktorý kráčal po Mesiaci.
+      - text: John Young
+        why: Pristál na Mesiaci s Apollom 16; predtým letel k Mesiacu na Apollo 10.
+      - text: Eugene Cernan
+        why: Pristál na Mesiaci s Apollom 17.
+    wrong:
+      - text: Michael Collins
+        why: Pilot veliteľského modulu Apolla 11, zostal na obežnej dráhe Mesiaca.
+      - text: Jim Lovell
+        why: Letel na Apollo 8 a Apollo 13, no pristátie Apolla 13 sa zrušilo.
+      - text: Jurij Gagarin
+        why: Nie je medzi dvanástimi ľuďmi, ktorí kráčali po Mesiaci.
+      - text: John Glenn
+        why: Nie je medzi dvanástimi ľuďmi, ktorí kráčali po Mesiaci.
+      - text: Valentina Tereškovová
+        why: Nie je medzi dvanástimi ľuďmi, ktorí kráčali po Mesiaci.
+      - text: Ivan Bella
+        why: Prvý slovenský kozmonaut, letel na stanicu Mir; po Mesiaci nekráčal.
+      - text: Vladimír Remek
+        why: Nie je medzi dvanástimi ľuďmi, ktorí kráčali po Mesiaci.
+
+  - id: vesmirne-misie-posadka
+    type: pick
+    prompt: Ktoré z týchto vesmírnych misií mali na palube ľudskú posádku?
+    difficulty: 3
+    tags: [vesmír]
+    source: https://en.wikipedia.org/wiki/List_of_human_spaceflights
+    correct:
+      - text: Vostok 1
+        why: Je na zozname letov s ľudskou posádkou z rokov 1961 až 1970.
+      - text: Voschod 2
+        why: Je na zozname letov s ľudskou posádkou z rokov 1961 až 1970.
+      - text: Gemini 4
+        why: Je na zozname letov s ľudskou posádkou z rokov 1961 až 1970.
+      - text: Apollo 11
+        why: Je na zozname letov s ľudskou posádkou z rokov 1961 až 1970.
+      - text: Apollo 13
+        why: Je na zozname letov s ľudskou posádkou z rokov 1961 až 1970.
+      - text: Skylab 2
+        why: Je na zozname letov s ľudskou posádkou z rokov 1971 až 1980.
+      - text: Sojuz TM-29
+        why: Let s ľudskou posádkou z roku 1999; letel na ňom aj Ivan Bella.
+    wrong:
+      - text: Sputnik 1
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: Luna 2
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: Voyager 1
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: Viking 1
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: Cassini
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: Rosetta
+        why: Nie je na zozname letov s ľudskou posádkou.
+      - text: New Horizons
+        why: Nie je na zozname letov s ľudskou posádkou.
+
+  - id: suhvezdia-oblohy
+    type: pick
+    prompt: Ktoré z týchto názvov patria medzi 88 oficiálnych súhvezdí nočnej oblohy?
+    difficulty: 2
+    tags: [vesmír, astronómia]
+    source: https://en.wikipedia.org/wiki/IAU_designated_constellations
+    correct:
+      - text: Orión
+        why: Je na zozname 88 súhvezdí.
+      - text: Kasiopeja
+        why: Je na zozname 88 súhvezdí.
+      - text: Veľká medvedica
+        why: Je na zozname 88 súhvezdí; jej súčasťou je Veľký voz.
+      - text: Škorpión
+        why: Je na zozname 88 súhvezdí.
+      - text: Labuť
+        why: Je na zozname 88 súhvezdí.
+      - text: Lýra
+        why: Je na zozname 88 súhvezdí.
+      - text: Perzeus
+        why: Je na zozname 88 súhvezdí.
+      - text: Drak
+        why: Je na zozname 88 súhvezdí.
+    wrong:
+      - text: Veľký voz
+        why: Nie je to súhvezdie, ale asterizmus, teda vzor hviezd v súhvezdí Veľká medvedica.
+      - text: Polárka
+        why: Je to najjasnejšia hviezda súhvezdia Malá medvedica.
+      - text: Sírius
+        why: Je to najjasnejšia hviezda súhvezdia Veľký pes.
+      - text: Plejády
+        why: Hviezdokopa, nie je na zozname 88 súhvezdí.
+      - text: Mliečna cesta
+        why: Nie je na zozname 88 súhvezdí.
+      - text: Betelgeuze
+        why: Hviezda, nie súhvezdie; nie je na zozname 88 súhvezdí.
+
+  - id: telo-kosti
+    type: pick
+    prompt: Ktoré z týchto častí ľudského tela sú skutočné kosti?
+    difficulty: 2
+    tags: [ľudské telo, anatómia]
+    source: https://en.wikipedia.org/wiki/List_of_bones_of_the_human_skeleton
+    correct:
+      - text: strmienok
+        why: Je na zozname kostí, medzi kostičkami stredného ucha.
+      - text: kladivko
+        why: Je na zozname kostí, medzi kostičkami stredného ucha.
+      - text: nákovka
+        why: Je na zozname kostí, medzi kostičkami stredného ucha.
+      - text: jabĺčko
+        why: Je na zozname kostí ako kolenná čiapočka (patella).
+      - text: lopatka
+        why: Je na zozname kostí v pletenci ramenného kĺbu.
+      - text: sánka
+        why: Je na zozname kostí medzi kosťami tváre.
+      - text: rebro
+        why: Je na zozname kostí; hrudný kôš má 12 párov rebier.
+    wrong:
+      - text: meniskus
+        why: Nie je na zozname kostí.
+      - text: Achillova šľacha
+        why: Nie je na zozname kostí.
+      - text: bránica
+        why: Nie je na zozname kostí.
+      - text: ušný bubienok
+        why: Nie je na zozname kostí.
+      - text: slezina
+        why: Nie je na zozname kostí.
+      - text: priedušnica
+        why: Nie je na zozname kostí.
+
+  - id: telo-travenie
+    type: pick
+    prompt: Ktoré z týchto orgánov patria do tráviacej sústavy človeka?
+    difficulty: 1
+    tags: [ľudské telo, anatómia]
+    source: https://en.wikipedia.org/wiki/Human_digestive_system
+    correct:
+      - text: žalúdok
+        why: Súčasť tráviacej rúry.
+      - text: pažerák
+        why: Súčasť tráviacej rúry.
+      - text: tenké črevo
+        why: Súčasť tráviacej rúry.
+      - text: hrubé črevo
+        why: Súčasť tráviacej rúry.
+      - text: pečeň
+        why: Pridružený orgán tráviacej sústavy.
+      - text: žlčník
+        why: Pridružený orgán tráviacej sústavy.
+      - text: pankreas
+        why: Pridružený orgán tráviacej sústavy (podžalúdková žľaza).
+    wrong:
+      - text: slezina
+        why: Podľa zdroja ju medicína zaraďuje iba do lymfatickej sústavy.
+      - text: pľúca
+        why: Nie sú súčasťou tráviacej sústavy.
+      - text: priedušnica
+        why: Hrtanová príklopka pri prehĺtaní chráni priedušnicu pred potravou; nie je tráviacim orgánom.
+      - text: oblička
+        why: Nie je na zozname orgánov tráviacej sústavy.
+      - text: štítna žľaza
+        why: Nie je na zozname orgánov tráviacej sústavy.
+
+  - id: chemia-znacky-pismeno
+    type: pick
+    prompt: Ktoré z týchto prvkov majú v periodickej tabuľke značku začínajúcu rovnakým písmenom ako ich slovenský názov?
+    difficulty: 1
+    tags: [chémia]
+    source: https://en.wikipedia.org/wiki/List_of_chemical_elements
+    correct:
+      - text: bór
+        why: Značka B.
+      - text: fluór
+        why: Značka F.
+      - text: hélium
+        why: Značka He.
+      - text: lítium
+        why: Značka Li.
+      - text: neón
+        why: Značka Ne.
+      - text: síra
+        why: Značka S.
+      - text: zinok
+        why: Značka Zn.
+    wrong:
+      - text: uhlík
+        why: Značka C, názov začína na U.
+      - text: vodík
+        why: Značka H, názov začína na V.
+      - text: kyslík
+        why: Značka O, názov začína na K.
+      - text: dusík
+        why: Značka N, názov začína na D.
+      - text: železo
+        why: Značka Fe, názov začína na Ž.
+      - text: zlato
+        why: Značka Au, názov začína na Z.
+      - text: ortuť
+        why: Značka Hg, názov začína na O.
+
+  - id: chemia-plyny
+    type: pick
+    prompt: Ktoré z týchto chemických prvkov sú pri izbovej teplote (20 °C) a bežnom tlaku plynné?
+    difficulty: 2
+    tags: [chémia]
+    source: https://en.wikipedia.org/wiki/Boiling_points_of_the_elements_(data_page)
+    correct:
+      - text: vodík
+        why: Teplota varu je asi −253 °C, takže pri 20 °C je plyn.
+      - text: hélium
+        why: Teplota varu je asi −269 °C, takže pri 20 °C je plyn.
+      - text: dusík
+        why: Teplota varu je asi −196 °C, takže pri 20 °C je plyn.
+      - text: kyslík
+        why: Teplota varu je asi −183 °C, takže pri 20 °C je plyn.
+      - text: fluór
+        why: Teplota varu je asi −188 °C, takže pri 20 °C je plyn.
+      - text: neón
+        why: Teplota varu je asi −246 °C, takže pri 20 °C je plyn.
+      - text: argón
+        why: Teplota varu je asi −186 °C, takže pri 20 °C je plyn.
+    wrong:
+      - text: bróm
+        why: Topí sa pri −7 °C a vrie pri 59 °C, takže pri 20 °C je kvapalina.
+      - text: ortuť
+        why: Topí sa pri −39 °C a vrie pri 357 °C, takže pri 20 °C je kvapalina.
+      - text: jód
+        why: Topí sa až pri asi 114 °C, takže pri 20 °C je pevná látka.
+      - text: gálium
+        why: Topí sa pri asi 30 °C, takže pri 20 °C je pevné.
+      - text: síra
+        why: Topí sa pri asi 115 °C, takže pri 20 °C je pevná látka.
+      - text: fosfor
+        why: Biely fosfor sa topí pri asi 44 °C, takže pri 20 °C je pevný.
+      - text: uhlík
+        why: Grafit sa za bežného tlaku netopí, sublimuje až pri asi 4 000 °C.
+
+  - id: fyzika-jednotky-vedci
+    type: pick
+    prompt: Ktoré z týchto fyzikálnych jednotiek sú pomenované po konkrétnych ľuďoch?
+    difficulty: 2
+    tags: [fyzika]
+    source: https://en.wikipedia.org/wiki/List_of_scientific_units_named_after_people
+    correct:
+      - text: watt
+        why: Pomenovaný po Jamesovi Wattovi.
+      - text: newton
+        why: Pomenovaný po Isaacovi Newtonovi.
+      - text: joule
+        why: Pomenovaný po Jamesovi Prescottovi Jouleovi.
+      - text: volt
+        why: Pomenovaný po Alessandrovi Voltovi.
+      - text: ampér
+        why: Pomenovaný po André-Marie Ampèrovi.
+      - text: hertz
+        why: Pomenovaný po Heinrichovi Rudolfovi Hertzovi.
+      - text: pascal
+        why: Pomenovaný po Blaiseovi Pascalovi.
+      - text: tesla
+        why: Pomenovaná po Nikolovi Teslovi.
+    wrong:
+      - text: kandela
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+      - text: mól
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+      - text: lumen
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+      - text: lux
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+      - text: bar
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+      - text: dioptria
+        why: Nie je na zozname jednotiek pomenovaných po ľuďoch.
+
+  - id: vedci-nobelova-cena
+    type: pick
+    prompt: Ktorí z týchto slávnych vedcov a vynálezcov získali Nobelovu cenu?
+    difficulty: 2
+    tags: [vedci, história]
+    source: https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics
+    correct:
+      - text: Albert Einstein
+        why: Cena za fyziku (1921) za zákon fotoelektrického javu.
+      - text: Marie Curie-Skłodowska
+        why: Cena za fyziku (1903) spolu s Pierrom Curiem a Henrim Becquerelom a samostatne za chémiu (1911).
+      - text: Alexander Fleming
+        why: Cena za medicínu (1945) spolu s Howardom Floreyom a Ernstom Chainom za objav penicilínu.
+      - text: Niels Bohr
+        why: Cena za fyziku (1922) za výskum štruktúry atómov a ich žiarenia.
+      - text: Max Planck
+        why: Cena za fyziku (1918) za objav energetických kvánt.
+      - text: Wilhelm Röntgen
+        why: Cena za fyziku (1901) za objav röntgenového žiarenia.
+      - text: Jaroslav Heyrovský
+        why: Cena za chémiu (1959) za vynález polarografie.
+    wrong:
+      - text: Dmitrij Mendelejev
+        why: Cenu nikdy nezískal; v roku 1906 mu chýbal jediný hlas a o rok neskôr zomrel.
+      - text: Nikola Tesla
+        why: Cenu nezískal; zvesti o jeho cene z roku 1915 boli nepodložené, fyziku vtedy získali Braggovci.
+      - text: Thomas Edison
+        why: Cenu nezískal; zvesti o jeho cene z roku 1915 boli nepodložené, fyziku vtedy získali Braggovci.
+
+  # ---------------------------------------------------------------- order
+  - id: kovy-teplota-topenia
+    type: order
+    prompt: Zoraď tieto kovy podľa teploty topenia od najvyššej.
+    direction: desc
+    unit: °C
+    difficulty: 3
+    tags: [chémia, fyzika]
+    source: https://en.wikipedia.org/wiki/Melting_points_of_the_elements_(data_page)
+    items:
+      - text: volfrám
+        value: 3422
+        why: Topí sa pri 3 422 °C.
+      - text: železo
+        value: 1538
+        why: Topí sa pri 1 538 °C.
+      - text: zlato
+        value: 1064
+        why: Topí sa pri 1 064 °C, teda nižšie než meď (1 085 °C).
+      - text: hliník
+        value: 660
+        why: Topí sa pri 660 °C.
+      - text: olovo
+        value: 327
+        why: Topí sa pri 327 °C.
+      - text: ortuť
+        value: -39
+        why: Topí sa pri −39 °C, preto je pri bežnej teplote kvapalná.
+
+  # ---------------------------------------------------------------- number
+  - id: ivan-bella-rok
+    type: number
+    prompt: V ktorom roku letel do vesmíru prvý slovenský kozmonaut Ivan Bella?
+    answer: 1999
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Letel od 20. do 28. februára 1999 v lodi Sojuz TM-29 na stanicu Mir.
+    difficulty: 1
+    tags: [vesmír, Slovensko]
+    source: https://sk.wikipedia.org/wiki/Ivan_Bella
+
+  - id: kosti-dospely-clovek
+    type: number
+    prompt: Koľko kostí má štandardne telo dospelého človeka?
+    answer: 206
+    unit: kostí
+    scale: linear
+    tolerance: 5
+    why: Dospelá kostra sa bežne uvádza ako 206 kostí, presný počet závisí od spôsobu počítania.
+    difficulty: 1
+    tags: [ľudské telo, anatómia]
+    source: https://en.wikipedia.org/wiki/List_of_bones_of_the_human_skeleton
+
+  - id: prvky-tabulka-pocet
+    type: number
+    prompt: Koľko chemických prvkov je oficiálne identifikovaných a pomenovaných v periodickej tabuľke?
+    answer: 118
+    unit: prvkov
+    scale: linear
+    tolerance: 2
+    asOf: "2026-11"
+    why: Únia IUPAC oficiálne identifikovala a pomenovala 118 chemických prvkov.
+    difficulty: 2
+    tags: [chémia]
+    source: https://en.wikipedia.org/wiki/List_of_chemical_elements
+
+  - id: slovenski-vynalezci
+    type: pick
+    prompt: Ktorí z týchto vedcov a vynálezcov sa narodili na území dnešného Slovenska?
+    difficulty: 3
+    tags: [vedci, Slovensko]
+    source: https://en.wikipedia.org/wiki/Aurel_Stodola
+    correct:
+      - text: Aurel Stodola
+        why: Narodil sa vo Vrbici-Huštáku, dnes časť Liptovského Mikuláša; odborník na parné turbíny.
+      - text: Jozef Murgaš
+        why: Narodil sa v Tajove; priekopník bezdrôtovej telegrafie.
+      - text: Štefan Banič
+        why: Narodil sa v dnešnej Smolenickej Novej Vsi; v USA získal patent na padák.
+      - text: Ján Bahýľ
+        why: Narodil sa vo Zvolenskej Slatine; v roku 1895 získal patent na vrtuľník.
+      - text: Dionýz Ilkovič
+        why: Narodil sa v Šarišskom Štiavniku; autor Ilkovičovej rovnice v polarografii.
+      - text: Jozef Maximilián Petzval
+        why: Narodil sa v Spišskej Belej; v roku 1840 navrhol portrétny objektív.
+      - text: Ján Andrej Segner
+        why: Narodil sa v Bratislave; zostrojil Segnerovo koleso poháňané reakčnou silou vody.
+    wrong:
+      - text: Nikola Tesla
+        why: Narodil sa v dedine Smiljan, dnes v Chorvátsku.
+      - text: Jaroslav Heyrovský
+        why: Narodil sa v Prahe.
+      - text: Otto Wichterle
+        why: Narodil sa v Prostějove na Morave.
+      - text: Gregor Mendel
+        why: Narodil sa v Hynčiciach, dnes v Českej republike.
+      - text: Jan Evangelista Purkyně
+        why: Narodil sa v Libochoviciach, dnes v Českej republike.
+
+  - id: planety-priemer
+    type: order
+    prompt: Zoraď planéty Slnečnej sústavy podľa priemeru od najväčšej.
+    direction: desc
+    unit: km
+    difficulty: 2
+    tags: [vesmír, planéty]
+    source: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    items:
+      - text: Jupiter
+        value: 142984
+        why: Priemer 142 984 km.
+      - text: Saturn
+        value: 120536
+        why: Priemer 120 536 km.
+      - text: Urán
+        value: 51118
+        why: Priemer 51 118 km.
+      - text: Neptún
+        value: 49528
+        why: Priemer 49 528 km.
+      - text: Zem
+        value: 12756
+        why: Priemer 12 756 km.
+      - text: Venuša
+        value: 12104
+        why: Priemer 12 104 km.
+      - text: Mars
+        value: 6792
+        why: Priemer 6 792 km.
+      - text: Merkúr
+        value: 4879
+        why: Priemer 4 879 km.
