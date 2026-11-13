@@ -14,6 +14,7 @@ const LABELS: Record<DemoScreen, string> = {
   order: "Poradie",
   number: "Číslo",
   choice: "Jedna zo štyroch",
+  compare: "Čo je viac?",
   answer: "Odpoveď po ťahu",
   reveal: "Výsledky kola",
   over: "Koniec",

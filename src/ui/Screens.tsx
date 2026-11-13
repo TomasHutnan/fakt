@@ -4,9 +4,13 @@ import { DEFAULT_SETTINGS, type Mode, type Settings } from "../engine/game.ts";
 import type { WipeRule } from "../engine/scoring.ts";
 import { DESIGNS } from "../designs/index.ts";
 import { parsePackFile } from "./packs.ts";
+import { REPO_URL } from "./links.ts";
 import { sk } from "./sk.ts";
 
-export const REPO_URL = "https://github.com/TomasHutnan/fakt";
+const QUICK = [
+  { rounds: 5, label: sk.quickGame },
+  { rounds: 20, label: sk.longGame },
+];
 
 export function TopBar({ title, onBack }: { title: string; onBack: () => void }) {
   return (
@@ -23,6 +27,11 @@ export function Home(props: {
   canResume: boolean;
   questionCount: number;
   packCount: number;
+  /** Questions added since the pack list was last opened. */
+  freshCount: number;
+  /** Players of the last game; quick starts are offered when there are some. */
+  lastPlayers: string[];
+  onQuick: (rounds: number) => void;
   onNew: () => void;
   onResume: () => void;
   onPacks: () => void;
@@ -44,9 +53,22 @@ export function Home(props: {
             {sk.resume}
           </button>
         )}
+        {props.lastPlayers.length > 0 && (
+          <div class="quick">
+            {QUICK.map((q, i) => (
+              <button
+                type="button"
+                class={`btn quick__btn${!props.canResume && i === 0 ? " btn--primary" : ""}`}
+                onClick={() => props.onQuick(q.rounds)}>
+                <span class="quick__label">{q.label}</span>
+                <span class="quick__meta">{sk.quickWith(props.lastPlayers, q.rounds)}</span>
+              </button>
+            ))}
+          </div>
+        )}
         <button
           type="button"
-          class={`btn btn--block${props.canResume ? "" : " btn--primary"}`}
+          class={`btn btn--block${props.canResume || props.lastPlayers.length > 0 ? "" : " btn--primary"}`}
           onClick={props.onNew}
         >
           {sk.newGame}
@@ -61,7 +83,17 @@ export function Home(props: {
           {sk.settings}
         </button>
       </nav>
-      <p class="home__stats">{sk.questionsInPacks(props.questionCount, props.packCount)}</p>
+      <p class="home__stats">
+        {sk.questionsInPacks(props.questionCount, props.packCount)}
+        {props.freshCount > 0 && (
+          <>
+            {" · "}
+            <button type="button" class="link home__fresh" onClick={props.onPacks}>
+              {sk.newQuestions(props.freshCount)}
+            </button>
+          </>
+        )}
+      </p>
     </div>
   );
 }
@@ -233,6 +265,8 @@ export function Packs(props: {
   packs: Pack[];
   importedIds: string[];
   enabled: string[];
+  /** Questions added since the last visit of this screen, per pack id. */
+  fresh: Record<string, number>;
   onToggle: (id: string, on: boolean) => void;
   onSetAll: (on: boolean) => void;
   /** Returns an error message, or null when the pack was added and saved. */
@@ -280,6 +314,7 @@ export function Packs(props: {
                   {p.title}
                   {p.adult && <span class="badge badge--adult">{sk.adult}</span>}
                   {imported && <span class="badge">{sk.imported}</span>}
+                  {props.fresh[p.id] > 0 && <span class="badge badge--new">{sk.newBadge(props.fresh[p.id])}</span>}
                 </span>
                 {p.description && <span class="pack__desc">{p.description}</span>}
                 {p.warnings && p.warnings.length > 0 && (
@@ -406,6 +441,29 @@ export function SettingsScreen(props: {
           onChange={(v) => props.onSettings({ ...s, revealEach: v === "on" })}
         />
         <p class="field__hint">{sk.revealEachHint}</p>
+
+        <Segmented<string>
+          id="haptics"
+          label={sk.haptics}
+          value={s.haptics ? "on" : "off"}
+          options={[
+            { value: "on", label: sk.on },
+            { value: "off", label: sk.off },
+          ]}
+          onChange={(v) => props.onSettings({ ...s, haptics: v === "on" })}
+        />
+        <p class="field__hint">{sk.hapticsHint}</p>
+
+        <Segmented<string>
+          id="sound"
+          label={sk.sound}
+          value={s.sound ? "on" : "off"}
+          options={[
+            { value: "off", label: sk.off },
+            { value: "on", label: sk.on },
+          ]}
+          onChange={(v) => props.onSettings({ ...s, sound: v === "on" })}
+        />
 
         <fieldset class="field">
           <legend class="field__label">{sk.seenCount(props.seenCount)}</legend>

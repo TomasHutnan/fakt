@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
-import { makeCard, type NumberCard, type PickCard } from "./cards.ts";
-import { DEFAULT_SETTINGS, newGame, reduce, standings, type GameState } from "./game.ts";
+import { makeCard, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
+import { DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState } from "./game.ts";
 import { createRng } from "./rng.ts";
 import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
 
@@ -93,6 +93,40 @@ describe("pick cards", () => {
     expect(pickTurnPoints(card, right.slice(0, 2), "always")).toBe(3);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "always")).toBe(0);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "firstFree")).toBe(3);
+  });
+});
+
+describe("which is more", () => {
+  const order = pack.questions[2] as Extract<(typeof pack.questions)[number], { type: "order" }>;
+  it("marks the item that comes first in the order as correct", () => {
+    for (let seed = 0; seed < 100; seed++) {
+      const card = makeCompareCard(pack, order, createRng(seed))!;
+      expect(card.type).toBe("choice");
+      expect(card.compare).toBe("desc");
+      expect(card.options).toHaveLength(2);
+      const value = (t: string) => order.items.find((i) => i.text === t)!.value;
+      const [a, b] = card.options;
+      expect(a.correct).toBe(value(a.text) > value(b.text));
+      expect(b.correct).toBe(!a.correct);
+    }
+  });
+  it("is worth fewer points than a four-option choice", () => {
+    const card = makeCompareCard(pack, order, createRng(1))!;
+    const right = card.options.findIndex((o) => o.correct);
+    const r = (option: number) => ({ player: 0, points: 0, answer: { type: "choice" as const, option } });
+    expect(scoreCard(card, [r(right), r(1 - right)], "always", 2)).toEqual([2, 0]);
+  });
+  it("deals some order questions as compare cards in mix mode, the same way on resume", () => {
+    const orderOnly: Pack = { ...pack, questions: [order] };
+    let compare = 0;
+    for (let seed = 0; seed < 60; seed++) {
+      const s = newGame({ players: ["A"], settings: { ...DEFAULT_SETTINGS, mode: "mix", packIds: ["test"] }, packs: [orderOnly], seen: new Set(), seed })!;
+      const again = newGame({ players: ["A"], settings: { ...DEFAULT_SETTINGS, mode: "mix", packIds: ["test"] }, packs: [orderOnly], seen: new Set(), seed })!;
+      expect(again.card).toEqual(s.card);
+      if (s.card.type === "choice") compare++;
+    }
+    expect(compare).toBeGreaterThan(10);
+    expect(compare).toBeLessThan(50);
   });
 });
 

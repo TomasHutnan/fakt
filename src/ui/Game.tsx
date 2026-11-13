@@ -1,5 +1,6 @@
 import { createContext, type ComponentChildren } from "preact";
 import { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "preact/hooks";
+import type { Pack } from "../content/types.ts";
 import type { Card, ChoiceCard, NumberCard, OrderCard, PickCard } from "../engine/cards.ts";
 import { formatNumber } from "../engine/cards.ts";
 import {
@@ -13,6 +14,8 @@ import {
   type TurnResult,
 } from "../engine/game.ts";
 import { orderPoints, pickPoints } from "../engine/scoring.ts";
+import { issueUrl, reportUrl } from "./links.ts";
+import { KEYS, load, save } from "./storage.ts";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
 
@@ -21,6 +24,8 @@ interface Props {
   dispatch: (a: Action) => void;
   onQuit: () => void;
   onPlayAgain: () => void;
+  /** Packs in play, to list the game's cards on the game-over screen. */
+  packs: Pack[];
 }
 
 const Dispatch = createContext<(a: Action) => void>(() => {});
@@ -33,14 +38,14 @@ export function Game(props: Props) {
   );
 }
 
-function GameInner({ state, dispatch, onQuit, onPlayAgain }: Props) {
+function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
   const [confirmQuit, setConfirmQuit] = useState(false);
   const s = state;
   // Close the quit dialog whenever the game moves on.
   useEffect(() => setConfirmQuit(false), [s.phase, s.round, s.turn]);
   const totalRounds = s.settings.target == null ? Math.max(s.round, Math.min(s.settings.rounds, s.deck.length)) : null;
 
-  if (s.phase === "over") return <GameOver state={s} onHome={onQuit} onPlayAgain={onPlayAgain} />;
+  if (s.phase === "over") return <GameOver state={s} packs={packs} onHome={onQuit} onPlayAgain={onPlayAgain} />;
 
   if (s.phase === "handover") {
     const name = s.players[currentPlayer(s)].name;
@@ -100,6 +105,7 @@ function CardHead({ card }: { card: Card }) {
   return (
     <div class="q__meta">
       <span class="q__pack">{card.packTitle}</span>
+      {card.type === "choice" && card.compare && <span class="q__kind">{sk.compareLabel}</span>}
       <span class={`q__difficulty q__difficulty--${card.difficulty}`}>{sk.difficultyNames[card.difficulty]}</span>
       {card.asOf && <span class="q__asof">{sk.asOf(card.asOf)}</span>}
     </div>
@@ -383,7 +389,9 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
 function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameState; dispatch: (a: Action) => void }) {
   if (state.phase === "turnEnd") return <TurnReveal state={state} />;
   return (
-    <ul class="options options--choice">
+    <>
+    {card.compare && <p class="q__hint">{sk.compareHint(card.compare)}</p>}
+    <ul class={`options options--choice${card.compare ? " options--compare" : ""}`}>
       {card.options.map((o, i) => (
         <li>
           <button type="button" class="opt" onClick={() => dispatch({ type: "submitChoice", option: i })}>
@@ -392,6 +400,7 @@ function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameSt
         </li>
       ))}
     </ul>
+    </>
   );
 }
 
@@ -494,6 +503,10 @@ function CardFoot({ card }: { card: Card }) {
         ) : (
           card.source
         )}
+        {" · "}
+        <a href={reportUrl(card)} target="_blank" rel="noopener noreferrer">
+          {sk.reportCard}
+        </a>
       </p>
     </>
   );
@@ -577,7 +590,98 @@ function prettySource(url: string): string {
   }
 }
 
-function GameOver({ state, onHome, onPlayAgain }: { state: GameState; onHome: () => void; onPlayAgain: () => void }) {
+type Rating = "up" | "down" | "flag";
+interface StoredRating {
+  rating: Rating;
+  /** Pack version when rated, so later fixes can be told apart. */
+  version?: number;
+}
+const RATINGS: { value: Rating; icon: string; label: string }[] = [
+  { value: "up", icon: "👍", label: sk.reviewUp },
+  { value: "down", icon: "👎", label: sk.reviewDown },
+  { value: "flag", icon: "⚠️", label: sk.reviewFlag },
+];
+
+/** Cards of the finished game, rated 👍 / 👎 / ⚠️; ratings stay on the device and can be sent as one issue. */
+function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
+  const cards = useMemo(
+    () =>
+      state.played.flatMap((key) => {
+        const [packId, qid] = key.split("/");
+        const pack = packs.find((p) => p.id === packId);
+        const q = pack?.questions.find((x) => x.id === qid);
+        return pack && q ? [{ key, prompt: q.prompt, version: pack.version }] : [];
+      }),
+    [state.played, packs],
+  );
+  const [ratings, setRatings] = useState<Record<string, StoredRating>>(() => {
+    const r = load<unknown>(KEYS.ratings, {});
+    return r && typeof r === "object" && !Array.isArray(r) ? (r as Record<string, StoredRating>) : {};
+  });
+  if (cards.length === 0) return null;
+  const rate = (key: string, version: number, rating: Rating) => {
+    const next = { ...ratings };
+    if (next[key]?.rating === rating) delete next[key];
+    else next[key] = { rating, version };
+    setRatings(next);
+    save(KEYS.ratings, next);
+  };
+  const rated = cards.filter((c) => ratings[c.key]);
+  const body = rated
+    .map((c) => `- ${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} \`${c.key}\` (v${c.version}): ${c.prompt}`)
+    .join("\n");
+  return (
+    <section class="review" aria-labelledby="review-title">
+      <h2 class="review__title" id="review-title">
+        {sk.reviewTitle}
+      </h2>
+      <ol class="review__list">
+        {cards.map((c) => (
+          <li class="review__item" key={c.key}>
+            <span class="review__prompt">{tie(c.prompt)}</span>
+            <span class="review__buttons" role="group" aria-label={c.prompt}>
+              {RATINGS.map((r) => (
+                <button
+                  type="button"
+                  class="btn btn--icon review__btn"
+                  aria-pressed={ratings[c.key]?.rating === r.value}
+                  aria-label={r.label}
+                  title={r.label}
+                  onClick={() => rate(c.key, c.version, r.value)}
+                >
+                  {r.icon}
+                </button>
+              ))}
+            </span>
+          </li>
+        ))}
+      </ol>
+      <p class="field__hint">{sk.reviewHint}</p>
+      {rated.length > 0 && (
+        <a
+          class="btn btn--small"
+          href={issueUrl(sk.reviewIssueTitle(rated.length), body)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {sk.reviewSend(rated.length)}
+        </a>
+      )}
+    </section>
+  );
+}
+
+function GameOver({
+  state,
+  packs,
+  onHome,
+  onPlayAgain,
+}: {
+  state: GameState;
+  packs: Pack[];
+  onHome: () => void;
+  onPlayAgain: () => void;
+}) {
   const table = standings(state.players);
   const winners = table.filter((e) => e.rank === 1);
   return (
@@ -603,6 +707,7 @@ function GameOver({ state, onHome, onPlayAgain }: { state: GameState; onHome: ()
           ))}
         </ol>
       )}
+      <Review state={state} packs={packs} />
       <div class="actions">
         <button type="button" class="btn btn--primary btn--block" onClick={onPlayAgain}>
           {sk.playAgain}

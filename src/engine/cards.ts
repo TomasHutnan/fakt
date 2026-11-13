@@ -14,6 +14,8 @@ interface CardBase {
   key: string;
   packId: string;
   packTitle: string;
+  /** Pack version the card was drawn from (missing in games saved before it existed). */
+  packVersion?: number;
   prompt: string;
   difficulty: number;
   source: string;
@@ -53,6 +55,8 @@ export interface NumberCard extends CardBase {
 export interface ChoiceCard extends CardBase {
   type: "choice";
   options: CardOption[];
+  /** "Which is more": two items of an order question; the one that comes first is correct. */
+  compare?: "asc" | "desc";
 }
 
 export type Card = PickCard | OrderCard | NumberCard | ChoiceCard;
@@ -66,6 +70,7 @@ export function makeCard(pack: Pack, q: Question, rng: Rng): Card {
     key: `${pack.id}/${q.id}`,
     packId: pack.id,
     packTitle: pack.title,
+    packVersion: pack.version,
     prompt: q.prompt,
     difficulty: q.difficulty,
     source: q.source,
@@ -113,6 +118,26 @@ export function makeCard(pack: Pack, q: Question, rng: Rng): Card {
       return { ...base, type: "choice", options: shuffle(rng, [{ ...q.correct, correct: true }, ...wrong]) };
     }
   }
+}
+
+/**
+ * "Which is more" card from an order question: two items with different values,
+ * the one that would come first in the order is correct.
+ */
+export function makeCompareCard(pack: Pack, q: Extract<Question, { type: "order" }>, rng: Rng): ChoiceCard | null {
+  const base = makeCard(pack, q, rng) as OrderCard;
+  const [a, ...rest] = shuffle(rng, base.items);
+  const b = rest.find((x) => x.value !== a.value);
+  if (!b) return null;
+  const dir = base.direction;
+  const first = dir === "desc" ? (a.value > b.value ? a : b) : a.value < b.value ? a : b;
+  const options = shuffle(rng, [a, b]).map((it) => ({
+    text: it.text,
+    why: it.why ? `${it.label}. ${it.why}` : it.label,
+    correct: it === first,
+  }));
+  const { items: _i, solution: _s, direction: _d, unit: _u, ...rest2 } = base;
+  return { ...rest2, type: "choice", options, compare: dir };
 }
 
 export interface DeckFilter {

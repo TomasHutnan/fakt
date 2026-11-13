@@ -160,3 +160,39 @@
 .gallery__frame { width: 360px; max-width: 100%; height: 740px; border: 1px solid #b9b9b4; border-radius: 18px; background: #fff; }
 .gallery__caption { display: flex; flex-direction: column; gap: 2px; max-width: 360px; }
 .gallery__caption a { color: #1b1b1b; }
+
+/* Home: quick starts with the last players */
+:where(.quick) { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+:where(.quick__btn) { flex-direction: column; gap: 2px; min-height: 64px; padding: 8px 12px; min-width: 0; }
+:where(.quick__label) { font-weight: 700; }
+:where(.quick__meta) {
+  font-size: 0.8rem; opacity: 0.8; max-width: 100%;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+:where(.link) {
+  background: none; border: 0; padding: 8px 0; margin: 0; font: inherit; color: inherit;
+  text-decoration: underline; cursor: pointer;
+}
+.badge--new { border-color: var(--accent, currentColor); color: var(--accent, currentColor); }
+
+/* "Which is more": two options side by side */
+:where(.options--compare) { grid-template-columns: 1fr 1fr; }
+:where(.options--compare .opt) { min-height: 96px; }
+:where(.q__kind) { font-weight: 700; }
+
+/* Game over: rate the cards just played */
+:where(.review) { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+:where(.review__title) { font-size: 1.05rem; font-weight: 700; }
+:where(.review__list) { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+:where(.review__item) {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; padding: 6px 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+:where(.review__prompt) { font-size: 0.92rem; line-height: 1.35; }
+:where(.review__buttons) { display: flex; gap: 2px; }
+.review__btn { background: none; border: 1px solid transparent; border-radius: 8px; font-size: 1.15rem; filter: grayscale(1); opacity: 0.6; }
+.review__btn[aria-pressed="true"] {
+  filter: none; opacity: 1; border-color: var(--accent, currentColor);
+  background: color-mix(in srgb, var(--accent, currentColor) 12%, transparent);
+}
+:where(.review .btn--small) { align-self: flex-start; }

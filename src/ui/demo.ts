@@ -1,5 +1,7 @@
 import type { Pack } from "../content/types.ts";
+import { makeCompareCard } from "../engine/cards.ts";
 import { DEFAULT_SETTINGS, newGame, reduce, type GameState } from "../engine/game.ts";
+import { createRng } from "../engine/rng.ts";
 
 // Fixed demo states for the design gallery (?demo=<screen>). Uses its own
 // small pack so the gallery works before the real packs load.
@@ -77,10 +79,10 @@ export const DEMO_PACK: Pack = {
 
 export type DemoScreen =
   | "home" | "setup" | "rules" | "packs" | "settings"
-  | "handover" | "play" | "order" | "number" | "choice" | "answer" | "busted" | "reveal" | "over";
+  | "handover" | "play" | "order" | "number" | "choice" | "compare" | "answer" | "busted" | "reveal" | "over";
 
 export const DEMO_SCREENS: DemoScreen[] = [
-  "home", "setup", "handover", "play", "busted", "order", "number", "choice", "answer", "reveal", "over", "packs", "settings", "rules",
+  "home", "setup", "handover", "play", "busted", "order", "number", "choice", "compare", "answer", "reveal", "over", "packs", "settings", "rules",
 ];
 
 const players = ["Zuzka", "Maroš", "Ivka"];
@@ -122,6 +124,11 @@ export function demoState(screen: DemoScreen): GameState | null {
       return reduce(game("number"), { type: "continue" }, packs);
     case "choice":
       return reduce(game("choice"), { type: "continue" }, packs);
+    case "compare": {
+      const s = reduce(game("order"), { type: "continue" }, packs);
+      const q = DEMO_PACK.questions.find((x) => x.type === "order")!;
+      return { ...s, card: makeCompareCard(DEMO_PACK, q as Extract<typeof q, { type: "order" }>, createRng(2))! };
+    }
     case "answer": {
       const s = reduce(game("order"), { type: "continue" }, packs);
       if (s.card.type !== "order") return s;
@@ -143,7 +150,7 @@ export function demoState(screen: DemoScreen): GameState | null {
       return s;
     }
     case "over":
-      return { ...game("pick"), phase: "over" };
+      return { ...game("pick"), phase: "over", played: DEMO_PACK.questions.map((q) => `demo/${q.id}`) };
     default:
       return null;
   }

@@ -43,4 +43,8 @@ export const KEYS = {
   seen: "seen",
   imported: "imported",
   design: "design",
+  /** Per-card ratings from the game-over screen: { [packId/questionId]: { rating, version } }. */
+  ratings: "ratings",
+  /** Built-in question ids per pack seen when the pack list was last opened, for "new questions". */
+  knownQuestions: "knownQuestions",
 } as const;
