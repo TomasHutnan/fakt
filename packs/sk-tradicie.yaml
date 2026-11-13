@@ -258,8 +258,6 @@ questions:
         why: Mužský tanec improvizovaného charakteru, často s valaškou.
       - text: karička
         why: Ženský kruhový tanec sprevádzaný spevom.
-      - text: čardáš
-        why: Párový tanec, ktorý vznikol v prvej polovici 19. storočia; za svoj ho pokladajú aj Maďari.
       - text: verbunk
         why: Mužský tanec spojený s náborom do vojska.
     wrong:
@@ -440,7 +438,7 @@ questions:
       - text: Traja králi (6. január)
         why: Sviatok Zjavenia Pána, ktorým začínajú fašiangy.
       - text: Blažej (3. február)
-        why: Zimný sviatok v februári, nie predvianočný stridží deň.
+        why: Zimný sviatok vo februári, nie predvianočný stridží deň.
       - text: Dorota (6. február)
         why: Februárový sviatok, mimo predvianočných stridžích dní.
       - text: Florián (4. máj)

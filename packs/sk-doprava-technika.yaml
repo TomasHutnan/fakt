@@ -33,13 +33,13 @@ questions:
         why: Golf patril k modelom, ktoré závod vyrábal po Passate v 90. rokoch.
     wrong:
       - text: Volkswagen Tiguan
-        why: Nie je medzi modelmi, ktoré článok o závode uvádza.
+        why: Nepatrí medzi modely vyrábané v bratislavskom závode.
       - text: Audi A4
         why: Z Audi sa v Bratislave vyrábajú Q7 a Q8, A4 medzi modelmi závodu nie je.
       - text: Porsche 911
         why: Z Porsche sa v Bratislave vyrába Cayenne, 911 medzi modelmi závodu nie je.
       - text: Volkswagen Transporter
-        why: Nie je medzi modelmi, ktoré článok o závode uvádza.
+        why: Nepatrí medzi modely vyrábané v bratislavskom závode.
 
   - id: auta-ostatne-zavody-sk
     type: pick
@@ -50,7 +50,7 @@ questions:
     source: https://sk.wikipedia.org/wiki/Kia_Slovakia
     correct:
       - text: Kia Sportage
-        why: Päťka Sportage sa vyrába v Kia Slovakia pri Žiline.
+        why: Model Sportage sa vyrába v Kia Slovakia pri Žiline.
       - text: Kia Ceed
         why: Ceed v rôznych karosériách schádza z žilinského závodu.
       - text: Kia XCeed
@@ -433,7 +433,7 @@ questions:
       - text: Air Slovakia
         why: Slovenská charterová aerolinka z rokov 1993 – 2010.
       - text: Go2Sky
-        why: Slovenská charterová aerolinka z rokov 2013 – 2020.
+        why: Slovenská charterová aerolinka založená v roku 2013.
       - text: Tatra Air
         why: Slovenská aerolinka z rokov 1992 – 1999.
       - text: Seagle Air
@@ -516,7 +516,7 @@ questions:
       - text: Most SNP v Bratislave
         why: Otvorili ho až 26. augusta 1972.
       - text: Prístavný most v Bratislave
-        why: Stavali sa 1977 – 1985.
+        why: Staval sa v rokoch 1977 – 1985.
       - text: Most Apollo v Bratislave
         why: Otvorili ho v roku 2005.
       - text: Lužný most v Bratislave
