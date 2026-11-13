@@ -136,6 +136,8 @@ export function App() {
     persist(KEYS.enabledPacks, ids);
   };
 
+  const lastPlayers = players.map((n) => n.trim()).filter(Boolean);
+
   if (screen === "designs") return <Designs onBack={() => setScreen("settings")} />;
 
   if (!builtIn && !loadError) return <div class="screen screen--loading"><p class="loading">{sk.loading}</p></div>;
@@ -245,8 +247,8 @@ export function App() {
       questionCount={packs.filter((p) => activeIds.includes(p.id)).reduce((n, p) => n + p.questions.length, 0)}
       packCount={activeIds.length}
       freshCount={activeIds.reduce((n, id) => n + (fresh[id] ?? 0), 0)}
-      lastPlayers={players.filter((n) => n.trim())}
-      onQuick={(rounds) => start(players.filter((n) => n.trim()), { ...settings, rounds, target: null }, false)}
+      lastPlayers={lastPlayers}
+      onQuick={(rounds) => start(lastPlayers, { ...settings, rounds, target: null }, false)}
       onNew={() => {
         setSetupError(null);
         setScreen("setup");

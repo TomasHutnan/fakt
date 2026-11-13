@@ -105,7 +105,7 @@ function CardHead({ card }: { card: Card }) {
   return (
     <div class="q__meta">
       <span class="q__pack">{card.packTitle}</span>
-      {card.type === "choice" && card.compare && <span class="q__kind">{sk.compareLabel}</span>}
+      {card.type === "choice" && card.compare && <span class="q__kind">{sk.compareLabel(card.compare)}</span>}
       <span class={`q__difficulty q__difficulty--${card.difficulty}`}>{sk.difficultyNames[card.difficulty]}</span>
       {card.asOf && <span class="q__asof">{sk.asOf(card.asOf)}</span>}
     </div>
@@ -590,6 +590,8 @@ function prettySource(url: string): string {
   }
 }
 
+const DEMO = new URLSearchParams(location.search).has("demo");
+
 type Rating = "up" | "down" | "flag";
 interface StoredRating {
   rating: Rating;
@@ -616,7 +618,13 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
   );
   const [ratings, setRatings] = useState<Record<string, StoredRating>>(() => {
     const r = load<unknown>(KEYS.ratings, {});
-    return r && typeof r === "object" && !Array.isArray(r) ? (r as Record<string, StoredRating>) : {};
+    if (!r || typeof r !== "object" || Array.isArray(r)) return {};
+    // Keep only well-formed entries: storage may hold data from another build.
+    return Object.fromEntries(
+      Object.entries(r as Record<string, unknown>).filter(([, v]) =>
+        RATINGS.some((x) => x.value === (v as StoredRating | null)?.rating),
+      ),
+    ) as Record<string, StoredRating>;
   });
   if (cards.length === 0) return null;
   const rate = (key: string, version: number, rating: Rating) => {
@@ -624,11 +632,12 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
     if (next[key]?.rating === rating) delete next[key];
     else next[key] = { rating, version };
     setRatings(next);
-    save(KEYS.ratings, next);
+    // The design gallery (?demo=) must not touch real data.
+    if (!DEMO) save(KEYS.ratings, next);
   };
   const rated = cards.filter((c) => ratings[c.key]);
   const body = rated
-    .map((c) => `- ${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} \`${c.key}\` (v${c.version}): ${c.prompt}`)
+    .map((c) => `- ${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} \`${c.key}\` (v${ratings[c.key].version ?? c.version}): ${c.prompt}`)
     .join("\n");
   return (
     <section class="review" aria-labelledby="review-title">

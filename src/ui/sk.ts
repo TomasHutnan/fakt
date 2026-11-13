@@ -88,7 +88,7 @@ export const sk = {
   pointsAfterRound: "Body sa rozdelia po kole podľa toho, kto bol najbližšie.",
   compareHint: (dir: "asc" | "desc") =>
     dir === "desc" ? "Ktorá z dvoch je v tomto poradí vyššie?" : "Ktorá z dvoch je v tomto poradí skôr?",
-  compareLabel: "Čo je viac?",
+  compareLabel: (dir: "asc" | "desc") => (dir === "desc" ? "Čo je viac?" : "Čo je menej?"),
   dragHint: "Potiahni riadok na správne miesto.",
   orderHint: (dir: "asc" | "desc") => (dir === "desc" ? "Najvyššie hore." : "Najnižšie hore."),
   moveUp: "Posunúť vyššie",
