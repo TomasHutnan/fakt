@@ -77,10 +77,10 @@ export const DEMO_PACK: Pack = {
 
 export type DemoScreen =
   | "home" | "setup" | "rules" | "packs" | "settings"
-  | "handover" | "play" | "order" | "number" | "choice" | "busted" | "reveal" | "over";
+  | "handover" | "play" | "order" | "number" | "choice" | "answer" | "busted" | "reveal" | "over";
 
 export const DEMO_SCREENS: DemoScreen[] = [
-  "home", "setup", "handover", "play", "busted", "order", "number", "choice", "reveal", "over", "packs", "settings", "rules",
+  "home", "setup", "handover", "play", "busted", "order", "number", "choice", "answer", "reveal", "over", "packs", "settings", "rules",
 ];
 
 const players = ["Zuzka", "Maroš", "Ivka"];
@@ -122,8 +122,14 @@ export function demoState(screen: DemoScreen): GameState | null {
       return reduce(game("number"), { type: "continue" }, packs);
     case "choice":
       return reduce(game("choice"), { type: "continue" }, packs);
+    case "answer": {
+      const s = reduce(game("order"), { type: "continue" }, packs);
+      if (s.card.type !== "order") return s;
+      return reduce(s, { type: "submitOrder", arrangement: s.card.items.map((_, i) => i).reverse() }, packs);
+    }
     case "reveal": {
       let s = game("pick");
+      s = { ...s, settings: { ...s.settings, revealEach: false } };
       for (let t = 0; t < players.length; t++) {
         s = reduce(s, { type: "continue" }, packs);
         if (s.card.type !== "pick") return s;

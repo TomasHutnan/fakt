@@ -76,7 +76,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain }: Props) {
           </div>
         </div>
       )}
-      {s.phase === "reveal" ? <Reveal state={s} dispatch={dispatch} /> : <Turn state={s} dispatch={dispatch} />}
+      {s.phase === "reveal" ? <Reveal state={s} dispatch={dispatch} /> : <Turn key={`${s.round}-${s.turn}`} state={s} dispatch={dispatch} />}
     </div>
   );
 }
@@ -211,13 +211,20 @@ function PickTurn({
 }
 
 function TurnEnd({ state, children }: { state: GameState; children?: ComponentChildren }) {
-  const last = isLastTurn(state);
   const dispatch = useContext(Dispatch);
+  // Alone with per-turn answers the round summary is skipped (see advance() in game.ts).
+  const label = !isLastTurn(state)
+    ? sk.next
+    : state.players.length === 1 && state.settings.revealEach
+      ? isFinalRound(state)
+        ? sk.finalResults
+        : sk.nextRound
+      : sk.showResults;
   return (
     <div class="turnend">
       {children}
       <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "endTurn" })}>
-        {last ? sk.showResults : sk.next}
+        {label}
       </button>
     </div>
   );
@@ -228,7 +235,9 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
   const [drag, setDrag] = useState<{ item: number; y: number } | null>(null);
   const list = useRef<HTMLOListElement>(null);
   const grab = useRef(0);
-  useEffect(() => setArr(card.items.map((_, i) => i)), [card.key, state.turn]);
+  // Latest arrangement for pointer handlers that fire before a re-render.
+  const live = useRef(arr);
+  live.current = arr;
   const items = () => Array.from(list.current?.children ?? []) as HTMLElement[];
   // Place the dragged row under the finger; runs after the DOM has the new order.
   useLayoutEffect(() => {
@@ -250,7 +259,7 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
   // Pointer drag (mouse and touch). The dragged row follows the finger;
   // the others reorder as its centre crosses their midpoints.
   const onDown = (e: PointerEvent, item: number) => {
-    if (e.button !== 0 || (e.target as HTMLElement).closest("button")) return;
+    if (drag || !e.isPrimary || e.button !== 0 || (e.target as HTMLElement).closest("button")) return;
     const el = e.currentTarget as HTMLElement;
     const top = list.current!.getBoundingClientRect().top;
     grab.current = e.clientY - top - el.offsetTop;
@@ -258,10 +267,11 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
     setDrag({ item, y: el.offsetTop });
   };
   const onMove = (e: PointerEvent) => {
-    if (!drag || !list.current) return;
+    if (!drag || !e.isPrimary || !list.current) return;
     const y = e.clientY - list.current.getBoundingClientRect().top - grab.current;
     const els = items();
-    const from = arr.indexOf(drag.item);
+    const cur = live.current;
+    const from = cur.indexOf(drag.item);
     const h = els[from]?.offsetHeight ?? 0;
     const centre = y + h / 2;
     let to = 0;
@@ -269,13 +279,16 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
       if (i !== from && el.offsetTop + el.offsetHeight / 2 < centre) to++;
     });
     if (to !== from) {
-      const next = arr.filter((x) => x !== drag.item);
+      const next = cur.filter((x) => x !== drag.item);
       next.splice(to, 0, drag.item);
+      live.current = next;
       setArr(next);
     }
     setDrag({ item: drag.item, y });
   };
-  const onUp = () => setDrag(null);
+  const onUp = (e: PointerEvent) => {
+    if (e.isPrimary) setDrag(null);
+  };
 
   return (
     <>
@@ -332,10 +345,6 @@ export function parseNumber(raw: string): number {
 function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameState; dispatch: (a: Action) => void }) {
   const [raw, setRaw] = useState("");
   const [error, setError] = useState(false);
-  useEffect(() => {
-    setRaw("");
-    setError(false);
-  }, [card.key, state.turn]);
   if (state.phase === "turnEnd") return <TurnReveal state={state} />;
   const submit = (e: Event) => {
     e.preventDefault();
@@ -389,6 +398,8 @@ function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameSt
 /** Turn end for order, number and choice when answers are shown to each player. */
 function TurnReveal({ state }: { state: GameState }) {
   const s = state;
+  // Only reachable with revealEach off from a game saved before that setting existed: show nothing.
+  if (!s.settings.revealEach) return <TurnEnd state={s} />;
   const r = s.results[s.results.length - 1];
   // Ranked number scoring needs everyone's guess, so points come after the round.
   const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
@@ -403,14 +414,16 @@ function TurnReveal({ state }: { state: GameState }) {
           ? sk.yourGuess(describe(s.card, r))
           : "";
   return (
-    <TurnEnd state={s}>
+    <>
       <CardAnswer card={s.card} results={[r]} names={() => sk.you} />
-      <p class={`verdict verdict--${points ? "complete" : points === 0 ? "busted" : "saved"}`}>
-        <strong class="verdict__title">{title}</strong>
-        <span class="verdict__detail">{points == null ? sk.pointsAfterRound : `+${sk.pointsNow(points)}`}</span>
-      </p>
-      <CardFoot card={s.card} />
-    </TurnEnd>
+      <TurnEnd state={s}>
+        <p class={`verdict verdict--${points ? "complete" : points === 0 ? "busted" : "saved"}`}>
+          <strong class="verdict__title">{title}</strong>
+          <span class="verdict__detail">{points == null ? sk.pointsAfterRound : `+${sk.pointsNow(points)}`}</span>
+        </p>
+        <CardFoot card={s.card} />
+      </TurnEnd>
+    </>
   );
 }
 
@@ -489,10 +502,7 @@ function CardFoot({ card }: { card: Card }) {
 function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) => void }) {
   const s = state;
   const card = s.card;
-  const over = useMemo(() => {
-    if (s.settings.target != null) return s.players.some((p) => p.score >= s.settings.target!);
-    return s.round >= Math.min(s.settings.rounds, s.deck.length);
-  }, [s]);
+  const over = useMemo(() => isFinalRound(s), [s]);
   const multi = s.players.length > 1;
   // Each player already saw the answer on their turn: the round ends with scores only.
   const full = !s.settings.revealEach;
@@ -530,6 +540,16 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
       </div>
     </section>
   );
+}
+
+/** Whether the current round is the last one (scores so far plus this card's points for a target game). */
+function isFinalRound(s: GameState): boolean {
+  if (s.settings.target != null) {
+    if (s.phase === "reveal") return s.players.some((p) => p.score >= s.settings.target!);
+    const pending = scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
+    return s.players.some((p, i) => p.score + s.results.reduce((n, r, j) => n + (r.player === i ? pending[j] : 0), 0) >= s.settings.target!);
+  }
+  return s.round >= Math.min(s.settings.rounds, s.deck.length);
 }
 
 function describe(card: Card, r: TurnResult): string {

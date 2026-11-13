@@ -5,7 +5,7 @@ import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { chromium } from "playwright";
 
-const SCREENS = ["home", "setup", "handover", "play", "busted", "order", "number", "choice", "reveal", "over", "packs", "settings", "rules"];
+const SCREENS = ["home", "setup", "handover", "play", "busted", "order", "number", "choice", "answer", "reveal", "over", "packs", "settings", "rules"];
 const [outDir = "screenshots", ...only] = process.argv.slice(2);
 const base = process.env.BASE_URL ?? "http://localhost:4173/";
 mkdirSync(outDir, { recursive: true });

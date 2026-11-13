@@ -16,7 +16,7 @@ export const sk = {
         "Na ťahu ťukáš na možnosti, o ktorých si myslíš, že sú pravdivé. Prvá správna je za 1 bod, druhá za 2, tretia za 3 a tak ďalej.",
         "Kedykoľvek môžeš povedať stop a body si vziať. Ak ťukneš na nesprávnu, body z tejto karty prepadnú.",
         "Potom podáš telefón ďalšiemu. Každý hrá tú istú kartu sám, kým to nevidia ostatní.",
-        "Po poslednom hráčovi sa ukážu všetky odpovede aj s vysvetlením.",
+        "Správnu odpoveď s vysvetlením uvidíš hneď po svojom ťahu. V nastaveniach to môžeš zmeniť tak, aby sa odpovede ukázali všetkým naraz až po poslednom hráčovi.",
       ],
     },
     {

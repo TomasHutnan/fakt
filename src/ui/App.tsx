@@ -229,7 +229,10 @@ function loadGame(): GameState | null {
     typeof (g.card as { type?: unknown } | undefined)?.type === "string" &&
     !!g.settings &&
     !!g.answer;
-  return ok ? (g as GameState) : null;
+  if (!ok) return null;
+  // Games saved before the per-turn answer setting existed keep the old behaviour.
+  if (typeof g.settings!.revealEach !== "boolean") g.settings = { ...g.settings!, revealEach: false };
+  return g as GameState;
 }
 
 function initialScreen(): Screen {
