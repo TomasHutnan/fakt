@@ -3,6 +3,7 @@ title: Dano Drevo
 description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor, 18+.
 lang: sk
 adult: true
+warnings: [vulgar, sexual]
 version: 1
 questions:
   - id: dd-postavy-komnata
@@ -488,3 +489,75 @@ questions:
     why: "Popluhár mal vtedy so spolužiakmi štrnásť; prvý diel paroduje Tajomnú komnatu."
     difficulty: 2
     source: https://refresher.cz/33400-Peter-Popluhar-alias-Dano-Drevo-Mainstream-krajiny-nemusim-radsej-pojdem-do-Malawi-Rozhovor
+
+  - id: dd-pocet-kon
+    type: number
+    prompt: Koľkokrát zaznie v prvom filme, Dano Drevo a tajomná komnata, slovo „kôň“ (v akomkoľvek tvare)?
+    answer: 11
+    unit: krát
+    scale: linear
+    tolerance: 2
+    why: "Slovo „kôň“ v tvaroch kôň, koňa, koňom a kone je v titulkoch prvého filmu 11-krát, od „Ty kôň“ po „Kim ešte stále si kôň?“."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: dd-pocet-synek
+    type: number
+    prompt: Koľkokrát je v titulkoch prvého filmu, Dano Drevo a tajomná komnata, meno „Synek“ (v akomkoľvek tvare)?
+    answer: 60
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Synek, Syneka, Synekom, Synekovi aj s preklepom „Sinek“: v titulkoch prvého filmu spolu 60-krát. V Turnaji už len 4-krát, aj s bratrancom Rastíkom."
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: dd-pocet-inzinieri
+    type: number
+    prompt: Koľkokrát zaznie v prvom filme oslovenie „inžinieri“?
+    answer: 3
+    unit: krát
+    scale: linear
+    tolerance: 1
+    why: "Len trikrát, vždy od Poslušného: „Dobré ráno, inžinieri!“, „Čo sa vám vlastne stalo, inžinieri?“ a „Majte se inžinieri“. Slovo „inžinier“ v inom tvare v titulkoch nie je."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, počet výskytov; 00:16:52, 00:40:13, 01:34:39)"
+    tags: [pocet]
+
+  - id: dd-pocet-rysave-prasa
+    type: number
+    prompt: Koľkokrát zaznie v oboch filmoch spolu spojenie „ryšavé prasa“ (v akomkoľvek tvare, aj „ryšavé prasce“)?
+    answer: 4
+    unit: krát
+    scale: linear
+    tolerance: 1
+    why: "Iba štyrikrát: trikrát v prvom filme (aj „ryšavých prasatách“) a raz v Turnaji („Ryšavé prasce majú prednosť“). Slovo „ryšavý“ samotné padne 21-krát."
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: dd-pocet-gabor
+    type: number
+    prompt: Koľkokrát je v titulkoch filmu Dano Drevo a turnaj Mekyho Žbirku meno „Gábor“ (v akomkoľvek tvare)?
+    answer: 63
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Gábor, Gábora, Gáborov: 63-krát, väčšinou v skandovaní fanúšikov „Gábor! Gábor!“. V prvom filme je Chvostnatý Gábor spomenutý dvakrát."
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: dd-pocet-zbirka
+    type: number
+    prompt: Koľkokrát je v titulkoch filmu Dano Drevo a turnaj Mekyho Žbirku meno „Žbirka“ (v akomkoľvek tvare)?
+    answer: 50
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Žbirka, Žbirku, Žbirkov, Žbirkom: 50-krát, bez názvov jeho skladieb, ktoré vo filme hrajú. V prvom filme ani raz."
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov; bez názvov skladieb v hranatých zátvorkách)"
+    tags: [pocet]

@@ -1,0 +1,450 @@
+id: sk-dano-drevo-bez-cenzury
+title: Dano Drevo bez cenzúry
+description: "Druhý balíček o Danovi Drevovi, tentoraz s tým, čo prvý vynechal: rasistické a etnické vtipy (Cigáni, Maďari, Židia, Jozef Šlota), vtipy o Starom Janovi a deťoch a vulgarizmy. Je to satira, otázky citujú hlášky z filmov, nie názory autorov. Silne 18+."
+lang: sk
+adult: true
+warnings: [vulgar, sexual, racism, abuse, dark-humor]
+version: 1
+questions:
+  # --- Starý Jano ---
+
+  - id: ddbc-jano-dovod
+    type: choice
+    prompt: Prečo podľa Dana na začiatku prvého filmu nechce ísť do Rokfortu?
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 00:06:09–00:06:20)"
+    correct: { text: Minulý rok ho obťažoval Starý Jano, why: "„Tá minulý rok ma starý Jano obťažoval, on vždycky obťažuje chlapov.“" }
+    wrong:
+      - { text: Má hodinu logopédie, why: "Na logopédiu sa ponáhľa koktajúci Janko Španiel." }
+      - { text: Musí opraviť skriňu, why: "„Ta ja nie som opravár,“ odsekne Dano strýkovi." }
+      - { text: Bojí sa Paťa Syneka, why: "Naopak: „Ta minulý výprask mu nestačil?“" }
+
+  - id: ddbc-jano-postel
+    type: choice
+    prompt: "Na porade profesorov sa niekto pýta Starého Jana, či sa Drevo do turnaja nedostal cez jeho posteľ. Čo Starý Jano odpovie?"
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:36:37–00:36:43)"
+    correct: { text: "Žiaľ, tentokrát nie", why: "Z toho hneď vyplynie, že Drevo musel „ojebať systém“, a Kolman ho chce podľa Koránu oholiť." }
+    wrong:
+      - { text: "Opýtajte sa Mekyho", why: "Vymyslené; so Žbirkom sa podľa profesorov aj tak nedá skontaktovať." }
+      - { text: "Som predsa riaditeľ", why: "Vymyslené; tým sa Starý Jano Danovi vyhráža na konci prvého filmu." }
+      - { text: "Na to si nespomínam", why: "Vymyslené; Starý Jano si takéto veci pamätá veľmi presne." }
+
+  - id: ddbc-jano-fakty
+    type: pick
+    prompt: Čo všetko platí o Starom Janovi v oboch filmoch?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:06:31–00:06:37, 01:16:26–01:16:29, 02:19:39–02:20:31); Dano Drevo a turnaj Mekyho Žbirku (titulky, 01:47:18–01:47:24, 02:20:18–02:20:29)"
+    correct:
+      - { text: Píše Danovi listy s nemravnými vecami, why: "Janko Španiel ich má, ale Danovi ich nechce dať." }
+      - { text: Volá Dana kúpať sa do vírivky, why: "„Za chvíľu sa ideme kúpať do výrivky,“ vysvetlí Poslušnému." }
+      - { text: Vyhráža sa Danovi vyhodením zo školy, why: "„Som na tejto škole riaditeľom, takže ťa kedykoľvek môžem vyhodiť.“" }
+      - { text: Ponúkne Danovi svoj klobúk, why: "Ako odmenu, ak Dano prijme jeho „drobnú požiadavku“." }
+      - { text: Na súd prišiel kvôli mladému stážistovi, why: "„…na ktorého som mal zálusk.“" }
+      - { text: Zmietne zo stola Danovu žiadosť o prestup, why: "„Dokiaľ ja budem riaditeľom tejto školy…“" }
+      - { text: Je riaditeľom Rokfortu, why: "Paródia Dumbledora." }
+    wrong:
+      - { text: Bol tajným pomocníkom Mekyho Žbirku, why: "Dano ho podozrieva, no pomocníkom bol Jerguš Gombit." }
+      - { text: Hrá Travian v 14. najlepšej aliancii, why: "To je Ľudo Kolman." }
+      - { text: Prekonvertoval na islam, why: "Tiež Ľudo Kolman, podľa úvodu Turnaja." }
+      - { text: Utiekol z protialkoholického liečenia, why: "To robí Braňo Mojsej, „tento rok už štvrtý krát“." }
+      - { text: Predal Mekymu slzy afgánskych polosirôt, why: "Predal mu ich Kolman, 70 litrov." }
+      - { text: Vyhral triatlon bez obličiek, why: "Tým sa chváli Poslušný." }
+
+  - id: ddbc-urologia
+    type: choice
+    prompt: Aké nové pravidlo spíšu profesori na čele so Starým Janom kvôli hrozbe Paťa Syneka?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 01:36:45–01:37:01)"
+    correct: { text: Chlapci od 6 do 18 rokov chodia na urologickú prehliadku k Starému Janovi, why: "Povinne, a to „dva krát denne“. Druhé pravidlo posúva večierku zo siedmej na piatu." }
+    wrong:
+      - { text: Večierka sa posúva zo siedmej na deviatu, why: "Posúva sa naopak skôr, na piatu." }
+      - { text: Ľudo Kolman nesmie hrať Travian, why: "Prístup mu zablokovali už skôr, na tri a pol roka, a nie kvôli Synekovi." }
+      - { text: Na babské hajzle sa smie chodiť len vo dvojici, why: "Vymyslené, hoci vstup do Tajomnej komnaty je práve tam." }
+
+  - id: ddbc-stred-nad-bodrogom
+    type: choice
+    prompt: Kam sa Starý Jano na konci prvého filmu vyhráža Dana preložiť, ak Dano neprijme jeho „drobnú požiadavku“?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 02:19:49–02:20:26)"
+    correct: { text: Na priemyselné učilište v Strede nad Bodrogom, why: "Kde vraj maďarskí Cigáni robia nováčikom zle a kde je legendou Chvostnatý Gábor, hviezda druhého filmu." }
+    wrong:
+      - { text: Do rožňavskej polepšovne, why: "Tú v Turnaji kedysi viedol István Farkas, usvedčený z maďarizmu." }
+      - { text: Na Prednú Horu, why: "Tam vezú na protialkoholické liečenie Braňa Mojseja." }
+      - { text: Do francúzskej dedinky Chevance, why: "Odtiaľ prídu v Turnaji „hygienické“ súťažiačky s madam Brigitte de Fecalie." }
+
+  - id: ddbc-mojsej-koncert
+    type: choice
+    prompt: Čím presvedčí Braňo Mojsej Starého Jana, aby mu dal na koncert chatrč profesora Poslušného?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 01:40:05–01:41:42, 02:21:46)"
+    correct: { text: Povie mu, že väčšina divákov budú chlapci, why: "„9 z 12 ľudí čo prídu sú chlapci…“ Starý Jano im hneď ponúkne jedlo a prespanie u seba. Napokon neprišlo ani jedno dieťa." }
+    wrong:
+      - { text: Sľúbi mu fľašu vodky, why: "Vodku chce naopak Mojsej, a nedostane ju." }
+      - { text: Zaspieva mu moldavskú pesničku, why: "Tou Dano otvára Tajomnú komnatu." }
+      - { text: Ponúkne mu svoj klobúk, why: "Klobúk ponúka Starý Jano Danovi." }
+
+  - id: ddbc-jed
+    type: choice
+    prompt: Ako sa Dano vyhovorí, keď mu Starý Jano pripomenie, že povedal „Milujem starého Jana“?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 02:15:03, 02:16:46, 02:19:12–02:19:27)"
+    correct: { text: Povedal to pod vplyvom Paťovho jedu, why: "Prvými príznakmi jedu sú podľa DiskoMiňa „sklon ku klamstvám a drzosť“." }
+    wrong:
+      - { text: Bol opitý z borovičky, why: "Borovičku pil Peder." }
+      - { text: Myslel tým Ondreja Golonku, why: "Vymyslené; Golonka je priateľ Starého Jana." }
+      - { text: Zmýlil si ho s Poslušným, why: "Vymyslené." }
+
+  - id: ddbc-davidkovia
+    type: choice
+    prompt: "Ako pokračuje pieseň pavúkov v Dávidovom brlohu: „My sme malí Dávidkovia, čo radi malé…“?"
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 01:47:24–01:47:58)"
+    correct: { text: "…kurvy lovia", why: "Pavúky ju opakujú dookola, keď Dano a Peder nechcú Dávidovi čistiť riť." }
+    wrong:
+      - { text: "…mušky lovia", why: "Vymyslené; to by bola pieseň pre deti." }
+      - { text: "…hady lovia", why: "Vymyslené; Paťo Synek je Dávidov kamarát." }
+      - { text: "…ryšavcov lovia", why: "Vymyslené, hoci Peder by sa zišiel." }
+
+  # --- Synek, ilorexia, súboj ---
+
+  - id: ddbc-synek-obete
+    type: pick
+    prompt: Na koho si podľa postáv prvého filmu potrpí had Paťo Synek alebo kto si má dať pred ním pozor?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:50:20–00:50:34, 00:51:16–00:51:17, 01:37:06–01:37:11, 01:57:04, 02:06:03)"
+    correct:
+      - { text: ľudia s dlhou hlavou, why: "Spomína ich profesorka Mc. Mlynarčíková aj oznam profesorov." }
+      - { text: ľudia podľa farby pleti, why: "„Na svoje obete má vysokú špecializáciu… alebo farba pleti.“" }
+      - { text: mladé kobyly, why: "Narážka na Kim." }
+      - { text: ryšavé prasatá, why: "Narážka na Pedra." }
+      - { text: kurence, why: "„Obľúbenou potravou pre Syneka sú kurence.“" }
+      - { text: lesby, why: "Oznam profesorov; podľa Sárosimy je jeho obľúbené jedlo „lesba na syrovej omáčke“." }
+      - { text: černosi, why: "V tom istom ozname ako lesby a ľudia s dlhou hlavou." }
+      - { text: ryšavky, why: "„A okrem toho je ryšavka a tie sú Paťove obľúbené,“ hovorí DiskoMiňo o Ctibor." }
+    wrong:
+      - { text: okuliarnatí, why: "Danove okuliare Paťa nezaujímajú; oči mu vyklove vrabec." }
+      - { text: profesori fyziky, why: "Pipík sa Paťa bojí, no na jedálnom lístku nie je." }
+      - { text: škriatkovia, why: "S Jankom Španielom prežil Paťo „romantické chvíle“." }
+      - { text: sovy, why: "Vymyslené." }
+
+  - id: ddbc-ilorexia
+    type: choice
+    prompt: "Ilorexia „postihuje najmä kone“. U koho je podľa knihy o vírusových chorobách „takmer 100 % šanca výskytu“?"
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 00:52:25–00:52:33)"
+    correct: { text: U cigánskych židov, why: "Peder hneď dodá, že to Kim vystihuje, lebo je kôň." }
+    wrong:
+      - { text: U robotov, why: "Kim sa mení na robota Ile, ale to je príznak, nie riziková skupina." }
+      - { text: U opíc, why: "Opica je Janko Španiel, a ten sa práve vyliečil z malomocnosti." }
+      - { text: U ryšavých prasiat, why: "Tie sú podľa Mc. Mlynarčíkovej Synekovou potravou." }
+
+  - id: ddbc-kuzla
+    type: choice
+    prompt: Aké kúzla sú v súboji profesora Pipíka s Ľudom Kolmanom zakázané?
+    difficulty: 1
+    source: "Dano Drevo a tajomná komnata (titulky, 01:05:12–01:06:11)"
+    correct: { text: Židovské, why: "„Žiadne židovské čáry máry nie sú povolené.“ Kolmanovo kúzlo bolo napokon „cigánske“, takže pravidlá neporušil." }
+    wrong:
+      - { text: Cigánske, why: "Práve cigánske kúzlo Kolman použil, a bolo povolené." }
+      - { text: Moldavské, why: "Moldavská pesnička otvára Tajomnú komnatu." }
+      - { text: Hadie, why: "Pipík sa síce chváli, že vyštudoval serpentológiu, no hadie kúzla nezakazuje." }
+
+  - id: ddbc-ceremonia
+    type: choice
+    prompt: Akú „ďalšiu dobrú správu“ oznámia na záverečnej ceremónii prvého filmu, hneď po gratulácii tehotnej Nogeranči?
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, 02:27:50–02:28:22)"
+    correct: { text: Všetky kone a židia budú do týždňa utratení, why: "Odpoveďou je jediné „Supér“. V Turnaji sa na to nadväzuje: Kolman pod touto hrozbou prestúpil na islam." }
+    wrong:
+      - { text: Pipík sa vracia z Mozambiku, why: "Pipík sa vyhlasuje za Güntera Schweinsteigera." }
+      - { text: Kim sa vyliečila z ilorexie, why: "Kim je stále kôň, anglický teplokrovník." }
+      - { text: Ľudo Kolman dostane späť Travian, why: "Vymyslené; zákaz trvá tri a pol roka." }
+
+  - id: ddbc-kolman-islam
+    type: choice
+    prompt: Čo podľa úvodu Turnaja Mekyho Žbirku urobil Ľudo Kolman „pod hrozbou utratenia všetkých Židov“?
+    difficulty: 1
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:00:31–00:00:35)"
+    correct: { text: Prestúpil na islam, why: "Odvtedy cituje Korán a predáva slzy afgánskych polosirôt." }
+    wrong:
+      - { text: Utiekol do Mozambiku, why: "Do Mozambiku chcel utiecť Pipík kvôli ebole." }
+      - { text: Stal sa riaditeľom, why: "Riaditeľom ostáva Starý Jano." }
+      - { text: Nahradil profesora Pipíka, why: "Pipíka nahradil „jeden osobitý profesor“, Jozef Šlota." }
+
+  # --- Jozef Šlota ---
+
+  - id: ddbc-slota-nenavist
+    type: pick
+    prompt: Koho vymenuje Jozef Šlota, keď sa triede predstaví ako človek „známy svojou nenávisťou“?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:23:06–00:23:23)"
+    correct:
+      - { text: Maďarov, why: "„…najmä voči Maďarom“, a to hneď na prvom mieste." }
+      - { text: Aziatov, why: "„…ale aj Aziatom…“" }
+      - { text: Rómov, why: "Tretí v poradí." }
+      - { text: Indov, why: "Indického študenta vraj kedysi napchal do mikrovlnky." }
+      - { text: Polynézanov, why: "Najprekvapivejšia položka zoznamu." }
+      - { text: Hispáncov, why: "Predposledná položka." }
+      - { text: černochov, why: "Zoznam končí „a černochom“." }
+    wrong:
+      - { text: Slovákov, why: "Šlota je národniar; Maďari podľa neho rozstrieľali v Černovej 1 500 Slovákov." }
+      - { text: Nemcov, why: "Stanovi síce vyčíta, že je „Nemec“, ktorý podporuje Cigána, no v zozname nie sú." }
+      - { text: ryšavcov, why: "Ryšavcov z turnaja vylúči prieskum socialistického zväzu mládeže, Šlota ich nevymenuje." }
+      - { text: rockerov, why: "Kim nadáva do rockerov, no do zoznamu sa nedostali." }
+      - { text: Čechov, why: "V zozname nie sú." }
+
+  - id: ddbc-slota-hlasky
+    type: pick
+    prompt: Ktoré hlášky v Turnaji Mekyho Žbirku povie (falošný) profesor Jozef Šlota?
+    difficulty: 3
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, časy pri možnostiach)"
+    correct:
+      - { text: "Je to tu posiate maďarskými špiónmi!", why: "Na prvej hodine, 00:23:59." }
+      - { text: "Mať tak plameňomet, tak vypálim celý prvý stupeň", why: "Po Pederovom recitovaní Mor ho!, 00:24:41." }
+      - { text: "Tento chrobák bol odchytený pri Komárne, a teda je to Maďar", why: "Chrobák je vraj prevtelený žandár z Černovej, 00:25:46." }
+      - { text: "Žiadny debilný rocker s dlhými vlasmi mi nebude rozprávať, čo mám učiť!", why: "Kim, 00:23:46." }
+      - { text: "Pripomínaš mi mňa v ranom detstve – mladý rasista!", why: "Danovi po hádke so Stanom, 00:52:35." }
+      - { text: "Drevo, strašne máš krásnu tvár", why: "Podozrivý kompliment, 00:27:52. Pod maskou je Jerguš Gombit, ktorý hľadá tvár pre Mekyho." }
+    wrong:
+      - { text: "Veľký Alah to všetko vidí", why: "Ľudo Kolman, keď mu Dano nekúpi slzy, 01:50:01." }
+      - { text: "Celkom rád odpisujem vodomery", why: "Dano Šlotovi, 00:53:47." }
+      - { text: "Dračí trus, Brigita", why: "Poslušný, 00:47:54." }
+      - { text: "Vyluhuj cikulu v harmančeku", why: "Šaňo Fekete predáva riešenie hádanky, 01:25:35." }
+      - { text: "Vedel si, že každý štvrtý človek na svete je moslim?", why: "Ľudo Kolman, 01:48:54." }
+
+  - id: ddbc-cernova
+    type: number
+    prompt: Koľko Slovákov podľa Jozefa Šlotu rozstrieľali Maďari počas Černovskej tragédie?
+    answer: 1500
+    unit: Slovákov
+    scale: log
+    tolerance: 0.15
+    why: "Šlota tvrdí 1 500. V skutočnosti si tragédia 27. októbra 1907 vyžiadala 15 mŕtvych, takže prehnal stokrát. Deň a mesiac však trafil."
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:23:31–00:23:52); https://sk.wikipedia.org/wiki/%C4%8Cernovsk%C3%A1_trag%C3%A9dia"
+
+  - id: ddbc-drevorubaci
+    type: choice
+    prompt: Prečo si Šlota myslí, že Dano má čistokrvne slovanských predkov?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:52:06–00:52:28)"
+    correct: { text: Kvôli priezvisku Drevo, why: "Vraj to predznamenáva predkov drevorubačov zo Slovenského rudohoria. Danova odpoveď o mame a polesnom to veľmi nepotvrdí." }
+    wrong:
+      - { text: Lebo vie naspamäť Mor ho!, why: "Mor ho! mal recitovať Peder a dostal päťku." }
+      - { text: Lebo nemá rád Žbirku, why: "To je pravda, no Šlota to neuvádza." }
+      - { text: Lebo bol na exkurzii v Černovej, why: "Vymyslené; s triedou boli na rimavskosobotskom cintoríne." }
+
+  - id: ddbc-mikrovlnka
+    type: choice
+    prompt: Prečo podľa klebiet Šlotu pred piatimi rokmi vyhodili zo školy?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:20:49–00:21:01)"
+    correct: { text: Napchal do mikrovlnky indického študenta, why: "Lebo mu zaželal dobré ráno. Pri obhajobe začal vrieskať slovenskú hymnu." }
+    wrong:
+      - { text: Písal hovadiny na tabuľu, why: "To podľa vlastných slov robí, „keď ma serú malí sprostí fagani“, no vyhodili ho za niečo iné." }
+      - { text: Počas hodín hral Travian, why: "To je Ľudo Kolman." }
+      - { text: Prišiel na hodinu opitý, why: "Orešanské vínko si dá až neskôr, keď sa háda so Stanom." }
+
+  - id: ddbc-sns
+    type: choice
+    prompt: Na čo sa ako prvé spýta pravý Jozef Šlota, keď ho na konci Turnaja oslobodia?
+    difficulty: 1
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 02:15:48–02:16:02)"
+    correct: { text: Či je SNS stále v parlamente, why: "„Neboj Jožko, SNS je stále tam,“ upokojí ho Kolman." }
+    wrong:
+      - { text: Kto vyhral turnaj, why: "Turnaj ho vôbec nezaujíma." }
+      - { text: Kde je Meky Žbirka, why: "Mekyho vtedy hľadajú všetci ostatní." }
+      - { text: Či ešte stojí Komárno, why: "Vymyslené." }
+
+  # --- Turnaj ---
+
+  - id: ddbc-losovanie
+    type: choice
+    prompt: Pod akou prezývkou vytiahne Meky z modrastého plamienka posledného súťažiaceho, Šaňa Feketeho?
+    difficulty: 1
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:32:02–00:32:56, 02:05:14)"
+    correct: { text: Pojebatý Cigán, why: "Z publika sa ozve „Abys skapal Cigoš!“ a „Je to čierny Cigán.“" }
+    wrong:
+      - { text: 37 centimetrov, why: "To je Chvostnatý Gábor; „tak to je myslím jasné“." }
+      - { text: Najväčšia štetka, why: "Zuzana de Merde." }
+      - { text: Čierny kôň, why: "Tak volá Meky na konci Dana, „alebo ako sa v Anglicku hovorí, black horse“." }
+
+  - id: ddbc-kung-pao
+    type: choice
+    prompt: Čo ponúkne predavačka z vozíka s jedlom vo vlaku namiesto Kung Pao?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:13:52–00:14:21)"
+    correct: { text: Sushi, why: "„Kung Pao nemáme, ty šikmooké monštrum, ale tu máš sushi. Do plynu s týmito východniarmi.“" }
+    wrong:
+      - { text: Rožky s treskou, why: "Tie si objedná Peder, spolu s alpou, okenou a cigaretami." }
+      - { text: Čabajku, why: "„Smrdím jak čabajka,“ povie Peder v róbe z maďarského secondhandu." }
+      - { text: Hovnovú pomazánku, why: "Tú niekto „ponúkne“ až pri príchode do Rokfortu, a len zo žartu." }
+
+  - id: ddbc-doberman
+    type: choice
+    prompt: Danovi zdochol doberman a pýta si recept od spolužiačky, „ako Aziatky“. Čo mu nakoniec poradí?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 01:12:41–01:13:33)"
+    correct: { text: Sójovú omáčku a zázvor, why: "Najprv ho pokarhá, že ich kultúra nie je jedenie psov, ale „Budha, tajomno, pingpong“. Potom za ním aj tak zakričí recept." }
+    wrong:
+      - { text: Vyhodiť ho do koša, why: "To navrhne sklamaný Dano, kým ho nezavolá späť." }
+      - { text: Harmanček, why: "V harmančekovej vode treba otvoriť zlaté vajce." }
+      - { text: Pot kazašských prasných svíň, why: "Ten si dáva Poslušný do vlasov." }
+
+  - id: ddbc-kokotleba
+    type: choice
+    prompt: Ako sa volá „slovenský ľudový drak“ z prvej disciplíny, ktorý si hľadá potravu „v osadách na východe Slovenska“?
+    difficulty: 1
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:56:05–00:56:35)"
+    correct: { text: Kokotleba, why: "Narážka na Mariana Kotlebu." }
+    wrong:
+      - { text: Kokoticius, why: "To je latinský drak." }
+      - { text: Kokotovič, why: "To je americký drak." }
+      - { text: Rastík, why: "Rastislav Synek, bratranec hada Paťa, pripadne Danovi." }
+
+  - id: ddbc-ples
+    type: choice
+    prompt: Za akej podmienky môžu na Rokfortský ples prísť podľa oznamu aj Cigáni?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 01:07:01–01:07:22)"
+    correct: { text: Po nainštalovaní kamier v hlavnej hale, why: "„…aby sa predišlo krádežiam.“ Ostatné minority, Arabi, ženy, černosi a ľudoopi, môžu prísť bez podmienky. Strieborný príbor aj tak zmizne." }
+    wrong:
+      - { text: Ak si oholia pazuchy, why: "Hygienické rady pred plesom dostali slečny." }
+      - { text: Ak ich osobne pozve Starý Jano, why: "Vymyslené." }
+      - { text: Ak to schváli Jozef Šlota, why: "Šlota sa naopak snažil, aby minority na ples nesmeli." }
+
+  # --- Šaňo Fekete ---
+
+  - id: ddbc-pohreb-veci
+    type: pick
+    prompt: Na pohrebe Šaňa Feketeho sa lúčia s vecami, ktoré si od všetkých požičal. Ktoré z týchto sú v zozname?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 02:19:02–02:19:21)"
+    correct:
+      - { text: forinty, why: "Hneď po „drahých peniazoch“." }
+      - { text: puklice, why: "Spolu s autorádiami." }
+      - { text: dopravné značky, why: "Medzi chladičmi a karburátormi." }
+      - { text: karburátory, why: "Predposledná položka." }
+      - { text: pneumatiky, why: "Hneď po elektronike." }
+      - { text: starožitnosti, why: "Za autorádiami a puklicami." }
+      - { text: reťaze, why: "Zoznam končí reťazami." }
+      - { text: bicykle, why: "Medzi pneumatikami a chladičmi." }
+    wrong:
+      - { text: kone, why: "Kone majú na Rokforte iný osud." }
+      - { text: knihy Zavárame na chalupe, why: "Tú dostane víťaz turnaja." }
+      - { text: Poltársky ozdobný válov, why: "Ten sa hľadal v bludisku." }
+      - { text: slipy, why: "V zozname nie sú; Stano o Šaňovi tvrdil len, že si ich „aspoň neobsiera“." }
+      - { text: mobilné telefóny, why: "V zozname nie sú, hoci elektronika áno." }
+
+  - id: ddbc-pohreb-suma
+    type: number
+    prompt: Koľko eur podľa smútočnej reči „odišlo“ so Šaňom Feketem?
+    answer: 17344
+    unit: €
+    scale: log
+    tolerance: 0.15
+    why: "„So Šaňom Feketem odišlo neuveriteľných 17 344 €.“ Danovi z toho dlžil 16 € na operáciu očí."
+    difficulty: 3
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 02:18:54–02:18:56)"
+
+  - id: ddbc-pozostatky
+    type: choice
+    prompt: Čo sa podľa smútočnej reči stane s pozostatkami Šaňa Feketeho?
+    difficulty: 2
+    source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, 02:18:41–02:18:51)"
+    correct: { text: Pridajú ich do detských zásypov, why: "„Celý život nás mal u riti. Tak teraz ho budeme mať u riti my.“" }
+    wrong:
+      - { text: Zakopú ich pri školskej žumpe, why: "Tak pochovajú sestru Zuzany de Merde z disciplíny v rybníku." }
+      - { text: Hodia ich havranom, why: "To hrozilo súťažiacim, ktorých drak nezožerie." }
+      - { text: Pošlú ich do Komárna, why: "Vymyslené." }
+
+  # --- Počty ---
+
+  - id: ddbc-pocet-kurva
+    type: number
+    prompt: Koľkokrát je v titulkoch oboch filmov spolu slovo „kurva“ (v akomkoľvek tvare)?
+    answer: 57
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Kurva, kurvy, kurvu, kurví a podobné tvary začínajúce na „kurv-“: 23-krát v prvom filme a 34-krát v Turnaji (bez názvu skladby Špinavá kurva). Tvary so „skurv-“ (skurvený, skurvysyn) sú navyše ďalších 18."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-pocet-jeb
+    type: number
+    prompt: Koľko slov so základom „jeb“ (jebem, jebo, najebal, vyjebaný…) je v titulkoch oboch filmov spolu?
+    answer: 137
+    unit: slov
+    scale: log
+    tolerance: 0.2
+    why: "Každé slovo, ktoré obsahuje „jeb“: 25 v prvom filme a 112 v Turnaji, vrátane prezývky „Dano Jebo“. Druhý film je o poznanie sprostejší."
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-pocet-cigan
+    type: number
+    prompt: Koľkokrát je v titulkoch oboch filmov spolu slovo „Cigán“ alebo „Cigoš“ (v akomkoľvek tvare)?
+    answer: 43
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Cigán, Cigáň, cigánsky, Cigánka, Cigoš a ďalšie tvary: 5-krát v prvom filme a 38-krát v Turnaji. Slovo „Róm“ a jeho tvary (Romák, rómsky) je v titulkoch len 7-krát."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-pocet-madar
+    type: number
+    prompt: Koľkokrát je v titulkoch oboch filmov spolu slovo „Maďar“ (v akomkoľvek tvare, aj maďarský, maďarčina)?
+    answer: 24
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Slová začínajúce na „maďar-“: 2-krát v prvom filme a 22-krát v Turnaji, od „mančaftu Maďarov zo Stredy nad Bodrogom“ po Šlotove hodiny dejepisu. „Staromaďarčinu“ z prvého filmu nerátame."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-pocet-zid
+    type: number
+    prompt: Koľkokrát je v titulkoch oboch filmov spolu slovo „Žid“ (v akomkoľvek tvare, aj židovský)?
+    answer: 8
+    unit: krát
+    scale: linear
+    tolerance: 2
+    why: "Slová začínajúce na „žid-“ (aj „židoboľševik“): po 4-krát v každom filme. Od židovských kúziel v súboji po „starú židovskú medicínu“ pre Mekyho."
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-pocet-stary-jano
+    type: number
+    prompt: Koľkokrát je v titulkoch prvého filmu, Dano Drevo a tajomná komnata, spojenie „Starý Jano“ (v akomkoľvek páde)?
+    answer: 37
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: "Starý Jano, Starého Jana, Starému Janovi, so Starým Janom: 37-krát v prvom filme. V Turnaji ešte 12-krát, ak rátame aj „Starého Jánoša“ z maďarského súdu."
+    difficulty: 2
+    source: "Dano Drevo a tajomná komnata (titulky, počet výskytov)"
+    tags: [pocet]
+
+  - id: ddbc-poradie-slov
+    type: order
+    prompt: Zoraď slová podľa toho, koľkokrát sú (v akomkoľvek tvare) v titulkoch oboch filmov, od najčastejšieho.
+    direction: desc
+    unit: výskytov
+    difficulty: 3
+    source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
+    tags: [pocet]
+    items:
+      - { text: "jeb- (jebem, jebo, vyjebaný…)", value: 137, why: "Najčastejší koreň v oboch filmoch, 112-krát len v Turnaji." }
+      - { text: kurva, value: 57, why: "Tesne pred ňou by bol „kokot“ s 56 výskytmi." }
+      - { text: Cigán, value: 43, why: "Spolu s „Cigošom“; 38-krát v Turnaji." }
+      - { text: Maďar, value: 24, why: "Rovnako často ako „hovno“." }
+      - { text: buzerant, value: 13, why: "Aj s „buznou“; päťkrát za sebou ho Dano zakričí na DiskoMiňa v Tajomnej komnate." }
+      - { text: Žid, value: 8, why: "Po štyrikrát v každom filme." }
