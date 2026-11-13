@@ -1,0 +1,427 @@
+id: sk-jedlo-pitie
+title: Jedlo a pitie
+description: Tradičné jedlá, syry, sladkosti, nápoje, víno, pivo a sviatočné špeciality zo Slovenska.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: vinohradnicke-oblasti
+    type: pick
+    prompt: Ktoré z týchto oblastí patria oficiálne medzi 6 vinohradníckych oblastí Slovenska?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Vinohradnícke_oblasti_Slovenska
+    correct:
+      - { text: Malokarpatská, why: Najväčšia a najrozmanitejšia oblasť, ťahá sa od Bratislavy po Skalicu a má 12 rajónov. }
+      - { text: Južnoslovenská, why: Oblasť pozdĺž Dunaja a južných hraníc, patrí do nej napríklad Strekov. }
+      - { text: Nitrianska, why: Oblasť v povodí Nitry s 9 vinohradníckymi rajónmi. }
+      - { text: Stredoslovenská, why: Oblasť stredného Slovenska so 7 rajónmi, patrí do nej aj Gemerský rajón. }
+      - { text: Východoslovenská, why: Najvýchodnejšia z veľkých oblastí, má 4 rajóny. }
+      - { text: Vinohradnícka oblasť Tokaj, why: Najmenšia slovenská oblasť, nemá rozdelenie na rajóny. }
+    wrong:
+      - { text: Záhorská, why: Záhorský rajón je súčasťou Malokarpatskej oblasti, samostatná oblasť to nie je. }
+      - { text: Pohronská, why: Takú vinohradnícku oblasť Slovensko oficiálne nemá. }
+      - { text: Zemplínska, why: Zemplín samostatnú oblasť nemá, vinice patria pod Východoslovenskú alebo Tokaj. }
+      - { text: Gemerská, why: Gemerský rajón patrí do Stredoslovenskej oblasti. }
+      - { text: Tatranská, why: Takú vinohradnícku oblasť Slovensko oficiálne nemá. }
+      - { text: Považská, why: Takú vinohradnícku oblasť Slovensko oficiálne nemá. }
+      - { text: Oravská, why: Orava medzi oficiálne vinohradnícke oblasti Slovenska nepatrí. }
+
+  - id: pivovary-slovensko
+    type: pick
+    prompt: Ktoré z týchto známych pív vznikli pôvodne na Slovensku (nie v Česku ani v zahraničí)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Beer_in_Slovakia
+    correct:
+      - { text: Zlatý Bažant, why: Pivovar v Hurbanove vyrába pivo od roku 1969 a v roku 1971 ako prvý v Československu plnil pivo do plechoviek. }
+      - { text: Šariš, why: Značka z pivovaru vo Veľkom Šariši pri Prešove, ktorý patrí k najväčším na Slovensku. }
+      - { text: Urpiner, why: Značka banskobystrického pivovaru. }
+      - { text: Steiger, why: Značka pivovaru vo Vyhniach pri Banskej Štiavnici. }
+      - { text: Corgoň, why: Slovenská značka spájaná s Nitrou. }
+      - { text: Topvar, why: Značka pôvodom z Topoľčian, dnes sa varí vo Veľkom Šariši. }
+      - { text: Smädný mních, why: Slovenská značka Pivovaru Šariš. }
+    wrong:
+      - { text: Radegast, why: Pivo z moravských Nošovíc, pomenované podľa slovanského boha. }
+      - { text: Starobrno, why: Tradičný pivovar z moravskej metropoly Brno. }
+      - { text: Velkopopovický Kozel, why: Česká značka z Velkých Popovíc pri Prahe. }
+      - { text: Gambrinus, why: Jedna z najznámejších českých značiek, varí sa v Plzni. }
+      - { text: Krušovice, why: Historický pivovar zo stredných Čiech. }
+      - { text: Ostravar, why: Pivovar z českej Ostravy. }
+      - { text: Zubr, why: Moravské pivo z Přerova, nie zo Slovenska. }
+
+  - id: sladkosti-napoje-slovensko
+    type: pick
+    prompt: Ktoré z týchto známych sladkostí a nealko nápojov z čias Československa vznikli na území dnešného Slovenska?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Horalky
+    correct:
+      - { text: Horalky, why: Vyrába ich Sedita v Seredi; spočiatku sa volali Tatranky a v roku 1965 lieskovce nahradili arašidmi. }
+      - { text: Mila, why: Oblátková sladkosť od seredskej Sedity. }
+      - { text: Kávenky, why: Kávové rezy od seredskej Sedity. }
+      - { text: Lina, why: Oblátková tyčinka od seredskej Sedity. }
+      - { text: Vinea, why: Hroznový nápoj vymyslený na Slovensku v roku 1973 kolektívom okolo Jána Farkaša. }
+      - { text: Deva, why: Čokoládovňa v Trebišove, kde sa sladkosti vyrábajú od roku 1951. }
+    wrong:
+      - { text: Kofola, why: Sirup Kofo vyvinuli v Prahe v roku 1959, je to česká záležitosť. }
+      - { text: Fidorka, why: Oplátka v čokoláde pochádza z českej Opavy. }
+      - { text: Lentilky, why: Farebné dražé sa od roku 1907 vyrábajú v moravskom Holešove. }
+      - { text: Margot, why: Kokosová tyčinka z českej čokoládovne Orion. }
+      - { text: Studentská pečeť, why: Kultová čokoláda českej značky Orion. }
+
+  - id: stedry-vecer-jedla
+    type: pick
+    prompt: Ktoré z týchto jedál a pochúťok tradične patria na štedrovečerný stôl na Slovensku?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Slovenská_kuchyňa
+    correct:
+      - { text: Kapustnica, why: Hustá polievka z kyslej kapusty, v mnohých regiónoch so sušenými hríbmi, slivkami či klobásou. }
+      - { text: Vianočné oblátky s medom, why: Jedia sa na začiatku večere, často s medom a cesnakom. }
+      - { text: Bobaľky (opekance), why: Malé pečené guľôčky z kysnutého cesta, podávané s makom alebo s kapustou. }
+      - { text: Vyprážaný kapor, why: Typická hlavná chuť štedrovečernej večere. }
+      - { text: Zemiakový šalát, why: Tradičná príloha ku kaprovi. }
+      - { text: Štedrák, why: Sladké vianočné pečivo, ktoré patrí k sviatočnému stolu. }
+    wrong:
+      - { text: Veľkonočná hrudka (syrek), why: Vaječno-mliečna špecialita patrí na Veľkú noc, nie na Vianoce. }
+      - { text: Paska, why: Slávnostný koláč sa nosí svätiť v košíku na Veľkú noc. }
+      - { text: Pečený moriak s plnkou, why: Typické jedlo na Deň vďakyvzdania v USA, nie na slovenský Štedrý večer. }
+      - { text: Veľkonočný baranček, why: Sladké pečivo patrí k jarným sviatkom. }
+      - { text: Anglický slivkový puding, why: Britská vianočná tradícia, u nás netypická. }
+      - { text: Údená šunka s chrenom, why: Klasika veľkonočného stola po konci pôstu. }
+
+  - id: velkonocne-jedla
+    type: pick
+    prompt: Ktoré z týchto jedál a pochúťok sa na Slovensku tradične pripravujú na Veľkú noc?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Slovenská_kuchyňa
+    correct:
+      - { text: Hrudka (syrek), why: Vaječno-mliečna sladká alebo slaná špecialita, najmä na východe Slovenska. }
+      - { text: Paska, why: Kysnutý sviatočný koláč, súčasť posväteného košíka. }
+      - { text: Varená údená šunka, why: Hlavné mäsové jedlo po skončení štyridsaťdňového pôstu. }
+      - { text: Strúhaný chren s cviklou, why: Štipľavá príloha k šunke, klobáse a vajíčkam. }
+      - { text: Piškótový baranček, why: Pečivo v tvare baránka z dvojdielnej formy. }
+      - { text: Vajíčka uvarené natvrdo, why: Patria do veľkonočného košíka aj na sviatočný stôl. }
+    wrong:
+      - { text: Bobaľky (opekance), why: Patria na Štedrý večer, nie na Veľkú noc. }
+      - { text: Vianočné oblátky, why: Tradičný začiatok štedrovečernej večere. }
+      - { text: Štedrák, why: Sladké pečivo, ktoré sa spája s Vianocami. }
+      - { text: Vyprážaný kapor, why: Vianočné jedlo, nie veľkonočné. }
+      - { text: Bryndzové halušky, why: Slovenské národné jedlo na každý deň, nie veľkonočná špecialita. }
+      - { text: Zemiakové lokše, why: Spájajú sa skôr s jeseňou a husacími hodmi než s Veľkou nocou. }
+      - { text: Treska v majonéze, why: Šalát zo socialistického bufetu, bez väzby na veľkonočné zvyky. }
+
+  - id: mineralne-vody-slovensko
+    type: pick
+    prompt: Ktoré z týchto prírodných minerálnych vôd pramenia na Slovensku?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Minerálna_voda
+    correct:
+      - { text: Budiš, why: Slovenská minerálka z vrtu v obci Budiš v Turčianskej kotline, jedna z najznámejších. }
+      - { text: Fatra, why: Minerálna voda z vrtov v Martine. }
+      - { text: Gemerka, why: Pramení na Gemeri v oblasti Slovenského krasu. }
+      - { text: Korytnica, why: Minerálka z kúpeľov Korytnica pri Ružomberku. }
+      - { text: Sulínka, why: Pramení pri obci Sulín v údolí rieky Poprad. }
+      - { text: Mitická, why: Plní sa z prameňa v Trenčianskych Miticiach. }
+      - { text: Baldovská, why: Pramení v Baldovciach pri Spišskom Podhradí. }
+    wrong:
+      - { text: Mattoni, why: Slávna česká minerálka z Kyselky pri Karlových Varoch. }
+      - { text: Magnesia, why: Česká minerálka zo západných Čiech, z oblasti Slavkovského lesa. }
+      - { text: Korunní, why: Česká minerálna voda z okolia Karlových Varov. }
+      - { text: Poděbradka, why: Pochádza zo stredočeského kúpeľného mesta Poděbrady. }
+      - { text: Vincentka, why: Liečivá minerálka z moravských kúpeľov Luhačovice. }
+      - { text: Radenska, why: Známa slovinská minerálna voda. }
+      - { text: Bílinská kyselka, why: Pramení v Bíline na severe Čiech. }
+
+  - id: zemiaky-tradicne-jedla
+    type: pick
+    prompt: V ktorých z týchto tradičných slovenských jedál sú zemiaky základnou surovinou cesta alebo samotného pokrmu?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Slovenská_kuchyňa
+    correct:
+      - { text: Bryndzové halušky, why: Cesto na halušky sa robí zo strúhaných zemiakov, múky a soli. }
+      - { text: Strapačky, why: Zemiakové halušky premiešané s dusenou kyslou kapustou. }
+      - { text: Zemiakové lokše, why: Tenké placky z varených zemiakov a múky pečené nasucho na platni. }
+      - { text: Haruľa (zemiaková placka), why: Placka zo strúhaných surových zemiakov; na Orave jej hovoria aj baba. }
+      - { text: Šúľance, why: Cesto na šúľance (napríklad s makom) sa pripravuje z varených zemiakov. }
+      - { text: Džatky, why: Spišské jedlo z drobných guliek zo zemiakov a múky, podáva sa so slaninou. }
+    wrong:
+      - { text: Bobaľky (opekance), why: Robia sa z kysnutého pšeničného cesta bez zemiakov. }
+      - { text: Štedrák, why: Kysnuté cesto plnené makom, orechmi, tvarohom a lekvárom. }
+      - { text: Parené buchty, why: Sladké buchty z kysnutého múčneho cesta pripravené nad parou. }
+      - { text: Skalický trdelník, why: Pečivo z kysnutého pšeničného cesta namotané na valec. }
+      - { text: Bratislavský rožok, why: Pšeničné pečivo s makovou alebo orechovou plnkou. }
+      - { text: Rezance s makom, why: Cestoviny z múky, zemiaky v nich nie sú. }
+
+  - id: chranene-vyrobky-eu
+    type: pick
+    prompt: Ktoré z týchto slovenských potravín majú v EÚ registrované chránené označenie (CHOP, CHZO alebo ZTŠ)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://www.mpsr.sk/politikakvality/?go=8&offset=7
+    correct:
+      - { text: Slovenská bryndza, why: Chránené zemepisné označenie (CHZO) získala v júli 2008. }
+      - { text: Slovenský oštiepok, why: Do európskeho registra CHZO ho zapísali v septembri 2008. }
+      - { text: Slovenská parenica, why: Parený zvinutý syr s CHZO. }
+      - { text: Skalický trdelník, why: Prvý slovenský výrobok s ochranou CHZO, zapísaný v decembri 2007. }
+      - { text: Paprika Žitava, why: Prvý slovenský výrobok s prísnejším Chráneným označením pôvodu (CHOP), zapísaný v roku 2014. }
+      - { text: Spišské párky, why: V roku 2011 získali štatút Zaručenej tradičnej špeciality (ZTŠ). }
+      - { text: Bratislavský rožok, why: Má od roku 2012 štatút ZTŠ. }
+      - { text: Klenovecký syrec, why: Gemerský zrejúci syr, ktorý má CHZO. }
+    wrong:
+      - { text: Bryndzové halušky, why: Napriek národnému statusu ako pokrm v registri EÚ nie sú. }
+      - { text: Treska v majonéze, why: Kultový šalát európske chránené označenie nemá. }
+      - { text: Horalky, why: Je to značka výrobcu, nie zemepisné označenie EÚ. }
+      - { text: Vinea, why: Nápoj má ochrannú známku, nie CHOP, CHZO ani ZTŠ. }
+      - { text: Kapustnica, why: Každá rodina ju varí inak, v registri EÚ nie je. }
+      - { text: Zemiakové lokše, why: V európskom registri kvality zapísané nie sú. }
+
+  - id: madarske-jedla-povod
+    type: pick
+    prompt: Ktoré z týchto jedál obľúbených na Slovensku majú pôvod v maďarskej alebo uhorskej kuchyni?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Guláš
+    correct:
+      - { text: Guláš, why: Názov pochádza z maďarského gulyás, teda pastiera dobytka. }
+      - { text: Langoš, why: Maďarská vyprážaná placka z kysnutého cesta (lángos). }
+      - { text: Lečo, why: Zeleninové jedlo z papriky, paradajok a cibule pochádza z maďarskej kuchyne (lecsó). }
+      - { text: Halászlé, why: Pikantná rybacia polievka s paprikou, typická pre povodie Dunaja a Tisy. }
+      - { text: Perkelt, why: Mäso dusené na cibuľovo-paprikovom základe (pörkölt). }
+      - { text: Segedínsky guláš, why: Napriek názvu nevznikol v Segedíne, ale v Pešti; ide o kapustový pokrm székelykáposzta. }
+    wrong:
+      - { text: Sviečková na smotane, why: Klasika českej kuchyne s knedľou. }
+      - { text: Viedenský rezeň, why: Rakúska špecialita (Wiener Schnitzel). }
+      - { text: Treska v majonéze, why: Slovenský šalát z čias socializmu, výroba sa začala v roku 1954. }
+      - { text: Kulajda, why: Smotanová polievka z južných Čiech. }
+      - { text: Tafelspitz, why: Rakúske varené hovädzie, známe z Viedne. }
+      - { text: Kaiserschmarrn, why: Rakúska sladká pochúťka z natrhanej palacinky. }
+
+  - id: syry-ovcie-mlieko
+    type: pick
+    prompt: Ktoré z týchto syrov a mliečnych špecialít sa vyrábajú z ovčieho mlieka alebo majú povinný výrazný podiel ovčieho (nie výhradne kravského)?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Bryndza
+    correct:
+      - { text: Slovenská bryndza, why: Musí obsahovať viac než polovicu ovčieho hrudkového syra. }
+      - { text: Slovenská parenica, why: Pri zmesi s kravským mliekom musí byť ovčieho najmenej 50 %. }
+      - { text: Žinčica, why: Nápoj zo srvátky, ktorá zostane po výrobe ovčieho syra. }
+      - { text: Grécka feta, why: Chránený grécky syr z ovčieho mlieka, prípadne s malým podielom kozieho. }
+      - { text: Talianske pecorino, why: Názov pochádza z talianskeho pecora, ovca. }
+      - { text: Francúzsky roquefort, why: Slávny modrý syr sa vyrába zo surového ovčieho mlieka. }
+    wrong:
+      - { text: Tekovský salámový syr, why: Chránený syr z Tekova sa vyrába z kravského mlieka. }
+      - { text: Olomoucké syrečky, why: Moravský syr z kravského tvarohu. }
+      - { text: Mozzarella di bufala, why: Pravá kampánska mozzarella sa vyrába z byvolieho mlieka. }
+      - { text: Taliansky parmezán, why: Parmigiano Reggiano sa vyrába výhradne z kravského mlieka. }
+      - { text: Český hermelín, why: Česká obdoba camembertu sa robí z kravského mlieka. }
+      - { text: Eidam, why: Polotvrdý syr holandského typu sa vyrába z kravského mlieka. }
+
+  - id: liehoviny-slovensko
+    type: pick
+    prompt: Ktoré z týchto známych liehovín a destilátov vznikli alebo sa tradične vyrábajú na Slovensku?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://spectator.sme.sk/c/23328202/slovak-borovicka-receives-protected-status-from-european-commission.html
+    correct:
+      - { text: Tatratea, why: Čajovo-bylinný likér z Kežmarku. }
+      - { text: Demänovka, why: Bylinný likér spojený s Liptovským Mikulášom. }
+      - { text: Karpatské brandy špeciál, why: Slovenský vínny destilát z Pezinka. }
+      - { text: Spišská borovička, why: Borievkový destilát so zemepisným označením liehovín EÚ. }
+      - { text: Trenčianska borovička Juniperus, why: V máji 2024 získala zemepisné označenie liehovín EÚ. }
+      - { text: Bošácka slivovica, why: Ovocný destilát z Bošáckej doliny na Považí. }
+    wrong:
+      - { text: Becherovka, why: Bylinný likér z českých Karlových Varov. }
+      - { text: Fernet Stock, why: Horký bylinný likér, ktorý vyrába česká firma Stock v Plzni. }
+      - { text: Slivovica R. Jelínek, why: Moravská slivovica z Vizovíc. }
+      - { text: Unicum, why: Maďarský horký bylinný likér z Budapešti. }
+      - { text: Jägermeister, why: Nemecký bylinný likér z Dolného Saska. }
+
+  - id: slovenske-regionalne-speciality
+    type: pick
+    prompt: Ktoré z týchto tradičných jedál a pečív sú regionálnymi špecialitami zo Slovenska (nie z okolitých krajín)?
+    difficulty: 2
+    source: https://regiongemer.sk/en/explore/muran-buns
+    correct:
+      - { text: Muránske buchty, why: Kysnuté pečené buchty z Muráňa s regionálnou značkou Gemer-Malohont; v roku 2025 získali aj európsku ochranu CHZO. }
+      - { text: Džatky, why: Zemiakové guľky zo Spiša, podávané so slaninou. }
+      - { text: Skalický trdelník, why: Duté pečivo zo Skalice na Záhorí, prvý slovenský výrobok s ochranou EÚ. }
+      - { text: Bratislavský rožok, why: Pečivo s makovou alebo orechovou plnkou z bratislavskej tradície, v EÚ chránené ako ZTŠ. }
+      - { text: Klenovecký syrec, why: Zrejúci syr z Klenovca na Gemeri s CHZO. }
+      - { text: Slovenská parenica, why: Parený a zvinutý syr, ktorý má CHZO. }
+    wrong:
+      - { text: Valašský frgál, why: Veľký okrúhly koláč z moravského Valašska v Česku. }
+      - { text: Krkonošské kyselo, why: Kyslá polievka z Krkonôš v severných Čechách. }
+      - { text: Olomoucké tvarůžky, why: Zrejúci syr z moravských Loštíc pri Olomouci. }
+      - { text: Jihočeská kulajda, why: Smotanová polievka z južných Čiech. }
+      - { text: Poľský bigos, why: Tradičné poľské jedlo z dusenej kapusty a mäsa. }
+      - { text: Poľský žurek, why: Poľská kyslá polievka z ražného kvásku. }
+
+  - id: festivaly-jedla-sk
+    type: pick
+    prompt: Ktoré z týchto podujatí sa konajú na Slovensku?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://slovakia.travel/en/the-cabbage-days
+    correct:
+      - { text: Dni zelá v Stupave, why: Festival tradícií okolo kapusty, ktorý sa v Stupave koná od roku 1996. }
+      - { text: Trdlofest v Skalici, why: Májová slávnosť okolo Skalického trdelníka. }
+      - { text: Majstrovstvá sveta vo varení bryndzových halušiek, why: Koná sa v Tureckej pri Banskej Bystrici. }
+      - { text: Pezinské vinobranie, why: Dlhoročná slávnosť hrozna v centre Pezinka. }
+      - { text: Modranské vinobranie, why: Trojdňová jesenná slávnosť v Modre. }
+      - { text: Tokajské vinobranie, why: Koná sa v obciach slovenského Tokaja, napríklad v Čerhove a Malej Tŕni. }
+    wrong:
+      - { text: Slavnosti chřestu a vína v Ivančiciach, why: Špargľový a vinársky festival v Ivančiciach na Morave. }
+      - { text: Znojemské historické vinobraní, why: Slávnosť vína s historickým sprievodom v českom Znojme. }
+      - { text: Pálavské vinobraní v Mikulove, why: Vinárska slávnosť v moravskom Mikulove. }
+      - { text: Vizovické Trnkobraní, why: Hudobný festival so slivovicou vo Vizoviciach na Morave. }
+
+  - id: slovenske-odrody-vinica
+    type: pick
+    prompt: Ktoré z týchto odrôd viniča boli vyšľachtené na Slovensku?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Dorota_Pospíšilová
+    correct:
+      - { text: Devín, why: Slovenská odroda vyšľachtená v Bratislave. }
+      - { text: Dunaj, why: Slovenská modrá odroda vyšľachtená v Bratislave. }
+      - { text: Hron, why: Slovenská modrá odroda, súrodenec odrôd Nitranka a Rimava. }
+      - { text: Nitranka, why: Slovenská modrá odroda, súrodenec odrôd Hron a Rimava. }
+      - { text: Rimava, why: Slovenská modrá odroda zo šľachtenia Doroty Pospíšilovej. }
+      - { text: Torysa, why: Slovenská modrá odroda pomenovaná po východoslovenskej rieke. }
+      - { text: Rosa, why: Slovenská modrá odroda zapísaná v slovenskom zozname odrôd. }
+    wrong:
+      - { text: Pálava, why: Česká biela odroda zo šľachtenia na Morave (Tramín x Müller-Thurgau). }
+      - { text: Cabernet Moravia, why: Česká odroda vyšľachtená na Morave. }
+      - { text: André, why: Česká modrá odroda zo šľachtiteľskej stanice vo Veľkých Pavloviciach. }
+      - { text: Veltlínske zelené, why: Stará odroda pochádzajúca z Rakúska. }
+      - { text: Frankovka modrá, why: Stará stredoeurópska odroda, nie nový slovenský šľachtenec. }
+      - { text: Cabernet Sauvignon, why: Svetová modrá odroda z francúzskeho Bordeaux. }
+      - { text: Rizling rýnsky, why: Klasická biela odroda z Nemecka. }
+
+  - id: gastro-myty-slovensko
+    type: pick
+    prompt: Ktoré z týchto tvrdení o slovenskom jedle a pití sú pravdivé?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://www.mpsr.sk/politikakvality/?go=8&offset=7
+    correct:
+      - { text: Skalický trdelník bol prvou slovenskou potravinou s chráneným označením EÚ, why: Do európskeho registra CHZO ho zapísali v decembri 2007. }
+      - { text: Horalky sa pôvodne volali Tatranky, why: Pod názvom Tatranky sa predávali od roku 1959, v roku 1965 lieskovce nahradili arašidmi. }
+      - { text: Prvú manufaktúru na bryndzu na Slovensku založil v roku 1787 Ján Vagač v Detve, why: Pochádzal zo Starej Turej a v Detve postavil Vagačov dom. }
+      - { text: Muránske buchty získali európske chránené označenie (CHZO) v roku 2025, why: Pridali sa k ďalším slovenským výrobkom v registri EÚ. }
+      - { text: Spišská borovička má zemepisné označenie liehovín EÚ, why: Je to dlhoročný slovenský chránený názov. }
+      - { text: Trenčianska borovička Juniperus získala ochranu EÚ v roku 2024, why: Komisia ju zapísala v máji 2024 ako zemepisné označenie liehovín. }
+    wrong:
+      - { text: Kofola vznikla v slovenskom závode v Rajeckej Lesnej, why: Vyvinuli ju v roku 1959 v Prahe. }
+      - { text: Bratislavský rožok má v EÚ chránené označenie pôvodu (CHOP), why: Má štatút Zaručenej tradičnej špeciality (ZTŠ). }
+      - { text: Všetky slovenské vinohradnícke oblasti ležia na západnom Slovensku, why: Existuje aj Východoslovenská a Tokajská oblasť. }
+      - { text: Slovenská bryndza má v EÚ štatút Zaručenej tradičnej špeciality, why: Má chránené zemepisné označenie (CHZO). }
+      - { text: Paprika Žitava je v EÚ chránená ako zemepisné označenie (CHZO), why: Je to Chránené označenie pôvodu (CHOP). }
+
+  - id: vinohradnicke-rajony-poradie
+    type: order
+    prompt: Zoraď slovenské vinohradnícke oblasti od najväčšieho počtu vinohradníckych rajónov po najmenší.
+    direction: desc
+    unit: vinohradníckych rajónov
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Vinohradnícke_oblasti_Slovenska
+    items:
+      - { text: Malokarpatská vinohradnícka oblasť, value: 12 }
+      - { text: Nitrianska vinohradnícka oblasť, value: 9 }
+      - { text: Južnoslovenská vinohradnícka oblasť, value: 8 }
+      - { text: Stredoslovenská vinohradnícka oblasť, value: 7 }
+      - { text: Východoslovenská vinohradnícka oblasť, value: 4 }
+
+  - id: sladkosti-napoje-vznik
+    type: order
+    prompt: Zoraď ikonické československé sladkosti a nápoje podľa roku, keď sa začali vyrábať alebo uviedli na trh, od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Kofola
+    items:
+      - { text: Lentilky, value: 1907 }
+      - { text: Deva (závod v Trebišove), value: 1951 }
+      - { text: Kofola, value: 1960 }
+      - { text: Horalky (pod týmto názvom), value: 1965 }
+      - { text: Vinea, value: 1974 }
+
+  - id: eu-ochrana-poradie
+    type: order
+    prompt: Zoraď slovenské potraviny a liehoviny podľa roku zápisu do európskeho registra chránených označení od najstaršieho.
+    direction: asc
+    unit: rok zápisu
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://www.mpsr.sk/politikakvality/?go=8&offset=7
+    items:
+      - { text: Skalický trdelník, value: 2007 }
+      - { text: Slovenská bryndza, value: 2008 }
+      - { text: Oravský korbáčik, value: 2011 }
+      - { text: Bratislavský rožok, value: 2012 }
+      - { text: Paprika Žitava, value: 2014 }
+      - { text: Trenčianska borovička Juniperus, value: 2024 }
+
+  - id: kofola-byliny
+    type: number
+    prompt: Koľko bylinných a ovocných zložiek obsahuje originálny sirup Kofo v nápoji Kofola?
+    answer: 14
+    unit: zložiek
+    scale: linear
+    tolerance: 1
+    why: Sirup Kofo vyvinuli v roku 1959 v Prahe a presný recept sa drží v tajnosti.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Kofola
+
+  - id: treska-rok-vzniku
+    type: number
+    prompt: V ktorom roku sa na Slovensku začala vyrábať treska v majonéze (spočiatku v remuláde)?
+    answer: 1954
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Výrobu spustil národný podnik Ryba v roku 1954, najprv v Bratislave, Košiciach a Žiline.
+    difficulty: 2
+    source: https://www.noviny.sk/pr-spravy/889800-kralovna-z-teglika-oslavuje-70-rokov-ako-sa-z-tresky-v-majoneze-stal-gastronomicky-klenot-slovakov
+
+  - id: vinea-rok-vzniku
+    type: number
+    prompt: V ktorom roku sa začala vyrábať a predávať hroznová limonáda Vinea?
+    answer: 1974
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Receptúru namiešali v roku 1973 a vyrábať sa začala v roku 1974.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Vinea
+
+  - id: najdlhsi-skalicky-trdelnik
+    type: number
+    prompt: Koľko centimetrov meral rekordný najdlhší skalický trdelník upečený na Trdlofeste v roku 2014?
+    answer: 208
+    unit: cm
+    scale: log
+    tolerance: 0.05
+    asOf: "2026-11"
+    why: Rekord z roku 2014 pekári v ďalšom roku už len potvrdili.
+    difficulty: 3
+    source: https://spectator.sme.sk/politics-and-society/c/skalica-sets-new-record-with-longest-trdelnik
+
+  - id: prvy-chraneny-vyrobok-eu
+    type: choice
+    prompt: Ktorá slovenská potravina získala ako úplne prvá chránené označenie Európskej únie?
+    correct: { text: Skalický trdelník, why: Do európskeho registra CHZO ho zapísali v decembri 2007 ako prvý slovenský výrobok. }
+    wrong:
+      - { text: Slovenská bryndza, why: Zápis CHZO získala až v júli 2008. }
+      - { text: Slovenský oštiepok, why: Chránené označenie získal v septembri 2008. }
+      - { text: Spišské párky, why: Štatút Zaručenej tradičnej špeciality získali v roku 2011. }
+    difficulty: 1
+    source: https://eur-lex.europa.eu/eli/reg/2007/1485/oj
+
+  - id: prva-bryndziaren-mesto
+    type: choice
+    prompt: V ktorom slovenskom meste založil Ján Vagač v roku 1787 prvú manufaktúru na bryndzu?
+    correct: { text: Detva, why: Vagačov dom v Detve stál pri zrode výroby jemnej bryndze z ovčieho syra. }
+    wrong:
+      - { text: Liptovský Mikuláš, why: Liptov je známy salašníctvom, ale Vagač pôsobil v Detve. }
+      - { text: Zvolen, why: Vagač pôsobil v neďalekej Detve, nie vo Zvolene. }
+      - { text: Brezno, why: Horehronie má tradíciu ovčiarstva, ale Vagačova manufaktúra stála v Detve. }
+    difficulty: 3
+    source: https://spectator.sme.sk/politics-and-society/c/bryndza-maker-gets-a-memorial-tablet
