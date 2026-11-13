@@ -1,0 +1,641 @@
+id: svet-popkultura
+title: Svetová popkultúra
+description: Filmy, seriály, hudobné hity, videohry, Eurovízia a kreslené legendy.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: filmy-spielberg
+    type: pick
+    prompt: Ktoré z týchto filmov režíroval Steven Spielberg?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Steven_Spielberg
+    correct:
+      - text: Čeľuste
+        why: Film z roku 1975 je v zozname Spielbergových réžií.
+      - text: Indiana Jones a dobyvatelia stratenej archy
+        why: Film z roku 1981 je v zozname Spielbergových réžií.
+      - text: E.T. Mimozemšťan
+        why: Film z roku 1982 je v zozname Spielbergových réžií.
+      - text: Jurský park
+        why: Film z roku 1993 je v zozname Spielbergových réžií.
+      - text: Schindlerov zoznam
+        why: Film z roku 1993, za ktorý Spielberg získal Oscara za réžiu.
+      - text: Zachráňte vojaka Ryana
+        why: Film z roku 1998, za ktorý Spielberg získal druhého Oscara za réžiu.
+      - text: Chyť ma, ak to dokážeš
+        why: Film z roku 2002 je v zozname Spielbergových réžií.
+    wrong:
+      - text: Návrat do budúcnosti
+        why: Režíroval Robert Zemeckis; Spielberg bol pri filme iba výkonným producentom.
+      - text: Forrest Gump
+        why: Film z roku 1994 režíroval Robert Zemeckis.
+      - text: Terminátor
+        why: Film z roku 1984 režíroval James Cameron.
+      - text: Titanic
+        why: Film z roku 1997 režíroval James Cameron.
+      - text: Gladiátor
+        why: Film z roku 2000 režíroval Ridley Scott.
+      - text: "Pán prsteňov: Spoločenstvo prsteňa"
+        why: Film z roku 2001 režíroval Peter Jackson.
+      - text: Votrelci
+        why: Film z roku 1986 režíroval James Cameron.
+
+  - id: tarantino-filmy
+    type: pick
+    prompt: Ktoré z týchto filmov režíroval Quentin Tarantino?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Quentin_Tarantino_filmography
+    correct:
+      - text: Gauneri (Reservoir Dogs)
+        why: Tarantinov režisérsky debut z januára 1992.
+      - text: "Pulp Fiction: Historky z podsvetia"
+        why: Film z roku 1994 získal Zlatú palmu v Cannes a Oscara za pôvodný scenár.
+      - text: Jackie Brownová
+        why: Film z roku 1997 podľa románu Rum Punch od Elmorea Leonarda.
+      - text: Kill Bill
+        why: Vyšiel ako dva filmy, Kill Bill 1 v roku 2003 a Kill Bill 2 v roku 2004.
+      - text: Nehanební bastardi
+        why: Film z roku 2009, za ktorý dostal Christoph Waltz Oscara za vedľajšiu rolu.
+      - text: Divoký Django
+        why: Film z roku 2012 priniesol Tarantinovi druhého Oscara za pôvodný scenár.
+      - text: Vtedy v Hollywoode
+        why: Film z roku 2019 je v zozname Tarantinových réžií.
+    wrong:
+      - text: Od súmraku do úsvitu
+        why: Tarantino napísal scenár a zahral si v ňom, ale režíroval ho Robert Rodriguez.
+      - text: True Romance
+        why: Tarantino napísal scenár, ale film režíroval Tony Scott.
+      - text: Klub bitkárov
+        why: Film z roku 1999 režíroval David Fincher.
+      - text: Mafiáni
+        why: Film z roku 1990 režíroval Martin Scorsese.
+      - text: Desperado
+        why: Film z roku 1995 režíroval Robert Rodriguez; Tarantino sa v ňom objavil len v epizódnej úlohe.
+      - text: Sedem
+        why: Film z roku 1995 režíroval David Fincher.
+
+  - id: harry-potter-herci
+    type: pick
+    prompt: Ktorí z týchto hercov si zahrali v pôvodnej osemfilmovej sérii Harry Potter (2001 – 2011)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Harry_Potter_(film_series)_cast_members
+    correct:
+      - text: Alan Rickman
+        why: Hral profesora Snapea.
+      - text: Maggie Smith
+        why: Hrala profesorku McGonagallovú.
+      - text: Gary Oldman
+        why: Hral Siriusa Blacka, ktorý sa objavil od tretieho filmu (Väzeň z Azkabanu).
+      - text: Ralph Fiennes
+        why: Hral lorda Voldemorta.
+      - text: Helena Bonham Carter
+        why: Hrala Bellatrix Lestrangeovú, ktorá sa objavila od piateho filmu.
+      - text: Emma Thompson
+        why: Hrala profesorku Trelawneyovú.
+      - text: Robert Pattinson
+        why: Hral Cedrica Diggoryho v štvrtom filme (Ohnivý pohár).
+    wrong:
+      - text: Ian McKellen
+        why: V zozname obsadenia série nefiguruje.
+      - text: Christopher Lee
+        why: V zozname obsadenia série nefiguruje.
+      - text: Patrick Stewart
+        why: V zozname obsadenia série nefiguruje.
+      - text: Sean Connery
+        why: V zozname obsadenia série nefiguruje.
+      - text: Liam Neeson
+        why: V zozname obsadenia série nefiguruje.
+      - text: Anthony Hopkins
+        why: V zozname obsadenia série nefiguruje.
+      - text: Morgan Freeman
+        why: V zozname obsadenia série nefiguruje.
+
+  - id: star-wars-povodna-trilogia
+    type: pick
+    prompt: Ktoré z týchto postáv sa objavili v pôvodnej trilógii Star Wars (Epizódy IV – VI, 1977 – 1983)?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Hviezdne_vojny_(film)
+    correct:
+      - text: Darth Vader
+        why: Vystupuje už v prvom filme z roku 1977.
+      - text: Luke Skywalker
+        why: V prvom filme ho hral Mark Hamill.
+      - text: Princezná Leia Organa
+        why: V prvom filme ju hrala Carrie Fisherová.
+      - text: Han Solo
+        why: V prvom filme ho hral Harrison Ford.
+      - text: Yoda
+        why: Objavuje sa v dieloch Impérium vracia úder (1980) a Návrat Jediho (1983).
+      - text: Boba Fett
+        why: Do kín sa dostal v Impériu vracia úder (1980) a objavil sa aj v Návrate Jediho (1983).
+    wrong:
+      - text: Darth Maul
+        why: Prvýkrát sa objavil až vo filme Skrytá hrozba (1999).
+      - text: Kylo Ren
+        why: Prvýkrát sa objavil až v roku 2015.
+      - text: Rey
+        why: Prvýkrát sa objavila až v roku 2015.
+      - text: Grogu (Baby Yoda)
+        why: Prvýkrát sa objavil až v seriáli The Mandalorian (2019).
+      - text: Padmé Amidala
+        why: Hrá ju Natalie Portmanová a prvýkrát sa objavuje až vo filme Skrytá hrozba (1999).
+      - text: Jar Jar Binks
+        why: Prvýkrát sa objavil až vo filme Skrytá hrozba (1999).
+      - text: Mace Windu
+        why: Hrá ho Samuel L. Jackson a prvýkrát sa objavuje až vo filme Skrytá hrozba (1999).
+
+  - id: marvel-mcu-filmy
+    type: pick
+    prompt: Ktoré z týchto komiksových filmov patria priamo do Marvel Cinematic Universe (MCU)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films
+    correct:
+      - text: Iron Man (2008)
+        why: Patrí do prvej fázy MCU.
+      - text: Strážcovia Galaxie (2014)
+        why: Patrí do druhej fázy MCU.
+      - text: Doctor Strange (2016)
+        why: Patrí do tretej fázy MCU.
+      - text: "Spider-Man: Návrat domov (2017)"
+        why: Patrí do tretej fázy MCU.
+      - text: "Thor: Ragnarok (2017)"
+        why: Patrí do tretej fázy MCU.
+      - text: Black Panther (2018)
+        why: Patrí do tretej fázy MCU.
+      - text: "Avengers: Endgame (2019)"
+        why: Patrí do tretej fázy MCU.
+    wrong:
+      - text: Spider-Man (2002)
+        why: V zozname filmov MCU nie je.
+      - text: X-Men (2000)
+        why: V zozname filmov MCU nie je.
+      - text: Deadpool (2016)
+        why: V zozname filmov MCU nie je; do MCU patrí až Deadpool & Wolverine (2024).
+      - text: "Logan: Wolverine (2017)"
+        why: V zozname filmov MCU nie je.
+      - text: Venom (2018)
+        why: V zozname filmov MCU nie je.
+      - text: Fantastická štvorka (2005)
+        why: "V zozname filmov MCU nie je; do MCU patrí film The Fantastic Four: First Steps (2025)."
+      - text: Blade (1998)
+        why: V zozname vydaných filmov MCU nie je.
+
+  - id: oscar-najlepsi-film
+    type: pick
+    prompt: Ktoré z týchto filmov získali Oscara za najlepší film (Best Picture)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture
+    correct:
+      - text: Krstný otec (1972)
+        why: Vyhral na 45. ročníku udeľovania Oscarov.
+      - text: Forrest Gump (1994)
+        why: Vyhral na 67. ročníku udeľovania Oscarov.
+      - text: Titanic (1997)
+        why: Vyhral na 70. ročníku udeľovania Oscarov.
+      - text: Gladiátor (2000)
+        why: Vyhral na 73. ročníku udeľovania Oscarov.
+      - text: "Pán prsteňov: Návrat kráľa (2003)"
+        why: Vyhral na 76. ročníku udeľovania Oscarov.
+      - text: Parazit (2019)
+        why: Stal sa prvým víťazom, ktorý nie je v angličtine.
+      - text: Oppenheimer (2023)
+        why: Je medzi víťazmi Oscara za najlepší film.
+    wrong:
+      - text: Vykúpenie z väznice Shawshank (1994)
+        why: Bol len nominovaný; vyhral Forrest Gump.
+      - text: "Pulp Fiction: Historky z podsvetia (1994)"
+        why: Bol len nominovaný; vyhral Forrest Gump.
+      - text: Zachráňte vojaka Ryana (1998)
+        why: Bol len nominovaný; vyhral Zamilovaný Shakespeare (Shakespeare in Love).
+      - text: "Pán prsteňov: Spoločenstvo prsteňa (2001)"
+        why: Bol len nominovaný; vyhral Čistá duša (A Beautiful Mind).
+
+  - id: pixar-filmy
+    type: pick
+    prompt: Ktoré z týchto animovaných filmov vytvorilo štúdio Pixar?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_Pixar_films
+    correct:
+      - text: Toy Story
+        why: Film z roku 1995, ktorý sa považuje za prvý celovečerný film vytvorený celý počítačovou animáciou.
+      - text: Hľadá sa Nemo
+        why: Film z roku 2003 získal Oscara za najlepší animovaný film.
+      - text: Rodinka úžasných
+        why: Film z roku 2004 je v zozname filmov Pixaru.
+      - text: Ratatouille
+        why: Film z roku 2007 je v zozname filmov Pixaru.
+      - text: Wall-E
+        why: Film z roku 2008 je v zozname filmov Pixaru.
+      - text: V hlave
+        why: Film z roku 2015 je v zozname filmov Pixaru.
+      - text: Coco
+        why: Film z roku 2017 je v zozname filmov Pixaru.
+    wrong:
+      - text: Shrek
+        why: V zozname filmov Pixaru nie je.
+      - text: Ľadové kráľovstvo
+        why: V zozname filmov Pixaru nie je.
+      - text: Leví kráľ
+        why: V zozname filmov Pixaru nie je.
+      - text: Doba ľadová
+        why: V zozname filmov Pixaru nie je.
+      - text: Ja, zloduch
+        why: V zozname filmov Pixaru nie je.
+      - text: Madagaskar
+        why: V zozname filmov Pixaru nie je.
+      - text: Ako vycvičiť draka
+        why: V zozname filmov Pixaru nie je.
+
+  - id: kreslene-postavy-looney-tunes
+    type: pick
+    prompt: Ktoré z týchto kreslených postáv patria do série Looney Tunes od štúdia Warner Bros.?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_Looney_Tunes_and_Merrie_Melodies_characters
+    correct:
+      - text: Bugs Bunny
+        why: Je v zozname postáv Looney Tunes; debutoval v roku 1940 v krátkom filme A Wild Hare.
+      - text: Daffy Duck
+        why: Je v zozname postáv Looney Tunes; debutoval v roku 1937.
+      - text: Porky Pig
+        why: Je v zozname postáv Looney Tunes.
+      - text: Sylvester
+        why: Je v zozname postáv Looney Tunes.
+      - text: Tweety
+        why: Je v zozname postáv Looney Tunes.
+      - text: Wile E. Coyote
+        why: Je v zozname postáv Looney Tunes.
+      - text: Tasmanian Devil (Taz)
+        why: Je v zozname postáv Looney Tunes.
+    wrong:
+      - text: Mickey Mouse
+        why: Je maskotom spoločnosti Walt Disney, nie Warner Bros.
+      - text: Donald Duck
+        why: Je postava zo sveta Walta Disneyho.
+      - text: Tom a Jerry
+        why: Vznikli v roku 1940 v štúdiu MGM (tvorcovia William Hanna a Joseph Barbera).
+      - text: Scooby-Doo
+        why: Vznikol v roku 1969 v štúdiu Hanna-Barbera.
+      - text: Fred Flintstone
+        why: Hlavná postava seriálu Flintstoneovci od štúdia Hanna-Barbera.
+      - text: Goofy
+        why: Je postava zo sveta Walta Disneyho.
+
+  - id: kapely-velka-britania
+    type: pick
+    prompt: Ktoré z týchto slávnych hudobných skupín pochádzajú zo Spojeného kráľovstva (Veľkej Británie)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/The_Beatles
+    correct:
+      - text: The Beatles
+        why: Vznikli v roku 1960 v Liverpoole.
+      - text: Queen
+        why: Vznikli v roku 1970 v Londýne.
+      - text: The Rolling Stones
+        why: Vznikli v roku 1962 v Londýne.
+      - text: Pink Floyd
+        why: Vznikli v roku 1965 v Londýne.
+      - text: Depeche Mode
+        why: Vznikli v roku 1980 v anglickom Basildone.
+      - text: Coldplay
+        why: Vznikli v roku 1997 v Londýne.
+      - text: Oasis
+        why: Vznikli v roku 1991 v Manchestri.
+    wrong:
+      - text: ABBA
+        why: Vznikla v roku 1972 v Štokholme vo Švédsku.
+      - text: U2
+        why: Vznikli v roku 1976 v Dubline v Írsku.
+      - text: AC/DC
+        why: Vznikli v roku 1973 v Sydney v Austrálii.
+      - text: Nirvana
+        why: Vznikla v roku 1987 v meste Aberdeen v americkom štáte Washington.
+      - text: Metallica
+        why: Vznikla v roku 1981 v Los Angeles v USA.
+      - text: Rammstein
+        why: Vznikli v roku 1994 v Berlíne v Nemecku.
+      - text: Daft Punk
+        why: Vznikli v roku 1993 v Paríži vo Francúzsku.
+
+  - id: hity-90-rokov
+    type: pick
+    prompt: Ktoré z týchto svetových hitov vyšli ako single v 90. rokoch (1990 – 1999)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Smells_Like_Teen_Spirit
+    correct:
+      - text: Nirvana – Smells Like Teen Spirit
+        why: Vyšla ako single 10. septembra 1991.
+      - text: R.E.M. – Losing My Religion
+        why: Vyšla ako single 19. februára 1991.
+      - text: Oasis – Wonderwall
+        why: Vyšla ako single 30. októbra 1995.
+      - text: Spice Girls – Wannabe
+        why: Debutový singel Spice Girls vyšiel v roku 1996.
+      - text: Aqua – Barbie Girl
+        why: Vyšla v apríli 1997.
+      - text: Cher – Believe
+        why: Vyšla 19. októbra 1998.
+    wrong:
+      - text: Eminem – Stan
+        why: Vyšla až 20. novembra 2000.
+      - text: Avril Lavigne – Complicated
+        why: Vyšla až 11. marca 2002.
+      - text: The White Stripes – Seven Nation Army
+        why: Vyšla až vo februári 2003.
+      - text: Michael Jackson – Billie Jean
+        why: Vyšla už 2. januára 1983.
+      - text: a-ha – Take On Me
+        why: Prvá verzia vyšla v roku 1984, nová verzia v roku 1985.
+      - text: Queen – Bohemian Rhapsody
+        why: Vyšla už v roku 1975.
+
+  - id: eurovizia-vitazne-krajiny
+    type: pick
+    prompt: Ktoré z týchto krajín už aspoň raz vyhrali pesničkovú súťaž Eurovízia (Eurovision Song Contest)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Eurovision_Song_Contest_winners
+    correct:
+      - text: Švédsko
+        why: Vyhralo sedemkrát (1974 až 2023).
+      - text: Írsko
+        why: Vyhralo sedemkrát (1970 až 1996), vrátane rokov 1992, 1993 a 1994.
+      - text: Ukrajina
+        why: Vyhrala trikrát (2004, 2016 a 2022).
+      - text: Rakúsko
+        why: Vyhralo trikrát (1966, 2014 a 2025).
+      - text: Fínsko
+        why: Vyhralo raz, v roku 2006.
+      - text: Srbsko
+        why: Vyhralo raz, v roku 2007.
+      - text: Bulharsko
+        why: Vyhralo raz, v roku 2026.
+    wrong:
+      - text: Slovensko
+        why: Nie je v zozname víťazov.
+      - text: Česko
+        why: Nie je v zozname víťazov.
+      - text: Poľsko
+        why: Nie je v zozname víťazov.
+      - text: Chorvátsko
+        why: Nie je v zozname víťazov.
+      - text: Island
+        why: Nie je v zozname víťazov; dvakrát skončil druhý.
+      - text: Malta
+        why: Nie je v zozname víťazov.
+      - text: Litva
+        why: Nie je v zozname víťazov.
+
+  - id: videohry-80-roky
+    type: pick
+    prompt: Ktoré z týchto slávnych videohier alebo herných sérií vznikli ešte v 80. rokoch 20. storočia (1980 – 1989)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pac-Man
+    correct:
+      - text: Pac-Man
+        why: V Japonsku vyšiel 22. mája 1980.
+      - text: Donkey Kong
+        why: Arkáda z roku 1981, v ktorej sa prvýkrát objavil Mario.
+      - text: Super Mario Bros.
+        why: V Japonsku vyšla 13. septembra 1985 na konzole Famicom.
+      - text: Tetris
+        why: Vytvoril ho sovietsky programátor Alexej Pažitnov, v Sovietskom zväze vyšiel v roku 1985.
+      - text: The Legend of Zelda
+        why: V Japonsku vyšla 21. februára 1986.
+      - text: Final Fantasy
+        why: V Japonsku vyšla 18. decembra 1987.
+      - text: Prince of Persia
+        why: V Severnej Amerike vyšla 3. októbra 1989 na počítači Apple II.
+    wrong:
+      - text: Sonic the Hedgehog
+        why: Vyšiel v roku 1991.
+      - text: Mortal Kombat
+        why: Arkádová hra vyšla v auguste 1992.
+      - text: Doom
+        why: Vyšiel 10. decembra 1993.
+      - text: Warcraft
+        why: Prvý diel (Orcs & Humans) vyšiel 15. novembra 1994.
+      - text: Tomb Raider
+        why: Prvý diel vyšiel v roku 1996.
+      - text: Pokémon
+        why: Prvé hry (Red a Green) vyšli v Japonsku 27. februára 1996.
+      - text: Grand Theft Auto (GTA)
+        why: Prvý diel vyšiel v Európe 28. novembra 1997.
+
+  - id: vreckove-herne-konzoly
+    type: pick
+    prompt: Ktoré z týchto zariadení sú vreckové herné konzoly (handheldy) určené primárne na hranie do ruky?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Handheld_game_console
+    correct:
+      - text: Game Boy
+        why: Vyšiel v roku 1989.
+      - text: Sega Game Gear
+        why: Vyšiel v roku 1990 (v Japonsku).
+      - text: Nintendo DS
+        why: Vyšiel v roku 2004.
+      - text: PlayStation Portable (PSP)
+        why: Vyšiel v roku 2004 (v Japonsku).
+      - text: Nintendo 3DS
+        why: Vyšiel v roku 2011.
+      - text: PlayStation Vita
+        why: Vyšiel v roku 2011.
+    wrong:
+      - text: Atari 2600
+        why: Je domáca konzola z roku 1977 pripájaná k televízoru.
+      - text: Nintendo 64
+        why: Je domáca konzola z roku 1996.
+      - text: PlayStation 2
+        why: Je domáca konzola.
+      - text: GameCube
+        why: Je domáca konzola z roku 2001.
+      - text: Xbox 360
+        why: Je domáca konzola z roku 2005.
+
+  - id: order-herne-konzoly
+    type: order
+    prompt: Zoraď tieto herné konzoly od najstaršej po najnovšiu podľa roku prvého vydania.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/History_of_video_game_consoles
+    items:
+      - text: Atari 2600
+        value: 1977
+        why: Patrí do druhej generácie konzol, vyšla v roku 1977.
+      - text: NES (Famicom)
+        value: 1983
+        why: V Japonsku vyšla v roku 1983 ako Famicom, v Severnej Amerike v roku 1985 ako NES.
+      - text: PlayStation
+        value: 1994
+        why: Patrí do piatej generácie konzol, vyšiel v roku 1994.
+      - text: PlayStation 2
+        value: 2000
+        why: Patrí do šiestej generácie konzol, vyšiel v roku 2000.
+      - text: Xbox 360
+        value: 2005
+        why: Patrí do siedmej generácie konzol, vyšiel v roku 2005.
+      - text: Nintendo Wii
+        value: 2006
+        why: Patrí do siedmej generácie konzol, vyšlo v roku 2006.
+
+  - id: order-filmy-trzby
+    type: order
+    prompt: Zoraď tieto kinohity od najvyšších celosvetových tržieb v kinách (bez započítania inflácie).
+    direction: desc
+    unit: mld. USD
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_highest-grossing_films
+    items:
+      - text: Avatar (2009)
+        value: 2.92
+        label: "2,92 mld. USD"
+        why: Tržby približne 2 923 700 000 dolárov.
+      - text: Titanic (1997)
+        value: 2.26
+        label: "2,26 mld. USD"
+        why: Tržby približne 2 257 900 000 dolárov.
+      - text: V hlave 2 (2024)
+        value: 1.7
+        label: "1,70 mld. USD"
+        why: Tržby približne 1 698 900 000 dolárov.
+      - text: Barbie (2023)
+        value: 1.45
+        label: "1,45 mld. USD"
+        why: Tržby približne 1 447 100 000 dolárov.
+
+  - id: order-serialy-premiera
+    type: order
+    prompt: Zoraď tieto slávne seriály od toho, ktorý mal televíznu premiéru ako prvý.
+    direction: asc
+    unit: rok
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/The_Simpsons
+    items:
+      - text: Simpsonovci
+        value: 1989
+        why: Seriál mal premiéru 17. decembra 1989.
+      - text: Priatelia
+        value: 1994
+        why: Seriál mal premiéru 22. septembra 1994.
+      - text: Ako som spoznal vašu mamu
+        value: 2005
+        why: Seriál mal premiéru 19. septembra 2005.
+      - text: Teória veľkého tresku
+        value: 2007
+        why: Seriál mal premiéru 24. septembra 2007.
+      - text: Perníkový tatko (Breaking Bad)
+        value: 2008
+        why: Seriál mal premiéru 20. januára 2008.
+      - text: Hra o tróny
+        value: 2011
+        why: Seriál mal premiéru 17. apríla 2011.
+
+  - id: order-eurovizia-vitazstva
+    type: order
+    prompt: Zoraď tieto krajiny od najväčšieho po najmenší počet víťazstiev na Eurovízii.
+    direction: desc
+    unit: víťazstiev
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Eurovision_Song_Contest_winners
+    items:
+      - text: Švédsko
+        value: 7
+        why: Vyhralo v rokoch 1974, 1984, 1991, 1999, 2012, 2015 a 2023.
+      - text: Spojené kráľovstvo
+        value: 5
+        why: Vyhralo v rokoch 1967, 1969, 1976, 1981 a 1997.
+      - text: Izrael
+        value: 4
+        why: Vyhral v rokoch 1978, 1979, 1998 a 2018.
+      - text: Taliansko
+        value: 3
+        why: Vyhralo v rokoch 1964, 1990 a 2021.
+      - text: Španielsko
+        value: 2
+        why: Vyhralo v rokoch 1968 a 1969.
+      - text: Bulharsko
+        value: 1
+        why: Vyhralo v roku 2026.
+
+  - id: rok-prvy-star-wars
+    type: number
+    prompt: V ktorom roku mal v amerických kinách premiéru úplne prvý film Star Wars (neskôr s podtitulom Nová nádej)?
+    answer: 1977
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Film mal premiéru 25. mája 1977; podtitul Epizóda IV – Nová nádej pribudol až pri uvedení v roku 1981.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Hviezdne_vojny_(film)
+
+  - id: pocet-epizod-priatelia
+    type: number
+    prompt: Koľko epizód má dohromady všetkých 10 sérií seriálu Priatelia (bez spomienkového špeciálu z roku 2021)?
+    answer: 236
+    unit: epizód
+    scale: linear
+    tolerance: 10
+    why: Seriál mal v rokoch 1994 až 2004 desať sérií a 236 epizód (séria 10 mala 18 epizód).
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Friends_episodes
+
+  - id: pocet-pokemonov-prva-generacia
+    type: number
+    prompt: Koľko druhov Pokémonov tvorilo pôvodnú prvú generáciu (v Pokédexe od Bulbasaura po Mewa)?
+    answer: 151
+    unit: Pokémonov
+    scale: linear
+    tolerance: 5
+    why: Prvá generácia má 151 druhov, od Bulbasaura (č. 1) po Mewa (č. 151).
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_generation_I_Pok%C3%A9mon
+
+  - id: predaje-playstation-2
+    type: number
+    prompt: Koľko miliónov kusov hernej konzoly PlayStation 2 sa celosvetovo predalo (najpredávanejšia konzola histórie)?
+    answer: 160
+    unit: mil. kusov
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: Údaj 160 miliónov kusov Sony potvrdilo v novembri 2024 na webe k 30. výročiu PlayStationu.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/PlayStation_2
+
+  - id: priatelia-kaviaren
+    type: choice
+    prompt: Ako sa volá newyorská kaviareň, v ktorej sa pravidelne stretáva partia zo seriálu Priatelia?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Friends
+    correct:
+      text: Central Perk
+      why: Kaviareň, v ktorej Rachel pracuje ako čašníčka.
+    wrong:
+      - text: Central Park Café
+        why: Takto sa kaviareň v seriáli nevolá.
+      - text: Monk's Café
+        why: Takto sa kaviareň v seriáli nevolá.
+      - text: Coffee Bean
+        why: Takto sa kaviareň v seriáli nevolá.
+
+  - id: mario-povodne-meno
+    type: choice
+    prompt: Pod akým menom sa postava Maria prvýkrát objavila v arkádovej hre Donkey Kong z roku 1981?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Donkey_Kong_(1981_video_game)
+    correct:
+      text: Jumpman
+      why: V pôvodnej arkáde mal meno Jumpman; meno Mario dostal podľa Maria Segaleho, prenajímateľa skladu Nintenda of America.
+    wrong:
+      - text: Plumber Joe
+        why: Takto sa postava nevolala; v hre Donkey Kong bola navyše tesárom.
+      - text: Luigi
+        why: Luigi sa v hre Donkey Kong vôbec neobjavil; debutoval až v hre Mario Bros. (1983).
+      - text: Red Cap
+        why: Takto sa postava nevolala; červenú čiapku dostal, aby sa nemuseli kresliť vlasy.
