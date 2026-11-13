@@ -16,7 +16,7 @@ questions:
       - text: Banská Štiavnica
         why: Zapísaná v roku 1993 aj s technickými pamiatkami okolia.
       - text: Spišský hrad
-        why: V zozname je od roku 1993 spolu s Levočou a okolitými pamiatkami.
+        why: Zapísaný v roku 1993; v roku 2009 zápis rozšírili aj o Levoču.
       - text: Vlkolínec
         why: Drevená osada pri Ružomberku, kde dnes žije len zopár obyvateľov.
       - text: Bardejov
@@ -28,7 +28,7 @@ questions:
       - text: drevené kostoly v slovenských Karpatoch
         why: Osem kostolíkov (Hervartov, Tvrdošín, Kežmarok, Bodružal...) zapísaných v roku 2008.
       - text: Dunajský limes (hranica Rímskej ríše)
-        why: Slovenský úsek pri Gerulate a Devíne bol zapísaný v roku 2021.
+        why: Slovenské lokality Gerulata (Rusovce) a Celemantia (Iža) boli zapísané v roku 2021.
     wrong:
       - text: Bojnický zámok
         why: Obľúbený cieľ výletov, no na zozname UNESCO nie je.
@@ -37,7 +37,7 @@ questions:
       - text: Trenčiansky hrad
         why: Národná kultúrna pamiatka, nie svetové dedičstvo.
       - text: Devínsky hrad
-        why: Dunajský limes sa dotýka Devína, ale samotný hrad zapísaný nie je.
+        why: Slovenský zápis Dunajského limesu tvoria Gerulata a Iža, hrad Devín v ňom nie je.
       - text: Kremnica
         why: Mesto s najstaršou fungujúcou mincovňou sveta nie je v zozname UNESCO.
       - text: historické jadro Košíc
@@ -57,7 +57,7 @@ questions:
       - text: Rastislav
         why: Roku 862 požiadal byzantského cisára o učiteľov viery v zrozumiteľnom jazyku.
       - text: Svätopluk I.
-        why: Vládol v rokoch 870 až 894 a za jeho vlády bola ríša najrozsiahlejšia.
+        why: Panoval do roku 894 a za jeho vlády bola ríša najrozsiahlejšia.
       - text: Mojmír I.
         why: Prvý známy panovník zjednotenej Moravy, ktorý podmanil Nitriansko.
       - text: Konštantín (Cyril)
@@ -78,7 +78,7 @@ questions:
       - text: Matej Korvín
         why: Uhorský kráľ z 15. storočia.
       - text: Samo
-        why: Franský obchodník a vládca ríše z 7. storočia, teda staršieho štátu.
+        why: Franský obchodník a vládca ríše zo 7. storočia, teda staršieho štátu.
       - text: Ľudovít Štúr
         why: Kodifikátor slovenčiny z 19. storočia.
       - text: Alžbeta Bátoriová
@@ -91,7 +91,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Cyril_and_Methodius
     tags: [velka-morava, cyril-metod]
     correct:
-      - text: pochádzali z Solúna
+      - text: pochádzali zo Solúna
         why: Bratia vyrastali v byzantskom Solúne, dnešných Thessalonikách.
       - text: vytvorili hlaholiku
         why: Bola to prvá abeceda určená pre slovanský jazyk.
@@ -128,8 +128,8 @@ questions:
     source: https://en.wikipedia.org/wiki/Slovak_National_Uprising
     tags: [snp, 1944]
     correct:
-      - text: začalo v lete 1944
-        why: Oficiálne sa počíta od 29. augusta 1944, keď do Slovenska vstúpila nemecká armáda.
+      - text: začalo sa v lete 1944
+        why: Oficiálne sa počíta od 29. augusta 1944, keď na Slovensko vstúpila nemecká armáda.
       - text: jeho centrom bola Banská Bystrica
         why: Mesto sa stalo hlavným mestom povstaleckého územia.
       - text: prvým veliteľom bol Ján Golian
@@ -137,21 +137,21 @@ questions:
       - text: Viest velil povstaniu od októbra 1944
         why: Funkciu prevzal 7. októbra.
       - text: politicky ho viedla Slovenská národná rada
-        why: Zložená z občianskych demokratov a komunistov.
+        why: Zložená z predstaviteľov občianskeho odboja a komunistov.
       - text: Banská Bystrica padla 27. októbra 1944
         why: Armáda potom prešla do partizánskeho boja.
     wrong:
       - text: viedol ho prezident Jozef Tiso
         why: Tiso stál na opačnej strane, bol prezidentom vtedajšieho Slovenského štátu.
-      - text: jeho centrom bolo Poprad
+      - text: jeho centrom bol Poprad
         why: Hlavné povstalecké mesto bola Banská Bystrica.
-      - text: začalo v roku 1939
+      - text: začalo sa v roku 1939
         why: Rok 1939 je vznik Slovenského štátu.
       - text: trvalo len niekoľko dní
         why: Regulárny odpor trval takmer dva mesiace.
       - text: povstaleckú armádu viedol M. R. Štefánik
         why: Štefánik zomrel už v roku 1919.
-      - text: skončilo na Vianoce 1944
+      - text: skončilo sa na Vianoce 1944
         why: Regulárny odpor sa skončil koncom októbra.
 
   - id: okupacia-1968
@@ -171,7 +171,7 @@ questions:
         why: Aj Bulhari poslali vojakov.
     wrong:
       - text: Rumunsko
-        why: Aj člen Varšavskej zmluvy sa odmietol zúčastniť a invázii verejne odporoval.
+        why: Hoci bolo členom Varšavskej zmluvy, odmietlo sa zúčastniť a inváziu verejne odsúdilo.
       - text: Albánsko
         why: Zúčastniť sa odmietlo a z Varšavskej zmluvy neskôr vystúpilo.
       - text: Juhoslávia
@@ -194,10 +194,10 @@ questions:
     source: https://en.wikipedia.org/wiki/Spi%C5%A1_Castle
     tags: [hrady, spis]
     correct:
-      - text: prvá písomná zmienka je z roku 1120
-        why: Ide o jednu z najstarších písomných zmienok o hrade u nás.
+      - text: najstaršia nepriama písomná zmienka je z roku 1209
+        why: Listina z roku 1209 spomína spišského prepošta, hrad bol sídlom župy.
       - text: v zozname UNESCO je od roku 1993
-        why: Zapísali ho spolu s Levočou a okolitými pamiatkami.
+        why: Zapísali ho spolu s okolitými pamiatkami, v roku 2009 pribudla Levoča.
       - text: v roku 1780 ho zničil požiar
         why: Príčina požiaru nie je známa.
       - text: patril Thurzovcom
@@ -227,6 +227,7 @@ questions:
     prompt: Ktoré dvojice hradu a osobnosti alebo rodu sú správne?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Tren%C4%8D%C3%ADn_Castle
+    note: Ďalšie zdroje - en.wikipedia.org/wiki/Bojnice_Castle, Orava_Castle, Spi%C5%A1_Castle, Dev%C3%ADn_Castle, Bratislava_Castle.
     tags: [hrady]
     correct:
       - text: Čachtice a Alžbeta Bátoriová
@@ -236,16 +237,16 @@ questions:
       - text: Bojnice a Pálffyovci
         why: Gróf Ján František Pálffy hrad v rokoch 1888 až 1910 romanticky prestaval.
       - text: Trenčín a Matúš Čák
-        why: Pán Váhu a Tatier sa po ňom volá aj hradná Matúšova veža.
+        why: Po Pánovi Váhu a Tatier sa volá aj hradná Matúšova veža.
       - text: Orava a Thurzovci
         why: Baníckych magnátov dnes pripomína renesančná prestavba hradu.
       - text: Spiš a Csákyovci
         why: Vlastnili ho viac než tri storočia, do roku 1945.
       - text: Devín a Napoleonove vojská
-        why: Pri ústupe po bitke pri Bratislave ho v roku 1809 vyhodili do vzduchu.
+        why: Pri ústupe po obliehaní Bratislavy ho v roku 1809 vyhodili do vzduchu.
     wrong:
       - text: Trenčín a Alžbeta Bátoriová
-        why: Báthoryová je spojená s Čachticami, nie s Trenčínom.
+        why: Bátoriová je spojená s Čachticami, nie s Trenčínom.
       - text: Spiš a Pálffyovci
         why: Pálffyovci patrili k Bojniciam a Červenému Kameňu.
       - text: Beckov a Napoleon
@@ -336,12 +337,13 @@ questions:
     prompt: Ktoré tvrdenia o slovenských vynálezcoch sú pravdivé?
     difficulty: 3
     source: https://en.wikipedia.org/wiki/%C5%A0tefan_Bani%C4%8D
+    note: Ďalšie zdroje - en.wikipedia.org/wiki/J%C3%A1n_Bah%C3%BD%C4%BE, Jozef_Murga%C5%A1.
     tags: [vynalezcovia]
     correct:
       - text: Štefan Banič získal americký patent na padák
         why: Patent číslo 1 108 484 dostal 25. augusta 1914.
-      - text: Banič patent predal americkej armáde
-        why: Nič nenasvedčuje tomu, že by ho armáda skutočne použila.
+      - text: Banič svoj patent prenechal americkej armáde
+        why: Zdroje sa líšia, či ho predal alebo daroval, no armáda ho nezaviedla.
       - text: Banič robil v USA v bani
         why: Pracoval ako baník v Pensylvánii.
       - text: Banič sa narodil pri Smoleniciach
@@ -358,7 +360,7 @@ questions:
       - text: Banič svoj padák vyskúšal pod Eiffelovou vežou
         why: Údajne skúšal vo Washingtone, nie v Paríži.
       - text: Banič patent daroval Rakúsko-Uhorsku
-        why: Patent predal americkej armáde.
+        why: Patent prenechal americkej armáde, nie Rakúsko-Uhorsku.
       - text: Bahýľ vynašiel žiarovku
         why: Slovenským vynálezom je vrtuľník, nie žiarovka.
       - text: Murgaš bol lekár v Prahe
@@ -412,7 +414,7 @@ questions:
         why: Najstaršie časti pochádzajú z 13. storočia.
       - text: natáčali sa tu scény pre film Upír Nosferatu z roku 1922
         why: Hrad zahral domov grófa Orloka.
-      - text: "natáčal sa tu film Dragonheart: Nová kapitola"
+      - text: "natáčal sa tu film Dragonheart: A New Beginning"
         why: Fantasy z roku 2000.
       - text: od roku 1370 bol sídlom Oravskej župy
         why: Župa sa po maďarsky volala Árva.
@@ -447,12 +449,10 @@ questions:
         why: Stalo sa to v 30. rokoch 15. storočia.
       - text: Mária Terézia ho premenila na rokokové sídlo
         why: Prestavba prebehla v 60. rokoch 18. storočia.
-      - text: sídli tu Národná rada Slovenskej republiky
-        why: Parlament zasadá v areáli hradu.
       - text: stojí na brale nad Dunajom
         why: Výhľad na rieku patrí k najslávnejším v meste.
       - text: bola tu uložená uhorská korunovačná koruna
-        why: Svätoštefanská koruna sa tu čas uchovávala.
+        why: Svätoštefanská koruna sa tu istý čas uchovávala.
     wrong:
       - text: zničili ho Napoleonove vojská v roku 1809
         why: To bol osud Devína.
@@ -517,8 +517,8 @@ questions:
         why: Podľa legendy ju kopal turecký väzeň Omar pre milú Fatimu.
       - text: je to národná kultúrna pamiatka
         why: Sídli v ňom Trenčianske múzeum.
-      - text: rokovali tu v roku 1335 poľský, uhorský a český kráľ
-        why: Rokovania v roku 1335 sa dotkli aj sporov o Sliezsko.
+      - text: v roku 1335 sa tu uzavrela Trenčianska zmluva medzi Českom, Poľskom a Uhorskom
+        why: Poľského kráľa zastupovali vyslanci; rokovalo sa aj o sporoch o Sliezsko.
     wrong:
       - text: sídlila tu Alžbeta Bátoriová
         why: Tá bola na Čachticiach.
@@ -540,9 +540,10 @@ questions:
     unit: rok
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Great_Moravia
+    note: Ďalšie zdroje - sk.wikipedia.org/wiki/Spi%C5%A1sk%C3%BD_hrad, en.wikipedia.org/wiki/History_of_Slovakia.
     items:
       - { text: Cyril a Metod prichádzajú na Veľkú Moravu, value: 863 }
-      - { text: Prvá zmienka o Spišskom hrade, value: 1120 }
+      - { text: Prvá písomná zmienka o Spišskom hrade, value: 1209 }
       - { text: Kodifikácia spisovnej slovenčiny podľa Štúra, value: 1843 }
       - { text: Založenie Matice slovenskej, value: 1863 }
       - { text: Vznik Česko-Slovenska, value: 1918 }
@@ -568,6 +569,7 @@ questions:
     unit: rok
     difficulty: 3
     source: https://en.wikipedia.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr
+    note: Ďalšie zdroje - en.wikipedia.org/wiki/Jozef_Murga%C5%A1, %C5%A0tefan_Bani%C4%8D, Milan_Rastislav_%C5%A0tef%C3%A1nik, Alexander_Dub%C4%8Dek.
     items:
       - { text: Ľudovít Štúr, value: 1815 }
       - { text: Jozef Murgaš, value: 1864 }
@@ -582,9 +584,10 @@ questions:
     unit: rok
     difficulty: 3
     source: https://en.wikipedia.org/wiki/Bojnice_Castle
+    note: Ďalšie zdroje - sk.wikipedia.org/wiki/Spi%C5%A1sk%C3%BD_hrad (1209), en.wikipedia.org/wiki/Orava_Castle.
     items:
       - { text: Bojnice, value: 1113 }
-      - { text: Spišský hrad, value: 1120 }
+      - { text: Spišský hrad, value: 1209 }
       - { text: Oravský hrad, value: 1267 }
       - { text: Krásna Hôrka, value: 1333 }
 

@@ -79,7 +79,7 @@ questions:
 
   - id: konope-legalne
     type: pick
-    prompt: Kde je podľa zákona rekreačná konope pre dospelých výslovne legálna (držba alebo pestovanie)?
+    prompt: Kde je podľa zákona rekreačná konopa pre dospelých výslovne legálna (držba alebo pestovanie)?
     difficulty: 2
     asOf: "2026-11"
     source: https://en.wikipedia.org/wiki/Legality_of_cannabis_by_country
@@ -121,7 +121,7 @@ questions:
       - text: Nitrianska
         why: Jedna zo šiestich oficiálnych oblastí.
       - text: Stredoslovenská
-        why: Oblasť okolo Hrontu a Ipľa.
+        why: Oblasť okolo Hrona a Ipľa.
       - text: Východoslovenská
         why: Vinice pri Košiciach a Michalovciach.
       - text: Tokajská
@@ -130,7 +130,7 @@ questions:
       - text: Záhorská
         why: Samostatná vinohradnícka oblasť to nie je.
       - text: Tatranská
-        why: V Tatrách vinič nerastie, také oblasť neexistuje.
+        why: V Tatrách vinič nerastie, taká oblasť neexistuje.
       - text: Považská
         why: Takáto vinohradnícka oblasť nie je.
       - text: Spišská
@@ -154,7 +154,7 @@ questions:
       - text: Zlatý Bažant – Hurbanovo
         why: Pivovar vznikol v 60. rokoch, od 1995 patrí Heinekenu.
       - text: Šariš – Veľký Šariš
-        why: Pivovar pri Prešove postavili v roku 1964.
+        why: Pivovar pri Prešove vznikol v roku 1964, prvé pivo uvarili v roku 1967.
       - text: Urpiner – Banská Bystrica
         why: Pivárske tradície tu siahajú až do roku 1501.
       - text: ERB – Banská Štiavnica
@@ -198,7 +198,7 @@ questions:
       - text: Tradične sa riedi 3 až 5 dielmi vody
         why: Pri riedení sa pravý absint zakalí.
       - text: Český absint sa po pridaní vody nezakalí
-        why: Je to skôr palinkový bitter bez anízu.
+        why: Je to skôr palinový bitter bez anízu.
     wrong:
       - text: Spôsobuje halucinácie vďaka thujónu
         why: Priame dôkazy o halucinogénnom účinku chýbajú.
@@ -256,7 +256,7 @@ questions:
     source: https://sk.wikipedia.org/wiki/Tatratea
     correct:
       - text: Tatratea
-        why: Vyrába ju Karloff v Kežmarku, od roku 2002, od 17 do 72 % alkoholu.
+        why: Vyrába ju Karloff v Kežmarku, veľkovýroba sa začala začiatkom roka 2003, od 17 do 72 % alkoholu.
       - text: Demänovka
         why: Bylinný likér, bitter má 38 %, sladká 33 %.
       - text: Spišská borovička
@@ -297,9 +297,9 @@ questions:
         why: Náboženské použitie zákon pripúšťal.
       - text: Dodatok ratifikovalo 46 zo 48 štátov
         why: Pridať sa nechceli Connecticut a Rhode Island.
-      - text: Pivo s 3,2 % sa vrátilo už v marci 1933
-        why: Cullen–Harrisonov zákon vrátil pivo ešte pred úplným zrušením prohibície.
-      - text: V New Yorku bolo okolo roku 1925 desaťtisíce podzemných barov (speakeasy)
+      - text: Pivo s 3,2 % sa vrátilo v apríli 1933
+        why: Cullen–Harrisonov zákon podpísaný v marci 1933 vrátil pivo do predaja od 7. apríla, ešte pred úplným zrušením prohibície.
+      - text: V New Yorku boli okolo roku 1925 desaťtisíce podzemných barov (speakeasy)
         why: Odhady sa pohybujú od 30 000 do 100 000.
     wrong:
       - text: Zrušil ju krach burzy v roku 1929
@@ -447,8 +447,8 @@ questions:
         why: Len výrobky zo Slovenska.
       - text: Typicky má okolo 60 % alkoholu
         why: Okolo 37,5 %.
-      - text: Spišská borovička sa vyrába v Poprade
-        why: Vo Starej Ľubovni.
+      - text: Spišská borovička sa vyrába v Bratislave
+        why: Spája sa so Spišom a Starou Ľubovňou.
       - text: Tatranská borovička je chránený názov
         why: Chránených je päť iných.
       - text: Vyrába sa z ihličia borovice lesnej
@@ -462,13 +462,13 @@ questions:
     correct:
       - text: Prvý zakalený destilát sa volá luter
         why: Opakovaným pálením sa zahusťuje a čistí.
-      - text: Pálenica ju ráta s 60 až 75 % a riedi vodou
+      - text: Niektoré pálenice ju vypália na 60 až 75 % a riedia vodou
         why: Na pitných 40 až 55 %.
       - text: Najlepšia dozrieva v dubových alebo nerezových sudoch
         why: Staršia je lepšia.
       - text: Vyrába sa aj v Rakúsku, Česku a bývalej Juhoslávii
         why: Nie je to len slovenský nápoj.
-      - text: Zmes lihu a esencie sa nemá volať slivovica
+      - text: Zmes liehu a esencie sa nemá volať slivovica
         why: Pravá musí byť z fermentovaných sliviek.
       - text: Vo výrobe sa niekedy používajú dovezené slivky
         why: Sú sladšie a lacnejšie.
@@ -521,7 +521,7 @@ questions:
   # ---------- ORDER ----------
   - id: order-sila-napojov
     type: order
-    prompt: Zoraď nápoje podľa maximálnej sily alkoholu od najsilnejšieho.
+    prompt: Zoraď nápoje podľa obsahu alkoholu od najsilnejšieho.
     direction: desc
     unit: "% alk."
     difficulty: 2
@@ -556,14 +556,13 @@ questions:
     unit: l/rok
     difficulty: 2
     asOf: "2024"
-    note: Údaje z rokov 2019 až 2024 podľa tabuľky na Wikipédii.
-    source: https://en.wikipedia.org/wiki/List_of_countries_by_beer_consumption_per_capita
+    note: Údaje za rok 2024 podľa správy Kirin Holdings.
+    source: https://www.kirinholdings.com/en/newsroom/release/2025/1222_01.html
     items:
-      - { text: Česko, value: 126.0 }
-      - { text: Rakúsko, value: 107.8 }
-      - { text: Nemecko, value: 99.0 }
-      - { text: Írsko, value: 92.9 }
-      - { text: Slovensko, value: 76.1 }
+      - { text: Česko, value: 148.8 }
+      - { text: Rakúsko, value: 104.6 }
+      - { text: Írsko, value: 99.0 }
+      - { text: Nemecko, value: 86.9 }
 
   - id: order-alkohol-na-hlavu
     type: order
