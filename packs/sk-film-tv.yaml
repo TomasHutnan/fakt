@@ -1,0 +1,452 @@
+id: sk-film-tv
+title: Film a televízia
+description: Slovenské a československé filmy, herci, seriály, rozprávky a televízne šou.
+lang: sk
+version: 1
+questions:
+  - id: film-sulik-rezia
+    type: pick
+    prompt: Ktoré z týchto filmov režíroval Martin Šulík?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Martin_%C5%A0ul%C3%ADk
+    correct:
+      - { text: Záhrada, why: "Rok 1995; bol aj slovenským kandidátom na Oscara." }
+      - { text: Orbis Pictus, why: "Šulíkov film z roku 1997, tiež vybraný na Oscara." }
+      - { text: Slnečný štát, why: "Film z roku 2005; Slovensko ním kandidovalo na Oscara." }
+      - { text: Cigán, why: "Šulíkov film z roku 2011." }
+      - { text: Všetko čo mám rád, why: "Slovenský kandidát na Oscara z roku 1993." }
+      - { text: Krajinka, why: "Film z roku 2000, tiež kandidát na Oscara." }
+      - { text: Tlmočník, why: "Film z roku 2018, ďalšia Šulíkova kandidatúra na Oscara." }
+    wrong:
+      - { text: Slnko v sieti, why: "Je to film Štefana Uhera z roku 1963." }
+      - { text: Čiara, why: "Režíroval ju Peter Bebjak." }
+      - { text: Koza, why: "Film Ivana Ostrochovského." }
+      - { text: Cenzorka, why: "Režíroval ju Péter Kerekes." }
+      - { text: Kristove roky, why: "Je to film Juraja Jakubiska." }
+      - { text: Obchod na korze, why: "Režírovali ho Ján Kadár a Elmar Klos." }
+      - { text: Obeť, why: "Režíroval ju Michal Blaško." }
+
+  - id: film-jakubisko-rezia
+    type: pick
+    prompt: Ktoré z týchto filmov natočil Juraj Jakubisko?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Juraj_Jakubisko
+    correct:
+      - { text: Kristove roky, why: "Film z roku 1967, za ktorý dostal ceny v Mannheime." }
+      - { text: Zbehovia a pútnici, why: "Film z roku 1968." }
+      - { text: Vtáčkovia, siroty a blázni, why: "Film z roku 1969." }
+      - { text: Tisícročná včela, why: "Rok 1983; hral v nej aj Jozef Kroner." }
+      - { text: Perinbaba, why: "Vianočná rozprávka z roku 1985." }
+      - { text: Sedím na konári a je mi dobre, why: "Film z roku 1989." }
+      - { text: Post coitum, why: "Film z roku 2004." }
+      - { text: Bathory, why: "Rok 2008; získal Českého leva za výtvarné riešenie." }
+    wrong:
+      - { text: Pacho, hybský zbojník, why: "Režíroval ho Martin Ťapák." }
+      - { text: Fontána pre Zuzanu, why: "Režíroval ju Dušan Rapoš." }
+      - { text: Soľ nad zlato, why: "Režíroval ju Martin Hollý." }
+      - { text: Popolvár najväčší na svete, why: "Režíroval ho Martin Ťapák." }
+      - { text: Slnko v sieti, why: "Režíroval ho Štefan Uher." }
+      - { text: Záhrada, why: "Je to film Martina Šulíka." }
+
+  - id: film-oscar-kandidati
+    type: pick
+    prompt: Ktoré z týchto filmov Slovensko vybralo ako svojho kandidáta na Oscara za cudzojazyčný film?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Slovak_submissions_for_the_Academy_Award_for_Best_International_Feature_Film
+    correct:
+      - { text: Záhrada, why: "Šulíkov film z roku 1995; Šulík má zo všetkých režisérov najviac kandidatúr." }
+      - { text: Čiara, why: "Peter Bebjak, výber na 90. ročník Oscarov." }
+      - { text: Cigán, why: "Šulíkov film z roku 2011." }
+      - { text: Koza, why: "Film Ivana Ostrochovského." }
+      - { text: Správa, why: "Anglicky The Auschwitz Report, režisér Peter Bebjak." }
+      - { text: Cenzorka, why: "Anglicky 107 Mothers, režisér Péter Kerekes." }
+      - { text: Obeť, why: "Film Michala Blaška vybraný na 95. ročník." }
+      - { text: Ema a smrtihlav, why: "Film Ivety Grófovej, kandidát na 97. ročník." }
+    wrong:
+      - { text: Šarlatán, why: "Je to český kandidát od Agnieszky Holland." }
+      - { text: Obchod na korze, why: "Oscara získal ako československý film, nie ako slovenský kandidát." }
+      - { text: Slnko v sieti, why: "Film z roku 1963, no na Oscara ho Slovensko nevyslalo." }
+      - { text: Piargy, why: "Najocenenejší film cien Slnko v sieti, no ako kandidát ho zoznam neuvádza." }
+      - { text: Perinbaba, why: "Rozprávka z roku 1985 nie je v zozname." }
+      - { text: Kristove roky, why: "Film z roku 1967 nie je v zozname." }
+
+  - id: film-kroner-filmy
+    type: pick
+    prompt: V ktorých z týchto filmov a seriálov hral Jozef Kroner?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Jozef_Kroner
+    correct:
+      - { text: Obchod na korze, why: "Zahral Tóna Brtka, stolára." }
+      - { text: Pacho, hybský zbojník, why: "V titulnej úlohe Pacha Matrtaja." }
+      - { text: Soľ nad zlato, why: "Hral šaša." }
+      - { text: Popolvár najväčší na svete, why: "Hral sluhu Šablicu." }
+      - { text: Tisícročná včela, why: "Zahral Martina Pichandu." }
+      - { text: Kubo, why: "Titulná rola z roku 1965." }
+      - { text: Sváko Ragan, why: "Titulná rola z roku 1976." }
+      - { text: Slovácko sa nesúdi, why: "Hral Matúša Pagáča." }
+    wrong:
+      - { text: Čiara, why: "Film z roku 2017, Kroner zomrel v roku 1998." }
+      - { text: Ema a smrtihlav, why: "Film z roku 2024, vznikol dávno po jeho smrti." }
+      - { text: Piargy, why: "Film z roku 2022, vznikol dávno po jeho smrti." }
+      - { text: Panelák, why: "Seriál z rokov 2008 až 2017, Kroner zomrel v roku 1998." }
+      - { text: Fontána pre Zuzanu, why: "V uvedenom obsadení nie je." }
+      - { text: Slnko v sieti, why: "V uvedenom obsadení nie je." }
+
+  - id: film-sol-nad-zlato-herci
+    type: pick
+    prompt: Kto z týchto hercov hral vo vianočnej rozprávke Soľ nad zlato (1982)?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/So%C4%BE_nad_zlato_(film)
+    correct:
+      - { text: Libuše Šafránková, why: "Hrala princeznú Marušku." }
+      - { text: Gábor Nagy, why: "Hral Soľného princa." }
+      - { text: Ladislav Chudík, why: "Hral kráľa podsvetia." }
+      - { text: Juraj Kukura, why: "Hral kráľa Norberta." }
+      - { text: Jozef Kroner, why: "Hral šaša." }
+      - { text: Karol Machata, why: "Hral kráľa Pravoslava." }
+      - { text: Anton Korenči, why: "Hral pokladníka." }
+    wrong:
+      - { text: Marián Labuda, why: "V uvedenom obsadení nie je." }
+      - { text: Emília Vášáryová, why: "V uvedenom obsadení nie je." }
+      - { text: Milan Lasica, why: "V uvedenom obsadení nie je." }
+      - { text: Diana Mórová, why: "V uvedenom obsadení nie je." }
+      - { text: Zuzana Fialová, why: "V uvedenom obsadení nie je." }
+      - { text: Ida Kamińska, why: "Hrala v Obchode na korze." }
+
+  - id: film-pacho-herci
+    type: pick
+    prompt: Kto z týchto hercov a tvorcov má úlohu v komédii Pacho, hybský zbojník?
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Pacho,_hybsk%C3%BD_zbojn%C3%ADk
+    correct:
+      - { text: Jozef Kroner, why: "V titulnej úlohe Pacha Matrtaja." }
+      - { text: Marián Labuda, why: "Hral grófa Erdődyho." }
+      - { text: Slávka Budínová, why: "Hrala Máriu Teréziu." }
+      - { text: Juraj Herz, why: "Český režisér tu hral majora Kuntza." }
+      - { text: Karol Čálik, why: "Hral Jana." }
+      - { text: Dušan Blaškovič, why: "Hral Ondra." }
+      - { text: Ida Rapaičová, why: "Hrala grófku Erdődyovú." }
+    wrong:
+      - { text: Libuše Šafránková, why: "Hrala v rozprávke Soľ nad zlato." }
+      - { text: Ida Kamińska, why: "Hrala v Obchode na korze." }
+      - { text: Marián Bielik, why: "Hral vo filme Slnko v sieti." }
+      - { text: Eva Vejmělková, why: "Hrala vo filme Fontána pre Zuzanu." }
+      - { text: Gábor Nagy, why: "Hral Soľného princa." }
+
+  - id: tv-panelak-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o seriáli Panelák sú pravdivé?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Panel%C3%A1k_(seri%C3%A1l)
+    correct:
+      - { text: Vysielala ho televízia JOJ, why: "Bol to prvý slovenský denný seriál tejto televízie." }
+      - { text: Začal sa vysielať vo februári 2008, why: "Prvý diel išiel 18. februára 2008." }
+      - { text: Hlavnú úlohu Ivany Schwarzovej hrala Diana Mórová, why: "Ivana sa stala kľúčovou postavou." }
+      - { text: Úvodnú pieseň naspievala skupina Desmod, why: "Znela v úvodnej znelke." }
+      - { text: Vrátil sa po prestávke v roku 2017, why: "Šestnásta séria bežala od marca do augusta 2017." }
+      - { text: Hosťovala v ňom tenistka Daniela Hantuchová, why: "Medzi hosťami boli aj Anastacia a Richard Müller." }
+      - { text: Spoluvytvoril ho Andy Kraus, why: "Bol autorom námetu a producentom seriálu." }
+    wrong:
+      - { text: Vysielala ho televízia Markíza, why: "Markíza vysielala Susedov." }
+      - { text: Skončil po štyroch sériách, why: "Mal šestnásť sérií." }
+      - { text: Titulnú pieseň spieval Pavol Habera, why: "To je pieseň zo seriálu Susedia." }
+      - { text: Skončil definitívne v roku 2015, why: "Po ohlásenom konci sa v roku 2017 vrátil." }
+      - { text: Hlavnou postavou bol lesník František Stromokocúr, why: "To je hrdina Susedov." }
+      - { text: Vysielal sa len raz týždenne, why: "Bol to denný seriál." }
+
+  - id: tv-susedia-herci
+    type: pick
+    prompt: Kto z nich patrí k hlavnej zostave seriálu Susedia?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Susedia_(seri%C3%A1l)
+    correct:
+      - { text: Peter Marcin, why: "Hrá lesníka Stromokocúra; postavy vznikli v kabarete Twister." }
+      - { text: Andy Kraus, why: "Hrá Maďara Lászlóa Komároma." }
+      - { text: Zuzana Tlučková, why: "Hrá Zuzanu Stromokocúrovú." }
+      - { text: Viki Ráková, why: "Hrá Ildikó Komárom." }
+      - { text: Marta Sládečková, why: "Hrá susedu Martu Sladkú." }
+      - { text: Kristína Pírová, why: "Hrá dcéru Milku." }
+      - { text: Tomáš Majláth, why: "Hrá syna Gergelyho." }
+    wrong:
+      - { text: Diana Mórová, why: "Je Ivana z Paneláku." }
+      - { text: Hana Gregorová, why: "Je Jarmila z Paneláku." }
+      - { text: Jakub Prachař, why: "Je Míša z Paneláku." }
+      - { text: Branislav Bystriansky, why: "Je Imro z Paneláku." }
+      - { text: Alexander Bárta, why: "Je Milan Kordiak z Paneláku." }
+      - { text: Emília Vášáryová, why: "Hrala vo filme Čiara." }
+
+  - id: film-ciara-herci
+    type: pick
+    prompt: Kto z nich hral v thrilleri Čiara (2017) z prostredia slovensko-ukrajinskej hranice?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/The_Line_(2017_film)
+    correct:
+      - { text: Tomáš Maštalír, why: "Hral Adama Krajňáka." }
+      - { text: Zuzana Fialová, why: "Hrala Sašu; v roku 2006 vyhrala aj Let's Dance." }
+      - { text: Emília Vášáryová, why: "Hrala Annu Krajňákovú." }
+      - { text: Stanislav Boklan, why: "Hral Krulla." }
+      - { text: Andrej Hryc, why: "Hral Petra Bernarda." }
+    wrong:
+      - { text: Alexandra Borbély, why: "Hrala vo filme Ema a smrtihlav." }
+      - { text: Nico Klimek, why: "Hral vo filme Ema a smrtihlav." }
+      - { text: Ivan Trojan, why: "Hral vo filme Šarlatán." }
+      - { text: Diana Mórová, why: "Je Ivana z Paneláku." }
+      - { text: Jozef Kroner, why: "Zomrel v roku 1998." }
+      - { text: Libuše Šafránková, why: "Hrala v rozprávke Soľ nad zlato." }
+
+  - id: film-sarlatan-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o filme Šarlatán (2020) sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Charlatan_(2020_film)
+    correct:
+      - { text: Režírovala ho Agnieszka Holland, why: "Poľská režisérka." }
+      - { text: Hlavného hrdinu hral Ivan Trojan, why: "Za rolu získal českého Leva." }
+      - { text: Premiéru mal na festivale Berlinale, why: "Premiéra bola 27. februára 2020." }
+      - { text: Na jeho výrobe sa podieľali aj slovenskí koproducenti, why: "Koprodukcia ČR, Írska, Slovenska a Poľska." }
+      - { text: Získal Českého leva za najlepší film, why: "Zo 14 nominácií vyhral päť sošiek." }
+      - { text: Bol českým kandidátom na Oscara, why: "Dostal sa aj do užšieho výberu." }
+      - { text: Točilo sa aj vo väznici v Mladej Boleslavi, why: "Natáčanie trvalo 36 dní." }
+      - { text: Vychádza zo života liečiteľa Jana Mikoláška, why: "Bylinkár z prvej polovice 20. storočia." }
+    wrong:
+      - { text: Bol slovenským kandidátom na Oscara, why: "Bol to český kandidát." }
+      - { text: Režíroval ho Peter Bebjak, why: "Bebjak natočil Čiaru a Správu." }
+      - { text: Premiéra bola v Cannes, why: "Bola v Berlíne." }
+      - { text: Hlavnú úlohu hral Milan Ondrík, why: "Hral ju Ivan Trojan." }
+      - { text: Film získal Oscara, why: "Zostal pri užšom výbere." }
+      - { text: Dialógy sú po slovensky, why: "Film je po česky." }
+
+  - id: film-obchod-na-korze-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o filme Obchod na korze sú pravdivé?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Obchod_na_korze
+    correct:
+      - { text: Získal Oscara za najlepší cudzojazyčný film, why: "Ceremónia 1966; bol to prvý československý Oscar." }
+      - { text: Režírovali ho Ján Kadár a Elmar Klos, why: "Spoločne napísali s Grosmanom aj scenár." }
+      - { text: Vychádza z novely Ladislava Grosmana, why: "Grosman napísal predlohu aj scenár." }
+      - { text: Natáčalo sa v Sabinove, why: "Pôvodne mala byť Rožňava, no vedenie mesta odmietlo." }
+      - { text: Hudbu zložil Zdeněk Liška, why: "Hudbu vydali aj na platni v USA." }
+      - { text: Ida Kamińska bola nominovaná na Oscara za hlavnú rolu, why: "Cenu však získala Elizabeth Taylor." }
+      - { text: Po roku 1969 ho zakázali, why: "Po emigrácii Jána Kadára." }
+      - { text: Získal cenu newyorských filmových kritikov, why: "Dostal ju v roku 1966." }
+    wrong:
+      - { text: Ida Kamińska získala Oscara, why: "Bola len nominovaná." }
+      - { text: Celý sa natáčal v Rožňave, why: "Vedenie mesta Rožňava natáčanie odmietlo." }
+      - { text: Režíroval ho Štefan Uher, why: "Uher natočil Slnko v sieti." }
+      - { text: Získal Zlatú palmu v Cannes, why: "V Cannes dostal len čestné uznanie." }
+      - { text: Hudbu zložil Ilja Zeljenka, why: "Zeljenka skomponoval hudbu k Slnku v sieti." }
+      - { text: Hlavný hrdina Tóno Brtko je mäsiar, why: "Je to stolár." }
+
+  - id: film-slnko-v-sieti-cena
+    type: pick
+    prompt: Ktoré tvrdenia o filmovej cene Slnko v sieti sú pravdivé?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Slnko_v_sieti_(cena)
+    correct:
+      - { text: Udeľuje ju Slovenská filmová a televízna akadémia, why: "Skratka SFTA." }
+      - { text: Je pomenovaná po filme Štefana Uhera, why: "Film Slnko v sieti je klasikou československej novej vlny." }
+      - { text: Sošku navrhol sklársky umelec Oliver Leššo, why: "Soška je sklenená plastika." }
+      - { text: Prvý ročník v roku 2004 odovzdal len cenu za celoživotné dielo, why: "Súťažné ceny pribudli od ročníka 2006." }
+      - { text: Najviac cien získal film Piargy, why: "Má 11 výhier." }
+      - { text: Hraný film musí mať viac ako 70 minút, why: "Musí mať aj kinodistribúciu a aspoň sedem verejných predstavení." }
+    wrong:
+      - { text: Udeľuje ju Slovenský filmový ústav, why: "Udeľuje ju akadémia SFTA." }
+      - { text: Je pomenovaná po Jakubiskovom filme Tisícročná včela, why: "Je pomenovaná po filme Slnko v sieti." }
+      - { text: Prvý ročník už rozdal ceny vo všetkých kategóriách, why: "V roku 2004 bola len cena za celoživotné dielo." }
+      - { text: Film musí mať minimálne 120 minút, why: "Stačí viac ako 70 minút." }
+      - { text: Víťazov vyberajú diváci v hlasovaní, why: "Hlasuje akadémia, vo dvoch kolách." }
+      - { text: Najviac cien získala Čiara, why: "Najviac má Piargy." }
+
+  - id: film-perinbaba-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o rozprávke Perinbaba (1985) sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Perinbaba
+    correct:
+      - { text: Režíroval ju Juraj Jakubisko, why: "Premiéra bola 1. novembra 1985." }
+      - { text: Perinbabu hrala Giulietta Masina, why: "Jakubisko tvrdí, že ju presvedčil Federico Fellini." }
+      - { text: Hudbu zložil Petr Hapka, why: "Český skladateľ." }
+      - { text: Vznikla v koprodukcii s mníchovským štúdiom Omnia Film, why: "Ide o československo-nemeckú koprodukciu." }
+      - { text: Vychádza z rozprávky bratov Grimmovcov Matka Hulda, why: "Scenár upravil Jakubisko s Ľubomírom Feldekom." }
+      - { text: Pokračovanie Perinbaba a dva svety vyšlo v roku 2023, why: "Režíroval ho opäť Jakubisko." }
+    wrong:
+      - { text: Režíroval ju Martin Hollý, why: "Hollý natočil Soľ nad zlato." }
+      - { text: Hudbu zložil Karel Svoboda, why: "Svoboda skomponoval hudbu k Soli nad zlato." }
+      - { text: Perinbabu hrala Libuše Šafránková, why: "Hrala princeznú v Soli nad zlato." }
+      - { text: Pokračovanie vyšlo v roku 1995, why: "Prišlo až v roku 2023." }
+      - { text: Vychádza z rozprávky Pavla Dobšinského, why: "Predlohou je Grimm." }
+      - { text: Bola čisto slovenská bez zahraničnej účasti, why: "Bola to koprodukcia so Západným Nemeckom." }
+
+  - id: film-fontana-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o hudobnom filme Fontána pre Zuzanu sú pravdivé?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Font%C3%A1na_pre_Zuzanu
+    correct:
+      - { text: Režíroval ho Dušan Rapoš, why: "Premiéra bola v marci 1986." }
+      - { text: Vychádza z knihy Eleonóry Gašparovej, why: "Scenár napísal Karol Hlávka." }
+      - { text: Hudbu zložil Vašo Patejdl, why: "Zároveň vo filme spevácky účinkuje." }
+      - { text: Zuzanu Petrovú hrala Eva Vejmělková, why: "Olina Zrubca hral Jiří Bábek." }
+      - { text: Fontána z filmu stojí na Kupeckého ulici v Bratislave, why: "Natáčalo sa aj v Uherskom Hradišti." }
+      - { text: Muzikál podľa príbehu mal premiéru v roku 2008, why: "Prišiel v októbri 2008." }
+      - { text: Robo Grigorov v ňom hral aj spieval, why: "Hral postavu Vikiho." }
+    wrong:
+      - { text: Zuzanu hrala Táňa Pauhofová, why: "Zuzanu hrala Eva Vejmělková." }
+      - { text: Hudbu zložil Karel Svoboda, why: "Hudbu skomponoval Vašo Patejdl." }
+      - { text: Fontána stojí na Hviezdoslavovom námestí, why: "Stojí na Kupeckého ulici." }
+      - { text: Režíroval ho Juraj Jakubisko, why: "Režisérom bol Dušan Rapoš." }
+      - { text: Vychádza z románu Alfonza Bednára, why: "Autorkou predlohy je Eleonóra Gašparová." }
+      - { text: Je to animovaný film, why: "Je to hraný film." }
+
+  - id: tv-vitazi-sutaze
+    type: pick
+    prompt: Kto z nich vyhral slovenskú reláciu Let's Dance alebo SuperStar?
+    difficulty: 2
+    note: "Ďalší zdroj pre SuperStar: https://sk.wikipedia.org/wiki/Slovensko_h%C4%BEad%C3%A1_SuperStar"
+    source: https://en.wikipedia.org/wiki/Let%27s_Dance_(Slovak_TV_series)
+    correct:
+      - { text: Zuzana Fialová, why: "Prvá víťazka Let's Dance v roku 2006." }
+      - { text: Nela Pocisková, why: "Vyhrala Let's Dance v roku 2010." }
+      - { text: Ján Koleník, why: "Víťaz Let's Dance 2022." }
+      - { text: Jakub Jablonský, why: "Víťaz deviatej série v roku 2024." }
+      - { text: Kristián Baran, why: "Víťaz desiatej série v roku 2025." }
+      - { text: Katarína Koščová, why: "Prvá víťazka SuperStar v roku 2005." }
+      - { text: Peter Cmorík, why: "Víťaz druhej série SuperStar." }
+      - { text: Vierka Berkyová, why: "Víťazka tretej série SuperStar z roku 2007." }
+    wrong:
+      - { text: Adela Vinczeová, why: "Moderovala Let's Dance aj SuperStar." }
+      - { text: Martin Rausch, why: "Moderoval SuperStar." }
+      - { text: Pavol Habera, why: "Bol porotcom v SuperStar." }
+      - { text: Dara Rolins, why: "Bola porotkyňou v SuperStar." }
+      - { text: Laco Lučenič, why: "Bol porotcom v SuperStar." }
+
+  - id: film-roky-vydania
+    type: order
+    prompt: Zoraď filmy od najstaršieho po najnovší podľa roku premiéry.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Juraj_Jakubisko
+    note: "Ďalšie zdroje: sk.wikipedia, články Obchod na korze, Perinbaba a Fontána pre Zuzanu."
+    items:
+      - { text: Obchod na korze, value: 1965 }
+      - { text: Kristove roky, value: 1967 }
+      - { text: Tisícročná včela, value: 1983 }
+      - { text: Perinbaba, value: 1985 }
+      - { text: Fontána pre Zuzanu, value: 1986 }
+      - { text: Čiara, value: 2017 }
+
+  - id: film-jakubisko-poradie
+    type: order
+    prompt: Zoraď filmy Juraja Jakubiska od najstaršieho po najnovší.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Juraj_Jakubisko
+    items:
+      - { text: Kristove roky, value: 1967 }
+      - { text: Vtáčkovia, siroty a blázni, value: 1969 }
+      - { text: Tisícročná včela, value: 1983 }
+      - { text: Perinbaba, value: 1985 }
+      - { text: Post coitum, value: 2004 }
+      - { text: Bathory, value: 2008 }
+
+  - id: tv-lets-dance-roky
+    type: order
+    prompt: Zoraď víťazov Let's Dance od najstaršieho víťazstva po najnovšie.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Let%27s_Dance_(Slovak_TV_series)
+    items:
+      - { text: Zuzana Fialová, value: 2006 }
+      - { text: Michaela Čobejová, value: 2008 }
+      - { text: Juraj Mokrý, value: 2009 }
+      - { text: Vladimír Kobielsky, value: 2017 }
+      - { text: Ján Koleník, value: 2022 }
+      - { text: Kristián Baran, value: 2025 }
+
+  - id: film-oscar-poradie
+    type: order
+    prompt: Zoraď slovenské filmy podľa toho, kedy ich Slovensko vybralo na Oscara, od najstaršieho.
+    direction: asc
+    unit: rok výberu
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Slovak_submissions_for_the_Academy_Award_for_Best_International_Feature_Film
+    items:
+      - { text: Všetko čo mám rád, value: 1993 }
+      - { text: Záhrada, value: 1995 }
+      - { text: Slnečný štát, value: 2005 }
+      - { text: Cigán, value: 2011 }
+      - { text: Čiara, value: 2017 }
+      - { text: Obeť, value: 2022 }
+
+  - id: tv-panelak-diely
+    type: number
+    prompt: Koľko dielov (v 16 sériách) mal seriál Panelák?
+    answer: 1351
+    unit: dielov
+    scale: log
+    tolerance: 0.1
+    why: Bežal s prestávkou od roku 2008 do roku 2017.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Panel%C3%A1k_(seri%C3%A1l)
+
+  - id: film-piargy-ceny
+    type: number
+    prompt: Koľko cien Slnko v sieti získal film Piargy, najocenenejší film v histórii týchto cien?
+    answer: 11
+    unit: cien
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Má aj najviac nominácií, až 16.
+    difficulty: 3
+    source: https://sk.wikipedia.org/wiki/Zoznam_laure%C3%A1tov_a_kandid%C3%A1tov_cien_Slnko_v_sieti
+
+  - id: film-fontana-rok
+    type: number
+    prompt: V ktorom roku mal premiéru hudobný film Fontána pre Zuzanu?
+    answer: 1986
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Premiéra bola 20. marca 1986.
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Font%C3%A1na_pre_Zuzanu
+
+  - id: film-obchod-oscar-rok
+    type: number
+    prompt: V ktorom roku bola ceremónia, na ktorej Obchod na korze získal Oscara?
+    answer: 1966
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: Bol to prvý československý film s touto cenou.
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Obchod_na_korze
+
+  - id: film-slnko-v-sieti-rezia
+    type: choice
+    prompt: Kto režíroval klasický film Slnko v sieti?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/The_Sun_in_a_Net
+    correct: { text: Štefan Uher, why: "Podľa poviedok Alfonza Bednára; po ňom je pomenovaná aj filmová cena." }
+    wrong:
+      - { text: Juraj Jakubisko, why: "Natočil Perinbabu a Tisícročnú včelu." }
+      - { text: Martin Ťapák, why: "Natočil Pacha, hybského zbojníka." }
+      - { text: Dušan Rapoš, why: "Natočil Fontánu pre Zuzanu." }
+
+  - id: film-obchod-brtko
+    type: choice
+    prompt: Kto hral stolára Tóna Brtka v Obchode na korze?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Obchod_na_korze
+    correct: { text: Jozef Kroner, why: "Rolu, ktorá mu priniesla svetovú slávu." }
+    wrong:
+      - { text: Ladislav Chudík, why: "Hral kráľa podsvetia v Soli nad zlato." }
+      - { text: Marián Labuda, why: "Hral grófa v Pachovi." }
+      - { text: Juraj Kukura, why: "Hral kráľa v Soli nad zlato." }
