@@ -14,7 +14,7 @@ import {
   type TurnResult,
 } from "../engine/game.ts";
 import { orderPoints, pickPoints } from "../engine/scoring.ts";
-import { issueUrl, reportUrl } from "./links.ts";
+import { ratingsUrl, reportUrl } from "./links.ts";
 import { KEYS, load, save } from "./storage.ts";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
@@ -636,9 +636,9 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
     if (!DEMO) save(KEYS.ratings, next);
   };
   const rated = cards.filter((c) => ratings[c.key]);
-  const body = rated
-    .map((c) => `- ${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} \`${c.key}\` (v${ratings[c.key].version ?? c.version}): ${c.prompt}`)
-    .join("\n");
+  const lines = rated.map(
+    (c) => `${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} ${c.key} (v${ratings[c.key].version ?? c.version}): ${c.prompt}`,
+  );
   return (
     <section class="review" aria-labelledby="review-title">
       <h2 class="review__title" id="review-title">
@@ -669,7 +669,7 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
       {rated.length > 0 && (
         <a
           class="btn btn--small"
-          href={issueUrl(sk.reviewIssueTitle(rated.length), body)}
+          href={ratingsUrl(lines)}
           target="_blank"
           rel="noopener noreferrer"
         >

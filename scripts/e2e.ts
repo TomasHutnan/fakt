@@ -37,7 +37,7 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       const report = page.locator(".q__source a", { hasText: "Nahlásiť chybu" });
       if (await report.count()) {
         const href = (await report.getAttribute("href")) ?? "";
-        if (!/\/issues\/new\?title=/.test(href)) errors.push(`bad report link: ${href}`);
+        if (!/docs\.google\.com\/forms\/.*entry\.395949983=/.test(href)) errors.push(`bad report link: ${href}`);
         reportLinks++;
       }
       await page.locator(".turnend .btn--primary").click();
@@ -114,7 +114,7 @@ for (const [mode, players, revealEach] of [
   await page.locator(".review__btn").first().click();
   const send = page.locator(".review a.btn");
   const href = (await send.getAttribute("href")) ?? "";
-  if (!href.includes("issues/new") || !decodeURIComponent(href).includes("👍")) errors.push(`bad review link: ${href}`);
+  if (!href.includes("entry.295936394=") || !new URL(href).searchParams.get("entry.295936394")?.includes("👍")) errors.push(`bad review link: ${href}`);
   await page.getByRole("button", { name: "Domov" }).click();
   await page.getByRole("button", { name: /Rýchla hra/ }).click();
   if (!(await page.locator(".handover").count())) errors.push("quick start did not start a game");

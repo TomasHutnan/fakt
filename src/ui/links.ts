@@ -2,29 +2,54 @@ import type { Card } from "../engine/cards.ts";
 
 export const REPO_URL = "https://github.com/TomasHutnan/fakt";
 
-// GitHub caps the URL of a prefilled issue (~8 kB encoded); drop whole lines from the end until it fits.
+// Reports go to a Google Form (no account needed). Field ids from the owner's prefilled link.
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScDquWAxCQQ_4CbRyajF6npX8sKzrcmCUiZQ5iHpu0FceSSGw/viewform";
+const FIELD = {
+  key: "entry.395949983",
+  version: "entry.808986666",
+  question: "entry.265971660",
+  ratings: "entry.295936394",
+} as const;
+
+// Long prefilled URLs can fail; drop whole lines from the end of the longest field until it fits.
 const MAX_URL = 7000;
 
-export function issueUrl(title: string, body: string): string {
-  const url = (b: string) => `${REPO_URL}/issues/new?${new URLSearchParams({ title, body: b })}`;
-  const lines = body.split("\n");
-  let out = url(body);
+function formUrl(fields: Partial<Record<keyof typeof FIELD, string>>, trim?: keyof typeof FIELD): string {
+  const url = (f: typeof fields) => {
+    const params = new URLSearchParams({ usp: "pp_url" });
+    for (const [k, v] of Object.entries(f)) if (v) params.set(FIELD[k as keyof typeof FIELD], v);
+    return `${FORM_URL}?${params}`;
+  };
+  let out = url(fields);
+  if (!trim || !fields[trim]) return out;
+  const lines = fields[trim]!.split("\n");
   while (out.length > MAX_URL && lines.length > 1) {
     lines.pop();
-    out = url(`${lines.join("\n")}\n…`);
+    out = url({ ...fields, [trim]: `${lines.join("\n")}\n…` });
   }
   return out;
 }
 
-/** Prefilled issue for one card: pack, question id, pack version and what was shown. */
+/** Report form for one card: key, pack version, and the question with the options shown. */
 export function reportUrl(card: Card): string {
-  const lines = [
-    `**Otázka:** ${card.prompt}`,
-    `**Balíček:** ${card.packTitle} (\`${card.key}\`${card.packVersion != null ? `, verzia ${card.packVersion}` : ""})`,
-  ];
+  const lines = [card.prompt];
   if (card.type === "pick" || card.type === "choice") {
-    lines.push("", "**Možnosti na karte:**", ...card.options.map((o) => `- ${o.correct ? "✓" : "✗"} ${o.text}`));
+    lines.push(...card.options.map((o) => `${o.correct ? "✓" : "✗"} ${o.text}`));
   }
-  lines.push("", "**Čo je zle:**", "");
-  return issueUrl(`Otázka ${card.key}`, lines.join("\n"));
+  return formUrl(
+    {
+      key: card.key,
+      version: card.packVersion != null ? String(card.packVersion) : "",
+      question: lines.join("\n"),
+    },
+    "question",
+  );
 }
+
+/** Ratings form after a game: one line per rated card. */
+export function ratingsUrl(lines: string[]): string {
+  return formUrl({ ratings: lines.join("\n") }, "ratings");
+}
+
+/** The report form with nothing filled in (Settings). */
+export const REPORT_FORM_URL = FORM_URL;

@@ -4,7 +4,7 @@ import { DEFAULT_SETTINGS, type Mode, type Settings } from "../engine/game.ts";
 import type { WipeRule } from "../engine/scoring.ts";
 import { DESIGNS } from "../designs/index.ts";
 import { parsePackFile } from "./packs.ts";
-import { REPO_URL } from "./links.ts";
+import { REPO_URL, REPORT_FORM_URL } from "./links.ts";
 import { sk } from "./sk.ts";
 
 const QUICK = [
@@ -488,7 +488,7 @@ export function SettingsScreen(props: {
               {sk.sourceCode}
             </a>
             {" · "}
-            <a href={`${REPO_URL}/issues/new`} target="_blank" rel="noopener noreferrer">
+            <a href={REPORT_FORM_URL} target="_blank" rel="noopener noreferrer">
               {sk.reportQuestion}
             </a>
           </p>
