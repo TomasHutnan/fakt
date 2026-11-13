@@ -1,0 +1,669 @@
+id: sk-tradicie
+title: Tradície a zvyky
+description: Vianoce, Veľká noc, fašiangy, kroje, ľudové nástroje, remeslá, festivaly a pamiatky Slovenska.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: vianoce-stedry-vecer
+    type: pick
+    prompt: Ktoré z týchto zvykov patria k tradičným slovenským Vianociam a Štedrému večeru?
+    difficulty: 1
+    tags: [vianoce, zvyky]
+    source: https://sk.wikipedia.org/wiki/%C5%A0tedr%C3%BD_de%C5%88
+    correct:
+      - text: prekrojenie jablka
+        why: Ak sa v strede ukázala päťcípa hviezdička zo zdravých jadierok, sľubovala zdravie.
+      - text: šupina z kapra pod obrusom
+        why: Mala do domu priniesť hojnosť a peniaze po celý nasledujúci rok.
+      - text: oblátky s medom a cesnakom
+        why: Med mal zabezpečiť lásku a dobrotu, cesnak zas pevné zdravie.
+      - text: reťaz okolo štedrovečerného stola
+        why: Spájala nohy stola, aby rodina držala celý rok pokope.
+      - text: pôst až do prvej večernej hviezdy
+        why: Kto ho vydržal, tomu sa vraj malo ukázať zlaté prasiatko.
+      - text: betlehemci a koledníci
+        why: Chodili od domu k domu s vianočnou hrou o narodení Ježiša a vinšmi.
+    wrong:
+      - text: vynášanie slameného panáka do potoka
+        why: To je jarné vynášanie Moreny pred Veľkou nocou.
+      - text: schovávanie sklenenej uhorky na stromčeku
+        why: Novodobý zvyk z vianočných ozdôb, nie slovenská ľudová tradícia.
+      - text: rozbíjanie tanierov pred dverami na Silvestra
+        why: Zvyk známy z Dánska, nie zo slovenských Vianoc.
+      - text: preskakovanie vysokej vatry na lúke
+        why: Patrí k júnovým jánskym ohňom na letný slnovrat.
+      - text: hľadanie čokoládových vajíčok v záhrade
+        why: Veľkonočný zvyk zo západnej Európy.
+      - text: pochovávanie basy
+        why: Veselý obrad na záver fašiangov pred začiatkom pôstu.
+
+  - id: velka-noc-zvyky
+    type: pick
+    prompt: Ktoré zvyky a predmety patria k tradičnej slovenskej Veľkej noci a Veľkému týždňu?
+    difficulty: 1
+    tags: [velka-noc, zvyky]
+    source: https://sk.wikipedia.org/wiki/Ve%C4%BEkono%C4%8Dn%C3%BD_pondelok
+    correct:
+      - text: šibačka vŕbovým korbáčom
+        why: Šibanie vŕbovými prútmi malo dievčatám priniesť zdravie a sviežosť.
+      - text: oblievačka studenou vodou
+        why: Chlapci oblievali dievčatá vodou, aby boli zdravé a svieže.
+      - text: maľované kraslice ako odmena
+        why: Dievčatá nimi na Veľkonočný pondelok obdarúvali šibačov a kupačov.
+      - text: rapkáče namiesto kostolných zvonov
+        why: Od Zeleného štvrtka zvony symbolicky odleteli do Ríma a nahradilo ich drevené rapkanie.
+      - text: špenát alebo žihľava na Zelený štvrtok
+        why: Zelené jarné jedlo v tento deň malo zabezpečiť zdravie na celý rok.
+    wrong:
+      - text: stavanie vyzdobenej brezy pred dom dievčaťa
+        why: Stavanie mája patrí k prelomu apríla a mája.
+      - text: chodenie v bielych plachtách s husím krídlom
+        why: Takto chodili Lucky alebo Barborky počas zimných stridžích dní.
+      - text: liatie roztaveného olova do vody
+        why: Zimné veštenie na Ondreja, Štedrý večer či Silvestra.
+      - text: zapaľovanie vatier na kopcoch na slnovrat
+        why: Jánske ohne patria ku koncu júna, nie k jari.
+      - text: pochovávanie basy
+        why: Veselý obrad na záver fašiangov, pred Veľkou nocou sa už nekonal.
+      - text: pečenie svätomartinskej husi
+        why: Jesenný zvyk spojený s 11. novembrom.
+
+  - id: fasiangy-zvyky
+    type: pick
+    prompt: Čo tradične patrí k slovenským fašiangom (obdobiu od Troch kráľov do Popolcovej stredy)?
+    difficulty: 2
+    tags: [fasiangy, zvyky]
+    source: https://sk.wikipedia.org/wiki/Fa%C5%A1iangy
+    correct:
+      - text: pochovávanie basy
+        why: Veselá paródia pohrebu na záver fašiangov, keď hudba na 40 dní pôstu stíchne.
+      - text: maska Turoňa s klapajúcou tlamou
+        why: Zvieracia maska s klapajúcou tlamou, ktorá chodila v sprievode po dedine.
+      - text: vyprážané šišky a fánky
+        why: Sýte pečivo pred pôstom; fánkam sa hovorilo aj božie milosti.
+      - text: domáce zabíjačky
+        why: Mäsité hody a hostiny pred pôstom.
+      - text: obchôdzky s ražňom alebo šabľou
+        why: Mládenci chodili po domoch a na šabľu či ražeň napichovali darovanú slaninu a klobásy.
+      - text: hlavná svadobná sezóna
+        why: Počas nasledujúceho pôstu sa svadby nekonali, takže ľudia sa ponáhľali zosobášiť.
+    wrong:
+      - text: vynášanie slameného panáka do potoka
+        why: Morena sa vynáša až neskôr v pôste, najčastejšie na Smrtnú nedeľu.
+      - text: pletenie vŕbových korbáčov
+        why: Zvyk spojený s Veľkonočným pondelkom, nie s fašiangami.
+      - text: zbieranie deviatich druhov liečivých bylín
+        why: Zbieranie liečivých bylín patrí k svätojánskym tradíciám v júni.
+      - text: rezanie čerešňovej halúzky do vázy
+        why: Predvianočný zvyk na Katarínu alebo Barboru.
+      - text: ukladanie vyčistených čižiem do okna
+        why: Mikulášska tradícia zo začiatku decembra.
+      - text: púšťanie orechových škrupiniek so sviečkou
+        why: Štedrovečerné veštenie pri vode, nie fašiangová zábava.
+
+  - id: ludove-nastroje
+    type: pick
+    prompt: Ktoré z týchto nástrojov patria medzi tradičné slovenské ľudové hudobné nástroje?
+    difficulty: 1
+    tags: [hudba, nastroje]
+    source: https://sk.wikipedia.org/wiki/Fujara
+    correct:
+      - text: fujara
+        why: Až dvojmetrová pastierska píšťala zo stredného Slovenska zapísaná v UNESCO.
+      - text: gajdy
+        why: Dychový nástroj s koženým mechom; gajdošská kultúra je na Slovensku v UNESCO.
+      - text: koncovka
+        why: Bezdierková pastierska píšťala, na ktorej sa tóny menia dychom a zakrývaním konca.
+      - text: pastierska trombita
+        why: Dlhá drevená trúba, ktorou sa pastieri dorozumievali v horách.
+      - text: drumbľa
+        why: Malý nástroj s jazýčkom priložený k ústam, ktoré slúžia ako ozvučnica.
+      - text: ozembuch
+        why: Rytmický nástroj, ktorým sa búcha o zem; hrá sa pri tanci a vo fašiangových sprievodoch.
+      - text: dvojačka
+        why: Dvojitá drevená píšťala, kde jedna rúrka hrá melódiu a druhá stály sprievodný tón.
+    wrong:
+      - text: balalajka
+        why: Ruský strunový nástroj s typickým trojuholníkovým telom.
+      - text: didgeridoo
+        why: Pôvodný dychový nástroj austrálskych domorodcov.
+      - text: sitar
+        why: Klasický indický brnkací nástroj s rezonančnými strunami.
+      - text: buzuki
+        why: Grécky strunový nástroj známy z tamojšej ľudovej hudby.
+      - text: kastanety
+        why: Španielske drevené klapky do ruky, typické pre flamenco.
+      - text: kantele
+        why: Tradičný fínsky strunový nástroj pripomínajúci citaru.
+      - text: bandura
+        why: Tradičný ukrajinský brnkací nástroj s desiatkami strún.
+
+  - id: ludova-architektura-rezervacie
+    type: pick
+    prompt: Ktoré z týchto obcí alebo osád patria medzi oficiálnych 10 pamiatkových rezervácií ľudovej architektúry na Slovensku?
+    difficulty: 2
+    tags: [architektura, pamiatky]
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Zoznam_pamiatkov%C3%BDch_rezerv%C3%A1ci%C3%AD_na_Slovensku
+    correct:
+      - text: Čičmany
+        why: Rezervácia od roku 1977, slávna bielymi ornamentmi na dreveniciach.
+      - text: Vlkolínec
+        why: Osada pri Ružomberku, rezervácia od roku 1977 a od roku 1993 aj v UNESCO.
+      - text: Ždiar
+        why: Goralská obec pod Belianskymi Tatrami, rezervácia od roku 1977.
+      - text: Podbiel
+        why: Obec na Orave, rezervácia od roku 1977.
+      - text: Špania Dolina
+        why: Bývalá banská obec pri Banskej Bystrici, rezervácia od roku 1979.
+      - text: Brhlovce
+        why: Obec pri Leviciach, rezervácia od roku 1983.
+      - text: Veľké Leváre
+        why: Záhorácka obec, rezervácia od roku 1981.
+    wrong:
+      - text: Terchová
+        why: Slávna jánošíkovská obec, no v zozname rezervácií ľudovej architektúry nie je.
+      - text: Zuberec
+        why: Je tu oravský skanzen, no obec nie je v zozname rezervácií ľudovej architektúry.
+      - text: Východná
+        why: Známa folklórnym festivalom, nie ako rezervácia ľudovej architektúry.
+      - text: Detva
+        why: Známa folklórom, no nie je rezerváciou ľudovej architektúry.
+      - text: Bardejov
+        why: Je mestská pamiatková rezervácia, nie rezervácia ľudovej architektúry.
+      - text: Banská Štiavnica
+        why: Historické banské mesto v UNESCO, no nie rezervácia ľudovej architektúry.
+
+  - id: skanzeny-slovensko
+    type: pick
+    prompt: V ktorých z týchto miest a obcí na Slovensku sa nachádza múzeum ľudovej architektúry v prírode (skanzen)?
+    difficulty: 2
+    tags: [architektura, muzea]
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Skanzen
+    correct:
+      - text: Martin
+        why: Múzeum slovenskej dediny v Jahodníckych hájoch je najväčší skanzen na Slovensku.
+      - text: Pribylina
+        why: Múzeum liptovskej dediny so stavbami zachránenými pred zatopením Liptovskou Marou.
+      - text: Zuberec
+        why: Múzeum oravskej dediny pri Zuberci.
+      - text: Vychylovka
+        why: Múzeum kysuckej dediny v Novej Bystrici, súčasťou je aj lesná železnička.
+      - text: Bardejovské Kúpele
+        why: Najstarší skanzen na Slovensku, prvá expozícia vznikla v roku 1965.
+      - text: Stará Ľubovňa
+        why: Ľubovniansky skanzen, národopisná expozícia v prírode.
+      - text: Humenné
+        why: Expozícia ľudovej architektúry a bývania v prírode.
+    wrong:
+      - text: Rožnov pod Radhoštěm
+        why: Slávne Valašské múzeum v prírode leží na Morave v Česku.
+      - text: Piešťany
+        why: Kúpeľné mesto má Balneologické múzeum, nie skanzen ľudových stavieb.
+      - text: Trenčín
+        why: Dominantou je hrad, skanzen ľudovej architektúry tam nie je.
+      - text: Zakopané
+        why: Poľské goralské mesto pod Tatrami, nie slovenské múzeum v prírode.
+      - text: Szentendre
+        why: Najväčší maďarský skanzen ležiaci severne od Budapešti.
+
+  - id: unesco-svetove-tradicie
+    type: pick
+    prompt: Ktoré z týchto slovenských tradícií, remesiel alebo ľudových pamiatok sú zapísané v celosvetovom zozname UNESCO?
+    difficulty: 2
+    tags: [unesco, tradicie]
+    asOf: "2026-11"
+    source: https://www.unesco.sk/en/intangible-cultural-heritage-of-Slovakia
+    correct:
+      - text: fujara a jej hudba
+        why: Prvý slovenský prvok nehmotného dedičstva ľudstva v UNESCO.
+      - text: modrotlač
+        why: Zapísaná v roku 2018 v spoločnej nominácii viacerých európskych krajín.
+      - text: drotárstvo
+        why: Remeslo a umenie zapísané do zoznamu UNESCO v roku 2019.
+      - text: terchovská muzika
+        why: Sláčiková ľudová hudba z Terchovej je v zozname UNESCO od roku 2013.
+      - text: horehronský viachlasný spev
+        why: Charakteristický viachlasný spev z Horehronia zapísali v roku 2017.
+      - text: gajdošská kultúra
+        why: Tradičné gajdovanie a výroba gájd sú v UNESCO od roku 2015.
+      - text: osada Vlkolínec
+        why: Zachovalá zrubová osada patrí do svetového dedičstva UNESCO už od roku 1993.
+    wrong:
+      - text: maľované drevenice v Čičmanoch
+        why: Sú pamiatkovou rezerváciou, no do zoznamu UNESCO nepatria.
+      - text: veľkonočná šibačka a oblievačka
+        why: Známa jarná tradícia, no na svetovom zozname UNESCO zapísaná nie je.
+      - text: Folklórny festival Východná
+        why: Významný folklórny festival, na listine UNESCO však nefiguruje.
+      - text: vynášanie Moreny
+        why: Starobylý jarný zvyk, ktorý nie je zapísaný v UNESCO.
+      - text: modranská majolika
+        why: Je v národnom zozname Slovenska, no na svetovú listinu UNESCO sa zatiaľ nedostala.
+      - text: banskoštiavnický Salamander
+        why: Je v národnom zozname nehmotného dedičstva Slovenska, nie na svetovej listine UNESCO.
+
+  - id: ludove-tance
+    type: pick
+    prompt: Ktoré z týchto tancov patria medzi tradičné ľudové tance zo Slovenska?
+    difficulty: 1
+    tags: [tanec, folklor]
+    source: https://folkdancefootnotes.org/dance/a-real-folk-dance-what-is-it/1st-generation-dances/odzemok-slovakia/
+    correct:
+      - text: odzemok
+        why: Mužský tanec improvizovaného charakteru, často s valaškou.
+      - text: karička
+        why: Ženský kruhový tanec sprevádzaný spevom.
+      - text: čardáš
+        why: Párový tanec, ktorý vznikol v prvej polovici 19. storočia; za svoj ho pokladajú aj Maďari.
+      - text: verbunk
+        why: Mužský tanec spojený s náborom do vojska.
+    wrong:
+      - text: flamenco
+        why: Vášnivý tanec z južného Španielska sprevádzaný gitarou a kastanetami.
+      - text: sirtaki
+        why: Populárny grécky tanec, ktorý preslávil film Grék Zorba.
+      - text: tarantella
+        why: Rýchly tradičný tanec z južného Talianska.
+      - text: kankán
+        why: Francúzsky kabaretný tanec z konca 19. storočia s vysokým vykopávaním nôh.
+      - text: hopak
+        why: Tradičný ukrajinský kozácky tanec s akrobatickými prvkami.
+      - text: samba
+        why: Brazílsky karnevalový tanec z Ria de Janeira.
+      - text: mazurka
+        why: Poľský ľudový tanec v trojdobom takte zo stredného Poľska.
+
+  - id: svadobne-zvyky
+    type: pick
+    prompt: Ktoré pojmy a obrady patria k tradičnej slovenskej ľudovej svadbe?
+    difficulty: 1
+    tags: [svadba, zvyky]
+    source: https://www.vlkolinec.sk/en/about-vlkolinec/customs/weddings/
+    correct:
+      - text: čepčenie nevesty
+        why: Polnočný obrad, pri ktorom neveste zložia venček a nasadia čepiec vydatej ženy.
+      - text: pytačky
+        why: Ženích s krstným otcom prichádza do nevestinho domu požiadať o ruku.
+      - text: odobierka
+        why: Lúčenie nevesty alebo ženícha s rodičmi pred odchodom z domu.
+      - text: starejší
+        why: Hlavná postava svadby, ktorá ju vedie a prednáša svadobné reči.
+      - text: rozbíjanie taniera a zametanie črepov
+        why: Mladomanželia musia črepy pozametať a to, čo ostane, vraj ohlasuje deti.
+    wrong:
+      - text: pochovávanie basy
+        why: Patrí na záver fašiangov pred pôstom, nie na svadbu.
+      - text: vynášanie Moreny
+        why: Jarný zvyk na zahnanie zimy pred Veľkou nocou.
+      - text: veľkonočná šibačka
+        why: Koná sa na Veľkonočný pondelok, nie na svadbe.
+      - text: trasenie plotom na Ondreja
+        why: Dievčenské ľúbostné veštenie na konci novembra.
+      - text: preskakovanie jánskej vatry
+        why: Zvyk zo Svätojánskej noci v júni.
+      - text: chodenie s Turoňom
+        why: Fašiangová koleda s rohatou zvieracou maskou.
+
+  - id: kroj-sucasti
+    type: pick
+    prompt: Ktoré z týchto názvov označujú súčasti tradičného slovenského ľudového kroja?
+    difficulty: 2
+    tags: [kroje, odev]
+    source: https://sk.wikipedia.org/wiki/Kroj
+    correct:
+      - text: čepiec
+        why: Pokrývka hlavy vydatých žien.
+      - text: parta
+        why: Ozdobná čelenka či veniec slobodných dievčat a neviest.
+      - text: krpce
+        why: Jednoduchá kožená obuv uväzovaná remencami.
+      - text: lajblík
+        why: Krátka zdobená vesta bez rukávov.
+      - text: oplecko
+        why: Ženská súčasť kroja, vyšívané rukávce.
+      - text: kabanica
+        why: Trojštvrťový kabát zo súkna, súčasť zimného odevu.
+      - text: guba
+        why: Vlnený kabát či plášť, súčasť zimného odevu.
+    wrong:
+      - text: dirndl
+        why: Tradičný ženský kroj alpských regiónov v Bavorsku a Rakúsku.
+      - text: kokošník
+        why: Ozdobná ruská pokrývka hlavy.
+      - text: kilt
+        why: Škótska pánska skladaná sukňa z tartanovej látky.
+      - text: sarafán
+        why: Tradičné dlhé ruské dievčenské a ženské šaty bez rukávov.
+      - text: pončo
+        why: Juhoamerický vlnený plášť s otvorom na hlavu.
+      - text: kimono
+        why: Slávnostný japonský odev so širokými rukávmi a opaskom obi.
+
+  - id: jedla-sviatky
+    type: pick
+    prompt: Ktoré jedlá a pečivá patria na Slovensku k tradičným vianočným, fašiangovým alebo veľkonočným stolom?
+    difficulty: 1
+    tags: [jedlo, zvyky]
+    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A1_kuchy%C5%88a
+    correct:
+      - text: opekance alebo bobáľky
+        why: Malé guľky z kysnutého cesta s makom na Štedrý večer.
+      - text: vianočná kapustnica
+        why: Polievka z kyslej kapusty, húb a sušených sliviek, v mnohých krajoch aj s klobásou.
+      - text: oblátky s medom
+        why: Tenké pečené oplátky, ktoré sa na Vianoce jedia na úvod večere.
+      - text: fašiangové šišky a fánky
+        why: Vyprážané pečivo pred pôstom, v niektorých krajoch zvané pampúchy.
+      - text: veľkonočná paska
+        why: Slávnostný kysnutý veľkonočný koláč, ktorý sa nosí svätiť do kostola.
+      - text: veľkonočná hrudka alebo syrek
+        why: Sladkastá či slaná vajíčkovo-mliečna špecialita varená na Veľkú noc.
+    wrong:
+      - text: panettone
+        why: Taliansky vysoký vianočný koláč z Milána s hrozienkami a kandizovaným ovocím.
+      - text: stollen
+        why: Tradičná nemecká vianočná štóla hojne posypaná práškovým cukrom.
+      - text: vianočný puding
+        why: Britský hutný dezert zo sušeného ovocia, ktorý sa pred podávaním flambuje.
+      - text: baklava
+        why: Sladký dezert z lístkového cesta, orechov a sirupu z Balkánu a Blízkeho východu.
+      - text: churros
+        why: Španielske vyprážané tyčinky z odpaľovaného cesta máčané v čokoláde.
+      - text: mesačný koláč (mooncake)
+        why: Čínske pečivo tradičné pre jesenný Sviatok stredu jesene.
+
+  - id: folklorne-festivaly-mesta
+    type: pick
+    prompt: V ktorých z týchto obcí alebo miest na Slovensku sa koná známy veľký folklórny festival?
+    difficulty: 2
+    tags: [festivaly, folklor]
+    asOf: "2026-11"
+    source: https://sk.wikipedia.org/wiki/Folkl%C3%B3rny_festival_V%C3%BDchodn%C3%A1
+    correct:
+      - text: Východná
+        why: Najstarší celoslovenský folklórny festival, koná sa od roku 1953.
+      - text: Detva
+        why: Dejisko Folklórnych slávností pod Poľanou, ktoré sa konajú od roku 1966.
+      - text: Myjava
+        why: Každý jún sa tu koná Medzinárodný folklórny festival Myjava.
+      - text: Terchová
+        why: Hostí Jánošíkove dni, ktoré sa konajú od roku 1963.
+      - text: Heľpa
+        why: Obec na Horehroní, dejisko Horehronských dní spevu a tanca.
+      - text: Zuberec
+        why: Každý august sa tu konajú Podroháčske folklórne slávnosti.
+      - text: Raslavice
+        why: Šarišská obec, dejisko Šarišských slávností piesní a tancov.
+    wrong:
+      - text: Strážnice
+        why: Folklórny festival na južnej Morave v Česku.
+      - text: Rožnov pod Radhoštěm
+        why: Moravské mesto s valašským skanzenom a folklórnymi slávnosťami v Česku.
+      - text: Zakopané
+        why: Poľské mesto pod Tatrami, kde sa koná festival horských krajín.
+      - text: Moháč
+        why: Maďarské mesto na Dunaji preslávené fašiangovým sprievodom Busójárás.
+      - text: Velká nad Veličkou
+        why: Centrum moravského regiónu Horňácko v Česku.
+      - text: Hollókő
+        why: Maďarská pamiatková obec zapísaná v UNESCO.
+
+  - id: stridzie-dni-svatci
+    type: pick
+    prompt: Ktoré predvianočné sviatky (od konca novembra do polovice decembra) patria v slovenskom ľudovom kalendári medzi „stridžie dni“?
+    difficulty: 3
+    tags: [zvyky, kalendar]
+    source: https://spectator.sme.sk/culture-and-lifestyle/c/under-the-festive-spell
+    correct:
+      - text: Katarína (25. november)
+        why: Prvá zo stridžích dní, začínalo obdobie ochrany pred zlými silami.
+      - text: Ondrej (30. november)
+        why: Noc pred ním patrila dievčenským ľúbostným veštbám.
+      - text: Barbora (4. december)
+        why: V predvečer chodili Barborky a dievčatá rezali čerešňové halúzky.
+      - text: Mikuláš (6. december)
+        why: Okrem obdarúvania detí patril aj medzi stridžie dni.
+      - text: Lucia (13. december)
+        why: Najdôležitejší zo stridžích dní, Lucia sa v rozprávkach považovala za najväčšiu čarodejnicu.
+    wrong:
+      - text: Martin (11. november)
+        why: Prinášal sneh, husacinu a mladé víno, do stridžích dní však nepatril.
+      - text: Štefan (26. december)
+        why: Druhý sviatok vianočný, nie stridží deň.
+      - text: Silvester (31. december)
+        why: Záver občianskeho roka, do stridžích dní nepatrí.
+      - text: Traja králi (6. január)
+        why: Sviatok Zjavenia Pána, ktorým začínajú fašiangy.
+      - text: Blažej (3. február)
+        why: Zimný sviatok v februári, nie predvianočný stridží deň.
+      - text: Dorota (6. február)
+        why: Februárový sviatok, mimo predvianočných stridžích dní.
+      - text: Florián (4. máj)
+        why: Jarný sviatok patróna hasičov a ochrancu pred ohňom.
+
+  - id: kraslice-techniky
+    type: pick
+    prompt: Ktoré z týchto techník patria medzi tradičné ľudové spôsoby zdobenia slovenských veľkonočných kraslíc?
+    difficulty: 3
+    tags: [velka-noc, remesla]
+    source: https://sk.wikipedia.org/wiki/Kraslica
+    correct:
+      - text: batikovanie včelím voskom
+        why: Rozohriaty vosk sa nanášal špendlíkom či trubičkou pred farbením v kúpeli.
+      - text: vyškrabávanie ornamentov
+        why: Do zafarbeného vajíčka sa jemný vzor vyškrabával ostrým nožíkom alebo ihlou.
+      - text: odrôtovanie jemným drôtom
+        why: Špecialita drotárov, ktorí vajíčko opletali drôtenou sieťkou ako čipkou.
+      - text: oblepovanie slamou a sitinou
+        why: Na škrupinu sa lepili drobné kosoštvorce z nalisovanej slamy či duše sitiny.
+      - text: leptanie octom alebo kapustovou šťavou
+        why: Kyselina vyleptala zo zafarbeného vajíčka svetlý vzor.
+    wrong:
+      - text: smaltovanie v keramickej peci
+        why: Vaječná škrupina by vysokú teplotu výpalu v peci nevydržala.
+      - text: tepanie kladivkom do medeného plechu
+        why: Kovotepecká technika, ktorá sa na krehkej škrupine nedá robiť.
+      - text: fúkanie tekutého skla pri kahanci
+        why: Takto vznikajú sklenené vianočné gule, nie tradičné kraslice.
+      - text: rezervotlač v indigovej kadi (modrotlač)
+        why: Technika farbenia ľanového a bavlneného plátna, nie vajec.
+      - text: vypaľovanie zlatým listom na porcelán
+        why: Zdobenie luxusného riadu, nie ľudových veľkonočných vajec.
+      - text: paličkovanie ľanovou niťou na valci
+        why: Postup výroby tradičnej čipky, nie zdobenia škrupín.
+
+  - id: ludove-vestenie
+    type: pick
+    prompt: Ktoré z týchto spôsobov veštenia patria do starých slovenských ľudových tradícií (najmä na Ondreja, Luciu či Štedrý večer)?
+    difficulty: 2
+    tags: [zvyky, povery]
+    source: https://sk.wikipedia.org/wiki/Vianoce
+    correct:
+      - text: liatie roztaveného olova do vody
+        why: Podľa stuhnutého tvaru sa hádalo povolanie budúceho ženícha alebo osud v novom roku.
+      - text: trasenie plotom v noci na Ondreja
+        why: Z ktorej strany zabrechal pes, odtiaľ mal prísť budúci manžel.
+      - text: hádzanie topánky cez hlavu ku dverám
+        why: Špička smerujúca k dverám znamenala skorý odchod z domu a svadbu.
+      - text: krájanie jablka naprieč na Štedrý večer
+        why: Päťcípa hviezdička zdravých jadierok sľubovala zdravie, krížik zas chorobu.
+      - text: púšťanie orechových škrupiniek so sviečkou
+        why: Lodičky v mise vody ukazovali, kto zostane doma a kto odíde do sveta.
+      - text: počítanie kolov v plote potme
+        why: Párny počet kolov mal predpovedať budúceho muža.
+    wrong:
+      - text: čítanie budúcnosti z čajových lístkov
+        why: Britská a východná tradícia veštenia zo šálky sypaného čaju.
+      - text: vykladanie tarotových kariet
+        why: Kartová tradícia pôvodom z renesančného Talianska, nie slovenská dedinská mágia.
+      - text: veštenie zo severských rún
+        why: Zvyk spojený so starogermánskou a škandinávskou kultúrou.
+      - text: čítanie z kávovej usadeniny
+        why: Veštenie známe z Turecka, Balkánu a Blízkeho východu.
+      - text: hádzanie paličiek I-ťing
+        why: Staroveká čínska veštecká tradícia z Knihy premien.
+      - text: veštenie z palmových listov
+        why: Indická tradícia prorokovania osudu, nie slovenský ľudový zvyk.
+
+  # ---------------------------------------------------------------- order
+  - id: zvyky-v-kalendari
+    type: order
+    prompt: Zoraď tieto tradičné slovenské zvyky tak, ako prichádzajú za sebou v kalendárnom roku (od januára do decembra).
+    direction: asc
+    difficulty: 1
+    tags: [zvyky, kalendar]
+    source: https://www.ludovakultura.sk/
+    items:
+      - text: Hromnice (svätenie sviec)
+        value: 33
+        label: 2. február
+      - text: vynášanie Moreny
+        value: 80
+        label: marec – apríl
+      - text: stavanie májov
+        value: 121
+        label: 1. máj
+      - text: jánske ohne
+        value: 175
+        label: 24. jún
+      - text: Lucia (vymetanie kútov)
+        value: 347
+        label: 13. december
+
+  - id: stridzie-dni-poradie
+    type: order
+    prompt: Zoraď tieto stridžie dni podľa toho, ako nasledujú v kalendári.
+    direction: asc
+    difficulty: 2
+    tags: [zvyky, kalendar]
+    source: https://spectator.sme.sk/culture-and-lifestyle/c/under-the-festive-spell
+    items:
+      - text: Katarína
+        value: 1125
+        label: 25. november
+      - text: Ondrej
+        value: 1130
+        label: 30. november
+      - text: Barbora
+        value: 1204
+        label: 4. december
+      - text: Mikuláš
+        value: 1206
+        label: 6. december
+      - text: Lucia
+        value: 1213
+        label: 13. december
+
+  - id: unesco-zapis-poradie
+    type: order
+    prompt: Zoraď tieto slovenské lokality a tradície podľa roku zápisu do celosvetového zoznamu UNESCO od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    tags: [unesco, tradicie]
+    asOf: "2026-11"
+    source: https://www.unesco.sk/en/intangible-cultural-heritage-of-Slovakia
+    items:
+      - text: Vlkolínec
+        value: 1993
+      - text: Terchovská muzika
+        value: 2013
+      - text: Gajdošská kultúra
+        value: 2015
+      - text: Horehronský viachlasný spev
+        value: 2017
+      - text: Modrotlač
+        value: 2018
+      - text: Drotárstvo
+        value: 2019
+
+  # ---------------------------------------------------------------- number
+  - id: vlkolinec-unesco-rok
+    type: number
+    prompt: V ktorom roku bol Vlkolínec zapísaný do Zoznamu svetového dedičstva UNESCO?
+    answer: 1993
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Do Zoznamu svetového dedičstva ho zapísali v roku 1993.
+    difficulty: 1
+    tags: [unesco, architektura]
+    source: https://sk.wikipedia.org/wiki/Vlkol%C3%ADnec
+
+  - id: vychodna-prvy-rocnik
+    type: number
+    prompt: V ktorom roku sa konal prvý ročník Folklórneho festivalu Východná, najstaršieho celoslovenského festivalu?
+    answer: 1953
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Festival sa vo Východnej koná od roku 1953.
+    difficulty: 2
+    tags: [festivaly, folklor]
+    source: https://sk.wikipedia.org/wiki/Folkl%C3%B3rny_festival_V%C3%BDchodn%C3%A1
+
+  - id: rezervacie-architektury-pocet
+    type: number
+    prompt: Koľko oficiálnych pamiatkových rezervácií ľudovej architektúry (ako Čičmany, Vlkolínec či Ždiar) je evidovaných na Slovensku?
+    answer: 10
+    unit: rezervácií
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Prvé štyri vyhlásili v roku 1977 (Čičmany, Vlkolínec, Podbiel, Ždiar), poslednou je Plavecký Peter z roku 1990.
+    difficulty: 3
+    tags: [architektura, pamiatky]
+    source: https://sk.wikipedia.org/wiki/Zoznam_pamiatkov%C3%BDch_rezerv%C3%A1ci%C3%AD_na_Slovensku
+
+  - id: unesco-nehmotne-pocet
+    type: number
+    prompt: Koľko prvkov má Slovensko v Reprezentatívnom zozname nehmotného kultúrneho dedičstva ľudstva UNESCO (fujara, modrotlač, drotárstvo...)?
+    answer: 9
+    unit: prvkov
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Fujara, terchovská muzika, gajdy, bábkarstvo, horehronský spev, modrotlač, drotárstvo, sokoliarstvo a chov lipicanov.
+    difficulty: 3
+    tags: [unesco, tradicie]
+    source: https://www.unesco.sk/en/intangible-cultural-heritage-of-Slovakia
+
+  # ---------------------------------------------------------------- choice
+  - id: morena-symbol
+    type: choice
+    prompt: Čo tradične symbolizuje slamená figurína Morena, ktorú ľudia na jar vynášajú z dediny?
+    difficulty: 1
+    tags: [zvyky, jar]
+    source: https://sk.wikipedia.org/wiki/Morena
+    correct:
+      text: zimu, chlad a smrť
+      why: Jej vynesením z dediny sa ľudia symbolicky lúčili so zimou.
+    wrong:
+      - text: bohatú jesennú úrodu obilia
+        why: Úroda sa oslavovala na dožinkách koncom leta.
+      - text: ochranu domu pred letnými búrkami
+        why: Na ochranu pred bleskom sa na Hromnice svätili sviece hromničky.
+      - text: svadbu a príchod mládencov do dediny
+        why: Zvyk sa viaže na Smrtnú nedeľu pred Veľkou nocou, nie na svadby.
+
+  - id: cicmany-poziar
+    type: choice
+    prompt: Ktorý architekt navrhol nové zrubové domy v Čičmanoch po veľkom požiari v roku 1921?
+    difficulty: 3
+    tags: [architektura, cicmany]
+    source: https://sk.wikipedia.org/wiki/%C4%8Ci%C4%8Dmany
+    correct:
+      text: Dušan Jurkovič
+      why: Po požiari z roku 1921 navrhol náhradné zrubové domy práve on.
+    wrong:
+      - text: Michal Milan Harminc
+        why: Známy slovenský architekt, no čičmianske zruby po požiari nenavrhoval.
+      - text: Jozef Gočár
+        why: Český architekt, nie autor čičmianskych zrubov.
+      - text: Emil Belluš
+        why: Slovenský architekt, nie autor čičmianskych zrubov.
