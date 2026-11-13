@@ -1,4 +1,5 @@
 // All UI texts. Slovak only for now; keep every visible string here.
+import type { ContentWarning } from "../content/types.ts";
 
 export const sk = {
   appName: "Fakt?",
@@ -123,7 +124,7 @@ export const sk = {
     "dark-humor": "čierny humor",
     racism: "rasizmus",
     abuse: "zneužívanie",
-  } as Record<string, string>,
+  } satisfies Record<ContentWarning, string> as Record<string, string>,
   questionsCount: (n: number) => `${n} ${plural(n, "otázka", "otázky", "otázok")}`,
   imported: "Importovaný",
   importPack: "Importovať balíček",

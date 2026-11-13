@@ -33,7 +33,7 @@ Required: light and dark (`@media (prefers-color-scheme: dark)`) unless the desi
 | Results | `.results`, `.result`, `.result--scored`, `.result__name`, `.result__detail`, `.result__points` |
 | Game over | `.over__head`, `.over__label`, `.over__title`, `.scoreboard`, `.score-row`, `.score-row--leader`, `.score-row__rank`, `.score-row__name`, `.score-row__score` |
 | Forms | `.field`, `.field__label` (legend), `.field__hint`, `.input`, `.segmented`, `.segmented__opt[aria-pressed]`, `.player-list`, `.player-row` |
-| Packs | `.pack-list`, `.pack`, `.pack--on`, `.pack__main`, `.pack__title`, `.pack__desc`, `.pack__meta`, `.pack__remove`, `.toggle` (checkbox), `.badge`, `.badge--adult`, `.file-btn` |
+| Packs | `.pack-list`, `.pack`, `.pack--on`, `.pack__main`, `.pack__title`, `.pack__desc`, `.pack__meta`, `.pack__remove`, `.toggle` (checkbox), `.pack__warnings`, `.badge`, `.badge--adult`, `.badge--warning`, `.file-btn` |
 | Settings | `.design-list`, `.design-choice[aria-pressed]`, `.design-choice__swatch`, `.design-choice__name`, `.design-choice__desc` |
 | Misc | `.confirm`, `.error`, `.notice`, `.loading` |
 

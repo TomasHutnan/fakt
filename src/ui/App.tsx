@@ -38,9 +38,9 @@ export function App() {
         setBuiltIn(list);
         // Packs added since the last visit get their default (on unless adult),
         // even when the player has already changed the selection.
-        const known = load<string[] | null>(KEYS.knownPacks, null);
-        const saved = load<string[] | null>(KEYS.enabledPacks, null);
-        if (saved && known) {
+        const known = load<unknown>(KEYS.knownPacks, null);
+        const saved = load<unknown>(KEYS.enabledPacks, null);
+        if (Array.isArray(saved) && Array.isArray(known)) {
           const added = list.filter((p) => !known.includes(p.id) && !p.adult && !saved.includes(p.id));
           if (added.length) {
             const ids = [...saved, ...added.map((p) => p.id)];

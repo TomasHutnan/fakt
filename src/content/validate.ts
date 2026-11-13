@@ -34,7 +34,7 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const license = str(input.license) ?? "CC0-1.0";
   const adult = input.adult === undefined ? false : input.adult;
   if (typeof adult !== "boolean") err("adult", "musí byť true alebo false");
-  const cw = input.warnings === undefined ? [] : input.warnings;
+  const cw = input.warnings == null ? [] : input.warnings;
   if (!Array.isArray(cw) || cw.some((w) => !(CONTENT_WARNINGS as readonly unknown[]).includes(w)))
     err("warnings", `musí byť zoznam z: ${CONTENT_WARNINGS.join(", ")}`);
   const version = input.version === undefined ? 1 : input.version;

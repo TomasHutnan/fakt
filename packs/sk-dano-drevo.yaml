@@ -492,7 +492,7 @@ questions:
 
   - id: dd-pocet-kon
     type: number
-    prompt: Koľkokrát zaznie v prvom filme, Dano Drevo a tajomná komnata, slovo „kôň“ (v akomkoľvek tvare)?
+    prompt: Koľkokrát je v titulkoch prvého filmu, Dano Drevo a tajomná komnata, slovo „kôň“ (v akomkoľvek tvare)?
     answer: 11
     unit: krát
     scale: linear
@@ -516,7 +516,7 @@ questions:
 
   - id: dd-pocet-inzinieri
     type: number
-    prompt: Koľkokrát zaznie v prvom filme oslovenie „inžinieri“?
+    prompt: Koľkokrát je v titulkoch prvého filmu, Dano Drevo a tajomná komnata, oslovenie „inžinieri“?
     answer: 3
     unit: krát
     scale: linear
@@ -528,7 +528,7 @@ questions:
 
   - id: dd-pocet-rysave-prasa
     type: number
-    prompt: Koľkokrát zaznie v oboch filmoch spolu spojenie „ryšavé prasa“ (v akomkoľvek tvare, aj „ryšavé prasce“)?
+    prompt: Koľkokrát je v titulkoch oboch filmov spolu spojenie „ryšavé prasa“ (v akomkoľvek tvare, aj „ryšavé prasce“)?
     answer: 4
     unit: krát
     scale: linear
@@ -552,7 +552,7 @@ questions:
 
   - id: dd-pocet-zbirka
     type: number
-    prompt: Koľkokrát je v titulkoch filmu Dano Drevo a turnaj Mekyho Žbirku meno „Žbirka“ (v akomkoľvek tvare)?
+    prompt: Koľkokrát je v titulkoch filmu Dano Drevo a turnaj Mekyho Žbirku meno „Žbirka“ (v akomkoľvek tvare, bez názvov skladieb)?
     answer: 50
     unit: krát
     scale: log

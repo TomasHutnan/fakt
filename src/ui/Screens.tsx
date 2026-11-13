@@ -283,7 +283,8 @@ export function Packs(props: {
                 </span>
                 {p.description && <span class="pack__desc">{p.description}</span>}
                 {p.warnings && p.warnings.length > 0 && (
-                  <span class="pack__warnings" aria-label={sk.contentWarnings}>
+                  <span class="pack__warnings">
+                    <span class="visually-hidden">{sk.contentWarnings}: </span>
                     {p.warnings.map((w) => (
                       <span class="badge badge--warning" key={w}>
                         {sk.warningNames[w]}
