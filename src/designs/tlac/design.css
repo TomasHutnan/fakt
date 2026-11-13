@@ -375,3 +375,6 @@
 [data-design="tlac"] .error { color: var(--bad); font-weight: 600; }
 [data-design="tlac"] .notice { color: var(--ink); font-weight: 600; border-left: 3px solid var(--signal); padding-left: 10px; }
 [data-design="tlac"] .loading { color: var(--muted); font-size: 17px; }
+
+/* Answered choice cards keep the play layout; filled cells need inner padding. */
+[data-design="tlac"] .options--answered.options--choice .opt { padding-inline: 10px; }

@@ -433,3 +433,6 @@
 @media (prefers-reduced-motion: reduce) {
   [data-design="smalt"] .btn:active:not(:disabled) { transform: none; }
 }
+
+/* Right answer the player did not pick: plain plate with a green rim (the ✓ marks it; ink stays readable in dark mode). */
+[data-design="smalt"] .options--answered .opt.opt--missed { --pl: var(--plate); --rc: var(--green); --pi: var(--plate-ink); background: var(--pl); color: var(--pi); }

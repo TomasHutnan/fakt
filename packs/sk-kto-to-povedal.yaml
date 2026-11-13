@@ -1,0 +1,451 @@
+id: sk-kto-to-povedal
+title: Kto to povedal?
+description: Slávne vety z českých a slovenských filmov, hollywoodske hlášky, komentátorské výkriky, výroky historických osobností a citáty, ktoré dotyčný v skutočnosti nikdy nepovedal.
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: pelisky-hlasky
+    type: pick
+    prompt: "Ktoré z týchto hlášok zaznejú vo filme Pelíšky (1999)?"
+    difficulty: 1
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Pel%C3%AD%C5%A1ky https://www.kfilmu.net/film/pelisky/hlasky/ https://www.nafilmy.com/pelisky/hlasky https://hlaskovstvi.blogspot.com/2019/01/pelisky.html https://www.blesk.cz/clanek/780669 https://cs.wikiquote.org/wiki/D%C3%ADlo:Obecn%C3%A1_%C5%A1kola https://cs.wikiquote.org/wiki/D%C3%ADlo:Vesni%C4%8Dko_m%C3%A1_st%C5%99ediskov%C3%A1 https://cs.wikiquote.org/wiki/D%C3%ADlo:Limon%C3%A1dov%C3%BD_Joe_aneb_Ko%C5%88sk%C3%A1_opera https://cs.wikipedia.org/wiki/J%C3%A1chyme,_ho%C4%8F_ho_do_stroje! https://cs.wikipedia.org/wiki/Mare%C4%8Dku,_podejte_mi_pero! https://cs.wikiquote.org/wiki/D%C3%ADlo:Kolja"
+    correct:
+      - { text: "Mě by jenom zajímalo, kde udělali soudruzi z NDR chybu.", why: "Otec Kraus (Jiří Kodet); asi najcitovanejšia veta filmu." }
+      - { text: "Dávám bolševikovi rok, maximálně dva.", why: "Opäť otec Kraus, presvedčený o skorom páde komunistov." }
+      - { text: "Nikdy, nebo navždy!", why: "Kraus takto odpovedá susedovmu chlapcovi, či pôjde Jindra von." }
+      - { text: "A skláři nebudou mít co žrát.", why: "Hovorí ju babička (Stella Zázvorková)." }
+      - { text: "A komu tím prospějete, co?", why: "Kričí ju otec Šebek (Miroslav Donutil)." }
+      - { text: "Mami, to máme zase rajskou?", why: "Pýta sa dcéra Uzlinka Šebková." }
+      - { text: "Učitelka a absolutně nepoučitelná!", why: "Hovorí ju otec Šebek." }
+    wrong:
+      - { text: "Neber úplatky, neber úplatky, nebo se z toho zblázníš.", why: "Jáchyme, hoď ho do stroje! (1974)." }
+      - { text: "Hliník se odstěhoval do Humpolce.", why: "Marečku, podejte mi pero! (1976)." }
+      - { text: "Alkohol podávaný v malých dávkách neškodí v jakémkoliv množství!", why: "Horác-Hogofogo v Limonádovom Joeovi (1964)." }
+      - { text: "Opakuji. Neolizujte železné zábradlí!", why: "Školský rozhlas pána riaditeľa v Obecnej škole (1991)." }
+      - { text: "Vy ste se zase kochal, že jo, pane doktore.", why: "Karel Pávek doktorovi Skružnému vo Vesničko má středisková (1985)." }
+      - { text: "Hudbu nezajímají rasy a národy.", why: "Zo Svěrákovho filmu Kolja (1996)." }
+
+  - id: ceske-filmy-priradenie
+    type: pick
+    prompt: "Ktoré dvojice „hláška – film“ sedia?"
+    difficulty: 2
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Obecn%C3%A1_%C5%A1kola https://cs.wikiquote.org/wiki/D%C3%ADlo:Vesni%C4%8Dko_m%C3%A1_st%C5%99ediskov%C3%A1 https://cs.wikiquote.org/wiki/D%C3%ADlo:Limon%C3%A1dov%C3%BD_Joe_aneb_Ko%C5%88sk%C3%A1_opera https://cs.wikiquote.org/wiki/D%C3%ADlo:Post%C5%99i%C5%BEiny https://cs.wikiquote.org/wiki/D%C3%ADlo:Kolja https://cs.wikipedia.org/wiki/J%C3%A1chyme,_ho%C4%8F_ho_do_stroje! https://cs.wikipedia.org/wiki/Mare%C4%8Dku,_podejte_mi_pero! https://sk.wikiquote.org/wiki/Pacho,_hybsk%C3%BD_zbojn%C3%ADk"
+    correct:
+      - { text: "„Neber úplatky, neber úplatky, nebo se z toho zblázníš.“ – Jáchyme, hoď ho do stroje!", why: "Hláška tak zľudovela, že ju ľudia citovali aj pri vybavovaní na úradoch." }
+      - { text: "„Hliník se odstěhoval do Humpolce.“ – Marečku, podejte mi pero!", why: "Veta sa ujala tak, že má v Humpolci vlastné múzeum." }
+      - { text: "„Kolaloka, to je zákon!“ – Limonádový Joe", why: "Hrdina, ktorý pije len Kolalokovu limonádu." }
+      - { text: "„Pan Chroust je blbec!“ – Obecná škola", why: "Otec Souček (Zdeněk Svěrák) synovi Edovi." }
+      - { text: "„Vy jednou špatně skončíte, pane doktore.“ – Vesničko má středisková", why: "Pávek doktorovi Skružnému; ten odpovedá: „To každej, Karle.“" }
+      - { text: "„Pro mě za mě, vlezte si třeba na komín.“ – Postřižiny", why: "Francin (Jiří Schmitzer) v Menzelovom filme podľa Hrabala." }
+      - { text: "„Keď sú páni, aj zbojníci musia byť!“ – Pacho, hybský zbojník", why: "Slovenská komédia z roku 1975." }
+    wrong:
+      - { text: "„Neber úplatky, neber úplatky, nebo se z toho zblázníš.“ – Pelíšky", why: "Je z filmu Jáchyme, hoď ho do stroje! (1974)." }
+      - { text: "„Hliník se odstěhoval do Humpolce.“ – Obecná škola", why: "Je z filmu Marečku, podejte mi pero! (1976)." }
+      - { text: "„Kolaloka, to je zákon!“ – Vesničko má středisková", why: "Patrí Limonádovému Joeovi." }
+      - { text: "„Pan Chroust je blbec!“ – Pelíšky", why: "Je z Obecnej školy." }
+      - { text: "„Pro mě za mě, vlezte si třeba na komín.“ – Kolja", why: "Je z Postřižin (1980)." }
+      - { text: "„Keď sú páni, aj zbojníci musia byť!“ – Jánošík", why: "Je z Pacha, hybského zbojníka." }
+
+  - id: pelisky-nikdy-nebo-navzdy
+    type: choice
+    prompt: "Kto v Pelíškoch odpovie susedovmu chlapcovi na otázku, či pôjde Jindra von: „Nikdy, nebo navždy!“?"
+    difficulty: 1
+    source: "https://www.nafilmy.com/pelisky/hlasky https://www.kfilmu.net/film/pelisky/hlasky/ https://hlaskovstvi.blogspot.com/2019/01/pelisky.html"
+    correct: { text: "Otec Kraus (Jiří Kodet)", why: "Bývalý vojak a vojnový invalida, otec Jindry." }
+    wrong:
+      - { text: "Otec Šebek (Miroslav Donutil)", why: "Jeho hláška je „A komu tím prospějete, co?“" }
+      - { text: "Babička (Stella Zázvorková)", why: "Jej patrí „A skláři nebudou mít co žrát.“" }
+      - { text: "Strýc Václav", why: "Jeho hláška je „No, kdo? Ježíšek, přece!“" }
+
+  - id: obecna-skola-rozhlas
+    type: choice
+    prompt: "Kto v Obecnej škole vyhlasuje školským rozhlasom „Neolizujte železné zábradlí! Neolizujte ani namrzlé kliky dveří!“?"
+    difficulty: 2
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Obecn%C3%A1_%C5%A1kola"
+    correct: { text: "Pán riaditeľ (Rudolf Hrušínský)", why: "Ten istý riaditeľ pozýva rodičov, „kteří chtějí vidět Idiota“, do riaditeľne." }
+    wrong:
+      - { text: "Učiteľ Igor Hnízdo (Jan Tříska)", why: "Ten sa triede predstaví úderom do tabule so svojím menom." }
+      - { text: "Otec Souček (Zdeněk Svěrák)", why: "Ten sa doma rozčuľuje na pána Chrousta." }
+      - { text: "Učiteľka Maxová (Daniela Kolářová)", why: "Tá sa vyhráža Rosenheimovi preradením do Vršovíc." }
+
+  - id: limonadovy-joe-alkohol
+    type: choice
+    prompt: "Kto v Limonádovom Joeovi tvrdí: „Alkohol podávaný v malých dávkách neškodí v jakémkoliv množství!“?"
+    difficulty: 2
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Limon%C3%A1dov%C3%BD_Joe_aneb_Ko%C5%88sk%C3%A1_opera"
+    correct: { text: "Horác-Hogofogo (Miloš Kopecký)", why: "Darebák, ktorý má aj hlášku „Setřu tvůj pel, poupátko.“" }
+    wrong:
+      - { text: "Limonádový Joe (Karel Fiala)", why: "Ten pije výhradne limonádu: „Kolaloka, to je zákon!“" }
+      - { text: "Grimpo (Josef Hlinomaz)", why: "Ten predstavuje svojich spolupracovníkov Kojota Kida a Pancha Kida." }
+      - { text: "Šerif", why: "Ten hovorí, že keď strieľa konzument Kolalokovej limonády, netreba volať lekára." }
+
+  - id: vesnicko-kochal
+    type: choice
+    prompt: "Kto vo filme Vesničko má středisková hovorí: „Vy ste se zase kochal, že jo, pane doktore“?"
+    difficulty: 1
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Vesni%C4%8Dko_m%C3%A1_st%C5%99ediskov%C3%A1"
+    correct: { text: "Šofér Karel Pávek (Marián Labuda)", why: "Vyčíta to doktorovi Skružnému, ktorý sa za volantom kochá." }
+    wrong:
+      - { text: "Doktor Skružný (Rudolf Hrušínský)", why: "Je to ten, kto sa kochá; odpovedá „Vono to snad nemá brzdy nebo co.“" }
+      - { text: "Závozník Otík (János Bán)", why: "O ňom Pávek hovorí, že v Berouně povie „Beroun“ a má vystaráno." }
+      - { text: "Otec Souček (Zdeněk Svěrák)", why: "Je to postava z Obecnej školy." }
+
+  - id: pacho-zbojnici
+    type: choice
+    prompt: "Z ktorého filmu je veta „Keď sú páni, aj zbojníci musia byť!“?"
+    difficulty: 1
+    source: "https://sk.wikiquote.org/wiki/Pacho,_hybsk%C3%BD_zbojn%C3%ADk https://www.teraz.sk/ms-v-hokeji-2022/bondra-zlaty-gol-ktory-som-dal-bol/632449-clanok.html"
+    correct: { text: "Pacho, hybský zbojník", why: "Slovenská komédia z roku 1975; ďalšia hláška: „Kto sa smeje naposledy, ten má dlhé vedenie!“" }
+    wrong:
+      - { text: "Tisícročná včela", why: "Iný slovenský film; zbojnícku komédiu točili o Pachovi." }
+      - { text: "Perinbaba", why: "Rozprávka, nie zbojnícka komédia." }
+      - { text: "Slnko v sieti", why: "Dráma Štefana Uhera, o zbojníkoch nie je." }
+
+  - id: poradie-filmov-hlasky
+    type: order
+    prompt: "Zoraď hlášky podľa roku vzniku filmu, v ktorom zazneli, od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: "https://cs.wikiquote.org/wiki/D%C3%ADlo:Limon%C3%A1dov%C3%BD_Joe_aneb_Ko%C5%88sk%C3%A1_opera https://cs.wikiquote.org/wiki/D%C3%ADlo:J%C3%A1chyme,_ho%C4%8F_ho_do_stroje! https://cs.wikipedia.org/wiki/Mare%C4%8Dku,_podejte_mi_pero! https://cs.wikiquote.org/wiki/D%C3%ADlo:Post%C5%99i%C5%BEiny https://cs.wikiquote.org/wiki/D%C3%ADlo:Vesni%C4%8Dko_m%C3%A1_st%C5%99ediskov%C3%A1 https://cs.wikiquote.org/wiki/D%C3%ADlo:Obecn%C3%A1_%C5%A1kola https://cs.wikiquote.org/wiki/D%C3%ADlo:Kolja https://cs.wikiquote.org/wiki/D%C3%ADlo:Pel%C3%AD%C5%A1ky"
+    items:
+      - { text: "„Kolaloka, to je zákon!“", value: 1964, why: "Limonádový Joe aneb Koňská opera, 1964." }
+      - { text: "„Neber úplatky, neber úplatky…“", value: 1974, why: "Jáchyme, hoď ho do stroje!, 1974." }
+      - { text: "„Hliník se odstěhoval do Humpolce.“", value: 1976, why: "Marečku, podejte mi pero!, 1976." }
+      - { text: "„Pro mě za mě, vlezte si třeba na komín.“", value: 1980, why: "Postřižiny, 1980." }
+      - { text: "„Vy ste se zase kochal, že jo, pane doktore.“", value: 1985, why: "Vesničko má středisková, natočená v roku 1985 (premiéra 1986)." }
+      - { text: "„Neolizujte železné zábradlí!“", value: 1991, why: "Obecná škola, 1991." }
+      - { text: "„Hudbu nezajímají rasy a národy.“", value: 1996, why: "Kolja, 1996." }
+      - { text: "„Dávám bolševikovi rok, maximálně dva.“", value: 1999, why: "Pelíšky, 1999." }
+
+  - id: casablanca-hlasky
+    type: pick
+    prompt: "Ktoré z týchto viet zaznejú vo filme Casablanca (1942)?"
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movie_Quotes https://en.wikipedia.org/wiki/Play_it_again,_Sam"
+    correct:
+      - { text: "Here's looking at you, kid.", why: "V ankete AFI piata najlepšia filmová hláška." }
+      - { text: "Louis, I think this is the beginning of a beautiful friendship.", why: "V ankete AFI na 20. mieste." }
+      - { text: "Play it, Sam. Play 'As Time Goes By.'", why: "Takto naozaj znie prosba klaviristovi Samovi." }
+      - { text: "Round up the usual suspects.", why: "Zatknite obvyklých podozrivých." }
+      - { text: "We'll always have Paris.", why: "Vždy nám zostane Paríž." }
+      - { text: "Of all the gin joints in all the towns in all the world, she walks into mine.", why: "Zo všetkých barov na svete vošla práve do môjho." }
+    wrong:
+      - { text: "Play it again, Sam.", why: "Slávny omyl: táto veta vo filme nezaznie, presne je to „Play it, Sam.“" }
+      - { text: "Frankly, my dear, I don't give a damn.", why: "Odviate vetrom (1939); víťaz ankety AFI." }
+      - { text: "I'm gonna make him an offer he can't refuse.", why: "Krstný otec (1972)." }
+      - { text: "May the Force be with you.", why: "Hviezdne vojny (1977)." }
+      - { text: "You talkin' to me?", why: "Taxikár (1976)." }
+      - { text: "Fasten your seatbelts. It's going to be a bumpy night.", why: "Všetko o Eve (1950)." }
+
+  - id: hollywood-priradenie
+    type: pick
+    prompt: "Ktoré dvojice „hláška – film“ sedia?"
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movie_Quotes"
+    correct:
+      - { text: "„I'll be back.“ – Terminátor", why: "Rok 1984." }
+      - { text: "„Hasta la vista, baby.“ – Terminátor 2: Deň zúčtovania", why: "Pokračovanie z roku 1991." }
+      - { text: "„E.T. phone home.“ – E.T. – Mimozemšťan", why: "Rok 1982." }
+      - { text: "„My precious.“ – Pán prsteňov: Dve veže", why: "Môj miláčik – rok 2002." }
+      - { text: "„I'm the king of the world!“ – Titanic", why: "Som kráľ sveta! – rok 1997." }
+      - { text: "„You're gonna need a bigger boat.“ – Čeľuste", why: "Budete potrebovať väčšiu loď – rok 1975." }
+      - { text: "„I see dead people.“ – Šiesty zmysel", why: "Vidím mŕtvych ľudí – 1999." }
+      - { text: "„Bond. James Bond.“ – Dr. No", why: "Prvý film s Jamesom Bondom, 1962." }
+    wrong:
+      - { text: "„I'll be back.“ – Rambo", why: "Je to Terminátor (1984)." }
+      - { text: "„My precious.“ – Titanic", why: "Je to Pán prsteňov: Dve veže (2002)." }
+      - { text: "„May the Force be with you.“ – Star Trek", why: "Je to z Hviezdnych vojen (1977)." }
+      - { text: "„I'm the king of the world!“ – Leví kráľ", why: "Je to Titanic (1997)." }
+      - { text: "„Show me the money!“ – Vlk z Wall Street", why: "Je to Jerry Maguire (1996)." }
+      - { text: "„You're gonna need a bigger boat.“ – Titanic", why: "Je to z Čeľustí (1975)." }
+
+  - id: poradie-hollywood
+    type: order
+    prompt: "Zoraď filmové hlášky podľa roku premiéry filmu, od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movie_Quotes"
+    items:
+      - { text: "„Here's looking at you, kid.“ (Casablanca)", value: 1942, why: "Casablanca, 1942." }
+      - { text: "„Bond. James Bond.“ (Dr. No)", value: 1962, why: "Dr. No, 1962." }
+      - { text: "„I'm gonna make him an offer he can't refuse.“ (Krstný otec)", value: 1972, why: "Krstný otec, 1972." }
+      - { text: "„May the Force be with you.“ (Hviezdne vojny)", value: 1977, why: "Hviezdne vojny, 1977." }
+      - { text: "„E.T. phone home.“ (E.T. – Mimozemšťan)", value: 1982, why: "E.T., 1982." }
+      - { text: "„I'll be back.“ (Terminátor)", value: 1984, why: "Terminátor, 1984." }
+      - { text: "„…life was like a box of chocolates.“ (Forrest Gump)", value: 1994, why: "Forrest Gump, 1994." }
+      - { text: "„I'm the king of the world!“ (Titanic)", value: 1997, why: "Titanic, 1997." }
+
+  - id: nikdy-nezaznelo
+    type: pick
+    prompt: "Ktoré z týchto slávnych viet v uvedenom diele alebo situácii v skutočnosti nikdy nezazneli?"
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Beam_me_up,_Scotty https://en.wikipedia.org/wiki/Play_it_again,_Sam https://en.wikipedia.org/wiki/Sherlock_Holmes https://en.wikipedia.org/wiki/Houston,_we_have_a_problem https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movie_Quotes"
+    correct:
+      - { text: "„Beam me up, Scotty.“ – v seriáloch a filmoch Star Trek", why: "Kapitán Kirk to presne takto nepovedal v žiadnej epizóde ani filme." }
+      - { text: "„Play it again, Sam.“ – vo filme Casablanca", why: "Vo filme zaznie „Play it, Sam. Play 'As Time Goes By.'“" }
+      - { text: "„Elementary, my dear Watson.“ – v Doylových príbehoch o Sherlockovi Holmesovi", why: "V 60 príbehoch to nie je; povie to až Holmes vo filme z roku 1939." }
+      - { text: "„Houston, we have a problem.“ – počas skutočnej misie Apollo 13", why: "Jack Swigert povedal „Okay, Houston … we've had a problem here.“" }
+    wrong:
+      - { text: "„Play it, Sam.“ – vo filme Casablanca", why: "Presne toto vo filme zaznie." }
+      - { text: "„Here's looking at you, kid.“ – vo filme Casablanca", why: "Zaznie; v ankete AFI je na 5. mieste." }
+      - { text: "„May the Force be with you.“ – vo filme Hviezdne vojny", why: "Zaznie, a nie raz." }
+      - { text: "„Elementary.“ – v Doylovej poviedke The Crooked Man", why: "Watson zvolá „Excellent!“ a Holmes odvetí „Elementary.“" }
+      - { text: "„Houston, we have a problem.“ – vo filme Apollo 13 (1995)", why: "Vo filme zaznie práve táto skrátená verzia." }
+      - { text: "„Bond. James Bond.“ – vo filme Dr. No", why: "Zaznie; je to prvý bondovský film (1962)." }
+
+  - id: einstein-naozaj
+    type: pick
+    prompt: "Ktoré z týchto výrokov Albert Einstein preukázateľne povedal alebo napísal?"
+    difficulty: 3
+    source: "https://en.wikiquote.org/wiki/Albert_Einstein https://quoteinvestigator.com/2017/03/23/same/"
+    correct:
+      - { text: "Imagination is more important than knowledge.", why: "Fantázia je dôležitejšia ako vedomosti – rozhovor pre Saturday Evening Post, 1929." }
+      - { text: "I, at any rate, am convinced that He does not throw dice.", why: "Boh nehrá kocky – list Maxovi Bornovi z decembra 1926." }
+      - { text: "Life is like riding a bicycle. To keep your balance you must keep moving.", why: "List synovi Eduardovi, február 1930." }
+      - { text: "I have no special talents. I am only passionately curious.", why: "List Carlovi Seeligovi, marec 1952." }
+    wrong:
+      - { text: "Insanity is doing the same thing over and over and expecting different results.", why: "Šialenstvo je robiť stále to isté… – prvý známy výskyt je z roku 1981 zo svojpomocných skupín pre závislých." }
+      - { text: "Everyone is a genius. But if you judge a fish by its ability to climb a tree…", why: "Rybu a strom Einsteinovi podľa Quote Investigatora len pripísali." }
+      - { text: "If the bee disappears from the surface of the earth, man would have no more than four years to live.", why: "Včely a štyri roky: doklad od Einsteina neexistuje, výrok sa objavuje až v 60. rokoch." }
+      - { text: "Not everything that can be counted counts, and not everything that counts can be counted.", why: "Je z knihy sociológa Williama Brucea Camerona (1963)." }
+      - { text: "Time is nature's way of keeping everything from happening at once.", why: "Einsteinovi sa pripisuje až od roku 2008; skôr ho citoval fyzik John Wheeler." }
+      - { text: "Everything is energy and that's all there is to it.", why: "Podľa Quote Investigatora niet dôkazu, že to Einstein povedal." }
+
+  - id: churchill-naozaj
+    type: pick
+    prompt: "Ktoré z týchto výrokov Winston Churchill preukázateľne povedal?"
+    difficulty: 3
+    source: "https://en.wikiquote.org/wiki/Winston_Churchill https://en.wikipedia.org/wiki/Blood,_toil,_tears_and_sweat"
+    correct:
+      - { text: "I have nothing to offer but blood, toil, tears, and sweat.", why: "Krv, drina, slzy a pot – prvý prejav v Dolnej snemovni ako premiér, 13. mája 1940." }
+      - { text: "Never in the field of human conflict was so much owed by so many to so few.", why: "O pilotoch RAF v bitke o Britániu, august 1940." }
+      - { text: "…democracy is the worst form of government except all those other forms that have been tried…", why: "Dolná snemovňa, 11. novembra 1947; sám uviedol, že „it has been said“." }
+      - { text: "We shall fight on the beaches, we shall fight on the landing grounds…", why: "Budeme bojovať na plážach – jeden z jeho najslávnejších vojnových prejavov." }
+    wrong:
+      - { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", why: "Pochádza z reklamnej kampane na pivo Budweiser z konca 30. rokov." }
+      - { text: "If you're going through hell, keep going.", why: "Ak ideš peklom, choď ďalej – v 50 miliónoch slov od Churchilla a o ňom sa nenašlo." }
+      - { text: "If you're not a liberal when you're 25, you have no heart…", why: "Churchillovo centrum: „niet záznamu, že by to niekto od neho počul“." }
+      - { text: "A pessimist sees the difficulty in every opportunity; an optimist sees the opportunity in every difficulty.", why: "Langworthova zbierka Churchillových citátov ho vedie medzi falošnými." }
+      - { text: "There is no such thing as a good tax.", why: "Povedal ho senátor z Oklahomy Thomas Gore v roku 1935." }
+      - { text: "If I were your husband I'd drink it.", why: "Vtip je americký humor z roku 1899 (káva v ňom pribudla až neskôr), nie odpoveď lady Astorovej." }
+
+  - id: nedolozene-vyroky
+    type: pick
+    prompt: "Ktoré z týchto slávnych výrokov podľa historikov a zbierok citátov uvedená osoba nikdy preukázateľne nepovedala?"
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Let_them_eat_cake https://en.wikipedia.org/wiki/Evelyn_Beatrice_Hall https://en.wikipedia.org/wiki/And_yet_it_moves https://en.wikipedia.org/wiki/L%27%C3%89tat,_c%27est_moi https://en.wikiquote.org/wiki/Mahatma_Gandhi https://en.wikiquote.org/wiki/Mark_Twain https://en.wikipedia.org/wiki/Ich_bin_ein_Berliner https://en.wikipedia.org/wiki/Tear_down_this_wall! https://en.wikipedia.org/wiki/Winning_isn%27t_everything;_it%27s_the_only_thing https://en.wikipedia.org/wiki/Olympic_symbols https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants"
+    correct:
+      - { text: "Mária Antoinetta: „Nech jedia koláče!“", why: "Príbeh je už v Rousseauových Vyznaniach, keď mala deväť rokov a vo Francúzsku ešte nebola." }
+      - { text: "Voltaire: „Nesúhlasím s tým, čo hovoríte, ale až do smrti budem brániť vaše právo to hovoriť.“", why: "Napísala to jeho životopiskyňa Evelyn Beatrice Hall v roku 1906 ako zhrnutie jeho postoja." }
+      - { text: "Galileo Galilei pred inkvizíciou: „A predsa sa točí!“", why: "Súdne záznamy ani prvý životopis to neuvádzajú; prvý raz to tlačou vyšlo až v roku 1757." }
+      - { text: "Ľudovít XIV.: „Štát som ja!“", why: "V záznamoch parlamentu nie je; frázu mu pripísal Lémontey až v roku 1818." }
+      - { text: "Gándhí: „Buď tou zmenou, ktorú chceš vidieť vo svete.“", why: "Podľa New York Times pre ňu „niet spoľahlivého dokladu“; stopy vedú k americkému projektu zo 70. rokov." }
+      - { text: "Gándhí: „Oko za oko a celý svet oslepne.“", why: "Vložil mu ju do úst scenárista filmu Gándhí (1982) John Briley." }
+      - { text: "Mark Twain: „Správy o mojej smrti sú veľmi prehnané.“", why: "Twain napísal „the report of my death was an exaggeration“; známa verzia je skomolenina." }
+    wrong:
+      - { text: "John F. Kennedy: „Ich bin ein Berliner.“", why: "Povedal to v Západnom Berlíne 26. júna 1963." }
+      - { text: "Ronald Reagan: „Mr. Gorbachev, tear down this wall!“", why: "Pri Brandenburskej bráne 12. júna 1987." }
+      - { text: "Isaac Newton: „Ak som videl ďalej, bolo to preto, že som stál na pleciach obrov.“", why: "Napísal to v liste Robertovi Hookovi (1675), hoci obraz je starší, od Bernarda z Chartres." }
+      - { text: "Vince Lombardi: „Víťazstvo nie je všetko, je to jediné, na čom záleží.“", why: "Lombardi ju naozaj používal od roku 1959, len ju vymyslel tréner Red Sanders." }
+      - { text: "Pierre de Coubertin: „Na olympijských hrách nie je najdôležitejšie vyhrať, ale zúčastniť sa.“", why: "Coubertin ju hlásal, prevzal ju však z kázne biskupa Ethelberta Talbota z roku 1908." }
+
+  - id: poradie-svetove-vyroky
+    type: order
+    prompt: "Zoraď tieto výroky podľa roku, keď prvý raz zazneli, od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Blood,_toil,_tears_and_sweat https://en.wikipedia.org/wiki/Elvis_has_left_the_building https://en.wikipedia.org/wiki/Ich_bin_ein_Berliner https://en.wikipedia.org/wiki/More_popular_than_Jesus https://en.wikipedia.org/wiki/Apollo_11 https://en.wikipedia.org/wiki/Tear_down_this_wall!"
+    items:
+      - { text: "Churchill: „Blood, toil, tears and sweat“", value: 1940, why: "13. mája 1940, prvý Churchillov prejav vo funkcii premiéra." }
+      - { text: "„Elvis has left the building“", value: 1956, why: "Promotér Horace Logan, 15. decembra 1956 v Shreveporte." }
+      - { text: "Kennedy: „Ich bin ein Berliner“", value: 1963, why: "26. júna 1963 v Západnom Berlíne." }
+      - { text: "Lennon: Beatles sú „more popular than Jesus“", value: 1966, why: "Rozhovor z roku 1966; v USA potom pálili platne Beatles." }
+      - { text: "Armstrong: „That's one small step for [a] man…“", value: 1969, why: "Pristátie Apolla 11 na Mesiaci, 1969." }
+      - { text: "Reagan: „Mr. Gorbachev, tear down this wall!“", value: 1987, why: "12. júna 1987 pri Brandenburskej bráne." }
+
+  - id: ich-bin-ein-berliner
+    type: choice
+    prompt: "Kto v roku 1963 v Západnom Berlíne povedal „Ich bin ein Berliner“?"
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/Ich_bin_ein_Berliner https://en.wikipedia.org/wiki/Tear_down_this_wall! https://en.wikipedia.org/wiki/I_Have_a_Dream https://en.wikipedia.org/wiki/Blood,_toil,_tears_and_sweat"
+    correct: { text: "John F. Kennedy", why: "26. júna 1963, necelé dva roky po postavení Berlínskeho múru." }
+    wrong:
+      - { text: "Ronald Reagan", why: "Ten v Berlíne v roku 1987 vyzval Gorbačova, aby múr zbúral." }
+      - { text: "Winston Churchill", why: "Jeho slávne vety zazneli v britskej Dolnej snemovni počas vojny." }
+      - { text: "Martin Luther King", why: "Jeho prejav z roku 1963 je „I Have a Dream“." }
+
+  - id: survival-of-the-fittest
+    type: choice
+    prompt: "Kto ako prvý použil frázu „survival of the fittest“ (prežitie najschopnejších)?"
+    difficulty: 3
+    source: "https://en.wikipedia.org/wiki/Survival_of_the_fittest"
+    correct: { text: "Herbert Spencer", why: "V Principles of Biology (1864), po prečítaní Darwinovho O pôvode druhov." }
+    wrong:
+      - { text: "Charles Darwin", why: "Ten ju prevzal od Spencera až neskôr, v knihe z roku 1868." }
+      - { text: "Alfred Russel Wallace", why: "Ten len navrhol Darwinovi, aby Spencerovu frázu používal." }
+      - { text: "Isaac Newton", why: "S evolúciou nemá nič spoločné; fráza je z roku 1864." }
+
+  - id: apollo-13-skutocne
+    type: choice
+    prompt: "Čo v skutočnosti povedal Jack Swigert z Apolla 13 riadiacemu stredisku po výbuchu na palube?"
+    difficulty: 3
+    source: "https://en.wikipedia.org/wiki/Houston,_we_have_a_problem https://en.wikipedia.org/wiki/Apollo_11"
+    correct: { text: "„Okay, Houston … we've had a problem here.“", why: "Mali sme tu problém – v minulom čase." }
+    wrong:
+      - { text: "„Houston, we have a problem.“", why: "Populárna skomolenina, ktorú preslávil film Apollo 13 (1995)." }
+      - { text: "„Houston, we've got a problem.“", why: "Tak sa volala televízna dráma z roku 1974, nie skutočná veta." }
+      - { text: "„That's one small step for [a] man, one giant leap for mankind.“", why: "Neil Armstrong na Mesiaci, Apollo 11 (1969)." }
+
+  - id: komentatori-priradenie
+    type: pick
+    prompt: "Ktoré dvojice „komentátorský výkrik – udalosť“ sedia?"
+    difficulty: 2
+    source: "https://www.startitup.sk/?p=759364 https://www.teraz.sk/ms-v-hokeji-2022/hokej-ms2002-zlato-od-triumfalneho-go/632448-clanok.html"
+    correct:
+      - { text: "„Sme majstri sveta! Sme majstri sveta!“ – finále MS v hokeji 2002", why: "Miloš Kováč po výhre nad Ruskom 4:3 v Göteborgu." }
+      - { text: "„Riško, nech ti to vyjde. Dáva gól! Sme vo finále!“ – semifinále MS 2002 proti Švédsku", why: "Rozhodujúci nájazd Richarda Lintnera poslal Slovensko do finále." }
+      - { text: "„Petra Vlhová je olympijskou víťazkou!“ – slalom na ZOH 2022", why: "Marcel Merčiak, Peking 2022." }
+      - { text: "„Peťo je majstrom sveta!“ – Saganov prvý titul v Richmonde", why: "„Peťo, poď! Peťo, ešte poď!“ znelo v cieli v USA." }
+      - { text: "„Gól! Gól! Fantázia v pohybe!“ – gól Kopúnka Taliansku na MS vo futbale", why: "Merčiak, Slovensko vyhralo 3:2 a postúpilo do osemfinále." }
+      - { text: "„Rátajte s nami! Slovensko je vo finále!“ – MS v hokeji 2012", why: "Slovensko v semifinále zdolalo Česko." }
+    wrong:
+      - { text: "„Sme majstri sveta! Sme majstri sveta!“ – finále MS v hokeji 2012", why: "Rok 2002 je zatiaľ jediný slovenský titul; v roku 2012 to bolo striebro." }
+      - { text: "„Riško, nech ti to vyjde. Dáva gól! Sme vo finále!“ – finále proti Rusku", why: "Lintnerov nájazd poslal Slovensko do finále, v semifinále so Švédskom." }
+      - { text: "„Petra Vlhová je olympijskou víťazkou!“ – obrovský slalom", why: "Olympijské zlato vyhrala v slalome." }
+      - { text: "„Peťo je majstrom sveta!“ – Saganov tretí titul v Bergene", why: "Toto znelo pri prvom titule v Richmonde." }
+      - { text: "„Gól! Gól! Fantázia v pohybe!“ – Bondrov zlatý gól v Göteborgu", why: "Je to futbalový výkrik Marcela Merčiaka z MS v JAR." }
+
+  - id: sme-majstri-sveta
+    type: choice
+    prompt: "Ktorý komentátor po finále MS 2002 kričal „Sme majstri sveta! Sme majstri sveta! Fantasticky to znie, fantasticky sa to hovorí.“?"
+    difficulty: 2
+    source: "https://www.startitup.sk/?p=759364 https://tn.nova.cz/sport/clanek/325388-milovany-karol-polak-na-tyhle-legendarni-hlasky-nezapomeneme"
+    correct: { text: "Miloš Kováč", why: "Legendárny slovenský hokejový komentátor." }
+    wrong:
+      - { text: "Marcel Merčiak", why: "Jeho sú výkriky pri Vlhovej zlate a Kopúnkovom góle." }
+      - { text: "Karol Polák", why: "Legendárny komentátor, autor hlášky „Beží nám pätnásta minúta!“" }
+      - { text: "Peter Bondra", why: "Ten zlatý gól strelil, nekomentoval ho." }
+
+  - id: satan-absolutne-vitazstvo
+    type: choice
+    prompt: "Kto po finále v Göteborgu 2002 povedal: „Neviem o ničom porovnateľnom. Je to absolútne víťazstvo. Nie je nič viac, čo by sme mohli dokázať“?"
+    difficulty: 2
+    source: "https://www.teraz.sk/ms-v-hokeji-2022/hokej-ms2002-zlato-od-triumfalneho-go/632448-clanok.html https://www.teraz.sk/ms-v-hokeji-2022/bondra-zlaty-gol-ktory-som-dal-bol/632449-clanok.html"
+    correct: { text: "Miroslav Šatan", why: "Kapitán tímu, najproduktívnejší hráč a MVP turnaja." }
+    wrong:
+      - { text: "Peter Bondra", why: "Strelec zlatého gólu; po rokoch povedal, že to bol „gól celého mužstva“." }
+      - { text: "Ján Filc", why: "Tréner zlatého tímu." }
+      - { text: "Žigmund Pálffy", why: "Ten Bondrovi prihral na zlatý gól." }
+
+  - id: bondra-sekundy
+    type: number
+    prompt: "Koľko sekúnd pred koncom finále MS 2002 strelil Peter Bondra víťazný gól na 4:3?"
+    answer: 100
+    unit: sekúnd
+    scale: linear
+    tolerance: 10
+    why: "Presne 100 sekúnd pred koncom, po prihrávke Žigmunda Pálffyho."
+    difficulty: 2
+    source: "https://www.teraz.sk/ms-v-hokeji-2022/bondra-zlaty-gol-ktory-som-dal-bol/632449-clanok.html"
+
+  - id: jagr-barcelona
+    type: choice
+    prompt: "Kto po zápase so Slovenskom na MS 2011 žartoval: „My hrajeme jako Barcelona, akorát nám první dvě třetiny chyběl Messi“?"
+    difficulty: 2
+    source: "https://cs.wikiquote.org/wiki/Jarom%C3%ADr_J%C3%A1gr"
+    correct: { text: "Jaromír Jágr", why: "Povedal to v rozhovore pre Českú televíziu; Česi federálne derby vyhrali." }
+    wrong:
+      - { text: "Miroslav Šatan", why: "Hral za Slovensko, ktoré v tom zápase prehralo." }
+      - { text: "Peter Sagan", why: "Cyklista, nie hokejista." }
+      - { text: "Marcel Merčiak", why: "Slovenský komentátor, nie hráč." }
+
+  - id: polak-patnasta-minuta
+    type: choice
+    prompt: "Ktorý komentátor sa preslávil vetou „A beží, beží… kto nám to beží? Beží nám pätnásta minúta!“?"
+    difficulty: 2
+    source: "https://tn.nova.cz/sport/clanek/325388-milovany-karol-polak-na-tyhle-legendarni-hlasky-nezapomeneme https://www.startitup.sk/?p=759364"
+    correct: { text: "Karol Polák", why: "Jeho hlášky si pripomínajú aj české médiá, napríklad TN.cz." }
+    wrong:
+      - { text: "Miloš Kováč", why: "Ten kričal „Sme majstri sveta!“ v roku 2002." }
+      - { text: "Marcel Merčiak", why: "Ten oslavoval Vlhovej olympijské zlato." }
+      - { text: "Ján Filc", why: "Hokejový tréner, nie komentátor." }
+
+  - id: osobnosti-vyroky
+    type: pick
+    prompt: "Ktoré dvojice „osobnosť – výrok“ sedia?"
+    difficulty: 2
+    source: "https://www.teraz.sk/slovensko/pred-140-rokmi-sa-narodil-milan-rastisla/481133-clanok.html https://sk.wikiquote.org/wiki/Milan_Rastislav_%C5%A0tef%C3%A1nik https://cs.wikiquote.org/wiki/Tom%C3%A1%C5%A1_Garrigue_Masaryk https://cs.wikiquote.org/wiki/Jan_Amos_Komensk%C3%BD https://sk.wikiquote.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr https://cs.wikiquote.org/wiki/Karel_%C4%8Capek"
+    correct:
+      - { text: "Milan Rastislav Štefánik – „Veriť, milovať, pracovať.“", why: "Podľa TASR jeho dodnes najznámejšie krédo." }
+      - { text: "Tomáš Garrigue Masaryk – „Nebát se a nekrást!“", why: "Jedno z najcitovanejších Masarykových hesiel." }
+      - { text: "Ján Amos Komenský – „Škola bez kázně – mlýn bez vody.“", why: "Učiteľ národov o disciplíne v škole." }
+      - { text: "Ľudovít Štúr – „Každý národ má svoj čas pod Božím slnkom…“", why: "Z diela Slovanstvo a svet budúcnosti; pokračuje „a lipa kvitne, až dub už dávno odkvitol“." }
+      - { text: "Tomáš Garrigue Masaryk – „Vlastenectví je láska k vlastnímu národu, nikoli nenávist k jiným.“", why: "Masarykova definícia vlastenectva." }
+      - { text: "Milan Rastislav Štefánik – „Účelne a logicky žije len ten, kto využíva každý okamih na prehĺbenie intelektu.“", why: "Z listu Vavrovi Šrobárovi z 9. septembra 1909." }
+      - { text: "Karel Čapek – „Humor je nejdemokratičtější z lidských zvyků.“", why: "Český spisovateľ a novinár." }
+    wrong:
+      - { text: "Tomáš Garrigue Masaryk – „Veriť, milovať, pracovať.“", why: "Je to Štefánikovo heslo." }
+      - { text: "Milan Rastislav Štefánik – „Nebát se a nekrást!“", why: "Je to Masarykovo heslo." }
+      - { text: "Ľudovít Štúr – „Škola bez kázně – mlýn bez vody.“", why: "Je to Komenský." }
+      - { text: "Ján Amos Komenský – „Každý národ má svoj čas pod Božím slnkom…“", why: "Je to Štúr." }
+      - { text: "Karel Čapek – „Vlastenectví je láska k vlastnímu národu, nikoli nenávist k jiným.“", why: "Je to Masaryk." }
+      - { text: "Ľudovít Štúr – „Humor je nejdemokratičtější z lidských zvyků.“", why: "Je to Karel Čapek." }
+
+  - id: stefanik-heslo
+    type: choice
+    prompt: "S ktorou osobnosťou sa spája heslo „Veriť, milovať, pracovať“?"
+    difficulty: 1
+    source: "https://www.teraz.sk/slovensko/pred-140-rokmi-sa-narodil-milan-rastisla/481133-clanok.html https://sk.wikiquote.org/wiki/Milan_Rastislav_%C5%A0tef%C3%A1nik https://cs.wikiquote.org/wiki/Tom%C3%A1%C5%A1_Garrigue_Masaryk https://cs.wikiquote.org/wiki/Jan_Amos_Komensk%C3%BD https://sk.wikiquote.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr"
+    correct: { text: "Milan Rastislav Štefánik", why: "Generál a spoluzakladateľ Československa." }
+    wrong:
+      - { text: "Tomáš Garrigue Masaryk", why: "Jeho heslo je „Nebát se a nekrást!“" }
+      - { text: "Ľudovít Štúr", why: "Od neho je napríklad „Každý národ má svoj čas pod Božím slnkom…“" }
+      - { text: "Ján Amos Komenský", why: "Od neho je „Škola bez kázně – mlýn bez vody.“" }
+
+  - id: lennon-jesus
+    type: choice
+    prompt: "Kto v roku 1966 vyhlásil, že Beatles sú „more popular than Jesus“ (populárnejší ako Ježiš)?"
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/More_popular_than_Jesus"
+    correct: { text: "John Lennon", why: "V Londýne nikoho nepohoršil, v USA potom pálili platne Beatles a protestoval aj Ku-klux-klan." }
+    wrong:
+      - { text: "Paul McCartney", why: "Výrok patrí Lennonovi; ten sa za neho napokon ospravedlňoval na tlačovkách." }
+      - { text: "Elvis Presley", why: "O ňom sa hovorilo „Elvis has left the building“, toto nie." }
+      - { text: "Ringo Starr", why: "Bubeník Beatles; výrok je Lennonov z rozhovoru pre londýnsky Evening Standard." }
+
+  - id: elvis-left-the-building
+    type: choice
+    prompt: "Kto prvý raz ohlásil „Elvis has left the building“ (Elvis opustil budovu)?"
+    difficulty: 3
+    source: "https://en.wikipedia.org/wiki/Elvis_has_left_the_building"
+    correct: { text: "Promotér Horace Logan", why: "V decembri 1956 v Shreveporte, aby sa fanúšikovia prestali dožadovať prídavku." }
+    wrong:
+      - { text: "Elvis Presley sám", why: "Veta je o ňom, nie od neho." }
+      - { text: "John Lennon", why: "Ten sa preslávil vetou, že Beatles sú populárnejší ako Ježiš." }
+      - { text: "Freddie Mercury", why: "S Elvisovými koncertmi v 50. rokoch nemal nič spoločné." }
+
+  - id: anticke-vyroky
+    type: pick
+    prompt: "Ktoré dvojice „výrok – autor“ sedia?"
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/Veni,_vidi,_vici https://en.wikipedia.org/wiki/Alea_iacta_est https://en.wikipedia.org/wiki/Eureka_(word) https://en.wikiquote.org/wiki/Archimedes https://en.wikipedia.org/wiki/Cogito,_ergo_sum https://en.wikipedia.org/wiki/I_know_that_I_know_nothing https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants"
+    correct:
+      - { text: "Veni, vidi, vici – Július Caesar", why: "Prišiel som, videl som, zvíťazil som – správa o rýchlom víťazstve." }
+      - { text: "Alea iacta est – Július Caesar", why: "Kocky sú hodené – pri prechode cez Rubikon, ktorým začal občiansku vojnu." }
+      - { text: "Heuréka! – Archimedes", why: "Našiel som! Podľa legendy vybehol z kúpeľa nahý." }
+      - { text: "Dajte mi pevný bod a pohnem Zemou – Archimedes", why: "Tak opisoval silu páky." }
+      - { text: "Cogito, ergo sum – René Descartes", why: "Myslím, teda som – po francúzsky už v Rozprave o metóde (1637), latinské znenie je neskoršie." }
+      - { text: "Viem, že nič neviem – Sokrates", why: "Ustálená parafráza Sokratových slov z Platónovej Obrany Sokrata." }
+      - { text: "Stojím na pleciach obrov – Isaac Newton", why: "V liste Robertovi Hookovi; obraz je však ešte zo stredoveku." }
+    wrong:
+      - { text: "Veni, vidi, vici – Napoleon Bonaparte", why: "Je to Caesar; uvádzajú to Plutarchos aj Suetonius." }
+      - { text: "Alea iacta est – cisár Nero", why: "Povedal to Caesar pri Rubikone." }
+      - { text: "Heuréka! – Pytagoras", why: "Je to Archimedes." }
+      - { text: "Cogito, ergo sum – Sokrates", why: "Je to Descartes, takmer o dve tisícročia neskôr." }
+      - { text: "Viem, že nič neviem – René Descartes", why: "Pripisuje sa Sokratovi." }
+      - { text: "Stojím na pleciach obrov – Albert Einstein", why: "V liste z roku 1675 to napísal Newton." }

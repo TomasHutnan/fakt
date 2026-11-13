@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status
 
-v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 20 packs / 514 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
+v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack format and importer, Preact UI with rules screen, 6 switchable designs (gallery at `#designs`; Kartotéka is the default, owner's choice 2026-11-13), 23 packs / 604 questions (adult packs carry content-warning tags), every pack cross-model fact-checked. Plan: `notes/V1 Plan.md`. Decisions: `notes/Open Questions.md` and the section below. Next: more packs toward 1,000 questions.
 
 - Report: `docs/research-report.html` (pre-decision research; where it disagrees with this file or the notes, they win).
 
@@ -58,7 +58,7 @@ v1 prototype built on branch `feat/v1-prototype` (2026-11-13): engine, pack form
 - **Input**: tap options or type a **number** (year, amount). Never free-text typing. Number guesses: closeness-based scoring solo, ranked points in multiplayer.
 - **Formats v1**: pick the true ones, put in order, number guess, one of four. "Which is more" in v2. No pictures/audio in the first year.
 - **Languages**: Slovak UI. Slovak packs first; English packs later for international questions, written directly, **no translation**. Czech packs allowed, low priority.
-- **Content**: packs written by the owner in the repo. Language-model drafts OK; every fact checked against its source; **every option needs an explanation** of why it is right or wrong. Time-sensitive facts kept with `asOf`. Adult packs welcome: labelled, off by default, switched on like any pack. Explanations are one line per option, longer only where really necessary. Kids packs v4+.
+- **Content**: packs written by the owner in the repo. Language-model drafts OK; every fact checked against its source; **every option needs an explanation** of why it is right or wrong. Time-sensitive facts kept with `asOf`. Adult packs welcome: labelled, off by default, switched on like any pack. Spicy packs live in the public repo like any other (owner, 2026-11-13); nothing hateful or untrue may go in them. Explanations are one line per option, longer only where really necessary. Kids packs v4+.
 - **Targets**: 200 cards in 8 packs for the first evening, 1,000 before sharing widely.
 - **Data model**: "one fact list, several formats" — a list question stores items (optionally with values) plus decoys; the game derives pick/order/compare cards from it.
 - **Packs**: YAML source in `packs/`, built to per-pack JSON plus an index with content hashes; importer accepts YAML and JSON, stores imports in the browser.

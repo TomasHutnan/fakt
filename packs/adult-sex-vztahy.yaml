@@ -1,0 +1,669 @@
+id: adult-sex-vztahy
+title: Sex a vzťahy
+description: Anatómia, antikoncepcia, história hračiek, fetiše, mýty a slovenské sobáše – kvíz pre dospelých bez červenania.
+lang: sk
+license: CC0-1.0
+adult: true
+warnings: [sexual]
+version: 1
+questions:
+  # ---------- PICK ----------
+  - id: antikoncepcia-pod-1-percento
+    type: pick
+    prompt: Pri ktorých metódach otehotnie pri bežnom (nie dokonalom) používaní menej ako 1 % žien za prvý rok?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Comparison_of_birth_control_methods
+    correct:
+      - text: hormonálne vnútromaternicové teliesko
+        why: Zlyhá asi u 0,2 % žien, či ho používajú dokonale alebo nie.
+      - text: medené vnútromaternicové teliesko
+        why: Bežné používanie 0,8 %, takže tesne pod hranicou.
+      - text: podkožný implantát
+        why: Len 0,05 %, najúčinnejšia vratná metóda v tabuľke.
+      - text: vazektómia
+        why: Asi 0,15 % pri bežnom používaní.
+      - text: podviazanie vajíčkovodov
+        why: Približne 0,5 %.
+    wrong:
+      - text: mužský kondóm
+        why: Pri bežnom používaní 13 %, pri dokonalom 2 %.
+      - text: antikoncepčná tabletka
+        why: Dokonale 0,3 %, ale v reálnom živote so zabúdaním 7 %.
+      - text: antikoncepčná náplasť
+        why: Rovnako ako tabletka, bežne 7 %.
+      - text: vaginálny krúžok
+        why: Aj tu bežne 7 %.
+      - text: hormonálna injekcia
+        why: Bežne 4 %, dokonale 0,2 %.
+      - text: prerušovaný styk
+        why: Bežne 20 %, teda každá piata žena za rok.
+      - text: ženský kondóm
+        why: Bežne 21 %.
+      - text: spermicídny gél
+        why: Bežne 21 %, dokonale stále 16 %.
+
+  - id: kondom-historia
+    type: pick
+    prompt: Ktoré tvrdenia o histórii kondómov sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/History_of_condoms
+    correct:
+      - text: Gabriele Falloppio opísal plátenné puzdrá v spise o syfilise
+        why: De Morbo Gallico vyšiel v roku 1564; puzdrá sa namáčali v roztoku a uväzovali stužkou.
+      - text: Casanova ich pred použitím nafukoval, aby našiel dierky
+        why: Je to prvá známa kontrola kvality kondómov, zapísaná v jeho pamätiach.
+      - text: Pred 19. storočím sa robili z plátna alebo zo zvieracích čriev
+        why: Napríklad z čriev alebo mechúra.
+      - text: Prvý gumený kondóm vyrobili v roku 1855
+        why: Umožnila to vulkanizácia gumy z rokov 1839 až 1844.
+      - text: Značka Durex začala vyrábať latexové kondómy v roku 1932
+        why: London Rubber Company, latex nahradil hrubú gumu.
+      - text: Prvý lubrikovaný kondóm uviedol Durex v roku 1957
+        why: Dovtedy boli všetky „na sucho“.
+    wrong:
+      - text: Názov má isto po lekárovi menom Condom
+        why: Príbeh o doktorovi Condomovi sa nikdy nepreukázal, pôvod slova je neznámy.
+      - text: Latexové kondómy existovali už v 18. storočí
+        why: Latexové prišli až koncom 20. rokov 20. storočia.
+      - text: Prvý polyuretánový kondóm prišiel v 50. rokoch
+        why: Polyuretánový Avanti uviedli až v 90. rokoch.
+      - text: Falloppio ich odporúčal najmä proti otehotneniu
+        why: Jeho spis bol o syfilise, „francúzskej chorobe“.
+      - text: Prvé gumené kondómy vznikli až po 2. svetovej vojne
+        why: Gumené existovali už od roku 1855.
+
+  - id: vibrator-historia
+    type: pick
+    prompt: Ktoré tvrdenia o histórii vibrátora sú podložené?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Vibrator_(sex_toy)
+    correct:
+      - text: Elektrický vibrátor vznikol koncom 19. storočia ako lekársky prístroj proti bolesti
+        why: Za otca elektromechanického vibrátora sa považuje Joseph Mortimer Granville.
+      - text: Na domáce použitie sa inzeroval v časopisoch už okolo roku 1900
+        why: V roku 1918 ho ponúkal aj katalóg obchodného domu Sears.
+      - text: Vibrátor Rabbit dostal meno podľa tvaru pripomínajúceho zajačie uši
+        why: Slávu mu urobila epizóda seriálu Sex v meste z augusta 1998.
+      - text: Magic Wand od Hitachi sa predával ako masážny prístroj na boľavé svaly
+        why: Na trh prišiel koncom 60. rokov, oficiálne bol „osobný masážny prístroj“.
+      - text: Hitachi v roku 2013 stiahla svoje meno z Magic Wand
+        why: Nechcela byť spájaná so sexuálnou hračkou, výrobok pokračoval ako Original Magic Wand.
+    wrong:
+      - text: Je dokázané, že viktoriánski lekári vynašli vibrátor na liečbu hystérie orgazmom
+        why: Je to len hypotéza Rachel Maines; historici Lieberman a Schatzberg ju v roku 2018 spochybnili.
+      - text: Vibrátory sa začali predávať domácnostiam až po 2. svetovej vojne
+        why: Inzeráty pre domácnosti sa objavili už okolo roku 1900.
+      - text: Magic Wand vznikol až v 90. rokoch
+        why: Hitachi ho registrovala v USA v apríli 1968.
+      - text: Rabbit sa prvýkrát objavil v televízii až po roku 2010
+        why: V Sexe v meste bol už v roku 1998.
+      - text: Hitachi dodnes hrdo tlačí svoje logo na Magic Wand
+        why: Od roku 2013 sa predáva bez mena Hitachi.
+
+  - id: dildo-historia
+    type: pick
+    prompt: Ktoré tvrdenia o dejinách dilda sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Dildo
+    correct:
+      - text: V nemeckej jaskyni Hohle Fels našli kamenný falus starý asi 30 000 rokov
+        why: Meria 20 cm a vedci predpokladajú, že mohol slúžiť ako dildo.
+      - text: Starovekí Gréci mu hovorili olisbos
+        why: Zvyčajne bol z kože.
+      - text: Spomína ho Aristofanova komédia Lysistrata
+        why: Hra z roku 411 pred n. l. o ženách, ktoré štrajkujú v posteli.
+      - text: V Taliansku 15. storočia sa vyrábali z kože, dreva alebo kameňa
+        why: Plasty a silikón prišli o pár storočí neskôr.
+      - text: Zobrazujú ho aj egyptské maľby spred asi 5 000 rokov
+        why: Datujú sa okolo roku 3000 pred n. l.
+      - text: Gréci poznali aj olisbokollikes, chlebové tyčinky v tvare dilda
+        why: Slovo poznáme z antických gréckych textov; išlo o pečivo v tvare dilda.
+    wrong:
+      - text: Slovo dildo je isto z talianskeho diletto (potešenie)
+        why: Je to len jedna z teórií; Oxfordský slovník v roku 2018 skôr odkazuje na nezmyselné slabiky z balád.
+      - text: Najstarší známy nález pochádza zo stredoveku
+        why: Hohle Fels je z doby kamennej, asi 30 000 rokov starý.
+      - text: Kamenný falus z Hohle Fels je vyrezaný z mamutej kosti
+        why: Je z prachovca, teda z kameňa.
+      - text: Grécky olisbos sa vyrábal zo skla
+        why: Typicky bol kožený.
+
+  - id: tabletka-historia
+    type: pick
+    prompt: Ktoré tvrdenia o antikoncepčnej tabletke a jej histórii sú pravdivé?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/History_of_birth_control
+    note: Účinnosť a počet užívateliek – https://en.wikipedia.org/wiki/Combined_oral_contraceptive_pill
+    correct:
+      - text: V USA ju schválili na antikoncepciu v roku 1960
+        why: Prvé povolenie na antikoncepciu prišlo práve v USA.
+      - text: Vyvinuli ju Gregory Pincus a John Rock
+        why: Pracovali na nej v 50. rokoch.
+      - text: Klinicky ju testovali v Portoriku
+        why: Testy prebehli v roku 1956.
+      - text: Pojem birth control spopularizovala Margaret Sanger
+        why: Spolu s Ottom Bobseinom v roku 1914.
+      - text: Pri dokonalom užívaní zlyhá asi u 0,3 % žien ročne
+        why: Pri bežnom užívaní je to však asi 7 až 9 %.
+      - text: Užíva ju viac ako 100 miliónov žien na svete
+        why: Podľa Wikipédie (stav 2026), z toho asi 9 miliónov v USA.
+    wrong:
+      - text: Vyvinul ju Pfizer ako liek na srdce
+        why: To je príbeh Viagry, nie tabletky.
+      - text: V USA ju schválili až v roku 1975
+        why: Na antikoncepciu ju schválili v roku 1960.
+      - text: Pri bežnom užívaní je spoľahlivá na 100 %
+        why: Zabudnuté tabletky robia svoje, bežne zlyhá asi 7 až 9 %.
+      - text: Prvá klinika Margaret Sanger fungovala desaťročia bez problémov
+        why: Otvorila ju v roku 1916 a po deviatich dňoch ju zavreli.
+      - text: Antikoncepcia bola v USA legálna pre manželov vždy
+        why: Až v roku 1965 Najvyšší súd zrušil zákaz v Connecticute (Griswold v. Connecticut).
+
+  - id: myty
+    type: pick
+    prompt: Ktoré z týchto rozšírených predstáv sú mýty?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hymen
+    note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Menstrual_synchrony, https://en.wikipedia.org/wiki/Human_penis_size, https://news.osu.edu/study-debunks-stereotype-that-men-think-about-sex-all-day-long/, https://en.wikipedia.org/wiki/Withdrawal_method, https://en.wikipedia.org/wiki/Spermatozoon, https://en.wikipedia.org/wiki/Clitoris, https://en.wikipedia.org/wiki/Baculum
+    correct:
+      - text: Muži myslia na sex každých sedem sekúnd
+        why: To by bolo vyše 8 000 myšlienok denne; v štúdii z Ohio State mali mladí muži medián asi 19.
+      - text: Podľa panenskej blany sa dá spoľahlivo určiť panenstvo
+        why: Stav hymenu nie je spoľahlivý ukazovateľ; testy panenstva OSN a WHO odsudzujú.
+      - text: Pri prvom styku krváca každá žena
+        why: V jednej medzikultúrnej štúdii krvácanie uviedla len o niečo viac ako polovica žien.
+      - text: Ženám, ktoré bývajú spolu, sa zosynchronizuje menštruácia
+        why: Prehľady z rokov 2006 a 2013 došli k tomu, že synchronizácia zrejme neexistuje.
+      - text: Podľa veľkosti topánok sa dá odhadnúť veľkosť penisu
+        why: Štúdia z roku 2002 nenašla medzi nimi žiadnu súvislosť.
+      - text: Predejakulát nikdy neobsahuje spermie
+        why: V štúdii z roku 2011 ich malo 11 z 27 mužov.
+      - text: Spermie prežijú v tele ženy najviac pár hodín
+        why: Môžu prežiť aj vyše 5 dní.
+    wrong:
+      - text: Ľudský penis nemá kosť, hoci šimpanz ju má
+        why: Pravda, človek patrí k nemnohým primátom bez penisovej kosti.
+      - text: Jedinou známou funkciou klitorisu je potešenie
+        why: Pravda, nič iné o ňom veda nevie.
+      - text: Väčšina žien potrebuje na orgazmus priamu stimuláciu klitorisu
+        why: Pravda, týka sa to 70 až 80 % žien.
+      - text: Prerušovaný styk zlyhá pri bežnom používaní asi u každej piatej ženy ročne
+        why: Pravda, okolo 20 %.
+      - text: Ženy myslia na sex v priemere menej často ako muži
+        why: Pravda, v štúdii z Ohio State mali ženy medián asi 10 myšlienok denne, muži 19.
+
+  - id: anatomia
+    type: pick
+    prompt: Ktoré tvrdenia o ľudskej sexuálnej anatómii sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Clitoris
+    note: Ďalšie zdroje – https://www.technologynetworks.com/neuroscience/news/human-clitoris-has-at-least-10281-nerve-fibers-367267 (tlačová správa OHSU z 27. 10. 2022), https://en.wikipedia.org/wiki/Spermatozoon, https://en.wikipedia.org/wiki/Baculum, https://en.wikipedia.org/wiki/Human_penis_size
+    correct:
+      - text: Hlavný citlivý nerv klitorisu má vyše 10 000 nervových vlákien
+        why: OHSU v roku 2022 napočítala asi 10 281; staršie číslo 8 000 pochádzalo zo štúdie na kravách.
+      - text: Klitoris aj s vnútornými ramenami môže merať 10 cm a viac
+        why: Viditeľná je len malá časť, väčšina je skrytá v tele.
+      - text: Klitoris je vývojovo obdobou penisu
+        why: Jeho žaluď zodpovedá žaluďu penisu a telo telu penisu.
+      - text: Človek nemá v penise kosť
+        why: Na rozdiel od väčšiny primátov, napríklad goríl a šimpanzov.
+      - text: Bičík ľudskej spermie meria asi 0,05 mm
+        why: Hlavička má len asi 5 mikrometrov.
+      - text: Spermia pláva rýchlosťou asi 1 až 3 mm za minútu
+        why: Na svoju veľkosť slušný výkon, v absolútnych číslach slimák.
+    wrong:
+      - text: Klitoris má len pár stoviek nervových zakončení
+        why: Len v jeho dorzálnom nerve je vyše 10 000 vlákien (OHSU, 2022).
+      - text: Ľudský penis má malú kosť ako väčšina cicavcov
+        why: Človek, kone a hovädzí dobytok kosť v penise nemajú.
+      - text: Spermia pláva rýchlosťou asi 1 cm za sekundu
+        why: Je to len 1 až 3 mm za minútu.
+      - text: Spermie objavili až v 20. storočí
+        why: Antonie van Leeuwenhoek ich videl mikroskopom už v roku 1677.
+      - text: Dĺžka penisu silno súvisí s výškou muža
+        why: Súvislosť je len veľmi slabá.
+
+  - id: zvierata
+    type: pick
+    prompt: Ktoré tvrdenia o sexe v ríši zvierat sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Animal_sexual_behaviour
+    note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Walrus, https://oiseaux.net/birds/lake.duck.html (slovenský názov), https://en.wikipedia.org/wiki/Lake_duck, https://en.wikipedia.org/wiki/Barnacle, https://en.wikipedia.org/wiki/Baculum
+    correct:
+      - text: Potápnica argentínska má rekordný penis dlhý 42,5 cm
+        why: Zapísaný v Guinnessovej knihe; v erekcii môže byť dlhý ako celý vták, bežne asi ako jeho polovica.
+      - text: Svijonožce majú penis až osemkrát dlhší ako telo
+        why: Najväčší pomer penisu k telu zo známych živočíchov; sú prirastené, tak to musia doháňať.
+      - text: Penisová kosť mroža môže merať vyše pol metra
+        why: Až 63 cm; Inupiati jej hovoria oosik a robia z nej rukoväte nožov.
+      - text: Kačice majú penis v tvare vývrtky a samice pošvu zatočenú opačne
+        why: Evolučné preťahovanie sa medzi pohlaviami.
+      - text: U samíc bonobov je až 75 % sexuálnej aktivity nereprodukčnej
+        why: Trenie genitálií je ich najtypickejšie sexuálne správanie.
+      - text: Rovnakopohlavné správanie je opísané u stoviek druhov
+        why: Do roku 1999 ho literatúra opísala aspoň u 471 voľne žijúcich druhov.
+    wrong:
+      - text: Hyeny majú penisovú kosť ako ostatné šelmy
+        why: Všetky šelmy ju majú, okrem hyen.
+      - text: Kone majú v penise kosť
+        why: Kopytníky, teda aj kone, ju nemajú.
+      - text: Väčšina sociálne monogamných spevavcov je aj sexuálne verná
+        why: Podľa jedného odhadu len asi 10 % zo 180 skúmaných druhov.
+      - text: Rovnakopohlavné správanie poznáme len u ľudí a delfínov
+        why: Je opísané aspoň u 471 druhov.
+      - text: Najdlhší penis vzhľadom na telo má slon
+        why: Rekord vzhľadom na telo patrí svijonožcom.
+
+  - id: fetise-pojmy
+    type: pick
+    prompt: Ktoré odborné názvy fetišov sú správne vysvetlené?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_paraphilias
+    correct:
+      - text: podofília – chodidlá
+        why: Najznámejší fetiš na časť tela, z gréckeho pous, noha.
+      - text: agalmatofília – sochy a figuríny
+        why: Z gréckeho agalma, socha.
+      - text: plyšofília – plyšové hračky
+        why: Áno, aj to má odborný názov.
+      - text: knizmolagnia – šteklenie
+        why: Vzrušenie zo šteklenia.
+      - text: katoptronofília – zrkadlá
+        why: Vzrušenie zo zrkadiel.
+      - text: maschalagnia – podpazušie
+        why: Fetiš na podpazušie.
+      - text: trichofília – vlasy
+        why: Z gréckeho thrix, vlas.
+      - text: dakryfília – slzy a plač
+        why: Z gréckeho dakry, slza.
+    wrong:
+      - text: pygofília – chodidlá
+        why: Pygofília je zadok, chodidlá sú podofília.
+      - text: mazofília – vlasy
+        why: Mazofília sú prsia.
+      - text: odaxelagnia – šteklenie
+        why: Odaxelagnia je hryzenie, šteklenie je knizmolagnia.
+      - text: sténolagnia – sochy
+        why: Sténolagnia sú svaly a prejavy sily.
+      - text: mechanofília – plyšové hračky
+        why: Mechanofília sú autá a iné stroje.
+      - text: xenofília – strach z cudzincov
+        why: Je to príťažlivosť k cudzím ľuďom a kultúram, nie strach.
+      - text: hybristofília – hrubé slová
+        why: Je to príťažlivosť k zločincom.
+
+  - id: bdsm
+    type: pick
+    prompt: Ktoré tvrdenia o BDSM sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/BDSM
+    correct:
+      - text: Skratka spája bondáž a disciplínu, dominanciu a submisiu, sadizmus a masochizmus
+        why: B/D, D/s a S/M v jednom.
+      - text: Najstaršie známe použitie skratky je z diskusie na Usenete z roku 1991
+        why: Samotné praktiky sú, samozrejme, oveľa staršie.
+      - text: Heslo SSC znamená bezpečne, rozumne a so súhlasom
+        why: Safe, sane and consensual, používa sa od 80. rokov.
+      - text: Sadizmus je pomenovaný po markízovi de Sade
+        why: Do medicíny pojem uviedol Richard von Krafft-Ebing.
+      - text: Masochizmus je pomenovaný po spisovateľovi Leopoldovi von Sacher-Masochovi
+        why: Opäť zásluha Krafft-Ebinga, v roku 1890.
+      - text: Bežný systém stop slov je semafor, kde červená znamená okamžite prestať
+        why: Žltá spomaliť, zelená pokračovať.
+    wrong:
+      - text: Skratka BDSM vznikla v 18. storočí
+        why: Prvé známe použitie je z roku 1991.
+      - text: SSC znamená sex, sila a kontrola
+        why: Znamená safe, sane and consensual.
+      - text: Masochizmus je pomenovaný po lekárovi, ktorý ho liečil
+        why: Je pomenovaný po spisovateľovi Sacher-Masochovi.
+      - text: Červená v semafore znamená pridaj
+        why: Červená je stop, presne ako na križovatke.
+      - text: Sadizmus je pomenovaný po gréckom bohovi bolesti
+        why: Je pomenovaný po markízovi de Sade.
+
+  - id: padesat-odtienov
+    type: pick
+    prompt: Ktoré tvrdenia o knihe Päťdesiat odtieňov sivej sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Fifty_Shades_of_Grey
+    correct:
+      - text: Napísala ju Britka E. L. James
+        why: Vlastným nákladom ju vydala v júni 2011.
+      - text: Začala ako fanfikcia na Twilight
+        why: Volala sa Master of the Universe a hrdinami boli Edward a Bella.
+      - text: Séria sa predala vo viac ako 150 miliónoch kusov
+        why: Toľko to bolo do októbra 2017.
+      - text: Preložili ju do vyše 50 jazykov
+        why: Konkrétne do 52.
+      - text: Film mal premiéru tesne pred Valentínom 2015
+        why: 13. februára 2015.
+    wrong:
+      - text: Začala ako fanfikcia na Harryho Pottera
+        why: Bola to fanfikcia na Twilight.
+      - text: Prvýkrát vyšla v 90. rokoch
+        why: Vyšla v roku 2011.
+      - text: Napísala ju Američanka, autorka ságy Twilight
+        why: Autorkou je Britka E. L. James, Twilight jej bol len predlohou.
+      - text: Film natočili až v roku 2020
+        why: Premiéru mal vo februári 2015.
+      - text: Séria sa predala v asi 5 miliónoch kusov
+        why: Bolo ich vyše 150 miliónov.
+
+  - id: kamasutra
+    type: pick
+    prompt: Ktoré tvrdenia o Kámasútre sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Kama_Sutra
+    correct:
+      - text: Pripisuje sa Vátsjájanovi
+        why: O autorovi sa vie len veľmi málo.
+      - text: Je napísaná v sanskrte
+        why: Mieša prózu a verše.
+      - text: Má sedem kníh
+        why: A podľa vlastného obsahu 36 kapitol.
+      - text: Jedna kniha je o tom, ako získať manželku
+        why: Kniha 3, polohy sú hlavne v knihe 2.
+      - text: Jedna kniha je venovaná kurtizánam
+        why: Kniha 6.
+      - text: Do angličtiny ju v roku 1883 vydal Richard Burton
+        why: Súkromne, preklad upravil pre viktoriánskych čitateľov.
+    wrong:
+      - text: Je to v podstate len zoznam sexuálnych polôh
+        why: Polohy sú len časť; je to príručka o láske, manželstve aj živote.
+      - text: Je napísaná v hindčine
+        why: Je v sanskrte.
+      - text: Má 64 kníh
+        why: Má 7 kníh; číslo 64 sa v nej objavuje pri „umeniach“.
+      - text: Prvý anglický preklad vyšiel až v 60. rokoch 20. storočia
+        why: Burtonovo vydanie je z roku 1883.
+      - text: Vznikla v stredovekom Japonsku
+        why: Je to staroindický text, asi z 3. storočia n. l.
+
+  - id: kinsey
+    type: pick
+    prompt: Ktoré tvrdenia o Kinseyho správach sú pravdivé?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Kinsey_Reports
+    correct:
+      - text: Správa o mužoch vyšla v roku 1948
+        why: Sexual Behavior in the Human Male.
+      - text: Správa o ženách vyšla v roku 1953
+        why: Sexual Behavior in the Human Female.
+      - text: Kinseyho škála má stupne od 0 do 6
+        why: 0 je výlučne heterosexuálny, 6 výlučne homosexuálny.
+      - text: Písmeno X na škále označuje ľudí bez sexuálnych kontaktov a reakcií
+        why: Dnes sa spája s asexualitou.
+      - text: Asi 37 % mužov uviedlo aspoň jednu homosexuálnu skúsenosť
+        why: Na rok 1948 šokujúce číslo.
+      - text: Vzorky neboli náhodné a metodiku kritizovali
+        why: Išlo o dobrovoľníkov a aj väzňov.
+    wrong:
+      - text: Kinseyho škála ide od 1 do 10
+        why: Ide od 0 do 6, plus X.
+      - text: Na škále 0 znamená výlučne homosexuálny
+        why: Naopak, 0 je výlučne heterosexuálny.
+      - text: Prvá vyšla správa o ženách
+        why: Prvá bola o mužoch (1948), o ženách až v roku 1953.
+      - text: Kinsey mal dokonale reprezentatívnu náhodnú vzorku
+        why: Práve to mu kritici vyčítajú.
+      - text: Správy vychádzali len z asi sto rozhovorov
+        why: Celkovo išlo asi o 18 000 rozhovorov.
+
+  - id: slovenske-sobase
+    type: pick
+    prompt: Ktoré tvrdenia o sobášoch a rozvodoch na Slovensku platili podľa ŠÚ SR v roku 2018?
+    difficulty: 2
+    asOf: "2018"
+    source: https://slovak.statistics.sk/wps/wcm/connect/315de940-2738-48d2-9757-60d7ef4b29fb/Statistika_v_suvislosiach_+Hlavne_trendy_vyvoja_sobasnosti_v_SR_roku_2018.pdf?MOD=AJPERES
+    correct:
+      - text: Ženích bol starší ako nevesta asi v 70 % sobášov
+        why: Presne 69,7 %, v roku 1996 to bolo 73,3 %.
+      - text: Ženích bol od nevesty starší v priemere asi o 3 roky
+        why: O 2,9 roka.
+      - text: Najviac rozvodov na 100 sobášov bolo v roku 2006
+        why: Vtedy 49, do roku 2018 to kleslo na 31.
+      - text: Svadby majú vrchol neskoro na jar (apríl až jún) a v septembri
+        why: Tak to uvádza ŠÚ SR; najmenej ich je v decembri, januári a marci, aj kvôli adventu a pôstu.
+      - text: Od roku 1996 sa priemerný vek pri sobáši zvýšil o vyše 7 rokov
+        why: O 7,4 roka u mužov aj žien.
+    wrong:
+      - text: Najviac svadieb býva v decembri
+        why: December patrí k mesiacom s najmenej sobášmi.
+      - text: Vo väčšine sobášov je nevesta staršia ako ženích
+        why: Ženích je starší asi v 70 % sobášov.
+      - text: Rovnako starí snúbenci tvorili asi tretinu sobášov
+        why: Len 10,8 %.
+      - text: Rozvodovosť každý rok rastie a rekord padol v roku 2018
+        why: Vrchol bol v roku 2006, potom klesala.
+      - text: Ženích pri prvom sobáši mal v priemere asi 25 rokov
+        why: To platilo v roku 1996 (24,7); v roku 2018 už 31,3.
+
+  - id: sex-v-cislach
+    type: pick
+    prompt: Ktoré tvrdenia o sexe v číslach sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Orgasm
+    note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Sexual_intercourse, https://en.wikipedia.org/wiki/Human_sexual_activity
+    correct:
+      - text: Ženský orgazmus trvá v priemere asi 20 sekúnd
+        why: Podľa odhadov, môže byť o niečo dlhší ako mužský.
+      - text: Sexuálni terapeuti považujú styk 3 až 7 minút za primeraný
+        why: Prieskum terapeutov z USA a Kanady z roku 2008; 7 až 13 minút je „žiaduce“.
+      - text: Páry mávajú sex v priemere raz až dvakrát týždenne
+        why: Teda asi šesť až sedemkrát mesačne.
+      - text: Ľudia s partnerom vo veku 18 až 29 rokov mávajú sex asi 112-krát ročne
+        why: Podľa Kinseyho inštitútu; vo veku 40 až 49 rokov je to asi 69-krát.
+      - text: Asi polovica žien uvádza, že niekedy predstierala orgazmus
+        why: Aj preto, že pri samotnej penetrácii ho zažívajú menej spoľahlivo.
+    wrong:
+      - text: Terapeuti považujú za žiaduci styk dlhší ako pol hodiny
+        why: 10 až 30 minút už hodnotili ako príliš dlho.
+      - text: Priemerný orgazmus trvá asi dve minúty
+        why: Ženský v priemere asi 20 sekúnd.
+      - text: Frekvencia sexu s vekom zvyčajne rastie
+        why: Zvyčajne s vekom klesá.
+      - text: Väčšina žien dosiahne orgazmus samotnou penetráciou bez stimulácie klitorisu
+        why: 70 až 80 % žien potrebuje priamu stimuláciu klitorisu.
+      - text: Podľa Kinseyho výskumníkov väčšina mužov vydržala pri styku vyše 10 minút
+        why: Naopak, 75 % mužov ejakulovalo do dvoch minút od penetrácie.
+
+  # ---------- ORDER ----------
+  - id: antikoncepcia-zlyhanie
+    type: order
+    prompt: Zoraď metódy podľa toho, koľko žien za prvý rok bežného používania otehotnie, od najviac.
+    direction: desc
+    unit: "%"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Comparison_of_birth_control_methods
+    items:
+      - { text: Bez ochrany, value: 85, why: Bez akejkoľvek ochrany otehotnie 85 % žien za rok. }
+      - { text: Prerušovaný styk, value: 20, why: Pri bežnom používaní asi 20 %. }
+      - { text: Mužský kondóm, value: 13, why: Pri dokonalom používaní len 2 %. }
+      - { text: Antikoncepčná tabletka, value: 7, why: Dokonale 0,3 %, rozdiel robí zabúdanie. }
+      - { text: Hormonálna injekcia, value: 4, why: Bežne asi 4 %. }
+      - { text: Podkožný implantát, value: 0.05, why: Najspoľahlivejšia metóda v tabuľke. }
+
+  - id: antikoncepcia-chronologia
+    type: order
+    prompt: Zoraď míľniky antikoncepcie od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/History_of_condoms
+    note: Tabletka – https://en.wikipedia.org/wiki/Combined_oral_contraceptive_pill
+    items:
+      - { text: Falloppio opísal plátenné puzdrá, value: 1564, why: V spise De Morbo Gallico o syfilise. }
+      - { text: Prvý gumený kondóm, value: 1855, why: Vďaka vulkanizácii gumy. }
+      - { text: Durex začal vyrábať latexové kondómy, value: 1932, why: London Rubber Company. }
+      - { text: Prvý lubrikovaný kondóm, value: 1957, why: Opäť Durex. }
+      - { text: Tabletku schválili v USA na antikoncepciu, value: 1960, why: Na antikoncepciu ju schválili ako prvé USA. }
+
+  - id: kultura-chronologia
+    type: order
+    prompt: Zoraď udalosti z dejín sexu od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Kinsey_Reports
+    note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Dildo, https://en.wikipedia.org/wiki/Kama_Sutra, https://en.wikipedia.org/wiki/Sexual_fetishism, https://en.wikipedia.org/wiki/Hitachi_Magic_Wand, https://en.wikipedia.org/wiki/Sildenafil, https://en.wikipedia.org/wiki/Fifty_Shades_of_Grey
+    items:
+      - { text: Aristofanova Lysistrata spomína dildá, value: -411, why: Komédia z roku 411 pred n. l. }
+      - { text: Burtonov anglický preklad Kámasútry, value: 1883, why: Vydaný súkromne pre viktoriánov. }
+      - { text: Alfred Binet použil slovo fetišizmus v sexuálnom zmysle, value: 1887, why: Predtým fetiš znamenal posvätný predmet. }
+      - { text: Kinseyho správa o mužoch, value: 1948, why: O ženách nasledovala v roku 1953. }
+      - { text: Hitachi registrovala v USA Magic Wand, value: 1968, why: Ako masážny prístroj. }
+      - { text: Viagra schválená v USA, value: 1998, why: 27. marca 1998. }
+      - { text: Vyšlo Päťdesiat odtieňov sivej, value: 2011, why: Najprv vlastným nákladom. }
+
+  - id: dlzky
+    type: order
+    prompt: Zoraď od najdlhšieho.
+    direction: desc
+    unit: cm
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Human_penis_size
+    note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Baculum, https://en.wikipedia.org/wiki/Lake_duck, https://en.wikipedia.org/wiki/Dildo
+    items:
+      - { text: Penisová kosť mroža, value: 56, why: Exemplár na obrázku vo Wikipédii má asi 56 cm, najdlhšie až 63 cm. }
+      - { text: Rekordný penis potápnice argentínskej, value: 42.5, why: Zapísaný v Guinnessovej knihe. }
+      - { text: Kamenný falus z Hohle Fels, value: 20, why: Starý asi 30 000 rokov. }
+      - { text: Dĺžka, ktorú si ženy v štúdii vybrali pre dlhodobého partnera, value: 16, why: Štúdia Prause a kol. (2015) s 3D modelmi. }
+      - { text: Priemerný ľudský penis v erekcii, value: 13.1, why: 13,12 cm podľa merania vyše 15 000 mužov. }
+
+  # ---------- NUMBER ----------
+  - id: priemerna-dlzka
+    type: number
+    prompt: Koľko centimetrov meria priemerný ľudský penis v erekcii?
+    answer: 13.1
+    unit: cm
+    scale: linear
+    tolerance: 1
+    why: Prehľad Veale a kol. (2015) s až 15 521 mužmi meranými zdravotníkmi dal 13,12 cm.
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Human_penis_size
+
+  - id: myslienky-na-sex
+    type: number
+    prompt: Koľkokrát denne mysleli mladí muži na sex v štúdii, kde si myšlienky odklikávali na počítadle (medián)?
+    answer: 19
+    unit: krát
+    scale: log
+    tolerance: 0.2
+    why: Ženy asi 10-krát; muži mysleli skoro rovnako často na jedlo (asi 18-krát). Žiadnych „každých 7 sekúnd“.
+    difficulty: 2
+    source: https://news.osu.edu/study-debunks-stereotype-that-men-think-about-sex-all-day-long/
+
+  - id: viagra-rok
+    type: number
+    prompt: V ktorom roku schválili v USA Viagru na poruchy erekcie?
+    answer: 1998
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: 27. marca 1998; pôvodne ju Pfizer skúmal ako liek na srdce.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Sildenafil
+
+  - id: vek-nevesty
+    type: number
+    prompt: Koľko rokov mala na Slovensku v priemere nevesta pri prvom sobáši v roku 2018?
+    answer: 28.7
+    unit: rokov
+    scale: linear
+    tolerance: 1.5
+    asOf: "2018"
+    why: V roku 1996 to bolo 22,2 roka; ženích pri prvom sobáši mal v roku 2018 v priemere 31,3 roka.
+    difficulty: 2
+    source: https://slovak.statistics.sk/wps/wcm/connect/315de940-2738-48d2-9757-60d7ef4b29fb/Statistika_v_suvislosiach_+Hlavne_trendy_vyvoja_sobasnosti_v_SR_roku_2018.pdf?MOD=AJPERES
+
+  - id: rozvody-na-100
+    type: number
+    prompt: Koľko rozvodov pripadalo na Slovensku v roku 2018 na 100 sobášov?
+    answer: 31
+    unit: rozvodov
+    scale: linear
+    tolerance: 5
+    asOf: "2018"
+    why: Vrchol bol v roku 2006 so 49 rozvodmi na 100 sobášov.
+    difficulty: 2
+    source: https://slovak.statistics.sk/wps/wcm/connect/315de940-2738-48d2-9757-60d7ef4b29fb/Statistika_v_suvislosiach_+Hlavne_trendy_vyvoja_sobasnosti_v_SR_roku_2018.pdf?MOD=AJPERES
+
+  - id: spermie-objav
+    type: number
+    prompt: V ktorom roku prvýkrát niekto uvidel spermie pod mikroskopom?
+    answer: 1677
+    unit: rok
+    scale: linear
+    tolerance: 20
+    why: Bol to Antonie van Leeuwenhoek.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Spermatozoon
+
+  - id: hohle-fels-vek
+    type: number
+    prompt: Koľko rokov je starý kamenný falus z nemeckej jaskyne Hohle Fels, možno najstaršie dildo?
+    answer: 30000
+    unit: rokov
+    scale: log
+    tolerance: 0.2
+    why: Je z mladšieho paleolitu, z prachovca a meria 20 cm.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Dildo
+
+  # ---------- CHOICE ----------
+  - id: viagra-povod
+    type: choice
+    prompt: Na čo pôvodne Pfizer skúmal sildenafil, neskôr známy ako Viagra?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Sildenafil
+    correct: { text: Na vysoký tlak a angínu pektoris, why: Vedľajší účinok sa ukázal zaujímavejší; syntetizovali ho v roku 1989 v anglickom Sandwichi. }
+    wrong:
+      - { text: Na plešatosť, why: Skúmali ho na srdce a tlak. }
+      - { text: Na depresiu, why: Skúmali ho na srdce a tlak. }
+      - { text: Na nespavosť, why: Skúmali ho na srdce a tlak; dnes sa ním pod názvom Revatio lieči pľúcna hypertenzia. }
+
+  - id: silfium
+    type: choice
+    prompt: Ktorá rastlina sa v antike používala na antikoncepciu a dnes je vyhynutá?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/History_of_birth_control
+    correct: { text: Silfium, why: Rástlo len pri Kyréne v dnešnej Líbyi a v neskorej antike úplne vyhynulo. }
+    wrong:
+      - { text: Šafran, why: Šafran sa pestuje dodnes. }
+      - { text: Mandragora, why: Mandragora rastie dodnes. }
+      - { text: Myrta, why: Myrta rastie dodnes. }
+
+  - id: predejakulat
+    type: choice
+    prompt: Koľko mužov z 27 malo v štúdii z roku 2011 spermie v predejakulačnej tekutine?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Withdrawal_method
+    correct: { text: "11", why: Teda 41 %, a 10 z nich malo pohyblivé spermie. Prerušovaný styk preto bežne zlyhá asi u 20 % žien za rok. }
+    wrong:
+      - { text: Ani jeden, why: Staršie malé štúdie to tvrdili, táto ich vyvrátila. }
+      - { text: "2", why: Bolo ich 11 z 27. }
+      - { text: Všetci, why: Bolo ich 11 z 27. }
+
+  - id: fetis-casti-tela
+    type: choice
+    prompt: Ktorá časť tela mala najviac internetových diskusných skupín o fetišoch v štúdii Scorolli a kol. (2007)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Sexual_fetishism
+    correct: { text: Chodidlá, why: Až 47 % skupín o častiach tela bolo o chodidlách. }
+    wrong:
+      - { text: Vlasy, why: Chodidlá so 47 % jasne vyhrali. }
+      - { text: Podpazušie, why: Chodidlá so 47 % jasne vyhrali. }
+      - { text: Svaly, why: Chodidlá so 47 % jasne vyhrali. }
+
+  - id: online-manzelstva
+    type: choice
+    prompt: Čo zistil prieskum medzi 19 131 Američanmi, ktorí sa vzali v rokoch 2005 až 2012, o manželstvách, ktoré začali online?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Online_dating
+    correct: { text: Končia rozchodom o niečo menej často, why: A manželia boli v priemere o niečo spokojnejší. }
+    wrong:
+      - { text: Končia rozvodom dvakrát častejšie, why: Bolo to naopak, o niečo menej často. }
+      - { text: Polovica sa rozpadne do dvoch rokov, why: Nič také prieskum nezistil. }
+      - { text: Sú takmer všetky bezdetné, why: Nič také prieskum nezistil. }

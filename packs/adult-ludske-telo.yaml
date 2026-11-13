@@ -1,0 +1,743 @@
+id: adult-ludske-telo
+title: Ľudské telo bez cenzúry
+description: Prdy, grganie, sople, pot, chlpy, nočné erekcie, menštruácia, rekordmani a mýty – telo tak, ako sa o ňom pri stole nehovorí.
+lang: sk
+license: CC0-1.0
+adult: true
+warnings: [sexual]
+version: 1
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: prdy-plyny
+    type: pick
+    prompt: Ktoré z týchto plynov sú hlavnou zložkou prdov alebo pôvodcom ich zápachu?
+    difficulty: 2
+    tags: [prdy, chémia]
+    source: https://en.wikipedia.org/wiki/Flatulence
+    correct:
+      - text: dusík
+        why: V čreve nevzniká, je to prehltnutý vzduch, ktorý si našiel zadný východ.
+      - text: oxid uhličitý
+        why: Jedna z bezzápachových zložiek, ktoré tvoria vyše 99 % objemu.
+      - text: vodík
+        why: Vyrábajú ho črevné baktérie; je horľavý, preto sa prd dá zapáliť.
+      - text: metán
+        why: Bez zápachu a horľavý; tvoria ho len niektorí ľudia, podľa ich črevných mikróbov.
+      - text: kyslík
+        why: Tiež pochádza z prehltnutého vzduchu.
+      - text: sírovodík
+        why: Jedna z prchavých zlúčenín síry, ktoré v stopovom množstve robia ten typický smrad.
+      - text: metántiol
+        why: Zlúčenina síry (metylmerkaptán), ktorá výrazne prispieva k zápachu.
+      - text: dimetylsulfid
+        why: Ďalšia zlúčenina síry z „vôňovej“ zmesi prdu.
+    wrong:
+      - text: hélium
+        why: Hlas po ňom piští, ale v prdoch medzi hlavnými zložkami nie je.
+      - text: chlór
+        why: Jedovatý plyn z bazénov; v prdoch medzi zložkami nie je.
+      - text: ozón
+        why: Nájdeš ho vo vysokej atmosfére, nie medzi zložkami prdov.
+      - text: oxid dusný
+        why: Rajský plyn; prdy by boli veselšie, ale nie je medzi ich zložkami.
+      - text: xenón
+        why: Vzácny plyn z výbojok, medzi zložkami prdov nie je.
+
+  - id: myty-o-tele
+    type: pick
+    prompt: Ktoré z týchto rozšírených tvrdení o ľudskom tele sú MÝTY?
+    difficulty: 2
+    tags: [mýty]
+    source: https://en.wikipedia.org/wiki/List_of_common_misconceptions_about_science,_technology,_and_mathematics
+    note: "Pravdivé tvrdenia overené v článkoch en.wikipedia: Flatulence, Sneeze, Hiccup, Yawn, Photic sneeze reflex, Nocturnal penile tumescence."
+    correct:
+      - text: Človek využíva len 10 % mozgu
+        why: Mýtus; mozog nevyužívame len z desatiny.
+      - text: Po smrti ďalej rastú vlasy a nechty
+        why: Mýtus; po smrti vlasy ani nechty ďalej nerastú.
+      - text: Po holení rastú chlpy hustejšie a tmavšie
+        why: Mýtus; holenie hrúbku ani farbu chlpov nemení.
+      - text: Pukanie prstami spôsobuje artritídu
+        why: Mýtus; s osteoartritídou to súvislosť nemá.
+      - text: Prehltnutá žuvačka sa trávi sedem rokov
+        why: Mýtus; trávenie žuvačky netrvá sedem rokov.
+      - text: Jednotlivé chute cítime len na určitých miestach jazyka
+        why: Mýtus; všetky chute vnímajú chuťové poháriky na celom jazyku.
+      - text: Polovicu tepla strácame cez hlavu
+        why: Mýtus; cez hlavu neodchádza polovica telesného tepla.
+      - text: Krv v žilách je modrá
+        why: Mýtus; krv je vždy červená vďaka hemoglobínu.
+      - text: Zobudiť námesačníka je nebezpečné
+        why: Mýtus; zobudenie mu neublíži.
+      - text: Podľa veľkosti nohy sa dá odhadnúť veľkosť penisu
+        why: Mýtus; veľkosť ruky ani nohy s veľkosťou penisu nesúvisí.
+      - text: Ženám, ktoré bývajú spolu, sa zosynchronizuje menštruácia
+        why: Mýtus; štúdie to nepotvrdili.
+      - text: Moč je sterilný
+        why: Mýtus; moč nie je sterilný ani v močovom mechúri.
+    wrong:
+      - text: Prd sa dá zapáliť
+        why: Pravda; vodík a metán sú horľavé.
+      - text: V REM spánku nemôžeme kýchnuť
+        why: Pravda; svaly sú v REM spánku ochabnuté, kýchnuť dokáže až prebudený človek.
+      - text: Štikútať môže aj dieťa ešte v maternici
+        why: Pravda; štikútanie bolo pozorované už u plodu.
+      - text: Zívnuť sa nám môže chcieť aj z čítania o zívaní
+        why: Pravda; aj čítanie alebo myslenie na zívanie ho vie spustiť. Zívaš?
+      - text: Niektorí ľudia kýchajú, keď sa pozrú do slnka
+        why: Pravda; tento dedičný reflex má 18 až 35 % ľudí.
+      - text: Muži mávajú počas spánku niekoľko erekcií za noc
+        why: Pravda; zvyčajne tri až päť, najmä v REM spánku.
+      - text: Kýchnuť sa dá aj s otvorenými očami
+        why: Pravda; oči sa reflexne zatvárajú, ale tvrdenie, že to inak nejde, je nepresné.
+
+  - id: moc-fakty
+    type: pick
+    prompt: Ktoré z týchto tvrdení o moči sú pravdivé?
+    difficulty: 2
+    tags: [moč, história]
+    source: https://en.wikipedia.org/wiki/Urine
+    note: "Súkenníci: https://en.wikipedia.org/wiki/Fulling"
+    correct:
+      - text: Z 91 až 96 % je to voda
+        why: Zvyšok tvoria rozpustené látky.
+      - text: Po špargli môže silno zapáchať
+        why: Telo rozkladá kyselinu asparagusovú na páchnuce látky.
+      - text: Po cvikle môže zružovieť
+        why: Volá sa to beetúria a je to neškodné.
+      - text: Rímski súkenníci ním čistili a bielili vlnu
+        why: Odstatý moč bol zdrojom amoniakálnych solí, preto bol pre nich cenný.
+      - text: Rimania vyberali daň z obchodu s močom
+        why: Volala sa vectigal urinae.
+      - text: Používal sa pri výrobe pušného prachu
+        why: Pred nástupom chemického priemyslu.
+      - text: Garbiari ním odstraňovali chlpy z koží
+        why: Pomáhal pripraviť kožu na vyčinenie.
+      - text: Mechúr dospelého bežne pojme 300 až 500 ml
+        why: Toľko býva pred močením, no vydrží aj podstatne viac.
+    wrong:
+      - text: Moč je sterilný, kým neopustí telo
+        why: Mýtus; nie je sterilný ani v mechúri.
+      - text: Žltú farbu mu dáva najmä vitamín C
+        why: Farbu mu dáva hlavne urobilín.
+      - text: Dospelý ho denne vyprodukuje asi päť litrov
+        why: Priemer je okolo 1,4 litra denne.
+      - text: Mechúr dospelého pojme najviac 100 ml
+        why: Bežne 300 až 500 ml, niekedy aj viac.
+      - text: Červený moč po cvikle je vždy príznak krvácania
+        why: Cvikla ho bežne a neškodne sfarbí, volá sa to beetúria.
+
+  - id: hovienko-fakty
+    type: pick
+    prompt: Ktoré z týchto tvrdení o ľudskej stolici sú pravdivé?
+    difficulty: 2
+    tags: [stolica]
+    source: https://en.wikipedia.org/wiki/Human_feces
+    correct:
+      - text: Čerstvá stolica je asi zo 75 % voda
+        why: Sušina tvorí len zhruba štvrtinu.
+      - text: Hnedú farbu jej dávajú látky z rozkladu bilirubínu
+        why: Sú to sterkobilín a urobilín.
+      - text: Veľkú časť sušiny tvoria baktérie
+        why: Bakteriálna biomasa tvorí 25 až 54 % organickej sušiny.
+      - text: Za zápach môžu okrem iného indol a skatol
+        why: Prchavé látky zo skupiny benzopyrolov.
+      - text: Bristolská stupnica delí stolicu do siedmich typov
+        why: Lekárska pomôcka od tvrdých bobkov po úplne tekutú.
+      - text: Tvar stolice závisí od toho, ako dlho bola v hrubom čreve
+        why: Preto lekári podľa tvaru odhadujú, ako rýchlo trávenie prebieha.
+      - text: Zdravý človek vylúči denne v priemere asi 128 g
+        why: Priemerné množstvo čerstvej stolice na osobu a deň.
+    wrong:
+      - text: Hnedú farbu jej dáva hlavne čokoláda a káva
+        why: Farbu dávajú látky z rozkladu bilirubínu, nie jedlo.
+      - text: Bristolská stupnica má desať typov
+        why: Má ich sedem.
+      - text: Zdravý človek vylúči denne asi kilogram
+        why: Priemer je okolo 128 g denne.
+      - text: Zapácha najmä pre metán
+        why: Metán je bez zápachu; smrdia zlúčeniny síry, indol a skatol.
+      - text: Čerstvá stolica obsahuje menej ako 20 % vody
+        why: Vody je v nej okolo 75 %.
+
+  - id: pot-a-pach
+    type: pick
+    prompt: Ktoré z týchto tvrdení o pote sú pravdivé?
+    difficulty: 2
+    tags: [pot, smrad]
+    source: https://en.wikipedia.org/wiki/Perspiration
+    note: "Ušný maz a pach z podpazušia: https://en.wikipedia.org/wiki/Earwax"
+    correct:
+      - text: Čerstvý pot z podpazušia je bez zápachu
+        why: Smrdieť začne, až keď ho rozložia baktérie na koži.
+      - text: Apokrinné potné žľazy sú hlavne v podpazuší
+        why: A na niekoľkých ďalších miestach; ekrinné sú takmer po celom tele.
+      - text: Pri extrémnej záťaži vie dospelý vypotiť 2 až 4 litre za hodinu
+        why: Za deň to môže byť až 10 až 14 litrov.
+      - text: Pot je prevažne voda
+        why: Rozpustené látky tvoria iba 0,2 až 1 %.
+      - text: Ušný maz vyrábajú upravené potné žľazy
+        why: Hlavnou zložkou mazu sú však odlúpené kožné bunky.
+      - text: Ľudia s mokrým ušným mazom mávajú výraznejší pach z podpazušia
+        why: Mokrý typ mazu súvisí s pachom podpazušia.
+      - text: Pri nervozite sa potia hlavne dlane, chodidlá a podpazušie
+        why: Emočné potenie sa obmedzuje na tieto miesta, niekedy aj čelo.
+    wrong:
+      - text: Pot páchne hneď, ako vyjde z kože
+        why: Zápach vzniká až rozkladom baktériami.
+      - text: Apokrinné žľazy sú rovnomerne po celom tele
+        why: Sú hlavne v podpazuší; po celom tele sú ekrinné.
+      - text: Pot je asi z pätiny soľ
+        why: Rozpustených látok je v ňom len 0,2 až 1 %.
+      - text: Človek nedokáže vypotiť viac ako liter za deň
+        why: Pri záťaži aj 10 až 14 litrov za deň.
+      - text: Mokrý ušný maz súvisí so slabším pachom tela
+        why: Je to naopak, súvisí s výraznejším pachom z podpazušia.
+
+  - id: sople-a-maz
+    type: pick
+    prompt: Ktoré z týchto tvrdení o soploch a ušnom maze sú pravdivé?
+    difficulty: 2
+    tags: [sople, ušný maz]
+    source: https://en.wikipedia.org/wiki/Earwax
+    note: "Sople: https://en.wikipedia.org/wiki/Mucus"
+    correct:
+      - text: Hlien je asi z 95 % voda
+        why: Hustotu mu dávajú bielkoviny mucíny.
+      - text: Hlien sa v dýchacích cestách tvorí neustále
+        why: Nielen pri nádche, ale stále, aj keď si ho nevšímaš.
+      - text: Sopeľ môže zozelenieť aj pri vírusovej infekcii
+        why: Zelený sopeľ nie je automaticky dôkaz baktérií.
+      - text: Ušný maz býva buď mokrý, alebo suchý
+        why: Mokrý typ je dominantný, suchý recesívny.
+      - text: Typ ušného mazu určuje zmena jediného písmena v DNA
+        why: Rozdiel spôsobuje jedna zámena bázy v géne ABCC11.
+      - text: Vatové tyčinky tlačia maz hlbšie do ucha
+        why: Preto sa na čistenie uší neodporúčajú.
+      - text: Ucho sa čistí samo, pomáha pri tom pohyb čeľuste
+        why: Maz sa pomaly posúva von aj pri žuvaní a rozprávaní.
+      - text: Hlavnou zložkou ušného mazu sú odlúpené kožné bunky
+        why: Platí pre mokrý aj suchý typ.
+    wrong:
+      - text: Zelený sopeľ vždy znamená bakteriálnu infekciu
+        why: Zozelenie aj pri vírusoch, ktoré prejdú samy.
+      - text: Hlien sa tvorí iba pri nádche
+        why: Tvorí sa neustále.
+      - text: Suchý ušný maz je dominantný typ
+        why: Dominantný je mokrý, suchý je recesívny.
+      - text: Ušný maz je hlavne zrazená krv
+        why: Je to hlavne odlúpená koža a výlučok žliaz.
+      - text: Uši treba denne čistiť vatovými tyčinkami
+        why: Tyčinky tlačia maz hlbšie; ucho sa čistí samo.
+
+  - id: spanok-zvlastnosti
+    type: pick
+    prompt: Ktoré z týchto tvrdení o spánku sú pravdivé?
+    difficulty: 2
+    tags: [spánok]
+    source: https://en.wikipedia.org/wiki/Hypnic_jerk
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Sleep-talking, https://en.wikipedia.org/wiki/Nocturnal_penile_tumescence, https://en.wikipedia.org/wiki/Sneeze"
+    correct:
+      - text: Trhnutie celým telom pri zaspávaní zažije asi 70 % ľudí
+        why: Hypnický záškub, často s pocitom pádu.
+      - text: V REM spánku nemožno kýchnuť
+        why: Svaly sú ochabnuté; kýchneš, až keď sa aspoň čiastočne zobudíš.
+      - text: Muži mávajú za noc zvyčajne tri až päť erekcií
+        why: Prichádzajú najmä v REM spánku.
+      - text: Aj ženy majú v spánku podobné prekrvenie klitorisu
+        why: Volá sa nočná tumescencia klitorisu.
+      - text: Rozprávanie v spánku sa odborne volá somnilokvia
+        why: Hovorí sa mu aj jednoducho rozprávanie zo sna.
+      - text: Polovica malých detí aspoň raz za rok rozpráva v spánku
+        why: Po 25. roku sa to u mnohých ľudí stáva čoraz zriedkavejšie.
+      - text: Rozprávanie v spánku je zvyčajne neškodné
+        why: Iba veľmi dramatické alebo vulgárne môže naznačiť inú poruchu spánku.
+    wrong:
+      - text: Hypnický záškub zažíva denne väčšina ľudí
+        why: Denne ho má asi 10 % ľudí, aspoň raz v živote 70 %.
+      - text: Rozprávanie v spánku sa deje len počas snov v REM spánku
+        why: Deje sa v REM aj NREM spánku, najčastejšie v hlbokom NREM.
+      - text: Nočných erekcií s vekom pribúda
+        why: S vekom ich ubúda; väčšina mužov nad 60 už nemá úplné nočné erekcie.
+      - text: V hlbokom spánku často kýchame
+        why: V REM spánku sa kýchnuť nedá.
+      - text: Zobudený námesačník môže dostať infarkt
+        why: Mýtus; zobudenie námesačníkovi neublíži.
+
+  - id: po-smrti
+    type: pick
+    prompt: Ktoré z týchto tvrdení o tom, čo sa deje s telom po smrti, sú pravdivé?
+    difficulty: 3
+    tags: [smrť]
+    source: https://en.wikipedia.org/wiki/Rigor_mortis
+    note: "Posmrtné škvrny: https://en.wikipedia.org/wiki/Livor_mortis"
+    correct:
+      - text: Posmrtná stuhnutosť môže nastúpiť už hodinu po smrti
+        why: Vrchol dosahuje zhruba po 13 hodinách.
+      - text: Stuhnutosť vzniká, lebo svalom dôjde ATP
+        why: Bez energie sa svalové vlákna nevedia uvoľniť.
+      - text: Krv po smrti klesá do najnižšie položených častí tela
+        why: Vznikajú tak posmrtné škvrny (livor mortis).
+      - text: Posmrtné škvrny sa začnú tvoriť už 20 až 30 minút po smrti
+        why: Okom viditeľné bývajú zhruba po dvoch hodinách.
+      - text: Posmrtné škvrny bývajú fialovočervené
+        why: Odtieň závisí od množstva hemoglobínu bez kyslíka.
+      - text: Pri otrave oxidom uhoľnatým sú škvrny jasnejšie červené
+        why: Namiesto fialovej majú červený odtieň.
+      - text: Stuhnutosť nakoniec povolí, keď sa svaly začnú rozkladať
+        why: Svalové vlákna sa rozpadajú 48 až 60 hodín po vrchole stuhnutosti.
+    wrong:
+      - text: Vlasy a nechty po smrti ešte niekoľko dní rastú
+        why: Mýtus; po smrti vlasy ani nechty nerastú.
+      - text: Posmrtné škvrny sa tvoria na najvyššie položených miestach tela
+        why: Krv klesá dole, škvrny sú na najnižšie položených miestach.
+      - text: Posmrtná stuhnutosť nastupuje až po troch dňoch
+        why: Môže začať už hodinu po smrti.
+      - text: Posmrtná stuhnutosť už nikdy nepovolí
+        why: Povolí, keď sa začnú rozkladať svalové vlákna.
+      - text: Stuhnutosť spôsobuje zrazená krv vo svaloch
+        why: Príčinou je nedostatok ATP vo svaloch.
+
+  - id: muzska-anatomia
+    type: pick
+    prompt: Ktoré z týchto tvrdení o mužskej anatómii sú pravdivé?
+    difficulty: 2
+    tags: [sex, anatómia]
+    source: https://en.wikipedia.org/wiki/Human_penis
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Testicle, https://en.wikipedia.org/wiki/Semen"
+    correct:
+      - text: Ľudský penis nemá kosť
+        why: Nemá bakulum, spolieha sa len na toporivé telesá.
+      - text: Erekciu spôsobuje krv, ktorá naplní toporivé telesá
+        why: Tepny sa rozšíria a krv naplní tri toporivé telesá (dve dutinkaté a jedno hubovité).
+      - text: Semenníky majú nižšiu teplotu ako zvyšok tela
+        why: Udržiavajú sa okolo 34,4 °C.
+      - text: V studenej vode sa semenníky vytiahnu bližšie k telu
+        why: Chlad ich pritiahne k telu.
+      - text: Spermie tvoria iba 2 až 5 % objemu ejakulátu
+        why: Zvyšok sú tekutiny zo semenných mechúrikov a prostaty.
+      - text: Ejakulát obsahuje fruktózu
+        why: Pridávajú ju semenné mechúriky, 2 až 5 mg na mililiter.
+      - text: Jedna ejakulácia obsahuje stovky miliónov spermií
+        why: Zhruba 200 až 500 miliónov.
+      - text: Typický objem ejakulátu je zhruba čajová lyžička
+        why: Prehľad 30 štúdií uvádza priemer okolo 3,4 ml.
+    wrong:
+      - text: Penis je sval, ktorý sa pri erekcii napne
+        why: Erekcia je vec krvi v toporivých telesách, nie zaťatého svalu.
+      - text: Ľudský penis má malú kosť
+        why: Ľudský penis bakulum (kosť) nemá.
+      - text: Spermie tvoria väčšinu objemu ejakulátu
+        why: Iba 2 až 5 %; zvyšok sú tekutiny zo žliaz.
+      - text: Semenníky majú o pár stupňov vyššiu teplotu ako telo
+        why: Majú nižšiu, okolo 34,4 °C.
+      - text: Jedna ejakulácia obsahuje zhruba tisíc spermií
+        why: Je ich 200 až 500 miliónov.
+      - text: Väčšinu objemu ejakulátu tvorí výlučok prostaty
+        why: Väčšinu, asi 70 %, tvoria semenné mechúriky; prostata 25 až 30 %.
+
+  - id: zenske-telo
+    type: pick
+    prompt: Ktoré z týchto tvrdení o ženskom tele sú pravdivé?
+    difficulty: 2
+    tags: [sex, menštruácia, anatómia]
+    source: https://en.wikipedia.org/wiki/Menstrual_cycle
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Breast, https://en.wikipedia.org/wiki/Clitoris, https://news.ohsu.edu/2022/10/27/pleasure-producing-human-clitoris-has-more-than-10-000-nerve-fibers"
+    correct:
+      - text: Väčšina žien má jeden prsník o trochu väčší
+        why: Mierna asymetria je bežná.
+      - text: Prsia tvorí hlavne tuk a väzivo
+        why: Žľazové tkanivo je len asi 10 až 20 % objemu.
+      - text: Bežný cyklus trvá 21 až 35 dní
+        why: Medián je 28 dní.
+      - text: Počas menštruácie žena stratí asi 30 až 60 ml krvi
+        why: Zhruba dve až štyri polievkové lyžice, aj keď to vyzerá na viac.
+      - text: Priemerný vek menopauzy je okolo 52 rokov
+        why: Zvyčajne prichádza medzi 45. a 55. rokom.
+      - text: Jediná známa funkcia klitorisu je pôžitok
+        why: Žiadnu inú úlohu nemá.
+      - text: Klitoris aj s vnútornými časťami môže merať 10 cm a viac
+        why: Viditeľný žaluď je len špička; telo a ramená sú vnútri.
+      - text: Klitoris má podľa štúdie z roku 2022 vyše 10 000 nervových vlákien
+        why: 10 281 len v hlavnom nerve; staršie číslo 8 000 vraj pochádzalo z výskumu hospodárskych zvierat.
+    wrong:
+      - text: Prsia sú prevažne zo svalov
+        why: Sú z tuku, väziva a žliaz; ležia na veľkom prsnom svale.
+      - text: Menštruácia sa riadi fázami Mesiaca
+        why: Prevláda názor, že s Mesiacom nesúvisí.
+      - text: Ženám, ktoré bývajú spolu, sa menštruácie zosynchronizujú
+        why: Mýtus; výskumy to nepotvrdili.
+      - text: Za jednu menštruáciu žena stratí asi pol litra krvi
+        why: Bežne len 30 až 60 ml.
+      - text: Klitoris je len malý hrbolček, nič viac
+        why: Väčšina je skrytá vnútri, celé meria 10 cm a viac.
+      - text: Bežný cyklus trvá presne 28 dní
+        why: 28 je medián; normálne je 21 až 35 dní.
+
+  - id: vlasy-chlpy-nechty
+    type: pick
+    prompt: Ktoré z týchto tvrdení o vlasoch, chlpoch a nechtoch sú pravdivé?
+    difficulty: 1
+    tags: [chlpy, nechty]
+    source: https://en.wikipedia.org/wiki/Human_hair_growth
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Goose_bumps, https://en.wikipedia.org/wiki/Nail_(anatomy)"
+    correct:
+      - text: Vlasy rastú zhruba centimeter za mesiac
+        why: Hrubšie o niečo rýchlejšie, tenšie pomalšie.
+      - text: Zdravý človek stratí denne 50 až 100 vlasov
+        why: To je normálne, pokiaľ dorastajú nové.
+      - text: Na dlaniach a chodidlách chlpy nerastú
+        why: Patria medzi miesta bez chlpov.
+      - text: Husiu kožu robia drobné svaly pri korienkoch chlpov
+        why: Vzpriamovače chlpov sa stiahnu a chlp sa postaví.
+      - text: Husia koža môže naskočiť aj z hudby
+        why: Okrem zimy a strachu ju vyvolávajú aj silné emócie a hudba.
+      - text: Niektorí ľudia vedia vyvolať husiu kožu vôľou
+        why: Bez akéhokoľvek vonkajšieho podnetu.
+      - text: Nechty na rukách rastú asi dvakrát rýchlejšie než na nohách
+        why: Asi 3,5 mm oproti 1,6 mm za mesiac.
+      - text: Necht ukazováka rastie rýchlejšie ako necht malíčka
+        why: Rýchlosť rastu sa líši aj medzi prstami.
+    wrong:
+      - text: Vlasy rastú zhruba centimeter za týždeň
+        why: Asi centimeter za mesiac.
+      - text: Denne normálne vypadne okolo tisíc vlasov
+        why: Normálne je 50 až 100.
+      - text: Nechty na nohách rastú rýchlejšie ako na rukách
+        why: Rastú asi o polovicu pomalšie.
+      - text: Po oholení chlpy dorastú hrubšie a tmavšie
+        why: Mýtus; holenie ich nemení.
+      - text: Husia koža je stiahnutie kožných ciev
+        why: Spôsobujú ju svaly, ktoré dvíhajú chlpy.
+
+  - id: kychanie-zivanie
+    type: pick
+    prompt: Ktoré z týchto tvrdení o kýchaní a zívaní sú pravdivé?
+    difficulty: 2
+    tags: [kýchanie, zívanie]
+    source: https://en.wikipedia.org/wiki/Sneeze
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Photic_sneeze_reflex, https://en.wikipedia.org/wiki/Yawn"
+    correct:
+      - text: Asi pätina až tretina ľudí kýcha, keď sa pozrie do slnka
+        why: Dedičný reflex, ktorý má 18 až 35 % ľudí.
+      - text: Tomuto reflexu sa po anglicky hovorí ACHOO syndróm
+        why: Vymyslená skratka, ktorá znie ako kýchnutie.
+      - text: Jedno kýchnutie môže vytvoriť 40 000 kvapôčok
+        why: Preto si zakrývaj ústa.
+      - text: Niektorí ľudia kýchajú pri sexuálnom vzrušení
+        why: Lekári podozrievajú skrížené vodiče v autonómnom nervovom systéme.
+      - text: Niektorí ľudia kýchajú po veľmi výdatnom jedle
+        why: Má to aj meno, snatiation, a je to dedičné.
+      - text: Zívanie môže vyvolať aj obrázok zívajúceho
+        why: Stačí aj čítať o zívaní alebo naň myslieť.
+      - text: Zívať vie aj plod v maternici
+        why: Zachytili to napríklad v 30. týždni tehotenstva.
+      - text: Nákazlivé zívanie pozorovali aj u psov
+        why: Aj u šimpanzov, mačiek, vtákov a plazov.
+    wrong:
+      - text: Pri kýchnutí sa na okamih zastaví srdce
+        why: Stará povera, odtiaľ aj zvyk vravieť „na zdravie“.
+      - text: S otvorenými očami sa kýchnuť nedá
+        why: Oči sa síce reflexne zatvárajú, no tvrdenie, že inak to nejde, je nepresné.
+      - text: Nákazlivé zívanie poznajú iba ľudia
+        why: Pozorovali ho aj u psov, mačiek, šimpanzov či vtákov.
+      - text: Kýchnutie vyletí rýchlosťou vyše 500 km/h
+        why: Merania uvádzajú najvyššiu rýchlosť vydychovaného prúdu asi 4,5 m/s, teda okolo 16 km/h.
+      - text: Zívanie typicky trvá asi pol minúty
+        why: Bežne okolo šiestich sekúnd.
+
+  - id: grganie-stikutanie-krucanie
+    type: pick
+    prompt: Ktoré z týchto tvrdení o grganí, štikútaní a kručaní v bruchu sú pravdivé?
+    difficulty: 2
+    tags: [grganie, štikútanie]
+    source: https://en.wikipedia.org/wiki/Burping
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Hiccup, https://en.wikipedia.org/wiki/Borborygmus"
+    correct:
+      - text: Grgnutie je väčšinou prehltnutý vzduch
+        why: Hlavne kyslík a dusík, ktoré sa pri jedle a pití dostali do žalúdka.
+      - text: Po pive či minerálke grgáme hlavne oxid uhličitý
+        why: Bublinky sa musia niekam podieť.
+      - text: V Japonsku sa grganie pri jedle považuje za neslušné
+        why: Rovnako ako v Európe a Severnej Amerike.
+      - text: Štikútanie je mimovoľný kŕč bránice
+        why: Myoklonický záškub bránice.
+      - text: Zvuk „hik“ vzniká, keď sa náhle zatvorí hlasivková štrbina
+        why: Zavrie sa asi za 35 milisekúnd.
+      - text: Štikútanie dlhšie ako 48 hodín sa považuje za pretrvávajúce
+        why: Kratšie záchvaty sú bežné v každom veku.
+      - text: Kručanie v bruchu vzniká hlavne v črevách
+        why: Ozýva sa pri žalúdku, ale robí ho pohyb plynu a tekutín v črevách.
+    wrong:
+      - text: Grgnutie tvorí hlavne metán z čriev
+        why: Je to väčšinou prehltnutý vzduch.
+      - text: Štikútanie je kŕč srdca
+        why: Je to kŕč bránice.
+      - text: Kručanie v bruchu vzniká výlučne v žalúdku
+        why: Robí ho najmä pohyb plynu a tekutín v črevách, len sa ozýva pri žalúdku.
+      - text: Štikútať začíname až po narodení
+        why: Štikútanie pozorovali aj u plodu v maternici.
+      - text: Grganie pri jedle je v Japonsku prejav vďaky
+        why: V Japonsku je to neslušné.
+
+  - id: rozmery-tela
+    type: pick
+    prompt: Ktoré z týchto údajov o ľudskom tele sú pravdivé?
+    difficulty: 3
+    tags: [rozmery]
+    source: https://en.wikipedia.org/wiki/Human_skin
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Nail_(anatomy), https://en.wikipedia.org/wiki/Human_penis, https://en.wikipedia.org/wiki/Testicle"
+    correct:
+      - text: Koža dospelého má plochu 1,5 až 2 m²
+        why: Zhruba ako dvojlôžko.
+      - text: Koža tvorí asi 16 % hmotnosti tela
+        why: Najväčší orgán tela.
+      - text: Necht na ruke celý dorastie za tri až šesť mesiacov
+        why: Rastie asi 3,5 mm za mesiac.
+      - text: Necht na nohe celý dorastie za 12 až 18 mesiacov
+        why: Rastie asi o polovicu pomalšie ako na ruke.
+      - text: Priemerný stoporený penis meria okolo 13 cm
+        why: Prehľad štúdií z roku 2015 uvádza 13,12 cm.
+      - text: Priemerný semenník má objem okolo 18 cm³
+        why: Normálne je 15 až 25 cm³.
+    wrong:
+      - text: Koža dospelého má plochu ako tenisový kurt
+        why: Má len 1,5 až 2 m².
+      - text: Koža tvorí iba asi 2 % hmotnosti tela
+        why: Tvorí asi 16 %.
+      - text: Necht na ruke dorastie celý za týždeň
+        why: Trvá to tri až šesť mesiacov.
+      - text: Priemerný stoporený penis meria okolo 20 cm
+        why: Priemer je okolo 13 cm; filmy pre dospelých nie sú štatistika.
+      - text: Priemerný semenník má objem okolo 100 cm³
+        why: Priemer je okolo 18 cm³.
+
+  # ---------------------------------------------------------------- order
+  - id: po-smrti-casova-os
+    type: order
+    prompt: Zoraď udalosti po smrti od najskoršej.
+    direction: asc
+    unit: hodín po smrti
+    difficulty: 3
+    tags: [smrť]
+    source: https://en.wikipedia.org/wiki/Livor_mortis
+    note: "Stuhnutosť: https://en.wikipedia.org/wiki/Rigor_mortis"
+    items:
+      - text: začínajú sa tvoriť posmrtné škvrny
+        value: 0.4
+        why: Už 20 až 30 minút po smrti.
+      - text: posmrtné škvrny sú viditeľné okom
+        value: 2
+        why: Zhruba dve hodiny po smrti.
+      - text: stuhnutosť je na vrchole
+        value: 13
+        why: Približne 13 hodín po smrti.
+      - text: svalové vlákna sa rozpadajú a stuhnutosť povoľuje
+        value: 61
+        why: 48 až 60 hodín po vrchole stuhnutosti, teda vyše dvoch dní po smrti.
+
+  - id: rast-vlasov-nechtov
+    type: order
+    prompt: Zoraď podľa toho, koľko narastie za mesiac, od najrýchlejšieho.
+    direction: desc
+    unit: mm za mesiac
+    difficulty: 2
+    tags: [chlpy, nechty]
+    source: https://en.wikipedia.org/wiki/Human_hair_growth
+    note: "Nechty: https://en.wikipedia.org/wiki/Nail_(anatomy)"
+    items:
+      - text: hrubý vlas
+        value: 11.4
+        why: Asi 11,4 mm za mesiac.
+      - text: tenký vlas
+        value: 7.6
+        why: Asi 7,6 mm za mesiac.
+      - text: necht na ruke
+        value: 3.5
+        why: Asi 3,5 mm za mesiac.
+      - text: necht na nohe
+        value: 1.6
+        why: Asi 1,6 mm za mesiac, preto sa strihá menej často.
+
+  - id: pocet-vlasov-farba
+    type: order
+    prompt: Zoraď podľa priemerného počtu vlasov na hlave od najväčšieho.
+    direction: desc
+    unit: vlasov
+    difficulty: 2
+    tags: [chlpy]
+    source: https://en.wikipedia.org/wiki/Human_hair_growth
+    items:
+      - text: blondiak
+        value: 150000
+        why: V priemere asi 150 000 vlasov, ale tenších.
+      - text: hnedovlasý
+        value: 110000
+        why: V priemere asi 110 000 vlasov.
+      - text: čiernovlasý
+        value: 100000
+        why: V priemere asi 100 000 vlasov.
+      - text: ryšavý
+        value: 90000
+        why: V priemere asi 90 000 vlasov, zato hrubších.
+
+  - id: zlozenie-ejakulatu
+    type: order
+    prompt: Zoraď podľa toho, akou časťou prispievajú k objemu ejakulátu, od najväčšej.
+    direction: desc
+    unit: "% objemu"
+    difficulty: 3
+    tags: [sex]
+    source: https://en.wikipedia.org/wiki/Semen
+    items:
+      - text: semenné mechúriky
+        value: 70
+        why: Asi 65 až 75 %.
+      - text: prostata
+        value: 27
+        why: Asi 25 až 30 %.
+      - text: semenníky (samotné spermie)
+        value: 3.5
+        why: Len 2 až 5 %, hoci ide o stovky miliónov spermií.
+      - text: bulbouretrálne žľazy
+        value: 0.5
+        why: Menej ako 1 %.
+
+  # ---------------------------------------------------------------- number
+  - id: stikutanie-rekord
+    type: number
+    prompt: Koľko rokov trvalo najdlhšie zaznamenané štikútanie?
+    answer: 68
+    unit: rokov
+    scale: linear
+    tolerance: 5
+    asOf: "2026-11"
+    why: Američan Charles Osborne štikútal od roku 1922 do roku 1990.
+    difficulty: 2
+    tags: [štikútanie, rekordy]
+    source: https://en.wikipedia.org/wiki/Hiccup
+
+  - id: grganie-rekord
+    type: number
+    prompt: Koľko decibelov mal najhlasnejší grg muža podľa Guinnessovej knihy rekordov?
+    answer: 112.4
+    unit: dB
+    scale: linear
+    tolerance: 5
+    asOf: "2026-11"
+    why: Austrálčan Neville Sharp v roku 2021 v Darwine; grgať ho naučila staršia sestra.
+    difficulty: 3
+    tags: [grganie, rekordy]
+    source: https://www.guinnessworldrecords.com/world-records/80129-loudest-burp-male
+
+  - id: wadlow-vyska
+    type: number
+    prompt: Koľko centimetrov meral Robert Wadlow, najvyšší človek v histórii?
+    answer: 272
+    unit: cm
+    scale: linear
+    tolerance: 8
+    asOf: "2026-11"
+    why: Za výšku mohla zväčšená hypofýza; nosil topánky veľkosti asi 75 a zomrel v 22 rokoch.
+    difficulty: 1
+    tags: [rekordy]
+    source: https://en.wikipedia.org/wiki/Robert_Wadlow
+
+  - id: kosen-vyska
+    type: number
+    prompt: Koľko centimetrov meria Sultan Kösen, najvyšší žijúci muž podľa Guinnessovej knihy rekordov?
+    answer: 251
+    unit: cm
+    scale: linear
+    tolerance: 6
+    asOf: "2026-11"
+    why: Turek Sultan Kösen nameraný v Ankare v roku 2011.
+    difficulty: 2
+    tags: [rekordy]
+    source: https://www.guinnessworldrecords.com/world-records/tallest-man-living
+
+  - id: jazyk-rekord
+    type: number
+    prompt: Koľko centimetrov meria najdlhší jazyk muža podľa Guinnessovej knihy rekordov (od špičky po stred hornej pery)?
+    answer: 10.1
+    unit: cm
+    scale: linear
+    tolerance: 1.5
+    asOf: "2026-11"
+    why: Nick Stoeberl z Kalifornie, nameraný v roku 2012.
+    difficulty: 2
+    tags: [rekordy]
+    source: https://www.guinnessworldrecords.com/world-records/longest-tongue
+
+  - id: moc-za-den
+    type: number
+    prompt: Koľko mililitrov moču vyprodukuje dospelý človek priemerne za deň?
+    answer: 1400
+    unit: ml
+    scale: log
+    tolerance: 0.2
+    why: Okolo 1,4 litra; mechúr pritom pred močením bežne drží 300 až 500 ml.
+    difficulty: 1
+    tags: [moč]
+    source: https://en.wikipedia.org/wiki/Urine
+
+  - id: stolica-za-den
+    type: number
+    prompt: Koľko gramov stolice vylúči zdravý človek priemerne za deň?
+    answer: 128
+    unit: g
+    scale: log
+    tolerance: 0.25
+    why: V priemere 128 g čerstvej stolice, z ktorej asi 75 % je voda.
+    difficulty: 2
+    tags: [stolica]
+    source: https://en.wikipedia.org/wiki/Human_feces
+
+  - id: prdy-za-den
+    type: number
+    prompt: Koľko mililitrov plynov vyprdí za deň zdravý človek na hornej hranici normálu?
+    answer: 1491
+    unit: ml
+    scale: log
+    tolerance: 0.2
+    why: Normálny rozsah je 476 až 1 491 ml za 24 hodín, rozdelených do 8 až 20 prdov.
+    difficulty: 3
+    tags: [prdy]
+    source: https://en.wikipedia.org/wiki/Flatulence
+
+  # ---------------------------------------------------------------- choice
+  - id: zapach-z-ust
+    type: choice
+    prompt: Odkiaľ pochádza zápach z úst vo väčšine prípadov?
+    difficulty: 1
+    tags: [smrad]
+    source: https://en.wikipedia.org/wiki/Halitosis
+    correct: { text: "z úst, najmä z povlaku na jazyku", why: "Asi 90 % prípadov má pôvod priamo v ústach, väčšinou na jazyku." }
+    wrong:
+      - { text: "zo žalúdka", why: "Je to častá predstava, no zdroj je vo väčšine prípadov v ústach." }
+      - { text: "z pľúc", why: "Asi 90 % prípadov vzniká priamo v ústach." }
+      - { text: "z pečene", why: "Väčšinou je vinný povlak na jazyku." }
+
+  - id: zeleny-sopel
+    type: choice
+    prompt: Čo dáva soplu pri nádche zelenú farbu?
+    difficulty: 2
+    tags: [sople]
+    source: https://en.wikipedia.org/wiki/Mucus
+    correct: { text: "enzým myeloperoxidáza", why: "Obsahuje železo v hemovej skupine, ktorá je zelená." }
+    wrong:
+      - { text: "chlorofyl zo zeleniny", why: "Šalát s tým nemá nič spoločné." }
+      - { text: "žlč", why: "Žlč farbí stolicu, nie sople." }
+      - { text: "zelené baktérie", why: "Zelený sopeľ býva aj pri vírusoch; farbu robí enzým." }
+
+  - id: puberta-skor
+    type: choice
+    prompt: Kto v priemere začína pubertu skôr?
+    difficulty: 1
+    tags: [puberta]
+    source: https://en.wikipedia.org/wiki/Puberty
+    correct: { text: "dievčatá, asi o rok a pol", why: "Dievčatá okolo 10,5 roka, chlapci okolo 11,5 až 12 rokov." }
+    wrong:
+      - { text: "chlapci, asi o rok", why: "Je to naopak, dievčatá začínajú skôr." }
+      - { text: "obe pohlavia v rovnakom veku", why: "Dievčatá v priemere asi o 18 mesiacov skôr." }
+      - { text: "chlapci, asi o tri roky", why: "Chlapci začínajú neskôr, okolo 11,5 až 12 rokov." }

@@ -148,6 +148,8 @@ function PickTurn({
   const wrong = answer.picks.length - found;
   const points = wrong && state.settings.wipe === "always" ? 0 : pickPoints(found);
   const over = state.phase === "turnEnd";
+  // With per-turn answers the solution is drawn into the same grid the player just used.
+  const reveal = over && state.settings.revealEach;
   return (
     <>
       <div class="turnbar">
@@ -158,31 +160,27 @@ function PickTurn({
         {state.settings.showCorrectCount && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && answer.picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
-      {over && state.settings.revealEach ? (
-        <CardAnswer card={card} results={state.results.slice(-1)} names={() => sk.you} />
-      ) : (
-      <ul class="options">
+      <ul class={`options${reveal ? " options--answered" : ""}`}>
         {card.options.map((o, i) => {
           const picked = answer.picks.includes(i);
-          const cls = picked ? (o.correct ? " opt--correct" : " opt--wrong") : "";
+          const m = optionMark(o.correct, picked, reveal);
           return (
             <li>
               <button
                 type="button"
-                class={`opt${cls}`}
+                class={`opt${m.cls}`}
                 disabled={over || picked}
                 aria-pressed={picked}
                 onClick={() => dispatch({ type: "pick", option: i })}
               >
                 <span class="opt__text">{tie(o.text)}</span>
-                {picked && <span class="visually-hidden">{` — ${o.correct ? sk.correctMark : sk.wrongMark}`}</span>}
-                {picked && <span class="opt__why">{tie(o.why)}</span>}
+                {m.label && <span class="visually-hidden">{` — ${m.label}`}</span>}
+                {(picked || reveal) && <span class="opt__why">{tie(o.why)}</span>}
               </button>
             </li>
           );
         })}
       </ul>
-      )}
       {over ? (
         <TurnEnd state={state}>
           <p class={`verdict verdict--${answer.status}`}>
@@ -410,6 +408,7 @@ function TurnReveal({ state }: { state: GameState }) {
   // Only reachable with revealEach off from a game saved before that setting existed: show nothing.
   if (!s.settings.revealEach) return <TurnEnd state={s} />;
   const r = s.results[s.results.length - 1];
+  if (!r) return <TurnEnd state={s} />;
   // Ranked number scoring needs everyone's guess, so points come after the round.
   const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
   const title =
@@ -424,7 +423,7 @@ function TurnReveal({ state }: { state: GameState }) {
           : "";
   return (
     <>
-      <CardAnswer card={s.card} results={[r]} names={() => sk.you} />
+      <InPlaceAnswer card={s.card} result={r} />
       <TurnEnd state={s}>
         <p class={`verdict verdict--${points ? "complete" : points === 0 ? "busted" : "saved"}`}>
           <strong class="verdict__title">{title}</strong>
@@ -434,6 +433,86 @@ function TurnReveal({ state }: { state: GameState }) {
       </TurnEnd>
     </>
   );
+}
+
+/** How an option looks once answered: picked right/wrong, missed right, or a wrong one left alone. */
+function optionMark(correct: boolean, picked: boolean, reveal: boolean): { cls: string; label: string | null } {
+  if (picked) return correct ? { cls: " opt--correct", label: sk.correctMark } : { cls: " opt--wrong", label: sk.wrongMark };
+  if (!reveal) return { cls: "", label: null };
+  return correct ? { cls: " opt--correct opt--missed", label: sk.missedMark } : { cls: " opt--rest", label: sk.restMark };
+}
+
+/** One player's answer drawn on the layout they answered in (same grid, same order). */
+function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
+  const a = result.answer;
+  switch (card.type) {
+    case "pick":
+      return null; // PickTurn draws its own grid
+    case "choice": {
+      const chosen = a.type === "choice" ? a.option : -1;
+      return (
+        <ul class={`options options--choice options--answered${card.compare ? " options--compare" : ""}`}>
+          {card.options.map((o, i) => {
+            const m = optionMark(o.correct, i === chosen, true);
+            return (
+              <li>
+                <button type="button" class={`opt${m.cls}`} disabled>
+                  <span class="opt__text">{tie(o.text)}</span>
+                  {m.label && <span class="visually-hidden">{` — ${m.label}`}</span>}
+                  <span class="opt__why">{tie(o.why)}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      );
+    }
+    case "order": {
+      const arr = a.type === "order" ? a.arrangement : card.solution;
+      return (
+        <ol class="order-list order-list--answered">
+          {arr.map((item, pos) => {
+            const right = card.solution[pos] === item;
+            const should = card.solution.indexOf(item) + 1;
+            return (
+              <li class={`order-item ${right ? "order-item--right" : "order-item--off"}`}>
+                <span class="order-item__rank">{pos + 1}</span>
+                <span class="order-item__text">
+                  <span class="order-item__mark" aria-hidden="true">{right ? "✓ " : "✗ "}</span>
+                  {tie(card.items[item].text)}
+                  <span class="visually-hidden">{` — ${right ? sk.correctMark : sk.shouldBe(should)}`}</span>
+                </span>
+                <span class="order-item__value">{card.items[item].label}</span>
+                {!right && (
+                  <span class="order-item__should" aria-hidden="true">
+                    {sk.shouldBe(should)}
+                  </span>
+                )}
+                {card.items[item].why && <span class="order-item__why">{tie(card.items[item].why!)}</span>}
+              </li>
+            );
+          })}
+        </ol>
+      );
+    }
+    case "number":
+      return (
+        <>
+          <div class="number-input">
+            <div class="number-input__row">
+              <input
+                class="input number-input__field"
+                readOnly
+                aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
+                value={a.type === "number" && a.value != null ? formatNumber(a.value) : ""}
+              />
+              {card.unit && <span class="number-input__unit">{card.unit}</span>}
+            </div>
+          </div>
+          <CardAnswer card={card} results={[]} names={() => ""} />
+        </>
+      );
+  }
 }
 
 /** The solution of a card; `names` labels who chose each option. */
