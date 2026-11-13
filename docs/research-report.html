@@ -1,0 +1,596 @@
+<title>Knowledge Game Blueprint</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column (max 78ch) with full-width tables; a scoreboard-style token card is the only "object" on the page. */
+:root {
+  --bg: #f2f6f3;
+  --surface: #ffffff;
+  --sunken: #e6ede9;
+  --fg: #14211d;
+  --muted: #55665f;
+  --line: #cbd8d1;
+  --accent: #0b6a55;
+  --accent-soft: #d5ebe3;
+  --token: #d99a0b;
+  --token-soft: #fbeecb;
+  --good: #1c7a45;
+  --good-soft: #d9f0e1;
+  --bad: #b3372b;
+  --bad-soft: #f8dcd8;
+  --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1715; --surface: #17211e; --sunken: #1d2a26; --fg: #e3ece8; --muted: #9bada5; --line: #2f403a;
+    --accent: #5ccbac; --accent-soft: #17382f; --token: #f0bb3c; --token-soft: #3a2f10;
+    --good: #6ed397; --good-soft: #173524; --bad: #f08a7e; --bad-soft: #43201c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1715; --surface: #17211e; --sunken: #1d2a26; --fg: #e3ece8; --muted: #9bada5; --line: #2f403a;
+  --accent: #5ccbac; --accent-soft: #17382f; --token: #f0bb3c; --token-soft: #3a2f10;
+  --good: #6ed397; --good-soft: #173524; --bad: #f08a7e; --bad-soft: #43201c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-block: 40px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+section > p, section > ul, section > ol, .prose { max-width: 78ch; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.01em; padding-top: 20px; border-top: 2px solid var(--fg); }
+h3 { font-size: 1.15rem; font-weight: 700; margin-top: 12px; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.25em; display: flex; flex-direction: column; gap: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--token); outline-offset: 2px; }
+code, pre { font-family: var(--mono); font-size: 0.85em; }
+code { background: var(--sunken); padding: 0.1em 0.35em; border-radius: 4px; }
+pre { background: var(--sunken); padding: 16px; border-radius: 8px; overflow-x: auto; line-height: 1.5; margin: 0; }
+pre code { background: none; padding: 0; font-size: 1em; }
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 70ch; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+header { display: flex; flex-direction: column; gap: 14px; }
+nav ul { list-style: none; padding: 0; flex-direction: row; flex-wrap: wrap; gap: 6px 8px; max-width: none; }
+nav a { display: inline-block; padding: 4px 11px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-size: 0.88rem; font-weight: 500; color: var(--fg); background: var(--surface); }
+nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; }
+.verdict > div { padding: 18px 20px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.verdict .k { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.verdict .v { font-weight: 600; }
+.verdict .d { font-size: 0.92rem; color: var(--muted); }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 640px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 0.76rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); background: var(--sunken); font-weight: 700; }
+td strong { font-weight: 600; }
+.pill { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+.pill.use { background: var(--good-soft); color: var(--good); }
+.pill.avoid { background: var(--bad-soft); color: var(--bad); }
+.pill.maybe { background: var(--token-soft); color: var(--fg); }
+.pill.phase { background: var(--accent-soft); color: var(--accent); }
+
+.note { border-left: 3px solid var(--token); padding: 4px 0 4px 14px; color: var(--muted); font-size: 0.94rem; max-width: 78ch; }
+
+/* demo card */
+.demo { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.demo .q { font-family: var(--display); font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.opt { font: inherit; font-weight: 600; text-align: left; padding: 10px 12px 10px 38px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; position: relative; }
+.opt::before { content: ""; position: absolute; left: 10px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: var(--token); box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt:disabled { cursor: default; }
+.opt.ok { background: var(--good-soft); border-color: var(--good); }
+.opt.ok::before { background: var(--good); }
+.opt.no { background: var(--bad-soft); border-color: var(--bad); text-decoration: line-through; }
+.opt.no::before { background: var(--bad); }
+.demobar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.score { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+.btn { font: inherit; font-weight: 600; padding: 7px 16px; border-radius: 8px; border: 1.5px solid var(--fg); background: var(--surface); color: var(--fg); cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.btn:disabled { opacity: .45; cursor: default; }
+#demoMsg { color: var(--muted); font-size: 0.94rem; min-height: 1.6em; }
+
+/* architecture diagram */
+.arch { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.arch > div { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.arch .t { font-family: var(--display); font-weight: 700; }
+.arch .s { font-size: 0.9rem; color: var(--muted); }
+.arch .step { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px 32px; }
+.cols > div { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+
+ol.questions { gap: 14px; max-width: 82ch; }
+ol.questions li::marker { font-family: var(--display); font-weight: 700; color: var(--accent); }
+ol.questions .rec { display: block; color: var(--muted); font-size: 0.93rem; }
+@media (prefers-reduced-motion: no-preference) { .opt { transition: background .15s, border-color .15s; } }
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">Research and design report · 12 November 2026</div>
+  <h1>A free, Slovak-first quiz game you can extend with your own question packs</h1>
+  <p class="lede">What similar games do, which free question data exists, how a static website can still support a group of friends, and a proposed first version. Decisions that are yours to make are collected at the end.</p>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#chytrak">Chytrák</a></li>
+      <li><a href="#games">Similar games</a></li>
+      <li><a href="#formats">Question formats</a></li>
+      <li><a href="#modes">Game modes</a></li>
+      <li><a href="#packs">Question packs</a></li>
+      <li><a href="#sources">Free data</a></li>
+      <li><a href="#arch">Architecture</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#risks">Risks</a></li>
+      <li><a href="#open">Open questions</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <div class="verdict">
+    <div><span class="k">Hosting</span><span class="v">A fully static site works</span><span class="d">Ship question packs as JSON files and load them on demand. 10,000 short questions are an estimated 1 MB compressed, so sending everything to the client is not a problem.</span></div>
+    <div><span class="k">First version</span><span class="v">One device, passed around</span><span class="d">This is how Chytrák is played and it needs no network code at all. Solo play comes for free.</span></div>
+    <div><span class="k">Phones for everyone</span><span class="v">Peer-to-peer first, relay later</span><span class="d">The host's browser runs the game and phones connect directly. A small free Cloudflare relay is the fallback if connections prove unreliable.</span></div>
+    <div><span class="k">Core mechanic</span><span class="v">Ten options, bank or bust</span><span class="d">One question, many options, some true. Keep picking for more points or stop before a wrong pick wipes them. Everyone can recognise something.</span></div>
+    <div><span class="k">Questions</span><span class="v">No free Slovak pool exists</span><span class="d">Content has to be generated from open data (Wikidata), translated from English CC BY-SA sets, or written by hand. This is the real work of the project.</span></div>
+    <div><span class="k">Data model</span><span class="v">One fact list, several formats</span><span class="d">Store a list such as "fish living in Slovakia" once, with decoys and values. The game derives pick-the-true, ordering and estimate questions from it.</span></div>
+  </div>
+  <p class="note">How this was researched: four research agents on smaller models read the cited pages on 12 November 2026. Claims they could not confirm from a page are marked as unverified where they matter. Size and failure-rate figures are estimates, not measurements.</p>
+</section>
+
+<section id="chytrak">
+  <h2>What Chytrák does, and the gap</h2>
+  <div class="cols">
+    <div>
+      <h3>How it plays</h3>
+      <ul>
+        <li>Each question shows 10 options, always 5 correct and 5 wrong.</li>
+        <li>One device for 1 to 5 players. Each player answers the same question, then passes the phone on.</li>
+        <li>Each correct pick adds points. An app-store aggregator lists 1 point for the first correct pick and 15 for all five. A wrong pick wipes what you earned on that question.</li>
+        <li>The game runs to a target score that can be changed in settings.</li>
+        <li>It is a native iOS and Android app. The site is only a landing page.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What it leaves open</h3>
+      <ul>
+        <li>The site claims "hundreds of questions". Extra questions are paid.</li>
+        <li>No custom question sets and no import.</li>
+        <li>Content is Czech. Nothing Slovak-specific was found.</li>
+        <li>One question format only.</li>
+        <li>No play on separate phones and no big-screen mode.</li>
+      </ul>
+      <p class="meta">Not found: prices, the number of free questions, and the exact end condition.</p>
+    </div>
+  </div>
+  <p>The mechanic closely matches the board game Smart10 (sold in Czech as Desítka): ten answers per card, answer or pass, and a wrong guess costs the markers won on that card. No source states that Chytrák is based on it, so treat the link as an inference. Smart10 has more variety than Chytrák: besides true or false it has number, order, century and colour cards.</p>
+  <p class="note">Game mechanics are free to reuse. Names, question text, artwork and visual identity are not. The plan is an original game in the same genre with its own name, look and questions, and nothing copied from Chytrák or Smart10.</p>
+
+  <h3>Try the mechanic</h3>
+  <div class="demo" aria-label="Sample question">
+    <div class="eyebrow">Sample card · pack "Slovenská príroda"</div>
+    <div class="q">Ktoré z týchto rýb žijú v slovenských riekach a jazerách?</div>
+    <div class="opts" id="opts"></div>
+    <div class="demobar">
+      <span class="score">Body na tejto karte: <span id="pts">0</span></span>
+      <button class="btn primary" id="bank" type="button">Stop, beriem body</button>
+      <button class="btn" id="again" type="button">Znova</button>
+    </div>
+    <div id="demoMsg" role="status">Pick an option. Each correct pick is worth one point more than the last. One wrong pick and the card's points are gone.</div>
+  </div>
+</section>
+
+<section id="games">
+  <h2>Similar games and what to take from them</h2>
+  <p>The useful part of each game is the mechanic that lets people who do not know the answer still take part.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Game</th><th>Question format</th><th>Why it is fun</th><th>Played on</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Smart10 / Desítka</strong></td><td>10 answers per card: true or false, number, order, century, colour</td><td>Answer or pass. First wrong guess is free, later ones lose the card's markers. First to 30.</td><td>Shared box, 2 to 8 players</td></tr>
+      <tr><td><strong>Wits &amp; Wagers</strong></td><td>Numeric estimate</td><td>Everyone guesses, then everyone bets on whose guess is closest. You only need to judge who is credible.</td><td>Paper and chips, up to 20</td></tr>
+      <tr><td><strong>Confident?</strong></td><td>Numeric range</td><td>Any range containing the answer scores 1, the narrowest scores 3. Hedging is allowed but costs.</td><td>Paper</td></tr>
+      <tr><td><strong>Timeline / Hitster</strong></td><td>Place a card in chronological order</td><td>Only relative order matters, and each correct card makes the next easier. Hitster does it with songs.</td><td>Shared table</td></tr>
+      <tr><td><strong>Half Truth</strong></td><td>6 options, exactly 3 true</td><td>Secretly bet on 1, 2 or 3 options. More chips, more reward, all lost on one mistake.</td><td>Simultaneous secret bets</td></tr>
+      <tr><td><strong>Fibbage (Jackbox)</strong></td><td>Fact with a blank</td><td>Everyone invents a lie, then picks the truth from the mix. Points for fooling friends.</td><td>TV plus phones, room code</td></tr>
+      <tr><td><strong>iKnow</strong></td><td>Clues revealed in 3 stages</td><td>Answer early for more points or wait for more clues. Also bet on whether another player is right.</td><td>Board</td></tr>
+      <tr><td><strong>Linkee</strong></td><td>4 questions with a hidden common link</td><td>Guess the link at any time, even from two answers.</td><td>Teams, spoken</td></tr>
+      <tr><td><strong>Bezzerwizzer</strong></td><td>Standard questions in 20 categories</td><td>You choose which of your categories is worth 1, 2, 3 or 4 points.</td><td>Board, teams</td></tr>
+      <tr><td><strong>AZ-kvíz / Blockbusters</strong></td><td>Answer starts with the letter on a hex</td><td>Claim hexes to connect the sides of the board. Blocking matters.</td><td>TV format well known in CZ and SK</td></tr>
+      <tr><td><strong>Kahoot</strong></td><td>Multiple choice, speed-scored</td><td>Pace and a live leaderboard.</td><td>Host screen, PIN, phones. Free tier up to 10 players.</td></tr>
+      <tr><td><strong>Sporcle / JetPunk</strong></td><td>Type in every member of a list against the clock</td><td>Completing a list. Needs real recall.</td><td>Mostly solo</td></tr>
+      <tr><td><strong>Daily games</strong> (Connections, Worldle, Quizl)</td><td>One puzzle per day</td><td>Same puzzle for everyone, shareable result.</td><td>Solo, compared in chat</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Open-source projects worth reading</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Project</th><th>Licence</th><th>Design</th><th>Relevance</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://github.com/arvindfroi/quizparty">quizparty</a></td><td>MIT</td><td>Vanilla JS static site. Host browser is the server, players join over PeerJS.</td><td>Closest to the "static, no server" architecture. Simple JSON quiz format with import and export. Tiny project.</td></tr>
+      <tr><td><a href="https://github.com/Ralex91/Razzia">Razzia</a></td><td>MIT</td><td>Node server, WebSocket, room code, host view.</td><td>Most popular current Kahoot-style clone (about 1,100 stars). Needs a server.</td></tr>
+      <tr><td><a href="https://github.com/IACBI/matah">matah</a></td><td>MIT</td><td>React, Socket.IO. Trivia, bluff and prompt games. Room code and QR.</td><td>Working reference for a bluff mode. Questions are one line each, pasted from a spreadsheet.</td></tr>
+      <tr><td><a href="https://github.com/htlin222/kahoot-cf">kahoot-cf</a></td><td>MIT</td><td>Cloudflare Workers and Durable Objects.</td><td>Reference for the relay architecture.</td></tr>
+      <tr><td><a href="https://github.com/quacksterparty/quackster">quackster</a></td><td>EUPL-1.2</td><td>Rust server, static SvelteKit front end, questions in YAML files.</td><td>Reference for questions as files in a repo.</td></tr>
+      <tr><td><a href="https://github.com/mawoka-myblock/ClassQuiz">ClassQuiz</a></td><td>MPL-2.0</td><td>FastAPI, SvelteKit, Postgres, Redis.</td><td>Full Kahoot alternative. Far heavier than needed here.</td></tr>
+    </tbody>
+  </table></div>
+  <p>No Slovak-language party quiz app and no established open-source game with the ten-options mechanic turned up. Czech and Slovak apps found were solo or duel quizzes (Kvízuj, Quiz War, a Slovak districts map quiz); their current status was not checked.</p>
+</section>
+
+<section id="formats">
+  <h2>Proposed question formats</h2>
+  <p>Four formats cover almost every question idea you mentioned and can all be played on a passed-around phone. The rest can wait.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Format</th><th>Example</th><th>Good for people who do not know</th><th>When</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pick the true ones</strong><br><code>pick</code></td><td>Ktoré z týchto rýb žijú na Slovensku? (10 options, some true)</td><td>Yes. You only pick what you recognise and can stop.</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Put in order</strong><br><code>order</code></td><td>Zoraď 5 najpočúvanejších skladieb interpreta od najhranejšej.</td><td>Yes. Partial credit for each correctly placed item.</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Estimate a number</strong><br><code>estimate</code></td><td>Koľko obyvateľov má Košice? Closest wins, or give a range.</td><td>Yes. Everyone can guess, and wrong guesses are funny.</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>One of four</strong><br><code>choice</code></td><td>Classic multiple choice.</td><td>Somewhat. A guess is right one time in four.</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Which is more</strong><br><code>compare</code></td><td>Čo je vyššie: Kriváň alebo Rysy?</td><td>Yes. Derived automatically from any list with values.</td><td><span class="pill phase">v2</span></td></tr>
+      <tr><td><strong>Name them all</strong><br><code>recall</code></td><td>Vymenuj krajské mestá. Typed answers.</td><td>No. Needs recall, plus matching that tolerates missing diacritics and typos.</td><td><span class="pill phase">v2</span></td></tr>
+      <tr><td><strong>Bluff</strong></td><td>Everyone writes a fake answer, then picks the real one.</td><td>Very. Needs every player on their own phone.</td><td><span class="pill phase">v3</span></td></tr>
+      <tr><td><strong>Picture, map pin, sound</strong></td><td>Čí je to erb? Kde leží Bardejov?</td><td>Yes.</td><td><span class="pill phase">later</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Song audio clips are out of scope: they are copyrighted and Hitster only works because it plays through Spotify. Images need a licence check per image (Wikimedia Commons is the obvious source).</p>
+</section>
+
+<section id="modes">
+  <h2>Proposed game modes</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mode</th><th>How it works</th><th>Devices</th><th>When</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Classic</strong></td><td>The ten-options game. Players take turns on the same card: pick one option or bank. Play to a target score. Settings: target score, whether the first wrong pick is free (Smart10 rule) or always wipes (Chytrák rule), fixed 5 true or a variable number.</td><td>One phone</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Solo run</strong></td><td>Same cards alone. Score per card, a streak, and a personal best per pack.</td><td>One phone</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Mix</strong></td><td>A party round that alternates formats: a pick card, an estimate, an ordering card. On one phone, estimates are entered in turn with the screen hidden from others.</td><td>One phone</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Teams</strong></td><td>Any mode with players grouped into teams that confer. Useful above 5 players.</td><td>One phone</td><td><span class="pill phase">v1</span></td></tr>
+      <tr><td><strong>Daily card</strong></td><td>The same few cards for everyone each day, chosen by a seed from the date. Works on a static site with no server. Result can be shared as text in a group chat.</td><td>Own phone</td><td><span class="pill phase">v2</span></td></tr>
+      <tr><td><strong>Guess and bet</strong></td><td>Everyone estimates a number in secret, guesses are shown sorted, then everyone bets on the closest. Narrow-range scoring as an alternative.</td><td>Phones, optional TV</td><td><span class="pill phase">v3</span></td></tr>
+      <tr><td><strong>Everyone at once</strong></td><td>All players answer the same card simultaneously on their own phones, with secret picks revealed together. Faster than turn taking for larger groups.</td><td>Phones, optional TV</td><td><span class="pill phase">v3</span></td></tr>
+      <tr><td><strong>Bluff</strong></td><td>Write a believable fake, find the truth.</td><td>Phones</td><td><span class="pill phase">v3</span></td></tr>
+      <tr><td><strong>Timeline</strong></td><td>Build a shared line of events or values, placing one card at a time.</td><td>One phone or TV</td><td><span class="pill phase">later</span></td></tr>
+      <tr><td><strong>Practice</strong></td><td>Questions you got wrong come back later. Turns the game into a way to learn a pack.</td><td>Own phone</td><td><span class="pill phase">later</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Two ideas that keep weaker players in the game: a catch-up rule where the player in last place picks the next pack, and showing a short fun fact after every card so a wrong answer still ends with something to laugh about.</p>
+</section>
+
+<section id="packs">
+  <h2>Question packs</h2>
+  <p>A pack is one file in the repo about one theme, for example "Slovenská príroda" or "Slovenský rap". Before a game, players tick the packs they want. Packs they dislike stay off and the choice is remembered on the device.</p>
+  <div class="cols">
+    <div>
+      <h3>One fact list, several formats</h3>
+      <p>Most of your example questions are lists: top 5 songs, fish in Slovakia, highest peaks. Store the list once with its values and some plausible decoys. The game can then ask it as pick-the-true, as an ordering card, as "which is more", or later as "name them all". One researched list gives four or more questions.</p>
+      <h3>Fields that matter</h3>
+      <ul>
+        <li><code>source</code>: where the fact comes from. Required. Settles arguments at the table.</li>
+        <li><code>asOf</code>: date the fact was true. Chart and population questions go stale.</li>
+        <li><code>fact</code>: one line shown after the card.</li>
+        <li><code>difficulty</code> 1 to 3 and free <code>tags</code>.</li>
+        <li><code>note</code> on an option: why a decoy is wrong or surprising.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sketch of a pack file</h3>
+<pre><code>id: sk-priroda
+title: Slovenská príroda
+lang: sk
+license: CC-BY-SA-4.0
+version: 1
+questions:
+  - id: ryby-sk
+    type: list
+    prompt: Ktoré z týchto rýb žijú
+      v slovenských riekach a jazerách?
+    difficulty: 1
+    source: https://...
+    asOf: 2026-11
+    fact: Hlavátka je najväčšia
+      lososovitá ryba Európy.
+    items: [kapor, šťuka, sumec,
+      zubáč, hlavátka, ...]
+    decoys: [treska, makrela,
+      tuniak, sardinka, platesa]
+  - id: stity
+    type: list
+    prompt: Najvyššie štíty Slovenska
+    unit: m
+    items:
+      - {name: Gerlachovský štít, value: 2655}
+      - {name: Lomnický štít, value: 2634}</code></pre>
+    </div>
+  </div>
+  <h3>Adding and importing packs</h3>
+  <ul>
+    <li><strong>In the repo:</strong> add a file under <code>packs/</code>. A build step validates it (schema, duplicate ids, enough decoys, source present) and writes one JSON file per pack plus a small index with a content hash per pack.</li>
+    <li><strong>Local import:</strong> drop a pack file into the app, or paste a link to one. It is validated the same way and stored in the browser only. Imported packs can be exported again and sent to a friend.</li>
+    <li><strong>Spreadsheet import</strong> for people who will not write YAML: one row per question, pasted as text. Later.</li>
+    <li><strong>In-app editor:</strong> a form that produces a pack file. Later, if friends actually want to write packs.</li>
+  </ul>
+</section>
+
+<section id="sources">
+  <h2>Free question data</h2>
+  <p>Searches in Slovak and Czech across GitHub, Hugging Face and the web found no openly licensed trivia pool in either language. The usable material is English question sets to translate and open structured data to turn into questions.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Source</th><th>Size</th><th>Licence</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong><a href="https://www.wikidata.org">Wikidata</a></strong> via SPARQL</td><td>Live test: 1,469 Slovak peaks with elevation, towns with population, 566 Slovak films, 573 actors</td><td>CC0</td><td><span class="pill use">Use</span> Best source for list, ranking and "which is more" questions. Slovak labels exist for most notable items. Long tail is noisy.</td></tr>
+      <tr><td><strong><a href="https://github.com/uberspot/OpenTriviaQA">OpenTriviaQA</a></strong></td><td>About 49,000 multiple choice, English</td><td>CC BY-SA 4.0</td><td><span class="pill use">Use, filtered</span> US-heavy and dated in places, origin of individual questions unclear. Filter hard, translate, spot check.</td></tr>
+      <tr><td><strong><a href="https://opentdb.com">Open Trivia DB</a></strong></td><td>About 5,300 verified, English</td><td>CC BY-SA 4.0</td><td><span class="pill use">Use</span> Better curated. API only, 50 questions per call, one call per 5 seconds.</td></tr>
+      <tr><td><strong>Statistical Office of the SR</strong>, Eurostat, Our World in Data, GeoNames</td><td>Statistics and places</td><td>CC BY 4.0 (check each)</td><td><span class="pill use">Use</span> Population, economy and geography rankings. Credit in a CREDITS file.</td></tr>
+      <tr><td><strong><a href="https://huggingface.co/datasets/ufal/cus-qa">CUS-QA</a></strong></td><td>About 970 Slovak and 1,080 Czech local-knowledge questions</td><td>MIT</td><td><span class="pill maybe">Inspiration</span> Hand-written by native speakers about local topics. Open-ended answers, so they need rework.</td></tr>
+      <tr><td><strong>SK-QuAD</strong></td><td>About 91,000 Slovak questions</td><td>CC BY-SA 4.0</td><td><span class="pill maybe">Limited</span> Questions refer to a text passage and rarely stand alone.</td></tr>
+      <tr><td><strong>MusicBrainz</strong> core data</td><td>Artists, releases</td><td>CC0</td><td><span class="pill maybe">Limited</span> Discographies yes, popularity no.</td></tr>
+      <tr><td><strong>The Trivia API</strong></td><td>About 14,600</td><td>CC BY-NC 4.0</td><td><span class="pill avoid">Avoid</span> Non-commercial licence does not belong in an open repo. No Slovak or Czech.</td></tr>
+      <tr><td><strong>Jeopardy dumps</strong>, jService</td><td>About 217,000 clues</td><td>None, scraped</td><td><span class="pill avoid">Avoid</span> J! Archive forbids scraping and republishing. jService is offline.</td></tr>
+      <tr><td><strong>TriviaQA</strong> and its Czech translation</td><td>About 170,000</td><td>Research only</td><td><span class="pill avoid">Avoid</span></td></tr>
+      <tr><td><strong>TMDB</strong></td><td>Films</td><td>No derivatives, no shared caches</td><td><span class="pill avoid">Avoid</span> Use Wikidata for film facts.</td></tr>
+      <tr><td><strong>Chart sites</strong> (ČNS IFPI, Spotify charts), commercial quiz sites, other quiz apps</td><td></td><td>No reuse terms</td><td><span class="pill avoid">Do not scrape</span> See below.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="cols">
+    <div>
+      <h3>Your two examples</h3>
+      <ul>
+        <li><strong>Fish in Slovakia:</strong> Wikidata cannot answer this. It has no reliable "lives in Slovakia" relation. Use a curated list, for example a national species checklist or a fisheries publication, and write the question by hand with the source cited.</li>
+        <li><strong>Top 5 songs of a Slovak artist:</strong> no open dataset. Individual facts ("this song has the most plays as of this date") are not protected, so looking up a handful of artists by hand and citing the source is fine. Copying a chart site wholesale is not. These questions age quickly, hence the <code>asOf</code> field.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Licence consequences</h3>
+      <ul>
+        <li>Anything translated from OpenTriviaQA or Open Trivia DB must stay CC BY-SA 4.0 with attribution. Question files can carry a different licence from the code.</li>
+        <li>Facts are not copyrightable in the EU, but the wording of a question and the choice of decoys can be. Reuse facts, write your own wording.</li>
+        <li>The EU database right protects against extracting a substantial part of someone's collection. Hand-compiling questions from public facts is fine. This is a research summary and not legal advice.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>A realistic content pipeline</h3>
+  <ol>
+    <li><strong>Generators:</strong> small scripts that query Wikidata and statistics sources and write list questions with values (peaks, rivers, towns, castles, athletes, films, neighbours of countries). Output is reviewed before it is committed.</li>
+    <li><strong>Translation:</strong> filter the English sets for questions that travel well, translate with a language model, convert to the pack format, spot check.</li>
+    <li><strong>Hand-written Slovak packs:</strong> the content that makes the game yours. A language model can draft a pack from a topic and sources, but each fact needs checking against its source because models get local details wrong.</li>
+    <li><strong>Checks in CI:</strong> schema validation, duplicate detection, missing sources, and a warning for <code>asOf</code> dates older than a set age.</li>
+    <li><strong>Feedback loop:</strong> a "report this question" link on every card that opens a prefilled issue.</li>
+  </ol>
+  <h3>Slovak pack ideas</h3>
+  <p>Slovenská príroda (ryby, huby, chránené zvieratá, štíty, jaskyne) · Mestá a kraje · Hrady a zámky · Slovenský rap a pop · Hokej a futbal · Olympionici · Slovenské filmy a seriály · Jedlo a pitie (bryndza, vína, pivá, Horalky) · Nárečia a slang · Československo a nostalgia 90. rokov · Značky a firmy · Rekordy Slovenska · Susedia (Česko, Poľsko, Maďarsko, Rakúsko) · Školské minimum (čo sme sa všetci učili a zabudli).</p>
+</section>
+
+<section id="arch">
+  <h2>Architecture</h2>
+  <h3>Build in three steps, each usable on its own</h3>
+  <div class="arch">
+    <div><span class="step">STEP 1 · NO NETWORK</span><span class="t">One device</span><span class="s">Static site, packs as JSON, game engine in the browser. Pass and play, solo, teams. Works offline once installed.</span></div>
+    <div><span class="step">STEP 2 · STILL STATIC</span><span class="t">Phones, peer to peer</span><span class="s">Host device runs the game. Phones join by QR code and connect over WebRTC. Only picks and scores travel between devices.</span></div>
+    <div><span class="step">STEP 3 · ONLY IF NEEDED</span><span class="t">Small relay</span><span class="s">One Cloudflare Worker with a Durable Object per room, or a WebSocket relay on your own server. Same messages, different transport.</span></div>
+  </div>
+
+  <h3>Why static is enough</h3>
+  <ul>
+    <li><strong>Data size:</strong> a short question is roughly 250 to 300 bytes of JSON. 10,000 questions are about 3 MB raw and an estimated 1 MB compressed. Split by pack, a pack is 50 to 200 KB. No database and no pre-generated decks are needed.</li>
+    <li><strong>Decks from a seed:</strong> every device has the same pack files, so the host only sends a seed and the card number. Each device shuffles identically. This keeps network messages to a few bytes and makes the daily card possible without a server.</li>
+    <li><strong>No repeats:</strong> the ids of cards you have seen are stored on the device.</li>
+    <li><strong>Offline:</strong> a service worker caches the app and each pack on first use. The site becomes installable on a phone home screen, which covers most of what an app would give you.</li>
+    <li>SQLite in the browser was considered and is unnecessary below roughly 100,000 questions.</li>
+  </ul>
+
+  <h3>Options for phones joining a game</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Option</th><th>Own server</th><th>Cost</th><th>Weak points</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Trystero</strong> (WebRTC, signalling over public Nostr relays or BitTorrent trackers)</td><td>None</td><td>Free</td><td>If the host's tab sleeps, the game stops. An estimated 10 to 25% of connections across mobile networks fail without a TURN relay (vendor figures, not measured). Guest Wi-Fi with client isolation can block it. Single maintainer.</td><td><span class="pill use">Step 2</span></td></tr>
+      <tr><td><strong>PeerJS</strong> with its public cloud</td><td>None</td><td>Free</td><td>Shared signalling server with no uptime promise. Last release June 2025.</td><td><span class="pill maybe">Alternative</span></td></tr>
+      <tr><td><strong>Cloudflare Durable Objects</strong> with WebSockets</td><td>A Worker of about 100 lines</td><td>Free plan: 100,000 requests per day, incoming messages counted 20 to 1. A game uses about 50.</td><td>Cloudflare-specific API. Hitting the daily limit fails requests instead of billing.</td><td><span class="pill use">Step 3</span></td></tr>
+      <tr><td><strong>Relay on your own server</strong></td><td>Yes</td><td>Whatever the server already costs</td><td>You maintain it. No lock-in.</td><td><span class="pill maybe">Alternative for step 3</span></td></tr>
+      <tr><td><strong>Supabase Realtime</strong></td><td>None</td><td>Free: 200 connections</td><td>Free projects pause after about a week without activity, so game night starts with a dead game.</td><td><span class="pill avoid">Skip</span></td></tr>
+      <tr><td><strong>Firebase, Ably, Pusher, Liveblocks, Convex</strong></td><td>None</td><td>Free tiers suffice</td><td>Proprietary APIs and accounts for no gain over the options above.</td><td><span class="pill avoid">Skip</span></td></tr>
+      <tr><td><strong>InstantDB cloud, Deno Deploy</strong></td><td></td><td></td><td>Both were reported as shutting down in 2027.</td><td><span class="pill avoid">Skip</span></td></tr>
+      <tr><td><strong>Yjs, Automerge and other sync libraries</strong></td><td></td><td></td><td>Built for concurrent editing. A quiz has one authority and tiny state.</td><td><span class="pill avoid">Overkill</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Friends in one room on the same Wi-Fi is the easy case for peer to peer. The transport sits behind a three-function interface (join, send, on message), so swapping Trystero for a relay later does not touch the game logic.</p>
+
+  <h3>Code structure</h3>
+  <div class="cols">
+    <div>
+      <ul>
+        <li><strong>Engine:</strong> pure TypeScript with no UI. Takes game state and an action, returns new state. Every mode is a reducer like this, which makes rules easy to test and lets the same engine run on one phone, on a host device, or inside a relay.</li>
+        <li><strong>Content:</strong> pack schema, validator, and the code that turns a fact list into concrete cards.</li>
+        <li><strong>UI:</strong> a small framework and plain CSS, designed for a phone held in one hand.</li>
+        <li><strong>Transport:</strong> local (one device), peer to peer, relay.</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><strong>Stack suggestion:</strong> TypeScript, Vite, Svelte, built as a static single-page app with a service worker. Preact is an equally good choice if you prefer React-style code.</li>
+        <li><strong>Hosting:</strong> GitHub Pages is enough for steps 1 and 2. Cloudflare Pages is the better home if step 3 uses a Worker.</li>
+        <li><strong>App later:</strong> an installable web app first. Google Play via a Trusted Web Activity or both stores via Capacitor reuse the same build.</li>
+        <li><strong>Repo layout:</strong> <code>packs/</code>, <code>src/engine/</code>, <code>src/content/</code>, <code>src/ui/</code>, <code>src/transport/</code>, <code>scripts/</code> for generators.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Features</h2>
+  <div class="cols">
+    <div>
+      <h3>First version</h3>
+      <ul>
+        <li>Player names, 1 to 8 players or teams, on one device</li>
+        <li>Classic, Solo run and Mix modes</li>
+        <li>Pack picker with on and off switches, remembered</li>
+        <li>Difficulty filter</li>
+        <li>Target score and rule variants in settings</li>
+        <li>Fun fact and source link after each card</li>
+        <li>No repeated cards until a pack is used up</li>
+        <li>Resume a game after closing the tab</li>
+        <li>Import a pack from a file</li>
+        <li>Installable, works offline, light and dark theme</li>
+        <li>Slovak interface, with text kept in translation files</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Second version</h3>
+      <ul>
+        <li>Daily card with a shareable result</li>
+        <li>Personal statistics per pack and per category</li>
+        <li>Import a pack from a link, export imported packs</li>
+        <li>"Report this question" link</li>
+        <li>Thumbs up or down per card, stored locally, exportable to help prune bad questions</li>
+        <li>Optional turn timer</li>
+        <li>Typed answers and "which is more" cards</li>
+        <li>Hand the phone over screen that hides the previous player's view</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Later</h3>
+      <ul>
+        <li>Join from your own phone by QR code</li>
+        <li>Big-screen view for a TV or laptop</li>
+        <li>Guess and bet, everyone at once, bluff</li>
+        <li>Spectators and late joiners</li>
+        <li>In-app pack editor and spreadsheet import</li>
+        <li>Picture and map questions</li>
+        <li>Practice mode with repetition of missed cards</li>
+        <li>Czech and English interface</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2>Roadmap</h2>
+  <ol>
+    <li><strong>Decide</strong> the open questions below that block work: play setup, languages, licences, stack.</li>
+    <li><strong>Pack format:</strong> write the schema and validator, and hand-write two small packs (about 30 cards each) to prove the format before any code depends on it.</li>
+    <li><strong>Engine and Classic mode</strong> on one device, with tests for the scoring rules.</li>
+    <li><strong>Play it with friends.</strong> Adjust rules and difficulty based on one real evening.</li>
+    <li><strong>Content push:</strong> Wikidata generators, translation of filtered English sets, more hand-written Slovak packs. Target a few hundred cards before sharing the link widely.</li>
+    <li><strong>Polish:</strong> offline install, import, Mix mode, statistics, daily card.</li>
+    <li><strong>Phones:</strong> peer-to-peer rooms, then simultaneous modes. Relay only if the peer-to-peer test fails in practice.</li>
+  </ol>
+</section>
+
+<section id="risks">
+  <h2>Risks</h2>
+  <ul>
+    <li><strong>Content is the bottleneck.</strong> The code is a few weekends. A few thousand good Slovak cards is the long part. A ten-option card needs five plausible decoys, which is more work per question than multiple choice.</li>
+    <li><strong>Wrong facts kill trust.</strong> One bad card and the table stops believing the game. Sources on every card, review before merge, and an easy report link are the defences.</li>
+    <li><strong>Translated questions feel foreign.</strong> English sets lean on US sport and television. Expect to keep a small share.</li>
+    <li><strong>Stale questions.</strong> Charts, populations and records change. The date field and a CI warning keep this visible.</li>
+    <li><strong>Peer-to-peer on phones</strong> can fail on mobile data or locked-down Wi-Fi, and stops if the host phone sleeps. Test before relying on it for a party, and keep one-device play as the fallback.</li>
+    <li><strong>Too close to Chytrák or Smart10.</strong> Keep the name, look and all questions original.</li>
+  </ul>
+</section>
+
+<section id="open">
+  <h2>Open questions for you</h2>
+  <ol class="questions">
+    <li><strong>How do you actually play?</strong> One phone passed around, everyone on their own phone, or a TV with phones as controllers?<span class="rec">Recommendation: one phone first, since that is how you play Chytrák today. The answer decides whether network play is version 1 or version 3.</span></li>
+    <li><strong>Do you need to play with friends who are not in the room?</strong><span class="rec">If yes, the relay moves forward, because peer to peer across mobile networks is the unreliable case.</span></li>
+    <li><strong>Which languages?</strong> Slovak only, or Slovak and Czech questions mixed, with English later?<span class="rec">Recommendation: Slovak interface, each pack tagged with its language, Czech packs allowed.</span></li>
+    <li><strong>How close to Chytrák's rules should Classic be?</strong> Always 5 true of 10, or a variable number? Does the first wrong pick wipe points, or is it free as in Smart10?<span class="rec">Recommendation: variable number of true options, since "always five" lets players count. Both wipe rules as a setting.</span></li>
+    <li><strong>Licences.</strong> Code under MIT? Question packs under CC BY-SA 4.0?<span class="rec">CC BY-SA is required for anything translated from the English sets. Your own packs could be CC0 or CC BY-SA.</span></li>
+    <li><strong>Is language-model drafting of questions acceptable, and who reviews?</strong><span class="rec">Recommendation: yes for drafts, with every fact checked against its cited source by a person before merge.</span></li>
+    <li><strong>Are translated English questions wanted at all,</strong> or should the game be hand-made Slovak content plus generated lists only?<span class="rec">Skipping them keeps all packs free of the share-alike requirement and avoids the foreign feel, at the cost of volume.</span></li>
+    <li><strong>How much content before you call it playable?</strong><span class="rec">Suggestion: 200 cards across 8 packs for the first evening, 1,000 before sharing widely.</span></li>
+    <li><strong>Time-sensitive questions</strong> such as song charts: keep them with a visible "as of" date, or avoid them?</li>
+    <li><strong>Tone.</strong> Is a rude or adults-only pack welcome? Should there be a kids or family filter?</li>
+    <li><strong>Typed answers.</strong> Do you want "name them all" questions, given they need typo-tolerant matching and are slow on a passed-around phone?</li>
+    <li><strong>Pictures.</strong> In scope for the first year, or text only?</li>
+    <li><strong>Who writes packs?</strong> Only you through the repo, friends through pull requests, or friends through an in-app editor and file import?<span class="rec">This decides how much effort goes into the editor and the spreadsheet import.</span></li>
+    <li><strong>Pack source format.</strong> YAML (pleasant to write by hand) or JSON (no build conversion, same as the import format)?<span class="rec">Recommendation: YAML in the repo, JSON as the built and imported format, with the importer accepting both.</span></li>
+    <li><strong>Stack.</strong> Svelte or Preact/React? Any framework you want to learn or avoid?</li>
+    <li><strong>Hosting and relay.</strong> GitHub Pages or Cloudflare Pages? If a relay is ever needed, Cloudflare's free plan or your own server?</li>
+    <li><strong>Name</strong> of the game, and whether you want a custom domain.</li>
+    <li><strong>Keep the option of an app store release open?</strong><span class="rec">It only matters for licence choices now. An installable web app covers the need otherwise.</span></li>
+  </ol>
+</section>
+
+<section id="unverified">
+  <h2>What was not verified</h2>
+  <ul>
+    <li>Chytrák's prices, free question count and exact scoring. The 1-to-15 point figure comes from an app-store aggregator, not the official site.</li>
+    <li>That Chytrák derives from Smart10.</li>
+    <li>WebRTC failure rates. All figures are vendor claims or data from 2015 and 2016.</li>
+    <li>Compressed pack sizes. Estimated from typical JSON compression, not measured on real packs.</li>
+    <li>The Supabase one-week pause rule and the Deno Deploy shutdown details, which came from search snippets and secondary reports.</li>
+    <li>Reuse terms of the Slovak Statistical Office (stated as CC BY 4.0, full conditions page not opened), Natural Earth, and the fish dataset listed on data.gov.sk.</li>
+    <li>Whether Open Trivia DB's terms allow crawling the full verified set.</li>
+    <li>Question formats and import formats of ClassQuiz and Razzia.</li>
+  </ul>
+</section>
+</main>
+
+<script>
+(function () {
+  var data = [
+    ["kapor obyčajný", true], ["treska škvrnitá", false], ["šťuka severná", true], ["makrela atlantická", false],
+    ["sumec veľký", true], ["tuniak modroplutvý", false], ["zubáč veľkoústy", true], ["sardinka európska", false],
+    ["hlavátka podunajská", true], ["platesa veľká", false]
+  ];
+  var opts = document.getElementById("opts"), pts = document.getElementById("pts"),
+      msg = document.getElementById("demoMsg"), bank = document.getElementById("bank"),
+      again = document.getElementById("again");
+  var score = 0, hits = 0, over = false;
+  function end(text) {
+    over = true; bank.disabled = true; msg.textContent = text;
+    Array.prototype.forEach.call(opts.children, function (b, i) {
+      b.disabled = true;
+      if (data[i][1]) b.classList.add("ok");
+    });
+  }
+  function start() {
+    score = 0; hits = 0; over = false; pts.textContent = "0"; bank.disabled = false;
+    msg.textContent = "Pick an option. Each correct pick is worth one point more than the last. One wrong pick and the card's points are gone.";
+    opts.innerHTML = "";
+    data.forEach(function (d) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.textContent = d[0];
+      b.addEventListener("click", function () {
+        if (over || b.disabled) return;
+        b.disabled = true;
+        if (d[1]) {
+          hits += 1; score += hits; pts.textContent = String(score); b.classList.add("ok");
+          if (hits === 5) end("All five found: 15 points, the maximum for this card.");
+          else msg.textContent = "Correct. Next pick is worth " + (hits + 1) + ". Keep going or stop?";
+        } else {
+          b.classList.add("no"); score = 0; pts.textContent = "0";
+          end("Wrong. That fish lives in the sea, and the points from this card are gone.");
+        }
+      });
+      opts.appendChild(b);
+    });
+  }
+  bank.addEventListener("click", function () { if (!over) end("Banked " + score + " point" + (score === 1 ? "" : "s") + ". The phone goes to the next player."); });
+  again.addEventListener("click", start);
+  start();
+})();
+</script>

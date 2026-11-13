@@ -1,0 +1,6 @@
+# Symlink to a separate Obsidian notes vault, managed outside this repo. Never commit.
+/notes
+
+node_modules/
+dist/
+.DS_Store
