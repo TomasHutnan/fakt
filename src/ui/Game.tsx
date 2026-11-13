@@ -13,6 +13,7 @@ import {
 } from "../engine/game.ts";
 import { orderPoints, pickPoints } from "../engine/scoring.ts";
 import { sk } from "./sk.ts";
+import { tie } from "./typo.ts";
 
 interface Props {
   state: GameState;
@@ -114,7 +115,7 @@ function Turn({ state, dispatch }: { state: GameState; dispatch: (a: Action) => 
     >
       <CardHead card={s.card} />
       {!solo && <p class="q__player">{player.name}</p>}
-      <h1 class="q__prompt">{s.card.prompt}</h1>
+      <h1 class="q__prompt">{tie(s.card.prompt)}</h1>
       {s.card.type === "pick" && s.answer?.type === "pick" && (
         <PickTurn card={s.card} answer={s.answer} state={s} dispatch={dispatch} />
       )}
@@ -163,9 +164,9 @@ function PickTurn({
                 aria-pressed={picked}
                 onClick={() => dispatch({ type: "pick", option: i })}
               >
-                <span class="opt__text">{o.text}</span>
+                <span class="opt__text">{tie(o.text)}</span>
                 {picked && <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>}
-                {picked && <span class="opt__why">{o.why}</span>}
+                {picked && <span class="opt__why">{tie(o.why)}</span>}
               </button>
             </li>
           );
@@ -234,7 +235,7 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
         {arr.map((item, pos) => (
           <li class="order-item" key={item}>
             <span class="order-item__rank">{pos + 1}</span>
-            <span class="order-item__text">{card.items[item].text}</span>
+            <span class="order-item__text">{tie(card.items[item].text)}</span>
             <span class="order-item__controls">
               <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${card.items[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
                 ↑
@@ -316,7 +317,7 @@ function ChoiceTurn({ card, state, dispatch }: { card: ChoiceCard; state: GameSt
       {card.options.map((o, i) => (
         <li>
           <button type="button" class="opt" onClick={() => dispatch({ type: "submitChoice", option: i })}>
-            <span class="opt__text">{o.text}</span>
+            <span class="opt__text">{tie(o.text)}</span>
           </button>
         </li>
       ))}
@@ -349,7 +350,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
   return (
     <section class={`q q--reveal q--${card.type}`}>
       <CardHead card={card} />
-      <h1 class="q__prompt">{card.prompt}</h1>
+      <h1 class="q__prompt">{tie(card.prompt)}</h1>
 
       {card.type === "pick" && (
         <ul class="options options--reveal">
@@ -357,8 +358,9 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
             const who = names((r) => r.answer.type === "pick" && r.answer.picks.includes(i));
             return (
               <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
-                <span class="opt__text">{o.text}</span>
-                <span class="opt__why">{o.why}</span>
+                <span class="opt__text">{tie(o.text)}</span>
+                <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>
+                <span class="opt__why">{tie(o.why)}</span>
                 {multi && who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
               </li>
             );
@@ -372,8 +374,9 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
             const who = names((r) => r.answer.type === "choice" && r.answer.option === i);
             return (
               <li class={`opt opt--static ${o.correct ? "opt--correct" : "opt--wrong"}`}>
-                <span class="opt__text">{o.text}</span>
-                <span class="opt__why">{o.why}</span>
+                <span class="opt__text">{tie(o.text)}</span>
+                <span class="visually-hidden">{o.correct ? sk.correctMark : sk.wrongMark}</span>
+                <span class="opt__why">{tie(o.why)}</span>
                 {who.length > 0 && <span class="opt__who">{who.join(", ")}</span>}
               </li>
             );
@@ -386,7 +389,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
           {card.solution.map((item, pos) => (
             <li class="order-item">
               <span class="order-item__rank">{pos + 1}</span>
-              <span class="order-item__text">{card.items[item].text}</span>
+              <span class="order-item__text">{tie(card.items[item].text)}</span>
               <span class="order-item__value">{card.items[item].label}</span>
               {card.items[item].why && <span class="order-item__why">{card.items[item].why}</span>}
             </li>

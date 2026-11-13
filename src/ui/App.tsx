@@ -214,10 +214,16 @@ function loadGame(): GameState | null {
     !!g &&
     typeof g === "object" &&
     Array.isArray(g.players) &&
+    g.players.length > 0 &&
+    Array.isArray(g.order) &&
+    typeof g.turn === "number" &&
+    g.turn >= 0 &&
+    g.turn < g.order.length &&
+    typeof g.round === "number" &&
     Array.isArray(g.deck) &&
     Array.isArray(g.results) &&
     typeof g.phase === "string" &&
-    !!g.card &&
+    typeof (g.card as { type?: unknown } | undefined)?.type === "string" &&
     !!g.settings &&
     !!g.answer;
   return ok ? (g as GameState) : null;

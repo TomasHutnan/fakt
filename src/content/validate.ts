@@ -191,7 +191,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       if (scale !== "linear" && scale !== "log") err("scale musí byť linear alebo log");
       if (scale === "log" && typeof answer === "number" && answer <= 0) err("scale log potrebuje kladnú odpoveď");
       const tolerance = q.tolerance;
-      if (typeof tolerance !== "number" || !(tolerance > 0)) err("tolerance musí byť kladné číslo");
+      if (typeof tolerance !== "number" || !Number.isFinite(tolerance) || tolerance <= 0) err("tolerance musí byť kladné číslo");
       if (scale === "log" && typeof tolerance === "number" && tolerance >= 1)
         err("pri scale log je tolerance podiel, napr. 0.1 = 10 %");
       const why = str(q.why);
