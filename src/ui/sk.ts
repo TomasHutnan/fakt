@@ -63,6 +63,7 @@ export const sk = {
   passTo: "Podaj telefón",
   tapToContinue: "Ťukni pre pokračovanie",
   yourTurn: "Na ťahu",
+  pointsUnit: (n: number) => plural(n, "bod", "body", "bodov"),
   pointsNow: (n: number) => `${n} ${plural(n, "bod", "body", "bodov")}`,
   nextPickWorth: (n: number) => `Ďalšia správna +${n}`,
   bank: (n: number) => `Stop, beriem ${n}`,

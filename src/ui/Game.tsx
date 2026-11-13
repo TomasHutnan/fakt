@@ -107,7 +107,9 @@ function Turn({ state, dispatch }: { state: GameState; dispatch: (a: Action) => 
   const player = s.players[currentPlayer(s)];
   const solo = s.players.length === 1;
   return (
-    <section class={`q q--${s.card.type}`}>
+    <section
+      class={`q q--${s.card.type}${s.answer?.type === "pick" && s.answer.status !== "playing" ? ` q--${s.answer.status}` : ""}`}
+    >
       <CardHead card={s.card} />
       {!solo && <p class="q__player">{player.name}</p>}
       <h1 class="q__prompt">{s.card.prompt}</h1>
@@ -139,7 +141,9 @@ function PickTurn({
   return (
     <>
       <div class="turnbar">
-        <span class="turnbar__points">{sk.pointsNow(points)}</span>
+        <span class="turnbar__points">
+          <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
+        </span>
         {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
         {state.settings.showCorrectCount && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
