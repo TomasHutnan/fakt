@@ -1,0 +1,504 @@
+id: atletika-sezona-2026
+title: "Atletika: sezóna 2026"
+description: Sezóna 2026 – Diamantová liga, Ultimate Championship v Budapešti, ME v Birminghame, halové MS v Toruni, svetové rekordy a zlatá Emma Zapletalová.
+lang: sk
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: dl-finale-2026-vitazi
+    type: pick
+    prompt: Kto vyhral svoju disciplínu vo finále Diamantovej ligy 2026 v Bruseli?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_Diamond_League
+    tags: [diamantova-liga]
+    correct:
+      - text: Collen Kebinatshipi
+        why: 400 m za 43,40 s, už tretí rekord Diamantovej ligy v jednej sezóne.
+      - text: Audrey Werro
+        why: 800 m za 1:54,75, o 6 stotín pred Femke Broeders-Bolovou; obhájila titul.
+      - text: Klaudia Kazimierska
+        why: 1500 m za 3:54,05, poľský rekord a svetové maximum roka.
+      - text: Alison dos Santos
+        why: 400 m prekážok za 46,70 týždeň po svetovom rekorde v Zürichu.
+      - text: Emmanouil Karalis
+        why: Žrď 6,12 m, rekord mítingu. Duplantis sa krátko pred súťažou odhlásil.
+      - text: Masai Russell
+        why: 100 m prekážok za 12,20 s, rekord mítingu.
+      - text: Kenny Bednarek
+        why: 200 m za 19,62 s, vyrovnal vtedajšie svetové maximum.
+      - text: Oblique Seville
+        why: Úradujúci majster sveta vyhral stovku za 9,90 s.
+      - text: Emmanuel Wanyonyi
+        why: 800 m za 1:41,80, rekord mítingu.
+    wrong:
+      - text: Mondo Duplantis
+        why: Zo žrde sa preventívne odhlásil chvíľu pred začiatkom, vyhral Karalis.
+      - text: Emma Zapletalová
+        why: Druhá na 400 m prekážok (53,10), Anna Cockrellová ju zdolala o 9 stotín.
+      - text: Femke Broeders-Bol
+        why: Na 800 m druhá, za Werrovou jej chýbalo len 6 stotín.
+      - text: Jereem Richards
+        why: Na 400 m druhý za 43,68 s, čo bol aj tak národný rekord Trinidadu a Tobaga.
+      - text: Letsile Tebogo
+        why: Olympijský víťaz na 200 m skončil v Bruseli až štvrtý.
+      - text: Karsten Warholm
+        why: Titul na 400 m prekážok bral Alison dos Santos.
+      - text: Noah Lyles
+        why: Stovku vyhral Seville, dvestovku Bednarek.
+
+  - id: me-2026-zlato
+    type: pick
+    prompt: Kto získal individuálne zlato na ME v atletike 2026 v Birminghame?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_European_Athletics_Championships
+    tags: [me]
+    correct:
+      - text: Emma Zapletalová
+        why: 400 m prekážok za 52,91 s, prvé zlato slovenskej ženy v histórii ME.
+      - text: Mondo Duplantis
+        why: Žrď 6,15 m, rekord šampionátu.
+      - text: Karsten Warholm
+        why: 400 m prekážok za 46,63 s, rekord šampionátu.
+      - text: Jakob Ingebrigtsen
+        why: 5000 m za 13:15,29, len o 31 stotín pred Nemcom Bremmom.
+      - text: Amy Hunt
+        why: Vyhrala 100 aj 200 m a s dvoma štafetami má štyri zlatá, rekord jedného ME.
+      - text: Audrey Werro
+        why: 800 m za 1:54,81, rekord šampionátu.
+      - text: Gianmarco Tamberi
+        why: Výška 2,32 m, najlepší výkon sezóny.
+      - text: Miltiadis Tentoglou
+        why: Diaľka 8,44 m.
+      - text: Jaroslava Mahučichová
+        why: Výška 1,97 m.
+    wrong:
+      - text: Keely Hodgkinson
+        why: Na 800 m strieborná, Werrovej podľahla o 20 stotín.
+      - text: Emmanouil Karalis
+        why: Strieborný za Duplantisom (6,00 m).
+      - text: Mykolas Alekna
+        why: Disk vyhral Slovinec Kristjan Čeh, Alekna bral striebro.
+      - text: Klaudia Kazimierska
+        why: Na 1500 m druhá za Britkou Georgiou Hunter Bellovou.
+      - text: Pedro Pichardo
+        why: Trojskok vyhral Andy Díaz výkonom 18,15 m, Pichardo striebro.
+      - text: Simon Ehammer
+        why: V diaľke strieborný za Tentoglouom.
+      - text: Ewa Swoboda
+        why: Na stovke strieborná, o dve stotiny za Amy Huntovou.
+
+  - id: ultimate-2026-vitazi
+    type: pick
+    prompt: Kto sa stal šampiónom na prvom World Athletics Ultimate Championship v Budapešti (september 2026)?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_World_Athletics_Ultimate_Championship
+    tags: [ultimate]
+    correct:
+      - text: Kenny Bednarek
+        why: Double 100 m (9,85) a 200 m (19,52, svetové maximum roka).
+      - text: Melissa Jefferson-Wooden
+        why: Tiež double, 100 m za 10,62 a 200 m za 21,47.
+      - text: Collen Kebinatshipi
+        why: 400 m za 43,39 s, rekord Botswany.
+      - text: Mondo Duplantis
+        why: Žrď 6,20 m, Karalis skončil druhý s 6,15.
+      - text: Gianmarco Tamberi
+        why: Výška 2,37 m, svetové maximum sezóny.
+      - text: Jakob Ingebrigtsen
+        why: 5000 m za 12:59,24 pred Colom Hockerom; štartoval na voľnú kartu.
+      - text: Josh Kerr
+        why: 1500 m za 3:29,35, tiež na voľnú kartu.
+      - text: Jaroslava Mahučichová
+        why: Výška 1,99 m.
+      - text: Larissa Iapichino
+        why: Diaľka 6,90 m.
+    wrong:
+      - text: Emma Zapletalová
+        why: Druhá na 400 m prekážok (52,68) za Jasmine Jonesovou.
+      - text: Karsten Warholm
+        why: Tretí na 400 m prekážok, vyhral Alison dos Santos za 45,98.
+      - text: Rai Benjamin
+        why: Druhý na 400 m prekážok aj na hladkej 400-vke.
+      - text: Oblique Seville
+        why: Majster sveta skončil na stovke druhý za Bednarekom.
+      - text: Emmanouil Karalis
+        why: Druhý za Duplantisom (6,15 m).
+      - text: Julien Alfred
+        why: Na stovke druhá za Jefferson-Woodenovou.
+      - text: Keely Hodgkinson
+        why: Na 800 m druhá za Audrey Werrovou.
+      - text: Emmanuel Wanyonyi
+        why: Na 800 m až tretí, vyhral Alžírčan Djamel Sedjati.
+
+  - id: svetove-rekordy-2026
+    type: pick
+    prompt: Kto v roku 2026 vytvoril svetový rekord?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_in_the_sport_of_athletics
+    tags: [rekordy]
+    correct:
+      - text: Sabastian Sawe
+        why: V Londýne zabehol maratón za 1:59:30, prvý regulárny maratón pod dve hodiny.
+      - text: Ja'Kobe Tharp
+        why: 110 m prekážok za 12,75 s ešte ako vysokoškolák na NCAA v Eugene.
+      - text: Alison dos Santos
+        why: 400 m prekážok za 45,80 s v Zürichu.
+      - text: Masai Russell
+        why: 100 m prekážok za 12,09 s v Zürichu, v ten istý večer ako dos Santos.
+      - text: Josh Kerr
+        why: Míľa za 3:42,66 na mítingu v Londýne.
+      - text: Mondo Duplantis
+        why: Žrď 6,31 m v hale v Uppsale.
+      - text: Emmanuel Wanyonyi
+        why: 1000 m za 2:11,83 v Monaku.
+      - text: Yomif Kejelcha
+        why: Polmaratón za 56:51 v Buenos Aires.
+    wrong:
+      - text: Noah Lyles
+        why: Mal najrýchlejšiu stovku roka (9,79), ale rekord je stále Boltových 9,58.
+      - text: Kenny Bednarek
+        why: 19,52 na 200 m bolo maximum roka, nie rekord.
+      - text: Audrey Werro
+        why: Na 800 m sa priblížila na 42 stotín k rekordu Jarmily Kratochvílovej z roku 1983.
+      - text: Femke Broeders-Bol
+        why: Po prechode na 800 m bez svetového rekordu.
+      - text: Faith Kipyegon
+        why: V zozname svetových rekordov roka 2026 nefiguruje.
+      - text: Beatrice Chebet
+        why: V roku 2026 svetový rekord nevytvorila.
+      - text: Jakob Ingebrigtsen
+        why: Vyhral Budapešť aj ME, rekord však nie.
+      - text: Sydney McLaughlin-Levrone
+        why: V roku 2026 bez svetového rekordu.
+
+  - id: zapletalova-2026
+    type: pick
+    prompt: Čo z tohto dosiahla Emma Zapletalová v sezóne 2026?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Emma_Zapletalov%C3%A1
+    tags: [slovensko, zapletalova]
+    correct:
+      - text: Zlato na ME v Birminghame
+        why: 400 m prekážok za 52,91 s, prvý veľký titul jej kariéry.
+      - text: Druhé miesto na Ultimate Championship v Budapešti
+        why: 52,68 s za Američankou Jasmine Jonesovou.
+      - text: Druhé miesto vo finále Diamantovej ligy
+        why: V Bruseli ju o 9 stotín zdolala Anna Cockrellová.
+      - text: Víťazstvo na mítingu Diamantovej ligy v Dauhe
+        why: 52,30 s, slovenský rekord a rekord mítingu.
+      - text: Víťazstvo na mítingu Diamantovej ligy v Ríme
+        why: 52,58 s, vtedy nový slovenský rekord.
+      - text: Víťazstvo na Bislett Games v Osle
+        why: Jedno z jej piatich víťazstiev v Diamantovej lige 2026.
+      - text: Slovenský rekord na 400 m hladkých
+        why: 50,59 s na Zlatej tretre v Ostrave.
+      - text: Slovenský rekord 52,30 s na 400 m prekážok
+        why: Zabehla ho 19. júna v Dauhe.
+    wrong:
+      - text: Víťazstvo vo finále Diamantovej ligy
+        why: Titul brala Anna Cockrellová, Zapletalová bola druhá.
+      - text: Víťazstvo na Ultimate Championship
+        why: Vyhrala Jasmine Jonesová za 52,45 s.
+      - text: Čas pod 52 sekúnd
+        why: Najrýchlejšie zabehla 52,30 s.
+      - text: Najrýchlejší čas sveta roka 2026
+        why: Bola druhá v tabuľkách, Cockrellová zabehla v Zürichu 52,13 s.
+      - text: Víťazstvo na mítingu v Zürichu
+        why: V Zürichu vyhrala Cockrellová svetovým maximom 52,13 s.
+      - text: Medaila z halových MS v Toruni
+        why: Na 400 m v hale skončila v semifinále.
+      - text: Svetový rekord
+        why: Ten drží Sydney McLaughlin-Levrone.
+      - text: Víťazstvo na 400 m na Zlatej tretre
+        why: V Ostrave bola štvrtá, hoci zabehla slovenský rekord 50,59 s.
+
+  - id: svetove-maxima-2026
+    type: pick
+    prompt: Kto mal na konci sezóny 2026 najlepší výkon roka na svete (svetové maximum, vrátane hál) vo svojej hlavnej disciplíne?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://worldathletics.org/records/toplists
+    tags: [tabulky]
+    correct:
+      - text: Noah Lyles
+        why: 100 m za 9,79 s v New Yorku.
+      - text: Kenny Bednarek
+        why: 200 m za 19,52 s na Ultimate Championship v Budapešti.
+      - text: Emmanuel Wanyonyi
+        why: 800 m za 1:41,76 v Zürichu, len o 7 stotín pred Sedjatim.
+      - text: Josh Kerr
+        why: 1500 m za 3:27,62 v Londýne.
+      - text: Ja'Kobe Tharp
+        why: 12,75 s na 110 m prekážok je zároveň svetový rekord.
+      - text: Gianmarco Tamberi
+        why: Výška 2,37 m v Budapešti.
+      - text: Miltiadis Tentoglou
+        why: Diaľka 8,66 m vo Vole.
+      - text: Audrey Werro
+        why: 800 m za 1:53,70 v Zürichu.
+      - text: Marileidy Paulino
+        why: 400 m za 48,48 s v Paríži, rekord Diamantovej ligy.
+    wrong:
+      - text: Collen Kebinatshipi
+        why: 43,39 s, no Nigérijčan Samuel Ogazi zabehol 43,38, o stotinu rýchlejšie.
+      - text: Oblique Seville
+        why: 9,82 s, druhý za Lylesom.
+      - text: Julien Alfred
+        why: 200 m za 21,51, Jefferson-Wooden v Budapešti 21,47.
+      - text: Keely Hodgkinson
+        why: 1:54,33, druhá za Werrovou.
+      - text: Emmanouil Karalis
+        why: 6,20 m, Duplantis v hale 6,31.
+      - text: Emma Zapletalová
+        why: 52,30 s, druhá za Cockrellovou (52,13).
+      - text: Cameron Myers
+        why: 3:28,00, druhý za Kerrom.
+      - text: Nicola Olyslagers
+        why: 2,02 m, Mahučichová skočila v hale 2,03.
+
+  - id: hms-torun-2026
+    type: pick
+    prompt: Kto vyhral svoju disciplínu na halových MS 2026 v poľskej Toruni?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_World_Athletics_Indoor_Championships
+    tags: [hala]
+    correct:
+      - text: Mondo Duplantis
+        why: Žrď 6,25 m, rekord halových MS.
+      - text: Keely Hodgkinson
+        why: 800 m za 1:55,30, rekord šampionátu.
+      - text: Georgia Hunter Bell
+        why: 1500 m za 3:58,53.
+      - text: Josh Kerr
+        why: 3000 m za 7:35,56, o 14 stotín pred Colom Hockerom.
+      - text: Lurdes Gloria Manuel
+        why: Česká senzácia, 400 m za 50,76 s.
+      - text: Jaroslava Mahučichová
+        why: Výška 2,01 m.
+      - text: Cooper Lutkenhaus
+        why: 800 m za 1:44,24, ešte ako 17-ročný.
+      - text: Simon Ehammer
+        why: Sedemboj 6670 bodov, svetový rekord.
+    wrong:
+      - text: Audrey Werro
+        why: Na 800 m strieborná za Hodgkinsonovou.
+      - text: Emmanouil Karalis
+        why: Druhý za Duplantisom (6,05 m).
+      - text: Cole Hocker
+        why: Na 3000 m druhý, len 14 stotín za Kerrom.
+      - text: Kishane Thompson
+        why: Na 60 m druhý, vyhral Američan Jordan Anthony.
+      - text: Jessica Hull
+        why: Striebro na 1500 m a bronz na 3000 m, zlato nie.
+      - text: Yulimar Rojas
+        why: V trojskoku druhá za Kubánkou Leyanis Pérezovou.
+      - text: Mattia Furlani
+        why: V diaľke druhý za Portugalčanom Gersonom Baldém.
+      - text: Natalia Bukowiecka
+        why: Na 400 m druhá, 7 stotín za Manuelovou.
+
+  - id: dl-2026-mesta
+    type: pick
+    prompt: Ktoré mestá hostili míting Diamantovej ligy 2026?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_Diamond_League
+    tags: [diamantova-liga]
+    correct:
+      - text: Rím
+        why: Golden Gala Pietro Mennea na Olympijskom štadióne.
+      - text: Štokholm
+        why: Bauhausgalan na olympijskom štadióne z roku 1912.
+      - text: Oslo
+        why: Bislett Games, kde Zapletalová vyhrala.
+      - text: Paríž
+        why: Meeting de Paris na štadióne Charléty.
+      - text: Monako
+        why: Herculis, kde Wanyonyi zabehol svetový rekord na 1000 m.
+      - text: Zürich
+        why: Weltklasse, večer dvoch svetových rekordov (dos Santos, Russell).
+      - text: Brusel
+        why: Memorial Van Damme, dvojdňové finále.
+      - text: Dauha
+        why: Míting v Katare, kde Zapletalová zabehla 52,30.
+      - text: Chorzów
+        why: Memoriál Kamily Skolimowskej na Sliezskom štadióne.
+      - text: Eugene
+        why: Prefontaine Classic na Hayward Field.
+    wrong:
+      - text: Ostrava
+        why: Zlatá tretra nie je mítingom Diamantovej ligy.
+      - text: Berlín
+        why: Chase Jacksonová tam síce hodila 21,02 m, no Berlín v Diamantovej lige nie je.
+      - text: Budapešť
+        why: Hostila Ultimate Championship, nie Diamantovú ligu.
+      - text: Birmingham
+        why: V minulosti áno, v roku 2026 však hostil ME; britský míting bol v Londýne.
+      - text: Hengelo
+        why: Holandský míting do Diamantovej ligy nepatrí.
+      - text: Nairobi
+        why: Keňa míting Diamantovej ligy nemá.
+
+  - id: me-2026-krajiny-zlato
+    type: pick
+    prompt: Ktoré krajiny získali na ME 2026 v Birminghame aspoň jednu zlatú medailu?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://athleticsweekly.com/news/birmingham-2026-in-numbers-a-statisticians-verdict-on-one-of-the-best-european-champs-yet-1040012707/
+    tags: [me]
+    correct:
+      - text: Slovensko
+        why: Emma Zapletalová na 400 m prekážok.
+      - text: Slovinsko
+        why: Kristjan Čeh v disku, 72,51 m, rekord šampionátu.
+      - text: Chorvátsko
+        why: Sara Kolak v hode oštepom.
+      - text: Maďarsko
+        why: Bence Halász v kladive, 84,25 m, svetové maximum.
+      - text: Grécko
+        why: Miltiadis Tentoglou v diaľke.
+      - text: Izrael
+        why: Družstvo v maratóne.
+      - text: Írsko
+        why: Dve zlatá, Mark English na 800 m a Kate O'Connorová v sedemboji.
+      - text: Fínsko
+        why: Dve zlatá, maratón (Alisa Vainio) a kladivo (Silja Kosonen).
+      - text: Ukrajina
+        why: Jaroslava Mahučichová vo výške.
+      - text: Švajčiarsko
+        why: Tri zlatá, okrem iného Werro na 800 m.
+    wrong:
+      - text: Francúzsko
+        why: 11 medailí (3 strieborné, 8 bronzových), ale ani jedno zlato.
+      - text: Poľsko
+        why: Šesť strieborných a dve bronzové, žiadne zlato.
+      - text: Česko
+        why: Prekvapivo bez jedinej medaily, najlepšie dve štvrté miesta.
+      - text: Belgicko
+        why: Jedno striebro a tri bronzy.
+      - text: Portugalsko
+        why: Striebro (Pichardo) a dva bronzy.
+      - text: Litva
+        why: Iba striebro Mykolasa Alekna v disku.
+      - text: Bulharsko
+        why: Dva bronzy.
+
+  # ---------------------------------------------------------------- ORDER
+  - id: me-2026-zlate-medaily
+    type: order
+    prompt: Zoraď krajiny podľa počtu zlatých medailí na ME 2026 v Birminghame (od najviac).
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://athleticsweekly.com/news/birmingham-2026-in-numbers-a-statisticians-verdict-on-one-of-the-best-european-champs-yet-1040012707/
+    tags: [me]
+    items:
+      - { text: Taliansko, value: 10, why: "Vyhralo medailovú tabuľku až v poslednej disciplíne, štafete 4 × 400 m mužov." }
+      - { text: Veľká Británia, value: 9, why: "Domáci, z toho štyri zlatá Amy Huntovej." }
+      - { text: Nemecko, value: 6, why: "Až desať strieborných, najviac zo všetkých." }
+      - { text: Holandsko, value: 5, why: "Okrem iného Schilderová vo vrhu guľou a van Klinkenová v disku." }
+      - { text: Nórsko, value: 4, why: "Warholm, Ingebrigtsen, Jægerová a zmiešaná štafeta 4 × 400 m." }
+      - { text: Švajčiarsko, value: 3, why: "Werro, Joseph na 110 m prekážok a Moserová v žrdi." }
+
+  - id: 400-prekazky-zeny-2026
+    type: order
+    prompt: Zoraď prekážkarky podľa najlepšieho času sezóny 2026 na 400 m prekážok (od najrýchlejšej).
+    direction: asc
+    unit: s
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://worldathletics.org/records/toplists/hurdles/400-metres-hurdles/all/women/senior/2026
+    tags: [tabulky, zapletalova]
+    items:
+      - { text: Anna Cockrell, value: 52.13, label: "52,13 s", why: "V Zürichu, svetové maximum roka." }
+      - { text: Emma Zapletalová, value: 52.30, label: "52,30 s", why: "V Dauhe, slovenský rekord." }
+      - { text: Jasmine Jones, value: 52.45, label: "52,45 s", why: "Pri víťazstve na Ultimate Championship v Budapešti." }
+      - { text: Rushell Clayton, value: 53.05, label: "53,05 s", why: "Jamajčanka, druhá v Dauhe za Zapletalovou." }
+      - { text: Dalilah Muhammad, value: 53.11, label: "53,11 s", why: "Bývalá rekordérka, štvrtá v Budapešti." }
+
+  - id: 800-zeny-2026
+    type: order
+    prompt: Zoraď bežkyne podľa najlepšieho času sezóny 2026 na 800 m (od najrýchlejšej).
+    direction: asc
+    unit: s
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://worldathletics.org/records/toplists/middlelong/800-metres/all/women/senior/2026
+    tags: [tabulky]
+    items:
+      - { text: Audrey Werro, value: 113.70, label: "1:53,70", why: "V Zürichu, 42 stotín od rekordu Kratochvílovej." }
+      - { text: Keely Hodgkinson, value: 114.33, label: "1:54,33", why: "V Štokholme skončila druhá." }
+      - { text: Femke Broeders-Bol, value: 114.71, label: "1:54,71", why: "Bývalá prekážkarka, v Zürichu za Werrovou." }
+      - { text: Georgia Hunter Bell, value: 115.03, label: "1:55,03", why: "Tiež v Zürichu; európska šampiónka na 1500 m." }
+      - { text: Anaïs Bourgoin, value: 115.65, label: "1:55,65", why: "Francúzka, tretia v Paríži." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: ultimate-2026-odmena
+    type: number
+    prompt: Koľko amerických dolárov dostal víťaz každej individuálnej disciplíny na Ultimate Championship 2026 v Budapešti?
+    answer: 150000
+    unit: USD
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: Celkový balík 10 miliónov dolárov bol najväčší v histórii atletiky; finančnú odmenu dostal každý štartujúci.
+    difficulty: 2
+    source: https://worldathletics.org/competitions/world-athletics-ultimate-championship/2026/news/press-releases/world-athletics-ultimate-championship
+    tags: [ultimate]
+
+  - id: dl-2026-pocet-mitingov
+    type: number
+    prompt: Z koľkých mítingov (vrátane finále) sa skladala Diamantová liga 2026?
+    answer: 15
+    unit: mítingov
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: 14 mítingov sezóny od Číny po Zürich a dvojdňové finále v Bruseli; celkovo sa rozdalo 9,24 milióna dolárov.
+    difficulty: 1
+    source: https://www.diamondleague.com/about/prize-money/
+    tags: [diamantova-liga]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: hms-2026-400-zeny
+    type: choice
+    prompt: Ktorá atlétka sa v marci 2026 v Toruni stala halovou majsterkou sveta na 400 m?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_World_Athletics_Indoor_Championships
+    tags: [hala, cesko]
+    correct:
+      text: Lurdes Gloria Manuel
+      why: Česká 21-ročná bežkyňa zabehla 50,76 s, čo bolo jediné české zlato v Toruni.
+    wrong:
+      - text: Natalia Bukowiecka
+        why: Domáca Poľka bola druhá, o 7 stotín.
+      - text: Lieke Klaver
+        why: Holanďanka brala bronz za 51,02.
+      - text: Henriette Jæger
+        why: Medailu z Torune nemá; vrchol jej sezóny bolo zlato na ME v Birminghame.
+
+  - id: sawe-maraton-2026
+    type: choice
+    prompt: Kto 26. apríla 2026 v Londýne zabehol maratón za 1:59:30, prvý regulárny svetový rekord pod dve hodiny?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_in_the_sport_of_athletics
+    tags: [rekordy, maraton]
+    correct:
+      text: Sabastian Sawe
+      why: Keňan prekonal rekord Kelvina Kiptuma (2:00:35) o viac ako minútu.
+    wrong:
+      - text: Yomif Kejelcha
+        why: Etiópčan dobehol druhý za 1:59:41, tiež pod dve hodiny.
+      - text: Jacob Kiplimo
+        why: Tretí za 2:00:28; v marci však zabehol svetový rekord v polmaratóne.
+      - text: Eliud Kipchoge
+        why: Pod dve hodiny bežal v roku 2019 vo Viedni, ale v podmienkach, ktoré sa za rekord neuznávajú.

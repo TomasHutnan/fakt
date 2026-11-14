@@ -1,0 +1,826 @@
+id: atletika-legendy-rekordy
+title: "Atletika: legendy a rekordy"
+description: Bolt, Duplantis, Zátopek, Kratochvílová a svetové rekordy – od Berlína 1936 po prvý maratón pod dve hodiny.
+lang: sk
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: pariz-2024-zlato
+    type: pick
+    prompt: Kto vyhral v Paríži 2024 olympijské zlato v individuálnej atletickej disciplíne?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics
+    tags: [olympiada]
+    correct:
+      - text: Noah Lyles
+        why: "Stovku vyhral o päť tisícin sekundy pred Kishanom Thompsonom, obaja mali na tabuli 9,79."
+      - text: Letsile Tebogo
+        why: "Dvestovku vyhral za 19,46 v africkom rekorde, Lyles bol až tretí."
+      - text: Jakob Ingebrigtsen
+        why: "Na 1500 m ostal bez medaily, no o pár dní vyhral päťku."
+      - text: Cole Hocker
+        why: "Prekvapivo vyhral 1500 m v olympijskom rekorde 3:27,65, Ingebrigtsen ostal bez medaily."
+      - text: Arshad Nadeem
+        why: "Pakistanský oštepár porazil obhajcu z Tokia Neeraja Chopru."
+      - text: Julien Alfredová
+        why: "Vyhrala 100 m a priniesla Svätej Lucii vôbec prvé olympijské zlato."
+      - text: Sifan Hassanová
+        why: "Bronz na 5000 m, bronz na 10 000 m a na záver zlato v maratóne."
+      - text: Keely Hodgkinsonová
+        why: "Britka vyhrala 800 m, v Tokiu 2021 mala striebro."
+      - text: Jaroslava Mahučichová
+        why: "Ukrajinská výškarka, mesiac predtým skočila svetový rekord 2,10 m."
+      - text: Tamirat Tola
+        why: "Etiópčan vyhral olympijský maratón, Kipchoge ho nedobehol."
+    wrong:
+      - text: Kishane Thompson
+        why: "Jamajčan prehral stovku o 0,005 s, rovnaký čas 9,79, striebro."
+      - text: Josh Kerr
+        why: "Na 1500 m striebro; svoje si vzal v roku 2026 svetovým rekordom na míľu."
+      - text: Neeraj Chopra
+        why: "Indický obhajca zlata z Tokia, v Paríži striebro za Nadeemom."
+      - text: Sha'Carri Richardsonová
+        why: "Striebro na 100 m za Julien Alfredovou."
+      - text: Karsten Warholm
+        why: "Na 400 m prekážok striebro za Raiom Benjaminom."
+      - text: Kenny Bednarek
+        why: "Na 200 m striebro, Tebogo bol rýchlejší."
+      - text: Malaika Mihambová
+        why: "Obhajkyňa zlata v diaľke skončila druhá za Tarou Davisovou-Woodhallovou."
+      - text: Katarina Johnson-Thompsonová
+        why: "V sedemboji striebro, zlato opäť Nafissatou Thiamová."
+
+  - id: tokio-2025-majstri-sveta
+    type: pick
+    prompt: Kto sa stal individuálnym majstrom sveta na MS v atletike v Tokiu 2025?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2025_World_Athletics_Championships
+    tags: [majstrovstva-sveta]
+    correct:
+      - text: Oblique Seville
+        why: "Jamajčan vyhral stovku, krajan Kishane Thompson bol druhý."
+      - text: Noah Lyles
+        why: "Na 100 m len bronz, ale dvestovku vyhral."
+      - text: Melissa Jeffersonová-Woodenová
+        why: "Americká šprintérka vyhrala 100 aj 200 m."
+      - text: Sydney McLaughlinová-Levroneová
+        why: "Majsterka prekážok si odskočila na hladkú 400-ku a vyhrala ju."
+      - text: Femke Bolová
+        why: "Holanďanka vyhrala 400 m prekážok, bronz brala Emma Zapletalová."
+      - text: Rai Benjamin
+        why: "Na 400 m prekážok porazil Alisona dos Santosa."
+      - text: Faith Kipyegonová
+        why: "Vyhrala 1500 m, na 5000 m dobehla druhá."
+      - text: Beatrice Chebetová
+        why: "Keňanka vyhrala 5000 aj 10 000 m."
+      - text: Armand Duplantis
+        why: "Tretí titul v rade a k tomu svetový rekord 6,30 m."
+      - text: Daniel Ståhl
+        why: "Švéd vyhral disk pred svetovým rekordmanom Alekom."
+    wrong:
+      - text: Kishane Thompson
+        why: "Opäť striebro na 100 m, tentoraz za krajanom Sevillom."
+      - text: Jakob Ingebrigtsen
+        why: "V Tokiu nezískal ani jednu medailu; na 1500 m zvíťazil Portugalčan Isaac Nader."
+      - text: Mykolas Alekna
+        why: "Svetový rekordman v disku, ale v Tokiu len striebro."
+      - text: Julien Alfredová
+        why: "Olympijská víťazka brala na 100 m bronz."
+      - text: Keely Hodgkinsonová
+        why: "Na 800 m bronz; vyhrala Keňanka Lilian Odira."
+      - text: Emmanouil Karalis
+        why: "Grécky žrdkár skončil druhý za Duplantisom."
+      - text: Yulimar Rojasová
+        why: "Svetová rekordérka v trojskoku brala bronz, zlato Kubánka Leyanis Pérezová."
+      - text: Emma Zapletalová
+        why: "Bronz na 400 m prekážok v slovenskom rekorde 53,00, titul nie."
+
+  - id: zrd-drzitelia-rekordu
+    type: pick
+    prompt: Kto z týchto žrdkárov niekedy držal svetový rekord mužov v skoku o žrdi?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+    tags: [skok-o-zrdi, rekordy]
+    correct:
+      - text: Sergej Bubka
+        why: "Rekord zlepšoval po centimetroch, prvý z nich skočil v roku 1984 v Bratislave."
+      - text: Armand Duplantis
+        why: "Pätnásť svetových rekordov, naposledy 6,31 m v Uppsale v marci 2026."
+      - text: Renaud Lavillenie
+        why: "V roku 2014 v hale v Donecku skočil 6,16 m a prekonal Bubku."
+      - text: Władysław Kozakiewicz
+        why: "Poliak skočil svetový rekord 5,78 m priamo vo finále OH v Moskve 1980."
+      - text: Thierry Vigneron
+        why: "Francúz sa v rokoch 1980 až 1984 o rekord preťahoval s Kozakiewiczom a Bubkom."
+      - text: Pierre Quinon
+        why: "V roku 1983 skočil v Kolíne 5,82 m, rekord držal štyri dni."
+      - text: Bob Seagren
+        why: "Američan držal rekord v 60. a 70. rokoch viackrát."
+      - text: Wolfgang Nordwig
+        why: "Východonemecký žrdkár, svetový rekord v roku 1970."
+    wrong:
+      - text: Sam Kendricks
+        why: "Olympijské striebro z Paríža a bronz z Ria, svetový rekord však nemá."
+      - text: Emmanouil Karalis
+        why: "V roku 2026 skočil 6,20 m, najvyšší skok, ktorý nestačil na víťazstvo; rekord to nebol."
+      - text: Thiago Braz
+        why: "Olympijský víťaz z Ria 2016, svetový rekord nikdy neskočil."
+      - text: Kurtis Marschall
+        why: "Austrálčan v júni 2026 ako prvý po takmer troch rokoch porazil Duplantisa, rekord nemá."
+      - text: Maksim Tarasov
+        why: "Olympijský víťaz z Barcelony 1992, v tabuľke svetových rekordov chýba."
+      - text: Steve Hooker
+        why: "Olympijský víťaz 2008, svetový rekord nikdy neprekonal."
+
+  - id: wr-z-80-rokov
+    type: pick
+    prompt: Ktoré z týchto svetových rekordov v olympijských disciplínach platia ešte z 80. rokov?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_world_records_in_athletics
+    tags: [rekordy]
+    correct:
+      - text: 800 m žien (Jarmila Kratochvílová)
+        why: "1:53,28 z Mníchova 1983, najstarší platný individuálny svetový rekord."
+      - text: 400 m žien (Marita Kochová)
+        why: "47,60 z austrálskej Canberry v roku 1985."
+      - text: 100 m žien (Florence Griffithová-Joynerová)
+        why: "10,49 z roku 1988, odvtedy sa k nemu nikto nedostal."
+      - text: 200 m žien (Florence Griffithová-Joynerová)
+        why: "21,34 zabehla na olympiáde v Soule 1988."
+      - text: skok do diaľky žien (Galina Čisťakovová)
+        why: "7,52 m v Leningrade v roku 1988."
+      - text: vrh guľou žien (Natalja Lisovská)
+        why: "22,63 m v Moskve v roku 1987."
+      - text: hod diskom žien (Gabriele Reinschová)
+        why: "76,80 m z roku 1988, ďalej ako svetový rekord mužov (s ľahším diskom)."
+      - text: hod kladivom mužov (Jurij Sedych)
+        why: "86,74 m zo Stuttgartu 1986, jediný mužský rekord z 80. rokov v olympijskej disciplíne."
+      - text: sedemboj (Jackie Joynerová-Kerseeová)
+        why: "7291 bodov na olympiáde v Soule 1988."
+    wrong:
+      - text: skok do výšky mužov (Javier Sotomayor)
+        why: "2,45 m z roku 1993, teda už 90. roky."
+      - text: skok do diaľky mužov (Mike Powell)
+        why: "8,95 m na MS v Tokiu 1991."
+      - text: trojskok mužov (Jonathan Edwards)
+        why: "18,29 m z Göteborgu 1995."
+      - text: hod oštepom mužov (Jan Železný)
+        why: "98,48 m z Jeny 1996."
+      - text: 1500 m mužov (Hicham El Guerrouj)
+        why: "3:26,00 z Ríma 1998."
+      - text: štafeta 4 × 400 m mužov (USA)
+        why: "Michael Johnson a spol. v roku 1993."
+      - text: skok o žrdi žien (Jelena Isinbajevová)
+        why: "5,06 m v Zürichu 2009."
+
+  - id: europania-svetove-rekordy
+    type: pick
+    prompt: Kto z týchto Európanov drží aktuálny svetový rekord v niektorej olympijskej atletickej disciplíne?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_world_records_in_athletics
+    tags: [rekordy]
+    correct:
+      - text: Armand Duplantis
+        why: "Skok o žrdi, 6,31 m z Uppsaly 2026."
+      - text: Jan Železný
+        why: "Oštep, 98,48 m od roku 1996."
+      - text: Barbora Špotáková
+        why: "Oštep žien, 72,28 m zo Stuttgartu 2008."
+      - text: Jarmila Kratochvílová
+        why: "800 m, 1:53,28 z roku 1983."
+      - text: Jonathan Edwards
+        why: "Trojskok, 18,29 m z MS 1995 v Göteborgu."
+      - text: Jurij Sedych
+        why: "Kladivo, 86,74 m z roku 1986."
+      - text: Mykolas Alekna
+        why: "Litovský diskár, 75,56 m z roku 2025."
+      - text: Kevin Mayer
+        why: "Desaťboj, 9126 bodov v roku 2018 vo francúzskom Talence."
+      - text: Anita Włodarczyková
+        why: "Kladivo žien, 82,98 m vo Varšave 2016."
+      - text: Jaroslava Mahučichová
+        why: "Výška žien, 2,10 m v Paríži 2024."
+    wrong:
+      - text: Karsten Warholm
+        why: "Jeho 45,94 na 400 m prekážok z Tokia 2021 v auguste 2026 prekonal Alison dos Santos."
+      - text: Stefka Kostadinovová
+        why: "Jej výškarský rekord 2,09 m vydržal od roku 1987 až do roku 2024, keď ho zlepšila Mahučichová."
+      - text: Jürgen Schult
+        why: "Diskársky rekord z roku 1986 mu v roku 2024 vzal Mykolas Alekna."
+      - text: Sergej Bubka
+        why: "Kráľ žrde, ale jeho rekordy už prekonali Lavillenie a Duplantis."
+      - text: Femke Bolová
+        why: "Na 400 m prekážok jej patrí európsky rekord, svetový drží Sydney McLaughlinová-Levroneová."
+      - text: Colin Jackson
+        why: "Jeho 12,91 na 110 m prekážok z roku 1993 už dávno neplatí."
+      - text: Paula Radcliffová
+        why: "Ženský maratónsky rekord stratila v roku 2019."
+
+  - id: tokio-2025-krajiny-so-zlatom
+    type: pick
+    prompt: Ktoré krajiny získali na MS v atletike v Tokiu 2025 aspoň jednu zlatú medailu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2025_World_Athletics_Championships
+    tags: [majstrovstva-sveta, medaily]
+    correct:
+      - text: Botswana
+        why: "Collen Kebinatshipi vyhral 400 m."
+      - text: Nový Zéland
+        why: "Výškar Hamish Kerr a prekážkar Geordie Beamish."
+      - text: Švédsko
+        why: "Duplantis v žrdi a Daniel Ståhl v disku."
+      - text: Portugalsko
+        why: "Isaac Nader na 1500 m a Pedro Pichardo v trojskoku."
+      - text: Taliansko
+        why: "Diaľkar Mattia Furlani."
+      - text: Švajčiarsko
+        why: "Ditaji Kambundji na 100 m prekážok."
+      - text: Tanzánia
+        why: "Maratónec Alphonce Simbu, prvé zlato Tanzánie v histórii MS."
+      - text: Ekvádor
+        why: "Oštepárka Juleisy Angulová."
+      - text: Kuba
+        why: "Trojskokanka Leyanis Pérezová."
+      - text: Španielsko
+        why: "Chodkyňa María Pérezová vyhrala 20 aj 35 km."
+    wrong:
+      - text: Veľká Británia
+        why: "Tri striebra a dva bronzy, zlato žiadne."
+      - text: Etiópia
+        why: "Vytrvalecká veľmoc odišla s dvoma striebrami a dvoma bronzmi, bez zlata."
+      - text: Japonsko
+        why: "Domáci získali len dva bronzy."
+      - text: Čína
+        why: "Dve striebra a dva bronzy."
+      - text: Grécko
+        why: "Len striebro žrdkára Karalisa za Duplantisom."
+      - text: Poľsko
+        why: "Jediné striebro, výškarka Maria Żodziková."
+      - text: Ukrajina
+        why: "Len bronz Jaroslavy Mahučichovej."
+      - text: Mexiko
+        why: "Dve striebra, zlato nie."
+
+  - id: maraton-rekordmani
+    type: pick
+    prompt: Kto z týchto bežcov niekedy držal svetový rekord v maratóne mužov?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Marathon_world_record_progression
+    tags: [maraton, rekordy]
+    correct:
+      - text: Abebe Bikila
+        why: "Svetový najlepší čas zabehol priamo na olympiáde v Ríme 1960 a znova v Tokiu 1964."
+      - text: Carlos Lopes
+        why: "Portugalec zabehol rekord 2:07:12 v Rotterdame 1985, rok po olympijskom zlate."
+      - text: Paul Tergat
+        why: "V Berlíne 2003 zabehol ako prvý pod 2:05."
+      - text: Haile Gebrselassie
+        why: "Dva rekordy v Berlíne, v rokoch 2007 a 2008."
+      - text: Dennis Kimetto
+        why: "Berlín 2014, 2:02:57."
+      - text: Eliud Kipchoge
+        why: "Rekordy v Berlíne 2018 (2:01:39) a 2022 (2:01:09)."
+      - text: Kelvin Kiptum
+        why: "2:00:35 v Chicagu 2023; rekord ratifikovali päť dní pred jeho tragickou smrťou."
+      - text: Sabastian Sawe
+        why: "1:59:30 v Londýne 2026, prvý legálny maratón pod dve hodiny."
+    wrong:
+      - text: Kenenisa Bekele
+        why: "V Berlíne 2019 zabehol 2:01:41, chýbali mu dve sekundy."
+      - text: Yomif Kejelcha
+        why: "V Londýne 2026 zabehol 1:59:41, pod dve hodiny, a aj tak bol druhý."
+      - text: Emil Zátopek
+        why: "Olympijský maratón 1952 vyhral, svetový rekord v maratóne však nemal."
+      - text: Mo Farah
+        why: "Olympijský kráľ dráhy, v maratóne svetový rekord nezabehol."
+      - text: Tamirat Tola
+        why: "Olympijský víťaz z Paríža 2024, nie rekordman."
+      - text: Frank Shorter
+        why: "Olympijský víťaz z Mníchova 1972, v tabuľke rekordov chýba."
+
+  - id: olympijski-vitazi-100m
+    type: pick
+    prompt: Kto z týchto šprintérov vyhral olympijské zlato v behu mužov na 100 m?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/100_metres_at_the_Olympics
+    tags: [sprint, olympiada]
+    correct:
+      - text: Usain Bolt
+        why: "Trikrát za sebou: 2008, 2012 a 2016."
+      - text: Carl Lewis
+        why: "Zlato 1984 a 1988, druhé až po diskvalifikácii Bena Johnsona."
+      - text: Jesse Owens
+        why: "Berlín 1936, jedno zo štyroch zlatých."
+      - text: Linford Christie
+        why: "Barcelona 1992, ako 32-ročný najstarší víťaz olympijskej stovky."
+      - text: Donovan Bailey
+        why: "Atlanta 1996 vo svetovom rekorde 9,84."
+      - text: Maurice Greene
+        why: "Sydney 2000."
+      - text: Justin Gatlin
+        why: "Atény 2004; neskôr pridal striebro a bronz."
+      - text: Noah Lyles
+        why: "Paríž 2024, o päť tisícin sekundy."
+    wrong:
+      - text: Asafa Powell
+        why: "Štyrikrát svetový rekord na stovke, olympijskú stovku však nevyhral."
+      - text: Yohan Blake
+        why: "V Londýne 2012 striebro za Boltom."
+      - text: Frankie Fredericks
+        why: "Namíbijčan bral na stovke dve olympijské striebra."
+      - text: Ben Johnson
+        why: "V Soule 1988 dobehol prvý, no pre doping mu zlato odobrali."
+      - text: Fred Kerley
+        why: "Striebro v Tokiu 2021, bronz v Paríži 2024."
+      - text: Andre De Grasse
+        why: "Na stovke dva bronzy; jeho zlato je z 200 m."
+
+  - id: owens-berlin-1936
+    type: pick
+    prompt: V ktorých disciplínach vyhral Jesse Owens olympijské zlato v Berlíne 1936?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Jesse_Owens
+    tags: [olympiada, legendy]
+    correct:
+      - text: beh na 100 m
+        why: "Prvé zo štyroch berlínskych zlatých."
+      - text: beh na 200 m
+        why: "Druhé šprintérske zlato."
+      - text: skok do diaľky
+        why: "Rovnakú štvoricu disciplín zopakoval Carl Lewis v Los Angeles 1984."
+      - text: štafeta 4 × 100 m
+        why: "Štvrté zlato, so štafetou USA."
+    wrong:
+      - text: beh na 400 m
+        why: "Štyristovku Owens v Berlíne nebežal."
+      - text: 110 m prekážok
+        why: "Owens v Berlíne neštartoval na prekážkach."
+      - text: trojskok
+        why: "Skákal len diaľku."
+      - text: skok do výšky
+        why: "Owens bol diaľkar a šprintér, nie výškar."
+      - text: štafeta 4 × 400 m
+        why: "Owens bežal len krátku štafetu."
+      - text: 400 m prekážok
+        why: "Táto disciplína medzi jeho štyrmi zlatými nie je."
+
+  - id: kenske-svetove-rekordy
+    type: pick
+    prompt: V ktorých bežeckých disciplínach drží svetový rekord Keňan alebo Keňanka?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_world_records_in_athletics
+    tags: [rekordy, vytrvalost]
+    correct:
+      - text: 800 m mužov
+        why: "David Rudisha, 1:40,91 na olympiáde v Londýne 2012."
+      - text: maratón mužov
+        why: "Sabastian Sawe, 1:59:30 v Londýne 2026."
+      - text: 1500 m žien
+        why: "Faith Kipyegonová, 3:48,68 v Eugene 2025."
+      - text: 5000 m žien
+        why: "Beatrice Chebetová, 13:58,06, prvá žena pod 14 minút."
+      - text: 10 000 m žien
+        why: "Opäť Beatrice Chebetová, 28:54,14 z roku 2024."
+      - text: 3000 m prekážok žien
+        why: "Beatrice Chepkoechová, 8:44,32 z Monaka 2018."
+    wrong:
+      - text: 5000 m mužov
+        why: "Joshua Cheptegei z Ugandy, susednej krajiny."
+      - text: 10 000 m mužov
+        why: "Tiež Ugandčan Cheptegei, 26:11,00."
+      - text: 3000 m prekážok mužov
+        why: "Etiópčan Lamecha Girma, Keňania tu prekvapivo rekord nemajú."
+      - text: 1500 m mužov
+        why: "Maročan Hicham El Guerrouj od roku 1998."
+      - text: 400 m mužov
+        why: "Juhoafričan Wayde van Niekerk, 43,03 v Riu 2016."
+      - text: 400 m prekážok žien
+        why: "Američanka Sydney McLaughlinová-Levroneová."
+      - text: 400 m žien
+        why: "Marita Kochová z NDR od roku 1985."
+
+  - id: bolt-fakty
+    type: pick
+    prompt: Čo platí o Usainovi Boltovi?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Usain_Bolt
+    tags: [sprint, legendy]
+    correct:
+      - text: Má osem olympijských zlatých medailí
+        why: "Bolo ich deväť, štafetové zlato z Pekingu 2008 mu odobrali pre doping Nestu Cartera."
+      - text: Je jedenásťnásobný majster sveta
+        why: "Najúspešnejší muž v histórii majstrovstiev sveta."
+      - text: Vyhral 100 aj 200 m na troch olympiádach za sebou
+        why: "Peking 2008, Londýn 2012 a Rio 2016, nikomu inému sa to nepodarilo."
+      - text: Drží svetový rekord na 200 m
+        why: "19,19 z MS v Berlíne 2009."
+      - text: Na MS 2011 ho vo finále stovky diskvalifikovali
+        why: "V Tegu predčasne vybehol z blokov."
+      - text: Po kariére trénoval s profesionálnym futbalovým klubom
+        why: "V roku 2018 s austrálskym Central Coast Mariners."
+      - text: Posledný individuálny pretek na 100 m skončil bronzom
+        why: "MS v Londýne 2017, potom ukončil kariéru."
+    wrong:
+      - text: Rekord 9,58 zabehol na olympiáde v Pekingu
+        why: "V Pekingu 2008 bežal 9,69; 9,58 zabehol na MS v Berlíne 2009."
+      - text: Vyhral olympijské zlato na 400 m
+        why: "Jeho trate boli 100 a 200 m, olympijské zlato na 400 m nemá."
+      - text: Drží svetový rekord v štafete 4 × 100 m spolu s USA
+        why: "Rekord 36,84 má s Jamajkou z Londýna 2012."
+      - text: Stovku bežal na olympiáde prvýkrát v Londýne 2012
+        why: "Peking 2008 bol jeho medzinárodný debut na 100 m a hneď ho vyhral."
+
+  - id: cs-olympijske-zlato
+    type: pick
+    prompt: Kto vyhral olympijské zlato v atletike za Československo alebo Česko?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Czechoslovakia_at_the_Olympics
+    tags: [ceskoslovensko, olympiada]
+    correct:
+      - text: Emil Zátopek
+        why: "Štyri zlatá: 10 000 m v Londýne 1948 a trojkoruna v Helsinkách 1952."
+      - text: Dana Zátopková
+        why: "Oštep v Helsinkách 1952, pár minút po Emilovom víťazstve na 5000 m."
+      - text: Olga Fikotová
+        why: "Disk v Melbourne 1956; potom sa vydala za amerického kladivára Harolda Connollyho."
+      - text: Miloslava Rezková
+        why: "Výška v Mexiku 1968."
+      - text: Ludvík Daněk
+        why: "Disk v Mníchove 1972."
+      - text: Jozef Pribilinec
+        why: "Slovák z Kopernice vyhral chôdzu na 20 km v Soule 1988."
+      - text: Robert Změlík
+        why: "Desaťboj v Barcelone 1992."
+      - text: Jan Železný
+        why: "Oštep 1992, 1996 a 2000, v Soule 1988 ešte striebro."
+      - text: Roman Šebrle
+        why: "Desaťboj v Aténach 2004."
+      - text: Barbora Špotáková
+        why: "Oštep v Pekingu 2008 aj v Londýne 2012."
+    wrong:
+      - text: Jarmila Kratochvílová
+        why: "Na olympiáde len striebro na 400 m (Moskva 1980), Los Angeles 1984 Československo bojkotovalo."
+      - text: Tomáš Dvořák
+        why: "Dvakrát majster sveta v desaťboji, na olympiáde bronz z Atlanty 1996."
+      - text: Vítězslav Veselý
+        why: "Oštepár s dvoma olympijskými bronzmi (2012 a 2020)."
+      - text: Jakub Vadlejch
+        why: "Olympijské striebro v oštepe z Tokia 2020."
+      - text: Helena Fibingerová
+        why: "Guliarka mala z olympiády bronz (Montreal 1976)."
+      - text: Imrich Bugár
+        why: "Diskár bol majstrom sveta 1983, z olympiády má striebro (Moskva 1980)."
+
+  - id: slovaci-alebo-cesi
+    type: pick
+    prompt: Ktorí z týchto atlétov sú Slováci?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Mat%C4%9Bj_T%C3%B3th
+    tags: [slovensko, ceskoslovensko]
+    correct:
+      - text: Matej Tóth
+        why: "Nitran, majster sveta 2015 v chôdzi na 50 km."
+      - text: Emma Zapletalová
+        why: "Tiež z Nitry; bronz na MS 2025 a titul majsterky Európy 2026 na 400 m prekážok."
+      - text: Ján Volko
+        why: "Šprintér, halový majster Európy na 60 m z roku 2019."
+      - text: Jozef Pribilinec
+        why: "Chodec z Kopernice, olympijský víťaz 1988."
+      - text: Libor Charfreitag
+        why: "Kladivár z Trnavy, majster Európy 2010."
+    wrong:
+      - text: Roman Šebrle
+        why: "Český desaťbojár, prvý nad 9000 bodov."
+      - text: Jan Železný
+        why: "Český oštepár, svetový rekordman."
+      - text: Barbora Špotáková
+        why: "Česká oštepárka, svetová rekordérka."
+      - text: Jarmila Kratochvílová
+        why: "Rodáčka z Golčovho Jeníkova v Česku."
+      - text: Jakub Vadlejch
+        why: "Český oštepár, olympijské striebro 2020."
+      - text: Vítězslav Veselý
+        why: "Český oštepár, dva olympijské bronzy."
+      - text: Jan Štefela
+        why: "Český výškar, bronz na MS v Tokiu 2025."
+      - text: Ludvík Daněk
+        why: "Diskár z Blanska, olympijský víťaz 1972."
+      - text: Miloslava Rezková
+        why: "Výškarka z Prahy, olympijská víťazka 1968."
+
+  - id: etiopcania-nie-kenania
+    type: pick
+    prompt: Ktorí z týchto bežcov sú Etiópčania (a nie Keňania)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_athletics_(men)
+    tags: [vytrvalost]
+    correct:
+      - text: Abebe Bikila
+        why: "Olympijský maratón vyhral v Ríme 1960 bosý a v Tokiu 1964 znova."
+      - text: Haile Gebrselassie
+        why: "Dve olympijské zlatá na 10 000 m (1996, 2000) a dva maratónske rekordy."
+      - text: Kenenisa Bekele
+        why: "Trojnásobný olympijský víťaz na dráhe, v maratóne mu k rekordu chýbali dve sekundy."
+      - text: Miruts Yifter
+        why: "Prezývaný „Yifter the Shifter“, v Moskve 1980 vyhral 5000 aj 10 000 m."
+      - text: Mamo Wolde
+        why: "Olympijský víťaz v maratóne z Mexika 1968."
+      - text: Tamirat Tola
+        why: "Olympijský víťaz v maratóne z Paríža 2024."
+      - text: Selemon Barega
+        why: "Zlato na 10 000 m v Tokiu 2021."
+      - text: Lamecha Girma
+        why: "Svetový rekordman na 3000 m prekážok (7:52,11)."
+    wrong:
+      - text: Eliud Kipchoge
+        why: "Keňan, dvojnásobný olympijský víťaz v maratóne."
+      - text: David Rudisha
+        why: "Keňan, svetový rekord na 800 m z Londýna 2012."
+      - text: Kipchoge Keino
+        why: "Keňská legenda, zlato na 1500 m v Mexiku 1968."
+      - text: Paul Tergat
+        why: "Keňan, dvakrát olympijské striebro za Gebrselassiem."
+      - text: Ezekiel Kemboi
+        why: "Keňan, dvojnásobný olympijský víťaz na 3000 m prekážok."
+      - text: Emmanuel Wanyonyi
+        why: "Keňan, olympijský víťaz na 800 m z Paríža 2024."
+      - text: Conseslus Kipruto
+        why: "Keňan, prekážkar, zlato z Ria 2016."
+
+  - id: zatopek-olympijske-zlata
+    type: pick
+    prompt: V ktorých pretekoch vyhral Emil Zátopek olympijské zlato?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Emil_Z%C3%A1topek
+    tags: [ceskoslovensko, olympiada, legendy]
+    correct:
+      - text: 10 000 m, Londýn 1948
+        why: "Prvé olympijské zlato „Českej lokomotívy“."
+      - text: 5000 m, Helsinki 1952
+        why: "V ten istý deň vyhrala oštep jeho manželka Dana."
+      - text: 10 000 m, Helsinki 1952
+        why: "Obhájil titul z Londýna."
+      - text: maratón, Helsinki 1952
+        why: "Prvý maratón v živote, na štart sa rozhodol na poslednú chvíľu."
+    wrong:
+      - text: 5000 m, Londýn 1948
+        why: "Tu bral striebro."
+      - text: maratón, Londýn 1948
+        why: "V roku 1948 maratón nebežal."
+      - text: 1500 m, Helsinki 1952
+        why: "Taká krátka trať nebola jeho; v Helsinkách bežal 5000, 10 000 a maratón."
+      - text: 3000 m prekážok, Helsinki 1952
+        why: "Prekážky Zátopek na olympiáde nebežal."
+      - text: 10 000 m, Melbourne 1956
+        why: "V Melbourne už zlato nezískal."
+      - text: maratón, Melbourne 1956
+        why: "Maratón v Melbourne nevyhral."
+
+  - id: trojnasobni-olympijski-vitazi
+    type: pick
+    prompt: Kto vyhral tú istú individuálnu atletickú disciplínu na olympiáde aspoň trikrát?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_athletics_(men)
+    tags: [olympiada, legendy]
+    correct:
+      - text: Usain Bolt
+        why: "100 aj 200 m v rokoch 2008, 2012 a 2016."
+      - text: Jan Železný
+        why: "Oštep 1992, 1996 a 2000."
+      - text: Carl Lewis
+        why: "Skok do diaľky štyrikrát za sebou, 1984 až 1996."
+      - text: Al Oerter
+        why: "Disk štyrikrát za sebou, 1956 až 1968."
+    wrong:
+      - text: Armand Duplantis
+        why: "Zatiaľ dve olympijské zlatá (Tokio 2021, Paríž 2024)."
+      - text: Eliud Kipchoge
+        why: "Maratón vyhral dvakrát, v Paríži 2024 nedobehol."
+      - text: Mo Farah
+        why: "5000 aj 10 000 m po dvakrát (2012, 2016)."
+      - text: David Rudisha
+        why: "800 m dvakrát, 2012 a 2016."
+      - text: Michael Johnson
+        why: "400 m dvakrát (1996, 2000), 200 m raz."
+      - text: Edwin Moses
+        why: "400 m prekážok 1976 a 1984; v roku 1980 USA bojkotovali hry."
+      - text: Sergej Bubka
+        why: "Kráľ žrde s desiatkami svetových rekordov, no olympijské zlato má len jedno (Soul 1988)."
+      - text: Ezekiel Kemboi
+        why: "Prekážky vyhral dvakrát, 2004 a 2012."
+
+  # ---------------------------------------------------------------- ORDER
+  - id: wr-100m-progresia
+    type: order
+    prompt: Zoraď tieto svetové rekordy mužov na 100 m od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Men%27s_100_metres_world_record_progression
+    tags: [sprint, rekordy]
+    items:
+      - { text: "Jim Hines, 9,95", value: 1968, why: "Prvá stovka pod 10 sekúnd s elektronickou časomierou, v Mexiku." }
+      - { text: "Calvin Smith, 9,93", value: 1983, why: "Vydržal štyri roky, kým ho nevyrovnal Carl Lewis." }
+      - { text: "Carl Lewis, 9,86", value: 1991, why: "Na MS v Tokiu 1991, rekord mu predtým na dva mesiace vzal Leroy Burrell." }
+      - { text: "Donovan Bailey, 9,84", value: 1996, why: "Olympijské finále v Atlante." }
+      - { text: "Maurice Greene, 9,79", value: 1999, why: "Atény, vtedy obrovský skok o päť stotín." }
+      - { text: "Asafa Powell, 9,74", value: 2007, why: "Jeho štvrtý svetový rekord, v talianskom Rieti." }
+      - { text: "Usain Bolt, 9,58", value: 2009, why: "MS v Berlíne, platí doteraz." }
+
+  - id: olympijske-zlata-krajiny
+    type: order
+    prompt: Zoraď krajiny podľa počtu olympijských zlatých medailí v atletike za celú históriu.
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://www.olympedia.org/sports/ATH
+    tags: [olympiada, medaily]
+    items:
+      - { text: USA, value: 358, why: "Viac ako päťkrát toľko ako druhý Sovietsky zväz." }
+      - { text: Veľká Británia, value: 57, why: "Najviac zo súčasných európskych krajín." }
+      - { text: Fínsko, value: 48, why: "Vďaka vytrvalcom ako Paavo Nurmi a oštepárom." }
+      - { text: Keňa, value: 38, why: "Takmer všetko z behov na stredných a dlhých tratiach." }
+      - { text: Jamajka, value: 27, why: "Šprinterská veľmoc, s Boltom na čele." }
+      - { text: Etiópia, value: 24, why: "Vytrvalci od Bikilu po Tolu." }
+
+  - id: rekordy-vo-vrhoch
+    type: order
+    prompt: Zoraď tieto svetové rekordy vo vrhačských disciplínach od najdlhšieho.
+    direction: desc
+    unit: m
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_world_records_in_athletics
+    tags: [rekordy, vrhy]
+    items:
+      - { text: oštep mužov (Železný), value: 98.48, why: "Jena 1996, takmer stometrový hod." }
+      - { text: kladivo mužov (Sedych), value: 86.74, why: "Stuttgart 1986." }
+      - { text: kladivo žien (Włodarczyková), value: 82.98, why: "Varšava 2016." }
+      - { text: disk žien (Reinschová), value: 76.80, why: "Ženský disk váži 1 kg, mužský 2 kg, preto ženy hádžu ďalej." }
+      - { text: disk mužov (Alekna), value: 75.56, why: "Litovec, rekord z roku 2025." }
+      - { text: oštep žien (Špotáková), value: 72.28, why: "Stuttgart 2008." }
+      - { text: guľa mužov (Crouser), value: 23.56, why: "Ryan Crouser v roku 2023." }
+
+  - id: cs-sk-atletika-chronologia
+    type: order
+    prompt: Zoraď tieto československé, české a slovenské atletické úspechy od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Czechoslovakia_at_the_Olympics
+    tags: [ceskoslovensko, slovensko]
+    items:
+      - { text: Zátopkova trojkoruna v Helsinkách, value: 1952, why: "5000 m, 10 000 m a maratón na jedných hrách, nikto to nezopakoval." }
+      - { text: Kratochvílovej svetový rekord na 800 m, value: 1983, why: "1:53,28 v Mníchove, platí dodnes." }
+      - { text: Bubkov prvý svetový rekord v Bratislave, value: 1984, why: "5,85 m na štadióne v Bratislave, prvý z jeho rekordov." }
+      - { text: Pribilinec vyhral chôdzu na olympiáde v Soule, value: 1988, why: "20 km, zlato pre Slováka v drese Československa." }
+      - { text: Železného svetový rekord 98,48 m, value: 1996, why: "V nemeckej Jene, platí dodnes." }
+      - { text: Šebrle ako prvý desaťbojár nad 9000 bodov, value: 2001, why: "9026 bodov v rakúskom Götzise." }
+      - { text: Tóth majstrom sveta v chôdzi na 50 km, value: 2015, why: "V Pekingu, rok pred olympijským zlatom v Riu." }
+      - { text: Zapletalová bronzová na MS v Tokiu, value: 2025, why: "400 m prekážok v slovenskom rekorde 53,00." }
+
+  - id: tokio-2025-medailova-tabulka
+    type: order
+    prompt: Zoraď krajiny podľa počtu zlatých medailí na MS v atletike v Tokiu 2025.
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/2025_World_Athletics_Championships
+    tags: [majstrovstva-sveta, medaily]
+    items:
+      - { text: USA, value: 16, why: "S veľkým náskokom prví." }
+      - { text: Keňa, value: 7, why: "Kipyegonová, Chebetová a ďalší vytrvalci." }
+      - { text: Kanada, value: 3, why: "Medzi zlatými aj kladivári Katzberg a Rogersová." }
+      - { text: Holandsko, value: 2, why: "Femke Bolová a guliarka Jessica Schilderová." }
+      - { text: Jamajka, value: 1, why: "Len Sevillova stovka, zato šesť strieborných." }
+      - { text: Veľká Británia, value: 0, why: "Tri striebra a dva bronzy, ani jedno zlato." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: cislo-duplantis-rekord
+    type: number
+    prompt: Aký je aktuálny svetový rekord Armanda Duplantisa v skoku o žrdi?
+    answer: 6.31
+    unit: m
+    scale: linear
+    tolerance: 0.05
+    why: "Skočil ho v marci 2026 v Uppsale, bol to jeho 15. svetový rekord, o centimeter vyššie než 6,30 m z MS v Tokiu."
+    asOf: "2026-11"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+    tags: [skok-o-zrdi, rekordy]
+
+  - id: cislo-kratochvilova-rok
+    type: number
+    prompt: V ktorom roku zabehla Jarmila Kratochvílová svetový rekord na 800 m, ktorý platí dodnes?
+    answer: 1983
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "1:53,28 v Mníchove 26. júla 1983, najstarší platný individuálny svetový rekord v atletike."
+    asOf: "2026-11"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Jarmila_Kratochv%C3%ADlov%C3%A1
+    tags: [ceskoslovensko, rekordy]
+
+  - id: cislo-bolt-100m
+    type: number
+    prompt: Aký je svetový rekord mužov v behu na 100 m?
+    answer: 9.58
+    unit: s
+    scale: linear
+    tolerance: 0.05
+    why: "Usain Bolt na MS v Berlíne 2009, o 11 stotín lepšie než jeho rekord z Pekingu."
+    asOf: "2026-11"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Men%27s_100_metres_world_record_progression
+    tags: [sprint, rekordy]
+
+  - id: cislo-zelezny-ostep
+    type: number
+    prompt: Koľko metrov meria svetový rekord Jana Železného v hode oštepom?
+    answer: 98.48
+    unit: m
+    scale: linear
+    tolerance: 2
+    why: "Hodil ho v Jene v roku 1996; okrem rekordu mu patria aj 4., 5. a 6. najdlhší hod histórie."
+    asOf: "2026-11"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Jan_%C5%BDelezn%C3%BD
+    tags: [ceskoslovensko, rekordy]
+
+  - id: cislo-ceskoslovensko-zlata
+    type: number
+    prompt: Koľko olympijských zlatých medailí v atletike získalo Československo?
+    answer: 11
+    unit: zlatých
+    scale: linear
+    tolerance: 2
+    why: "Štyri z nich patria Emilovi Zátopkovi, posledné vybojovali Železný a Změlík v Barcelone 1992."
+    difficulty: 3
+    source: https://www.olympedia.org/sports/ATH
+    tags: [ceskoslovensko, olympiada]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: sebrle-9000
+    type: choice
+    prompt: Kto bol prvý desaťbojár, ktorý prekonal hranicu 9000 bodov?
+    correct:
+      text: Roman Šebrle
+      why: "V roku 2001 v Götzise nazbieral 9026 bodov."
+    wrong:
+      - { text: Tomáš Dvořák, why: "Jeho krajan sa v roku 1999 zastavil na 8994 bodoch, šesť bodov pod hranicou." }
+      - { text: Ashton Eaton, why: "Američan prekonal 9000 bodov až po Šebrlovi (9045 v roku 2015)." }
+      - { text: Kevin Mayer, why: "Súčasný rekordman (9126), ale až v roku 2018." }
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Roman_%C5%A0ebrle
+    tags: [desatboj, ceskoslovensko]
+
+  - id: bubka-prvy-rekord
+    type: choice
+    prompt: V ktorom meste skočil Sergej Bubka svoj prvý svetový rekord v skoku o žrdi?
+    correct:
+      text: Bratislava
+      why: "26. mája 1984 skočil v Bratislave 5,85 m."
+    wrong:
+      - { text: Paríž, why: "Tu o týždeň neskôr zlepšil rekord na 5,88 m." }
+      - { text: Moskva, why: "V Moskve skočil rekord 5,78 m Poliak Kozakiewicz na OH 1980." }
+      - { text: Kyjev, why: "Hlavné mesto Ukrajiny, prvý Bubkov rekord tam nepadol." }
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
+    tags: [skok-o-zrdi, slovensko]
+
+  - id: warholm-rekord-padol
+    type: choice
+    prompt: Kto v roku 2026 prekonal svetový rekord Karstena Warholma na 400 m prekážok?
+    correct:
+      text: Alison dos Santos
+      why: "Brazílčan zabehol v Zürichu 45,80, Warholm dobehol druhý."
+    wrong:
+      - { text: Rai Benjamin, why: "Olympijský víťaz 2024 a majster sveta 2025, rekord však nemá." }
+      - { text: Abderrahman Samba, why: "Katarčan bral bronz na MS 2025, rekord nezabehol." }
+      - { text: Kevin Young, why: "Jeho rekord 46,78 z Barcelony 1992 padol už dávno." }
+    asOf: "2026-11"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_world_records_in_athletics
+    tags: [rekordy, prekazky]
+
+  - id: volko-halovy-titul
+    type: choice
+    prompt: V ktorej disciplíne sa Ján Volko stal v roku 2019 halovým majstrom Európy?
+    correct:
+      text: 60 m
+      why: "Titul získal 2. marca 2019; o dva roky predtým bral na šesťdesiatke striebro."
+    wrong:
+      - { text: 200 m, why: "Dvestovku beháva, halový titul to však nie je." }
+      - { text: 400 m, why: "To je skôr doména Emmy Zapletalovej." }
+      - { text: 60 m prekážok, why: "Volko nie je prekážkar." }
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/J%C3%A1n_Volko
+    tags: [slovensko, sprint]

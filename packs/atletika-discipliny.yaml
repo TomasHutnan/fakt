@@ -1,0 +1,777 @@
+id: atletika-discipliny
+title: "Atletika: disciplíny a pravidlá"
+description: Desaťboj, prekážky, chybné štarty, náčinie, kvalifikačné limity, Diamantová liga a prémie – kráľovná športov od preťahovania lanom po Budapešť.
+lang: sk
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: olympijske-discipliny-historicke
+    type: pick
+    prompt: Ktoré z týchto disciplín boli niekedy súčasťou olympijskej atletiky?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_Summer_Olympics
+    tags: [olympiáda, história]
+    correct:
+      - text: preťahovanie lanom
+        why: V rokoch 1900–1920 sa počítalo do olympijskej atletiky, dnes ho za atletiku nikto nepovažuje.
+      - text: skok do výšky z miesta
+        why: Bez rozbehu, z oboch nôh; na hrách bol od roku 1900 do 1912.
+      - text: skok do diaľky z miesta
+        why: Ďalší skok bez rozbehu, ktorý z programu zmizol po hrách 1912.
+      - text: trojskok z miesta
+        why: Len dvakrát, v Paríži 1900 a v St. Louis 1904.
+      - text: beh na 200 m cez prekážky
+        why: Nízke prekážky, olympijský len v rokoch 1900 a 1904.
+      - text: hod 56-librovým závažím
+        why: Takmer 25,4 kg železa, hádzalo sa v rokoch 1904 a 1920.
+      - text: beh na 60 m
+        why: Dnes len halová disciplína, no na hrách 1900 a 1904 sa bežal vonku.
+      - text: vrh guľou obojručne
+        why: Raz, v Štokholme 1912; výsledok bol súčet pokusov pravou a ľavou rukou.
+      - text: hod oštepom voľným štýlom
+        why: Len v Londýne 1908, oštep sa mohol chytiť kdekoľvek.
+      - text: cezpoľný beh
+        why: Na hrách 1912, 1920 a 1924, potom zmizol a odvtedy sa nevrátil.
+    wrong:
+      - text: hod kladivom obojručne
+        why: Obojručne sa v roku 1912 vrhala guľa, hádzal disk a oštep, kladivo nie.
+      - text: beh na 100 yardov
+        why: Olympijské šprinty sa merali v metroch; yardy vo výpočte olympijských disciplín nie sú.
+      - text: chôdza na 100 km
+        why: Najdlhšia olympijská chôdza mala 50 km.
+      - text: štafeta 4 × 200 m
+        why: Na hrách boli štafety 4 × 100, 4 × 400 a raz kombinovaná štafeta (1908), nie 4 × 200.
+      - text: skok o žrdi z miesta
+        why: Skákalo sa z miesta do výšky, do diaľky aj trojskokom, ale o žrdi vždy s rozbehom.
+      - text: hod kriketovou loptičkou
+        why: Na olympiáde nikdy nebol; z exotických hodov sa skúšal disk po grécky a obojručné hody.
+      - text: beh na 1 míľu
+        why: Míľa na hrách nebola; bežalo sa 5 míľ (1908) a tímové behy na 3 a 4 míle.
+
+  - id: pariz-2024-program
+    type: pick
+    prompt: Ktoré z týchto disciplín boli v programe atletiky na olympiáde v Paríži 2024?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics
+    tags: [olympiáda, Paríž 2024]
+    correct:
+      - text: chôdza na 20 km
+        why: Chodci súťažili pri moste Pont d'Iéna, kúsok od Eiffelovej veže.
+      - text: zmiešaná štafeta v chôdzi na maratónskej trati
+        why: Muž a žena sa striedali na trati dlhej ako maratón; v tejto podobe len raz, v Paríži.
+      - text: zmiešaná štafeta 4 × 400 m
+        why: Na hrách od Tokia 2020.
+      - text: beh na 3000 m prekážok žien
+        why: Ženy ho bežia na hrách od Pekingu 2008, je to najmladšia ženská disciplína.
+      - text: sedemboj
+        why: Ženský viacboj, na hrách od roku 1984.
+      - text: desaťboj
+        why: Mužský viacboj, olympijský od roku 1912.
+      - text: beh na 10 000 m
+        why: Muži ho bežali rovno ako finále, 2. augusta, bez rozbehov.
+      - text: maratón
+        why: Štart pri radnici Hôtel de Ville, cieľ pri Invalidovni.
+      - text: hod kladivom žien
+        why: Ženy hádžu kladivo na hrách od roku 2000.
+    wrong:
+      - text: chôdza na 50 km
+        why: Poslednýkrát v Tokiu 2020; v Paríži ju nahradila zmiešaná štafeta v chôdzi.
+      - text: beh na 60 m
+        why: Halová disciplína; na olympiáde naposledy v roku 1904.
+      - text: mužský sedemboj
+        why: Ten sa súťaží iba v hale; muži majú na hrách desaťboj.
+      - text: zmiešaná štafeta 4 × 100 m
+        why: Tá debutuje až v Los Angeles 2028.
+      - text: cezpoľný beh
+        why: Na hrách naposledy v roku 1924.
+      - text: chôdza na polmaratónskej trati
+        why: Nahradí 20 km chôdzu až v Los Angeles 2028.
+      - text: ženský desaťboj
+        why: Ženy na hrách súťažia v sedemboji, desaťboj je len mužský.
+      - text: beh na 200 m cez prekážky
+        why: Na hrách len v rokoch 1900 a 1904.
+
+  - id: desatboj-discipliny
+    type: pick
+    prompt: Ktoré disciplíny patria do desaťboja?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Decathlon
+    tags: [viacboj]
+    correct:
+      - text: beh na 100 m
+        why: Otvára prvý deň desaťboja.
+      - text: skok do diaľky
+        why: Druhá disciplína prvého dňa.
+      - text: vrh guľou
+        why: Tretia disciplína prvého dňa.
+      - text: skok do výšky
+        why: Štvrtá disciplína prvého dňa.
+      - text: beh na 400 m
+        why: Uzatvára prvý deň.
+      - text: beh na 110 m prekážok
+        why: Ráno druhého dňa, hneď ako prvá disciplína.
+      - text: hod diskom
+        why: Druhá disciplína druhého dňa.
+      - text: skok o žrdi
+        why: Tretia disciplína druhého dňa.
+      - text: hod oštepom
+        why: Predposledná disciplína.
+      - text: beh na 1500 m
+        why: Záverečná disciplína, po ktorej ide celé pole spolu čestné kolo.
+    wrong:
+      - text: trojskok
+        why: Do desaťboja nepatrí; zo skokov sú tam diaľka, výška a žrď.
+      - text: beh na 200 m
+        why: Ten je v ženskom sedemboji, nie v desaťboji.
+      - text: beh na 800 m
+        why: Tiež zo sedemboja; desaťbojári bežia 400 a 1500 m.
+      - text: hod kladivom
+        why: Z hodov sú v desaťboji len guľa, disk a oštep.
+      - text: beh na 400 m prekážok
+        why: Prekážky v desaťboji sú len krátke, 110 m.
+      - text: beh na 3000 m prekážok
+        why: Desaťbojárom by sa po žrdi a oštepe naozaj nechcelo.
+      - text: beh na 60 m
+        why: Patrí do halového sedemboja mužov, nie do desaťboja.
+
+  - id: sedemboj-discipliny
+    type: pick
+    prompt: Ktoré disciplíny patria do ženského sedemboja?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Heptathlon
+    tags: [viacboj]
+    correct:
+      - text: beh na 100 m prekážok
+        why: Otvára sedemboj.
+      - text: skok do výšky
+        why: Druhá disciplína prvého dňa.
+      - text: vrh guľou
+        why: Tretia disciplína prvého dňa.
+      - text: beh na 200 m
+        why: Uzatvára prvý deň; pribudol, keď sedemboj nahradil päťboj.
+      - text: skok do diaľky
+        why: Otvára druhý deň.
+      - text: hod oštepom
+        why: Spolu s 200 m pribudol pri prechode z päťboja na sedemboj.
+      - text: beh na 800 m
+        why: Záverečný beh sedemboja.
+    wrong:
+      - text: hod diskom
+        why: Disk je v desaťboji, v sedemboji nie.
+      - text: skok o žrdi
+        why: Žrď je len v desaťboji a v halovom sedemboji mužov.
+      - text: beh na 400 m
+        why: Patrí do desaťboja; ženy bežia 200 a 800 m.
+      - text: trojskok
+        why: Nie je v žiadnom olympijskom viacboji.
+      - text: beh na 1500 m
+        why: To je záver desaťboja.
+      - text: beh na 100 m
+        why: Ženy začínajú prekážkami, nie hladkou stovkou.
+      - text: hod kladivom
+        why: Kladivo nie je v žiadnom bežnom viacboji.
+
+  - id: halove-ms-discipliny
+    type: pick
+    prompt: Ktoré disciplíny sa súťažia na halových majstrovstvách sveta?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/2025_World_Athletics_Indoor_Championships
+    tags: [hala]
+    correct:
+      - text: beh na 60 m
+        why: Halová náhrada stovky.
+      - text: beh na 60 m prekážok
+        why: Len päť prekážok namiesto desiatich.
+      - text: beh na 400 m
+        why: V hale sú to dve kolá po 200 m.
+      - text: beh na 3000 m
+        why: Najdlhší halový beh; na olympiáde ho bežali len ženy v rokoch 1984–1992.
+      - text: štafeta 4 × 400 m
+        why: V programe od roku 1991.
+      - text: trojskok
+        why: Ženy ho mali v hale skôr ako vonku na olympiáde.
+      - text: vrh guľou
+        why: Jediný hod, ktorý sa do haly bezpečne zmestí.
+      - text: päťboj žien
+        why: Halová verzia sedemboja; oštep sa pod strechu nezmestí.
+      - text: sedemboj mužov
+        why: Halový viacboj mužov, končí behom na 1000 m.
+    wrong:
+      - text: beh na 200 m
+        why: Zrušený po roku 2004, lebo na úzkych zákrutách mali šancu len vonkajšie dráhy.
+      - text: beh na 100 m
+        why: V hale sa beží 60 m.
+      - text: beh na 110 m prekážok
+        why: V hale sú prekážky na 60 m.
+      - text: hod oštepom
+        why: Haly sú naň primalé, preto sa v hale súťaží päťboj, nie sedemboj.
+      - text: hod diskom
+        why: Pod strechou sa z hodov súťaží len guľa.
+      - text: hod kladivom
+        why: Sedemkilová guľa na drôte do haly naozaj nepatrí.
+      - text: beh na 3000 m prekážok
+        why: Vodná priekopa v hale nie je.
+      - text: desaťboj
+        why: Muži majú v hale sedemboj.
+      - text: chôdza
+        why: Z halových MS zmizla po roku 1993.
+
+  - id: pravidla-behy
+    type: pick
+    prompt: Ktoré tvrdenia o pravidlách bežeckých disciplín sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/False_start
+    tags: [pravidlá, beh]
+    correct:
+      - text: Na olympiáde vylučuje šprintéra už prvý chybný štart
+        why: Na to doplatil aj Usain Bolt vo finále stovky na MS 2011 v Tegu.
+      - text: Pohyb skôr ako 0,1 s po výstrele sa počíta ako chybný štart
+        why: Rýchlejšie podľa pravidiel človek na výstrel zareagovať nevie.
+      - text: Prekážkar, ktorý nechtiac zhodí prekážku, nie je diskvalifikovaný
+        why: Zhodenie prekážky stojí len čas, nie diskvalifikáciu.
+      - text: Na prekážku v behu na 3000 m prekážok sa smie stúpiť
+        why: Prekážky sú pevné, nepadajú a pravidlá dovoľujú prekonať ich akýmkoľvek spôsobom.
+      - text: Odovzdávkové územie v štafete 4 × 100 m má 30 m
+        why: Od novembra 2017; predtým 20 m plus 10 m na rozbeh.
+      - text: Pád kolíka sám osebe neznamená diskvalifikáciu štafety
+        why: Stojí veľa času, ale sám osebe štafetu nevylúči.
+      - text: Bežci na 800 m sa po prvej zákrute zbiehajú do jednej dráhy
+        why: Je to najkratší beh, v ktorom sa bežci stretnú pri vnútornom okraji.
+      - text: Rekord na 100 m neplatí, ak fúka vietor v chrbát nad 2,0 m/s
+        why: Preto Tyson Gay 9,68 s pri vetre 4,1 m/s nie je rekord.
+    wrong:
+      - text: Za prvý chybný štart dostane šprintér na olympiáde len varovanie
+        why: Tolerancia skončila; už prvý chybný štart znamená vylúčenie.
+      - text: Kto zhodí tri prekážky, je diskvalifikovaný
+        why: Nechtiac zhodených prekážok môže byť koľkokoľvek, trestá sa len úmysel.
+      - text: Prekážky v behu na 3000 m prekážok sa musia preskočiť bez dotyku
+        why: Mnohí bežci na prekážku normálne stúpia, najmä pri vodnej priekope.
+      - text: Odovzdávkové územie v štafete 4 × 100 m má 20 m
+        why: Tak to bolo do roku 2017, dnes má 30 m.
+      - text: Ak bežcovi spadne kolík, štafeta je automaticky vylúčená
+        why: Pád kolíka sa netrestá, len stojí veľa času.
+      - text: Rekord na 400 m neplatí pri vetre v chrbát nad 2,0 m/s
+        why: Veterný limit platí len pre 100 m, 200 m, krátke prekážky, diaľku a trojskok.
+      - text: Beh na 800 m sa beží celý v dráhach
+        why: V dráhach je len do konca prvej zákruty.
+      - text: Vodná priekopa v behu na 3000 m prekážok je hlboká vyše metra
+        why: Najhlbšia je hneď za prekážkou, asi 70 cm, a smerom dopredu sa zvažuje.
+
+  - id: pravidla-technicke
+    type: pick
+    prompt: Ktoré tvrdenia o pravidlách skokov a hodov sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/High_jump
+    tags: [pravidlá, skoky, hody]
+    correct:
+      - text: Výškar vypadne po troch neúspešných pokusoch za sebou
+        why: Pokusy sa počítajú za sebou, aj keď sú na rôznych výškach.
+      - text: Výškar smie niektorú výšku vynechať
+        why: Vynechanie šetrí sily, ale riskuje, že na vyššej laťke neuspeje.
+      - text: Pri rovnosti na prvom mieste vo výške si skokani môžu zlato podeliť
+        why: Pravidlo z roku 2009; v Tokiu 2020 si tak zlato rozdelili Barshim a Tamberi.
+      - text: Vo finále hodov dostane po troch sériách najlepších osem ďalšie tri pokusy
+        why: Ostatní finalisti po tretej sérii končia.
+      - text: Guľa sa musí vrhať jednou rukou
+        why: Vypúšťa sa jednou rukou nad úrovňou ramena; obojručne sa vrhalo len na hrách 1912.
+      - text: Mužská guľa a mužské kladivo vážia rovnako
+        why: Oboje 7,26 kg, teda 16 libier.
+      - text: Skok do diaľky sa meria k najbližšej stope v piesku
+        why: Kto si sadne dozadu, prichádza o centimetre.
+      - text: Výsek pre vrh guľou má necelých 35 stupňov
+        why: Presne 34,92°; od roku 2004 ho kvôli bezpečnosti zúžili zo 40°.
+    wrong:
+      - text: Výškar vypadne, len ak trikrát neprekoná tú istú výšku
+        why: Stačia tri neúspechy za sebou na akýchkoľvek výškach.
+      - text: Pri rovnosti vo výške musí o víťazovi vždy rozhodnúť rozoskakovanie
+        why: Od roku 2009 je rozoskakovanie dobrovoľné.
+      - text: Od roku 2026 sa skok do diaľky skáče zo 40-centimetrovej odrazovej zóny
+        why: Zónu skúšali, no v decembri 2025 od reformy upustili.
+      - text: Guľu možno vrhať obojručne, ak to pretekár vopred ohlási
+        why: Obojručný vrh bol olympijský len v roku 1912.
+      - text: Ženské kladivo váži rovnako ako mužské
+        why: Ženské má 4 kg, mužské 7,26 kg.
+      - text: Každý finalista vo vrhu guľou má šesť pokusov
+        why: Štvrtý až šiesty pokus dostane len najlepších osem.
+      - text: Rekord v hode oštepom neplatí pri vetre v chrbát nad 2,0 m/s
+        why: Veterný limit platí len pre šprinty, krátke prekážky, diaľku a trojskok.
+      - text: Diaľka sa meria od miesta, kde sa skokan skutočne odrazil
+        why: Meria sa od čiary brvna, takže každý centimeter pred ňou je stratený.
+
+  - id: vietor-rekordy
+    type: pick
+    prompt: V ktorých disciplínach neplatí rekord, ak fúka vietor v chrbát rýchlejšie ako 2,0 m/s?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Wind_assistance
+    tags: [pravidlá, rekordy]
+    correct:
+      - text: beh na 100 m
+        why: Tyson Gay zabehol 9,68 s, ale pri vetre 4,1 m/s, takže to rekord nie je.
+      - text: beh na 200 m
+        why: Leroy Burrell zabehol v roku 1990 19,61 s pri vetre 4,0 m/s, rekord z toho nebol.
+      - text: beh na 100 m prekážok
+        why: Krátke prekážky sa bežia po rovinke, takže vietor pomáha celou silou.
+      - text: beh na 110 m prekážok
+        why: Renaldo Nehemiah mal 12,91 s pri vetre 3,5 m/s, a tak to nebolo uznané.
+      - text: skok do diaľky
+        why: Rozbeh je šprint, vietor v chrbát pomáha.
+      - text: trojskok
+        why: Rovnako ako diaľka, rozbeh po rovinke.
+    wrong:
+      - text: beh na 400 m
+        why: Kolo dookola štadióna, vietor raz pomáha a raz brzdí; limit tu neplatí.
+      - text: beh na 400 m prekážok
+        why: Tiež celé kolo, veterný limit sa naň nevzťahuje.
+      - text: beh na 800 m
+        why: Vietor sa tu pri rekordoch nemeria.
+      - text: skok do výšky
+        why: Veterný limit pre výšku nie je.
+      - text: skok o žrdi
+        why: Hoci sa beží rozbeh, veterný limit pre žrď neplatí.
+      - text: hod oštepom
+        why: Hody veterný limit nemajú.
+      - text: hod diskom
+        why: Disk vietor oproti dokonca nesie ďalej, no limit tu neplatí.
+      - text: vrh guľou
+        why: 7,26 kg vietor veľmi nepostrčí.
+
+  - id: ultimate-2026-discipliny
+    type: pick
+    prompt: Ktoré mužské disciplíny boli na prvom World Athletics Ultimate Championship v Budapešti 2026?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/World_Athletics_Ultimate_Championship
+    asOf: "2026-11"
+    tags: [Ultimate Championship]
+    correct:
+      - text: beh na 100 m
+        why: Šprinty boli jadrom programu orientovaného na televíziu.
+      - text: beh na 400 m
+        why: V programe mužov aj žien.
+      - text: beh na 800 m
+        why: Stredné trate do 5000 m v programe zostali.
+      - text: beh na 5000 m
+        why: Najdlhší beh programu.
+      - text: beh na 110 m prekážok
+        why: Prekážky boli krátke aj dlhé.
+      - text: beh na 400 m prekážok
+        why: V programe mužov aj žien.
+      - text: skok o žrdi
+        why: Technické disciplíny vyberali podľa toho, ktoré diváci na MS sledovali najradšej.
+      - text: hod kladivom
+        why: U mužov áno, zato ženy kladivo v programe nemali.
+      - text: hod oštepom
+        why: Jediný hod spoločný pre mužov aj ženy.
+    wrong:
+      - text: beh na 10 000 m
+        why: Vyradený, lebo je pre televíziu pridlhý.
+      - text: beh na 3000 m prekážok
+        why: Prekážky s vodnou priekopou tiež vypadli.
+      - text: maratón
+        why: Cestné disciplíny program nemal.
+      - text: vrh guľou
+        why: Muži ani ženy guľu nemali.
+      - text: hod diskom
+        why: Disk v programe chýbal.
+      - text: trojskok
+        why: U mužov nie, ale ženy ho v programe mali.
+      - text: desaťboj
+        why: Viacboje v programe neboli.
+
+  - id: diamantova-liga-pravidla
+    type: pick
+    prompt: Ktoré tvrdenia o Diamantovej lige sú pravdivé?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Diamond_League
+    asOf: "2026-11"
+    tags: [Diamantová liga]
+    correct:
+      - text: Diamantová liga vznikla v roku 2010
+        why: Nahradila Zlatú ligu, ktorá sa konala od roku 1998.
+      - text: Na mítingoch dostáva body najlepších osem (8, 7, 6 … 1)
+        why: Systém platí od roku 2017; body slúžia len na postup do finále.
+      - text: Víťaza disciplíny určí jediné finále, nie súčet bodov
+        why: Od roku 2017 rozhoduje len výsledok finále.
+      - text: Finále je od roku 2020 jeden dvojdňový míting
+        why: Predtým sa finále delilo medzi Zürich a Brusel.
+      - text: Finále sa strieda medzi Zürichom a Bruselom
+        why: Výnimkou bol rok 2023, keď bolo finále v Eugene.
+      - text: Víťazi Diamantovej ligy 2022 mali voľnú kartu na MS 2023
+        why: Wild card dostali úradujúci majstri sveta a víťazi Diamantovej ligy.
+      - text: Víťazi finále 2026 mali isté miesto na Ultimate Championship
+        why: Finále v Bruseli sa konalo týždeň pred Budapešťou.
+      - text: Víťaz bežnej disciplíny na mítingu dostal v roku 2026 10 000 dolárov
+        why: Vo vybraných disciplínach Diamond+ to bolo dvojnásobne, 20 000 dolárov.
+    wrong:
+      - text: Diamantová liga vznikla v roku 2000
+        why: Prvá sezóna bola 2010.
+      - text: Víťazom sa stane ten, kto má po sezóne najviac bodov
+        why: Tak to bolo v rokoch 2010–2016, odvtedy rozhoduje finále.
+      - text: Body na mítingu dostávajú len prví traja
+        why: Len v rokoch 2010–2015 (4, 2 a 1 bod); dnes boduje osem.
+      - text: Finále sa koná vždy v Zürichu
+        why: Strieda sa so Bruselom; v roku 2026 bolo v Bruseli.
+      - text: Finále Diamantovej ligy 2023 bolo v Bruseli
+        why: V roku 2023 sa finále výnimočne konalo v Eugene.
+      - text: Víťaz bežnej disciplíny na mítingu dostal v roku 2026 100 000 dolárov
+        why: Bežné víťazstvo na mítingu je za 10 000, v disciplínach Diamond+ za 20 000 dolárov.
+
+  - id: premie-v-atletike
+    type: pick
+    prompt: Ktoré tvrdenia o prémiách v atletike sú pravdivé?
+    difficulty: 3
+    source: https://worldathletics.org/competitions/world-athletics-championships/tokyo25/news/press-releases/tdk-world-record-programme-wch-tokyo-25
+    asOf: "2026-11"
+    tags: [peniaze]
+    correct:
+      - text: World Athletics vyplatila každému olympijskému víťazovi v Paríži 2024 50 000 dolárov
+        why: Bola to prvá medzinárodná federácia, ktorá platila prémie za olympijské zlato.
+      - text: Majster sveta v individuálnej disciplíne dostal v Tokiu 2025 70 000 dolárov
+        why: Strieborní dostali 35 000 a bronzoví 22 000 dolárov.
+      - text: Za svetový rekord na MS v Tokiu 2025 bola prémia 100 000 dolárov
+        why: Bonus ponúkli TDK a World Athletics popri prémii za umiestnenie.
+      - text: Víťazná štafeta na MS v Tokiu 2025 dostala 80 000 dolárov
+        why: Suma je na celý tím, nie na každého bežca.
+      - text: Víťaz Ultimate Championship 2026 dostal 150 000 dolárov
+        why: Viac ako dvojnásobok prémie majstra sveta 2025.
+      - text: Celková dotácia Ultimate Championship 2026 bola 10 miliónov dolárov
+        why: V programe bolo 28 disciplín.
+    wrong:
+      - text: Medzinárodný olympijský výbor platí olympijským víťazom prémie
+        why: MOV prémie neplatí; v atletike ich v Paríži platila World Athletics.
+      - text: V Paríži 2024 dostali od World Athletics prémiu aj strieborní a bronzoví
+        why: Len zlatí; pre strieborných a bronzových sa prémie chystajú na Los Angeles 2028.
+      - text: Za vyrovnanie svetového rekordu v Tokiu 2025 bola rovnaká prémia ako za prekonanie
+        why: Výkon musel rekord zlepšiť, vyrovnanie sa nerátalo.
+      - text: Bronz na MS v Tokiu 2025 bol ohodnotený 35 000 dolármi
+        why: 35 000 dostali strieborní, bronzoví 22 000.
+      - text: Víťazi Ultimate Championship 2026 dostali zlaté medaily
+        why: Víťazi dostali trofej, medaily sa oficiálne neudeľovali.
+      - text: Víťaz Ultimate Championship 2026 dostal 1 milión dolárov
+        why: Víťaz dostal 150 000 dolárov, milión nie.
+
+  - id: anticky-patboj
+    type: pick
+    prompt: Ktoré disciplíny patrili do päťboja na antických olympijských hrách?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Decathlon
+    tags: [história]
+    correct:
+      - text: skok do diaľky
+        why: Jediný skok antického päťboja.
+      - text: hod diskom
+        why: Disk je dnes aj v desaťboji.
+      - text: hod oštepom
+        why: Aj ten prežil do dnešného desaťboja.
+      - text: šprint
+        why: Krátky beh na dĺžku štadióna.
+      - text: zápasenie
+        why: Päťboj končil zápasom, čo by dnes desaťbojárov asi prekvapilo.
+    wrong:
+      - text: vrh guľou
+        why: Do antického päťboja nepatril.
+      - text: skok do výšky
+        why: Antický päťboj mal len jeden skok, do diaľky.
+      - text: skok o žrdi
+        why: Do antického päťboja nepatril.
+      - text: hod kladivom
+        why: Do antického päťboja nepatril.
+      - text: šerm
+        why: Patrí do moderného päťboja, nie antického.
+      - text: plávanie
+        why: Tiež z moderného päťboja.
+      - text: beh cez prekážky
+        why: Do antického päťboja nepatril.
+
+  - id: halovy-sedemboj-muzi
+    type: pick
+    prompt: Ktoré disciplíny patria do halového sedemboja mužov?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Heptathlon
+    tags: [viacboj, hala]
+    correct:
+      - text: beh na 60 m
+        why: Otvára halový sedemboj.
+      - text: skok do diaľky
+        why: Rovnako ako v desaťboji, hneď po šprinte.
+      - text: vrh guľou
+        why: Jediný hod v halovom sedemboji.
+      - text: skok do výšky
+        why: Uzatvára prvý deň.
+      - text: beh na 60 m prekážok
+        why: Otvára druhý deň.
+      - text: skok o žrdi
+        why: Žrď sa do haly zmestí, oštep nie.
+      - text: beh na 1000 m
+        why: Záverečný beh, ktorý v inom viacboji nenájdete.
+    wrong:
+      - text: beh na 400 m
+        why: Patrí do desaťboja.
+      - text: beh na 1500 m
+        why: Záver desaťboja; v hale sa beží 1000 m.
+      - text: hod oštepom
+        why: V hale sa nehádže, preto halové viacboje oštep nemajú.
+      - text: hod diskom
+        why: V hale sa z hodov súťaží len guľa.
+      - text: beh na 200 m
+        why: Patrí do ženského sedemboja vonku.
+      - text: trojskok
+        why: V žiadnom viacboji nie je.
+      - text: beh na 800 m
+        why: Záver ženského päťboja a sedemboja, nie mužského halového sedemboja.
+
+  - id: maraton-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o maratóne sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Marathon
+    tags: [maratón, história]
+    correct:
+      - text: Presnú dĺžku maratónu ustanovili až v roku 1921
+        why: Dovtedy sa dĺžka od hier k hrám menila.
+      - text: Olympijský maratón v Londýne 1908 štartoval pri hrade Windsor
+        why: Z tejto trate pochádza dnešná dĺžka maratónu.
+      - text: Ženy bežia olympijský maratón od roku 1984
+        why: Prvou víťazkou bola Joan Benoit z USA.
+      - text: V Paríži 2024 bol ženský maratón poslednou atletickou disciplínou hier
+        why: Prvýkrát od roku 1984 bežali ženy maratón v posledný deň.
+      - text: Trať maratónu môže byť o kúsok dlhšia, ale nie kratšia
+        why: Tolerancia 42 m je len smerom nahor.
+      - text: Maratón je jediný cestný beh na olympiáde aj na MS
+        why: Ostatné cestné disciplíny sú chôdze.
+      - text: Prvý Bostonský maratón sa bežal až po prvom olympijskom maratóne
+        why: Boston 1897 sa inšpiroval olympijským maratónom v Aténach 1896.
+    wrong:
+      - text: Na prvej olympiáde v roku 1896 sa bežalo presne 42,195 km
+        why: Dĺžku zjednotili až v roku 1921.
+      - text: Ženy bežia olympijský maratón od roku 1960
+        why: Ženský maratón pribudol až v Los Angeles 1984.
+      - text: Bostonský maratón je starší ako olympijský maratón
+        why: Prvý Boston sa bežal 19. apríla 1897, rok po Aténach.
+      - text: V Paríži 2024 bežali muži maratón v posledný deň hier
+        why: Muži bežali deň pred ženami, 10. augusta.
+      - text: Maratón v Paríži 2024 sa končil na Stade de France
+        why: Cieľ bol pri Invalidovni.
+      - text: Na olympiáde sa beží aj polmaratón
+        why: Beh na polmaratón na hrách nie je, polmaratónska bude v Los Angeles 2028 len chôdza.
+
+  - id: pariz-2024-repasaz
+    type: pick
+    prompt: V ktorých disciplínach mali bežci v Paríži 2024 druhú šancu cez opravný beh (repasáž)?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics
+    tags: [olympiáda, Paríž 2024]
+    correct:
+      - text: beh na 200 m
+        why: Repasáž platila pre všetky individuálne behy od 200 do 1500 m.
+      - text: beh na 400 m
+        why: Kto neprešiel z rozbehu, dostal ďalšiu šancu.
+      - text: beh na 800 m
+        why: Tiež v rozsahu od 200 do 1500 m.
+      - text: beh na 1500 m
+        why: Najdlhší beh s repasážou.
+      - text: beh na 110 m prekážok
+        why: Repasáž mali všetky prekážkové behy.
+      - text: beh na 100 m prekážok
+        why: Ženské krátke prekážky tiež.
+      - text: beh na 400 m prekážok
+        why: Muži aj ženy.
+    wrong:
+      - text: beh na 100 m
+        why: Stovka mala namiesto repasáže predkolo.
+      - text: beh na 5000 m
+        why: Pre dlhé trate repasáž nebola.
+      - text: beh na 10 000 m
+        why: Rovno finále, bez rozbehov.
+      - text: beh na 3000 m prekážok
+        why: Prekážkový beh na 3000 m do repasáže nepatril.
+      - text: štafeta 4 × 100 m
+        why: Repasáž bola len pre individuálne behy.
+      - text: maratón
+        why: Maratón sa beží rovno ako finále.
+
+  # --------------------------------------------------------------- ORDER
+  - id: naradie-hmotnost
+    type: order
+    prompt: Zoraď atletické náčinie podľa hmotnosti od najťažšieho.
+    direction: desc
+    unit: kg
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Shot_put
+    tags: [hody, náčinie]
+    items:
+      - { text: olympijské závažie 56 libier (1904 a 1920), value: 25.4, label: "25,4 kg", why: "Historický hod, 56 libier je asi 25,4 kg." }
+      - { text: guľa mužov, value: 7.26, label: "7,26 kg", why: "16 libier, rovnako ako mužské kladivo." }
+      - { text: guľa žien, value: 4, label: "4 kg", why: "Rovnako ťažká ako ženské kladivo." }
+      - { text: disk mužov, value: 2, label: "2 kg", why: "Platí pre dospelých mužov do 49 rokov." }
+      - { text: disk žien, value: 1, label: "1 kg", why: "Polovica mužského disku." }
+      - { text: oštep mužov, value: 0.8, label: "800 g", why: "Od roku 1986 nový tvar, ktorý skrátil hody a zabránil plochým dopadom." }
+      - { text: oštep žien, value: 0.6, label: "600 g", why: "Ženský oštep upravili v roku 1999." }
+
+  - id: prekazky-vyska
+    type: order
+    prompt: Zoraď prekážkové behy podľa výšky prekážok od najvyšších.
+    direction: desc
+    unit: cm
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Hurdling
+    tags: [prekážky]
+    items:
+      - { text: 110 m prekážok mužov, value: 106.7, label: "106,7 cm", why: "42 palcov, najvyššia poloha prekážky." }
+      - { text: 400 m prekážok mužov, value: 91.4, label: "91,4 cm", why: "36 palcov, rovnako ako prekážky mužov na 3000 m prekážok." }
+      - { text: 100 m prekážok žien, value: 83.8, label: "83,8 cm", why: "33 palcov." }
+      - { text: 400 m prekážok žien, value: 76.2, label: "76,2 cm", why: "30 palcov, najnižšia z hlavných výšok." }
+
+  - id: zeny-olympijsky-debut
+    type: order
+    prompt: Zoraď ženské disciplíny podľa roku, keď sa prvýkrát objavili na olympiáde, od najskoršej.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_Summer_Olympics
+    tags: [olympiáda, história]
+    items:
+      - { text: beh na 100 m, value: 1928, why: "Ženy vstúpili do olympijskej atletiky v Amsterdame 1928." }
+      - { text: skok do diaľky, value: 1948, why: "Prvýkrát v Londýne 1948." }
+      - { text: beh na 1500 m, value: 1972, why: "Prvýkrát v Mníchove 1972." }
+      - { text: maratón, value: 1984, why: "Los Angeles 1984, víťazka Joan Benoit." }
+      - { text: trojskok, value: 1996, why: "Atlanta 1996." }
+      - { text: skok o žrdi, value: 2000, why: "Sydney 2000, spolu s hodom kladivom." }
+      - { text: beh na 3000 m prekážok, value: 2008, why: "Peking 2008, posledná pridaná ženská disciplína." }
+
+  - id: premie-poradie
+    type: order
+    prompt: Zoraď atletické prémie od najvyššej.
+    direction: desc
+    unit: USD
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/World_Athletics_Ultimate_Championship
+    asOf: "2026-11"
+    tags: [peniaze]
+    items:
+      - { text: víťaz Ultimate Championship 2026, value: 150000, label: "150 000 $", why: "Viac ako dvojnásobok prémie majstra sveta." }
+      - { text: svetový rekord na MS 2025 v Tokiu, value: 100000, label: "100 000 $", why: "Bonus k prémii za umiestnenie." }
+      - { text: víťazná štafeta na MS 2025 v Tokiu, value: 80000, label: "80 000 $", why: "Na celý tím." }
+      - { text: majster sveta 2025 v Tokiu, value: 70000, label: "70 000 $", why: "Individuálna disciplína." }
+      - { text: olympijský víťaz v Paríži 2024, value: 50000, label: "50 000 $", why: "Platila World Athletics, nie MOV." }
+      - { text: bronz na MS 2025 v Tokiu, value: 22000, label: "22 000 $", why: "Strieborní dostali 35 000 $." }
+
+  # -------------------------------------------------------------- NUMBER
+  - id: maraton-dlzka
+    type: number
+    prompt: Koľko kilometrov meria maratón?
+    answer: 42.195
+    unit: km
+    scale: linear
+    tolerance: 0.5
+    why: Presne 42,195 km, dĺžka je zjednotená od roku 1921 a pochádza z olympijskej trate v Londýne 1908.
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Marathon
+    tags: [maratón]
+
+  - id: steeplechase-prekazky
+    type: number
+    prompt: Koľko prekážok vrátane vodných priekop prekoná bežec na 3000 m prekážok?
+    answer: 35
+    unit: prekážok
+    scale: linear
+    tolerance: 3
+    why: 28 bežných prekážok a 7 vodných priekop; v každom zo siedmich kôl štyri prekážky a jedna priekopa.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/3000_metres_steeplechase
+    tags: [prekážky]
+
+  - id: pariz-2024-pocet-disciplin
+    type: number
+    prompt: V koľkých disciplínach sa rozdali medaily v atletike na olympiáde v Paríži 2024?
+    answer: 48
+    unit: disciplín
+    scale: linear
+    tolerance: 3
+    why: 23 mužských, 23 ženských a 2 zmiešané; prvýkrát mali muži a ženy rovnaký počet disciplín.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics
+    tags: [olympiáda, Paríž 2024]
+
+  - id: olympijska-premia-pariz
+    type: number
+    prompt: Koľko amerických dolárov vyplatila World Athletics každému olympijskému víťazovi v Paríži 2024?
+    answer: 50000
+    unit: USD
+    scale: log
+    tolerance: 0.15
+    asOf: "2024"
+    why: 50 000 dolárov; World Athletics sa tak stala prvou federáciou, ktorá platila prémie za olympijské zlato.
+    difficulty: 2
+    source: https://worldathletics.org/competitions/olympic-games/the-xxxiii-olympic-games-7153115/news/article/world-athletics-introduces-prize-money-for-olympic-gold-medallists
+    tags: [peniaze, Paríž 2024]
+
+  - id: limit-100m-pariz
+    type: number
+    prompt: Aký bol kvalifikačný limit mužov na 100 m pre olympiádu v Paríži 2024?
+    answer: 10.00
+    unit: s
+    scale: linear
+    tolerance: 0.05
+    asOf: "2024"
+    why: Presne 10,00 s; rovnaký limit platil aj pre MS 2025 v Tokiu. Ženy potrebovali 11,07 s.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics_%E2%80%93_Qualification
+    tags: [kvalifikácia, Paríž 2024]
+
+  - id: limit-desatboj-pariz
+    type: number
+    prompt: Koľko bodov bol kvalifikačný limit v desaťboji pre olympiádu v Paríži 2024?
+    answer: 8460
+    unit: bodov
+    scale: log
+    tolerance: 0.02
+    asOf: "2024"
+    why: 8460 bodov; limity rozdelili zhruba polovicu miest, zvyšok svetový rebríček.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics_%E2%80%93_Qualification
+    tags: [kvalifikácia, Paríž 2024]
+
+  # -------------------------------------------------------------- CHOICE
+  - id: max-sportovcov-krajina
+    type: choice
+    prompt: Koľko najviac športovcov z jednej krajiny mohlo v Paríži 2024 štartovať v jednej individuálnej atletickej disciplíne?
+    correct:
+      text: "3"
+      why: Ak ich splnilo kvalifikáciu viac, krajina si vybrala, napríklad USA podľa svojej nominačnej súťaže.
+    wrong:
+      - { text: "2", why: "Dvaja by boli málo; limit je traja." }
+      - { text: "4", why: "Štvrtý by musel zostať doma, aj keby mal limit." }
+      - { text: bez obmedzenia, why: "Bez obmedzenia je to až na Ultimate Championship, olympiáda pustí troch." }
+    difficulty: 2
+    asOf: "2024"
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics_%E2%80%93_Qualification
+    tags: [kvalifikácia, Paríž 2024]
+
+  - id: nahrada-50km-chodze
+    type: choice
+    prompt: Ktorá disciplína nahradila v Paríži 2024 chôdzu na 50 km?
+    correct:
+      text: zmiešaná štafeta v chôdzi na maratónskej trati
+      why: Dvojica muž a žena sa striedala v štyroch úsekoch; súťaž sa v tejto podobe konala len raz.
+    wrong:
+      - { text: chôdza na 35 km, why: "Tá je na majstrovstvách sveta, na olympiáde nie." }
+      - { text: zmiešaná štafeta 4 × 100 m, why: "Tá príde až v Los Angeles 2028." }
+      - { text: ženská chôdza na 50 km, why: "Na olympiáde nikdy nebola." }
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics
+    tags: [olympiáda, chôdza]
+
+  - id: ultimate-2026-mesto
+    type: choice
+    prompt: Kde sa v roku 2026 konal prvý World Athletics Ultimate Championship?
+    correct:
+      text: Budapešť
+      why: 11.–13. septembra 2026 na štadióne, kde boli aj MS 2023.
+    wrong:
+      - { text: Tokio, why: "Tam boli MS 2025." }
+      - { text: Brusel, why: "Tam bolo týždeň predtým finále Diamantovej ligy." }
+      - { text: Zürich, why: "Zürich sa s Bruselom strieda pri finále Diamantovej ligy." }
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/2026_World_Athletics_Ultimate_Championship
+    tags: [Ultimate Championship]
