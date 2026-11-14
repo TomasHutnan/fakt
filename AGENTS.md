@@ -20,7 +20,7 @@ Goals, in the owner's words:
 Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
 
 - Built: Classic and Mix modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, vibration/sound settings, import, offline PWA.
-- Content: **23 packs / 604 questions** (6 adult). Target 1,000.
+- Content: **26 packs / 678 questions** (6 adult; athletics split into disciplines, legends/records and a yearly season pack). Target 1,000.
 - Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
 
