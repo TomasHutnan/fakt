@@ -30,7 +30,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - `agy` runs only through `scripts/agy-readonly.py` (read-only allow-list), never with `--dangerously-skip-permissions`. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
 - **Content pipeline**: a Claude subagent drafts a pack from sources it opens itself → Gemini Hydrogen fact-checks → the writer verifies each finding against a source and applies only confirmed ones (drops what can't be settled) → Hydrogen re-review to PASS → merge. WebFetch returns a model summary, so check numbers against the raw page. Long runs hit the usage limit: resume the same agent afterwards rather than starting over.
 - Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
-- Commits are made with `-c commit.gpgsign=false` when the owner is away (GPG pinentry cannot be answered unattended); the owner may re-sign.
+- Commits are not signed in this repo (owner's rule): use `git -c commit.gpgsign=false commit`, never re-sign or wait for GPG pinentry. Repo-local git config sets `commit.gpgsign=false`.
 
 ## Rules for agents
 
