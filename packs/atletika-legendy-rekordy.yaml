@@ -76,7 +76,7 @@ questions:
       - text: Armand Duplantis
         why: "Tretí titul v rade a k tomu svetový rekord 6,30 m."
       - text: Daniel Ståhl
-        why: "Švéd vyhral disk pred svetovým rekordmanom Alekom."
+        why: "Švéd vyhral disk pred svetovým rekordmanom Aleknom."
     wrong:
       - text: Kishane Thompson
         why: "Opäť striebro na 100 m, tentoraz za krajanom Sevillom."
@@ -424,7 +424,7 @@ questions:
         why: "V Tegu predčasne vybehol z blokov."
       - text: Po kariére trénoval s profesionálnym futbalovým klubom
         why: "V roku 2018 s austrálskym Central Coast Mariners."
-      - text: Posledný individuálny pretek na 100 m skončil bronzom
+      - text: Posledné individuálne preteky na 100 m skončil bronzom
         why: "MS v Londýne 2017, potom ukončil kariéru."
     wrong:
       - text: Rekord 9,58 zabehol na olympiáde v Pekingu
@@ -434,7 +434,7 @@ questions:
       - text: Drží svetový rekord v štafete 4 × 100 m spolu s USA
         why: "Rekord 36,84 má s Jamajkou z Londýna 2012."
       - text: Stovku bežal na olympiáde prvýkrát v Londýne 2012
-        why: "Peking 2008 bol jeho medzinárodný debut na 100 m a hneď ho vyhral."
+        why: "Na olympiáde bežal stovku prvýkrát už v Pekingu 2008 a hneď vyhral."
 
   - id: cs-olympijske-zlato
     type: pick
@@ -467,7 +467,7 @@ questions:
       - text: Jarmila Kratochvílová
         why: "Na olympiáde len striebro na 400 m (Moskva 1980), Los Angeles 1984 Československo bojkotovalo."
       - text: Tomáš Dvořák
-        why: "Dvakrát majster sveta v desaťboji, na olympiáde bronz z Atlanty 1996."
+        why: "Trikrát po sebe majster sveta v desaťboji (1997, 1999, 2001), na olympiáde bronz z Atlanty 1996."
       - text: Vítězslav Veselý
         why: "Oštepár s dvoma olympijskými bronzmi (2012 a 2020)."
       - text: Jakub Vadlejch
@@ -776,7 +776,7 @@ questions:
       why: "V roku 2001 v Götzise nazbieral 9026 bodov."
     wrong:
       - { text: Tomáš Dvořák, why: "Jeho krajan sa v roku 1999 zastavil na 8994 bodoch, šesť bodov pod hranicou." }
-      - { text: Ashton Eaton, why: "Američan prekonal 9000 bodov až po Šebrlovi (9045 v roku 2015)." }
+      - { text: Ashton Eaton, why: "Američan prekonal 9000 bodov až po Šebrlovi, prvýkrát v roku 2012 (9039)." }
       - { text: Kevin Mayer, why: "Súčasný rekordman (9126), ale až v roku 2018." }
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Roman_%C5%A0ebrle

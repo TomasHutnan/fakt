@@ -56,7 +56,7 @@ questions:
     tags: [me]
     correct:
       - text: Emma Zapletalová
-        why: 400 m prekážok za 52,91 s, prvé zlato slovenskej ženy v histórii ME.
+        why: 400 m prekážok za 52,91 s.
       - text: Mondo Duplantis
         why: Žrď 6,15 m, rekord šampionátu.
       - text: Karsten Warholm
@@ -68,7 +68,7 @@ questions:
       - text: Audrey Werro
         why: 800 m za 1:54,81, rekord šampionátu.
       - text: Gianmarco Tamberi
-        why: Výška 2,32 m, najlepší výkon sezóny.
+        why: Na zlato mu stačilo 2,32 m.
       - text: Miltiadis Tentoglou
         why: Diaľka 8,44 m.
       - text: Jaroslava Mahučichová
@@ -121,7 +121,7 @@ questions:
       - text: Karsten Warholm
         why: Tretí na 400 m prekážok, vyhral Alison dos Santos za 45,98.
       - text: Rai Benjamin
-        why: Druhý na 400 m prekážok aj na hladkej 400-vke.
+        why: Druhý na 400 m prekážok aj na hladkej štvorstovke.
       - text: Oblique Seville
         why: Majster sveta skončil na stovke druhý za Bednarekom.
       - text: Emmanouil Karalis
@@ -211,7 +211,7 @@ questions:
       - text: Víťazstvo na mítingu v Zürichu
         why: V Zürichu vyhrala Cockrellová svetovým maximom 52,13 s.
       - text: Medaila z halových MS v Toruni
-        why: Na 400 m v hale skončila v semifinále.
+        why: Na 400 m postúpila do semifinále, medailu nezískala.
       - text: Svetový rekord
         why: Ten drží Sydney McLaughlin-Levrone.
       - text: Víťazstvo na 400 m na Zlatej tretre
@@ -385,7 +385,7 @@ questions:
       - text: Portugalsko
         why: Striebro (Pichardo) a dva bronzy.
       - text: Litva
-        why: Iba striebro Mykolasa Alekna v disku.
+        why: Iba striebro Mykolasa Aleknu v disku.
       - text: Bulharsko
         why: Dva bronzy.
 
@@ -476,7 +476,7 @@ questions:
     tags: [hala, cesko]
     correct:
       text: Lurdes Gloria Manuel
-      why: Česká 21-ročná bežkyňa zabehla 50,76 s, čo bolo jediné české zlato v Toruni.
+      why: Česká 20-ročná bežkyňa zabehla 50,76 s, čo bolo jediné české zlato v Toruni.
     wrong:
       - text: Natalia Bukowiecka
         why: Domáca Poľka bola druhá, o 7 stotín.

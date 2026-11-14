@@ -27,7 +27,7 @@ questions:
       - text: beh na 60 m
         why: Dnes len halová disciplína, no na hrách 1900 a 1904 sa bežal vonku.
       - text: vrh guľou obojručne
-        why: Raz, v Štokholme 1912; výsledok bol súčet pokusov pravou a ľavou rukou.
+        why: Raz, v Štokholme 1912; výsledok bol súčet najlepšieho pokusu pravou a najlepšieho ľavou rukou.
       - text: hod oštepom voľným štýlom
         why: Len v Londýne 1908, oštep sa mohol chytiť kdekoľvek.
       - text: cezpoľný beh
@@ -35,8 +35,6 @@ questions:
     wrong:
       - text: hod kladivom obojručne
         why: Obojručne sa v roku 1912 vrhala guľa, hádzal disk a oštep, kladivo nie.
-      - text: beh na 100 yardov
-        why: Olympijské šprinty sa merali v metroch; yardy vo výpočte olympijských disciplín nie sú.
       - text: chôdza na 100 km
         why: Najdlhšia olympijská chôdza mala 50 km.
       - text: štafeta 4 × 200 m
@@ -45,8 +43,6 @@ questions:
         why: Skákalo sa z miesta do výšky, do diaľky aj trojskokom, ale o žrdi vždy s rozbehom.
       - text: hod kriketovou loptičkou
         why: Na olympiáde nikdy nebol; z exotických hodov sa skúšal disk po grécky a obojručné hody.
-      - text: beh na 1 míľu
-        why: Míľa na hrách nebola; bežalo sa 5 míľ (1908) a tímové behy na 3 a 4 míle.
 
   - id: pariz-2024-program
     type: pick
@@ -255,7 +251,7 @@ questions:
       - text: Beh na 800 m sa beží celý v dráhach
         why: V dráhach je len do konca prvej zákruty.
       - text: Vodná priekopa v behu na 3000 m prekážok je hlboká vyše metra
-        why: Najhlbšia je hneď za prekážkou, asi 70 cm, a smerom dopredu sa zvažuje.
+        why: Najhlbšie miesto je hneď za prekážkou a má menej ako meter; smerom dopredu sa zvažuje.
 
   - id: pravidla-technicke
     type: pick
@@ -391,10 +387,10 @@ questions:
         why: Systém platí od roku 2017; body slúžia len na postup do finále.
       - text: Víťaza disciplíny určí jediné finále, nie súčet bodov
         why: Od roku 2017 rozhoduje len výsledok finále.
-      - text: Finále je od roku 2020 jeden dvojdňový míting
-        why: Predtým sa finále delilo medzi Zürich a Brusel.
-      - text: Finále sa strieda medzi Zürichom a Bruselom
-        why: Výnimkou bol rok 2023, keď bolo finále v Eugene.
+      - text: Finále je od roku 2021 jeden dvojdňový míting
+        why: Do roku 2019 sa delilo medzi Zürich a Brusel, finále 2020 zrušil covid.
+      - text: Od roku 2024 sa finále strieda medzi Zürichom a Bruselom
+        why: Brusel 2024 a 2026, Zürich 2025; v roku 2023 bolo výnimočne v Eugene.
       - text: Víťazi Diamantovej ligy 2022 mali voľnú kartu na MS 2023
         why: Wild card dostali úradujúci majstri sveta a víťazi Diamantovej ligy.
       - text: Víťazi finále 2026 mali isté miesto na Ultimate Championship
@@ -409,7 +405,7 @@ questions:
       - text: Body na mítingu dostávajú len prví traja
         why: Len v rokoch 2010–2015 (4, 2 a 1 bod); dnes boduje osem.
       - text: Finále sa koná vždy v Zürichu
-        why: Strieda sa so Bruselom; v roku 2026 bolo v Bruseli.
+        why: Od roku 2024 sa strieda s Bruselom; v roku 2026 bolo v Bruseli.
       - text: Finále Diamantovej ligy 2023 bolo v Bruseli
         why: V roku 2023 sa finále výnimočne konalo v Eugene.
       - text: Víťaz bežnej disciplíny na mítingu dostal v roku 2026 100 000 dolárov
