@@ -96,6 +96,7 @@ At least 4 items with distinct values; the game uses 4–5 of them. `direction: 
 - **Slovak, natural and correct.** Diacritics always. Sentence case. No full stop after options.
 - **Not too obscure.** Most people at the table should recognise at least a few options. If nobody could get anything, the card is not fun. Aim for difficulty mix ~40 % 1, ~40 % 2, ~20 % 3.
 - **Every option has a one-line `why`**, true or false. It is shown after the card and is half the fun: a surprising fact, a reason, a joke. Longer only when really needed.
+- **Order items must not give the order away**: no "PlayStation" next to "PlayStation 2" or "Bengoro" next to "Bengoro II" (the check warns). They also pair up in "which is more" cards.
 - **Wrong options must be plausible.** A wrong option that is obviously wrong is wasted. The best wrong options are the ones people argue about.
 - **Each option must be unambiguously true or false.** If it depends on interpretation, drop it.
 - **Verify every fact against the source.** Prefer Wikipedia (sk/cs/en), official statistics (ŠÚ SR), official sites. If two sources disagree, use neither or explain in `why`.

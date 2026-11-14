@@ -4,7 +4,7 @@ description: Elán, Kontrafakt, Majk Spirit, Horkýže Slíže, Sima a ďalší 
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: elan-hity
     type: pick
@@ -366,7 +366,6 @@ questions:
       - { text: Kral, value: 2009 }
       - { text: Fenomen, value: 2011 }
       - { text: Krstný otec, value: 2016 }
-      - { text: Bengoro II, value: 2023 }
 
   - id: eurovizia-poradie
     type: order

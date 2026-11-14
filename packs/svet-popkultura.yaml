@@ -4,7 +4,7 @@ description: Filmy, seriály, hudobné hity, videohry, Eurovízia a kreslené le
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: filmy-spielberg
     type: pick
@@ -462,6 +462,7 @@ questions:
     unit: rok
     difficulty: 2
     source: https://en.wikipedia.org/wiki/History_of_video_game_consoles
+    note: Mega Drive – https://en.wikipedia.org/wiki/Sega_Genesis
     items:
       - text: Atari 2600
         value: 1977
@@ -472,9 +473,9 @@ questions:
       - text: PlayStation
         value: 1994
         why: Patrí do piatej generácie konzol, vyšiel v roku 1994.
-      - text: PlayStation 2
-        value: 2000
-        why: Patrí do šiestej generácie konzol, vyšiel v roku 2000.
+      - text: Sega Mega Drive
+        value: 1988
+        why: V Japonsku vyšla v októbri 1988, v Európe až v roku 1990.
       - text: Xbox 360
         value: 2005
         why: Patrí do siedmej generácie konzol, vyšiel v roku 2005.

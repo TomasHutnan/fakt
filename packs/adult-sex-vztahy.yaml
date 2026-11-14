@@ -5,7 +5,7 @@ lang: sk
 license: CC0-1.0
 adult: true
 warnings: [sexual]
-version: 1
+version: 2
 questions:
   # ---------- PICK ----------
   - id: antikoncepcia-pod-1-percento
@@ -519,7 +519,7 @@ questions:
 
   - id: dlzky
     type: order
-    prompt: Zoraď od najdlhšieho.
+    prompt: Zoraď tieto falické dĺžky v centimetroch od najdlhšej.
     direction: desc
     unit: cm
     difficulty: 3
@@ -529,7 +529,7 @@ questions:
       - { text: Penisová kosť mroža, value: 56, why: Exemplár na obrázku vo Wikipédii má asi 56 cm, najdlhšie až 63 cm. }
       - { text: Rekordný penis potápnice argentínskej, value: 42.5, why: Zapísaný v Guinnessovej knihe. }
       - { text: Kamenný falus z Hohle Fels, value: 20, why: Starý asi 30 000 rokov. }
-      - { text: Dĺžka, ktorú si ženy v štúdii vybrali pre dlhodobého partnera, value: 16, why: Štúdia Prause a kol. (2015) s 3D modelmi. }
+      - { text: Penis, ktorý si ženy v štúdii vybrali pre dlhodobý vzťah, value: 16, why: Štúdia Prause a kol. (2015) s 3D modelmi. }
       - { text: Priemerný ľudský penis v erekcii, value: 13.1, why: 13,12 cm podľa merania vyše 15 000 mužov. }
 
   # ---------- NUMBER ----------
