@@ -176,6 +176,11 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       const values = items.map((i) => i.value);
       if (new Set(values).size !== values.length) err("order: hodnoty sa nesmú opakovať");
       noDuplicates(items.map((i) => i.text));
+      // "PlayStation" vs "PlayStation 2": the name gives the order away (also in "which is more" cards).
+      for (const a of items)
+        for (const b of items)
+          if (b.text.startsWith(a.text + " ") && /^(\d+|[IVX]+)$/.test(b.text.slice(a.text.length + 1)))
+            warnings.push(`${where}: „${a.text}“ a „${b.text}“ prezrádzajú poradie podľa čísla v názve`);
       const direction = q.direction === undefined ? "desc" : q.direction;
       if (direction !== "asc" && direction !== "desc") err("direction musí byť asc alebo desc");
       const unit = str(q.unit) ?? undefined;
