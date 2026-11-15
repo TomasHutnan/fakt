@@ -34,14 +34,14 @@ questions:
     correct:
       - { text: Kristove roky, why: "Film z roku 1967, za ktorý dostal ceny v Mannheime." }
       - { text: Zbehovia a pútnici, why: "Film z roku 1968." }
-      - { text: Vtáčkovia, siroty a blázni, why: "Film z roku 1969." }
+      - { text: "Vtáčkovia, siroty a blázni", why: "Film z roku 1969." }
       - { text: Tisícročná včela, why: "Rok 1983; hral v nej aj Jozef Kroner." }
       - { text: Perinbaba, why: "Vianočná rozprávka z roku 1985." }
       - { text: Sedím na konári a je mi dobre, why: "Film z roku 1989." }
       - { text: Post coitum, why: "Film z roku 2004." }
       - { text: Bathory, why: "Rok 2008; získal Českého leva za výtvarné riešenie." }
     wrong:
-      - { text: Pacho, hybský zbojník, why: "Režíroval ho Martin Ťapák." }
+      - { text: "Pacho, hybský zbojník", why: "Režíroval ho Martin Ťapák." }
       - { text: Fontána pre Zuzanu, why: "Režíroval ju Dušan Rapoš." }
       - { text: Soľ nad zlato, why: "Režíroval ju Martin Hollý." }
       - { text: Popolvár najväčší na svete, why: "Režíroval ho Martin Ťapák." }
@@ -78,7 +78,7 @@ questions:
     source: https://sk.wikipedia.org/wiki/Jozef_Kroner
     correct:
       - { text: Obchod na korze, why: "Zahral Tóna Brtka, stolára." }
-      - { text: Pacho, hybský zbojník, why: "V titulnej úlohe Pacha Matrtaja." }
+      - { text: "Pacho, hybský zbojník", why: "V titulnej úlohe Pacha Matrtaja." }
       - { text: Soľ nad zlato, why: "Hral šaša." }
       - { text: Popolvár najväčší na svete, why: "Hral sluhu Šablicu." }
       - { text: Tisícročná včela, why: "Zahral Martina Pichandu." }
@@ -349,7 +349,7 @@ questions:
     source: https://sk.wikipedia.org/wiki/Juraj_Jakubisko
     items:
       - { text: Kristove roky, value: 1967 }
-      - { text: Vtáčkovia, siroty a blázni, value: 1969 }
+      - { text: "Vtáčkovia, siroty a blázni", value: 1969 }
       - { text: Tisícročná včela, value: 1983 }
       - { text: Perinbaba, value: 1985 }
       - { text: Post coitum, value: 2004 }

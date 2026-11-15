@@ -622,19 +622,19 @@ questions:
     prompt: V ktorej krajine leží inkské mesto Machu Picchu?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Machu_Picchu
-    correct: { text: Peru, why: Leží v regióne Cusco, asi 80 km severozápadne od mesta Cusco. }
+    correct: { text: "Peru", why: "Leží v regióne Cusco, asi 80 km severozápadne od mesta Cusco." }
     wrong:
-      - { text: Bolívia, why: Susedí s Peru, ale Machu Picchu v nej neleží. }
-      - { text: Ekvádor, why: Inkovia tu tiež vládli, ale Machu Picchu je inde. }
-      - { text: Čile, why: Inkská ríša sem zasahovala, no Machu Picchu v Čile nie je. }
+      - { text: "Bolívia", why: "Susedí s Peru, ale Machu Picchu v nej neleží." }
+      - { text: "Ekvádor", why: "Inkovia tu tiež vládli, ale Machu Picchu je inde." }
+      - { text: "Čile", why: "Inkská ríša sem zasahovala, no Machu Picchu v Čile nie je." }
 
   - id: choice-vlajka-taliansko
     type: choice
     prompt: Ktorý štát má vlajku zloženú z troch zvislých pruhov, zeleného, bieleho a červeného, bez akéhokoľvek znaku?
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Flag_of_Italy
-    correct: { text: Taliansko, why: Zvislá trikolóra od roku 1946, inšpirovaná francúzskou. }
+    correct: { text: "Taliansko", why: "Zvislá trikolóra od roku 1946, inšpirovaná francúzskou." }
     wrong:
-      - { text: Maďarsko, why: Má červeno-bielo-zelenú vlajku, ale pruhy sú vodorovné. }
-      - { text: Mexiko, why: Pruhy sú rovnaké, no v strede má štátny znak s orlom. }
-      - { text: Írsko, why: Zvislé pruhy, ale zelená, biela a oranžová. }
+      - { text: "Maďarsko", why: "Má červeno-bielo-zelenú vlajku, ale pruhy sú vodorovné." }
+      - { text: "Mexiko", why: "Pruhy sú rovnaké, no v strede má štátny znak s orlom." }
+      - { text: "Írsko", why: "Zvislé pruhy, ale zelená, biela a oranžová." }

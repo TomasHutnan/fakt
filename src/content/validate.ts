@@ -113,6 +113,12 @@ function validateQuestion(q: unknown, where: string, now: Date) {
     ...(note ? { note } : {}),
   };
 
+  // An unquoted comma inside a YAML flow mapping ({ text: a, b, why: … }) silently
+  // turns the rest of the text into a key, so stray keys are always an error.
+  const unknownKeys = (o: Obj, allowed: string[], label: string) => {
+    for (const k of Object.keys(o))
+      if (!allowed.includes(k)) err(`${label}: neznámy kľúč „${k}“ (čiarka v texte bez úvodzoviek?)`);
+  };
   const options = (v: unknown, label: string): Option[] => {
     if (!Array.isArray(v)) {
       err(`${label} musí byť zoznam možností`);
@@ -129,6 +135,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       err(`${label}: možnosť musí mať text a why`);
       return null;
     }
+    unknownKeys(o, ["text", "why"], label);
     const text = str(o.text);
     const why = str(o.why);
     if (!text) err(`${label}: chýba text`);
@@ -159,6 +166,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       else
         q.items.forEach((it, j) => {
           if (!isObj(it)) return err(`items[${j}] musí mať text a value`);
+          unknownKeys(it, ["text", "value", "label", "why"], `items[${j}]`);
           const text = str(it.text);
           const value = it.value;
           if (!text) err(`items[${j}]: chýba text`);
