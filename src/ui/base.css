@@ -49,6 +49,17 @@
 /* Top bar */
 :where(.topbar) { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 :where(.topbar__title) { flex: 1 1 auto; min-width: 0; }
+/* Menu screens: "Späť" stays reachable on long lists (the phone's back gesture
+   leaves the site). The bar bleeds into the screen padding so nothing scrolls
+   past beside or above it; the background is the page colour of each design. */
+:where(.topbar--sticky) {
+  position: sticky; top: 0; z-index: 5;
+  margin-top: calc(-1 * max(16px, env(safe-area-inset-top)));
+  padding-top: max(16px, env(safe-area-inset-top)); padding-bottom: 8px;
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left))) calc(-1 * max(16px, env(safe-area-inset-right)));
+  padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+  background: var(--desk, var(--bg, var(--paper, Canvas)));
+}
 :where(.scorestrip) { display: flex; flex-wrap: wrap; gap: 6px; flex-basis: 100%; order: 3; }
 :where(.scorestrip__item) { display: inline-flex; gap: 6px; align-items: baseline; }
 

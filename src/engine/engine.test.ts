@@ -149,7 +149,7 @@ describe("number scoring", () => {
 function play(seed = 42, players = ["Ana", "Bo"], settings = {}) {
   const s = newGame({
     players,
-    settings: { ...DEFAULT_SETTINGS, packIds: ["test"], ...settings },
+    settings: { ...DEFAULT_SETTINGS, mode: "classic" as const, packIds: ["test"], ...settings },
     packs: [pack],
     seen: new Set(),
     seed,

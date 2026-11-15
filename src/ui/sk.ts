@@ -27,7 +27,7 @@ export const sk = {
     {
       title: "Mix",
       body: [
-        "Okrem výberu prídu aj iné karty: zoradiť položky podľa hodnoty, tipnúť číslo alebo vybrať jednu zo štyroch.",
+        "Predvolený režim. Okrem výberu prídu aj iné karty: zoradiť položky podľa hodnoty, tipnúť číslo alebo vybrať jednu zo štyroch. Kto chce len výbery, zvolí pri novej hre Klasiku.",
         "Pri čísle vyhráva najbližší tip. Kto je presne, dostane bonus.",
       ],
     },

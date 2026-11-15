@@ -24,7 +24,7 @@ export function App() {
   const [loadError, setLoadError] = useState(false);
   const [imported, setImported] = useState<Pack[]>(() => (demo ? [] : loadImported()));
   const [enabled, setEnabled] = useState<string[] | null>(() => (demo ? ["demo"] : load(KEYS.enabledPacks, null)));
-  const [settings, setSettings] = useState<Settings>(() => ({ ...DEFAULT_SETTINGS, ...load(KEYS.settings, {}) }));
+  const [settings, setSettings] = useState<Settings>(loadSettings);
   const [players, setPlayers] = useState<string[]>(() => (demo ? ["Zuzka", "Maroš", "Ivka"] : load(KEYS.players, [])));
   const [seen, setSeen] = useState<string[]>(() => (demo ? [] : load(KEYS.seen, [])));
   const [game, setGame] = useState<GameState | null>(() => (demo ? demoState(demo) : loadGame()));
@@ -265,6 +265,20 @@ export function App() {
 }
 
 /** Imported packs are re-validated on load: storage may hold data from an older build. */
+/** Saved settings always held a mode (every start saves them), so players from
+ *  before Mix became the default are moved to it once; choosing Klasika later sticks. */
+function loadSettings(): Settings {
+  const saved = load<Partial<Settings>>(KEYS.settings, {});
+  if (!demo && !load(KEYS.mixDefault, false)) {
+    if (saved.mode === "classic") {
+      saved.mode = "mix";
+      save(KEYS.settings, saved);
+    }
+    save(KEYS.mixDefault, true);
+  }
+  return { ...DEFAULT_SETTINGS, ...saved };
+}
+
 function loadImported(): Pack[] {
   const raw = load<unknown>(KEYS.imported, []);
   if (!Array.isArray(raw)) return [];
