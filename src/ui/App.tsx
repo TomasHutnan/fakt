@@ -268,7 +268,7 @@ export function App() {
 /** Saved settings always held a mode (every start saves them), so players from
  *  before Mix became the default are moved to it once; choosing Klasika later sticks. */
 function loadSettings(): Settings {
-  const saved = load<Partial<Settings>>(KEYS.settings, {});
+  const saved = load<Partial<Settings> | null>(KEYS.settings, null) ?? {};
   if (!demo && !load(KEYS.mixDefault, false)) {
     if (saved.mode === "classic") {
       saved.mode = "mix";
