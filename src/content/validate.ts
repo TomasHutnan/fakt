@@ -37,6 +37,12 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const cw = input.warnings == null ? [] : input.warnings;
   if (!Array.isArray(cw) || cw.some((w) => !(CONTENT_WARNINGS as readonly unknown[]).includes(w)))
     err("warnings", `musí byť zoznam z: ${CONTENT_WARNINGS.join(", ")}`);
+  const defaultOn = input.defaultOn;
+  if (defaultOn !== undefined && typeof defaultOn !== "boolean") err("defaultOn", "musí byť true alebo false");
+  if (adult === true && defaultOn === true) err("defaultOn", "18+ balíček je vždy predvolene vypnutý");
+  // Crude content never switches itself on: packs with warnings are 18+ or off by default.
+  if (adult === false && Array.isArray(cw) && cw.length && defaultOn !== false)
+    err("warnings", "balíček s varovaniami musí byť 18+ (adult: true) alebo predvolene vypnutý (defaultOn: false)");
   const version = input.version === undefined ? 1 : input.version;
   if (!Number.isInteger(version)) err("version", "musí byť celé číslo");
 
@@ -72,6 +78,7 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   if (description) pack.description = description;
   const author = str(input.author);
   if (author) pack.author = author;
+  if (defaultOn === false && !adult) pack.defaultOn = false;
   if (Array.isArray(cw) && cw.length) pack.warnings = [...new Set(cw as ContentWarning[])];
   return { pack, errors, warnings };
 }
