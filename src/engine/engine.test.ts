@@ -312,7 +312,10 @@ describe("validator", () => {
     expect(validatePack(pack).pack?.warnings).toBeUndefined();
   });
   it("keeps packs with warnings off by default: 18+ or defaultOn false", () => {
-    expect(validatePack({ ...pack, warnings: ["vulgar"] }).pack).toBeNull();
+    const implicit = validatePack({ ...pack, warnings: ["vulgar"] });
+    expect(implicit.pack?.defaultOn).toBe(false);
+    expect(implicit.warnings.join()).toMatch(/predvolene vypnutý/);
+    expect(validatePack({ ...pack, warnings: ["vulgar"], defaultOn: true }).pack).toBeNull();
     const optIn = validatePack({ ...pack, defaultOn: false, warnings: ["vulgar"] }).pack!;
     expect(optIn.defaultOn).toBe(false);
     expect(onByDefault(optIn)).toBe(false);

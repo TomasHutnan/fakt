@@ -16,7 +16,7 @@ adult: false              # true = labelled 18+ and off by default
 defaultOn: false          # optional: off until the player switches it on (niche or mildly crude packs).
                           # Default true; adult packs are always off.
 warnings: [vulgar, racism]  # optional content warnings shown on the pack: vulgar, sexual, drugs,
-                          # dark-humor, racism, abuse. A pack with warnings must be adult or defaultOn: false.
+                          # dark-humor, racism, abuse. A pack with warnings is adult or defaultOn: false (set it explicitly).
 version: 1
 questions: [...]
 ```
