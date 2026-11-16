@@ -346,11 +346,12 @@ export function Packs(props: {
     const saved = load<unknown>(KEYS.openGroups, []);
     return Array.isArray(saved) ? saved.filter((x): x is string => typeof x === "string") : [];
   });
-  const toggleOpen = (id: string) => {
-    const next = open.includes(id) ? open.filter((x) => x !== id) : [...open, id];
-    setOpen(next);
-    save(KEYS.openGroups, next);
-  };
+  const toggleOpen = (id: string) =>
+    setOpen((prev) => {
+      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
+      save(KEYS.openGroups, next);
+      return next;
+    });
 
   return (
     <div class="screen screen--packs">
@@ -397,7 +398,7 @@ export function Packs(props: {
                     type="button"
                     class="pack-group__head"
                     aria-expanded={isOpen}
-                    aria-controls={`group-${g.id}`}
+                    aria-controls={isOpen ? `group-${g.id}` : undefined}
                     onClick={() => toggleOpen(g.id)}
                   >
                     <span class="pack-group__chevron" aria-hidden="true">
