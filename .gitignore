@@ -6,3 +6,4 @@ dist/
 dev-dist/
 public/packs/
 .DS_Store
+.env

@@ -1,0 +1,15 @@
+.git
+.github
+node_modules
+dist
+dev-dist
+public/packs
+notes
+reference
+references
+docs
+*.md
+!packs/**/*.md
+.env
+compose*.yaml
+Dockerfile
