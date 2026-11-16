@@ -6,6 +6,8 @@ import { DESIGNS } from "../designs/index.ts";
 import { parsePackFile } from "./packs.ts";
 import { REPO_URL, REPORT_FORM_URL } from "./links.ts";
 import { sk } from "./sk.ts";
+import { groupPacks, searchPacks } from "./packGroups.ts";
+import { KEYS, load, save } from "./storage.ts";
 
 const QUICK = [
   { rounds: 5, label: sk.quickGame },
@@ -269,6 +271,7 @@ export function Packs(props: {
   fresh: Record<string, number>;
   onToggle: (id: string, on: boolean) => void;
   onSetAll: (on: boolean) => void;
+  onSetMany: (ids: string[], on: boolean) => void;
   /** Returns an error message, or null when the pack was added and saved. */
   onImport: (pack: Pack) => string | null;
   onRemoveImported: (id: string) => void;
@@ -292,6 +295,63 @@ export function Packs(props: {
     } else setMsg({ ok: false, lines: [sk.importFailed, ...res.errors.slice(0, 12)] });
   };
 
+  const row = (p: Pack) => {
+    const on = props.enabled.includes(p.id);
+    const imported = props.importedIds.includes(p.id);
+    return (
+      <li class={`pack${on ? " pack--on" : ""}`} key={p.id}>
+        <label class="pack__main" for={`pack-${p.id}`}>
+          <span class="pack__title">
+            {p.title}
+            {p.adult && <span class="badge badge--adult">{sk.adult}</span>}
+            {imported && <span class="badge">{sk.imported}</span>}
+            {props.fresh[p.id] > 0 && <span class="badge badge--new">{sk.newBadge(props.fresh[p.id])}</span>}
+          </span>
+          {p.description && <span class="pack__desc">{p.description}</span>}
+          {p.warnings && p.warnings.length > 0 && (
+            <span class="pack__warnings">
+              <span class="visually-hidden">{sk.contentWarnings}: </span>
+              {p.warnings.map((w) => (
+                <span class="badge badge--warning" key={w}>
+                  {sk.warningNames[w]}
+                </span>
+              ))}
+            </span>
+          )}
+          <span class="pack__meta">
+            {sk.questionsCount(p.questions.length)} · {p.lang.toUpperCase()}
+            {p.license !== "CC0-1.0" ? ` · ${p.license}` : ""}
+          </span>
+        </label>
+        <input
+          id={`pack-${p.id}`}
+          type="checkbox"
+          class="toggle"
+          checked={on}
+          onChange={(e) => props.onToggle(p.id, (e.target as HTMLInputElement).checked)}
+        />
+        {imported && (
+          <button type="button" class="btn btn--ghost btn--small pack__remove" onClick={() => props.onRemoveImported(p.id)}>
+            {sk.remove}
+          </button>
+        )}
+      </li>
+    );
+  };
+
+  const [query, setQuery] = useState("");
+  const groups = groupPacks(props.packs, props.importedIds);
+  const found = searchPacks(groups, query);
+  const [open, setOpen] = useState<string[]>(() => {
+    const saved = load<unknown>(KEYS.openGroups, []);
+    return Array.isArray(saved) ? saved.filter((x): x is string => typeof x === "string") : [];
+  });
+  const toggleOpen = (id: string) => {
+    const next = open.includes(id) ? open.filter((x) => x !== id) : [...open, id];
+    setOpen(next);
+    save(KEYS.openGroups, next);
+  };
+
   return (
     <div class="screen screen--packs">
       <TopBar title={sk.packs} onBack={props.onBack} />
@@ -303,51 +363,73 @@ export function Packs(props: {
           {sk.allOff}
         </button>
       </div>
-      <ul class="pack-list">
-        {props.packs.map((p) => {
-          const on = props.enabled.includes(p.id);
-          const imported = props.importedIds.includes(p.id);
-          return (
-            <li class={`pack${on ? " pack--on" : ""}`} key={p.id}>
-              <label class="pack__main" for={`pack-${p.id}`}>
-                <span class="pack__title">
-                  {p.title}
-                  {p.adult && <span class="badge badge--adult">{sk.adult}</span>}
-                  {imported && <span class="badge">{sk.imported}</span>}
-                  {props.fresh[p.id] > 0 && <span class="badge badge--new">{sk.newBadge(props.fresh[p.id])}</span>}
-                </span>
-                {p.description && <span class="pack__desc">{p.description}</span>}
-                {p.warnings && p.warnings.length > 0 && (
-                  <span class="pack__warnings">
-                    <span class="visually-hidden">{sk.contentWarnings}: </span>
-                    {p.warnings.map((w) => (
-                      <span class="badge badge--warning" key={w}>
-                        {sk.warningNames[w]}
+      <div class="field pack-search">
+        <label class="visually-hidden" for="pack-search">
+          {sk.searchPacks}
+        </label>
+        <input
+          id="pack-search"
+          type="search"
+          class="input"
+          placeholder={sk.searchPacksPlaceholder}
+          value={query}
+          onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
+        />
+      </div>
+      {query.trim() ? (
+        found.length ? (
+          <ul class="pack-list">{found.map(row)}</ul>
+        ) : (
+          <p class="field__hint">{sk.noPacksFound}</p>
+        )
+      ) : (
+        <div class="pack-groups">
+          {groups.map((g) => {
+            const isOpen = open.includes(g.id);
+            const on = g.packs.filter((p) => props.enabled.includes(p.id)).length;
+            const fresh = g.packs.reduce((n, p) => n + (props.fresh[p.id] ?? 0), 0);
+            const questions = g.packs.reduce((n, p) => n + p.questions.length, 0);
+            const allOn = on === g.packs.length;
+            return (
+              <section class={`pack-group${isOpen ? " pack-group--open" : ""}`} key={g.id}>
+                <div class="pack-group__bar">
+                  <button
+                    type="button"
+                    class="pack-group__head"
+                    aria-expanded={isOpen}
+                    aria-controls={`group-${g.id}`}
+                    onClick={() => toggleOpen(g.id)}
+                  >
+                    <span class="pack-group__chevron" aria-hidden="true">
+                      {isOpen ? "▾" : "▸"}
+                    </span>
+                    <span class="pack-group__text">
+                      <span class="field__label pack-group__title">
+                        {g.label}
+                        {fresh > 0 && <span class="badge badge--new">{sk.newBadge(fresh)}</span>}
                       </span>
-                    ))}
-                  </span>
+                      <span class="pack__meta pack-group__meta">{sk.groupMeta(on, g.packs.length, questions)}</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn--ghost btn--small pack-group__toggle"
+                    aria-label={allOn ? sk.groupOffLabel(g.label) : sk.groupOnLabel(g.label)}
+                    onClick={() => props.onSetMany(g.packs.map((p) => p.id), !allOn)}
+                  >
+                    {allOn ? sk.groupOff : sk.groupOn}
+                  </button>
+                </div>
+                {isOpen && (
+                  <ul class="pack-list" id={`group-${g.id}`}>
+                    {g.packs.map(row)}
+                  </ul>
                 )}
-                <span class="pack__meta">
-                  {sk.questionsCount(p.questions.length)} · {p.lang.toUpperCase()}
-                  {p.license !== "CC0-1.0" ? ` · ${p.license}` : ""}
-                </span>
-              </label>
-              <input
-                id={`pack-${p.id}`}
-                type="checkbox"
-                class="toggle"
-                checked={on}
-                onChange={(e) => props.onToggle(p.id, (e.target as HTMLInputElement).checked)}
-              />
-              {imported && (
-                <button type="button" class="btn btn--ghost btn--small pack__remove" onClick={() => props.onRemoveImported(p.id)}>
-                  {sk.remove}
-                </button>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+              </section>
+            );
+          })}
+        </div>
+      )}
       <section class="field">
         <label class="btn btn--block file-btn" for="import-file">
           {sk.importPack}

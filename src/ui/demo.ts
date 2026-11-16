@@ -11,6 +11,7 @@ const o = (text: string, why: string) => ({ text, why });
 export const DEMO_PACK: Pack = {
   id: "demo",
   title: "Slovenská príroda",
+  category: "zemepis",
   lang: "sk",
   license: "CC0-1.0",
   adult: false,

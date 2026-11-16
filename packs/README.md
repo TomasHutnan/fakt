@@ -10,6 +10,8 @@ Packs are **CC0-1.0** unless a pack sets its own `license`. Never copy question 
 id: sk-priroda            # lower-case-with-dashes, same as the file name
 title: Slovenská príroda
 description: Ryby, huby, štíty, jaskyne a zvieratá.
+category: zemepis         # section in the pack list: kultura | historia | zemepis | veda | tradicie | sport
+                          # (required for packs in this repo; 18+ packs are listed under 18+ anyway)
 lang: sk                  # sk | cs | en
 license: CC0-1.0          # optional, default CC0-1.0
 adult: false              # true = labelled 18+ and off by default

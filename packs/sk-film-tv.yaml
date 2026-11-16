@@ -1,6 +1,7 @@
 id: sk-film-tv
 title: Film a televízia
 description: Slovenské a československé filmy, herci, seriály, rozprávky a televízne šou.
+category: kultura
 lang: sk
 version: 1
 questions:

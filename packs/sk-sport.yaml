@@ -1,6 +1,7 @@
 id: sk-sport
 title: Šport
 description: Hokej, futbal, olympijské zlato, tenis a Peter Sagan – slovenský šport od Gotenburgu po Atlantu.
+category: sport
 lang: sk
 version: 1
 questions:

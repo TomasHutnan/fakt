@@ -144,6 +144,22 @@
 :where(.pack__main) { display: flex; flex-direction: column; gap: 3px; cursor: pointer; min-width: 0; }
 :where(.pack__title) { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 :where(.pack__remove) { grid-column: 1 / -1; justify-self: start; }
+/* Pack list sections: a full-width header button opens the section; the small button switches all its packs. */
+:where(.pack-groups) { display: flex; flex-direction: column; gap: 6px; }
+:where(.pack-group) { display: flex; flex-direction: column; gap: 8px; }
+:where(.pack-group--open) { padding-bottom: 8px; }
+:where(.pack-group__bar) {
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+}
+.pack-group__head {
+  flex: 1; min-width: 0; min-height: 52px; display: flex; align-items: center; gap: 10px;
+  padding: 6px 0; margin: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left;
+}
+:where(.pack-group__chevron) { width: 1em; flex: none; text-align: center; }
+:where(.pack-group__text) { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pack-group__head .field__label.pack-group__title { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+:where(.pack-group__toggle) { flex: none; }
 :where(.toggle) { width: 28px; height: 28px; }
 
 :where(.design-list) { display: flex; flex-direction: column; gap: 8px; }
