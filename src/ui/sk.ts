@@ -98,7 +98,11 @@ export const sk = {
   moveDown: "Posunúť nižšie",
   submit: "Potvrdiť",
   numberPlaceholder: "Tvoj tip",
-  numberInvalid: "Napíš číslo.",
+  numberInvalid: "Napíš len číslo, bez jednotiek a iných znakov.",
+  numberPrecision: (decimals: number) =>
+    decimals === 0
+      ? "Celé číslo."
+      : `Na ${decimals} ${plural(decimals, "desatinné miesto", "desatinné miesta", "desatinných miest")}, napr. 12,${"345678".slice(0, decimals)} (čiarka aj bodka).`,
   showResults: "Ukázať výsledky",
   results: "Výsledky kola",
   answer: "Odpoveď",

@@ -2,7 +2,8 @@ import { createContext, type ComponentChildren } from "preact";
 import { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "preact/hooks";
 import type { Pack } from "../content/types.ts";
 import type { Card, ChoiceCard, NumberCard, OrderCard, PickCard } from "../engine/cards.ts";
-import { formatNumber } from "../engine/cards.ts";
+import { formatNumber, numberDecimals } from "../engine/cards.ts";
+import { parseNumber } from "./number.ts";
 import {
   currentPlayer,
   isLastTurn,
@@ -340,24 +341,20 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
   );
 }
 
-export function parseNumber(raw: string): number {
-  const cleaned = raw.replace(/[\s  ]/g, "").replace(",", ".");
-  if (!/^-?\d*\.?\d+$/.test(cleaned)) return NaN;
-  return Number(cleaned);
-}
-
 function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameState; dispatch: (a: Action) => void }) {
   const [raw, setRaw] = useState("");
   const [error, setError] = useState(false);
   if (state.phase === "turnEnd") return <TurnReveal state={state} />;
+  const decimals = numberDecimals(card);
   const submit = (e: Event) => {
     e.preventDefault();
-    const v = parseNumber(raw);
+    const v = parseNumber(raw, decimals);
     if (!Number.isFinite(v)) return setError(true);
     dispatch({ type: "submitNumber", value: v });
   };
   return (
     <form class="number-input" onSubmit={submit}>
+      <p class="q__hint" id="number-hint">{sk.numberPrecision(decimals)}</p>
       <label class="number-input__row">
         <input
           id="number-guess"
@@ -366,6 +363,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
           autoComplete="off"
           placeholder={sk.numberPlaceholder}
           aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
+          aria-describedby="number-hint"
           value={raw}
           onInput={(e) => {
             setRaw((e.target as HTMLInputElement).value);

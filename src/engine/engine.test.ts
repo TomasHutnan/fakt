@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
-import { makeCard, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
+import { makeCard, numberDecimals, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
 import { DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState } from "./game.ts";
 import { createRng } from "./rng.ts";
 import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
@@ -143,6 +143,23 @@ describe("number scoring", () => {
   });
   it("ranks multiplayer guesses with shared ranks", () => {
     expect(numberRankedPoints(card, [1000, 1500, 1500, 999999])).toEqual([7, 3, 3, 0]);
+  });
+  it("always gives the closest guess points, even when far off", () => {
+    expect(numberRankedPoints(card, [999999, 9999999])).toEqual([5, 0]);
+    expect(numberRankedPoints(card, [999999, 999999, 9999999])).toEqual([5, 5, 0]);
+    expect(numberRankedPoints(card, [NaN, NaN])).toEqual([0, 0]);
+  });
+});
+
+describe("number precision", () => {
+  it("asks for decimals only when the tolerance is below one unit", () => {
+    expect(numberDecimals({ answer: 1998, scale: "linear", tolerance: 2 })).toBe(0);
+    expect(numberDecimals({ answer: 13.1, scale: "linear", tolerance: 1 })).toBe(0);
+    expect(numberDecimals({ answer: 42.195, scale: "linear", tolerance: 0.5 })).toBe(1);
+    expect(numberDecimals({ answer: 9.58, scale: "linear", tolerance: 0.05 })).toBe(2);
+    expect(numberDecimals({ answer: 10, scale: "linear", tolerance: 0.1 })).toBe(1);
+    expect(numberDecimals({ answer: 30.126, scale: "log", tolerance: 0.05 })).toBe(0);
+    expect(numberDecimals({ answer: 2.5, scale: "log", tolerance: 0.1 })).toBe(1);
   });
 });
 
