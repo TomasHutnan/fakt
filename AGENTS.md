@@ -29,7 +29,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule). Write the prompt to a file (`docs/.review-<name>.prompt`, deleted afterwards) and run `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt-file> <out-file>`; the prompt asks for `severity file:line — issue` lines and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS. Check findings before acting: Gemini is often wrong.
 - `agy` runs only through `scripts/agy-readonly.py` (read-only allow-list), never with `--dangerously-skip-permissions`. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
 - **Content pipeline**: a Claude subagent drafts a pack from sources it opens itself → Gemini Hydrogen fact-checks → the writer verifies each finding against a source and applies only confirmed ones (drops what can't be settled) → Hydrogen re-review to PASS → merge. WebFetch returns a model summary, so check numbers against the raw page. Long runs hit the usage limit: resume the same agent afterwards rather than starting over.
-- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
+- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; container: `docker build -t fakt . && docker run --rm -p 4180:8080 fakt`, then the e2e script against it; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
 - Commits are not signed in this repo (owner's rule): use `git -c commit.gpgsign=false commit`, never re-sign or wait for GPG pinentry. Repo-local git config sets `commit.gpgsign=false`.
 
 ## Rules for agents
@@ -47,16 +47,17 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 
 ## Decisions (owner, 2026-11-13)
 
-- **Play**: one phone passed around, hand-over screen "pass to <name>, tap to continue". Network play only in v3 with a big-screen host view (Jackbox style), same room; no remote play. A team is simply entered as one player.
+- **Play**: one phone passed around, hand-over screen "pass to <name>, tap to continue". Multiplayer on own phones: see below. A team is simply entered as one player.
 - **Classic**: 10 options, 2–8 true (count hidden; setting shows it). Each player plays the whole card alone. k-th correct pick = k points; bank any time; wrong pick wipes the card (setting: only ends the turn). 10 rounds by default, target score as a setting.
 - **Answers**: shown to each player right after their turn, drawn in place on the grid they answered in (setting: everyone after the round).
 - **Formats**: pick, order (dragged), number guess (closeness solo, ranked in multiplayer), one of four, which is more (derived from order questions in Mix). Never free-text answers; no pictures/audio in the first year.
-- **Later modes**: Everyone at once, Guess and bet (v3). Daily card, Teams, card-level content tags: not now. Bluff, typed list recall: dropped.
+- **Later modes**: Guess and bet, challenge link (after rooms work). Daily card, Teams, card-level content tags: not now. Bluff, typed list recall: dropped.
 - **Languages**: Slovak UI. Slovak packs first; English packs later, written directly, no translation. Czech allowed.
 - **Content**: adult packs welcome (labelled, off by default, content-warning tags); niche or mildly crude packs can be normal but off by default (`defaultOn: false`, 2026-11-16); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
 - **Packs**: YAML in `packs/`, built to per-pack JSON + index with hashes; importer accepts YAML and JSON, stores imports in the browser. Packs CC0 (per-pack `license` allowed); code MIT. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
 - **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
-- **Hosting**: GitHub Pages; a Cloudflare Workers relay only if v3 P2P (Trystero) fails.
+- **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and, later, the room server, on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`). GitHub Pages still deploys until the domain moves.
+- **Multiplayer** (2026-11-17): rooms on the same server, everyone on their own phone, optional big screen, remote play allowed; creator uploads enabled packs, the room runs the engine. See `notes/Decisions.md`.
 - **Reports/ratings**: owner's prefilled Google Form (`src/ui/links.ts`), not GitHub issues.
 - **App store**: keep possible as long as it does not limit the web version.
 
@@ -73,6 +74,7 @@ src/content/      pack types and validation (shared by build script and importer
 src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
 src/ui/           Preact screens, storage, Slovak texts (sk.ts), links (report form), feedback (vibration/sound), demo states
 src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
+src/server/       Node server in the container (static app now, rooms next); runs via type stripping
 scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper), dano-drevo-counts (word counts from subtitles)
 docs/             research report
 notes/            symlink to the owner's Obsidian vault (ignored, never commit)
