@@ -16,6 +16,7 @@ describe("parseNumber", () => {
     expect(parseNumber("1,234,567", 0)).toBe(1234567);
     expect(parseNumber("1.234,5")).toBe(1234.5);
     expect(parseNumber("1,234.5")).toBe(1234.5);
+    expect(parseNumber("0.400.000", 0)).toBeNaN();
   });
   it("reads one separator plus three digits as thousands on whole-number questions", () => {
     expect(parseNumber("1.400", 0)).toBe(1400);

@@ -42,5 +42,5 @@ export function parseNumber(raw: string, decimals = 2): number {
 
 function grouped(s: string, sep: string): boolean {
   const parts = s.split(sep);
-  return /^\d{1,3}$/.test(parts[0]) && parts.slice(1).every((p) => /^\d{3}$/.test(p));
+  return /^[1-9]\d{0,2}$/.test(parts[0]) && parts.slice(1).every((p) => /^\d{3}$/.test(p));
 }

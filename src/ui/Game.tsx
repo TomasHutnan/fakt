@@ -502,7 +502,6 @@ function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
                 class="input number-input__field"
                 readOnly
                 aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
-          aria-describedby="number-hint"
                 value={a.type === "number" && a.value != null ? formatNumber(a.value) : ""}
               />
               {card.unit && <span class="number-input__unit">{card.unit}</span>}

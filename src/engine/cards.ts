@@ -62,7 +62,7 @@ export interface ChoiceCard extends CardBase {
 export type Card = PickCard | OrderCard | NumberCard | ChoiceCard;
 
 export function formatNumber(n: number): string {
-  return n.toLocaleString("sk-SK", { maximumFractionDigits: 2 });
+  return n.toLocaleString("sk-SK", { maximumFractionDigits: 6 });
 }
 
 /**
