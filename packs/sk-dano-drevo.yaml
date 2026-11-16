@@ -1,8 +1,9 @@
 id: sk-dano-drevo
 title: Dano Drevo
-description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor, 18+.
+description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor.
 lang: sk
-adult: true
+adult: false
+defaultOn: false
 warnings: [vulgar]
 version: 1
 questions:

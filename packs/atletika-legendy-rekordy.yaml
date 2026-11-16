@@ -2,6 +2,7 @@ id: atletika-legendy-rekordy
 title: "Atletika: legendy a rekordy"
 description: Bolt, Duplantis, Zátopek, Kratochvílová a svetové rekordy – od Berlína 1936 po prvý maratón pod dve hodiny.
 lang: sk
+defaultOn: false
 version: 1
 questions:
   # ---------------------------------------------------------------- PICK

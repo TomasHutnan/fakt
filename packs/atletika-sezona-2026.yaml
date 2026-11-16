@@ -2,6 +2,7 @@ id: atletika-sezona-2026
 title: "Atletika: sezóna 2026"
 description: Sezóna 2026 – Diamantová liga, Ultimate Championship v Budapešti, ME v Birminghame, halové MS v Toruni, svetové rekordy a zlatá Emma Zapletalová.
 lang: sk
+defaultOn: false
 version: 1
 questions:
   # ---------------------------------------------------------------- PICK
