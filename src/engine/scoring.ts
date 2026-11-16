@@ -59,14 +59,16 @@ export function numberSoloPoints(card: NumberCard, guess: number): number {
 }
 
 /**
- * Multiplayer: rank by closeness. Ties share a rank (1, 1, 3). Guesses ten or more
- * times the tolerance away score nothing. Within tolerance earns a bonus.
+ * Multiplayer: rank by closeness. Ties share a rank (1, 1, 3). The closest guess always
+ * scores, however far off; other guesses ten or more times the tolerance away score
+ * nothing. Within tolerance earns a bonus.
  */
 export function numberRankedPoints(card: NumberCard, guesses: number[]): number[] {
   const errors = guesses.map((g) => numberError(card, g));
   return errors.map((e) => {
-    if (e >= 10) return 0;
+    if (!Number.isFinite(e)) return 0;
     const rank = errors.filter((other) => other < e).length;
+    if (rank > 0 && e >= 10) return 0;
     const base = POINTS.numberRanked[rank] ?? 0;
     return base + (e <= 1 ? POINTS.numberWithinToleranceBonus : 0);
   });

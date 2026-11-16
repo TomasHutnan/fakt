@@ -65,6 +65,16 @@ export function formatNumber(n: number): string {
   return n.toLocaleString("sk-SK", { maximumFractionDigits: 2 });
 }
 
+/**
+ * Decimal places a guess needs to be able to land within tolerance: 0 when the
+ * tolerance is a whole unit or more (log scale: relative to the answer).
+ */
+export function numberDecimals(card: Pick<NumberCard, "answer" | "scale" | "tolerance">): number {
+  const abs = card.scale === "log" ? Math.abs(card.answer) * card.tolerance : card.tolerance;
+  if (!(abs > 0) || abs >= 1) return 0;
+  return Math.min(6, Math.ceil(-Math.log10(abs) - 1e-9));
+}
+
 export function makeCard(pack: Pack, q: Question, rng: Rng): Card {
   const base: CardBase = {
     key: `${pack.id}/${q.id}`,

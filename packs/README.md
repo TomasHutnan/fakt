@@ -76,6 +76,8 @@ At least 4 items with distinct values; the game uses 4–5 of them. `direction: 
   unit: obyvateľov
   scale: log          # log = relative error (populations, amounts); linear = absolute (years)
   tolerance: 0.05     # log: fraction (0.05 = within 5 % is full points); linear: units (e.g. 2 years)
+                      # the game derives the asked precision from it: below 1 unit (log: below 1 unit of
+                      # answer × tolerance) the player is asked for decimals, otherwise for a whole number
   asOf: "2025"
   why: Druhé najväčšie mesto Slovenska.
   difficulty: 2
@@ -105,5 +107,6 @@ At least 4 items with distinct values; the game uses 4–5 of them. `direction: 
 - **Each option must be unambiguously true or false.** If it depends on interpretation, drop it.
 - **Verify every fact against the source.** Prefer Wikipedia (sk/cs/en), official statistics (ŠÚ SR), official sites. If two sources disagree, use neither or explain in `why`.
 - **Mix of types per pack:** roughly 60 % pick, 15 % order, 15 % number, 10 % choice.
+- **Number answers: whole numbers where you can.** Use decimals only when the decimal is the fact itself (Bolt's 9,58 s, the 30,126 Sk euro rate); otherwise pick a unit that gives a whole number. Keep `tolerance` at 1 unit or more unless you really want players to type decimals.
 - Use `asOf` for anything that changes. Prefer stable facts where the choice is free.
 - Adult packs: frank and funny, but factual. No instructions for anything dangerous or illegal.
