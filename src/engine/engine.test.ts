@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Pack } from "../content/types.ts";
+import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
 import { makeCard, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
 import { DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState } from "./game.ts";
@@ -149,7 +149,7 @@ describe("number scoring", () => {
 function play(seed = 42, players = ["Ana", "Bo"], settings = {}) {
   const s = newGame({
     players,
-    settings: { ...DEFAULT_SETTINGS, packIds: ["test"], ...settings },
+    settings: { ...DEFAULT_SETTINGS, mode: "classic" as const, packIds: ["test"], ...settings },
     packs: [pack],
     seen: new Set(),
     seed,
@@ -307,9 +307,21 @@ describe("validator", () => {
     expect(res.errors.join("\n")).toMatch(/10 možností/);
   });
   it("accepts known content warnings and rejects unknown ones", () => {
-    expect(validatePack({ ...pack, warnings: ["vulgar", "racism"] }).pack?.warnings).toEqual(["vulgar", "racism"]);
-    expect(validatePack({ ...pack, warnings: ["gore"] }).pack).toBeNull();
+    expect(validatePack({ ...pack, adult: true, warnings: ["vulgar", "racism"] }).pack?.warnings).toEqual(["vulgar", "racism"]);
+    expect(validatePack({ ...pack, adult: true, warnings: ["gore"] }).pack).toBeNull();
     expect(validatePack(pack).pack?.warnings).toBeUndefined();
+  });
+  it("keeps packs with warnings off by default: 18+ or defaultOn false", () => {
+    const implicit = validatePack({ ...pack, warnings: ["vulgar"] });
+    expect(implicit.pack?.defaultOn).toBe(false);
+    expect(implicit.warnings.join()).toMatch(/predvolene vypnutý/);
+    expect(validatePack({ ...pack, warnings: ["vulgar"], defaultOn: true }).pack).toBeNull();
+    const optIn = validatePack({ ...pack, defaultOn: false, warnings: ["vulgar"] }).pack!;
+    expect(optIn.defaultOn).toBe(false);
+    expect(onByDefault(optIn)).toBe(false);
+    expect(onByDefault(validatePack(pack).pack!)).toBe(true);
+    expect(onByDefault(validatePack({ ...pack, adult: true }).pack!)).toBe(false);
+    expect(validatePack({ ...pack, adult: true, defaultOn: true }).pack).toBeNull();
   });
 
   it("warns about stale asOf", () => {

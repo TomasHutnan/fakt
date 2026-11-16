@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "preact/hooks";
-import type { Pack } from "../content/types.ts";
+import { onByDefault, type Pack } from "../content/types.ts";
 import { applyDesign, DEFAULT_DESIGN } from "../designs/index.ts";
 import { DEFAULT_SETTINGS, newGame, reduce, type Action, type GameState, type Settings } from "../engine/game.ts";
 import { randomSeed } from "../engine/rng.ts";
@@ -24,7 +24,7 @@ export function App() {
   const [loadError, setLoadError] = useState(false);
   const [imported, setImported] = useState<Pack[]>(() => (demo ? [] : loadImported()));
   const [enabled, setEnabled] = useState<string[] | null>(() => (demo ? ["demo"] : load(KEYS.enabledPacks, null)));
-  const [settings, setSettings] = useState<Settings>(() => ({ ...DEFAULT_SETTINGS, ...load(KEYS.settings, {}) }));
+  const [settings, setSettings] = useState<Settings>(loadSettings);
   const [players, setPlayers] = useState<string[]>(() => (demo ? ["Zuzka", "Maroš", "Ivka"] : load(KEYS.players, [])));
   const [seen, setSeen] = useState<string[]>(() => (demo ? [] : load(KEYS.seen, [])));
   const [game, setGame] = useState<GameState | null>(() => (demo ? demoState(demo) : loadGame()));
@@ -41,12 +41,12 @@ export function App() {
     loadBuiltInPacks()
       .then((list) => {
         setBuiltIn(list);
-        // Packs added since the last visit get their default (on unless adult),
+        // Packs added since the last visit get their default (on unless adult or defaultOn: false),
         // even when the player has already changed the selection.
         const known = load<unknown>(KEYS.knownPacks, null);
         const saved = load<unknown>(KEYS.enabledPacks, null);
         if (Array.isArray(saved) && Array.isArray(known)) {
-          const added = list.filter((p) => !known.includes(p.id) && !p.adult && !saved.includes(p.id));
+          const added = list.filter((p) => !known.includes(p.id) && onByDefault(p) && !saved.includes(p.id));
           if (added.length) {
             const ids = [...saved, ...added.map((p) => p.id)];
             setEnabled(ids);
@@ -88,8 +88,8 @@ export function App() {
     persist(KEYS.knownQuestions, all);
   };
 
-  // Default selection: everything except adult packs.
-  const enabledIds = enabled ?? packs.filter((p) => !p.adult).map((p) => p.id);
+  // Default selection: everything except adult and opt-in packs.
+  const enabledIds = enabled ?? packs.filter(onByDefault).map((p) => p.id);
   const activeIds = enabledIds.filter((id) => packs.some((p) => p.id === id));
 
   // Persist (never in demo mode, so the gallery cannot overwrite a real game).
@@ -265,6 +265,20 @@ export function App() {
 }
 
 /** Imported packs are re-validated on load: storage may hold data from an older build. */
+/** Saved settings always held a mode (every start saves them), so players from
+ *  before Mix became the default are moved to it once; choosing Klasika later sticks. */
+function loadSettings(): Settings {
+  const saved = load<Partial<Settings> | null>(KEYS.settings, null) ?? {};
+  if (!demo && !load(KEYS.mixDefault, false)) {
+    if (saved.mode === "classic") {
+      saved.mode = "mix";
+      save(KEYS.settings, saved);
+    }
+    save(KEYS.mixDefault, true);
+  }
+  return { ...DEFAULT_SETTINGS, ...saved };
+}
+
 function loadImported(): Pack[] {
   const raw = load<unknown>(KEYS.imported, []);
   if (!Array.isArray(raw)) return [];

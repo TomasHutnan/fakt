@@ -80,6 +80,8 @@ export interface Pack {
   /** SPDX id, default CC0-1.0 */
   license: string;
   adult: boolean;
+  /** false = off until the player switches it on (niche packs). Adult packs are always off. */
+  defaultOn?: boolean;
   /** Content warnings shown on the pack, see CONTENT_WARNINGS. */
   warnings?: ContentWarning[];
   version: number;
@@ -95,6 +97,7 @@ export interface PackMeta {
   lang: string;
   license: string;
   adult: boolean;
+  defaultOn?: boolean;
   warnings?: ContentWarning[];
   version: number;
   count: number;
@@ -102,3 +105,6 @@ export interface PackMeta {
   hash: string;
   file: string;
 }
+
+/** Whether a pack is switched on for new players and when it is added later. */
+export const onByDefault = (p: Pick<Pack, "adult" | "defaultOn">): boolean => !p.adult && p.defaultOn !== false;

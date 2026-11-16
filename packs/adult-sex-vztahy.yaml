@@ -481,7 +481,7 @@ questions:
       - { text: Bez ochrany, value: 85, why: Bez akejkoľvek ochrany otehotnie 85 % žien za rok. }
       - { text: Prerušovaný styk, value: 20, why: Pri bežnom používaní asi 20 %. }
       - { text: Mužský kondóm, value: 13, why: Pri dokonalom používaní len 2 %. }
-      - { text: Antikoncepčná tabletka, value: 7, why: Dokonale 0,3 %, rozdiel robí zabúdanie. }
+      - { text: "Antikoncepčná tabletka", value: 7, why: "Dokonale 0,3 %, rozdiel robí zabúdanie." }
       - { text: Hormonálna injekcia, value: 4, why: Bežne asi 4 %. }
       - { text: Podkožný implantát, value: 0.05, why: Najspoľahlivejšia metóda v tabuľke. }
 
@@ -526,11 +526,11 @@ questions:
     source: https://en.wikipedia.org/wiki/Human_penis_size
     note: Ďalšie zdroje – https://en.wikipedia.org/wiki/Baculum, https://en.wikipedia.org/wiki/Lake_duck, https://en.wikipedia.org/wiki/Dildo
     items:
-      - { text: Penisová kosť mroža, value: 56, why: Exemplár na obrázku vo Wikipédii má asi 56 cm, najdlhšie až 63 cm. }
+      - { text: "Penisová kosť mroža", value: 56, why: "Exemplár na obrázku vo Wikipédii má asi 56 cm, najdlhšie až 63 cm." }
       - { text: Rekordný penis potápnice argentínskej, value: 42.5, why: Zapísaný v Guinnessovej knihe. }
       - { text: Kamenný falus z Hohle Fels, value: 20, why: Starý asi 30 000 rokov. }
-      - { text: Penis, ktorý si ženy v štúdii vybrali pre dlhodobý vzťah, value: 16, why: Štúdia Prause a kol. (2015) s 3D modelmi. }
-      - { text: Priemerný ľudský penis v erekcii, value: 13.1, why: 13,12 cm podľa merania vyše 15 000 mužov. }
+      - { text: "Penis, ktorý si ženy v štúdii vybrali pre dlhodobý vzťah", value: 16, why: "Štúdia Prause a kol. (2015) s 3D modelmi." }
+      - { text: "Priemerný ľudský penis v erekcii", value: 13.1, why: "13,12 cm podľa merania vyše 15 000 mužov." }
 
   # ---------- NUMBER ----------
   - id: priemerna-dlzka
@@ -640,9 +640,9 @@ questions:
     prompt: Koľko mužov z 27 malo v štúdii z roku 2011 spermie v predejakulačnej tekutine?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Withdrawal_method
-    correct: { text: "11", why: Teda 41 %, a 10 z nich malo pohyblivé spermie. Prerušovaný styk preto bežne zlyhá asi u 20 % žien za rok. }
+    correct: { text: "11", why: "Teda 41 %, a 10 z nich malo pohyblivé spermie. Prerušovaný styk preto bežne zlyhá asi u 20 % žien za rok." }
     wrong:
-      - { text: Ani jeden, why: Staršie malé štúdie to tvrdili, táto ich vyvrátila. }
+      - { text: "Ani jeden", why: "Staršie malé štúdie to tvrdili, táto ich vyvrátila." }
       - { text: "2", why: Bolo ich 11 z 27. }
       - { text: Všetci, why: Bolo ich 11 z 27. }
 
@@ -664,6 +664,6 @@ questions:
     source: https://en.wikipedia.org/wiki/Online_dating
     correct: { text: Končia rozchodom o niečo menej často, why: A manželia boli v priemere o niečo spokojnejší. }
     wrong:
-      - { text: Končia rozvodom dvakrát častejšie, why: Bolo to naopak, o niečo menej často. }
+      - { text: "Končia rozvodom dvakrát častejšie", why: "Bolo to naopak, o niečo menej často." }
       - { text: Polovica sa rozpadne do dvoch rokov, why: Nič také prieskum nezistil. }
       - { text: Sú takmer všetky bezdetné, why: Nič také prieskum nezistil. }

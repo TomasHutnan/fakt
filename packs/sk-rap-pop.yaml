@@ -12,7 +12,7 @@ questions:
     difficulty: 1
     source: https://sk.wikipedia.org/wiki/Elán_(skupina)
     correct:
-      - { text: Voda, čo ma drží nad vodou, why: Jeden z najväčších evergreenov kapely. }
+      - { text: "Voda, čo ma drží nad vodou", why: "Jeden z najväčších evergreenov kapely." }
       - { text: Tanečnice z Lúčnice, why: Patrí k najznámejším hitom Elánu. }
       - { text: Kráľovná bielych tenisiek, why: Klasika z repertoára Joža Ráža a spol. }
       - { text: Neviem byť sám, why: Jedna z najhranejších balád kapely. }
@@ -22,7 +22,7 @@ questions:
     wrong:
       - { text: Nepoznám, why: Hit skupiny IMT Smile z albumu Klik-klak. }
       - { text: Maštaľ, why: Singel Horkýže Slíže z albumu V rámci oného. }
-      - { text: Žily, why: Pieseň, ktorá preslávila No Name aj v Česku. }
+      - { text: "Žily", why: "Pieseň, ktorá preslávila No Name aj v Česku." }
       - { text: Hey Now, why: Najznámejšia pieseň Peter Bič Project. }
       - { text: Lavíny, why: Desmod za ňu v roku 2008 dostal Zlatého slávika za hit roka. }
       - { text: Vrany, why: Druhý singel IMT Smile z albumu Klik-klak. }
@@ -36,20 +36,20 @@ questions:
     source: https://sk.wikipedia.org/wiki/Elán_(skupina)
     asOf: "2026-11"
     correct:
-      - { text: Jožo Ráž, why: Basgitarista a spevák, v kapele od založenia v roku 1968. }
+      - { text: "Jožo Ráž", why: "Basgitarista a spevák, v kapele od založenia v roku 1968." }
       - { text: Vašo Patejdl, why: Klávesista a spevák; v kapele bol do roku 1985 a potom v rokoch 1996 až 2023. }
-      - { text: Juraj Farkaš, why: Zakladateľ, gitarista a spevák; v kapele do roku 1985. }
+      - { text: "Juraj Farkaš", why: "Zakladateľ, gitarista a spevák; v kapele do roku 1985." }
       - { text: Zdeno Baláž, why: Zakladajúci bubeník. }
-      - { text: Ján Baláž, why: Sólový gitarista, v kapele od roku 1981. }
-      - { text: Fero Turák, why: Klávesista, trubkár, spevák a huslista, v kapele v rokoch 1975 až 1980 a 1990 až 1991. }
-      - { text: Peter Farnbauer, why: Gitarista a klávesista, v kapele od roku 1990. }
-      - { text: Henry Tóth, why: Gitarista, v kapele v rokoch 2003 až 2013. }
+      - { text: "Ján Baláž", why: "Sólový gitarista, v kapele od roku 1981." }
+      - { text: "Fero Turák", why: "Klávesista, trubkár, spevák a huslista, v kapele v rokoch 1975 až 1980 a 1990 až 1991." }
+      - { text: "Peter Farnbauer", why: "Gitarista a klávesista, v kapele od roku 1990." }
+      - { text: "Henry Tóth", why: "Gitarista, v kapele v rokoch 2003 až 2013." }
     wrong:
       - { text: Martin Ďurinda, why: Líder Tublatanky. }
       - { text: Pavol Habera, why: Spevák skupiny Team. }
       - { text: Miro Žbirka, why: Spevák Modusu a sólista. }
-      - { text: Richard Müller, why: Sólový spevák, nie člen Elánu. }
-      - { text: Dežo Ursiny, why: Hudobník, nie člen Elánu. }
+      - { text: "Richard Müller", why: "Sólový spevák, nie člen Elánu." }
+      - { text: "Dežo Ursiny", why: "Hudobník, nie člen Elánu." }
       - { text: Mário Kollár, why: Spevák Desmodu. }
 
   - id: kontrafakt-albumy
@@ -61,7 +61,7 @@ questions:
     correct:
       - { text: E.R.A., why: Debutový album z roku 2004. }
       - { text: Bozk na rozlúčku, why: Vyšiel v roku 2007. }
-      - { text: Navždy, why: Z roku 2013, s hitmi Stokujeme vonku a JBMNT. }
+      - { text: "Navždy", why: "Z roku 2013, s hitmi Stokujeme vonku a JBMNT." }
       - { text: Real Newz, why: Z roku 2019. }
       - { text: KF ako Rolls, why: Z roku 2021. }
     wrong:
@@ -81,13 +81,13 @@ questions:
     correct:
       - { text: Nový človek, why: Debut z roku 2011. }
       - { text: Ypsilon Black, why: Vyšiel 31. marca 2015. }
-      - { text: Ypsilon White, why: Vyšiel len o päť týždňov po Black, 5. mája 2015. }
+      - { text: "Ypsilon White", why: "Vyšiel len o päť týždňov po Black, 5. mája 2015." }
       - { text: Nie som tu náhodou, why: Z decembra 2018. }
-      - { text: PLAYLI5T, why: Z roku 2023, vyšiel iba digitálne. }
+      - { text: "PLAYLI5T", why: "Z roku 2023, vyšiel iba digitálne." }
     wrong:
-      - { text: Kvalitný materiál, why: Album skupiny H16 z roku 2006, nie sólový. }
+      - { text: "Kvalitný materiál", why: "Album skupiny H16 z roku 2006, nie sólový." }
       - { text: Čísla nepustia, why: Album skupiny H16 z roku 2008. }
-      - { text: Rýmy, hudba a boh, why: Album skupiny H16 z roku 2013. }
+      - { text: "Rýmy, hudba a boh", why: "Album skupiny H16 z roku 2013." }
       - { text: Sila, why: Album skupiny H16 z roku 2016. }
       - { text: Fenomen, why: Sólový album Rytmusa. }
       - { text: Pancier, why: Sólový album Separa z roku 2017. }
@@ -103,8 +103,8 @@ questions:
       - { text: V rámci oného, why: Debut z roku 1997 so singlom Maštaľ. }
       - { text: Vo štvorici po opici, why: Vyšiel v roku 1998. }
       - { text: Ja chaču tebja, why: Album z roku 2000. }
-      - { text: Festival Chorobná, why: Z roku 2001, obsahuje Lístok na Mars. }
-      - { text: Kýže sliz, why: Z roku 2002, je na ňom Malá Žužu aj Vlak. }
+      - { text: "Festival Chorobná", why: "Z roku 2001, obsahuje Lístok na Mars." }
+      - { text: "Kýže sliz", why: "Z roku 2002, je na ňom Malá Žužu aj Vlak." }
       - { text: Alibaba a 40 krátkych songov, why: Z roku 2003; pokračovanie vyšlo až v roku 2021. }
       - { text: Ukáž tú tvoju ZOO, why: Z roku 2007. }
       - { text: Pustite Karola, why: Z roku 2017. }
@@ -125,7 +125,7 @@ questions:
     correct:
       - { text: Derylov svet, why: Album z roku 2003. }
       - { text: Skupinová terapia, why: Album z roku 2004. }
-      - { text: Uhol pohľadu, why: Z roku 2006, je na ňom cover Karola Duchoňa V dolinách. }
+      - { text: "Uhol pohľadu", why: "Z roku 2006, je na ňom cover Karola Duchoňa V dolinách." }
       - { text: Kyvadlo, why: Album z roku 2007. }
       - { text: Vitajte na konci sveta, why: Album z roku 2010. }
       - { text: Molekuly zvuku, why: Album z roku 2017. }
@@ -145,19 +145,19 @@ questions:
     source: https://sk.wikipedia.org/wiki/IMT_Smile
     asOf: "2026-11"
     correct:
-      - { text: Katarína Knechtová, why: Bola speváčkou IMT Smile do roku 1998, potom odišla do Pehy. }
+      - { text: "Katarína Knechtová", why: "Bola speváčkou IMT Smile do roku 1998, potom odišla do Pehy." }
       - { text: Peter Bič, why: Po odchode z kapely v roku 2010 založil Peter Bič Project. }
-      - { text: Martin Valihora, why: Bubeník, ktorý neskôr hral aj so svetovými jazzovými menami. }
+      - { text: "Martin Valihora", why: "Bubeník, ktorý neskôr hral aj so svetovými jazzovými menami." }
       - { text: Martin Migaš, why: Bol členom kapely v minulosti. }
-      - { text: Mário Gapa Garbera, why: Saxofonista, ktorý v kapele hral. }
-      - { text: Ivan Tásler, why: Spevák, gitarista a zakladateľ kapely. }
+      - { text: "Mário Gapa Garbera", why: "Saxofonista, ktorý v kapele hral." }
+      - { text: "Ivan Tásler", why: "Spevák, gitarista a zakladateľ kapely." }
       - { text: Miro Tásler, why: Klávesista a zakladateľ; názov vznikol z iniciálok bratov. }
     wrong:
       - { text: Vašo Patejdl, why: Klávesista Elánu. }
       - { text: Peter Hrivňák Kuko, why: Spevák Horkýže Slíže. }
       - { text: Igor Timko, why: Spevák No Name z Košíc. }
       - { text: Mário Kollár, why: Spevák Desmodu. }
-      - { text: Majk Spirit, why: Raper, s IMT Smile nehral. }
+      - { text: "Majk Spirit", why: "Raper, s IMT Smile nehral." }
       - { text: Peter Cmorík, why: Víťaz SuperStar 2005 až 2006. }
 
   - id: eurovizia-sk
@@ -169,10 +169,10 @@ questions:
     correct:
       - { text: Kristína, why: V Osle 2010 spievala Horehronie a skončila v semifinále šestnásta. }
       - { text: Twiins, why: V roku 2011 s piesňou I'm Still Alive. }
-      - { text: Max Jason Mai, why: V roku 2012 s Don't Close Your Eyes; v semifinále skončil posledný, s 22 bodmi. }
+      - { text: "Max Jason Mai", why: "V roku 2012 s Don't Close Your Eyes; v semifinále skončil posledný, s 22 bodmi." }
       - { text: Marcel Palonder, why: V roku 1996 s piesňou Kým nás máš. }
       - { text: Katarína Hasprová, why: V roku 1998 s piesňou Modlitba. }
-      - { text: Kamil Mikulčík a Nela Pocisková, why: Návrat po jedenástich rokoch, v roku 2009 s piesňou Leť tmou. }
+      - { text: "Kamil Mikulčík a Nela Pocisková", why: "Návrat po jedenástich rokoch, v roku 2009 s piesňou Leť tmou." }
       - { text: Tublatanka, why: Debut Slovenska v roku 1994 s piesňou Nekonečná pieseň. }
     wrong:
       - { text: Horkýže Slíže, why: Na Eurovízii nikdy nevystúpili. }
@@ -191,7 +191,7 @@ questions:
     asOf: "2026-11"
     correct:
       - { text: Vyzliecť si človeka, why: Debut z roku 2012. }
-      - { text: Dobrý deň, to som ja, why: Z roku 2013, získal dvojitú platinu. }
+      - { text: "Dobrý deň, to som ja", why: "Z roku 2013, získal dvojitú platinu." }
       - { text: Na pravom poludní, why: Z roku 2014. }
       - { text: Smej sa duša moja, why: Z roku 2016. }
       - { text: Len tak sa stíšim, why: Z roku 2019. }
@@ -212,14 +212,14 @@ questions:
     source: https://sk.wikipedia.org/wiki/Peter_Bič_Project
     asOf: "2026-11"
     correct:
-      - { text: Say It Loud, why: Debut z roku 2012, so singlom Hey Now. }
+      - { text: "Say It Loud", why: "Debut z roku 2012, so singlom Hey Now." }
       - { text: Just a Story, why: Z roku 2015. }
       - { text: Dream, why: Z roku 2017. }
       - { text: Labyrint, why: Z roku 2019. }
       - { text: Hlava, why: Z roku 2021. }
-      - { text: Stále ťa má niekto rád, why: Najnovší štúdiový album, z roku 2025. }
+      - { text: "Stále ťa má niekto rád", why: "Najnovší štúdiový album, z roku 2025." }
     wrong:
-      - { text: Hlava má sedem otvorov, why: Album IMT Smile z roku 2008, odkiaľ Bič pochádza. }
+      - { text: "Hlava má sedem otvorov", why: "Album IMT Smile z roku 2008, odkiaľ Bič pochádza." }
       - { text: Rodina, why: Album IMT Smile z roku 2012. }
       - { text: Na ceste 1979, why: Album IMT Smile z roku 2015. }
       - { text: Kyvadlo, why: Album Desmodu. }
@@ -233,9 +233,9 @@ questions:
     asOf: "2026-11"
     correct:
       - { text: Buldozér, why: Sólový debut z roku 2012. }
-      - { text: Pirát, why: Z roku 2014, je na ňom Bublina s Tinou. }
+      - { text: "Pirát", why: "Z roku 2014, je na ňom Bublina s Tinou." }
       - { text: Pancier, why: Z roku 2017. }
-      - { text: Flowdemort, why: Z roku 2023, podľa Separovej prezývky. }
+      - { text: "Flowdemort", why: "Z roku 2023, podľa Separovej prezývky." }
       - { text: Čo sa stalo?!, why: Album DMS z roku 2011. }
       - { text: MMXV, why: Album DMS z decembra 2015. }
       - { text: MDMS, why: Album DMS z roku 2019. }
@@ -254,9 +254,9 @@ questions:
     difficulty: 1
     source: https://sk.wikipedia.org/wiki/No_Name
     correct:
-      - { text: Žily, why: Pieseň, ktorá kapelu preslávila aj v Česku. }
+      - { text: "Žily", why: "Pieseň, ktorá kapelu preslávila aj v Česku." }
       - { text: Ty a tvoja sestra, why: Úspešný singel z albumu Počkám si na zázrak. }
-      - { text: Ďakujem, že si, why: Singel z albumu Počkám si na zázrak. }
+      - { text: "Ďakujem, že si", why: "Singel z albumu Počkám si na zázrak." }
       - { text: Kto dokáže, why: Singel z roku 2017 s Karlom Gottom. }
       - { text: Ženušky, why: Duet s Luciou Bílou z albumu Nový album. }
       - { text: Elity, why: Vyšla k 25. výročiu kapely v roku 2021. }
@@ -265,7 +265,7 @@ questions:
       - { text: Maštaľ, why: Hit Horkýže Slíže. }
       - { text: Hey Now, why: Hit Peter Bič Project. }
       - { text: Lavíny, why: Hit Desmodu. }
-      - { text: Pár dní, why: Pieseň Desmodu, ocenená Aurelom v roku 2005. }
+      - { text: "Pár dní", why: "Pieseň Desmodu, ocenená Aurelom v roku 2005." }
       - { text: Horehronie, why: Pieseň Kristíny z Eurovízie. }
 
   - id: albumy-2012
@@ -279,7 +279,7 @@ questions:
       - { text: Say It Loud (Peter Bič Project), why: Debut skupiny z roku 2012. }
       - { text: Vyzliecť si človeka (Sima Martausová), why: Debut Simy z roku 2012. }
       - { text: Buldozér (Separ), why: Vyšiel 31. októbra 2012. }
-      - { text: Don't Look Back (Celeste Buckingham), why: Vyšiel 20. apríla 2012, krátko pred jej sedemnástymi narodeninami. }
+      - { text: "Don't Look Back (Celeste Buckingham)", why: "Vyšiel 20. apríla 2012, krátko pred jej sedemnástymi narodeninami." }
       - { text: Na slnečnej strane sveta (Kristína), why: Tretí album speváčky. }
       - { text: Rodina (IMT Smile), why: Album z roku 2012. }
       - { text: St. Mary Huana Ganja (Horkýže Slíže), why: Album z roku 2012. }
@@ -289,8 +289,8 @@ questions:
       - { text: Fenomen (Rytmus), why: Vyšiel v decembri 2011. }
       - { text: S.E.X.Y. (Tina), why: Album z roku 2011. }
       - { text: Iný rozmer (Desmod), why: Album z roku 2011. }
-      - { text: Dobrý deň, to som ja (Sima Martausová), why: Vyšiel až v roku 2013. }
-      - { text: Where I Belong (Celeste Buckingham), why: Druhý album, z roku 2013. }
+      - { text: "Dobrý deň, to som ja (Sima Martausová)", why: "Vyšiel až v roku 2013." }
+      - { text: "Where I Belong (Celeste Buckingham)", why: "Druhý album, z roku 2013." }
       - { text: Navždy (Kontrafakt), why: Album z roku 2013. }
       - { text: Pirát (Separ), why: Vyšiel v marci 2014. }
 
@@ -327,9 +327,9 @@ questions:
     correct:
       - { text: Rytmus je Patrik Vrbovský, why: Narodil sa 3. januára 1977 v Kroměříži. }
       - { text: Majk Spirit je Michal Dušička, why: Narodil sa v Bratislave v roku 1984. }
-      - { text: Separ je Michael Kmeť, why: Bratislavský raper, prezývaný aj FlowDemort. }
+      - { text: "Separ je Michael Kmeť", why: "Bratislavský raper, prezývaný aj FlowDemort." }
       - { text: Ego je Michal Straka, why: Rodák z Lučenca a absolvent práva. }
-      - { text: Tina je Martina Csillaghová, why: Rodáčka z Prešova, narodená 11. marca 1984. }
+      - { text: "Tina je Martina Csillaghová", why: "Rodáčka z Prešova, narodená 11. marca 1984." }
       - { text: Kristína je Kristína Peláková, why: Rodáčka zo Svidníka. }
     wrong:
       - { text: Majk Spirit je Michal Straka, why: Straka je občianske meno Ega. }
@@ -456,7 +456,7 @@ questions:
   - id: superstar-prvy-rocnik
     type: choice
     prompt: Kto vyhral prvý ročník súťaže Slovensko hľadá SuperStar v rokoch 2004 až 2005?
-    correct: { text: Katarína Koščová, why: Vyhrala prvú sériu, ktorú vysielala STV. }
+    correct: { text: "Katarína Koščová", why: "Vyhrala prvú sériu, ktorú vysielala STV." }
     wrong:
       - { text: Martina Šindlerová, why: Skončila druhá v prvom ročníku. }
       - { text: Mária Bundová, why: Skončila druhá v druhom ročníku. }

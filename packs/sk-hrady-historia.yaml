@@ -651,8 +651,8 @@ questions:
     prompt: V ktorom meste má sídlo Matica slovenská?
     correct: { text: Martin, why: Založili ju tam v roku 1863. }
     wrong:
-      - { text: Banská Bystrica, why: Bolo centrom SNP, nie Matice. }
+      - { text: "Banská Bystrica", why: "Bolo centrom SNP, nie Matice." }
       - { text: Nitra, why: Bola sídlom Pribinovho kniežatstva. }
-      - { text: Žilina, why: Leží neďaleko, ale sídlom Matice nie je. }
+      - { text: "Žilina", why: "Leží neďaleko, ale sídlom Matice nie je." }
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Matica_slovensk%C3%A1

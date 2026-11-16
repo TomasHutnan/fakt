@@ -2,6 +2,7 @@ id: atletika-legendy-rekordy
 title: "Atletika: legendy a rekordy"
 description: Bolt, Duplantis, Zátopek, Kratochvílová a svetové rekordy – od Berlína 1936 po prvý maratón pod dve hodiny.
 lang: sk
+defaultOn: false
 version: 1
 questions:
   # ---------------------------------------------------------------- PICK
@@ -681,7 +682,7 @@ questions:
       - { text: Kratochvílovej svetový rekord na 800 m, value: 1983, why: "1:53,28 v Mníchove, platí dodnes." }
       - { text: Bubkov prvý svetový rekord v Bratislave, value: 1984, why: "5,85 m na štadióne v Bratislave, prvý z jeho rekordov." }
       - { text: Pribilinec vyhral chôdzu na olympiáde v Soule, value: 1988, why: "20 km, zlato pre Slováka v drese Československa." }
-      - { text: Železného svetový rekord 98,48 m, value: 1996, why: "V nemeckej Jene, platí dodnes." }
+      - { text: "Železného svetový rekord 98,48 m", value: 1996, why: "V nemeckej Jene, platí dodnes." }
       - { text: Šebrle ako prvý desaťbojár nad 9000 bodov, value: 2001, why: "9026 bodov v rakúskom Götzise." }
       - { text: Tóth majstrom sveta v chôdzi na 50 km, value: 2015, why: "V Pekingu, rok pred olympijským zlatom v Riu." }
       - { text: Zapletalová bronzová na MS v Tokiu, value: 2025, why: "400 m prekážok v slovenskom rekorde 53,00." }

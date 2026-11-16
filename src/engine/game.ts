@@ -34,7 +34,7 @@ export interface Settings {
 }
 
 export const DEFAULT_SETTINGS: Settings = {
-  mode: "classic",
+  mode: "mix",
   rounds: 10,
   target: null,
   wipe: "always",

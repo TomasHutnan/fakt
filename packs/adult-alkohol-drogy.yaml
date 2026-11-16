@@ -653,6 +653,6 @@ questions:
       text: Rumunsko
       why: 17 litrov čistého alkoholu ročne na človeka nad 15 rokov.
     wrong:
-      - { text: Česko, why: Tretie s 13,3 litra. }
-      - { text: Nemecko, why: Piate s 12,2 litra. }
-      - { text: Lotyšsko, why: Štvrté s 13,1 litra. }
+      - { text: "Česko", why: "Tretie s 13,3 litra." }
+      - { text: "Nemecko", why: "Piate s 12,2 litra." }
+      - { text: "Lotyšsko", why: "Štvrté s 13,1 litra." }

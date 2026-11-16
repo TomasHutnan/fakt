@@ -14,18 +14,18 @@ questions:
     tags: [hranice]
     correct:
       - { text: Česko, why: Do roku 1993 sme boli jeden štát. }
-      - { text: Poľsko, why: Hranica vedie hlavne po horách, napríklad cez Tatry. }
-      - { text: Ukrajina, why: Najvýchodnejší sused, hlavný priechod je pri Vyšnom Nemeckom. }
-      - { text: Maďarsko, why: Dlhá južná hranica, veľká časť vedie po Dunaji a Ipli. }
+      - { text: "Poľsko", why: "Hranica vedie hlavne po horách, napríklad cez Tatry." }
+      - { text: "Ukrajina", why: "Najvýchodnejší sused, hlavný priechod je pri Vyšnom Nemeckom." }
+      - { text: "Maďarsko", why: "Dlhá južná hranica, veľká časť vedie po Dunaji a Ipli." }
       - { text: Rakúsko, why: Susedí priamo s Bratislavou. }
     wrong:
       - { text: Rumunsko, why: Medzi nami leží Maďarsko alebo Ukrajina. }
       - { text: Slovinsko, why: Medzi nami leží Rakúsko alebo Maďarsko. }
-      - { text: Nemecko, why: Je to blízko, ale medzi nami leží Rakúsko a Česko. }
-      - { text: Chorvátsko, why: Spoločnú hranicu nemáme, leží medzi nami Maďarsko. }
+      - { text: "Nemecko", why: "Je to blízko, ale medzi nami leží Rakúsko a Česko." }
+      - { text: "Chorvátsko", why: "Spoločnú hranicu nemáme, leží medzi nami Maďarsko." }
       - { text: Srbsko, why: Medzi nami a Srbskom leží Maďarsko. }
-      - { text: Bielorusko, why: Priamo nesusedí, je za Poľskom alebo Ukrajinou. }
-      - { text: Litva, why: Je to ďaleko, medzi nami je Poľsko. }
+      - { text: "Bielorusko", why: "Priamo nesusedí, je za Poľskom alebo Ukrajinou." }
+      - { text: "Litva", why: "Je to ďaleko, medzi nami je Poľsko." }
       - { text: Moldavsko, why: Je za Ukrajinou. }
 
   - id: sidla-krajov
@@ -36,16 +36,16 @@ questions:
     tags: [kraje]
     correct:
       - { text: Bratislava, why: Hlavné mesto je zároveň sídlom najmenšieho kraja. }
-      - { text: Trnava, why: Sídlo Trnavského kraja, nie Piešťany ani Dunajská Streda. }
+      - { text: "Trnava", why: "Sídlo Trnavského kraja, nie Piešťany ani Dunajská Streda." }
       - { text: Trenčín, why: Sídlo najmenej ľudnatého kraja na Slovensku. }
-      - { text: Nitra, why: Sídlo kraja je v Nitre, nie v Nových Zámkoch. }
-      - { text: Žilina, why: Nie Martin, hoci Martin je v tom istom kraji. }
+      - { text: "Nitra", why: "Sídlo kraja je v Nitre, nie v Nových Zámkoch." }
+      - { text: "Žilina", why: "Nie Martin, hoci Martin je v tom istom kraji." }
       - { text: Banská Bystrica, why: Sídlo najväčšieho kraja podľa rozlohy. }
-      - { text: Prešov, why: Sídlo najľudnatejšieho kraja, nie Poprad. }
+      - { text: "Prešov", why: "Sídlo najľudnatejšieho kraja, nie Poprad." }
       - { text: Košice, why: Druhé najväčšie mesto Slovenska. }
     wrong:
-      - { text: Martin, why: Deviate najväčšie mesto, no krajské sídlo je Žilina. }
-      - { text: Poprad, why: Desiate najväčšie mesto, ale sídlo kraja je Prešov. }
+      - { text: "Martin", why: "Deviate najväčšie mesto, no krajské sídlo je Žilina." }
+      - { text: "Poprad", why: "Desiate najväčšie mesto, ale sídlo kraja je Prešov." }
       - { text: Zvolen, why: V Banskobystrickom kraji je sídlo v Banskej Bystrici. }
       - { text: Michalovce, why: Krajské sídlo je v Košiciach. }
       - { text: Komárno, why: Sídlom Nitrianskeho kraja je Nitra. }
@@ -68,13 +68,13 @@ questions:
       - { text: Šaľa, why: Leží na oboch brehoch dolného Váhu. }
       - { text: Komárno, why: Váh sa tu vlieva do Dunaja. }
     wrong:
-      - { text: Nitra, why: Má vlastnú rieku Nitru, ktorá sa do Váhu vlieva až pri Komárne. }
+      - { text: "Nitra", why: "Má vlastnú rieku Nitru, ktorá sa do Váhu vlieva až pri Komárne." }
       - { text: Zvolen, why: Leží na Hrone. }
-      - { text: Prešov, why: Leží na Torysi, ktorá je na východe. }
+      - { text: "Prešov", why: "Leží na Torysi, ktorá je na východe." }
       - { text: Banská Bystrica, why: Leží na Hrone. }
-      - { text: Poprad, why: Leží na rieke Poprad, ktorá tečie do Baltského mora. }
-      - { text: Trnava, why: Leží na malej Trnávke, nie na Váhu. }
-      - { text: Nové Zámky, why: Ležia na Nitre, ďaleko od Váhu. }
+      - { text: "Poprad", why: "Leží na rieke Poprad, ktorá tečie do Baltského mora." }
+      - { text: "Trnava", why: "Leží na malej Trnávke, nie na Váhu." }
+      - { text: "Nové Zámky", why: "Ležia na Nitre, ďaleko od Váhu." }
 
   - id: mesta-v-presovskom-kraji
     type: pick
@@ -83,7 +83,7 @@ questions:
     source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
     tags: [kraje]
     correct:
-      - { text: Poprad, why: Po Prešove najväčšie mesto kraja, má okolo 48 000 obyvateľov. }
+      - { text: "Poprad", why: "Po Prešove najväčšie mesto kraja, má okolo 48 000 obyvateľov." }
       - { text: Bardejov, why: Jeho historické centrum je od roku 2000 v zozname UNESCO. }
       - { text: Humenné, why: Mesto na rieke Laborec. }
       - { text: Levoča, why: Spolu so Spišským hradom je v zozname UNESCO. }
@@ -92,7 +92,7 @@ questions:
       - { text: Stará Ľubovňa, why: Mesto pod hradom neďaleko poľskej hranice. }
       - { text: Medzilaborce, why: Je tu Múzeum moderného umenia Andyho Warhola. }
     wrong:
-      - { text: Spišská Nová Ves, why: Leží na Spiši, ale v Košickom kraji. }
+      - { text: "Spišská Nová Ves", why: "Leží na Spiši, ale v Košickom kraji." }
       - { text: Michalovce, why: Je v Košickom kraji. }
       - { text: Rožňava, why: Je v Košickom kraji. }
       - { text: Trebišov, why: Je v Košickom kraji. }
@@ -107,16 +107,16 @@ questions:
     source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
     tags: [kraje]
     correct:
-      - { text: Martin, why: Má okolo 50 000 obyvateľov, hoci krajské sídlo je Žilina. }
-      - { text: Čadca, why: Mesto na Kysuciach, blízko hraníc s Českom a Poľskom. }
+      - { text: "Martin", why: "Má okolo 50 000 obyvateľov, hoci krajské sídlo je Žilina." }
+      - { text: "Čadca", why: "Mesto na Kysuciach, blízko hraníc s Českom a Poľskom." }
       - { text: Ružomberok, why: Mesto na Váhu v Liptove. }
       - { text: Liptovský Mikuláš, why: Najväčšie mesto Liptova. }
       - { text: Dolný Kubín, why: Mesto na Orave. }
       - { text: Námestovo, why: Mesto na Orave pri Oravskej priehrade. }
-      - { text: Turčianske Teplice, why: Sú v Turci, nie v Trenčianskom kraji. }
+      - { text: "Turčianske Teplice", why: "Sú v Turci, nie v Trenčianskom kraji." }
       - { text: Bytča, why: Mesto na Váhu medzi Žilinou a Považskou Bystricou. }
     wrong:
-      - { text: Považská Bystrica, why: Hoci je blízko Žiliny, patrí do Trenčianskeho kraja. }
+      - { text: "Považská Bystrica", why: "Hoci je blízko Žiliny, patrí do Trenčianskeho kraja." }
       - { text: Púchov, why: Je v Trenčianskom kraji. }
       - { text: Prievidza, why: Je v Trenčianskom kraji. }
       - { text: Brezno, why: Je v Banskobystrickom kraji. }
@@ -131,14 +131,14 @@ questions:
     tags: [kraje]
     correct:
       - { text: Michalovce, why: Mesto na Zemplíne s vyše 34 000 obyvateľmi. }
-      - { text: Spišská Nová Ves, why: Leží na Spiši, ale patrí do Košického kraja. }
+      - { text: "Spišská Nová Ves", why: "Leží na Spiši, ale patrí do Košického kraja." }
       - { text: Rožňava, why: Mesto na Gemeri. }
       - { text: Trebišov, why: Mesto na Zemplíne. }
       - { text: Gelnica, why: Okresné mesto v Košickom kraji. }
       - { text: Moldava nad Bodvou, why: Mesto pri maďarskej hranici. }
       - { text: Sobrance, why: Mesto pri ukrajinských hraniciach. }
     wrong:
-      - { text: Poprad, why: Leží na Spiši, ale patrí do Prešovského kraja. }
+      - { text: "Poprad", why: "Leží na Spiši, ale patrí do Prešovského kraja." }
       - { text: Humenné, why: Je v Prešovskom kraji. }
       - { text: Levoča, why: Je v Prešovskom kraji. }
       - { text: Revúca, why: Je v Banskobystrickom kraji. }
@@ -163,7 +163,7 @@ questions:
       - { text: Partizánske, why: Vzniklo ako továrenské mesto. }
     wrong:
       - { text: Skalica, why: Je v Trnavskom kraji. }
-      - { text: Piešťany, why: Sú v Trnavskom kraji, hoci sú blízko Trenčína. }
+      - { text: "Piešťany", why: "Sú v Trnavskom kraji, hoci sú blízko Trenčína." }
       - { text: Turčianske Teplice, why: Sú v Žilinskom kraji. }
       - { text: Topoľčany, why: Sú v Nitrianskom kraji. }
       - { text: Zvolen, why: Je v Banskobystrickom kraji. }
@@ -183,7 +183,7 @@ questions:
       - { text: Šurany, why: Mesto na dolnom toku. }
       - { text: Nové Zámky, why: Mesto na dolnom toku Nitry. }
     wrong:
-      - { text: Levice, why: Ležia v povodí Hrona, nie Nitry. }
+      - { text: "Levice", why: "Ležia v povodí Hrona, nie Nitry." }
       - { text: Trnava, why: Leží na Trnávke. }
       - { text: Zvolen, why: Leží na Hrone. }
       - { text: Žilina, why: Leží na Váhu. }
@@ -204,7 +204,7 @@ questions:
       - { text: Žiar nad Hronom, why: Meno mesta nesie rieku. }
       - { text: Žarnovica, why: Mesto v Pohroní. }
     wrong:
-      - { text: Lučenec, why: Leží v povodí Ipľa, nie Hrona. }
+      - { text: "Lučenec", why: "Leží v povodí Ipľa, nie Hrona." }
       - { text: Prievidza, why: Leží na Nitre. }
       - { text: Rimavská Sobota, why: Leží na Rimave. }
       - { text: Trenčín, why: Leží na Váhu. }
@@ -227,12 +227,12 @@ questions:
       - { text: Sliač, why: Kúpele Sliač sú neďaleko Zvolena. }
       - { text: Bojnice, why: Kúpele aj hrad v jednom meste. }
     wrong:
-      - { text: Žilina, why: Žilina je dopravná križovatka, nie kúpeľné mesto. }
-      - { text: Nitra, why: Nitra je mesto s hradom, nie kúpeľmi. }
-      - { text: Trnava, why: Trnave sa hovorí Malý Rím, kúpele tam nie sú. }
-      - { text: Banská Štiavnica, why: Banícke mesto, nie kúpeľné. }
+      - { text: "Žilina", why: "Žilina je dopravná križovatka, nie kúpeľné mesto." }
+      - { text: "Nitra", why: "Nitra je mesto s hradom, nie kúpeľmi." }
+      - { text: "Trnava", why: "Trnave sa hovorí Malý Rím, kúpele tam nie sú." }
+      - { text: "Banská Štiavnica", why: "Banícke mesto, nie kúpeľné." }
       - { text: Považská Bystrica, why: Priemyselné mesto na Váhu. }
-      - { text: Lučenec, why: Mesto na juhu s textilnou tradíciou, nie kúpeľné mesto. }
+      - { text: "Lučenec", why: "Mesto na juhu s textilnou tradíciou, nie kúpeľné mesto." }
 
   - id: unesco-mesta
     type: pick
@@ -242,18 +242,18 @@ questions:
     tags: [unesco]
     correct:
       - { text: Banská Štiavnica, why: Zapísaná v roku 1993 spolu s technickými pamiatkami okolia. }
-      - { text: Bardejov, why: Ochranná rezervácia, zapísaná v roku 2000. }
+      - { text: "Bardejov", why: "Ochranná rezervácia, zapísaná v roku 2000." }
       - { text: Levoča, why: Zapísaná spolu so Spišským hradom. }
       - { text: Kežmarok, why: Drevený artikulárny kostol je v zozname UNESCO. }
       - { text: Tvrdošín, why: Drevený kostol Všetkých svätých je v zozname UNESCO. }
       - { text: Vlkolínec, why: Osada pri Ružomberku je od roku 1993 v zozname UNESCO. }
     wrong:
-      - { text: Kremnica, why: Mincovňa je tam od roku 1328, ale UNESCO to nezapísalo. }
-      - { text: Trenčín, why: Hrad je dominantou mesta, no v zozname UNESCO nie je. }
-      - { text: Košice, why: Historické centrum nie je v zozname UNESCO, hoci Dóm svätej Alžbety je jeho dominantou. }
-      - { text: Nitra, why: Nitriansky hrad je dominantou mesta, no v zozname UNESCO nie je. }
-      - { text: Prešov, why: Historické centrum je pamiatková rezervácia, no v zozname UNESCO nie je. }
-      - { text: Zvolen, why: Zvolenský zámok je dominantou mesta, no v zozname UNESCO nie je. }
+      - { text: "Kremnica", why: "Mincovňa je tam od roku 1328, ale UNESCO to nezapísalo." }
+      - { text: "Trenčín", why: "Hrad je dominantou mesta, no v zozname UNESCO nie je." }
+      - { text: "Košice", why: "Historické centrum nie je v zozname UNESCO, hoci Dóm svätej Alžbety je jeho dominantou." }
+      - { text: "Nitra", why: "Nitriansky hrad je dominantou mesta, no v zozname UNESCO nie je." }
+      - { text: "Prešov", why: "Historické centrum je pamiatková rezervácia, no v zozname UNESCO nie je." }
+      - { text: "Zvolen", why: "Zvolenský zámok je dominantou mesta, no v zozname UNESCO nie je." }
 
   - id: hranicne-prechody-madarsko
     type: pick
@@ -284,20 +284,20 @@ questions:
     correct:
       - { text: SN – Spišská Nová Ves, why: Snina má SV. }
       - { text: SV – Snina, why: Svidník má SK. }
-      - { text: PP – Poprad, why: Dvojica P a P, nie PO (to je Prešov). }
+      - { text: "PP – Poprad", why: "Dvojica P a P, nie PO (to je Prešov)." }
       - { text: RK – Ružomberok, why: Prvé a posledné písmeno názvu. }
       - { text: LM – Liptovský Mikuláš, why: Začiatočné písmená oboch slov. }
       - { text: KK – Kežmarok, why: Prvé a posledné písmeno názvu (KE patria Košiciam). }
-      - { text: BJ – Bardejov, why: Nie BR, tá patrí Breznu. }
+      - { text: "BJ – Bardejov", why: "Nie BR, tá patrí Breznu." }
     wrong:
       - { text: BR – Bardejov, why: BR patrí Breznu. }
-      - { text: ZV – Žilina, why: ZV patrí Zvolenu, Žilina mala ZA. }
+      - { text: "ZV – Žilina", why: "ZV patrí Zvolenu, Žilina mala ZA." }
       - { text: NZ – Nitra, why: NZ patrí Novým Zámkom. }
-      - { text: MT – Michalovce, why: MT patrí Martinu, Michalovce mali MI. }
-      - { text: PB – Prešov, why: PB patrí Považskej Bystrici, Prešov mal PO. }
-      - { text: TN – Trnava, why: TN patrí Trenčínu, Trnava mala TT. }
-      - { text: LC – Levice, why: LC patrí Lučencu, Levice mali LV. }
-      - { text: SK – Skalica, why: SK patrí Svidníku, Skalica mala SI. }
+      - { text: "MT – Michalovce", why: "MT patrí Martinu, Michalovce mali MI." }
+      - { text: "PB – Prešov", why: "PB patrí Považskej Bystrici, Prešov mal PO." }
+      - { text: "TN – Trnava", why: "TN patrí Trenčínu, Trnava mala TT." }
+      - { text: "LC – Levice", why: "LC patrí Lučencu, Levice mali LV." }
+      - { text: "SK – Skalica", why: "SK patrí Svidníku, Skalica mala SI." }
 
   - id: mesta-v-nitrianskom-kraji
     type: pick
@@ -313,7 +313,7 @@ questions:
       - { text: Šaľa, why: Mesto na Váhu. }
       - { text: Topoľčany, why: Mesto v podhorí Tribeča. }
       - { text: Štúrovo, why: Mesto na Dunaji oproti Ostrihomu. }
-      - { text: Šahy, why: Ležia blízko Ipľa, no patria do Nitrianskeho kraja. }
+      - { text: "Šahy", why: "Ležia blízko Ipľa, no patria do Nitrianskeho kraja." }
     wrong:
       - { text: Dunajská Streda, why: Je v Trnavskom kraji. }
       - { text: Galanta, why: Je v Trnavskom kraji. }
@@ -461,7 +461,7 @@ questions:
   - id: rieka-banska-bystrica
     type: choice
     prompt: Ktorá rieka preteká Banskou Bystricou?
-    correct: { text: Hron, why: Hron pramení pri Telgárte a tečie cez Brezno, Banskú Bystricu a Zvolen. }
+    correct: { text: "Hron", why: "Hron pramení pri Telgárte a tečie cez Brezno, Banskú Bystricu a Zvolen." }
     wrong:
       - { text: Váh, why: Váh preteká Žilinou a Trenčínom. }
       - { text: Nitra, why: Nitra preteká Prievidzou a Nitrou. }
@@ -472,9 +472,9 @@ questions:
   - id: bratislava-susedia
     type: choice
     prompt: S ktorými dvoma štátmi hraničí Bratislava priamo svojím územím?
-    correct: { text: Rakúsko a Maďarsko, why: Je jediné hlavné mesto na svete, ktoré priamo susedí s dvoma cudzími štátmi. }
+    correct: { text: "Rakúsko a Maďarsko", why: "Je jediné hlavné mesto na svete, ktoré priamo susedí s dvoma cudzími štátmi." }
     wrong:
-      - { text: Rakúsko a Česko, why: S Českom Bratislava nehraničí, najbližší prechod je až v Brodskom. }
+      - { text: "Rakúsko a Česko", why: "S Českom Bratislava nehraničí, najbližší prechod je až v Brodskom." }
       - { text: Maďarsko a Ukrajina, why: Ukrajina je na opačnom konci krajiny. }
       - { text: Poľsko a Rakúsko, why: Poľsko je ďaleko na severe. }
     difficulty: 2

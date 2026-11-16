@@ -37,6 +37,18 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const cw = input.warnings == null ? [] : input.warnings;
   if (!Array.isArray(cw) || cw.some((w) => !(CONTENT_WARNINGS as readonly unknown[]).includes(w)))
     err("warnings", `musí byť zoznam z: ${CONTENT_WARNINGS.join(", ")}`);
+  let defaultOn = input.defaultOn;
+  if (defaultOn !== undefined && typeof defaultOn !== "boolean") err("defaultOn", "musí byť true alebo false");
+  if (adult === true && defaultOn === true) err("defaultOn", "18+ balíček je vždy predvolene vypnutý");
+  // Crude content never switches itself on: packs with warnings are 18+ or off by default.
+  // Not an error, so packs imported before this rule still load.
+  if (adult === false && Array.isArray(cw) && cw.length && defaultOn !== false) {
+    if (defaultOn === true) err("defaultOn", "balíček s varovaniami nesmie byť predvolene zapnutý");
+    else {
+      warnings.push("balíček má varovania, preto je predvolene vypnutý (doplň defaultOn: false alebo adult: true)");
+      defaultOn = false;
+    }
+  }
   const version = input.version === undefined ? 1 : input.version;
   if (!Number.isInteger(version)) err("version", "musí byť celé číslo");
 
@@ -72,6 +84,7 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   if (description) pack.description = description;
   const author = str(input.author);
   if (author) pack.author = author;
+  if (defaultOn === false && !adult) pack.defaultOn = false;
   if (Array.isArray(cw) && cw.length) pack.warnings = [...new Set(cw as ContentWarning[])];
   return { pack, errors, warnings };
 }
@@ -113,6 +126,12 @@ function validateQuestion(q: unknown, where: string, now: Date) {
     ...(note ? { note } : {}),
   };
 
+  // An unquoted comma inside a YAML flow mapping ({ text: a, b, why: … }) silently
+  // turns the rest of the text into a key, so stray keys are always an error.
+  const unknownKeys = (o: Obj, allowed: string[], label: string) => {
+    for (const k of Object.keys(o))
+      if (!allowed.includes(k)) err(`${label}: neznámy kľúč „${k}“ (čiarka v texte bez úvodzoviek?)`);
+  };
   const options = (v: unknown, label: string): Option[] => {
     if (!Array.isArray(v)) {
       err(`${label} musí byť zoznam možností`);
@@ -129,6 +148,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       err(`${label}: možnosť musí mať text a why`);
       return null;
     }
+    unknownKeys(o, ["text", "why"], label);
     const text = str(o.text);
     const why = str(o.why);
     if (!text) err(`${label}: chýba text`);
@@ -159,6 +179,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       else
         q.items.forEach((it, j) => {
           if (!isObj(it)) return err(`items[${j}] musí mať text a value`);
+          unknownKeys(it, ["text", "value", "label", "why"], `items[${j}]`);
           const text = str(it.text);
           const value = it.value;
           if (!text) err(`items[${j}]: chýba text`);

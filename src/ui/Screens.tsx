@@ -14,7 +14,7 @@ const QUICK = [
 
 export function TopBar({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <header class="topbar">
+    <header class="topbar topbar--sticky">
       <button type="button" class="btn btn--ghost btn--small topbar__back" onClick={onBack}>
         ← {sk.back}
       </button>
@@ -193,8 +193,8 @@ export function Setup(props: {
           label={sk.mode}
           value={settings.mode}
           options={[
-            { value: "classic", label: sk.modeClassic },
             { value: "mix", label: sk.modeMix },
+            { value: "classic", label: sk.modeClassic },
           ]}
           onChange={(mode) => set({ mode })}
         />

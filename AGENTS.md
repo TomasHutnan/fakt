@@ -15,13 +15,13 @@ Goals, in the owner's words:
 - Not too obscure. A wrong answer should still be something to laugh about.
 - Packs can be switched off if a topic does not interest the group.
 
-## Status (2026-11-13)
+## Status (2026-11-16)
 
 Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
 
-- Built: Classic and Mix modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, vibration/sound settings, import, offline PWA.
-- Content: **26 packs / 678 questions** (6 adult; athletics split into disciplines, legends/records and a yearly season pack). Target 1,000.
-- Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
+- Built: Mix (default) and Classic modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), sticky back bar, vibration/sound settings, import, offline PWA.
+- Content: **27 packs / 716 questions** (4 adult, 4 opt-in: Dano Drevo, Politické hlášky, athletics legends and season). Target 1,000.
+- Next: pack categories + search (agreed: one topic category per pack, automatic 18+ section; split in `notes/Decisions.md`), playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
 
 ## Workflow
@@ -42,7 +42,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
 - Every question needs a `source`; time-sensitive facts need `asOf`; every pick/choice option (and every number question) needs a one-line `why`; order items should have one. Language-model facts are checked against the source before merge.
 - **Nothing hateful or untrue**, also in spicy packs. Quotes of real people verbatim as printed by a reliable source; no claims of wrongdoing beyond the source.
-- Anything crude goes into an 18+ pack with `warnings`: non-adult packs switch on automatically for existing players.
+- Crude content never switches on by itself: strong material (sexual, drugs, racism, heavy vulgarity) goes into an 18+ pack; mildly crude packs may be normal with `defaultOn: false`. Either way they need `warnings` (validation enforces it).
 - Question content is primarily Slovak (Czech acceptable). Code, comments and docs are in English.
 
 ## Decisions (owner, 2026-11-13)
@@ -53,7 +53,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - **Formats**: pick, order (dragged), number guess (closeness solo, ranked in multiplayer), one of four, which is more (derived from order questions in Mix). Never free-text answers; no pictures/audio in the first year.
 - **Later modes**: Everyone at once, Guess and bet (v3). Daily card, Teams, card-level content tags: not now. Bluff, typed list recall: dropped.
 - **Languages**: Slovak UI. Slovak packs first; English packs later, written directly, no translation. Czech allowed.
-- **Content**: adult packs welcome (labelled, off by default, content-warning tags); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
+- **Content**: adult packs welcome (labelled, off by default, content-warning tags); niche or mildly crude packs can be normal but off by default (`defaultOn: false`, 2026-11-16); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
 - **Packs**: YAML in `packs/`, built to per-pack JSON + index with hashes; importer accepts YAML and JSON, stores imports in the browser. Packs CC0 (per-pack `license` allowed); code MIT. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
 - **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
 - **Hosting**: GitHub Pages; a Cloudflare Workers relay only if v3 P2P (Trystero) fails.

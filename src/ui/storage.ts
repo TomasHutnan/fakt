@@ -47,4 +47,6 @@ export const KEYS = {
   ratings: "ratings",
   /** Built-in question ids per pack seen when the pack list was last opened, for "new questions". */
   knownQuestions: "knownQuestions",
+  /** Set once saved settings were moved to Mix when it became the default (2026-11). */
+  mixDefault: "mixDefault",
 } as const;

@@ -1,9 +1,10 @@
 id: sk-dano-drevo
 title: Dano Drevo
-description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor, 18+.
+description: Kultová slovenská dabingová paródia na Harryho Pottera. Hlášky, postavy, Rokfort, Paťo Synek a Turnaj Mekyho Žbirku. Vulgárny humor.
 lang: sk
-adult: true
-warnings: [vulgar, sexual]
+adult: false
+defaultOn: false
+warnings: [vulgar]
 version: 1
 questions:
   - id: dd-postavy-komnata
@@ -130,7 +131,7 @@ questions:
     wrong:
       - { text: Hadou rečou, why: "Tak to bolo v origináli; Dano hadou rečou nehovorí." }
       - { text: Pesničkou Biely kvet, why: "Žbirkov hit patrí do druhého filmu." }
-      - { text: Ľudovkou Pod horou, pod horou, why: "Tá znie v aute cestou na Rokfort." }
+      - { text: "Ľudovkou Pod horou, pod horou", why: "Tá znie v aute cestou na Rokfort." }
 
   - id: dd-inzinieri
     type: choice
@@ -244,7 +245,7 @@ questions:
     difficulty: 2
     source: "Dano Drevo a tajomná komnata (titulky, 00:40:33, 00:51:40, 01:03:20, 01:36:04, 02:26:51); Dano Drevo a turnaj Mekyho Žbirku (titulky, 00:00:09–00:00:27, 01:24:37)"
     correct:
-      - { text: Hovorí o sebe, že je kôň, why: "„Ja viem, že som kôň!“ Na konci je z nej anglický teplokrovník." }
+      - { text: "Hovorí o sebe, že je kôň", why: "„Ja viem, že som kôň!“ Na konci je z nej anglický teplokrovník." }
       - { text: Postihne ju ilorexia a mení sa na robota Ile, why: "Choroba, ktorá vraj postihuje najmä kone." }
       - { text: Uvarí lekvár na premenu chlapcov, why: "Paródia mnoholičového elixíru; prísada sú chlpy Rudolfa a Michala." }
       - { text: Operuje ju profesor Pipík, why: "Nožom, ktorým si predtým natieral horčicu na chlieb." }
@@ -284,7 +285,7 @@ questions:
     source: "Dano Drevo a tajomná komnata (titulky, 00:19:22, 00:58:03, 01:04:30, 01:36:11–01:36:20, 01:55:41, 02:02:40, 02:18:22)"
     correct:
       - { text: Daruje Danovi svoju knihu Hybnosť telies, why: "„Danovi knihy, ktorým nikto nechápe, sám som ich napísal.“" }
-      - { text: Tvrdí každému, že je lekár, why: "„Jasné, že nie, ale každému to hovorí.“" }
+      - { text: "Tvrdí každému, že je lekár", why: "„Jasné, že nie, ale každému to hovorí.“" }
       - { text: Rád začína hodinu vtipom, why: "Napríklad vtipom na klop-klop, ktorý si nepamätá." }
       - { text: Pri Kiminej operácii jej v čreve zabudne zrkadlo, why: "Zrkadlo ostalo v jej tenkom čreve." }
       - { text: Chce utiecť do Mozambiku kvôli ebole, why: "Potom tvrdí, že ho potrebuje Nigéria, Ázia aj Austrália." }
@@ -343,7 +344,7 @@ questions:
       - { text: Slzy afgánskych polosirôt, why: "Kolman ich Mekymu predal 70 litrov." }
       - { text: Bravčová kosť ohlodaná Ivanou Christovou, why: "Paródia kosti otca." }
       - { text: Ruka plastického chirurga, why: "Paródia mäsa sluhu; plastickým chirurgom je Mekyho pomocník Igor Patkaň." }
-      - { text: Krv krásavca, ktorého tvár si Meky privlastní, why: "Tou je, samozrejme, Dano." }
+      - { text: "Krv krásavca, ktorého tvár si Meky privlastní", why: "Tou je, samozrejme, Dano." }
       - { text: Gulášový kotol, why: "Do neho sa krv vykvapká." }
     wrong:
       - { text: Chlpy Rudolfa a Michala, why: "To bola prísada do Kiminho lekváru v prvom filme." }

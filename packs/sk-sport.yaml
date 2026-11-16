@@ -523,12 +523,12 @@ questions:
     source: https://en.wikipedia.org/wiki/Slovakia_at_the_Olympics
     tags: [olympiada]
     items:
-      - { text: Michal Martikán, kanoe C1 (Atlanta), value: 1996 }
-      - { text: Hochschorneri, kanoe C2 (Sydney), value: 2000 }
-      - { text: Elena Kaliská, kajak K1 (Atény), value: 2004 }
-      - { text: Anastasiya Kuzmina, biatlon šprint (Vancouver), value: 2010 }
-      - { text: Matej Tóth, chôdza 50 km (Rio), value: 2016 }
-      - { text: Petra Vlhová, slalom (Peking), value: 2022 }
+      - { text: "Michal Martikán, kanoe C1 (Atlanta)", value: 1996 }
+      - { text: "Hochschorneri, kanoe C2 (Sydney)", value: 2000 }
+      - { text: "Elena Kaliská, kajak K1 (Atény)", value: 2004 }
+      - { text: "Anastasiya Kuzmina, biatlon šprint (Vancouver)", value: 2010 }
+      - { text: "Matej Tóth, chôdza 50 km (Rio)", value: 2016 }
+      - { text: "Petra Vlhová, slalom (Peking)", value: 2022 }
 
   - id: poradie-nhl-body
     type: order
