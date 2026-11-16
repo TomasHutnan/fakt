@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
 COPY . .
-RUN npm run build
+RUN npm run build && rm src/server/*.test.ts
 
 FROM node:26-slim
 ENV NODE_ENV=production \

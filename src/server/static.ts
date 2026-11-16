@@ -1,5 +1,6 @@
 // Serves the built app (dist/) over plain HTTP. TLS and compression are Caddy's job.
 import { createReadStream } from "node:fs";
+import { pipeline } from "node:stream/promises";
 import { stat } from "node:fs/promises";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { extname, join, resolve, sep } from "node:path";
@@ -92,8 +93,7 @@ export function staticHandler(root: string) {
     headers["Content-Length"] = String(info.size);
     res.writeHead(200, headers);
     if (req.method === "HEAD") return void res.end();
-    const stream = createReadStream(file);
-    stream.on("error", () => res.destroy());
-    stream.pipe(res);
+    // pipeline closes the file if the client goes away mid-response.
+    await pipeline(createReadStream(file), res).catch(() => res.destroy());
   };
 }
