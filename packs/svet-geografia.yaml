@@ -1,6 +1,7 @@
 id: svet-geografia
 title: Svet a zemepis
 description: Hlavné mestá, susedia, rieky, vrchy, vlajky, meny a slávne pamiatky z celého sveta.
+category: zemepis
 lang: sk
 version: 1
 questions:

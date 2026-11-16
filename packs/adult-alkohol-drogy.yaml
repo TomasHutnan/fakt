@@ -1,6 +1,7 @@
 id: adult-alkohol-drogy
 title: Alkohol a drogy
 description: Pálenky, pivo, víno, prohibícia a zákony – kvíz pre dospelých, ktorí vedia, čo pijú.
+category: tradicie
 lang: sk
 adult: true
 warnings: [drugs]

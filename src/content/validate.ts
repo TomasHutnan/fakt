@@ -1,4 +1,4 @@
-import { CONTENT_WARNINGS, type ContentWarning, type Difficulty, type Option, type OrderItem, type Pack, type Question } from "./types.ts";
+import { CATEGORIES, CONTENT_WARNINGS, type Category, type ContentWarning, type Difficulty, type Option, type OrderItem, type Pack, type Question } from "./types.ts";
 
 // Validation shared by scripts/build-packs.ts and the in-app importer.
 // Messages are Slovak because the importer shows them to players.
@@ -37,6 +37,9 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const cw = input.warnings == null ? [] : input.warnings;
   if (!Array.isArray(cw) || cw.some((w) => !(CONTENT_WARNINGS as readonly unknown[]).includes(w)))
     err("warnings", `musí byť zoznam z: ${CONTENT_WARNINGS.join(", ")}`);
+  const category = input.category;
+  if (category !== undefined && !(CATEGORIES as readonly unknown[]).includes(category))
+    err("category", `musí byť jedno z: ${CATEGORIES.join(", ")}`);
   let defaultOn = input.defaultOn;
   if (defaultOn !== undefined && typeof defaultOn !== "boolean") err("defaultOn", "musí byť true alebo false");
   if (adult === true && defaultOn === true) err("defaultOn", "18+ balíček je vždy predvolene vypnutý");
@@ -85,6 +88,7 @@ export function validatePack(input: unknown, now: Date = new Date()): Validation
   const author = str(input.author);
   if (author) pack.author = author;
   if (defaultOn === false && !adult) pack.defaultOn = false;
+  if (category !== undefined) pack.category = category as Category;
   if (Array.isArray(cw) && cw.length) pack.warnings = [...new Set(cw as ContentWarning[])];
   return { pack, errors, warnings };
 }

@@ -49,4 +49,6 @@ export const KEYS = {
   knownQuestions: "knownQuestions",
   /** Set once saved settings were moved to Mix when it became the default (2026-11). */
   mixDefault: "mixDefault",
+  /** Pack list sections the player has opened. */
+  openGroups: "openGroups",
 } as const;

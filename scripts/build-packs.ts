@@ -6,7 +6,7 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "nod
 import { basename, join } from "node:path";
 import { parse } from "yaml";
 import { validatePack } from "../src/content/validate.ts";
-import type { PackMeta, QuestionType } from "../src/content/types.ts";
+import { CATEGORIES, type PackMeta, type QuestionType } from "../src/content/types.ts";
 
 const args = process.argv.slice(2);
 const check = args.includes("--check");
@@ -42,6 +42,11 @@ for (const file of files) {
   if (!pack) {
     console.error(`✗ ${name}`);
     for (const e of errors) console.error(`    ${e}`);
+    failed++;
+    continue;
+  }
+  if (!pack.category) {
+    console.error(`✗ ${name}: built-in packs need a category (${CATEGORIES.join(", ")})`);
     failed++;
     continue;
   }

@@ -68,6 +68,10 @@ export interface ChoiceQuestion extends QuestionBase {
 export type Question = PickQuestion | OrderQuestion | NumberQuestion | ChoiceQuestion;
 export type QuestionType = Question["type"];
 
+/** Topic sections of the pack list, in display order. 18+ and imported packs get their own sections. */
+export const CATEGORIES = ["kultura", "historia", "zemepis", "veda", "tradicie", "sport"] as const;
+export type Category = (typeof CATEGORIES)[number];
+
 export const CONTENT_WARNINGS = ["vulgar", "sexual", "drugs", "dark-humor", "racism", "abuse"] as const;
 export type ContentWarning = (typeof CONTENT_WARNINGS)[number];
 
@@ -82,6 +86,8 @@ export interface Pack {
   adult: boolean;
   /** false = off until the player switches it on (niche packs). Adult packs are always off. */
   defaultOn?: boolean;
+  /** Section in the pack list. Required for built-in packs, optional for imports. */
+  category?: Category;
   /** Content warnings shown on the pack, see CONTENT_WARNINGS. */
   warnings?: ContentWarning[];
   version: number;
@@ -98,6 +104,7 @@ export interface PackMeta {
   license: string;
   adult: boolean;
   defaultOn?: boolean;
+  category?: Category;
   warnings?: ContentWarning[];
   version: number;
   count: number;

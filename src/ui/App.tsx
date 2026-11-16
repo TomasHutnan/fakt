@@ -194,6 +194,9 @@ export function App() {
           fresh={fresh}
           onToggle={(id, on) => updateEnabled(on ? [...activeIds, id] : activeIds.filter((x) => x !== id))}
           onSetAll={(on) => updateEnabled(on ? packs.map((p) => p.id) : [])}
+          onSetMany={(ids, on) =>
+            updateEnabled(on ? [...activeIds, ...ids.filter((id) => !activeIds.includes(id))] : activeIds.filter((id) => !ids.includes(id)))
+          }
           onImport={(p) => {
             if (builtIn?.some((b) => b.id === p.id)) return sk.importClash(p.id);
             const next = [...imported.filter((x) => x.id !== p.id), p];

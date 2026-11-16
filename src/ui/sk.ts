@@ -1,5 +1,5 @@
 // All UI texts. Slovak only for now; keep every visible string here.
-import type { ContentWarning } from "../content/types.ts";
+import type { Category, ContentWarning } from "../content/types.ts";
 
 export const sk = {
   appName: "Fakt?",
@@ -154,6 +154,26 @@ export const sk = {
   remove: "Odstrániť",
   allOn: "Zapnúť všetky",
   allOff: "Vypnúť všetky",
+  searchPacks: "Hľadať balíček",
+  searchPacksPlaceholder: "Hľadať balíček…",
+  noPacksFound: "Žiadny balíček sa nenašiel.",
+  categories: {
+    kultura: "Kultúra a zábava",
+    historia: "História a spoločnosť",
+    zemepis: "Zemepis a príroda",
+    veda: "Veda a technika",
+    tradicie: "Jazyk, jedlo a tradície",
+    sport: "Šport",
+  } satisfies Record<Category, string>,
+  groupAdult: "18+",
+  groupImported: "Importované",
+  groupOther: "Ostatné",
+  groupMeta: (on: number, total: number, questions: number) =>
+    `${on}/${total} zapnuté · ${questions} ${plural(questions, "otázka", "otázky", "otázok")}`,
+  groupOn: "Zapnúť",
+  groupOff: "Vypnúť",
+  groupOnLabel: (name: string) => `Zapnúť všetky v sekcii ${name}`,
+  groupOffLabel: (name: string) => `Vypnúť všetky v sekcii ${name}`,
 
   // settings
   design: "Vzhľad",
