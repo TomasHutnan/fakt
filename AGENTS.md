@@ -15,13 +15,13 @@ Goals, in the owner's words:
 - Not too obscure. A wrong answer should still be something to laugh about.
 - Packs can be switched off if a topic does not interest the group.
 
-## Status (2026-11-13)
+## Status (2026-11-16)
 
 Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
 
-- Built: Classic and Mix modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, vibration/sound settings, import, offline PWA.
-- Content: **26 packs / 678 questions** (6 adult; athletics split into disciplines, legends/records and a yearly season pack). Target 1,000.
-- Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
+- Built: Mix (default) and Classic modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), sticky back bar, vibration/sound settings, import, offline PWA.
+- Content: **27 packs / 716 questions** (4 adult, 4 opt-in: Dano Drevo, Politické hlášky, athletics legends and season). Target 1,000.
+- Next: pack categories + search (agreed: one topic category per pack, automatic 18+ section; split in `notes/Decisions.md`), playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
 
 ## Workflow
