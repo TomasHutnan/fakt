@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ================================================================ PICK
   - id: leonardo-diela
@@ -26,7 +26,7 @@ questions:
       - { text: Zrodenie Venuše, why: "Slávny Botticelliho obraz zo Florencie." }
       - { text: Dievča s perlovou náušnicou, why: "Holandský Vermeer, o vyše sto rokov mladší." }
       - { text: Nočná hliadka, why: "Rembrandtov obrovský skupinový portrét z Amsterdamu." }
-      - { text: Hviezdna noc, why: "Van Gogh ju namaľoval v roku 1889, vyše 400 rokov po Leonardovi." }
+      - { text: Hviezdna noc, why: "Van Gogh ju namaľoval v roku 1889, 370 rokov po Leonardovej smrti." }
 
   - id: michelangelo-diela
     type: pick
@@ -36,10 +36,10 @@ questions:
     tags: [sochárstvo, renesancia]
     correct:
       - { text: socha Dávid, why: "Vytesal ju z jedného bloku mramoru v rokoch 1501 až 1504; dnes stojí vo Florencii." }
-      - { text: Pieta v Bazilike svätého Petra, why: "Dokončil ju ako 23-ročný, okolo roku 1499." }
+      - { text: Pieta v Bazilike svätého Petra, why: "Dokončil ju okolo roku 1499, ešte pred 25. narodeninami." }
       - { text: Stvorenie Adama, why: "Časť maľby na strope Sixtínskej kaplnky; slávny je dotyk prstov Boha a Adama." }
       - { text: Posledný súd, why: "Obrovská freska na oltárnej stene Sixtínskej kaplnky." }
-      - { text: Madona z Brugg, why: "Mramorová socha z rokov 1503 až 1505, ktorá sa dostala do Belgicka a stojí tam dodnes." }
+      - { text: Madona z Brugg, why: "Mramorová socha z rokov 1501 až 1504, ktorá sa dostala do Belgicka a stojí tam dodnes." }
     wrong:
       - { text: Zrodenie Venuše, why: "Botticelli, nie Michelangelo." }
       - { text: Mona Lisa, why: "Leonardo da Vinci." }
@@ -70,7 +70,7 @@ questions:
 
   - id: holandski-maliari
     type: pick
-    prompt: Ktorí z týchto maliarov a grafikov sa narodili v Holandsku?
+    prompt: Ktorí z týchto maliarov a grafikov sa narodili na území dnešného Holandska?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Johannes_Vermeer
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Rembrandt, /Vincent_van_Gogh, /Frans_Hals, /Piet_Mondrian, /M._C._Escher, /Hieronymus_Bosch, /Peter_Paul_Rubens"
@@ -99,7 +99,7 @@ questions:
     tags: [hudba, klasicizmus]
     correct:
       - { text: Eroica (3. symfónia), why: "Pôvodne ju venoval Napoleonovi, no po jeho vyhlásení za cisára venovanie vraj zoškrabal." }
-      - { text: Mesačná sonáta, why: "Meno Mesačná jej dal až po jeho smrti básnik Ludwig Rellstab." }
+      - { text: Mesačná sonáta, why: "Meno Mesačná jej dal až po jeho smrti básnik Ludwig Rellstab, ktorý ju v roku 1832 prirovnal k mesačnému svitu na Luzernskom jazere." }
       - { text: Fidelio, why: "Jeho jediná opera, premiéra bola v roku 1805." }
       - { text: Missa solemnis, why: "Omša, ktorú dokončil v roku 1823." }
       - { text: 9. symfónia s Ódou na radosť, why: "Do finále zaradil zbor a sólistov; hymna Európskej únie z nej preberá melódiu." }
@@ -208,7 +208,7 @@ questions:
     tags: [veda, vynálezy]
     correct:
       - { text: Narodil sa v Smiljane v dnešnom Chorvátsku, why: "V čase jeho narodenia, v roku 1856, to bolo Rakúske cisárstvo." }
-      - { text: Krátko pracoval pre Thomasa Edisona, why: "Po príchode do USA v roku 1884; po pár mesiacoch od neho odišiel." }
+      - { text: Krátko pracoval pre Thomasa Edisona, why: "Po príchode do USA v roku 1884; asi po pol roku od neho odišiel." }
       - { text: Vyvinul striedavý indukčný motor, why: "Patenty na motory na viacfázový striedavý prúd sú jeho najznámejším dielom." }
       - { text: V roku 1898 predviedol čln riadený rádiom, why: "Predvádzal ho v New Yorku a chcel ho predávať ako riadený torpédový čln." }
       - { text: Podľa neho je pomenovaná cievka vysokého napätia, why: "Teslova cievka, ktorá tvorí fialové blesky." }
@@ -230,7 +230,7 @@ questions:
       - { text: Narodil sa na Korzike, why: "V Ajacciu v roku 1769." }
       - { text: Vyhral bitku pri Slavkove (Austerlitz), why: "2. decembra 1805 porazil rakúsko-ruské vojská pri dnešnom Slavkove u Brna." }
       - { text: V roku 1803 predal Louisianu USA, why: "Územie takmer zdvojnásobilo rozlohu Spojených štátov." }
-      - { text: V roku 1804 sa sám korunoval za cisára, why: "Korunu si vzal z rúk pápeža a nasadil si ju sám." }
+      - { text: V roku 1804 sa sám korunoval za cisára, why: "Korunu vzal z oltára a nasadil si ju sám, v prítomnosti pápeža Pia VII." }
       - { text: Bol vyhnaný na ostrov Elba, why: "V roku 1814; z ostrova o rok neskôr ušiel." }
       - { text: Zomrel na ostrove Svätá Helena, why: "Rok 1821, v južnom Atlantiku, ďaleko od Európy." }
       - { text: Bitku pri Waterloo prehral v júni 1815, why: "Porazili ho vojská Británie a Pruska." }
@@ -290,7 +290,7 @@ questions:
     tags: [literatura]
     correct:
       - { text: Zločin a trest, why: "Román o študentovi Raskoľnikovovi z roku 1866." }
-      - { text: Bratia Karamazovovci, why: "Jeho posledný román, vyšiel krátko pred smrťou v roku 1881." }
+      - { text: Bratia Karamazovovci, why: "Jeho posledný román, vyšiel v roku 1880, niekoľko mesiacov pred jeho smrťou v roku 1881." }
       - { text: Idiot, why: "Z roku 1869, o dobrosrdečnom kniežati Myškinovi." }
       - { text: Besi, why: "V angličtine známe aj ako Demons." }
       - { text: Hráč, why: "Napísal ho za 26 dní, pretože mal dlhy z hazardu." }
@@ -334,7 +334,7 @@ questions:
     tags: [panovnici]
     correct:
       - { text: Mária Terézia, why: "Vládla habsburskej monarchii v rokoch 1740 až 1780, ako uhorská kráľovná sa dala korunovať v Bratislave." }
-      - { text: Katarína II. Veľká, why: "Ruská cárovná v rokoch 1762 až 1796; sama sa dostala k moci po prevrate proti manželovi." }
+      - { text: Katarína II. Veľká, why: "Ruská cárovná v rokoch 1762 až 1796; k moci sa dostala prevratom proti manželovi s pomocou gardy." }
       - { text: Viktória, why: "Britská kráľovná od roku 1837, vládla vyše 63 rokov." }
       - { text: Alžbeta I., why: "Anglická kráľovná v rokoch 1558 až 1603, posledná panovníčka z rodu Tudorovcov." }
       - { text: Kleopatra VII., why: "Posledná panovníčka helenistického Egypta." }
@@ -360,7 +360,7 @@ questions:
       - { text: Rozklad bieleho svetla hranolom, why: "Ukázal, že biele svetlo sa skladá z farieb dúhy." }
       - { text: Základy diferenciálneho a integrálneho počtu, why: "Rozvinul ho súčasne s Leibnizom, spor o prvenstvo trval roky." }
       - { text: Zrkadlový ďalekohľad, why: "Zostrojil ho okolo roku 1668." }
-      - { text: Bol správcom Kráľovskej mincovne, why: "Od roku 1699 do smrti bol Master of the Mint." }
+      - { text: Bol správcom Kráľovskej mincovne, why: "Od roku 1699 do smrti bol správcom Kráľovskej mincovne." }
     wrong:
       - { text: Teória relativity, why: "Einstein, 1905 a 1915." }
       - { text: Evolúcia prirodzeným výberom, why: "Charles Darwin." }
@@ -514,7 +514,7 @@ questions:
     items:
       - { text: Ľudovít XIV., value: 72, why: "Kráľ Slnko vládol od roku 1643 do 1715, je medzi najdlhšie vládnucimi panovníkmi histórie." }
       - { text: Alžbeta II., value: 70, why: "Vládla 70 rokov a 214 dní." }
-      - { text: František Jozef I., value: 68, why: "Takmer 68 rokov, 1848 až 1916." }
+      - { text: František Jozef I., value: 67, why: "Takmer 68 rokov, 1848 až 1916." }
       - { text: Kráľovná Viktória, value: 63, why: "Vládla 63 rokov a 216 dní." }
       - { text: Alžbeta I., value: 44, why: "Vládla od roku 1558 do 1603." }
       - { text: Mária Terézia, value: 40, why: "Od roku 1740 do 1780." }
@@ -532,7 +532,7 @@ questions:
       - { text: Isaac Newton, value: 1643, why: "Narodil sa rok po Galileovej smrti." }
       - { text: Charles Darwin, value: 1809, why: "Rovnaký rok ako Abraham Lincoln." }
       - { text: Nikola Tesla, value: 1856, why: "Narodil sa v Smiljane." }
-      - { text: Marie Curie, value: 1867, why: "Narodená vo Varšave." }
+      - { text: Maria Curieová-Skłodowská, value: 1867, why: "Narodená vo Varšave." }
       - { text: Albert Einstein, value: 1879, why: "Narodil sa v Ulme." }
 
   # ================================================================ NUMBER
@@ -554,7 +554,7 @@ questions:
     unit: detí
     scale: linear
     tolerance: 1
-    why: "Za 19 rokov, od roku 1737 do 1756; trinásť prežilo detstvo a jednou z dcér bola Mária Antoinetta."
+    why: "Za 19 rokov, od roku 1737 do 1756; trinásť prežilo dojčenský vek a desať sa dožilo dospelosti a jednou z dcér bola Mária Antoinetta."
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Maria_Theresa
 
@@ -634,4 +634,4 @@ questions:
     wrong:
       - { text: Louis Pasteur, why: "Vynašiel pasterizáciu a vakcínu proti besnote." }
       - { text: Robert Koch, why: "Objavil pôvodcu tuberkulózy." }
-      - { text: Marie Curie, why: "Objavila polónium a rádium." }
+      - { text: Maria Curieová-Skłodowská, why: "Objavila polónium a rádium." }
