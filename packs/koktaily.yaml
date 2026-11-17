@@ -1,0 +1,565 @@
+id: koktaily
+title: Koktaily
+description: Z čoho sa miešajú slávne koktaily, kde vznikli, v akom pohári sa podávajú a čo je Bavorák.
+category: tradicie
+lang: sk
+license: CC0-1.0
+adult: false
+defaultOn: true
+version: 1
+questions:
+  - id: mojito-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa oficiálneho receptu IBA do klasického mojita?
+    difficulty: 1
+    source: https://iba-world.com/iba-cocktail/mojito/
+    correct:
+      - { text: "Biely rum", why: "Základ mojita, IBA predpisuje 45 ml bieleho kubánskeho rumu." }
+      - { text: "Limetková šťava", why: "Čerstvo vytlačená, 20 ml." }
+      - { text: "Mäta", why: "Vetvičky mäty sa jemne roztlačia s cukrom a limetkou." }
+      - { text: "Biely trstinový cukor", why: "Dve lyžičky, ktoré sa rozmiešajú s mätou a limetkou." }
+      - { text: "Sóda", why: "Mojito sa dolieva sódou, preto je také osviežujúce." }
+    wrong:
+      - { text: "Tonik", why: "Tonik patrí do ginu s tonikom, mojito sa dolieva sódou." }
+      - { text: "Gin", why: "Mojito je rumový koktail, gin v ňom nie je." }
+      - { text: "Pomarančový džús", why: "Z citrusov má mojito iba limetku." }
+      - { text: "Bazový sirup", why: "Baza s mätou je Hugo, nie mojito." }
+      - { text: "Angostura", why: "Horké kvapky patria do old fashioned či manhattanu." }
+      - { text: "Zázvorové pivo", why: "To patrí do Moscow Mule." }
+      - { text: "Kokosový krém", why: "Ten patrí do piña colady." }
+
+  - id: pina-colada-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa receptu IBA do piña colady?
+    difficulty: 1
+    source: https://iba-world.com/iba-cocktail/pina-colada/
+    correct:
+      - { text: "Biely rum", why: "IBA uvádza 50 ml bieleho rumu." }
+      - { text: "Kokosový krém", why: "Dodáva typickú kokosovú chuť a hustotu, 30 ml." }
+      - { text: "Ananásový džús", why: "Názov znamená po španielsky „preciedený ananás“." }
+    wrong:
+      - { text: "Vodka", why: "Piña colada je rumová, vodka v nej nie je." }
+      - { text: "Pomarančový džús", why: "Z ovocia má iba ananás." }
+      - { text: "Grenadína", why: "Granátový sirup robí farebné vrstvy v Tequila Sunrise." }
+      - { text: "Tequila", why: "Tequila do piña colady nepatrí." }
+      - { text: "Mäta", why: "Mäta patrí do mojita, nie do piña colady." }
+      - { text: "Triple sec", why: "Pomarančový likér patrí do margarity či cosmopolitanu." }
+      - { text: "Banán", why: "Banán v recepte IBA nie je, mixuje sa len rum, kokos a ananás s ľadom." }
+      - { text: "Sóda", why: "Piña colada sa mixuje s ľadom, sódou sa nedolieva." }
+
+  - id: negroni-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa receptu IBA do klasického Negroni?
+    difficulty: 2
+    source: https://iba-world.com/iba-cocktail/negroni/
+    correct:
+      - { text: "Gin", why: "Tretina drinku, 30 ml." }
+      - { text: "Campari", why: "Horký červený likér, tiež 30 ml." }
+      - { text: "Sladký červený vermút", why: "Posledná tretina, Negroni je presne jedna k jednej k jednej." }
+    wrong:
+      - { text: "Vodka", why: "Negroni je ginový koktail." }
+      - { text: "Aperol", why: "Aperol patrí do spritzu, v Negroni je Campari." }
+      - { text: "Prosecco", why: "Prosecco namiesto ginu má variant Negroni Sbagliato, nie klasika." }
+      - { text: "Suchý vermút", why: "Suchý vermút patrí do martini, Negroni má sladký červený." }
+      - { text: "Sóda", why: "Campari s vermútom a sódou je Americano." }
+      - { text: "Tonik", why: "Tonik v recepte nie je, Negroni sa len zamieša s ľadom." }
+      - { text: "Bourbon", why: "S bourbonom namiesto ginu je to Boulevardier." }
+      - { text: "Limetková šťava", why: "Negroni nemá žiadnu citrusovú šťavu, len plátok pomaranča na ozdobu." }
+
+  - id: margarita-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa receptu IBA do margarity?
+    difficulty: 1
+    source: https://iba-world.com/iba-cocktail/margarita/
+    correct:
+      - { text: "Tequila", why: "IBA chce 50 ml tequily zo 100 % agáve." }
+      - { text: "Triple sec", why: "Pomarančový likér, 20 ml." }
+      - { text: "Limetková šťava", why: "Čerstvo vytlačená, 15 ml." }
+    wrong:
+      - { text: "Rum", why: "Rum je v daiquiri, margarita stojí na tequile." }
+      - { text: "Vodka", why: "Vodka do margarity nepatrí." }
+      - { text: "Grenadína", why: "Grenadína s tequilou je Tequila Sunrise." }
+      - { text: "Pomarančový džús", why: "Pomaranč je v margarite len vo forme likéru triple sec." }
+      - { text: "Kokosový krém", why: "Ten patrí do piña colady." }
+      - { text: "Grepová limonáda", why: "Tequila s grepovou limonádou je Paloma." }
+      - { text: "Mäta", why: "Mäta je v mojite, nie v margarite." }
+      - { text: "Agávový sirup", why: "Ten má Tommy's Margarita, klasická margarita sladne likérom triple sec." }
+
+  - id: bloody-mary-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa receptu IBA do Bloody Mary?
+    difficulty: 2
+    source: https://iba-world.com/iba-cocktail/bloody-mary/
+    correct:
+      - { text: "Vodka", why: "Základ, 45 ml." }
+      - { text: "Paradajkový džús", why: "Dvojnásobok vodky, 90 ml." }
+      - { text: "Citrónová šťava", why: "IBA uvádza 15 ml čerstvej citrónovej šťavy." }
+      - { text: "Worcesterská omáčka", why: "Dva streky pre slanú a pikantnú chuť." }
+      - { text: "Tabasco", why: "Pálivá omáčka podľa chuti." }
+      - { text: "Zelerová soľ", why: "Spolu so zelerom na ozdobu dáva typickú chuť." }
+      - { text: "Korenie", why: "Mleté čierne korenie podľa chuti." }
+    wrong:
+      - { text: "Gin", why: "Verzia s ginom sa volá Red Snapper." }
+      - { text: "Tequila", why: "S tequilou je to Bloody Maria." }
+      - { text: "Kečup", why: "Do Bloody Mary ide paradajkový džús, nie kečup." }
+      - { text: "Pomarančový džús", why: "Z citrusov má Bloody Mary iba citrón." }
+      - { text: "Sójová omáčka", why: "V recepte IBA nie je, slanú chuť dáva worcesterská omáčka." }
+      - { text: "Cukrový sirup", why: "Bloody Mary je slaný drink, sirup nemá." }
+      - { text: "Sóda", why: "Sódou sa Bloody Mary nedolieva." }
+
+  - id: hugo-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria do drinku Hugo?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hugo_(cocktail)
+    correct:
+      - { text: "Prosecco", why: "Hugo je postavený na talianskom šumivom víne." }
+      - { text: "Bazový sirup alebo likér", why: "Pôvodne sa robil so sirupom z medovky, ten neskôr nahradila baza." }
+      - { text: "Mäta", why: "Lístky mäty sú typické pre Hugo." }
+      - { text: "Sóda", why: "Perlivou vodou sa drink zľahčí." }
+    wrong:
+      - { text: "Aperol", why: "Prosecco s Aperolom je Aperol Spritz, nie Hugo." }
+      - { text: "Campari", why: "Campari patrí do Negroni a Americana." }
+      - { text: "Rum", why: "Rum s mätou je mojito, Hugo je bez destilátu." }
+      - { text: "Gin", why: "Gin v Hugu nie je." }
+      - { text: "Pomarančový džús", why: "Prosecco s pomarančovým džúsom je Mimosa." }
+      - { text: "Grenadína", why: "Granátový sirup do Huga nepatrí." }
+      - { text: "Zázvorové pivo", why: "To patrí do Moscow Mule." }
+      - { text: "Broskyňové pyré", why: "Prosecco s broskyňovým pyré je Bellini." }
+
+  - id: long-island-suroviny
+    type: pick
+    prompt: Čo všetko patrí podľa receptu IBA do Long Island Iced Tea?
+    difficulty: 2
+    source: https://iba-world.com/iba-cocktail/long-island-iced-tea/
+    correct:
+      - { text: "Vodka", why: "Jeden z piatich alkoholov, každý po 15 ml." }
+      - { text: "Tequila", why: "Aj tequila má v drinku svojich 15 ml." }
+      - { text: "Biely rum", why: "Ďalší z piatich alkoholov v drinku." }
+      - { text: "Gin", why: "Aj gin patrí do tejto bomby." }
+      - { text: "Cointreau", why: "Pomarančový likér je piaty alkohol." }
+      - { text: "Citrónová šťava", why: "25 ml citrónovej šťavy." }
+      - { text: "Kola", why: "Dolieva sa ňou a vďaka nej drink vyzerá ako čaj." }
+    wrong:
+      - { text: "Čaj", why: "Žiadny čaj v ňom nie je, ľadový čaj len pripomína farbou." }
+      - { text: "Whisky", why: "Whisky medzi piatimi alkoholmi nie je." }
+      - { text: "Koňak", why: "Koňak do Long Islandu nepatrí." }
+      - { text: "Campari", why: "Horký likér do Long Islandu nepatrí." }
+      - { text: "Tonik", why: "Dolieva sa kolou, nie tonikom." }
+      - { text: "Pomarančový džús", why: "Pomaranč je tam len v likéri Cointreau." }
+      - { text: "Zázvorové pivo", why: "To patrí do Moscow Mule." }
+
+  - id: sex-on-the-beach-suroviny
+    type: pick
+    prompt: Ktoré suroviny patria podľa receptu IBA do Sex on the Beach?
+    difficulty: 2
+    source: https://iba-world.com/iba-cocktail/sex-on-the-beach/
+    correct:
+      - { text: "Vodka", why: "Základ drinku, 40 ml." }
+      - { text: "Broskyňový likér", why: "Broskyňový šnaps, 20 ml." }
+      - { text: "Pomarančový džús", why: "Čerstvý pomarančový džús, 40 ml." }
+      - { text: "Brusnicový džús", why: "Dáva drinku červenú farbu, 40 ml." }
+    wrong:
+      - { text: "Rum", why: "Sex on the Beach je vodkový drink." }
+      - { text: "Kokosový krém", why: "Kokos patrí do piña colady." }
+      - { text: "Ananásový džús", why: "V recepte IBA ananás nie je." }
+      - { text: "Grenadína", why: "Červenú farbu tu dáva brusnicový džús, nie grenadína." }
+      - { text: "Tequila", why: "Tequila v tomto drinku nie je." }
+      - { text: "Smotana", why: "Smotana patrí do White Russian." }
+      - { text: "Sóda", why: "Drink sa nedolieva sódou, je zo samých džúsov a alkoholu." }
+
+  - id: zaklad-rum
+    type: pick
+    prompt: Ktoré z týchto koktailov sú podľa receptov IBA postavené na rume?
+    difficulty: 1
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Mojito", why: "45 ml bieleho kubánskeho rumu." }
+      - { text: "Daiquiri", why: "Rum, limetka a cukor, nič viac." }
+      - { text: "Cuba Libre", why: "Biely rum s kolou a limetkou." }
+      - { text: "Piña colada", why: "Biely rum s kokosom a ananásom." }
+      - { text: "Mai Tai", why: "Dokonca dva rumy, jamajský a z Martiniku." }
+      - { text: "Dark 'n' Stormy", why: "Tmavý rum Goslings plávajúci na zázvorovom pive." }
+      - { text: "Hemingway Special", why: "Rum s grepom, limetkou a likérom maraschino." }
+    wrong:
+      - { text: "Margarita", why: "Margarita stojí na tequile." }
+      - { text: "Cosmopolitan", why: "Základom je citrónová vodka." }
+      - { text: "Negroni", why: "Negroni je ginový koktail." }
+      - { text: "Moscow Mule", why: "Moscow Mule je vodka so zázvorovým pivom." }
+      - { text: "Tequila Sunrise", why: "Ako napovedá názov, základom je tequila." }
+      - { text: "Bloody Mary", why: "Bloody Mary je vodka s paradajkovým džúsom." }
+      - { text: "Old Fashioned", why: "Old Fashioned je whiskový koktail." }
+      - { text: "Paloma", why: "Paloma je tequila s grepovou limonádou." }
+
+  - id: zaklad-vodka
+    type: pick
+    prompt: Ktoré z týchto koktailov sú podľa receptov IBA postavené na vodke?
+    difficulty: 1
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Moscow Mule", why: "IBA dokonca menuje vodku Smirnoff so zázvorovým pivom." }
+      - { text: "Cosmopolitan", why: "Citrónová vodka s Cointreau, limetkou a brusnicami." }
+      - { text: "Bloody Mary", why: "Vodka s paradajkovým džúsom." }
+      - { text: "Sex on the Beach", why: "Vodka s broskyňovým likérom a džúsmi." }
+      - { text: "Espresso Martini", why: "Vodka, kávový likér a espresso." }
+      - { text: "Black Russian", why: "Vodka s kávovým likérom, so smotanou je z neho White Russian." }
+      - { text: "Porn Star Martini", why: "Vanilková vodka s marakujou." }
+    wrong:
+      - { text: "Dry Martini", why: "Klasické martini je podľa IBA gin so suchým vermútom." }
+      - { text: "Caipirinha", why: "Základ je brazílska cachaça, verzia s vodkou sa volá Caipiroska." }
+      - { text: "Mojito", why: "Mojito je rumové." }
+      - { text: "Margarita", why: "Margarita je z tequily." }
+      - { text: "Negroni", why: "Negroni je z ginu." }
+      - { text: "Daiquiri", why: "Daiquiri je rumové." }
+      - { text: "Manhattan", why: "Manhattan je z ražnej whisky." }
+      - { text: "Whiskey Sour", why: "Ako napovedá názov, je to whisky." }
+
+  - id: zaklad-gin
+    type: pick
+    prompt: Ktoré z týchto koktailov sú podľa receptov IBA postavené na gine?
+    difficulty: 2
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Negroni", why: "Gin, Campari a sladký vermút v pomere jedna k jednej k jednej." }
+      - { text: "Dry Martini", why: "60 ml ginu a len 10 ml suchého vermútu." }
+      - { text: "Gin Fizz", why: "Gin s citrónom, sirupom a sódou." }
+      - { text: "French 75", why: "Gin s citrónom, dolievaný šampanským." }
+      - { text: "Bramble", why: "Gin s citrónom a černicovým likérom na drvenom ľade." }
+    wrong:
+      - { text: "Mojito", why: "Mojito je rumové." }
+      - { text: "Cosmopolitan", why: "Cosmopolitan je z citrónovej vodky." }
+      - { text: "Margarita", why: "Margarita je z tequily." }
+      - { text: "Manhattan", why: "Manhattan je z ražnej whisky." }
+      - { text: "Old Fashioned", why: "Old Fashioned je z bourbonu alebo ražnej whisky." }
+      - { text: "Moscow Mule", why: "Moscow Mule je vodkový." }
+      - { text: "Mai Tai", why: "Mai Tai je z dvoch rumov." }
+      - { text: "Paloma", why: "Paloma je z tequily." }
+      - { text: "Espresso Martini", why: "Napriek menu je to vodka s kávou, nie gin." }
+
+  - id: zaklad-whisky
+    type: pick
+    prompt: Ktoré z týchto koktailov sú podľa receptov IBA postavené na whisky?
+    difficulty: 2
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Manhattan", why: "Ražná whisky so sladkým vermútom a angosturou." }
+      - { text: "Old Fashioned", why: "Bourbon alebo ražná whisky s kockou cukru a angosturou." }
+      - { text: "Whiskey Sour", why: "Bourbon s citrónom a sirupom, voliteľne s bielkom." }
+      - { text: "Irish Coffee", why: "Írska whisky s horúcou kávou a smotanou." }
+    wrong:
+      - { text: "Horse's Neck", why: "Ten je podľa IBA z koňaku so zázvorovou limonádou." }
+      - { text: "Negroni", why: "Negroni je z ginu, verzia s bourbonom sa volá Boulevardier." }
+      - { text: "Daiquiri", why: "Daiquiri je rumové." }
+      - { text: "Cosmopolitan", why: "Cosmopolitan je vodkový." }
+      - { text: "Margarita", why: "Margarita je z tequily." }
+      - { text: "Mojito", why: "Mojito je rumové." }
+      - { text: "Moscow Mule", why: "Moscow Mule je vodkový." }
+      - { text: "Espresso Martini", why: "Káva je tu s vodkou, nie s whisky ako v Irish Coffee." }
+      - { text: "Mai Tai", why: "Mai Tai je rumový." }
+
+  - id: sumive-vino
+    type: pick
+    prompt: Do ktorých z týchto drinkov patrí šumivé víno (prosecco alebo šampanské)?
+    difficulty: 2
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Aperol Spritz", why: "IBA: 90 ml prosecca, 60 ml Aperolu a strek sódy." }
+      - { text: "Bellini", why: "Prosecco s pyré z bielych broskýň." }
+      - { text: "Mimosa", why: "Pomarančový džús a prosecco pol na pol." }
+      - { text: "Hugo", why: "Prosecco s bazou, mätou a sódou." }
+      - { text: "French 75", why: "Gin s citrónom dolievaný šampanským." }
+      - { text: "Kir Royal", why: "Likér z čiernych ríbezlí so šampanským." }
+    wrong:
+      - { text: "Kir", why: "Obyčajný Kir je s tichým bielym vínom, šampanské má až Kir Royal." }
+      - { text: "Americano", why: "Campari s vermútom sa dolieva sódou, nie vínom." }
+      - { text: "Negroni", why: "Klasické Negroni má gin, prosecco má až variant Sbagliato." }
+      - { text: "Cuba Libre", why: "Rum s kolou." }
+      - { text: "Piña colada", why: "Rum s kokosom a ananásom." }
+      - { text: "Moscow Mule", why: "Vodka so zázvorovým pivom." }
+      - { text: "Cosmopolitan", why: "Vodka, Cointreau, limetka a brusnice." }
+      - { text: "Long Island Iced Tea", why: "Päť alkoholov s kolou, víno medzi nimi nie je." }
+
+  - id: vznik-kuba
+    type: pick
+    prompt: Ktoré z týchto koktailov vznikli podľa najrozšírenejšej verzie na Kube?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Mojito
+    correct:
+      - { text: "Mojito", why: "Za jeho rodisko sa považuje Havana, hoci presný pôvod je sporný." }
+      - { text: "Daiquiri", why: "Vymyslel ho americký banský inžinier Jennings Cox na Kube, meno má po pláži pri Santiagu de Cuba." }
+      - { text: "Cuba Libre", why: "Vznikol na Kube začiatkom 20. storočia po španielsko-americkej vojne." }
+    wrong:
+      - { text: "Piña colada", why: "Pochádza z Portorika, ktoré ju v roku 1978 vyhlásilo za svoj oficiálny nápoj." }
+      - { text: "Caipirinha", why: "Brazílsky národný koktail." }
+      - { text: "Margarita", why: "Vznikla podľa väčšiny verzií v Mexiku." }
+      - { text: "Mai Tai", why: "Trader Vic ho podľa vlastných slov vymyslel v kalifornskom Oaklande." }
+      - { text: "Negroni", why: "Vznikol vo Florencii." }
+      - { text: "Bellini", why: "Vznikol v Harry's Bar v Benátkach." }
+      - { text: "Espresso Martini", why: "Vymyslel ho Dick Bradsell v Londýne." }
+      - { text: "Moscow Mule", why: "Napriek menu vznikol v USA." }
+
+  - id: vznik-taliansko
+    type: pick
+    prompt: Ktoré z týchto drinkov vznikli v Taliansku?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Negroni
+    correct:
+      - { text: "Negroni", why: "Podľa najznámejšej verzie ho v roku 1919 namiešali vo florentskej kaviarni Casoni pre grófa Camilla Negroniho." }
+      - { text: "Bellini", why: "Vymyslel ho Giuseppe Cipriani v benátskom Harry's Bar." }
+      - { text: "Americano", why: "Prvýkrát ho podávali v bare Gaspara Campariho v Miláne." }
+      - { text: "Hugo", why: "Vymyslel ho barman Roland Gruber v Naturns v Južnom Tirolsku." }
+      - { text: "Spritz", why: "Vznikol v Benátsku v 19. storočí, keď tam vládli Habsburgovci." }
+    wrong:
+      - { text: "Mojito", why: "Za rodisko mojita sa považuje Havana." }
+      - { text: "Cuba Libre", why: "Vznikol na Kube." }
+      - { text: "Piña colada", why: "Pochádza z Portorika." }
+      - { text: "Mai Tai", why: "Pochádza z Kalifornie." }
+      - { text: "Espresso Martini", why: "Napriek espressu vznikol v Londýne." }
+      - { text: "Caipirinha", why: "Je to brazílsky národný koktail." }
+      - { text: "Long Island Iced Tea", why: "Pochádza z amerického Long Islandu." }
+      - { text: "Cosmopolitan", why: "Všetky verzie jeho vzniku sa odohrávajú v USA." }
+
+  - id: pohar-highball
+    type: pick
+    prompt: Ktoré z týchto koktailov sa podľa receptu IBA podávajú vo vysokom pohári typu highball?
+    difficulty: 3
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Cuba Libre", why: "Rum s kolou sa stavia rovno v highballe s ľadom." }
+      - { text: "Sex on the Beach", why: "Stavia sa v highballe plnom ľadu." }
+      - { text: "Tequila Sunrise", why: "Vo vysokom pohári vynikne prechod farieb ako pri východe slnka." }
+      - { text: "Paloma", why: "Tequila s grepovou limonádou v highballe." }
+      - { text: "Long Island Iced Tea", why: "Všetko sa leje do highballu s ľadom." }
+      - { text: "Dark 'n' Stormy", why: "Zázvorové pivo v highballe a rum navrch." }
+      - { text: "Horse's Neck", why: "Koňak so zázvorovou limonádou v highballe." }
+    wrong:
+      - { text: "Margarita", why: "Podáva sa vychladená v koktailovom pohári na stopke." }
+      - { text: "Dry Martini", why: "Klasický martini pohár na stopke." }
+      - { text: "Cosmopolitan", why: "Veľký koktailový pohár na stopke." }
+      - { text: "Caipirinha", why: "Mieša sa priamo v nízkom pohári old fashioned." }
+      - { text: "Negroni", why: "Podáva sa v nízkom pohári old fashioned." }
+      - { text: "Bellini", why: "Podáva sa vo vysokom úzkom pohári na šampanské." }
+      - { text: "Aperol Spritz", why: "Podáva sa vo vínovom pohári s ľadom." }
+      - { text: "Espresso Martini", why: "Podáva sa vo vychladenom koktailovom pohári." }
+
+  - id: limetka-nie-citron
+    type: pick
+    prompt: Do ktorých z týchto koktailov patrí podľa receptu IBA limetka (nie citrón)?
+    difficulty: 3
+    source: https://iba-world.com/cocktails/all-cocktails/
+    correct:
+      - { text: "Mojito", why: "20 ml limetkovej šťavy." }
+      - { text: "Margarita", why: "15 ml limetkovej šťavy." }
+      - { text: "Daiquiri", why: "Rum, cukor a 20 ml limetkovej šťavy." }
+      - { text: "Cuba Libre", why: "10 ml limetkovej šťavy a limetka na ozdobu." }
+      - { text: "Caipirinha", why: "Celá limetka nakrájaná na kúsky a roztlačená s cukrom." }
+      - { text: "Moscow Mule", why: "10 ml limetkovej šťavy." }
+      - { text: "Cosmopolitan", why: "15 ml limetkovej šťavy, citrón je len kôrka na ozdobu." }
+      - { text: "Mai Tai", why: "30 ml čerstvej limetkovej šťavy." }
+    wrong:
+      - { text: "Whiskey Sour", why: "Kyslosť mu dáva 25 ml citrónovej šťavy." }
+      - { text: "Bloody Mary", why: "IBA uvádza citrónovú šťavu a citrón na ozdobu." }
+      - { text: "Gin Fizz", why: "30 ml citrónovej šťavy." }
+      - { text: "French 75", why: "15 ml citrónovej šťavy." }
+      - { text: "Long Island Iced Tea", why: "25 ml citrónovej šťavy." }
+      - { text: "Bramble", why: "25 ml citrónovej šťavy." }
+
+  - id: nazov-miesto
+    type: pick
+    prompt: Ktoré z týchto koktailov majú v názve zemepisné miesto (mesto, ostrov, krajinu alebo pláž)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Daiquiri
+    correct:
+      - { text: "Manhattan", why: "Newyorský obvod; drink vraj vznikol v tamojšom Manhattan Clube." }
+      - { text: "Long Island Iced Tea", why: "Ostrov v štáte New York, kde ho údajne v roku 1972 vymyslel Robert Butt." }
+      - { text: "Moscow Mule", why: "Moskva je v názve, hoci drink vznikol v USA." }
+      - { text: "Cuba Libre", why: "Znamená „Slobodná Kuba“, heslo kubánskeho boja za nezávislosť." }
+      - { text: "Daiquiri", why: "Daiquirí je pláž a bývalá železná baňa pri Santiagu de Cuba." }
+    wrong:
+      - { text: "Negroni", why: "Nesie meno grófa Camilla Negroniho." }
+      - { text: "Bellini", why: "Pomenovaný po benátskom maliarovi Giovannim Bellinim." }
+      - { text: "Mai Tai", why: "Podľa tahitského slova pre „dobrý“ či „výborný“." }
+      - { text: "Margarita", why: "Po španielsky „sedmokráska“, možno aj ženské meno." }
+      - { text: "Mimosa", why: "Pomenovaná podľa žltých kvetov mimózy (akácie)." }
+      - { text: "Caipirinha", why: "Zdrobnenina slova caipira, ktorým sa označujú ľudia zo štátu São Paulo." }
+      - { text: "Cosmopolitan", why: "Podľa jednej legendy prvý ochutnávač zvolal „aké kozmopolitné“." }
+      - { text: "Hugo", why: "Mužské meno, nie miesto." }
+
+  - id: nazov-umelec
+    type: pick
+    prompt: Ktoré z týchto drinkov nesú meno slávneho umelca (maliara, skladateľa či spisovateľa)?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Rossini_(cocktail)
+    correct:
+      - { text: "Bellini", why: "Ružová farba pripomínala Ciprianimu obraz benátskeho maliara Giovanniho Belliniho." }
+      - { text: "Rossini", why: "Prosecco s jahodovým pyré, pomenované po skladateľovi Gioachinovi Rossinim." }
+      - { text: "Puccini", why: "Prosecco s mandarínkovou šťavou, nesie meno skladateľa opery Tosca." }
+      - { text: "Tintoretto", why: "Šumivé víno s granátovým jablkom, meno má po benátskom maliarovi." }
+      - { text: "Hemingway Special", why: "Rumový drink nesie meno spisovateľa Ernesta Hemingwaya." }
+    wrong:
+      - { text: "Negroni", why: "Camillo Negroni bol gróf, nie umelec." }
+      - { text: "Vesper", why: "Vesper Lynd je vymyslená postava z bondovky Casino Royale." }
+      - { text: "Margarita", why: "Španielsky „sedmokráska“, žiadna umelkyňa." }
+      - { text: "Manhattan", why: "Nesie meno newyorského obvodu." }
+      - { text: "Mai Tai", why: "Tahitsky „dobrý“." }
+      - { text: "Daiquiri", why: "Nesie meno pláže na Kube." }
+      - { text: "Cosmopolitan", why: "Znamená „svetobežnícky“, nie je to meno." }
+
+  - id: rok-vzniku-koktailov
+    type: order
+    prompt: Zoraď koktaily podľa roku vzniku (podľa najrozšírenejšej verzie) od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Mai_Tai
+    note: "Negroni 1919 Florencia; Mai Tai 1944 Trader Vic's; Piña colada 1954 Caribe Hilton; Long Island 1972 (Robert Butt); Espresso Martini okolo 1983 (Soho Brasserie)."
+    items:
+      - { text: "Negroni", value: 1919 }
+      - { text: "Mai Tai", value: 1944 }
+      - { text: "Piña colada", value: 1954 }
+      - { text: "Long Island Iced Tea", value: 1972 }
+      - { text: "Espresso Martini", value: 1983 }
+
+  - id: likery-alkohol
+    type: order
+    prompt: Zoraď likéry a bitters podľa obsahu alkoholu od najsilnejšieho.
+    direction: desc
+    unit: "% obj."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Becherovka
+    note: "Cointreau 40 %, Becherovka 38 %, Jägermeister 35 %, Baileys 17 %, Aperol 11 % (en.wikipedia)."
+    items:
+      - { text: "Cointreau", value: 40 }
+      - { text: "Becherovka", value: 38 }
+      - { text: "Jägermeister", value: 35 }
+      - { text: "Baileys", value: 17 }
+      - { text: "Aperol", value: 11 }
+
+  - id: likery-rok
+    type: order
+    prompt: Zoraď nápoje podľa roku, keď vznikli, od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Campari
+    note: "Becherovka 1807, Campari 1860, Aperol 1919, Jägermeister 1935 (vyvinutý 1934), Baileys 1974 (en.wikipedia)."
+    items:
+      - { text: "Becherovka", value: 1807 }
+      - { text: "Campari", value: 1860 }
+      - { text: "Aperol", value: 1919 }
+      - { text: "Jägermeister", value: 1935 }
+      - { text: "Baileys", value: 1974 }
+
+  - id: ml-destilatu-iba
+    type: order
+    prompt: Zoraď koktaily podľa množstva hlavného destilátu v oficiálnom recepte IBA, od najväčšieho.
+    direction: desc
+    unit: ml
+    difficulty: 3
+    source: https://iba-world.com/cocktails/all-cocktails/
+    note: "Caipirinha 60 ml cachaçy, Cuba Libre 50 ml rumu, Mojito 45 ml rumu, Sex on the Beach 40 ml vodky, Negroni 30 ml ginu."
+    items:
+      - { text: "Caipirinha (cachaça)", value: 60 }
+      - { text: "Cuba Libre (rum)", value: 50 }
+      - { text: "Mojito (rum)", value: 45 }
+      - { text: "Sex on the Beach (vodka)", value: 40 }
+      - { text: "Negroni (gin)", value: 30 }
+
+  - id: long-island-pocet-alkoholov
+    type: number
+    prompt: Koľko rôznych alkoholických nápojov obsahuje Long Island Iced Tea podľa receptu IBA?
+    answer: 5
+    unit: alkoholov
+    scale: linear
+    tolerance: 1
+    why: Vodka, tequila, biely rum, gin a Cointreau, každý po 15 ml, a navrch kola.
+    difficulty: 1
+    source: https://iba-world.com/iba-cocktail/long-island-iced-tea/
+
+  - id: vesper-rok
+    type: number
+    prompt: V ktorom roku vyšiel román Casino Royale, v ktorom si James Bond vymyslí koktail Vesper?
+    answer: 1953
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Ian Fleming v ňom dal Bondovi recept na tri miery ginu Gordon's, jednu vodky a pol miery Kina Lillet.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Vesper_(cocktail)
+
+  - id: hugo-rok
+    type: number
+    prompt: V ktorom roku vymyslel barman Roland Gruber v Južnom Tirolsku drink Hugo?
+    answer: 2005
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: Vznikol v bare v Naturns a odtiaľ sa rozšíril do Rakúska, Švajčiarska a Nemecka.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Hugo_(cocktail)
+
+  - id: pina-colada-narodny-napoj
+    type: number
+    prompt: V ktorom roku vyhlásilo Portoriko piña coladu za svoj oficiálny nápoj?
+    answer: 1978
+    unit: rok
+    scale: linear
+    tolerance: 4
+    why: Hotel Caribe Hilton v San Juane tvrdí, že ju tam v roku 1954 vymyslel barman Ramón Marrero.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Pi%C3%B1a_colada
+
+  - id: espresso-martini-zrnka
+    type: number
+    prompt: Koľko kávových zŕn má podľa receptu IBA plávať na espresso martini?
+    answer: 3
+    unit: zrnká
+    scale: linear
+    tolerance: 1
+    why: Tri zrnká na pene sú jediná ozdoba, ktorú IBA pri espresso martini uvádza.
+    difficulty: 2
+    source: https://iba-world.com/iba-cocktail/espresso-martini/
+
+  - id: bavorak
+    type: choice
+    prompt: Čo dostanete, keď si v českom bare objednáte „Bavoráka“?
+    difficulty: 1
+    source: https://cs.wikipedia.org/wiki/Fernet_Stock
+    correct: { text: "Fernet s tonikom", why: "Tak sa v Česku hovorí fernetu s tonikom." }
+    wrong:
+      - { text: "Becherovku s tonikom", why: "Becherovka s tonikom sa volá Beton." }
+      - { text: "Pivo s limonádou", why: "To je radler alebo shandy." }
+      - { text: "Jägermeister s energetickým nápojom", why: "To je Jägerbomb, s Bavorákom nemá nič spoločné." }
+
+  - id: beton
+    type: choice
+    prompt: Ako sa ľudovo volá Becherovka s tonikom?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Becherovka
+    correct: { text: "Beton", why: "Becherovka s tonikom, po česky aj po slovensky jednoducho betón." }
+    wrong:
+      - { text: "Bavorák", why: "Bavorák je fernet s tonikom." }
+      - { text: "Hugo", why: "Hugo je prosecco s bazou a mätou." }
+      - { text: "Spritz", why: "Spritz je víno so sódou a likérom, napríklad Aperolom." }
+
+  - id: bellini-meno
+    type: choice
+    prompt: Po kom je pomenovaný koktail Bellini z benátskeho Harry's Bar?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Bellini_(cocktail)
+    correct: { text: "Po maliarovi Giovannim Bellinim", why: "Ružová farba drinku pripomínala Ciprianimu farby na obraze tohto benátskeho maliara z 15. storočia." }
+    wrong:
+      - { text: "Po skladateľovi Vincenzovi Bellinim", why: "Autor opery Norma s drinkom nesúvisí, po skladateľovi Rossinim je pomenovaný jeho jahodový variant Rossini." }
+      - { text: "Po herečke Monice Bellucci", why: "Bellini vznikol najneskôr v roku 1948, ešte predtým, ako sa narodila." }
+      - { text: "Po zakladateľovi baru Giuseppem Bellinim", why: "Harry's Bar založil a Bellini vymyslel Giuseppe Cipriani." }
+
+  - id: cuba-libre-vyznam
+    type: choice
+    prompt: Čo znamená názov Cuba Libre?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Cuba_Libre
+    correct: { text: "Slobodná Kuba", why: "Bolo to heslo kubánskeho hnutia za nezávislosť." }
+    wrong:
+      - { text: "Kubánska noc", why: "Libre znamená po španielsky slobodný." }
+      - { text: "Kubánska knižnica", why: "Knižnica je po španielsky biblioteca, libre je slobodný." }
+      - { text: "Kubánsky rum", why: "Rum je po španielsky ron, libre znamená slobodný." }
