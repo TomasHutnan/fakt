@@ -347,7 +347,8 @@ export class Hub {
 
   private act(c: Client, action: ClientAction): void {
     if (!c.room || !c.playerId) return this.fail(c, "invalid");
-    if (!action || typeof action !== "object" || typeof action.type !== "string") return this.fail(c, "invalid");
+    // Only what a device may ask for: join, connect and tick come from the hub itself.
+    if (!action || typeof action !== "object" || !CLIENT_ACTIONS.has(action.type)) return this.fail(c, "invalid");
     // The reducer validates the rest; `by`, `now` and `seed` always come from here.
     const { by: _b, now: _n, seed: _s, ...rest } = action as ClientAction & { by?: unknown; now?: unknown; seed?: unknown };
     const seed = action.type === "start" || action.type === "again" ? randomInt(2 ** 32) : undefined;
@@ -453,27 +454,35 @@ export class Hub {
 
   private restore(snap: Snapshot): void {
     const now = Date.now();
-    for (const r of snap.rooms ?? []) {
-      if (!r?.state?.code || !Array.isArray(r.packs) || !Array.isArray(r.tokens)) continue;
-      // Everyone reconnects; questions get some extra time back for the restart.
-      let state: RoomState = { ...r.state, players: r.state.players.map((p) => ({ ...p, connected: false })) };
-      if (state.phase === "question" && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
-      const interned = this.intern(r.packs);
-      if (!interned) continue;
-      const room: Room = {
-        state,
-        packs: interned.packs,
-        packKeys: interned.keys,
-        tokens: new Map(r.tokens),
-        clients: new Set(),
-        timer: null,
-        lastActive: now,
-        born: typeof r.born === "number" ? r.born : now,
-        ip: typeof r.ip === "string" ? r.ip : "",
-      };
-      this.rooms.set(state.code, room);
-      this.schedule(room);
+    for (const r of Array.isArray(snap?.rooms) ? snap.rooms : []) {
+      try {
+        this.restoreRoom(r, now);
+      } catch (err) {
+        console.error("fakt: room not restored:", err);
+      }
     }
+  }
+
+  private restoreRoom(r: Snapshot["rooms"][number], now: number): void {
+    if (!r?.state?.code || !Array.isArray(r.state.players) || !Array.isArray(r.packs) || !Array.isArray(r.tokens)) return;
+    // Everyone reconnects; questions get some extra time back for the restart.
+    let state: RoomState = { ...r.state, players: r.state.players.map((p) => ({ ...p, connected: false })) };
+    if (state.phase === "question" && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
+    const interned = this.intern(r.packs);
+    if (!interned) return;
+    const room: Room = {
+      state,
+      packs: interned.packs,
+      packKeys: interned.keys,
+      tokens: new Map(r.tokens),
+      clients: new Set(),
+      timer: null,
+      lastActive: now,
+      born: typeof r.born === "number" ? r.born : now,
+      ip: typeof r.ip === "string" ? r.ip : "",
+    };
+    this.rooms.set(state.code, room);
+    this.schedule(room);
   }
 
   /** Stops timers and closes every connection (on shutdown, after taking a snapshot). */
@@ -495,6 +504,8 @@ function emptyRoom(): RoomState {
 }
 
 const PACES: Pace[] = ["none", "calm", "fast"];
+
+const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "kick", "again"] satisfies ClientAction["type"][]);
 
 /** Settings from a client, checked field by field; null when anything is off. */
 export function cleanSettings(raw: unknown): RoomSettings | null {

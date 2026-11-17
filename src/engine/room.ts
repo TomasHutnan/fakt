@@ -315,6 +315,10 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         played: [],
       };
     }
+
+    default:
+      // Unknown actions (e.g. from a newer or broken client) change nothing.
+      return s;
   }
 }
 

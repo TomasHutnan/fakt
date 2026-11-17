@@ -353,6 +353,36 @@ describe("playing through the hub", () => {
     expect(all[2].view.players.every((p) => p.score === 0)).toBe(true);
   });
 
+  it("refuses actions only the server may take, and survives junk actions", () => {
+    const { host, code, all } = room(3);
+    const zuzka = all[1];
+    const miroId = all[2].seat!.id!;
+    zuzka.act({ type: "join", id: "fake", name: "Fake" });
+    zuzka.act({ type: "connect", id: miroId, connected: false });
+    zuzka.act({ type: "tick", now: 1e15 });
+    zuzka.act({ type: "explode" });
+    zuzka.act({ type: "__proto__" });
+    expect(hub.room(code)!.players.map((p) => p.name)).toEqual(["Jano", "Hráč 1", "Hráč 2"]);
+    expect(hub.room(code)!.players.every((p) => p.connected)).toBe(true);
+    // Junk values in valid actions change nothing and never throw.
+    host.act({ type: "start" });
+    for (const a of [
+      { type: "pick", option: "x" },
+      { type: "pick", option: null },
+      { type: "pick", option: { length: 1 } },
+      { type: "submitOrder", arrangement: "abc" },
+      { type: "submitOrder", arrangement: { length: 4 } },
+      { type: "submitNumber", value: "5" },
+      { type: "submitChoice", option: 1.5 },
+      { type: "kick", id: { toString: 1 } },
+      { type: "kick", id: null },
+    ]) {
+      expect(() => zuzka.act(a)).not.toThrow();
+    }
+    expect(hub.room(code)!.answers).toEqual({});
+    expect(host.view.phase).toBe("question");
+  });
+
   it("ignores a spoofed sender, time or seed", () => {
     const { host, all } = room(2);
     const zuzka = all[1];
@@ -485,5 +515,18 @@ describe("housekeeping", () => {
     expect(back.view.players.find((p) => p.name === "Jano")!.pick?.found).toBeGreaterThanOrEqual(0);
     const hostBack = join(hub, code, undefined, host.seat!.token!);
     expect(hostBack.view.controller).toBe(host.seat!.id);
+  });
+});
+
+describe("snapshots from disk", () => {
+  it("skips broken rooms instead of failing to start", () => {
+    const good = create(hub);
+    const snap = JSON.parse(JSON.stringify(hub.snapshot()));
+    snap.rooms.push({ state: { code: "BBBB", players: "x" }, packs: [], tokens: [] }, null, { state: null }, { state: { code: "CCCC", players: [] }, packs: 5, tokens: [] });
+    const h = new Hub({}, snap);
+    expect(h.roomCount).toBe(1);
+    expect(h.room(good.seat!.code)).toBeDefined();
+    expect(() => new Hub({}, { savedAt: 0, rooms: "nope" } as never)).not.toThrow();
+    h.close();
   });
 });
