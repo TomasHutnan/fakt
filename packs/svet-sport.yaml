@@ -200,7 +200,7 @@ questions:
         why: Debutovalo v Tokiu, v Paríži sa rozdelilo na dve súťaže.
       - text: golf
         why: Na hry sa vrátil v roku 2016 po vyše sto rokoch.
-      - text: ragby sedmičiek
+      - text: sedmičkové ragby
         why: Na olympiáde je od roku 2016.
       - text: moderný päťboj
         why: V Paríži naposledy s jazdou na koni.
@@ -265,7 +265,7 @@ questions:
     tags: [olympiáda, medaily, zimné]
     correct:
       - text: Nórsko
-        why: Vyhralo 11-krát (raz o prvenstvo delené), naposledy štyrikrát po sebe, v roku 2026 s rekordnými 18 zlatými.
+        why: Vyhralo 11-krát (raz sa o prvenstvo delilo), naposledy štyrikrát po sebe, v roku 2026 s rekordnými 18 zlatými.
       - text: Sovietsky zväz
         why: Sedemkrát v rokoch 1956 až 1988.
       - text: USA
@@ -413,7 +413,7 @@ questions:
       - text: ragby na vozíku
         why: Pôvodne sa mu hovorilo murderball, na hrách je od roku 2000.
       - text: sedací volejbal
-        why: Na paralympiáde od roku 1976.
+        why: Medailovým športom je na paralympiáde od roku 1980.
       - text: futbal nevidiacich
         why: Päť hráčov na strane, na hrách od roku 2004.
       - text: paratriatlon
@@ -559,7 +559,7 @@ questions:
         why: Trofej nesie meno Vinca Lombardiho, nie názov ligy.
       - text: Najviac titulov, šesť, majú Pittsburgh a New England
         why: Patriots majú aj najviac účastí vo finále – 12.
-      - text: Super Bowl LX vyhralo Seattle
+      - text: Super Bowl LX vyhrali Seattle Seahawks
         why: Seahawks porazili Patriots 29:13 a oplatili im prehru z roku 2015.
       - text: Od roku 2022 sa hrá druhú nedeľu vo februári
         why: Predtým sa hrával v januári a neskôr začiatkom februára.
@@ -936,7 +936,7 @@ questions:
     wrong:
       - { text: St. Moritz, why: "Druhé zimné hry v roku 1928 a znova v roku 1948." }
       - { text: Lake Placid, why: "Tretie hry v roku 1932, prvé mimo Európy." }
-      - { text: Oslo, why: "Hry v roku 1952, na ktorých prvýkrát horel zimný olympijský oheň." }
+      - { text: Oslo, why: "Hry v roku 1952, pred ktorými sa prvýkrát konala štafeta so zimnou olympijskou pochodňou." }
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Winter_Olympic_Games
     tags: [olympiáda, zimné, história]
