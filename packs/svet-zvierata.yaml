@@ -4,7 +4,7 @@ description: "Kto naozaj lieta, kto má koľko nôh, kde kto žije, kto už vyhy
 category: zemepis
 lang: sk
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: zv-naozaj-lietaju
@@ -30,17 +30,17 @@ questions:
     wrong:
       - text: lietajúca ryba
         why: "Vyskočí z vody a na veľkých prsných plutvách plachtí nad hladinou, ale nemáva nimi."
-      - text: lietajúca veverica
+      - text: poletuška
         why: "Má kožnú blanu medzi končatinami a len plachtí zo stromu na strom."
       - text: letucha
-        why: "Volá sa aj „lietajúci lemur“, no z juhovýchodnej Ázie len plachtí."
+        why: "Volá sa aj „lietajúci lemur“, žije v juhovýchodnej Ázii a len plachtí."
       - text: vakoveverica
         why: "Malý austrálsky vačkovec, ktorý plachtí ako lietajúca veverica."
       - text: lietajúci had
         why: "Ázijský had, ktorý sa zo stromu skĺzne vzduchom, no lietať nevie."
       - text: lietajúca žaba
         why: "Zo stromu na strom len plachtí."
-      - text: lietajúca jašterica drak
+      - text: jašterica dráčik
         why: "Ázijská jašterica, ktorá zo stromu len plachtí."
 
   - id: zv-nelietave-vtaky
@@ -56,7 +56,7 @@ questions:
       - text: emu
         why: "Najvyšší pôvodný vták Austrálie."
       - text: kivi
-        why: "Novozélandský symbol; na obrovskom vajci sedí samec."
+        why: "Novozélandský symbol; u väčšiny druhov sedí na obrovskom vajci samec."
       - text: tučniak
         why: "Krídla mu slúžia ako plutvy pod vodou."
       - text: kazuár
@@ -141,7 +141,7 @@ questions:
       - text: medúza
         why: "Pŕhlivec bez mozgu, srdca aj kostí."
       - text: sépia
-        why: "Hlavonožec, príbuzná chobotnice."
+        why: "Hlavonožec, príbuzný chobotnice."
       - text: delfín
         why: "Cicavec, ktorý dýcha vzduch a kojí mláďatá."
       - text: lamantín
@@ -162,7 +162,7 @@ questions:
       - text: leňoch
         why: "Žije v pralesoch Strednej a Južnej Ameriky."
       - text: mravčiar veľký
-        why: "Žije od Hondurasu po Bolíviu."
+        why: "Žije v Strednej a Južnej Amerike, od Hondurasu po severnú Argentínu."
       - text: kolibrík
         why: "Kolibríky žijú len na americkom kontinente."
       - text: kapybara
@@ -202,7 +202,7 @@ questions:
       - text: kakadu
         why: "Papagáje kakadu žijú v Austrálii, na Novej Guinei a okolitých ostrovoch."
       - text: diabol tasmánsky
-        why: "Dnes žije len na Tasmánii, ktorá patrí Austrálii."
+        why: "Vo voľnej prírode žije takmer len na Tasmánii, ktorá patrí Austrálii."
       - text: vombat
         why: "Podsaditý austrálsky vačkovec, ktorý si hrabe nory."
     wrong:
@@ -266,7 +266,7 @@ questions:
       - text: aj-aj
         why: "Lemur s dlhým prstom a zubami, ktoré mu stále rastú ako hlodavcovi."
       - text: fosa
-        why: "Mačkovitá šelma, ktorá sa živí najmä lemurmi."
+        why: "Šelma podobná mačke, no príbuzná skôr mangustám; živí sa najmä lemurmi."
     wrong:
       - text: galago
         why: "Vyzerá ako malý lemur, ale žije na africkej pevnine."
@@ -338,7 +338,7 @@ questions:
         why: "Ryba, ktorú mali za vyhynutú 66 miliónov rokov, kým ju v roku 1938 nechytili."
       - text: takahe
         why: "Znovuobjavený v roku 1948 na Novom Zélande."
-      - text: kôň Prževalského
+      - text: kôň Przewalského
         why: "Vo voľnej prírode vyhynul, ale zo zoo ho vrátili do Mongolska."
       - text: kakapo
         why: "Kriticky ohrozený, no stále žije."
@@ -365,7 +365,7 @@ questions:
       - text: kakapo
         why: "Nelietavý papagáj z Nového Zélandu."
       - text: tučniak africký
-        why: "Kedysi veľmi početný; pod 10 000 párov klesol v roku 2023 a preradili ho medzi kriticky ohrozené."
+        why: "Kedysi veľmi početný; v roku 2023 klesol pod 10 000 párov a v roku 2024 ho IUCN preradila medzi kriticky ohrozené."
       - text: gaviál
         why: "Indický krokodíl s úzkym pyskom, kriticky ohrozený od roku 2007."
     wrong:
@@ -377,8 +377,8 @@ questions:
         why: "Zraniteľný."
       - text: koala
         why: "Podľa IUCN zraniteľná."
-      - text: žirafa
-        why: "Ako druh zraniteľná."
+      - text: pštros dvojprstý
+        why: "Najmenej dotknutý, napriek lovu pre perie v minulosti."
       - text: tiger
         why: "Ohrozený, no nie kriticky."
       - text: šimpanz
@@ -414,7 +414,7 @@ questions:
       - text: Hroch sa potí krvou
         why: "Vylučuje červenkastý prirodzený opaľovací krém, ktorý nie je ani krv, ani pot."
       - text: Chobotnica má desať ramien
-        why: "Má osem ramien; desať ich majú sépie a kalamáre."
+        why: "Má osem ramien; sépie a kalamáre majú osem ramien a dve chápadlá."
 
   - id: zv-vajcia
     type: pick
@@ -468,7 +468,7 @@ questions:
         why: "Na obrovskom vajci sedí samec."
     wrong:
       - text: kukučka
-        why: "Nestará sa nikto z nich – vajcia podhodí iným vtákom."
+        why: "O vajcia sa nestará ani samec, ani samica – podhodia ich iným vtákom."
       - text: panda veľká
         why: "Otec sa na výchove mláďaťa vôbec nepodieľa."
       - text: ľadový medveď
@@ -503,7 +503,7 @@ questions:
         why: "Obojživelník s vlhkou kožou, nie plaz."
       - text: červoň
         why: "Beznohý obojživelník podobný dážďovke."
-      - text: jaskyniar
+      - text: jaskyniar vodný
         why: "Slepý jaskynný obojživelník, príbuzný mlokov."
       - text: rosnička
         why: "Stromová žaba, teda obojživelník."
@@ -534,7 +534,7 @@ questions:
       - text: panda červená
         why: "S pandou veľkou nie je blízko príbuzná; bližšie má k mývalom a lasicovitým."
       - text: medvedík čistotný
-        why: "Je to mýval, nie medveď."
+        why: "Napriek menu to nie je medveď, ale šelma z čeľade medvedíkovitých."
       - text: pomalka
         why: "Mikroskopický živočích, ktorému hovoria „vodný medvedík“."
 
@@ -561,7 +561,7 @@ questions:
     wrong:
       - text: letucha
         why: "Hovorí sa jej „lietajúci lemur“ a je najbližší príbuzný primátov, ale primát nie je."
-      - text: tany
+      - text: tana
         why: "Vyzerá ako veverica, má vlastný rad cicavcov."
       - text: kinkažu
         why: "Patrí medzi medvedíkovité, príbuzný mývala."
