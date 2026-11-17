@@ -40,7 +40,7 @@ is more?". **Klasika** is ten-option cards only.
 - **Your own packs**: import a YAML or JSON pack; it stays in your browser.
 - **Feedback from the table**: rate each card 👍 / 😐 / 👎 after a game, or report a mistake on any card.
   Ratings and reports go to the author anonymously, without leaving the game.
-- **Four designs**, each in light and dark, switchable during a game.
+- **Four designs** (three with light and dark modes, Tabuľa always dark), switchable during a game.
 
 <p align="center">
   <img src="docs/screenshots/order.png" width="200" alt="Order card in the Zvýrazňovač design">
@@ -82,7 +82,7 @@ npm start            # Node server: serves dist/ and runs rooms (PORT, default 8
 - `packs/` – question packs in YAML; see `packs/README.md` for the format and writing guide
 
 Play tests and screenshots (with `npx vite preview --port 4174` running): `node scripts/e2e.ts http://localhost:4174/`,
-`node scripts/screenshots.ts <dir>` (every design and screen), `node scripts/readme-screenshots.ts http://localhost:4174/` (the images above).
+`BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir>` (every design and screen), `node scripts/readme-screenshots.ts http://localhost:4174/` (the images above).
 
 ## Deploy
 
