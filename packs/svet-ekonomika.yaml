@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ PICK
   - id: ek-top10-hdp
@@ -20,7 +20,7 @@ questions:
       - { text: Čína, why: "Druhá s približne 19,5 bilióna dolárov." }
       - { text: Nemecko, why: "Tretia, približne 5 biliónov; najväčšia ekonomika Európy." }
       - { text: Japonsko, why: "Štvrté, približne 4,4 bilióna dolárov." }
-      - { text: Spojené kráľovstvo, why: "Približne 4,0 bilióna dolárov, päté miesto." }
+      - { text: Spojené kráľovstvo, why: "Približne 4,0 bilióna dolárov, piate miesto." }
       - { text: India, why: "Približne 3,96 bilióna a rýchlo rastie; Spojené kráľovstvo ju predbieha len tesne." }
       - { text: Francúzsko, why: "Siedme, približne 3,4 bilióna dolárov." }
       - { text: Taliansko, why: "Približne 2,55 bilióna dolárov." }
@@ -109,7 +109,7 @@ questions:
       - { text: Mexiko, why: "Palivá tvoria len okolo 3 % vývozu; hlavné sú autá a elektronika." }
       - { text: Nemecko, why: "Palivá tvoria menej než 2 % vývozu." }
       - { text: Holandsko, why: "Palivá tvoria okolo 11 % vývozu, hlavne cez rotterdamský prístav." }
-      - { text: Brazília, why: "Palivá tvoria okolo 16 % vývozu; väčšinu tvorí soja, železná ruda a mäso." }
+      - { text: Brazília, why: "Palivá tvoria okolo 16 % vývozu; väčšinu tvorí sója, železná ruda a mäso." }
       - { text: Spojené kráľovstvo, why: "Palivá tvoria len okolo 7 % vývozu." }
 
   - id: ek-remitancie
@@ -145,7 +145,7 @@ questions:
     tags: [poľnohospodárstvo]
     source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities https://en.wikipedia.org/wiki/List_of_countries_by_coffee_production"
     correct:
-      - { text: Káva, why: "V roku 2023 dala približne 31 % svetovej úrody zelenej kávy." }
+      - { text: Káva, why: "Dáva asi tretinu svetovej úrody zelenej kávy." }
       - { text: Cukrová trstina, why: "Z nej sa u nich vyrába cukor aj etanol do áut." }
       - { text: Pomaranče, why: "Prvé miesto pred Čínou a Mexikom." }
       - { text: Sója, why: "Ďalšie dve miesta patria USA a Argentíne." }
@@ -172,7 +172,7 @@ questions:
       - { text: Paradajky, why: "Pred Indiou a Tureckom." }
       - { text: Jablká, why: "Pred USA a Tureckom." }
       - { text: Bavlna, why: "Pred Indiou a Brazíliou." }
-      - { text: Hrozno, why: "Pred Talianskom a Francúzskom." }
+      - { text: Hrozno, why: "Najväčší pestovateľ hrozna na svete." }
     wrong:
       - { text: Ryža, why: "Prekvapenie: podľa údajov FAO za rok 2024 je prvá India." }
       - { text: Banány, why: "Prvá je India, Čína je druhá." }
@@ -213,8 +213,8 @@ questions:
     correct:
       - { text: Brazília, why: "Najväčší producent už od roku 1852; v roku 2023 približne tretina svetovej úrody." }
       - { text: Vietnam, why: "Dvojka, väčšinou lacnejšia robusta." }
-      - { text: Indonézia, why: "Tretia v poradí." }
-      - { text: Kolumbia, why: "Štvrtá, známa vysoko kvalitnou arabikou." }
+      - { text: Indonézia, why: "Patrí k štyrom najväčším pestovateľom kávy." }
+      - { text: Kolumbia, why: "Patrí k štyrom najväčším pestovateľom, známa kvalitnou arabikou." }
     wrong:
       - { text: Taliansko, why: "Espresso je ich národný symbol, ale kávu tam nepestujú." }
       - { text: Jamajka, why: "Horská káva Blue Mountain je vzácna a drahá, ale objemy sú malé." }
@@ -280,7 +280,7 @@ questions:
       - { text: Andorra, why: "Euro používa na základe dohody s EÚ." }
       - { text: Monako, why: "Razí vlastné euromince." }
       - { text: San Maríno, why: "Má dohodu s EÚ a razí vlastné euromince." }
-      - { text: Vatikán, why: "Euromince s portrétom pápeža razí vlastný štát." }
+      - { text: Vatikán, why: "Má vlastné euromince na základe dohody s EÚ, hoci nie je jej členom." }
     wrong:
       - { text: Švajčiarsko, why: "Platí vlastným frankom." }
       - { text: Lichtenštajnsko, why: "Používa švajčiarsky frank." }
@@ -324,7 +324,7 @@ questions:
     correct:
       - { text: Ekvádor, why: "Dolár používa od roku 2000." }
       - { text: Panama, why: "Používa dolár od roku 1904, vlastné balboy existujú len ako mince." }
-      - { text: Salvádor, why: "Používa dolár a popri ňom aj bitcoin." }
+      - { text: Salvádor, why: "Dolár je tu oficiálnou menou od roku 2001." }
       - { text: Marshallove ostrovy, why: "Dolár používajú ako oficiálnu menu." }
       - { text: Mikronézia, why: "Dolár používa od roku 1944." }
       - { text: Palau, why: "Dolár používa od roku 1944." }
@@ -335,7 +335,7 @@ questions:
       - { text: Mexiko, why: "Platí pesom." }
       - { text: Argentína, why: "Dolár tam ľudia používajú neoficiálne, no oficiálne platí peso." }
       - { text: Bahamy, why: "Majú bahamský dolár viazaný na americký 1 : 1, no je to vlastná mena." }
-      - { text: Peru, why: "Platí soľom, hoci dolár sa používa pri veľkých nákupoch." }
+      - { text: Peru, why: "Platí solom, hoci dolár sa používa pri veľkých nákupoch." }
 
   - id: ek-dolar-vlastny
     type: pick
@@ -348,13 +348,13 @@ questions:
       - { text: Kanada, why: "Jej jednodolárovú mincu poznajú ako „loonie“." }
       - { text: Austrália, why: "Austrálsky dolár je vlastná mena." }
       - { text: Nový Zéland, why: "Jeho dolár volajú „kiwi“." }
-      - { text: Singapur, why: "Singapurský dolár je vlastná mena; platí vedľa bruneiského v pomere 1 : 1." }
+      - { text: Singapur, why: "Singapurský dolár je vlastná mena; platí vedľa brunejského v pomere 1 : 1." }
       - { text: Hongkong, why: "Hongkongský dolár je vlastná mena." }
       - { text: Jamajka, why: "Jamajský dolár je vlastná mena." }
       - { text: Fidži, why: "Fidžijský dolár je vlastná mena." }
     wrong:
       - { text: Mexiko, why: "Platí pesom, hoci peso aj dolár používajú značku $." }
-      - { text: Chile, why: "Platí chilským pesom, ktoré tiež používa značku $." }
+      - { text: Čile, why: "Platí čilským pesom, ktoré tiež používa značku $." }
       - { text: Spojené kráľovstvo, why: "Platí librou šterlingov." }
       - { text: Japonsko, why: "Platí jenom." }
       - { text: Švajčiarsko, why: "Platí frankom." }
@@ -377,7 +377,7 @@ questions:
       - { text: Bolívia (1985), why: "V roku 1985 tam inflácia presiahla 20 000 % ročne." }
     wrong:
       - { text: Švajčiarsko, why: "Frank sa stal symbolom stability." }
-      - { text: Japonsko, why: "Naopak, dlho trápila deflácia." }
+      - { text: Japonsko, why: "Naopak, dlho ho trápila deflácia." }
       - { text: Nórsko, why: "Žiadna hyperinflácia v histórii." }
       - { text: Kanada, why: "Žiadna hyperinflácia v histórii." }
       - { text: Austrália, why: "Žiadna hyperinflácia v histórii." }
@@ -418,7 +418,7 @@ questions:
     correct:
       - { text: Čad, why: "Okolo 5,8 dieťaťa na ženu, najviac na svete." }
       - { text: Somálsko, why: "Okolo 5,8 dieťaťa na ženu." }
-      - { text: Niger, why: "Okolo 5,6 dieťaťa na ženu; zároveň majú najnižší medián veku na svete." }
+      - { text: Niger, why: "Okolo 5,6 dieťaťa na ženu; zároveň má najnižší medián veku na svete." }
       - { text: Mali, why: "Okolo 5,3 dieťaťa na ženu." }
       - { text: Angola, why: "Okolo 4,9 dieťaťa na ženu." }
       - { text: Afganistan, why: "Okolo 4,6 dieťaťa na ženu." }
@@ -636,7 +636,7 @@ questions:
 
   - id: ek-cislo-honduras-remitancie
     type: number
-    prompt: Koľko percent HDP Hondurasu tvoria peniaze, ktoré posielajú domov Honduranci pracujúci v zahraničí?
+    prompt: Koľko percent HDP Hondurasu tvoria peniaze, ktoré posielajú domov Hondurasania pracujúci v zahraničí?
     answer: 30
     unit: "%"
     scale: linear
@@ -694,7 +694,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Hyperinflation"
     correct: { text: Forint, why: "Zaviedli ho v auguste 1946 a platí dodnes." }
     wrong:
-      - { text: Koruna, why: "Tú používalo Česko a Slovensko." }
+      - { text: Koruna, why: "Českú korunu používa Česko dodnes, Slovensko malo vlastnú korunu do roku 2008." }
       - { text: Marka, why: "Tú používalo Nemecko." }
       - { text: Zlotý, why: "Tým platí Poľsko." }
 
