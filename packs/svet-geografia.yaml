@@ -50,7 +50,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Germany
     correct:
       - text: Dánsko
-        why: Jediná pozemná hranica pevninského Dánska je práve s Nemeckom (cez Grónsko má od roku 2022 hranicu aj s Kanadou).
+        why: Jediná pozemná hranica pevninského Dánska je práve s Nemeckom (cez Grónsko má od dohody o ostrove Hans hranicu aj s Kanadou).
       - text: Poľsko
         why: Hranica vedie hlavne po Odre a Nise.
       - text: Česko
@@ -664,7 +664,7 @@ questions:
         why: Jazdí sa vľavo, hoci Kambodža, Laos aj Mjanmarsko jazdia vpravo.
     wrong:
       - text: Švédsko
-        why: Vľavo sa jazdilo až do roku 1967, potom sa celá krajina prepla na pravú stranu.
+        why: Vľavo sa jazdilo až do roku 1967, potom sa celá krajina prešla na pravú stranu.
       - text: USA
         why: Pravostranná premávka.
       - text: Kanada
@@ -703,7 +703,7 @@ questions:
 
   - id: najvyssia-hora-sveta
     type: number
-    prompt: Aká vysoká je Mount Everest, najvyššia hora sveta, v metroch nad morom?
+    prompt: Aký vysoký je Mount Everest, najvyššia hora sveta, v metroch nad morom?
     answer: 8849
     unit: m n. m.
     scale: linear
