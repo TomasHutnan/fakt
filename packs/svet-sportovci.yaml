@@ -1,0 +1,963 @@
+id: svet-sportovci
+title: Slávni športovci
+description: Jordan, Gretzky, Federer, Pelé, Merckx a ďalšie svetové hviezdy – tituly, kluby, prezývky a rekordy.
+category: sport
+lang: sk
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: f1-majstri-sveta
+    type: pick
+    prompt: Kto z týchto pretekárov sa stal majstrom sveta Formuly 1?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/2026_Formula_One_World_Championship, /Stirling_Moss, /Felipe_Massa, /Gilles_Villeneuve, /Rubens_Barrichello"
+    tags: [formula-1]
+    correct:
+      - text: Ayrton Senna
+        why: "Tri tituly s McLarenom: 1988, 1990 a 1991."
+      - text: Alain Prost
+        why: "Štyri tituly, posledný v roku 1993."
+      - text: Niki Lauda
+        why: "Rakúšan bral tituly v rokoch 1975, 1977 a 1984."
+      - text: Mika Häkkinen
+        why: "Fín vyhral dva tituly za sebou, 1998 a 1999."
+      - text: Fernando Alonso
+        why: "Španiel má dva tituly, z rokov 2005 a 2006."
+      - text: Jenson Button
+        why: "Jediný titul získal v roku 2009."
+      - text: Nico Rosberg
+        why: "Titul v roku 2016; jeho otec Keke bol majstrom sveta v roku 1982."
+      - text: Lando Norris
+        why: "Majster sveta 2025, rok pred Antonellim."
+      - text: Kimi Antonelli
+        why: "Titul v roku 2026 s Mercedesom ako najmladší majster sveta v histórii."
+      - text: Juan Manuel Fangio
+        why: "Argentínčan vyhral päť titulov v 50. rokoch."
+    wrong:
+      - text: Stirling Moss
+        why: "Považuje sa za jedného z najlepších jazdcov, ktorí titul nikdy nezískali."
+      - text: Felipe Massa
+        why: "V roku 2008 prišiel o titul o jediný bod, v poslednom kole poslednej VC."
+      - text: Gilles Villeneuve
+        why: "Titul nikdy nezískal; majstrom sveta sa stal až jeho syn Jacques v roku 1997."
+      - text: Rubens Barrichello
+        why: "Odjazdil 322 veľkých cien a vyhral 11, titul však nemá."
+      - text: Charles Leclerc
+        why: "Pretekár z Monaka a líder Ferrari, majstrom sveta sa zatiaľ nestal."
+
+  - id: zlata-lopta-vitazi
+    type: pick
+    prompt: Kto z týchto futbalistov vyhral Zlatú loptu (Ballon d'Or)?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Ballon_d%27Or
+    tags: [futbal, zlata-lopta]
+    correct:
+      - text: Zinedine Zidane
+        why: "Vyhral ju v roku 1998, keď s Francúzskom získal titul majstra sveta."
+      - text: Ronaldinho
+        why: "Zlatá lopta 2005 za čarovné výkony v Barcelone."
+      - text: Kaká
+        why: "Vyhral ju v roku 2007 ako hráč AC Miláno."
+      - text: Pavel Nedvěd
+        why: "Čech z Juventusu ju vyhral v roku 2003, Henry bol druhý."
+      - text: Andrij Ševčenko
+        why: "Ukrajinský útočník, víťaz v roku 2004."
+      - text: Fabio Cannavaro
+        why: "Taliansky obranca, víťaz v roku 2006."
+      - text: Luka Modrić
+        why: "Chorvát, víťaz v roku 2018."
+      - text: Rodri
+        why: "Defenzívny záložník Manchestru City, víťaz v roku 2024."
+      - text: Ousmane Dembélé
+        why: "Zlatá lopta 2025 ako hráč Paríža Saint-Germain."
+      - text: Harry Kane
+        why: "Vyhral jej 70. ročník v roku 2026."
+      - text: Roberto Baggio
+        why: "Taliansky „božský cop“ ju vyhral v roku 1993."
+      - text: Michael Owen
+        why: "Anglický útočník Liverpoolu, víťaz v roku 2001."
+    wrong:
+      - text: Thierry Henry
+        why: "Najbližšie bol v roku 2003, skončil druhý za Nedvědom."
+      - text: Paolo Maldini
+        why: "V roku 2003 bol tretí, vyššie sa nikdy nedostal."
+      - text: Andrés Iniesta
+        why: "Majster sveta 2010, Zlatú loptu však nevyhral."
+      - text: Gianluigi Buffon
+        why: "Majster sveta 2006, no medzi brankármi ju vyhral len Lev Jašin."
+      - text: Neymar
+        why: "Preslávil sa skôr rekordným prestupom za 222 miliónov eur do PSG."
+      - text: Robert Lewandowski
+        why: "Nikdy ju nevyhral; ročník 2020 sa pre covid vôbec neudeľoval."
+      - text: Zlatan Ibrahimović
+        why: "Hral za Barcelonu, Juventus, Inter, Miláno aj PSG, Zlatú loptu však nikdy nezískal."
+
+  - id: wimbledon-vitazi
+    type: pick
+    prompt: Kto z týchto tenistov a tenistiek vyhral Wimbledon vo dvojhre?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Wimbledon_gentlemen%27s_singles_champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_Wimbledon_ladies%27_singles_champions, /2026_Wimbledon_Championships, /Gustavo_Kuerten, /Gabriela_Sabatini"
+    tags: [tenis]
+    correct:
+      - text: Roger Federer
+        why: "Rekordných osem titulov, posledný v roku 2017."
+      - text: Pete Sampras
+        why: "Sedem titulov v rokoch 1993 až 2000."
+      - text: Boris Becker
+        why: "Prvý titul získal v roku 1985, spolu tri."
+      - text: Goran Ivanišević
+        why: "Trikrát prehral finále, až na štvrtý pokus v roku 2001 vyhral."
+      - text: Andre Agassi
+        why: "Vyhral v roku 1992 vo finále proti Ivaniševićovi."
+      - text: Jannik Sinner
+        why: "Vyhral v rokoch 2025 a 2026, druhýkrát vo finále proti Zverevovi."
+      - text: Steffi Grafová
+        why: "Sedem titulov z Wimbledonu."
+      - text: Martina Hingisová
+        why: "Vyhrala v roku 1997, keď vo finále zdolala Janu Novotnú."
+      - text: Jana Novotná
+        why: "Dve finále prehrala, v roku 1998 konečne vyhrala."
+      - text: Mária Šarapovová
+        why: "V roku 2004 zdolala vo finále Serenu Williamsovú."
+      - text: Petra Kvitová
+        why: "Česká ľaváčka vyhrala v rokoch 2011 a 2014."
+      - text: Linda Nosková
+        why: "Vyhrala v roku 2026 v čisto českom finále proti Muchovej."
+    wrong:
+      - text: Ivan Lendl
+        why: "Osem grandslamov, no vo Wimbledone prehral finále v rokoch 1986 aj 1987."
+      - text: Alexander Zverev
+        why: "Finále 2026 prehral so Sinnerom po vyhratom prvom sete."
+      - text: Gustavo Kuerten
+        why: "Brazílčan trikrát vyhral Roland Garros, nie Wimbledon."
+      - text: Gabriela Sabatiniová
+        why: "Argentínčanka vyhrala US Open 1990, vo Wimbledone bola len vo finále."
+      - text: Ons Jabeurová
+        why: "Tuniska prehrala finále 2023 s Markétou Vondroušovou."
+      - text: Karolína Muchová
+        why: "Finále 2026 prehrala s krajankou Nosková v troch setoch."
+      - text: Amanda Anisimovová
+        why: "Vo finále 2025 nezískala proti Świątekovej ani jeden gem."
+
+  - id: prezyvky-sportovcov
+    type: pick
+    prompt: Ktoré prezývky patria správnemu športovcovi?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Michael_Jordan
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Diego_Maradona, /Franz_Beckenbauer, /Eddy_Merckx, /Mike_Tyson, /Ronnie_O%27Sullivan, /Jack_Nicklaus, /Kobe_Bryant, /Roberto_Baggio, /Kimi_R%C3%A4ikk%C3%B6nen, /Gerd_M%C3%BCller, /Bernard_Hinault, /Evander_Holyfield, /Tyson_Fury"
+    tags: [prezyvky]
+    correct:
+      - text: "Air Jordan – Michael Jordan"
+        why: "Za smeče od čiary trestného hodu; volali ho aj His Airness."
+      - text: "El Pibe de Oro – Diego Maradona"
+        why: "Zlatý chlapec, jeden z dvoch najlepších hráčov 20. storočia podľa FIFA."
+      - text: "Der Kaiser – Franz Beckenbauer"
+        why: "Cisár vyhral MS ako hráč v roku 1974 aj ako tréner v roku 1990."
+      - text: "Kanibal – Eddy Merckx"
+        why: "Chcel vyhrať všetko, preto Le Cannibale."
+      - text: "Iron Mike – Mike Tyson"
+        why: "Volali ho aj Kid Dynamite a Najhorší chlap na planéte."
+      - text: "The Rocket – Ronnie O'Sullivan"
+        why: "Raketa preto, že ako mladík vyhral zápas na deväť frejmov za rekordných 43 minút."
+      - text: "Zlatý medveď – Jack Nicklaus"
+        why: "The Golden Bear, rekordér so šiestimi titulmi z Masters."
+      - text: "Black Mamba – Kobe Bryant"
+        why: "Celú kariéru odohral za Lakers."
+      - text: "Il Divin Codino – Roberto Baggio"
+        why: "Božský cop, podľa jeho charakteristického vrkoča."
+      - text: "Iceman – Kimi Räikkönen"
+        why: "Ľadový muž pre svoj chladný pokoj, majster sveta F1 2007."
+    wrong:
+      - text: "Der Kaiser – Gerd Müller"
+        why: "Müller bol Der Bomber; cisárom bol Beckenbauer."
+      - text: "Iron Mike – Muhammad Ali"
+        why: "Ali o sebe hovoril ako o Najväčšom, Iron Mike je Tyson."
+      - text: "Zlatý medveď – Tiger Woods"
+        why: "Tiger je sám prezývka, vlastným menom Eldrick; medveďom je Nicklaus."
+      - text: "Kanibal – Bernard Hinault"
+        why: "Hinault bol Le Blaireau, Jazvec, a tiež Le Patron."
+      - text: "The Real Deal – Lennox Lewis"
+        why: "The Real Deal je Evander Holyfield, jediný štvornásobný majster sveta v ťažkej váhe."
+      - text: "The Gypsy King – Wladimir Kličko"
+        why: "Cigánsky kráľ je Tyson Fury."
+
+  - id: stanley-cup-hviezdy
+    type: pick
+    prompt: Ktoré z týchto hokejových hviezd vyhrali Stanleyho pohár?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions
+    note: "Ďalšie zdroje: hráčske stránky na en.wikipedia.org (Wayne_Gretzky, Mario_Lemieux, Sidney_Crosby, Alexander_Ovechkin, Jaromír_Jágr, Dominik_Hašek, Bobby_Orr, Teemu_Selänne, Marcel_Dionne, Henrik_Lundqvist, Mats_Sundin, Pavel_Bure, Eric_Lindros, Connor_McDavid)"
+    tags: [hokej, nhl]
+    correct:
+      - text: Wayne Gretzky
+        why: "S Edmontonom vyhral štyrikrát, prvý pohár v roku 1984."
+      - text: Mario Lemieux
+        why: "Penguins doviedol k titulom v rokoch 1991 a 1992."
+      - text: Sidney Crosby
+        why: "Prvý pohár v roku 2009 v siedmom zápase finále."
+      - text: Alexander Ovečkin
+        why: "V roku 2018 prvý titul v histórii Washingtonu a k tomu Conn Smythe Trophy."
+      - text: Jaromír Jágr
+        why: "Ako mladík s Pittsburghom v rokoch 1991 a 1992."
+      - text: Dominik Hašek
+        why: "V roku 2002 s Detroitom, kde hral spolu s Brettom Hullom."
+      - text: Bobby Orr
+        why: "Boston doviedol k titulom 1970 a 1972 a v oboch finále strelil rozhodujúci gól."
+      - text: Teemu Selänne
+        why: "Fínsky rekordér nováčikov vyhral v roku 2007 s Anaheimom."
+    wrong:
+      - text: Marcel Dionne
+        why: "731 gólov, najviac zo všetkých hráčov, ktorí sa nikdy nedostali do finále."
+      - text: Henrik Lundqvist
+        why: "Celú kariéru v NHL odchytal za Rangers, tí od roku 1994 nevyhrali."
+      - text: Mats Sundin
+        why: "Švédska legenda Toronta, pohár nikdy nezdvihol."
+      - text: Pavel Bure
+        why: "S Vancouverom prehral finále v roku 1994."
+      - text: Eric Lindros
+        why: "S Philadelphiou sa v roku 1997 dostal do finále, viac nie."
+      - text: Connor McDavid
+        why: "Dvakrát za sebou prehral finále s Floridou, v roku 2026 vypadol už v prvom kole."
+
+  - id: tour-de-france-vitazi
+    type: pick
+    prompt: Kto z týchto cyklistov vyhral Tour de France?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Tour_de_France_general_classification_winners
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Mark_Cavendish, /Raymond_Poulidor, /Primož_Roglič, /Wout_van_Aert, /Fabian_Cancellara, /Remco_Evenepoel"
+    tags: [cyklistika]
+    correct:
+      - text: Eddy Merckx
+        why: "Kanibal má päť víťazstiev, rovnako ako Anquetil, Hinault, Induráin a Pogačar."
+      - text: Miguel Induráin
+        why: "Päťkrát za sebou, v rokoch 1991 až 1995."
+      - text: Bernard Hinault
+        why: "Päť titulov; v roku 1984 ho porazil krajan Fignon."
+      - text: Greg LeMond
+        why: "V roku 1986 prvý víťaz spoza Európy, v roku 1989 vyhral o 8 sekúnd."
+      - text: Bradley Wiggins
+        why: "V roku 2012 prvý britský víťaz."
+      - text: Chris Froome
+        why: "Vyhral 100. ročník v roku 2013."
+      - text: Cadel Evans
+        why: "V roku 2011 prvý austrálsky víťaz."
+      - text: Egan Bernal
+        why: "V roku 2019 prvý Kolumbijčan na čele Tour."
+      - text: Jonas Vingegaard
+        why: "Prvý dánsky víťaz od roku 1996."
+      - text: Tadej Pogačar
+        why: "V roku 2026 piaty titul a vyrovnaný rekord."
+    wrong:
+      - text: Mark Cavendish
+        why: "Rekordných 35 etáp a zelený dres, celkové poradie nikdy."
+      - text: Raymond Poulidor
+        why: "Večný druhý: trikrát druhý a päťkrát tretí, žltý dres nikdy neobliekol."
+      - text: Remco Evenepoel
+        why: "V roku 2026 druhý, za Pogačarom 6 minút a 26 sekúnd."
+      - text: Primož Roglič
+        why: "Bývalý skokan na lyžiach vyhral Vueltu, Tour nie."
+      - text: Wout van Aert
+        why: "Belgičan je viacnásobný majster sveta v cyklokrose."
+      - text: Fabian Cancellara
+        why: "Švajčiar prezývaný Spartakus."
+
+  - id: nba-mvp-finale
+    type: pick
+    prompt: Kto z týchto basketbalistov bol vyhlásený za najužitočnejšieho hráča (MVP) finále NBA?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Bill_Russell_NBA_Finals_Most_Valuable_Player_Award
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Karl_Malone, /John_Stockton, /Scottie_Pippen, /Dennis_Rodman, /Charles_Barkley, /Patrick_Ewing, /Allen_Iverson, /Steve_Nash, /Luka_Dončić"
+    tags: [basketbal, nba]
+    correct:
+      - text: Michael Jordan
+        why: "MVP všetkých šiestich finále, ktoré s Chicagom vyhral."
+      - text: Kobe Bryant
+        why: "Dvakrát, v rokoch 2009 a 2010."
+      - text: Shaquille O'Neal
+        why: "Tri razy za sebou s Lakers, 2000 až 2002."
+      - text: Tim Duncan
+        why: "Trojnásobný MVP finále so San Antoniom."
+      - text: Dirk Nowitzki
+        why: "Nemec v roku 2011 doviedol Dallas k jedinému titulu."
+      - text: Tony Parker
+        why: "Francúz zo San Antonia, MVP finále 2007."
+      - text: Giannis Antetokounmpo
+        why: "Grék v roku 2021 s Milwaukee."
+      - text: Nikola Jokić
+        why: "Srb v roku 2023 s Denverom."
+      - text: Stephen Curry
+        why: "Cenu dostal v roku 2022."
+      - text: Hakeem Olajuwon
+        why: "Dvakrát za sebou s Houstonom, 1994 a 1995."
+    wrong:
+      - text: Scottie Pippen
+        why: "Šesť titulov s Chicagom, cenu však vždy dostal Jordan."
+      - text: Dennis Rodman
+        why: "Päť titulov a sedem rokov za sebou najlepší doskakovač ligy, MVP finále nie."
+      - text: Karl Malone
+        why: "193 zápasov play-off bez titulu, najviac v histórii."
+      - text: John Stockton
+        why: "S Malonem patria medzi najlepších hráčov, ktorí titul nikdy nevyhrali."
+      - text: Charles Barkley
+        why: "V roku 1993 MVP sezóny, no vo finále prehral."
+      - text: Steve Nash
+        why: "Dvakrát za sebou MVP základnej časti, v rokoch 2005 a 2006."
+      - text: Allen Iverson
+        why: "MVP sezóny 2000/01, vo finále však MVP bol Shaquille O'Neal."
+      - text: Luka Dončić
+        why: "S Dallasom prehral finále 2024 s Bostonom."
+
+  - id: zlatan-kluby
+    type: pick
+    prompt: Za ktoré z týchto klubov hral Zlatan Ibrahimović?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Zlatan_Ibrahimovi%C4%87
+    tags: [futbal, kluby]
+    correct:
+      - text: Malmö FF
+        why: "Prvý klub v rodnom Malmö."
+      - text: Ajax Amsterdam
+        why: "Prvý zahraničný prestup, do Holandska."
+      - text: Juventus
+        why: "Prvé pôsobenie v Taliansku."
+      - text: Inter Miláno
+        why: "Do Interu prišiel z Juventusu."
+      - text: FC Barcelona
+        why: "Jediný španielsky klub jeho kariéry."
+      - text: AC Miláno
+        why: "Hral tu dvakrát, na konci kariéry sa vrátil."
+      - text: Paríž Saint-Germain
+        why: "Jeho jediný francúzsky klub."
+      - text: Manchester United
+        why: "Jeho jediný anglický klub."
+      - text: LA Galaxy
+        why: "Jeho americký klub v MLS."
+    wrong:
+      - text: Real Madrid
+        why: "V Španielsku hral len za Barcelonu."
+      - text: Bayern Mníchov
+        why: "V Nemecku nikdy nehral."
+      - text: Chelsea
+        why: "V Anglicku hral iba za Manchester United."
+      - text: Celtic Glasgow
+        why: "V Škótsku nikdy nepôsobil."
+      - text: Benfica Lisabon
+        why: "V Portugalsku nikdy nehral."
+
+  - id: ronaldo-kluby
+    type: pick
+    prompt: Za ktoré z týchto klubov hral Cristiano Ronaldo?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Cristiano_Ronaldo
+    tags: [futbal, kluby]
+    correct:
+      - text: Sporting Lisabon
+        why: "Tu začínal, odtiaľ prestúpil do Anglicka."
+      - text: Manchester United
+        why: "Hral tu dvakrát."
+      - text: Real Madrid
+        why: "Do Madridu prišiel z Manchestru United."
+      - text: Juventus
+        why: "Z Madridu odišiel do Turína."
+      - text: Al-Nassr
+        why: "Saudskoarabský klub, kam odišiel po druhom pôsobení v Manchestri."
+    wrong:
+      - text: FC Barcelona
+        why: "V Španielsku hral iba za Real Madrid."
+      - text: Paríž Saint-Germain
+        why: "Vo Francúzsku nikdy nehral."
+      - text: Bayern Mníchov
+        why: "V Nemecku nikdy nepôsobil."
+      - text: Chelsea
+        why: "V Anglicku hral len za Manchester United."
+      - text: Benfica Lisabon
+        why: "V Lisabone hral za rivala Sporting."
+      - text: Inter Miláno
+        why: "V Taliansku hral iba za Juventus."
+
+  - id: tazka-vaha-majstri
+    type: pick
+    prompt: Kto z týchto boxerov bol majstrom sveta v ťažkej váhe?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_world_heavyweight_boxing_champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Floyd_Mayweather_Jr., /Manny_Pacquiao, /Canelo_Álvarez, /Oscar_De_La_Hoya, /Marvelous_Marvin_Hagler a stránky jednotlivých boxerov"
+    tags: [box]
+    correct:
+      - text: Muhammad Ali
+        why: "Ešte ako Cassius Clay vyhral olympijské zlato v Ríme 1960 v poloťažkej váhe."
+      - text: Mike Tyson
+        why: "Najmladší majster sveta v ťažkej váhe, mal 20 rokov."
+      - text: George Foreman
+        why: "Aj najstarší majster sveta v ťažkej váhe."
+      - text: Joe Frazier
+        why: "V roku 1971 porazil Aliho v Zápase storočia."
+      - text: Evander Holyfield
+        why: "Jediný štvornásobný majster sveta v ťažkej váhe."
+      - text: Lennox Lewis
+        why: "Olympijské zlato v roku 1988 získal ešte za Kanadu."
+      - text: Vitalij Kličko
+        why: "Po kariére sa stal starostom Kyjeva."
+      - text: Tyson Fury
+        why: "Britský Cigánsky kráľ."
+      - text: Anthony Joshua
+        why: "Olympijský víťaz z Londýna 2012."
+      - text: Oleksandr Usyk
+        why: "Absolútny šampión v krížovej aj ťažkej váhe."
+      - text: Rocky Marciano
+        why: "Jediný majster sveta v ťažkej váhe, ktorý skončil kariéru bez prehry."
+    wrong:
+      - text: Floyd Mayweather
+        why: "Neporazený 50 – 0, ale v oveľa ľahších kategóriách."
+      - text: Manny Pacquiao
+        why: "Jediný majster sveta v ôsmich váhových kategóriách, ťažká medzi nimi nie je; neskôr filipínsky senátor."
+      - text: Canelo Álvarez
+        why: "Majster sveta v štyroch kategóriách, najvyššie v poloťažkej."
+      - text: Oscar De La Hoya
+        why: "Zlatý chlapec, šampión v ľahších kategóriách."
+      - text: Marvin Hagler
+        why: "Legenda strednej váhy, meno si úradne zmenil na Marvelous Marvin Hagler."
+
+  - id: masters-vitazi
+    type: pick
+    prompt: Kto z týchto golfistov vyhral turnaj Masters v Auguste?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Masters_Tournament_champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/2026_Masters_Tournament, /Greg_Norman, /Colin_Montgomerie, /Lee_Westwood, /Ernie_Els, /Brooks_Koepka"
+    tags: [golf]
+    correct:
+      - text: Jack Nicklaus
+        why: "Rekordných šesť víťazstiev, posledné ako 46-ročný."
+      - text: Tiger Woods
+        why: "Päť zelených sák, posledné v roku 2019 po 11 rokoch bez majoru."
+      - text: Arnold Palmer
+        why: "Štyrikrát víťaz Masters."
+      - text: Seve Ballesteros
+        why: "Španiel vyhral dvakrát."
+      - text: Nick Faldo
+        why: "Trikrát víťaz, Angličan."
+      - text: Bernhard Langer
+        why: "Nemec vyhral dvakrát."
+      - text: Rory McIlroy
+        why: "Vyhral v rokoch 2025 a 2026, druhýkrát o úder pred Schefflerom."
+      - text: Scottie Scheffler
+        why: "Dvakrát víťaz, v roku 2026 druhý."
+      - text: Sergio García
+        why: "V roku 2017 v rozstrele proti Justinovi Roseovi."
+      - text: Hideki Matsuyama
+        why: "Japonec, víťaz z roku 2021."
+    wrong:
+      - text: Greg Norman
+        why: "Žralok strávil 331 týždňov na čele svetového rebríčka, Masters nevyhral."
+      - text: Justin Rose
+        why: "Prehral rozstrel v roku 2017 aj v roku 2025."
+      - text: Colin Montgomerie
+        why: "Rekordných osem víťazstiev v rebríčku Európskej túry, ani jeden major."
+      - text: Lee Westwood
+        why: "Prvý, kto sa stal svetovou jednotkou bez víťazstva na majore."
+      - text: Ernie Els
+        why: "The Big Easy vyhral iné majory, nie Masters."
+      - text: Brooks Koepka
+        why: "Päť majorov, no v Auguste bol v roku 2023 len druhý za Rahmom."
+
+  - id: sach-majstri-sveta
+    type: pick
+    prompt: Kto z týchto šachistov bol majstrom sveta?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/World_Chess_Championship
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Judit_Polgár, /Hikaru_Nakamura"
+    tags: [sach]
+    correct:
+      - text: Garri Kasparov
+        why: "V roku 1985 vzal titul Karpovovi."
+      - text: Anatolij Karpov
+        why: "Titul obhájil proti Korčnému v rokoch 1978 a 1981."
+      - text: Bobby Fischer
+        why: "V roku 1972 vyzval Spasského a vzal mu titul."
+      - text: Magnus Carlsen
+        why: "Nór sa titulu dobrovoľne vzdal a v roku 2023 ho neobhajoval."
+      - text: Viswanathan Anand
+        why: "V roku 1995 ešte prehral s Kasparovom, neskôr sa majstrom sveta stal."
+      - text: Vladimir Kramnik
+        why: "V roku 2000 porazil Kasparova."
+      - text: Michail Tal
+        why: "Majster sveta v rokoch 1960 – 1961."
+      - text: Boris Spasskij
+        why: "Majster sveta od roku 1969, v roku 1972 prišiel o titul vo zápase s Fischerom."
+      - text: Ding Liren
+        why: "V roku 2023 porazil Nepomňaščieho."
+      - text: Gukesh Dommaraju
+        why: "Úradujúci majster sveta, v roku 2024 porazil Dinga."
+    wrong:
+      - text: Viktor Korčnoj
+        why: "Dvakrát prehral zápas o titul s Karpovom, v rokoch 1978 a 1981."
+      - text: Fabiano Caruana
+        why: "Zápas o titul v roku 2018 prehral s Carlsenom v rapid tiebreaku."
+      - text: Ian Nepomňaščij
+        why: "O titul hral dvakrát, s Carlsenom aj s Dingom, a dvakrát prehral."
+      - text: Judit Polgárová
+        why: "Pokladá sa za najsilnejšiu šachistku histórie, majsterkou sveta nebola."
+      - text: Nigel Short
+        why: "V roku 1993 vyzval Kasparova, zápas prehral."
+      - text: Hikaru Nakamura
+        why: "Americký veľmajster a známy streamer, majster sveta nebol."
+
+  - id: lyzovanie-celkovy-svetovy-pohar
+    type: pick
+    prompt: Kto z týchto lyžiarov vyhral aspoň raz celkový Svetový pohár v alpskom lyžovaní?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_FIS_Alpine_Ski_World_Cup_men%27s_champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_FIS_Alpine_Ski_World_Cup_women%27s_champions, /Franz_Klammer, /Didier_Cuche, /Ted_Ligety, /Sofia_Goggia, /Deborah_Compagnoni, /Henrik_Kristoffersen"
+    tags: [lyzovanie]
+    correct:
+      - text: Marcel Hirscher
+        why: "Rekordných osem veľkých glóbusov za sebou."
+      - text: Marco Odermatt
+        why: "Švajčiar má päť celkových víťazstiev."
+      - text: Hermann Maier
+        why: "Rakúšan vyhral celkový pohár štyrikrát."
+      - text: Ingemar Stenmark
+        why: "Trikrát celkovo, a k tomu 86 víťazstiev v pretekoch."
+      - text: Alberto Tomba
+        why: "Tomba la Bomba vyhral celkový pohár raz, v roku 1995."
+      - text: Aksel Lund Svindal
+        why: "Nór vyhral celkovo dvakrát."
+      - text: Mikaela Shiffrinová
+        why: "Najviac celkových titulov medzi ženami."
+      - text: Lindsey Vonnová
+        why: "Štyri celkové tituly."
+      - text: Janica Kostelićová
+        why: "Chorvátka vyhrala celkovo trikrát."
+      - text: Tina Mazeová
+        why: "Slovinka vyhrala celkový pohár v roku 2013."
+    wrong:
+      - text: Franz Klammer
+        why: "Kráľ zjazdu vyhral olympijské zlato doma v Innsbrucku 1976, veľký glóbus nie."
+      - text: Didier Cuche
+        why: "Zjazdár vyhral aj slávny Hahnenkamm v Kitzbüheli, celkovo nikdy."
+      - text: Ted Ligety
+        why: "Olympijský víťaz v obrovskom slalome zo Soči 2014."
+      - text: Henrik Kristoffersen
+        why: "Päť malých glóbusov za disciplíny, celkovo najlepšie druhý v roku 2016."
+      - text: Sofia Goggiová
+        why: "Olympijská víťazka v zjazde z Pjongčangu 2018."
+      - text: Deborah Compagnoniová
+        why: "Tri olympijské zlatá na troch hrách po sebe, celkový pohár nie."
+
+  - id: plavci-olympijske-zlato
+    type: pick
+    prompt: Kto z týchto olympijských hviezd získal medailu v plávaní (skoky do vody sa nerátajú)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Mark_Spitz
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Michael_Phelps, /Ian_Thorpe, /Katie_Ledecky, /Léon_Marchand, /Federica_Pellegrini, /Adam_Peaty, /Johnny_Weissmuller, /Duke_Kahanamoku, /Greg_Louganis, /Tom_Daley, /Fu_Mingxia, /Apolo_Ohno, /Katarina_Witt"
+    tags: [plavanie, olympiada]
+    correct:
+      - text: Mark Spitz
+        why: "Najúspešnejší športovec OH v Mníchove 1972."
+      - text: Michael Phelps
+        why: "28 olympijských medailí, najviac v histórii."
+      - text: Ian Thorpe
+        why: "Päť olympijských zlatých pre Austráliu."
+      - text: Katie Ledecká
+        why: "Najúspešnejšia plavkyňa histórie, deväť olympijských zlatých."
+      - text: Léon Marchand
+        why: "V Paríži 2024 štyri individuálne zlatá, prezývajú ho moderný Phelps."
+      - text: Federica Pellegriniová
+        why: "Zlato na 200 m voľným spôsobom v Pekingu 2008."
+      - text: Adam Peaty
+        why: "Olympijský víťaz na 100 m prsia z Ria 2016."
+      - text: Johnny Weissmuller
+        why: "Päť olympijských zlatých, potom si zahral Tarzana v dvanástich filmoch."
+      - text: Duke Kahanamoku
+        why: "Havajčan vyhral 100 m voľným spôsobom v Štokholme 1912 a spopularizoval surfovanie."
+    wrong:
+      - text: Greg Louganis
+        why: "Skokan do vody, štyri zlatá na OH 1984 a 1988."
+      - text: Tom Daley
+        why: "Skokan do vody, olympijský víťaz v synchronizovaných skokoch z 10 m."
+      - text: Fu Ming-sia
+        why: "Čínska skokanka do vody, majsterka sveta už ako 12-ročná."
+      - text: Apolo Ohno
+        why: "Americký rýchlokorčuliar na krátkej dráhe."
+      - text: Katarina Wittová
+        why: "Krasokorčuliarka, dvojnásobná olympijská víťazka."
+
+  - id: ms-futbal-majstri
+    type: pick
+    prompt: Kto z týchto futbalistov sa stal majstrom sveta?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_top_goalscorers
+    note: "Medaily z MS podľa hráčskych stránok na en.wikipedia.org (Zinedine_Zidane, Pelé, Lionel_Messi, Ronaldo_(Brazilian_footballer), Gianluigi_Buffon, Andrés_Iniesta, Kylian_Mbappé, Franz_Beckenbauer, Diego_Maradona, Lamine_Yamal, Johan_Cruyff, Ferenc_Puskás, Eusébio, Michel_Platini, Luka_Modrić, Roberto_Baggio, Cristiano_Ronaldo) a /2026_FIFA_World_Cup"
+    tags: [futbal, majstrovstva-sveta]
+    correct:
+      - text: Pelé
+        why: "Trikrát: 1958, 1962 a 1970."
+      - text: Diego Maradona
+        why: "V roku 1986; vo štvrťfinále strelil Angličanom gól rukou aj gól po sóle od polovice ihriska."
+      - text: Lionel Messi
+        why: "V roku 2022; v roku 2026 prehral finále so Španielskom."
+      - text: Ronaldo (Brazílčan)
+        why: "Majster sveta 1994 a 2002."
+      - text: Zinedine Zidane
+        why: "Vo finále 1998 strelil dva góly."
+      - text: Gianluigi Buffon
+        why: "Taliansky brankár, majster sveta 2006."
+      - text: Andrés Iniesta
+        why: "Majster sveta 2010 so Španielskom."
+      - text: Kylian Mbappé
+        why: "Majster sveta 2018 ako 19-ročný."
+      - text: Lamine Yamal
+        why: "Majster sveta 2026, keď Španielsko vyhralo druhý titul."
+      - text: Franz Beckenbauer
+        why: "Ako hráč v roku 1974, ako tréner v roku 1990."
+    wrong:
+      - text: Johan Cruyff
+        why: "S Holandskom prehral finále 1974."
+      - text: Ferenc Puskás
+        why: "S Maďarskom striebro z finále 1954."
+      - text: Eusébio
+        why: "S Portugalskom bronz v roku 1966."
+      - text: Michel Platini
+        why: "Najďalej tretí v roku 1986."
+      - text: Luka Modrić
+        why: "Striebro 2018, bronz 2022."
+      - text: Roberto Baggio
+        why: "Vo finále 1994 proti Brazílii nepremenil rozhodujúcu penaltu."
+      - text: Cristiano Ronaldo
+        why: "Medailu z majstrovstiev sveta nemá."
+
+  - id: brazilcania
+    type: pick
+    prompt: Kto z týchto športovcov je Brazílčan?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Kaká, /Neymar, /Gustavo_Kuerten, /Marta_(footballer), /Ronaldinho, /Gabriela_Sabatini, /Juan_Pablo_Montoya, /Carlos_Valderrama, /Diego_Maradona"
+    tags: [krajiny]
+    correct:
+      - text: Ayrton Senna
+        why: "Trojnásobný majster sveta F1."
+      - text: Nelson Piquet
+        why: "Aj on má tri tituly v F1."
+      - text: Emerson Fittipaldi
+        why: "Majster sveta F1 v rokoch 1972 a 1974."
+      - text: Gustavo Kuerten
+        why: "Guga trikrát vyhral Roland Garros."
+      - text: Marta
+        why: "Šesťkrát najlepšia futbalistka sveta podľa FIFA."
+      - text: Kaká
+        why: "Zlatá lopta 2007."
+      - text: Neymar
+        why: "V roku 2017 prestúpil z Barcelony do PSG za rekordných 222 miliónov eur."
+      - text: Ronaldinho
+        why: "Zlatá lopta 2005."
+    wrong:
+      - text: Juan Manuel Fangio
+        why: "Argentínčan, päťnásobný majster sveta F1."
+      - text: Gabriela Sabatiniová
+        why: "Argentínčanka, víťazka US Open 1990."
+      - text: Juan Pablo Montoya
+        why: "Kolumbijčan, vyhral Indianapolis 500."
+      - text: Carlos Valderrama
+        why: "Kolumbijský futbalista prezývaný El Pibe."
+      - text: Diego Maradona
+        why: "Argentínčan, majster sveta 1986."
+
+  - id: svedi
+    type: pick
+    prompt: Kto z týchto severských športovcov je Švéd?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Bj%C3%B6rn_Borg
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Ingemar_Stenmark, /Peter_Forsberg, /Nicklas_Lidström, /Annika_Sörenstam, /Stefan_Edberg, /Kimi_Räikkönen, /Mika_Häkkinen, /Caroline_Wozniacki, /Peter_Schmeichel, /Aksel_Lund_Svindal, /Magnus_Carlsen, /Erling_Haaland, /Teemu_Selänne"
+    tags: [krajiny]
+    correct:
+      - text: Björn Borg
+        why: "Päť Wimbledonov za sebou, kariéru ukončil ako 25-ročný."
+      - text: Stefan Edberg
+        why: "Majster hry servis – volej, dva tituly z Wimbledonu."
+      - text: Ingemar Stenmark
+        why: "86 víťazstiev v pretekoch Svetového pohára."
+      - text: Peter Forsberg
+        why: "Jeho rozhodujúci nájazd vo finále OH 1994 sa dostal na poštovú známku."
+      - text: Nicklas Lidström
+        why: "Sedemkrát najlepší obranca NHL, štyri Stanleyho poháre s Detroitom."
+      - text: Annika Sörenstamová
+        why: "Jediná golfistka, ktorá v súťaži zahrala kolo za 59 úderov."
+    wrong:
+      - text: Teemu Selänne
+        why: "Fín, ako nováčik NHL strelil rekordných 76 gólov."
+      - text: Kimi Räikkönen
+        why: "Fín, Iceman, majster sveta F1 2007."
+      - text: Mika Häkkinen
+        why: "Fín, majster sveta F1 1998 a 1999."
+      - text: Caroline Wozniacká
+        why: "Dánka, víťazka Australian Open 2018."
+      - text: Peter Schmeichel
+        why: "Dánsky brankár, majster Európy 1992."
+      - text: Magnus Carlsen
+        why: "Nórsky šachista a bývalý majster sveta."
+      - text: Erling Haaland
+        why: "Nór, hoci sa narodil v anglickom Leedse."
+
+  - id: prvenstva-a-milniky
+    type: pick
+    prompt: Ktoré tvrdenia o prvenstvách a rekordoch sú pravdivé?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Nadia_Com%C4%83neci
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Ballon_d%27Or, /List_of_FIFA_World_Cup_top_goalscorers, /Lee_Westwood, /List_of_FIS_Alpine_Ski_World_Cup_men%27s_champions, /2026_Formula_One_World_Championship, /List_of_Wimbledon_gentlemen%27s_singles_champions, /List_of_Masters_Tournament_champions, /List_of_Tour_de_France_general_classification_winners"
+    tags: [rekordy]
+    correct:
+      - text: Nadia Comăneciová dostala prvú desiatku v histórii olympijskej gymnastiky
+        why: "Ako 14-ročná v Montreale 1976, na tých istých hrách pridala ďalších šesť."
+      - text: George Weah je jediný Afričan so Zlatou loptou
+        why: "Libérijčan ju vyhral v roku 1995 ako prvý hráč spoza Európy."
+      - text: Josef Masopust z Dukly Praha vyhral Zlatú loptu
+        why: "V roku 1962, pred Eusébiom."
+      - text: Kylian Mbappé bol dvakrát najlepším strelcom majstrovstiev sveta
+        why: "V rokoch 2022 a 2026, ako jediný v histórii."
+      - text: Lee Westwood bol svetovou jednotkou v golfe bez víťazstva na majore
+        why: "Bol prvý, komu sa to podarilo, v roku 2010."
+      - text: Marcel Hirscher vyhral celkový Svetový pohár osemkrát
+        why: "Osem veľkých glóbusov, najviac v histórii."
+      - text: Kimi Antonelli je najmladší majster sveta F1
+        why: "Titul získal v roku 2026, v druhej sezóne v F1."
+    wrong:
+      - text: Nadia Comăneciová dostala prvú olympijskú desiatku v Moskve 1980
+        why: "Bolo to v Montreale 1976."
+      - text: Kimi Antonelli je prvý Talian, ktorý vyhral titul v F1
+        why: "Pred ním Alberto Ascari v rokoch 1952 a 1953; Antonelli je prvý Talian od neho."
+      - text: Ingemar Stenmark vyhral celkový Svetový pohár osemkrát
+        why: "Celkovo vyhral trikrát; osem titulov má Hirscher."
+      - text: Roger Federer vyhral Wimbledon desaťkrát
+        why: "Vyhral osemkrát, aj to je rekord."
+      - text: Tiger Woods vyhral Masters viackrát ako Jack Nicklaus
+        why: "Woods päťkrát, Nicklaus šesťkrát."
+      - text: Tadej Pogačar vyhral Tour de France šesťkrát
+        why: "Päťkrát, rovnako ako rekordéri Anquetil, Merckx, Hinault a Induráin."
+
+  # ---------------------------------------------------------------- ORDER
+  - id: f1-pocet-titulov
+    type: order
+    prompt: Zoraď jazdcov F1 podľa počtu titulov majstra sveta od najviac.
+    direction: desc
+    unit: titulov
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions
+    tags: [formula-1]
+    items:
+      - { text: Lewis Hamilton, value: 7, why: "Rovnako ako Michael Schumacher." }
+      - { text: Juan Manuel Fangio, value: 5, why: "Päť titulov v 50. rokoch." }
+      - { text: Sebastian Vettel, value: 4, why: "Štyri za sebou s Red Bullom, 2010 až 2013." }
+      - { text: Ayrton Senna, value: 3, why: "Tri tituly s McLarenom." }
+      - { text: Fernando Alonso, value: 2, why: "Tituly z rokov 2005 a 2006." }
+      - { text: Jenson Button, value: 1, why: "Jediný titul v roku 2009." }
+
+  - id: grandslamy-legend
+    type: order
+    prompt: Zoraď tenisové legendy podľa počtu grandslamových titulov vo dvojhre od najviac.
+    direction: desc
+    unit: titulov
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_Grand_Slam_men%27s_singles_champions
+    tags: [tenis]
+    items:
+      - { text: Roger Federer, value: 20, why: "Z toho osem Wimbledonov." }
+      - { text: Pete Sampras, value: 14, why: "Vrátane siedmich Wimbledonov." }
+      - { text: Björn Borg, value: 11, why: "Šesť Roland Garros a päť Wimbledonov." }
+      - { text: Ivan Lendl, value: 8, why: "Rovnako ako Agassi, Wimbledon však nikdy." }
+      - { text: John McEnroe, value: 7, why: "Z toho tri Wimbledony." }
+      - { text: Boris Becker, value: 6, why: "Prvý Wimbledon vyhral v roku 1985." }
+      - { text: Andy Murray, value: 3, why: "Dva z nich vo Wimbledone, v rokoch 2013 a 2016." }
+
+  - id: olympijske-zlata-hviezd
+    type: order
+    prompt: Zoraď olympionikov podľa počtu olympijských zlatých medailí od najviac.
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Michael_Phelps
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Katie_Ledecky, /Marit_Bjørgen, /Simone_Biles, /Nadia_Comăneci, /Katarina_Witt"
+    tags: [olympiada]
+    items:
+      - { text: Michael Phelps, value: 23, why: "Z toho osem na jedných hrách v Pekingu." }
+      - { text: Katie Ledecká, value: 9, why: "Najúspešnejšia plavkyňa histórie." }
+      - { text: Marit Bjørgenová, value: 8, why: "Bežkyňa na lyžiach a so 15 medailami najúspešnejšia zimná olympionička." }
+      - { text: Simone Bilesová, value: 7, why: "Štyri zlatá v Riu 2016 a tri v Paríži 2024." }
+      - { text: Nadia Comăneciová, value: 5, why: "Všetky v individuálnych disciplínach." }
+      - { text: Katarina Wittová, value: 2, why: "Sarajevo 1984 a Calgary 1988." }
+
+  - id: zlata-lopta-pocet
+    type: order
+    prompt: Zoraď futbalistov podľa počtu získaných Zlatých lôpt od najviac.
+    direction: desc
+    unit: Zlatých lôpt
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Ballon_d%27Or
+    tags: [futbal, zlata-lopta]
+    items:
+      - { text: Lionel Messi, value: 8, why: "Rekord, prvú získal v roku 2009." }
+      - { text: Cristiano Ronaldo, value: 5, why: "Má aj rekordných 18 nominácií." }
+      - { text: Johan Cruyff, value: 3, why: "Prvý trojnásobný víťaz." }
+      - { text: Franz Beckenbauer, value: 2, why: "Jediný obranca, ktorý ju vyhral dvakrát." }
+      - { text: Zinedine Zidane, value: 1, why: "Rok 1998, rok titulu majstra sveta." }
+
+  - id: ms-futbal-strelci
+    type: order
+    prompt: Zoraď futbalistov podľa počtu gólov na majstrovstvách sveta od najviac.
+    direction: desc
+    unit: gólov
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_top_goalscorers
+    tags: [futbal, majstrovstva-sveta]
+    items:
+      - { text: Kylian Mbappé, value: 22, why: "Na MS 2026 sa stal novým rekordérom." }
+      - { text: Lionel Messi, value: 21, why: "Na MS 2026 dal päť gólov a prekonal Kloseho." }
+      - { text: Miroslav Klose, value: 16, why: "Rekord držal od roku 2014 do roku 2026." }
+      - { text: Ronaldo (Brazílčan), value: 15, why: "Góly strieľal na MS 1998, 2002 a 2006." }
+      - { text: Just Fontaine, value: 13, why: "Všetkých 13 na jedinom turnaji, MS 1958." }
+      - { text: Pelé, value: 12, why: "Hral na štyroch šampionátoch, tri vyhral." }
+
+  - id: hokej-legendy-narodenie
+    type: order
+    prompt: Zoraď hokejové legendy podľa roku narodenia od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Gordie_Howe
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Bobby_Orr, /Wayne_Gretzky, /Mario_Lemieux, /Jaromír_Jágr, /Sidney_Crosby, /Connor_McDavid"
+    tags: [hokej, nhl]
+    items:
+      - { text: Gordie Howe, value: 1928, why: "Mr. Hockey, väčšinu kariéry v Detroite." }
+      - { text: Bobby Orr, value: 1948, why: "Obranca, ktorý v Bostone menil hru." }
+      - { text: Wayne Gretzky, value: 1961, why: "Narodil sa v januári 1961 v Kanade." }
+      - { text: Mario Lemieux, value: 1965, why: "V NHL debutoval v októbri 1984." }
+      - { text: Jaromír Jágr, value: 1972, why: "Draftoval ho Pittsburgh v roku 1990." }
+      - { text: Sidney Crosby, value: 1987, why: "V NHL debutoval v októbri 2005." }
+      - { text: Connor McDavid, value: 1997, why: "V NHL debutoval v októbri 2015." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: cislo-phelps-peking
+    type: number
+    prompt: Koľko zlatých medailí získal Michael Phelps na olympijských hrách v Pekingu 2008?
+    answer: 8
+    unit: zlatých
+    scale: linear
+    tolerance: 1
+    why: "Prekonal tak rekord Marka Spitza, ktorý v Mníchove 1972 získal sedem."
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Michael_Phelps
+    tags: [plavanie, olympiada]
+
+  - id: cislo-tyson-vek
+    type: number
+    prompt: Koľko rokov mal Mike Tyson, keď sa stal najmladším majstrom sveta v ťažkej váhe?
+    answer: 20
+    unit: rokov
+    scale: linear
+    tolerance: 2
+    why: "Presne 20 rokov a 4 mesiace; tento rekord platí dodnes."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Mike_Tyson
+    tags: [box]
+
+  - id: cislo-cavendish-etapy
+    type: number
+    prompt: Koľko etáp Tour de France vyhral Mark Cavendish, rekordér v tejto štatistike?
+    answer: 35
+    unit: etáp
+    scale: linear
+    tolerance: 3
+    why: "Vyhrával ich od roku 2008 do roku 2024, celkové poradie nikdy."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Mark_Cavendish
+    tags: [cyklistika]
+
+  - id: cislo-deep-blue
+    type: number
+    prompt: V ktorom roku prehral Garri Kasparov zápas s počítačom Deep Blue?
+    answer: 1997
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Odveta v New Yorku skončila 3½ : 2½; prvý zápas o rok skôr ešte vyhral Kasparov."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov
+    tags: [sach]
+
+  - id: cislo-messier-pohare
+    type: number
+    prompt: Koľko Stanleyho pohárov vyhral Mark Messier?
+    answer: 6
+    unit: pohárov
+    scale: linear
+    tolerance: 1
+    why: "Päť s Edmontonom a jeden s Rangers; ako jediný bol kapitánom víťazov s dvoma rôznymi tímami."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Mark_Messier
+    tags: [hokej, nhl]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: velky-jeden
+    type: choice
+    prompt: Ktorý hokejista mal prezývku „The Great One“ (Veľký)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Wayne_Gretzky
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Mario_Lemieux, /Gordie_Howe, /Bobby_Orr"
+    tags: [hokej, prezyvky]
+    correct: { text: Wayne Gretzky, why: "V NHL hral za štyri tímy v rokoch 1979 až 1999." }
+    wrong:
+      - { text: Mario Lemieux, why: "Ten bol Super Mario alebo Le Magnifique, Veľkolepý." }
+      - { text: Gordie Howe, why: "Jeho prezývali Mr. Hockey." }
+      - { text: Bobby Orr, why: "Obranca Bostonu, ktorý v rokoch 1970 a 1972 strelil gól rozhodujúci o pohári." }
+
+  - id: pogacar-krajina
+    type: choice
+    prompt: Z ktorej krajiny pochádza cyklista Tadej Pogačar?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Tadej_Poga%C4%8Dar
+    tags: [cyklistika, krajiny]
+    correct: { text: Slovinsko, why: "Narodil sa v Klanci pri Komende; ako prvý Slovinec vyhral Tour de France." }
+    wrong:
+      - { text: Chorvátsko, why: "Susedná krajina, Pogačar je však zo Slovinska." }
+      - { text: Slovensko, why: "Častá zámena Slovinska a Slovenska, aj v cyklistike." }
+      - { text: Srbsko, why: "Srbská hviezda je Jokić v basketbale, nie cyklista." }
+
+  - id: osullivan-sport
+    type: choice
+    prompt: V ktorom športe je hviezdou Ronnie O'Sullivan?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Ronnie_O%27Sullivan
+    tags: [snooker]
+    correct: { text: snooker, why: "Sedemkrát majster sveta, čo je v modernej ére rekord, ktorý zdieľa so Stephenom Hendrym." }
+    wrong:
+      - { text: šípky, why: "Aj tam sa hrá v sálach pred plným hľadiskom, Rocket však hrá snooker." }
+      - { text: golf, why: "Prezývku The Rocket dostal za rýchlu hru pri snookerovom stole." }
+      - { text: bowling, why: "Rýchlosť ho preslávila pri snookerovom stole, nie na bowlingovej dráhe." }
+
+  - id: pele-druhy-klub
+    type: choice
+    prompt: Za ktorý klub hral Pelé okrem brazílskeho Santosu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pel%C3%A9
+    tags: [futbal, kluby]
+    correct: { text: New York Cosmos, why: "Kariéru dohral v Spojených štátoch." }
+    wrong:
+      - { text: Real Madrid, why: "Pelé nikdy nehral v európskom klube." }
+      - { text: Benfica Lisabon, why: "Jeho jediné kluby boli Santos a New York Cosmos." }
+      - { text: Juventus, why: "V Taliansku nikdy nehral." }
