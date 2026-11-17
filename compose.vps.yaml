@@ -11,13 +11,27 @@ services:
     image: ghcr.io/tomashutnan/fakt:${FAKT_IMAGE_TAG:-latest}
     restart: unless-stopped
     environment:
-      # Rooms will accept WebSocket connections only from this origin.
+      # Rooms accept WebSocket connections only from this origin.
       - FAKT_PUBLIC_ORIGIN=https://${FAKT_DOMAIN:?set it in .env}
+      # Abuse limits; defaults in .env.example.
+      - FAKT_MAX_ROOMS=${FAKT_MAX_ROOMS:-200}
+      - FAKT_ROOMS_PER_IP=${FAKT_ROOMS_PER_IP:-3}
+      - FAKT_CREATES_PER_10MIN=${FAKT_CREATES_PER_10MIN:-6}
+      - FAKT_MAX_CONNECTIONS=${FAKT_MAX_CONNECTIONS:-600}
+      - FAKT_CONNECTIONS_PER_IP=${FAKT_CONNECTIONS_PER_IP:-40}
+      - FAKT_MAX_PACK_MB=${FAKT_MAX_PACK_MB:-48}
+      - FAKT_ROOM_TTL_MINUTES=${FAKT_ROOM_TTL_MINUTES:-60}
+      # Keeps Node's heap below the container limit.
+      - NODE_OPTIONS=--max-old-space-size=${FAKT_HEAP_MB:-160}
     volumes:
       # Room snapshots across restarts. Must be owned by uid 1000.
       - ${FAKT_DATA_PATH:?set it in .env}:/data
     networks:
       - web
+    # Hard caps, so a flood of rooms cannot starve the other services on the VPS.
+    mem_limit: ${FAKT_MEM_LIMIT:-256m}
+    cpus: ${FAKT_CPUS:-0.5}
+    pids_limit: 64
     # Only /data is writable, and the process runs as uid 1000.
     read_only: true
     cap_drop:
