@@ -136,7 +136,8 @@ export function newGame({ players, settings, packs, seen, seed }: NewGameInput):
   };
 }
 
-function cardFor(key: string, packs: Pack[], seed: number, pos: number): Card | null {
+/** The card at deck position `pos`, drawn the same way on every device for a given seed. */
+export function cardFor(key: string, packs: Pack[], seed: number, pos: number): Card | null {
   const [packId, qid] = key.split("/");
   const pack = packs.find((p) => p.id === packId);
   const q = pack?.questions.find((x) => x.id === qid);
