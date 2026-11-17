@@ -207,7 +207,7 @@ export function isLastRound(s: RoomState): boolean {
 export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomState {
   switch (a.type) {
     case "join": {
-      if (s.players.some((p) => p.id === a.id) || joinError(s, a.name)) return s;
+      if (typeof a.id !== "string" || typeof a.name !== "string" || s.players.some((p) => p.id === a.id) || joinError(s, a.name)) return s;
       const used = new Set(s.players.map((p) => p.color));
       const color = Array.from({ length: MAX_PLAYERS }, (_, i) => i).find((i) => !used.has(i)) ?? 0;
       const player: RoomPlayer = { id: a.id, name: cleanName(a.name)!, score: 0, color, connected: true };
@@ -224,7 +224,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       return s;
 
     case "kick": {
-      if (a.by !== controllerId(s) || a.id === a.by || !s.players.some((p) => p.id === a.id)) return s;
+      if (typeof a.id !== "string" || a.by !== controllerId(s) || a.id === a.by || !s.players.some((p) => p.id === a.id)) return s;
       const { [a.id]: _gone, ...answers } = s.answers;
       const next: RoomState = {
         ...s,
@@ -251,7 +251,8 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       if (card?.type !== "pick") return s;
       const prev = s.answers[a.by];
       const ans = prev?.type === "pick" ? prev : { type: "pick" as const, picks: [], status: "playing" as const };
-      if (ans.status !== "playing" || ans.picks.includes(a.option) || !card.options[a.option]) return s;
+      if (!Number.isInteger(a.option) || a.option < 0 || a.option >= card.options.length) return s;
+      if (ans.status !== "playing" || ans.picks.includes(a.option)) return s;
       const picks = [...ans.picks, a.option];
       const found = picks.filter((i) => card.options[i].correct).length;
       const status = !card.options[a.option].correct ? "busted" : found === card.correctCount ? "complete" : "playing";

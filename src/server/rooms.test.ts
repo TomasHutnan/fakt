@@ -383,6 +383,49 @@ describe("playing through the hub", () => {
     expect(host.view.phase).toBe("question");
   });
 
+  it("a pick sent as a string cannot score the same option twice", () => {
+    const { host, code, all } = room(2);
+    host.act({ type: "start" });
+    const card = hub.room(code)!.card as PickCard;
+    const right = card.options.findIndex((o) => o.correct);
+    all[1].act({ type: "pick", option: right });
+    all[1].act({ type: "pick", option: String(right) });
+    all[1].act({ type: "pick", option: `${right}.0` });
+    const a = hub.room(code)!.answers[all[1].seat!.id!];
+    expect(a).toEqual({ type: "pick", picks: [right], status: "playing" });
+  });
+
+  it("objects that cannot become strings never crash the hub", () => {
+    const evil = '{"toString":null,"valueOf":null}';
+    const { host, code } = room(2);
+    const raws = [
+      `{"t":"join","v":1,"code":${evil},"name":"X"}`,
+      `{"t":"watch","v":1,"code":${evil}}`,
+      `{"t":"join","v":1,"code":"${code}","name":${evil}}`,
+      `{"t":"join","v":1,"code":"${code}","token":${evil}}`,
+    ];
+    for (const raw of raws) {
+      const c = new FakeConn(hub, "3.3.3.3");
+      expect(() => c.msg(raw)).not.toThrow();
+    }
+    host.act({ type: "start" });
+    for (const a of [`{"t":"act","action":{"type":"pick","option":${evil}}}`, `{"t":"act","action":{"type":"kick","id":${evil}}}`, `{"t":"act","action":{"type":"submitOrder","arrangement":[${evil}]}}`]) {
+      expect(() => host.msg(a)).not.toThrow();
+    }
+    const c = new FakeConn(hub, "4.4.4.4");
+    const q = { id: "x", type: "pick", prompt: "p", source: "s", asOf: JSON.parse(evil), tags: [JSON.parse(evil)], correct: [], wrong: [] };
+    expect(() => c.msg({ t: "create", v: PROTOCOL, name: "J", settings: { ...SETTINGS, packIds: ["e"] }, packs: [{ ...PACK, id: "e", questions: [q, { ...q, type: JSON.parse(evil) }] }], seen: [] })).not.toThrow();
+    expect(c.lastError).toBe("badPacks");
+  });
+
+  it("validates a pack with many options quickly", () => {
+    const big = { ...PACK, id: "big", questions: [{ ...PACK.questions[0], correct: Array.from({ length: 30_000 }, (_, i) => ({ text: `o${i}`, why: "w" })) }] };
+    const t = performance.now();
+    const c = new FakeConn(hub, "2.2.2.2");
+    c.msg({ t: "create", v: PROTOCOL, name: "J", settings: { ...SETTINGS, packIds: ["big"] }, packs: [big], seen: [] });
+    expect(performance.now() - t).toBeLessThan(1500);
+  });
+
   it("ignores a spoofed sender, time or seed", () => {
     const { host, all } = room(2);
     const zuzka = all[1];

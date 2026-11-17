@@ -42,7 +42,12 @@ export function attachRooms(server: Server, hub: Hub, opts: Partial<WsOptions> =
       });
       ws.on("message", (data, isBinary) => {
         if (isBinary) return ws.close(4400, "binary");
-        handlers.message(data.toString());
+        try {
+          handlers.message(data.toString());
+        } catch (err) {
+          console.error("fakt: socket message failed:", err);
+          ws.close(4400, "invalid");
+        }
       });
       ws.on("close", handlers.close);
       ws.on("error", () => ws.terminate());

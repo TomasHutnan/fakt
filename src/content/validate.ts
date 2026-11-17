@@ -112,12 +112,12 @@ function validateQuestion(q: unknown, where: string, now: Date) {
   if (!source) err("chýba zdroj (source)");
   let asOf: string | undefined;
   if (q.asOf !== undefined) {
-    asOf = String(q.asOf).trim();
+    asOf = typeof q.asOf === "string" || typeof q.asOf === "number" ? String(q.asOf).trim() : "";
     if (!AS_OF.test(asOf)) err('asOf musí byť v tvare "RRRR" alebo "RRRR-MM"');
     else if (now.getFullYear() - Number(asOf.slice(0, 4)) > STALE_YEARS)
       warnings.push(`${where}: údaj k ${asOf} môže byť zastaraný`);
   }
-  const tags = Array.isArray(q.tags) ? q.tags.map(String) : undefined;
+  const tags = Array.isArray(q.tags) ? q.tags.filter((t): t is string | number => typeof t === "string" || typeof t === "number").map(String) : undefined;
   const note = str(q.note) ?? undefined;
 
   const base = {
@@ -161,7 +161,8 @@ function validateQuestion(q: unknown, where: string, now: Date) {
   };
   const noDuplicates = (texts: string[]) => {
     const lower = texts.map((t) => t.toLocaleLowerCase("sk"));
-    const dup = lower.find((t, i) => lower.indexOf(t) !== i);
+    const seen = new Set<string>();
+    const dup = lower.find((t) => seen.has(t) || (seen.add(t), false));
     if (dup) err(`možnosť "${dup}" je tam dvakrát`);
   };
 
@@ -251,7 +252,7 @@ function validateQuestion(q: unknown, where: string, now: Date) {
       break;
     }
     default:
-      err(`neznámy typ "${String(q.type)}" (pick, order, number, choice)`);
+      err(`neznámy typ "${typeof q.type === "string" ? q.type : typeof q.type}" (pick, order, number, choice)`);
   }
 
   return { question: errors.length ? null : question, errors, warnings };

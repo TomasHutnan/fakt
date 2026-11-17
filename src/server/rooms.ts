@@ -158,6 +158,16 @@ export class Hub {
   }
 
   private onMessage(c: Client, raw: string): void {
+    // Input from the internet must never take the process down.
+    try {
+      this.handle(c, raw);
+    } catch (err) {
+      console.error("fakt: message failed:", err);
+      this.fail(c, "invalid", true);
+    }
+  }
+
+  private handle(c: Client, raw: string): void {
     if (!this.allowMessage(c)) return c.conn.close(CLOSE.busy, "busy");
     let msg: ClientMessage;
     try {
@@ -306,7 +316,7 @@ export class Hub {
   private join(c: Client, msg: Extract<ClientMessage, { t: "join" }>): void {
     if (msg.v !== PROTOCOL) return this.fail(c, "proto");
     if (c.room) return this.fail(c, "invalid");
-    const code = normalizeCode(String(msg.code ?? ""));
+    const code = typeof msg.code === "string" ? normalizeCode(msg.code) : "";
     const room = isCode(code) ? this.rooms.get(code) : undefined;
     if (!room) return this.fail(c, "noRoom");
     const known = typeof msg.token === "string" ? room.tokens.get(msg.token) : undefined;
@@ -322,7 +332,7 @@ export class Hub {
   private watch(c: Client, msg: Extract<ClientMessage, { t: "watch" }>): void {
     if (msg.v !== PROTOCOL) return this.fail(c, "proto");
     if (c.room) return this.fail(c, "invalid");
-    const code = normalizeCode(String(msg.code ?? ""));
+    const code = typeof msg.code === "string" ? normalizeCode(msg.code) : "";
     const room = isCode(code) ? this.rooms.get(code) : undefined;
     if (!room) return this.fail(c, "noRoom");
     if ([...room.clients].filter((x) => x.watcher).length >= this.limits.maxWatchers) return this.fail(c, "full");
