@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ================================================================ PICK
   - id: ek-top10-hdp
@@ -139,7 +139,7 @@ questions:
 
   - id: ek-brazilia-jednotka
     type: pick
-    prompt: Ktoré z týchto plodín sú podľa údajov FAO za rok 2024 najviac pestovanými v Brazílii (je číslo jeden na svete)?
+    prompt: Ktoré z týchto plodín sú podľa údajov FAO za rok 2024 plodinami, v ktorých je Brazília najväčším pestovateľom na svete?
     difficulty: 2
     asOf: "2024"
     tags: [poľnohospodárstvo]
@@ -154,8 +154,8 @@ questions:
       - { text: Banány, why: "Prvá je India, nasleduje Čína." }
       - { text: Pšenica, why: "Prvá je Čína, potom India a Rusko." }
       - { text: Čaj, why: "Prvá je Čína, potom India a Keňa." }
-      - { text: Bavlna, why: "Prvá je Čína, Brazília je tretia." }
-      - { text: Kukurica, why: "Prvé sú USA, druhá Čína; Brazília je tretia." }
+      - { text: Bavlna, why: "Najviac bavlny pestuje Čína." }
+      - { text: Kukurica, why: "Najviac kukurice pestujú USA." }
       - { text: Kaučuk, why: "Prvé je Thajsko." }
 
   - id: ek-cina-jednotka
@@ -171,7 +171,7 @@ questions:
       - { text: Zemiaky, why: "Pred Indiou a Ukrajinou." }
       - { text: Paradajky, why: "Pred Indiou a Tureckom." }
       - { text: Jablká, why: "Pred USA a Tureckom." }
-      - { text: Bavlna, why: "Pred Indiou a Brazíliou." }
+      - { text: Bavlna, why: "Najväčší pestovateľ bavlny na svete." }
       - { text: Hrozno, why: "Najväčší pestovateľ hrozna na svete." }
     wrong:
       - { text: Ryža, why: "Prekvapenie: podľa údajov FAO za rok 2024 je prvá India." }
@@ -235,7 +235,7 @@ questions:
       - { text: Čína, why: "Rodisko čaju a jeho najväčší producent." }
       - { text: India, why: "Darjeeling a Assam sú svetovo známe čaje." }
       - { text: Keňa, why: "Veľký vývozca čierneho čaju." }
-      - { text: Srí Lanka, why: "Ceylonský čaj dal meno bývalému Cejlónu." }
+      - { text: Srí Lanka, why: "Cejlónsky čaj je pomenovaný podľa starého názvu ostrova." }
       - { text: Turecko, why: "Pestuje sa hlavne pri Čiernom mori." }
     wrong:
       - { text: Japonsko, why: "Slávny zelený čaj, no objemy sú malé." }
@@ -259,7 +259,7 @@ questions:
       - { text: Figy, why: "Pred Egyptom a Alžírskom." }
       - { text: Duľa obyčajná, why: "Pred Čínou a Uzbekistanom." }
     wrong:
-      - { text: Pistácie, why: "Prvé sú USA, Turecko je tretie." }
+      - { text: Pistácie, why: "Najviac pistácií pestujú USA." }
       - { text: Mandle, why: "Prvé sú USA." }
       - { text: Olivy, why: "Prvé je Španielsko." }
       - { text: Pomaranče, why: "Prvá je Brazília." }
@@ -301,7 +301,7 @@ questions:
       - { text: Česko, why: "Platí korunou; euro sa zaviazalo prijať, ale bez termínu." }
       - { text: Maďarsko, why: "Platí forintom." }
       - { text: Poľsko, why: "Platí zlotým." }
-      - { text: Rumunsko, why: "Platí lejom." }
+      - { text: Rumunsko, why: "Platí rumunským leu." }
       - { text: Švédsko, why: "Platí švédskou korunou; euro v referende odmietlo v roku 2003." }
       - { text: Dánsko, why: "Má výnimku zo zmluvy, platí dánskou korunou." }
     wrong:
@@ -371,7 +371,7 @@ questions:
       - { text: Maďarsko (1945 – 1946), why: "Najhoršia hyperinflácia v dejinách: v júli 1946 sa ceny zdvojnásobovali približne každých 15 hodín." }
       - { text: Weimarské Nemecko (1923), why: "Najvyššia bankovka mala hodnotu 100 biliónov mariek." }
       - { text: Zimbabwe (2008), why: "Vydalo bankovku s hodnotou 100 biliónov zimbabwianskych dolárov." }
-      - { text: Venezuela, why: "Hyperinflácia tam vypukla v druhej polovici 2010-tych rokov." }
+      - { text: Venezuela, why: "Hyperinflácia tam vypukla v druhej polovici desiatych rokov 21. storočia." }
       - { text: Juhoslávia (1992 – 1994), why: "Hyperinflácia sprevádzala rozpad štátu a vojnu." }
       - { text: Rakúsko (1921 – 1922), why: "Ceny vzrástli od roku 1914 do januára 1923 vyše 11 000-násobne." }
       - { text: Bolívia (1985), why: "V roku 1985 tam inflácia presiahla 20 000 % ročne." }
@@ -382,7 +382,7 @@ questions:
       - { text: Kanada, why: "Žiadna hyperinflácia v histórii." }
       - { text: Austrália, why: "Žiadna hyperinflácia v histórii." }
       - { text: Švédsko, why: "Žiadna hyperinflácia v histórii." }
-      - { text: USA, why: "Aj najvyššia inflácia bola ďaleko pod hranicou hyperinflácie." }
+      - { text: USA, why: "Ani počas vojny za nezávislosť nedosiahla inflácia hranicu hyperinflácie (50 % mesačne)." }
 
   - id: ek-zaniknute-meny
     type: pick
@@ -694,7 +694,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Hyperinflation"
     correct: { text: Forint, why: "Zaviedli ho v auguste 1946 a platí dodnes." }
     wrong:
-      - { text: Koruna, why: "Českú korunu používa Česko dodnes, Slovensko malo vlastnú korunu do roku 2008." }
+      - { text: Koruna, why: "Českú korunu používa Česko dodnes, Slovensko malo vlastnú korunu do zavedenia eura v roku 2009." }
       - { text: Marka, why: "Tú používalo Nemecko." }
       - { text: Zlotý, why: "Tým platí Poľsko." }
 
