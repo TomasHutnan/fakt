@@ -44,7 +44,7 @@ questions:
       - { text: "Nescafé", why: "Instantná káva, s ktorou Nestlé prišlo v roku 1938." }
       - { text: "Nespresso", why: "Kapsulová káva je samostatná dcérska firma Nestlé." }
       - { text: "Nesquik", why: "Kakao Nesquik; predpona Nes- prezrádza majiteľa." }
-      - { text: "KitKat", why: "Okrem USA, kde ho z licencie vyrába Hershey, patrí Nestlé." }
+      - { text: "KitKat", why: "Okrem USA, kde ho na základe licencie vyrába Hershey, patrí Nestlé." }
       - { text: "Maggi", why: "Nestlé značku vlastní od roku 1947." }
       - { text: "Purina", why: "Krmivo pre psy a mačky Nestlé kúpilo v decembri 2001." }
       - { text: "Orion", why: "Pražská čokoládovňa Študentskej pečate a Margot patrí pod Nestlé Česko." }
@@ -102,7 +102,7 @@ questions:
       - { text: "Scania", why: "Švédske nákladiaky, súčasť koncernu od roku 2008." }
     wrong:
       - { text: "Rolls-Royce", why: "Bentley patrí VW, ale Rolls-Royce Motor Cars vlastní BMW." }
-      - { text: "Mini", why: "Britskú značku predáva BMW od roku 2000." }
+      - { text: "Mini", why: "Britská značka patrí BMW, ktoré nové Mini predáva od roku 2001." }
       - { text: "Volvo", why: "Švédske osobné autá väčšinovo vlastní čínsky Geely." }
       - { text: "Jaguar", why: "Spolu s Land Roverom patrí indickej skupine Tata." }
       - { text: "Ferrari", why: "Samostatná firma, od Fiatu sa oddelila v roku 2016." }
@@ -264,7 +264,7 @@ questions:
     correct:
       - { text: "Budweiser (americký)", why: "Americký Budweiser od Anheuser-Busch sa o meno roky súdi s českým Budvarom." }
       - { text: "Stella Artois", why: "Belgický ležiak z Lovane." }
-      - { text: "Corona", why: "Mexické pivo; v USA ho z licencie predáva Constellation Brands." }
+      - { text: "Corona", why: "Mexické pivo; v USA ho na základe licencie predáva Constellation Brands." }
       - { text: "Beck's", why: "Nemecké pivo z Brém." }
       - { text: "Hoegaarden", why: "Belgické pšeničné pivo." }
       - { text: "Leffe", why: "Belgické pivo z portfólia AB InBev." }
@@ -285,7 +285,7 @@ questions:
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/IKEA, /H%26M, /Ericsson, /Electrolux, /Absolut_Vodka, /Tetra_Pak, /Husqvarna_Group, /Nokia, /Carlsberg_Group, /Pandora_(jewelry), /Rovio_Entertainment, /Bang_%26_Olufsen, /Fazer, /Marimekko"
     correct:
       - { text: "Spotify", why: "Hudobná služba zo Štokholmu, založená v roku 2006." }
-      - { text: "IKEA", why: "Prevádzkové sídlo má dodnes v Älmhulte, kde všetko začalo." }
+      - { text: "IKEA", why: "Kamprad ju založil v roku 1943 v Agunnaryde; prvý obchodný dom otvorila v Älmhulte." }
       - { text: "H&M", why: "Prvý obchod otvorili v roku 1947 v meste Västerås, vtedy pod menom Hennes." }
       - { text: "Ericsson", why: "Telekomunikačná firma zo Štokholmu, založená v roku 1876." }
       - { text: "Electrolux", why: "Výrobca spotrebičov, pod menom Electrolux od roku 1919." }
