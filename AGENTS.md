@@ -37,7 +37,7 @@ Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner
 - `notes/` is a symlink into the owner's separate Obsidian vault. You may read and edit the Markdown there. **Never commit it, never `git add` it, never remove it from `.gitignore`.**
 - `reference/` (owner's material, e.g. subtitles) is not ours: never commit or edit it. Reading it as a source is fine.
 - Commits on feature branches are allowed; merge to `main` and push only after a passing Hydrogen review. Remote: `origin` = github.com/TomasHutnan/fakt (public).
-- Offload simple, mechanical tasks (page fetches, searches, bulk conversions) to cheaper models/subagents.
+- **Spend the Claude quota sparingly** (owner, 2026-11-17): pack writers and other subagents run on Sonnet (`model: sonnet`), mechanical tasks (page fetches, searches, bulk conversions, count checks) on Haiku; Opus only for the main session. Use Gemini for research lookups and fact-checks: `agy_research` / `agy_ask` MCP with `workspace: "none"` (no repo access) for web facts, `scripts/agy-readonly.py` for anything that reads the repo. Gemini answers are leads, not sources: every fact is still checked against the raw page it cites.
 - Do not copy question text, names, artwork or visual identity from Chytrák, Smart10/Desítka or any other quiz product. Mechanics may be reused; content and identity must be original.
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
 - Every question needs a `source`; time-sensitive facts need `asOf`; every pick/choice option (and every number question) needs a one-line `why`; order items should have one. Language-model facts are checked against the source before merge.
