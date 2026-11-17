@@ -40,7 +40,7 @@ questions:
         why: "Ázijský had, ktorý sa zo stromu skĺzne vzduchom, no lietať nevie."
       - text: lietajúca žaba
         why: "Zo stromu na strom len plachtí."
-      - text: jašterica dráčik
+      - text: dráčik lietavý
         why: "Ázijská jašterica, ktorá zo stromu len plachtí."
 
   - id: zv-nelietave-vtaky
@@ -56,7 +56,7 @@ questions:
       - text: emu
         why: "Najvyšší pôvodný vták Austrálie."
       - text: kivi
-        why: "Novozélandský symbol; u väčšiny druhov sedí na obrovskom vajci samec."
+        why: "Novozélandský symbol; na obrovskom vajci sedí samec, u niektorých druhov striedavo so samicou."
       - text: tučniak
         why: "Krídla mu slúžia ako plutvy pod vodou."
       - text: kazuár
@@ -143,7 +143,7 @@ questions:
       - text: sépia
         why: "Hlavonožec, príbuzný chobotnice."
       - text: delfín
-        why: "Cicavec, ktorý dýcha vzduch a kojí mláďatá."
+        why: "Cicavec, ktorý dýcha vzduch a dojčí mláďatá."
       - text: lamantín
         why: "Morský cicavec, ktorého volajú aj morská krava."
       - text: morská uhorka
@@ -226,7 +226,7 @@ questions:
     tags: [kde-zije]
     correct:
       - text: mrož
-        why: "Ako jediný plutvonožec kojí mláďatá aj vo vode."
+        why: "Ako jediný plutvonožec dojčí mláďatá aj vo vode."
       - text: pižmoň
         why: "Huňatý bylinožravec arktickej tundry."
       - text: líška polárna
@@ -260,7 +260,7 @@ questions:
     tags: [kde-zije]
     correct:
       - text: lemur kata
-        why: "Ako všetky lemury žije len na Madagaskare."
+        why: "Ako všetky lemury pochádza len z Madagaskaru."
       - text: sifaka
         why: "Lemur, ktorého všetky druhy sú ohrozené."
       - text: aj-aj
@@ -442,7 +442,7 @@ questions:
       - text: delfín
         why: "Cicavec, rodí živé mláďatá."
       - text: netopier
-        why: "Rodí živé mláďatá a kojí ich."
+        why: "Rodí živé mláďatá a dojčí ich."
       - text: klokan
         why: "Rodí drobné mláďa, ktoré dorastá vo vaku."
 
@@ -607,7 +607,7 @@ questions:
   # ---------------------------------------------------------------- ORDER
   - id: zv-poradie-vyhynutia
     type: order
-    prompt: Zoraď vyhynuté zvieratá podľa roku, keď posledného jedinca naposledy spoľahlivo videli živého (od najskôr).
+    prompt: Zoraď vyhynuté zvieratá podľa roku, keď posledného jedinca naposledy spoľahlivo videli živého (od najdávnejšieho).
     direction: asc
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Steller%27s_sea_cow
@@ -635,7 +635,7 @@ questions:
       - { text: veľryba grónska, value: 211, why: "Údaj z voľnej prírody." }
       - { text: korytnačka slonia z Galapág, value: 177, why: "Toľko vydržala v zajatí." }
       - { text: človek, value: 122.5, why: "Jeanne Calmentová." }
-      - { text: slon indický, value: 79.6, why: "Najstarší slon v zajatí." }
+      - { text: slon ázijský, value: 79.6, why: "Najstarší slon v zajatí." }
       - { text: kôň, value: 57, why: "Najstarší kôň v zajatí." }
       - { text: mačka domáca, value: 30, why: "Nepotvrdené rekordy hovoria aj o 37 rokoch." }
       - { text: myš domová, value: 4, why: "Najstaršia myš v zajatí." }
