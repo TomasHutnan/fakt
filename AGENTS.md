@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status (2026-11-17)
 
-Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. Playtest feedback round on `feat/playtest-feedback` (until merged); favourite topics decided but not built (see `notes/Decisions.md`).
+Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. Playtest feedback round merged 2026-11-17; favourite topics decided but not built (see `notes/Decisions.md`).
 
 - Built: Mix (default) and Classic modes, rooms (everyone on own phone + big screen), last place picks the pack every 3rd round (the double final round was dropped), tie-break for a shared lead (one number card for the tied leaders), social lines and end titles, all formats, per-turn answers drawn in place, 4 designs (Kartotéka default, gallery at `#designs`), post-game ratings (👍/😐/👎) and per-card reports sent in the background to the owner's Google Form, quick settings (design, sound, vibration) during a game, rooms: answers count down and move on with a pace, standings on phones without a big screen, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
 - Content: **31 packs / 836 questions** (4 adult, 5 opt-in: Dano Drevo, Politické hlášky, athletics legends and season, Zvláštne jedlá sveta). Target 1,000.
