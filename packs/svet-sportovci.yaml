@@ -3,7 +3,7 @@ title: Slávni športovci
 description: Jordan, Gretzky, Federer, Pelé, Merckx a ďalšie svetové hviezdy – tituly, kluby, prezývky a rekordy.
 category: sport
 lang: sk
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: f1-majstri-sveta
@@ -138,9 +138,9 @@ questions:
       - text: Gabriela Sabatiniová
         why: "Argentínčanka vyhrala US Open 1990, vo Wimbledone bola len vo finále."
       - text: Ons Jabeurová
-        why: "Tuniska prehrala finále 2023 s Markétou Vondroušovou."
+        why: "Tunisanka prehrala finále 2023 s Markétou Vondroušovou."
       - text: Karolína Muchová
-        why: "Finále 2026 prehrala s krajankou Nosková v troch setoch."
+        why: "Finále 2026 prehrala s krajankou Noskovou v troch setoch."
       - text: Amanda Anisimovová
         why: "Vo finále 2025 nezískala proti Świątekovej ani jeden gem."
 
@@ -163,7 +163,7 @@ questions:
       - text: "Iron Mike – Mike Tyson"
         why: "Volali ho aj Kid Dynamite a Najhorší chlap na planéte."
       - text: "The Rocket – Ronnie O'Sullivan"
-        why: "Raketa preto, že ako mladík vyhral zápas na deväť frejmov za rekordných 43 minút."
+        why: "Raketa pre neuveriteľne rýchlu hru."
       - text: "Zlatý medveď – Jack Nicklaus"
         why: "The Golden Bear, rekordér so šiestimi titulmi z Masters."
       - text: "Black Mamba – Kobe Bryant"
@@ -251,7 +251,7 @@ questions:
       - text: Egan Bernal
         why: "V roku 2019 prvý Kolumbijčan na čele Tour."
       - text: Jonas Vingegaard
-        why: "Prvý dánsky víťaz od roku 1996."
+        why: "Tour vyhral v rokoch 2022 a 2023."
       - text: Tadej Pogačar
         why: "V roku 2026 piaty titul a vyrovnaný rekord."
     wrong:
@@ -463,7 +463,7 @@ questions:
       - text: Colin Montgomerie
         why: "Rekordných osem víťazstiev v rebríčku Európskej túry, ani jeden major."
       - text: Lee Westwood
-        why: "Prvý, kto sa stal svetovou jednotkou bez víťazstva na majore."
+        why: "Svetovou jednotkou bol v rokoch 2010 a 2011, major však nevyhral nikdy."
       - text: Ernie Els
         why: "The Big Easy vyhral iné majory, nie Masters."
       - text: Brooks Koepka
@@ -493,7 +493,7 @@ questions:
       - text: Michail Tal
         why: "Majster sveta v rokoch 1960 – 1961."
       - text: Boris Spasskij
-        why: "Majster sveta od roku 1969, v roku 1972 prišiel o titul vo zápase s Fischerom."
+        why: "Majster sveta od roku 1969, v roku 1972 prišiel o titul v zápase s Fischerom."
       - text: Ding Liren
         why: "V roku 2023 porazil Nepomňaščieho."
       - text: Gukesh Dommaraju
@@ -534,7 +534,7 @@ questions:
       - text: Aksel Lund Svindal
         why: "Nór vyhral celkovo dvakrát."
       - text: Mikaela Shiffrinová
-        why: "Najviac celkových titulov medzi ženami."
+        why: "Celkový Svetový pohár vyhrala viackrát ako takmer každá lyžiarka v histórii."
       - text: Lindsey Vonnová
         why: "Štyri celkové tituly."
       - text: Janica Kostelićová
@@ -549,7 +549,7 @@ questions:
       - text: Ted Ligety
         why: "Olympijský víťaz v obrovskom slalome zo Soči 2014."
       - text: Henrik Kristoffersen
-        why: "Päť malých glóbusov za disciplíny, celkovo najlepšie druhý v roku 2016."
+        why: "Päť malých glóbusov za disciplíny, v celkovom poradí skončil najvyššie druhý."
       - text: Sofia Goggiová
         why: "Olympijská víťazka v zjazde z Pjongčangu 2018."
       - text: Deborah Compagnoniová
@@ -728,7 +728,7 @@ questions:
       - text: Kylian Mbappé bol dvakrát najlepším strelcom majstrovstiev sveta
         why: "V rokoch 2022 a 2026, ako jediný v histórii."
       - text: Lee Westwood bol svetovou jednotkou v golfe bez víťazstva na majore
-        why: "Bol prvý, komu sa to podarilo, v roku 2010."
+        why: "Na čelo rebríčka sa dostal v roku 2010, major však nevyhral nikdy."
       - text: Marcel Hirscher vyhral celkový Svetový pohár osemkrát
         why: "Osem veľkých glóbusov, najviac v histórii."
       - text: Kimi Antonelli je najmladší majster sveta F1
@@ -795,7 +795,7 @@ questions:
     items:
       - { text: Michael Phelps, value: 23, why: "Z toho osem na jedných hrách v Pekingu." }
       - { text: Katie Ledecká, value: 9, why: "Najúspešnejšia plavkyňa histórie." }
-      - { text: Marit Bjørgenová, value: 8, why: "Bežkyňa na lyžiach a so 15 medailami najúspešnejšia zimná olympionička." }
+      - { text: Marit Bjørgenová, value: 8, why: "Bežkyňa na lyžiach a s 15 medailami najúspešnejšia zimná olympionička." }
       - { text: Simone Bilesová, value: 7, why: "Štyri zlatá v Riu 2016 a tri v Paríži 2024." }
       - { text: Nadia Comăneciová, value: 5, why: "Všetky v individuálnych disciplínach." }
       - { text: Katarina Wittová, value: 2, why: "Sarajevo 1984 a Calgary 1988." }
@@ -827,7 +827,7 @@ questions:
     tags: [futbal, majstrovstva-sveta]
     items:
       - { text: Kylian Mbappé, value: 22, why: "Na MS 2026 sa stal novým rekordérom." }
-      - { text: Lionel Messi, value: 21, why: "Na MS 2026 dal päť gólov a prekonal Kloseho." }
+      - { text: Lionel Messi, value: 21, why: "Na MS 2026 sa dostal na 21 gólov a prekonal Kloseho." }
       - { text: Miroslav Klose, value: 16, why: "Rekord držal od roku 2014 do roku 2026." }
       - { text: Ronaldo (Brazílčan), value: 15, why: "Góly strieľal na MS 1998, 2002 a 2006." }
       - { text: Just Fontaine, value: 13, why: "Všetkých 13 na jedinom turnaji, MS 1958." }
