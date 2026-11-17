@@ -58,7 +58,8 @@ export const DEFAULT_LIMITS: Limits = {
   roomsPerIp: 3,
   maxConnections: 600,
   connectionsPerIp: 40,
-  maxPackBytes: 48 * 1024 * 1024,
+  // Counted as JSON; parsed objects take a few times more heap.
+  maxPackBytes: 12 * 1024 * 1024,
   roomTtlMs: 60 * 60 * 1000,
   maxWatchers: 4,
   createsPerWindow: 6,
@@ -101,8 +102,15 @@ interface Client {
 
 export interface Snapshot {
   savedAt: number;
-  rooms: { state: RoomState; packs: Pack[]; tokens: [string, string][]; lastActive: number; born?: number; ip?: string }[];
+  /** Distinct packs by content hash (older snapshots keep packs inside each room). */
+  packs?: Record<string, Pack>;
+  rooms: { state: RoomState; packs?: Pack[]; packKeys?: string[]; tokens: [string, string][]; lastActive: number; born?: number; ip?: string }[];
 }
+
+/** Largest pack a room accepts: real packs have a few dozen questions of up to 12 options. */
+const MAX_QUESTIONS_PER_PACK = 2000;
+const MAX_QUESTIONS_TOTAL = 10_000;
+const MAX_OPTIONS = 40;
 
 export class Hub {
   private rooms = new Map<string, Room>();
@@ -295,9 +303,20 @@ export class Hub {
   private cleanPacks(raw: unknown, ids: string[]): Pack[] | null {
     if (!Array.isArray(raw) || raw.length > this.limits.maxPacks) return null;
     const packs: Pack[] = [];
+    let total = 0;
     for (const p of raw) {
       const id = (p as { id?: unknown } | null)?.id;
       if (typeof id !== "string" || !ids.includes(id) || packs.some((x) => x.id === id)) continue;
+      // Cheap size checks before validation, whose checks are not all linear.
+      const qs = (p as { questions?: unknown }).questions;
+      if (!Array.isArray(qs) || qs.length > MAX_QUESTIONS_PER_PACK || (total += qs.length) > MAX_QUESTIONS_TOTAL) return null;
+      for (const q of qs) {
+        if (!q || typeof q !== "object") return null;
+        for (const k of ["correct", "wrong", "items"]) {
+          const v = (q as Record<string, unknown>)[k];
+          if (Array.isArray(v) && v.length > MAX_OPTIONS) return null;
+        }
+      }
       const res = validatePack(p);
       if (!res.pack) return null;
       packs.push(res.pack);
@@ -456,9 +475,12 @@ export class Hub {
 
   /** Everything needed to carry running games over a restart. */
   snapshot(): Snapshot {
+    const packs: Record<string, Pack> = {};
+    for (const [key, e] of this.packStore) packs[key] = e.pack;
     return {
       savedAt: Date.now(),
-      rooms: [...this.rooms.values()].map((r) => ({ state: r.state, packs: r.packs, tokens: [...r.tokens], lastActive: r.lastActive, born: r.born, ip: r.ip })),
+      packs,
+      rooms: [...this.rooms.values()].map((r) => ({ state: r.state, packKeys: r.packKeys, tokens: [...r.tokens], lastActive: r.lastActive, born: r.born, ip: r.ip })),
     };
   }
 
@@ -466,19 +488,25 @@ export class Hub {
     const now = Date.now();
     for (const r of Array.isArray(snap?.rooms) ? snap.rooms : []) {
       try {
-        this.restoreRoom(r, now);
+        this.restoreRoom(r, snap.packs, now);
       } catch (err) {
         console.error("fakt: room not restored:", err);
       }
     }
   }
 
-  private restoreRoom(r: Snapshot["rooms"][number], now: number): void {
-    if (!r?.state?.code || !Array.isArray(r.state.players) || !Array.isArray(r.packs) || !Array.isArray(r.tokens)) return;
+  private restoreRoom(r: Snapshot["rooms"][number], shared: Snapshot["packs"], now: number): void {
+    if (!r?.state?.code || !Array.isArray(r.state.players) || !Array.isArray(r.tokens)) return;
+    const packs = Array.isArray(r.packs)
+      ? r.packs
+      : Array.isArray(r.packKeys) && shared && typeof shared === "object"
+        ? r.packKeys.map((k) => (Object.hasOwn(shared, k) ? shared[k] : null))
+        : null;
+    if (!packs || !packs.length || packs.some((p) => !p)) return;
     // Everyone reconnects; questions get some extra time back for the restart.
     let state: RoomState = { ...r.state, players: r.state.players.map((p) => ({ ...p, connected: false })) };
     if (state.phase === "question" && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
-    const interned = this.intern(r.packs);
+    const interned = this.intern(packs as Pack[]);
     if (!interned) return;
     const room: Room = {
       state,

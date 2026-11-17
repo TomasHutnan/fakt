@@ -349,3 +349,29 @@ describe("validator", () => {
     expect(res.warnings.length).toBe(1);
   });
 });
+
+describe("interleave", () => {
+  // The simple quadratic version it replaces.
+  const slow = (entries: { pack: { id: string } }[]) => {
+    const out: typeof entries = [];
+    const rest = entries.slice();
+    while (rest.length) {
+      const last = out[out.length - 1]?.pack.id;
+      const i = rest.findIndex((e) => e.pack.id !== last);
+      out.push(...rest.splice(i === -1 ? 0 : i, 1));
+    }
+    return out;
+  };
+  it("matches the simple version and stays fast on one pack", async () => {
+    const { interleave } = await import("./cards.ts");
+    for (let t = 0; t < 300; t++) {
+      const n = (t * 7) % 40;
+      const entries = Array.from({ length: n }, (_, i) => ({ pack: { id: "abc"[(i * 31 + t * 17 + ((i * t) % 5)) % (1 + (t % 3))] }, i }));
+      expect(interleave(entries as never)).toEqual(slow(entries));
+    }
+    const one = Array.from({ length: 50_000 }, (_, i) => ({ pack: { id: "a" }, i }));
+    const t0 = performance.now();
+    expect(interleave(one as never)).toHaveLength(50_000);
+    expect(performance.now() - t0).toBeLessThan(500);
+  });
+});

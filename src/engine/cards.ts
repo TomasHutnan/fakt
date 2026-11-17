@@ -179,14 +179,25 @@ export function buildDeck(packs: Pack[], filter: DeckFilter, rng: Rng): DeckEntr
   return [...interleave(shuffle(rng, fresh)), ...interleave(shuffle(rng, used))];
 }
 
-/** Avoid two questions from the same pack in a row where possible. */
-function interleave(entries: DeckEntry[]): DeckEntry[] {
+/**
+ * Avoid two questions from the same pack in a row where possible: always take the
+ * earliest entry from another pack than the last one. Linear: the entries skipped
+ * on the way are all from one pack and wait in `held` (in order).
+ */
+export function interleave(entries: DeckEntry[]): DeckEntry[] {
   const out: DeckEntry[] = [];
-  const rest = entries.slice();
-  while (rest.length) {
+  const held: DeckEntry[] = [];
+  let h = 0;
+  let next = 0;
+  while (out.length < entries.length) {
     const last = out[out.length - 1]?.pack.id;
-    const i = rest.findIndex((e) => e.pack.id !== last);
-    out.push(...rest.splice(i === -1 ? 0 : i, 1));
+    if (h < held.length && held[h].pack.id !== last) {
+      out.push(held[h++]);
+      continue;
+    }
+    while (next < entries.length && entries[next].pack.id === last) held.push(entries[next++]);
+    if (next < entries.length) out.push(entries[next++]);
+    else out.push(held[h++]);
   }
   return out;
 }

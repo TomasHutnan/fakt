@@ -122,8 +122,10 @@ export class RoomClient {
       }
       this.onMessage(msg);
     };
-    ws.onclose = () => {
+    ws.onclose = (e) => {
       if (this.ws !== ws) return;
+      // Closed for sending too fast: wait the longest before trying again.
+      if (e.code === 4429) this.retries = 10;
       this.ws = null;
       if (this.pingTimer) clearInterval(this.pingTimer);
       this.set({ status: "closed" });

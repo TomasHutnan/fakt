@@ -418,6 +418,13 @@ describe("playing through the hub", () => {
     expect(c.lastError).toBe("badPacks");
   });
 
+  it("refuses packs that are too big before validating them", () => {
+    const many = { ...PACK, id: "many", questions: Array.from({ length: 2001 }, (_, i) => ({ ...PACK.questions[0], id: `q${i}` })) };
+    const c = new FakeConn(hub, "6.6.6.6");
+    c.msg({ t: "create", v: PROTOCOL, name: "J", settings: { ...SETTINGS, packIds: ["many"] }, packs: [many], seen: [] });
+    expect(c.lastError).toBe("badPacks");
+  });
+
   it("validates a pack with many options quickly", () => {
     const big = { ...PACK, id: "big", questions: [{ ...PACK.questions[0], correct: Array.from({ length: 30_000 }, (_, i) => ({ text: `o${i}`, why: "w" })) }] };
     const t = performance.now();
@@ -562,6 +569,24 @@ describe("housekeeping", () => {
 });
 
 describe("snapshots from disk", () => {
+  it("stores each pack once and restores old snapshots with packs inside rooms", () => {
+    const a = create(hub);
+    const b = create(hub, "Zuzka");
+    const snap = JSON.parse(JSON.stringify(hub.snapshot()));
+    expect(Object.keys(snap.packs)).toHaveLength(1);
+    expect(snap.rooms[0].packs).toBeUndefined();
+    const h = new Hub({}, snap);
+    expect(h.roomCount).toBe(2);
+    expect(h.storedPackBytes).toBe(hub.storedPackBytes);
+    // The format before shared packs.
+    const old = { savedAt: 0, rooms: snap.rooms.map((r: { packKeys: string[] }) => ({ ...r, packKeys: undefined, packs: r.packKeys.map((k) => snap.packs[k]) })) };
+    const h2 = new Hub({}, old);
+    expect(h2.room(a.seat!.code)).toBeDefined();
+    expect(h2.room(b.seat!.code)).toBeDefined();
+    h.close();
+    h2.close();
+  });
+
   it("skips broken rooms instead of failing to start", () => {
     const good = create(hub);
     const snap = JSON.parse(JSON.stringify(hub.snapshot()));
