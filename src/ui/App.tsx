@@ -183,7 +183,6 @@ export function App() {
       difficulties: s.difficulties,
       packIds: activeIds,
       pace: s.pace,
-      doubleFinal: s.doubleFinal,
       lastPicks: s.lastPicks,
     };
     setSetupError(null);
@@ -437,7 +436,6 @@ function loadGame(): GameState | null {
   // Games saved before the per-turn answer setting existed keep the old behaviour.
   if (typeof g.settings!.revealEach !== "boolean") g.settings = { ...g.settings!, revealEach: false };
   // Games saved before the comeback rules play on without them.
-  if (typeof g.settings!.doubleFinal !== "boolean") g.settings = { ...g.settings!, doubleFinal: false };
   if (typeof g.settings!.lastPicks !== "boolean") g.settings = { ...g.settings!, lastPicks: false };
   return g as GameState;
 }

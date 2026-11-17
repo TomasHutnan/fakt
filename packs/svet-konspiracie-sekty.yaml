@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ KONŠPIRÁCIE
   # ---------------------------------------------------------------- pick
@@ -44,7 +44,7 @@ questions:
       - { text: "Birds Aren't Real", why: "Peter McIndoe si ju ako vtip vymyslel v januári 2017 v Memphise." }
       - { text: "Pizzagate", why: "Vyvrátená fáma, ktorá sa rozšírila počas amerických volieb v roku 2016." }
     wrong:
-      - { text: "Paul is dead", why: "Fáma o McCartneyho smrti kolovala od roku 1966 a naplno sa rozšírila v roku 1969." }
+      - { text: "Paul is dead – Paul McCartney zomrel", why: "Fáma o McCartneyho smrti kolovala od roku 1966 a naplno sa rozšírila v roku 1969." }
       - { text: "Bielefeld neexistuje", why: "Prvýkrát ju zverejnil študent Achim Held na Usenete 16. mája 1994." }
       - { text: "Chemtrails", why: "Vznikla koncom 90. rokov po správe amerického letectva o počasí z roku 1996." }
       - { text: "Sfalšované pristátie na Mesiaci", why: "Rôzni ľudia to tvrdia už od polovice 70. rokov." }
@@ -86,7 +86,7 @@ questions:
     wrong:
       - { text: "Birds Aren't Real", why: "Podľa tejto satiry sú vtáky vládne drony, nie mimozemšťania." }
       - { text: "Chemtrails", why: "Podľa teórie stopy za lietadlami rozprašuje vláda, nie mimozemšťania." }
-      - { text: "Paul is dead", why: "Podľa fámy McCartneyho nahradil pozemský dvojník." }
+      - { text: "Paul is dead – Paul McCartney zomrel", why: "Podľa fámy McCartneyho nahradil pozemský dvojník." }
       - { text: "Bielefeld neexistuje", why: "Podľa vtipu mesto vymysleli „oni“, mimozemšťania v pôvodnej verzii nefigurujú." }
       - { text: "Fantómový čas", why: "Podľa Illiga históriu sfalšovali cisár Oto III. a pápež Silvester II." }
       - { text: "QAnon", why: "Tvrdí, že tajnú vojnu vedie Donald Trump proti pozemským elitám." }

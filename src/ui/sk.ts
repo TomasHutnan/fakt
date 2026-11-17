@@ -34,7 +34,7 @@ export const sk = {
     {
       title: "Šanca dobehnúť",
       body: [
-        "Posledné kolo sa ráta dvojnásobne. Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Obe pravidlá sa dajú vypnúť v nastaveniach.",
+        "Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Dá sa to vypnúť v nastaveniach.",
         "Po kole hra prezradí, kto sa na čo chytil, a na konci rozdá tituly.",
       ],
     },
@@ -265,7 +265,6 @@ export const sk = {
   groupOffLabel: (name: string) => `Vypnúť všetky v sekcii ${name}`,
 
   // comeback rules, social lines, titles
-  doubleNow: "Posledné kolo: body ×2",
   packPickLabel: "Posledný vyberá",
   packPickYou: "Si na poslednom mieste, tak vyberáš, odkiaľ bude ďalšia otázka.",
   packPickWait: (name: string) => `${name} je na poslednom mieste a vyberá, odkiaľ bude ďalšia otázka.`,
@@ -309,8 +308,6 @@ export const sk = {
   revealEachOn: "Hneď po ťahu",
   revealEachOff: "Všetkým po kole",
   revealEachHint: "Hneď po ťahu: každý vidí riešenie po svojej odpovedi a po kole sa ukážu už len body. Všetkým po kole: riešenie sa ukáže naraz, keď odpovedia všetci.",
-  doubleFinal: "Posledné kolo za dvojnásobok",
-  doubleFinalHint: "V poslednom kole sa body rátajú dvakrát. Pri hre do cieľového skóre neplatí.",
   lastPicks: "Posledný vyberá balíček",
   lastPicksHint: "Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka.",
   haptics: "Vibrácie",

@@ -37,7 +37,6 @@ export interface RoomSettings {
   difficulties: number[];
   packIds: string[];
   pace: Pace;
-  doubleFinal: boolean;
   lastPicks: boolean;
 }
 
@@ -50,7 +49,6 @@ export const DEFAULT_ROOM_SETTINGS: RoomSettings = {
   difficulties: [1, 2, 3],
   packIds: [],
   pace: "calm",
-  doubleFinal: true,
   lastPicks: true,
 };
 
@@ -417,8 +415,7 @@ function closeQuestion(s: RoomState): RoomState {
     results.push({ playerId: p.id, answer: a, points: 0 });
   }
   const turns: TurnResult[] = results.map((r, i) => ({ player: i, answer: r.answer, points: 0 }));
-  const m = isDouble(s) ? 2 : 1;
-  const points = scoreCard(card, turns, s.settings.wipe, s.players.length).map((p) => p * m);
+  const points = scoreCard(card, turns, s.settings.wipe, s.players.length);
   const scored = results.map((r, i) => ({ ...r, points: points[i] ?? 0 }));
   const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })));
   const round: RoomRound = { ...rec, results: rec.results.map((x) => ({ ...x, playerId: scored[x.player].playerId })) };
@@ -427,11 +424,6 @@ function closeQuestion(s: RoomState): RoomState {
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
   return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: null, ready: [] };
-}
-
-/** The current card counts double: last round of a game with a set number of rounds. */
-export function isDouble(s: RoomState): boolean {
-  return s.settings.doubleFinal && s.settings.target == null && (s.phase === "question" || s.phase === "reveal") && isLastRound(s);
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
@@ -566,8 +558,6 @@ export interface RoomView {
   deadline: number | null;
   mine: MyAnswer | null;
   results: RoomResult[];
-  /** The current card counts double. */
-  double: boolean;
   packChoice: RoomState["packChoice"];
   pickedBy: string | null;
   /** Reveal: remarks about this card; player numbers are indices into `players`. */
@@ -596,7 +586,6 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     deadline: question || s.phase === "choosePack" ? s.deadline : null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
-    double: isDouble(s),
     packChoice: s.phase === "choosePack" ? s.packChoice : null,
     pickedBy: question || reveal ? s.pickedBy : null,
     social: reveal ? roomSocial(s) : [],
@@ -638,6 +627,6 @@ function myAnswer(s: RoomState, id: string): MyAnswer | null {
   if (card?.type !== "pick") return null;
   const picks = a.picks.map((i) => ({ option: i, correct: card.options[i].correct, why: card.options[i].why }));
   const found = picks.filter((p) => p.correct).length;
-  const points = (found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found)) * (isDouble(s) ? 2 : 1);
+  const points = (found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found));
   return { type: "pick", picks, status: a.status, points };
 }

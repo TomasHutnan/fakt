@@ -8,7 +8,6 @@ const errors: string[] = [];
 let compareCards = 0;
 let reportLinks = 0;
 let packPicks = 0;
-let doubles = 0;
 let socialLines = 0;
 
 async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], revealEach: boolean) {
@@ -39,7 +38,6 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       continue;
     }
     if (await page.locator(".handover").count()) {
-      if (await page.locator(".handover__double").count()) doubles++;
       await page.locator(".handover").click();
       continue;
     }
@@ -136,9 +134,8 @@ for (const [mode, players, revealEach] of [
   await page.close();
 }
 await browser.close();
-console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}, pack picks: ${packPicks}, double handovers: ${doubles}, social lines: ${socialLines}`);
+console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}, pack picks: ${packPicks}, social lines: ${socialLines}`);
 if (!packPicks) errors.push("no pack pick seen");
-if (!doubles) errors.push("no double final round seen");
 if (!socialLines) errors.push("no social line seen");
 if (!reportLinks) errors.push("no report link seen");
 if (errors.length) {

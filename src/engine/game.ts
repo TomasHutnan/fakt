@@ -37,8 +37,6 @@ export interface Settings {
   online: boolean;
   /** Time to answer in rooms. */
   pace: "none" | "calm" | "fast";
-  /** Last round counts double (only with a set number of rounds). */
-  doubleFinal: boolean;
   /** Every third round the player in last place picks the pack. */
   lastPicks: boolean;
 }
@@ -56,7 +54,6 @@ export const DEFAULT_SETTINGS: Settings = {
   packIds: [],
   online: false,
   pace: "calm",
-  doubleFinal: true,
   lastPicks: true,
 };
 
@@ -261,13 +258,6 @@ export function reduce(s: GameState, a: Action, packs: Pack[]): GameState {
   }
 }
 
-/** Points multiplier of the current card: 2 in the last round when that rule is on. */
-export function multiplier(s: Pick<GameState, "settings" | "round" | "deck">): number {
-  const { settings } = s;
-  if (!settings.doubleFinal || settings.target != null) return 1;
-  return s.round >= Math.min(settings.rounds, s.deck.length) ? 2 : 1;
-}
-
 /** After a turn: hand over to the next player, or close the round. */
 function advance(s: GameState, packs: Pack[]): GameState {
   if (!isLastTurn(s)) return { ...s, turn: s.turn + 1, phase: "handover", answer: initialAnswer(s.card) };
@@ -319,8 +309,7 @@ function finishTurn(s: GameState, packs: Pack[]): GameState {
 }
 
 function reveal(s: GameState): GameState {
-  const m = multiplier(s);
-  const points = scoreCard(s.card, s.results, s.settings.wipe, s.players.length).map((p) => p * m);
+  const points = scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
   const results = s.results.map((r, i) => ({ ...r, points: points[i] }));
   const players = s.players.map((p, i) => ({
     ...p,

@@ -50,7 +50,7 @@ export function resolvePath(root: string, urlPath: string): string | null {
 const SECURITY_HEADERS: Record<string, string> = {
   "X-Content-Type-Options": "nosniff",
   "Referrer-Policy": "strict-origin-when-cross-origin",
-  "Content-Security-Policy": "frame-ancestors 'none'",
+  "Content-Security-Policy": "frame-ancestors 'self'",
 };
 
 function send(res: ServerResponse, status: number, body: string): void {

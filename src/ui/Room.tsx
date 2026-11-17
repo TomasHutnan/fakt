@@ -6,7 +6,7 @@ import { pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
 import type { ClientState, RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
-import { DoubleNote, PackPicker, SocialList, TitleList } from "./Comeback.tsx";
+import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
 
@@ -282,14 +282,9 @@ function playerName(view: RoomView, id: string | null): string {
   return view.players.find((p) => p.id === id)?.name ?? "?";
 }
 
-/** Notes above a card: double points, who chose the pack. */
+/** Note above a card: who chose the pack. */
 function CardNotes({ view }: { view: RoomView }) {
-  return (
-    <>
-      {view.double && <DoubleNote />}
-      {view.pickedBy && <p class="q__picked">{sk.pickedBy(playerName(view, view.pickedBy))}</p>}
-    </>
-  );
+  return view.pickedBy ? <p class="q__picked">{sk.pickedBy(playerName(view, view.pickedBy))}</p> : null;
 }
 
 function RoomPackPick({ view, send, now, onLeave, banner }: Inner) {
@@ -332,7 +327,7 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
         <CardHead card={card} />
         <CardNotes view={view} />
         <h1 class="q__prompt">{tie(card.prompt)}</h1>
-        {card.type === "pick" && <PickInput card={card} mine={mine?.type === "pick" ? mine : null} send={send} m={view.double ? 2 : 1} />}
+        {card.type === "pick" && <PickInput card={card} mine={mine?.type === "pick" ? mine : null} send={send} />}
         {card.type === "order" &&
           (mine ? <Sent /> : <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => send({ type: "submitOrder", arrangement })} />)}
         {card.type === "number" &&
@@ -361,12 +356,10 @@ function PickInput({
   card,
   mine,
   send,
-  m,
 }: {
   card: Extract<HiddenCard, { type: "pick" }>;
   mine: Extract<MyAnswer, { type: "pick" }> | null;
   send: (a: ClientAction) => void;
-  m: number;
 }) {
   const picks = mine?.picks ?? [];
   const found = picks.filter((p) => p.correct).length;
@@ -378,7 +371,7 @@ function PickInput({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth((found + 1) * m)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
         {card.correctCount != null && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}

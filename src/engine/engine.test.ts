@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
 import { makeCard, numberDecimals, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
-import { currentPlayer, DEFAULT_SETTINGS, multiplier, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
+import { currentPlayer, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
 import { createRng } from "./rng.ts";
 import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
 
@@ -397,21 +397,17 @@ describe("comeback rules on one phone", () => {
     return s;
   };
 
-  it("the last round counts double", () => {
+  it("the last round counts like any other", () => {
     let s = start(["Ana", "Bo"], { rounds: 2, lastPicks: false });
-    expect(multiplier(s)).toBe(1);
     s = round(s, 0);
     expect(s.players[0].score).toBe(1);
     s = reduce(s, { type: "nextRound" }, both);
-    expect(multiplier(s)).toBe(2);
     s = round(s, 0);
-    expect(s.players[0].score).toBe(3);
-    expect(multiplier(start(["Ana"], { rounds: 1, target: 20 }))).toBe(1);
-    expect(multiplier(start(["Ana"], { rounds: 1, doubleFinal: false }))).toBe(1);
+    expect(s.players[0].score).toBe(2);
   });
 
   it("every third round the last player picks the pack", () => {
-    let s = start(["Ana", "Bo", "Cyril"], { rounds: 6, doubleFinal: false });
+    let s = start(["Ana", "Bo", "Cyril"], { rounds: 6 });
     for (let r = 0; r < 2; r++) {
       s = round(s, 0);
       s = reduce(s, { type: "nextRound" }, both);

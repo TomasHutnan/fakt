@@ -511,7 +511,7 @@ export class Hub {
       history: Array.isArray(r.state.history) ? r.state.history : [],
       packChoice: r.state.packChoice ?? null,
       pickedBy: r.state.pickedBy ?? null,
-      settings: { ...r.state.settings, doubleFinal: r.state.settings?.doubleFinal ?? false, lastPicks: r.state.settings?.lastPicks ?? false },
+      settings: { ...r.state.settings, lastPicks: r.state.settings?.lastPicks ?? false },
       players: r.state.players.map((p) => ({ ...p, connected: false })),
     };
     if ((state.phase === "question" || state.phase === "choosePack") && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
@@ -565,8 +565,8 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
   if (s.wipe !== "always" && s.wipe !== "firstFree") return null;
   if (typeof s.showCorrectCount !== "boolean") return null;
   if (!PACES.includes(s.pace as Pace)) return null;
-  // Added after the first release: older clients leave them out.
-  if (s.doubleFinal !== undefined && typeof s.doubleFinal !== "boolean") return null;
+  // Added after the first release: older clients leave it out. (Older clients may
+  // still send doubleFinal, a removed rule; it is ignored.)
   if (s.lastPicks !== undefined && typeof s.lastPicks !== "boolean") return null;
   const diffs = s.difficulties;
   if (!Array.isArray(diffs) || diffs.length === 0 || !diffs.every((d) => d === 1 || d === 2 || d === 3)) return null;
@@ -579,7 +579,6 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
     wipe: s.wipe,
     showCorrectCount: s.showCorrectCount,
     pace: s.pace as Pace,
-    doubleFinal: s.doubleFinal !== false,
     lastPicks: s.lastPicks !== false,
     difficulties: Array.from(new Set(diffs as number[])),
     packIds: Array.from(new Set(ids as string[])),

@@ -13,7 +13,7 @@ A design is a folder `src/designs/<id>/` with two files and nothing else:
 
 Required: light and dark (`@media (prefers-color-scheme: dark)`) unless the design is deliberately single-theme (then set every colour explicitly); visible `:focus-visible`; tap targets ≥ 44 px; respect `prefers-reduced-motion`; correct/wrong states must not rely on colour alone where it matters (reveal uses ✓ or similar).
 
-`src/designs/zaklad/` is the reference implementation: copy its selector list and restyle every rule.
+`src/designs/kartoteka/` (the default) is the reference implementation: copy its selector list and restyle every rule.
 
 ## Class vocabulary
 

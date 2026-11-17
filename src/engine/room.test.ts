@@ -694,36 +694,23 @@ describe("comeback rules in rooms", () => {
   const TWO = [makePack("t"), makePack("u")];
   const sim3 = (patch: Partial<RoomSettings> = {}) => new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 6, packIds: ["t", "u"], pace: "calm", ...patch }, TWO);
 
-  it("the last round counts double, for scores and the pick preview", () => {
+  it("the last round counts like any other, for scores and the pick preview", () => {
     const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false });
     sim.act("h", { type: "start" });
-    expect(viewFor(sim.s, "h").double).toBe(false);
     const first = pickPoints((sim.s.card as PickCard).correctCount);
     sim.answerAll("best");
     sim.act("h", { type: "next" });
     expect(sim.s.round).toBe(2);
-    const v = viewFor(sim.s, "h");
-    expect(v.double).toBe(true);
     const card = sim.s.card as PickCard;
     sim.act("h", { type: "pick", option: card.options.findIndex((o) => o.correct) });
-    expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 2 });
+    expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 1 });
     sim.answerAll("best");
-    const second = pickPoints(card.correctCount) * 2;
+    const second = pickPoints(card.correctCount);
     expect(sim.s.players.map((p) => p.score)).toEqual([first + second, first + second]);
   });
 
-  it("no double round when it is switched off or the game runs to a target", () => {
-    for (const patch of [{ doubleFinal: false }, { target: 30, rounds: 2 }] as Partial<RoomSettings>[]) {
-      const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false, ...patch });
-      sim.act("h", { type: "start" });
-      sim.answerAll("best");
-      sim.act("h", { type: "next" });
-      expect(viewFor(sim.s, "h").double).toBe(false);
-    }
-  });
-
   it("every third round the last player picks the pack of the next card", () => {
-    const sim = sim3({ doubleFinal: false });
+    const sim = sim3();
     sim.act("h", { type: "start" });
     // Jano scores, the others bust: two rounds.
     for (let r = 0; r < 2; r++) {
@@ -757,7 +744,7 @@ describe("comeback rules in rooms", () => {
   });
 
   it("the controller picks for an absent chooser, and time runs out to the first pack", () => {
-    const sim = sim3({ doubleFinal: false });
+    const sim = sim3();
     sim.act("h", { type: "start" });
     for (let r = 0; r < 2; r++) {
       sim.answerAll("best");
