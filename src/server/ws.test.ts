@@ -10,7 +10,7 @@ import { PACK } from "./rooms.test.ts";
 import { attachRooms } from "./ws.ts";
 
 const ORIGIN = "https://fakt.test";
-const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 2, packIds: ["t"], doubleFinal: false, lastPicks: false };
+const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 2, packIds: ["t"], lastPicks: false };
 
 let server: Server;
 let hub: Hub;

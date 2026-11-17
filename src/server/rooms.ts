@@ -360,7 +360,8 @@ export class Hub {
     c.watcher = true;
     room.clients.add(c);
     this.send(c, { t: "seat", code: room.state.code, id: null, token: null });
-    this.pushView(room, c);
+    // Phones show the standings only while no big screen does.
+    for (const x of room.clients) this.pushView(room, x);
   }
 
   private seat(c: Client, room: Room, playerId: string, token?: string): void {
@@ -390,6 +391,7 @@ export class Hub {
     if (!room) return;
     room.clients.delete(c);
     c.room = null;
+    if (c.watcher) for (const x of room.clients) this.pushView(room, x);
     if (c.playerId && ![...room.clients].some((x) => x.playerId === c.playerId)) {
       this.dispatch(room, { type: "connect", id: c.playerId, connected: false });
     }
@@ -421,12 +423,12 @@ export class Hub {
     }
   }
 
-  /** One timer per room, for the question deadline. */
+  /** One timer per room, for the deadline of a question, a pack pick or the answers on show. */
   private schedule(room: Room): void {
     if (room.timer) clearTimeout(room.timer);
     room.timer = null;
     const { phase, deadline } = room.state;
-    if ((phase !== "question" && phase !== "choosePack") || deadline == null) return;
+    if ((phase !== "question" && phase !== "choosePack" && phase !== "reveal") || deadline == null) return;
     const wait = Math.max(0, deadline + GRACE_MS + 5 - Date.now());
     room.timer = setTimeout(() => {
       room.timer = null;
@@ -438,7 +440,9 @@ export class Hub {
   }
 
   private pushView(room: Room, c: Client): void {
-    const view = JSON.stringify(viewFor(room.state, c.playerId));
+    let screens = 0;
+    for (const x of room.clients) if (x.watcher) screens++;
+    const view = JSON.stringify({ ...viewFor(room.state, c.playerId), screens });
     if (view === c.lastView) return;
     c.lastView = view;
     c.conn.send(`{"t":"view","now":${Date.now()},"view":${view}}`);
@@ -511,10 +515,11 @@ export class Hub {
       history: Array.isArray(r.state.history) ? r.state.history : [],
       packChoice: r.state.packChoice ?? null,
       pickedBy: r.state.pickedBy ?? null,
-      settings: { ...r.state.settings, doubleFinal: r.state.settings?.doubleFinal ?? false, lastPicks: r.state.settings?.lastPicks ?? false },
+      tiebreak: r.state.tiebreak ?? null,
+      settings: { ...r.state.settings, lastPicks: r.state.settings?.lastPicks ?? false },
       players: r.state.players.map((p) => ({ ...p, connected: false })),
     };
-    if ((state.phase === "question" || state.phase === "choosePack") && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
+    if ((state.phase === "question" || state.phase === "choosePack" || state.phase === "reveal") && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
     const interned = this.intern(packs as Pack[]);
     if (!interned) return;
     const room: Room = {
@@ -565,8 +570,8 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
   if (s.wipe !== "always" && s.wipe !== "firstFree") return null;
   if (typeof s.showCorrectCount !== "boolean") return null;
   if (!PACES.includes(s.pace as Pace)) return null;
-  // Added after the first release: older clients leave them out.
-  if (s.doubleFinal !== undefined && typeof s.doubleFinal !== "boolean") return null;
+  // Added after the first release: older clients leave it out. (Older clients may
+  // still send doubleFinal, a removed rule; it is ignored.)
   if (s.lastPicks !== undefined && typeof s.lastPicks !== "boolean") return null;
   const diffs = s.difficulties;
   if (!Array.isArray(diffs) || diffs.length === 0 || !diffs.every((d) => d === 1 || d === 2 || d === 3)) return null;
@@ -579,7 +584,6 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
     wipe: s.wipe,
     showCorrectCount: s.showCorrectCount,
     pace: s.pace as Pace,
-    doubleFinal: s.doubleFinal !== false,
     lastPicks: s.lastPicks !== false,
     difficulties: Array.from(new Set(diffs as number[])),
     packIds: Array.from(new Set(ids as string[])),

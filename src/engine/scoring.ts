@@ -4,7 +4,8 @@ import type { NumberCard, OrderCard, PickCard } from "./cards.ts";
 
 export const POINTS = {
   orderPerPosition: 2,
-  orderPerfectBonus: 2,
+  /** No bonus for a perfect order: with 4 items 3/4 is impossible, so 4/4 was already a big jump. */
+  orderPerfectBonus: 0,
   choice: 4,
   /** "Which is more": a coin flip if you know nothing, so worth less. */
   compare: 2,

@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
 import { makeCard, numberDecimals, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
-import { currentPlayer, DEFAULT_SETTINGS, multiplier, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
+import { currentPlayer, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
 import { createRng } from "./rng.ts";
+import { packOptions } from "./comeback.ts";
+import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
 import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
 
 const opt = (text: string) => ({ text, why: `${text} why` });
@@ -202,9 +204,23 @@ describe("game flow", () => {
       s = reduce(s, { type: "pick", option: s.card.options.findIndex((o) => !o.correct) }, [pack]);
       s = reduce(s, { type: "endTurn" }, [pack]);
     }
+    // 1 : 1 — a tie-break: one number card for both, the closest guess wins a point.
+    s = reduce(s, { type: "nextRound" }, [pack]);
+    expect(s.tiebreak).toEqual({ players: [0, 1] });
+    expect(s.card.type).toBe("number");
+    expect(s.phase).toBe("handover");
+    if (s.card.type !== "number") throw new Error();
+    const answer = s.card.answer;
+    for (const value of [answer, answer * 5]) {
+      s = reduce(s, { type: "continue" }, [pack]);
+      s = reduce(s, { type: "submitNumber", value }, [pack]);
+      s = reduce(s, { type: "endTurn" }, [pack]);
+    }
+    expect(s.phase).toBe("reveal");
+    expect(s.players.map((p) => p.score)).toEqual([2, 1]);
     s = reduce(s, { type: "nextRound" }, [pack]);
     expect(s.phase).toBe("over");
-    expect(s.played).toHaveLength(2);
+    expect(s.played).toHaveLength(3);
   });
 
   it("ends a turn automatically when all correct options are found", () => {
@@ -397,21 +413,17 @@ describe("comeback rules on one phone", () => {
     return s;
   };
 
-  it("the last round counts double", () => {
+  it("the last round counts like any other", () => {
     let s = start(["Ana", "Bo"], { rounds: 2, lastPicks: false });
-    expect(multiplier(s)).toBe(1);
     s = round(s, 0);
     expect(s.players[0].score).toBe(1);
     s = reduce(s, { type: "nextRound" }, both);
-    expect(multiplier(s)).toBe(2);
     s = round(s, 0);
-    expect(s.players[0].score).toBe(3);
-    expect(multiplier(start(["Ana"], { rounds: 1, target: 20 }))).toBe(1);
-    expect(multiplier(start(["Ana"], { rounds: 1, doubleFinal: false }))).toBe(1);
+    expect(s.players[0].score).toBe(2);
   });
 
   it("every third round the last player picks the pack", () => {
-    let s = start(["Ana", "Bo", "Cyril"], { rounds: 6, doubleFinal: false });
+    let s = start(["Ana", "Bo", "Cyril"], { rounds: 6 });
     for (let r = 0; r < 2; r++) {
       s = round(s, 0);
       s = reduce(s, { type: "nextRound" }, both);
@@ -449,10 +461,88 @@ describe("comeback rules on one phone", () => {
     let s = start(["Ana", "Bo"], { rounds: 2, lastPicks: false });
     s = round(s, 0);
     s = reduce(s, { type: "nextRound" }, both);
-    s = round(s, 1);
+    s = round(s, 0);
     s = reduce(s, { type: "nextRound" }, both);
     expect(s.phase).toBe("over");
     expect(s.history).toHaveLength(2);
     expect(s.history![0].results.map((r) => r.status)).toEqual(["banked", "busted"]);
+  });
+});
+
+describe("tie-break", () => {
+  const numberCard = { answer: 100, scale: "linear" as const, tolerance: 10 };
+  const classic = (players: string[], packs: Pack[]) =>
+    newGame({ players, settings: { ...DEFAULT_SETTINGS, mode: "classic", rounds: 1, lastPicks: false, packIds: packs.map((p) => p.id) }, packs, seen: new Set(), seed: 3 })!;
+  /** Everyone busts on the current pick card. */
+  const bustAll = (s: GameState, packs: Pack[]) => {
+    for (let t = 0; t < s.order.length; t++) {
+      s = reduce(s, { type: "continue" }, packs);
+      s = reduce(s, { type: "pick", option: (s.card as PickCard).options.findIndex((o) => !o.correct) }, packs);
+      s = reduce(s, { type: "endTurn" }, packs);
+    }
+    return reduce(s, { type: "nextRound" }, packs);
+  };
+
+  it("finds the tied leaders", () => {
+    expect(tiedLeaders([3, 5, 5, 1])).toEqual([1, 2]);
+    expect(tiedLeaders([3, 5, 4])).toEqual([]);
+    expect(tiedLeaders([2])).toEqual([]);
+  });
+
+  it("gives a point to the closest guess only; equally close guesses keep the tie", () => {
+    expect(tiebreakPoints(numberCard, [90, 130, NaN])).toEqual([1, 0, 0]);
+    expect(tiebreakPoints(numberCard, [90, 110])).toEqual([1, 1]);
+    expect(tiebreakPoints(numberCard, [NaN, NaN])).toEqual([0, 0]);
+  });
+
+  it("takes the next number card in the deck, else one from the packs not played yet", () => {
+    expect(tiebreakKey(["test/p1", "test/n1"], 0, [pack], ["test"], [], 1)).toBe("test/n1");
+    expect(tiebreakKey(["test/p1"], 0, [pack], ["test"], [], 1)).toBe("test/n1");
+    // Only played ones left: one of them rather than none.
+    expect(tiebreakKey([], 0, [pack], ["test"], ["test/n1"], 1)).toBe("test/n1");
+    expect(tiebreakKey([], 0, [pack], [], [], 1)).toBeNull();
+  });
+
+  it("only the tied leaders play it, and the game ends after it either way", () => {
+    let s = classic(["Ana", "Bo", "Cyril"], [pack]);
+    // Round 1: Ana and Cyril score 1, Bo busts.
+    for (let t = 0; t < 3; t++) {
+      s = reduce(s, { type: "continue" }, [pack]);
+      const card = s.card as PickCard;
+      const ok = currentPlayer(s) !== 1;
+      s = reduce(s, { type: "pick", option: card.options.findIndex((o) => o.correct === ok) }, [pack]);
+      if (ok) s = reduce(s, { type: "bank" }, [pack]);
+      s = reduce(s, { type: "endTurn" }, [pack]);
+    }
+    s = reduce(s, { type: "nextRound" }, [pack]);
+    expect(s.tiebreak).toEqual({ players: [0, 2] });
+    expect(s.order).toEqual([0, 2]);
+    // Both exactly right: still a tie, the game ends anyway.
+    for (let t = 0; t < 2; t++) {
+      s = reduce(s, { type: "continue" }, [pack]);
+      s = reduce(s, { type: "submitNumber", value: (s.card as NumberCard).answer }, [pack]);
+      s = reduce(s, { type: "endTurn" }, [pack]);
+    }
+    expect(s.players.map((p) => p.score)).toEqual([2, 0, 2]);
+    s = reduce(s, { type: "nextRound" }, [pack]);
+    expect(s.phase).toBe("over");
+    expect(standings(s.players).filter((e) => e.rank === 1)).toHaveLength(2);
+  });
+
+  it("no tie-break without a number question, alone, or with a clear winner", () => {
+    const picksOnly: Pack = { ...pack, id: "picks", questions: pack.questions.filter((q) => q.type === "pick") };
+    expect(bustAll(classic(["Ana", "Bo"], [picksOnly]), [picksOnly]).phase).toBe("over");
+    expect(bustAll(classic(["Solo"], [pack]), [pack]).phase).toBe("over");
+  });
+});
+
+describe("pack pick options", () => {
+  it("leaves out packs that are gone before choosing three", () => {
+    const deck = ["a/1", "b/1", "c/1", "d/1"];
+    for (let round = 3; round < 30; round += 3) {
+      const options = packOptions(deck, 0, 9, round, (id) => id !== "a");
+      expect(options).toHaveLength(3);
+      expect(options).not.toContain("a");
+    }
   });
 });

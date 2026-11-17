@@ -1,27 +1,29 @@
 import { createRng, shuffle } from "./rng.ts";
 
-// Catch-up rules shared by one-phone games and rooms: the last round counts
-// double, and every third round the player in last place picks the pack.
+// Catch-up rule shared by one-phone games and rooms: every third round the
+// player in last place picks the pack.
 
 export const PACK_PICK_EVERY = 3;
 export const PACK_PICK_OPTIONS = 3;
 
 export interface ComebackSettings {
-  /** Last round counts double (games with a set number of rounds). */
-  doubleFinal: boolean;
   /** Every third round the last player picks the pack of the next card. */
   lastPicks: boolean;
 }
 
-export const DEFAULT_COMEBACK: ComebackSettings = { doubleFinal: true, lastPicks: true };
+export const DEFAULT_COMEBACK: ComebackSettings = { lastPicks: true };
 
 export function isPackPickRound(round: number): boolean {
   return round > 1 && round % PACK_PICK_EVERY === 0;
 }
 
-/** Up to three different packs that still have cards in the deck from `pos` on, in a seeded order. */
-export function packOptions(deck: string[], pos: number, seed: number, round: number): string[] {
-  const ids = Array.from(new Set(deck.slice(pos).map((k) => k.split("/")[0])));
+/**
+ * Up to three different packs that still have cards in the deck from `pos` on, in a seeded
+ * order. `available` drops packs that are gone (an imported pack removed mid-game) before
+ * the three are chosen, so the others can take their place.
+ */
+export function packOptions(deck: string[], pos: number, seed: number, round: number, available: (id: string) => boolean = () => true): string[] {
+  const ids = Array.from(new Set(deck.slice(pos).map((k) => k.split("/")[0]))).filter(available);
   return shuffle(createRng((seed ^ 0x2f6b) + round * 101), ids).slice(0, PACK_PICK_OPTIONS);
 }
 

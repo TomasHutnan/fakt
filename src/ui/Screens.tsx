@@ -113,7 +113,7 @@ export function Home(props: {
   );
 }
 
-function Segmented<T extends string | number>(props: {
+export function Segmented<T extends string | number>(props: {
   id: string;
   label: string;
   value: T;
@@ -574,18 +574,6 @@ export function SettingsScreen(props: {
           onChange={(v) => props.onSettings({ ...s, showCorrectCount: v === "on" })}
         />
         <p class="field__hint">{sk.showCorrectCountHint}</p>
-
-        <Segmented<string>
-          id="double-final"
-          label={sk.doubleFinal}
-          value={s.doubleFinal ? "on" : "off"}
-          options={[
-            { value: "on", label: sk.on },
-            { value: "off", label: sk.off },
-          ]}
-          onChange={(v) => props.onSettings({ ...s, doubleFinal: v === "on" })}
-        />
-        <p class="field__hint">{sk.doubleFinalHint}</p>
 
         <Segmented<string>
           id="last-picks"

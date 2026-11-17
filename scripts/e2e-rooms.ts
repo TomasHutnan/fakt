@@ -15,6 +15,8 @@ const log = (...a: unknown[]) => console.log(...a);
 
 async function phone(b: Browser, label: string, viewport = { width: 390, height: 844 }): Promise<Page> {
   const ctx = await b.newContext({ viewport });
+  // Reports and ratings never reach the real form.
+  await ctx.route("https://docs.google.com/forms/**", (r) => r.fulfill({ status: 200, body: "" }));
   const page = await ctx.newPage();
   page.on("pageerror", (e) => errors.push(`${label}: ${e.message}`));
   page.on("console", (m) => {
@@ -50,7 +52,6 @@ async function joinByLink(p: Page, code: string, name: string) {
 
 /** One step for one phone on whatever its screen shows; returns false when nothing to do. */
 let packPicks = 0;
-let doubles = 0;
 let socialLines = 0;
 
 async function step(p: Page): Promise<boolean> {
@@ -62,7 +63,6 @@ async function step(p: Page): Promise<boolean> {
     return true;
   }
   if (await p.locator(".q--packpick").count()) return false;
-  if (await p.locator(".double-note").count()) doubles++;
   const reveal = p.locator(".q--reveal .actions .btn--primary:not([disabled])");
   if (await reveal.count()) {
     socialLines += await p.locator(".social__line").count();
@@ -190,9 +190,8 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
 await playRoom("Mix", "Bez limitu");
 await playRoom("Klasika", "Rýchlo");
 await browser.close();
-log(`pack picks: ${packPicks}, double-round screens: ${doubles}, social lines: ${socialLines}`);
+log(`pack picks: ${packPicks}, social lines: ${socialLines}`);
 if (!packPicks) errors.push("no pack pick seen");
-if (!doubles) errors.push("no double round seen");
 if (!socialLines) errors.push("no social line seen");
 if (errors.length) {
   console.log(`FAILED:\n${errors.join("\n")}`);

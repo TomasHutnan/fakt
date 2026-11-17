@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Pack } from "../content/types.ts";
-import type { Card, OrderCard, PickCard } from "./cards.ts";
+import type { Card, NumberCard, OrderCard, PickCard } from "./cards.ts";
 import { DEFAULT_SETTINGS, newGame } from "./game.ts";
 import {
   allAnswered,
@@ -12,6 +12,7 @@ import {
   joinError,
   MAX_PLAYERS,
   reduceRoom,
+  REVEAL_SECONDS,
   viewFor,
   type ClientAction,
   type RoomSettings,
@@ -318,6 +319,20 @@ describe("room questions", () => {
     expect(sim.s).toBe(before);
   });
 
+  it("with a pace the answers stay up for a while, then the room moves on", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast" });
+    sim.act("h", { type: "start" });
+    sim.answerAll("best");
+    expect(sim.s.phase).toBe("reveal");
+    expect(sim.s.deadline).toBe(sim.now + REVEAL_SECONDS.fast.pick * 1000);
+    expect(viewFor(sim.s, "h").deadline).toBe(sim.s.deadline);
+    sim.advance(REVEAL_SECONDS.fast.pick * 1000);
+    expect(sim.s.phase).toBe("reveal");
+    sim.advance(GRACE_MS + 1);
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.round).toBe(2);
+  });
+
   it("without a time limit the question waits; the controller can close it", () => {
     const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "none" });
     sim.act("h", { type: "start" });
@@ -327,6 +342,10 @@ describe("room questions", () => {
     sim.act("p1", { type: "close" });
     expect(sim.s.phase).toBe("question");
     sim.act("h", { type: "close" });
+    expect(sim.s.phase).toBe("reveal");
+    // The answers wait too.
+    expect(sim.s.deadline).toBeNull();
+    sim.advance(10 * 60 * 1000);
     expect(sim.s.phase).toBe("reveal");
   });
 
@@ -482,7 +501,10 @@ describe("room rounds and game end", () => {
     while (sim.s.phase !== "over") {
       keys.push(sim.s.card!.key);
       expect(viewFor(sim.s, "h").lastRound).toBe(sim.s.round === 5);
-      sim.answerAll(sim.s.round % 2 ? "best" : "worst");
+      // Jano wins (no tie-break).
+      const card = sim.s.card!;
+      answerOne(sim, "h", card, sim.s.round % 2 ? "best" : "worst");
+      if (sim.s.phase === "question") answerOne(sim, "p1", card, "worst");
       for (const id of sim.ids) sim.act(id, { type: "ready" });
     }
     expect(keys).toHaveLength(5);
@@ -531,12 +553,46 @@ describe("room rounds and game end", () => {
     sim.act("h", { type: "start", seed: 7 });
     const second: string[] = [];
     while (sim.s.phase !== "over") {
-      second.push(sim.s.card!.key);
+      // The tie-break card may come again (the test packs have one number question).
+      if (!sim.s.tiebreak) second.push(sim.s.card!.key);
       sim.act("h", { type: "close" });
       sim.act("h", { type: "next" });
     }
     // 6 pick questions: the second game of 3 uses the other 3.
     expect(second.filter((k) => first.includes(k))).toEqual([]);
+  });
+
+  it("a tie for first goes to a tie-break that only the tied leaders answer", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    answerOne(sim, "p2", card, "worst");
+    expect(viewFor(sim.s, "p2").lastRound).toBe(true);
+    sim.act("h", { type: "next" });
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.tiebreak).toEqual(["h", "p1"]);
+    expect(sim.s.card!.type).toBe("number");
+    expect(viewFor(sim.s, "p2").tiebreak).toEqual(["h", "p1"]);
+    const n = sim.s.card as NumberCard;
+    // Miro is out of it: his answer is ignored and nobody waits for him.
+    const before = sim.s;
+    sim.act("p2", { type: "submitNumber", value: n.answer });
+    expect(sim.s).toBe(before);
+    sim.act("h", { type: "submitNumber", value: n.answer * 3 });
+    sim.act("p1", { type: "submitNumber", value: n.answer });
+    expect(sim.s.phase).toBe("reveal");
+    expect(sim.s.results.map((r) => [r.playerId, r.points])).toEqual([
+      ["h", 0],
+      ["p1", 1],
+    ]);
+    sim.act("h", { type: "next" });
+    expect(sim.s.phase).toBe("over");
+    expect(viewFor(sim.s, "h").tiebreak).toEqual(["h", "p1"]);
+    // A new game starts without it.
+    sim.act("h", { type: "again", seed: 3 });
+    expect(sim.s.tiebreak).toBeNull();
   });
 
   it("is deterministic for a seed", () => {
@@ -670,7 +726,9 @@ describe("room fuzz", () => {
         sim.act(sim.ids[0], { type: sim.s.phase === "question" ? "close" : "next" });
       }
       expect(sim.s.phase).toBe("over");
-      expect(new Set(sim.s.played).size).toBe(sim.s.played.length);
+      // A tie-break may reuse a number card when the packs have no other.
+      const regular = sim.s.tiebreak ? sim.s.played.slice(0, -1) : sim.s.played;
+      expect(new Set(regular).size).toBe(regular.length);
     }
   });
 });
@@ -694,36 +752,23 @@ describe("comeback rules in rooms", () => {
   const TWO = [makePack("t"), makePack("u")];
   const sim3 = (patch: Partial<RoomSettings> = {}) => new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 6, packIds: ["t", "u"], pace: "calm", ...patch }, TWO);
 
-  it("the last round counts double, for scores and the pick preview", () => {
+  it("the last round counts like any other, for scores and the pick preview", () => {
     const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false });
     sim.act("h", { type: "start" });
-    expect(viewFor(sim.s, "h").double).toBe(false);
     const first = pickPoints((sim.s.card as PickCard).correctCount);
     sim.answerAll("best");
     sim.act("h", { type: "next" });
     expect(sim.s.round).toBe(2);
-    const v = viewFor(sim.s, "h");
-    expect(v.double).toBe(true);
     const card = sim.s.card as PickCard;
     sim.act("h", { type: "pick", option: card.options.findIndex((o) => o.correct) });
-    expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 2 });
+    expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 1 });
     sim.answerAll("best");
-    const second = pickPoints(card.correctCount) * 2;
+    const second = pickPoints(card.correctCount);
     expect(sim.s.players.map((p) => p.score)).toEqual([first + second, first + second]);
   });
 
-  it("no double round when it is switched off or the game runs to a target", () => {
-    for (const patch of [{ doubleFinal: false }, { target: 30, rounds: 2 }] as Partial<RoomSettings>[]) {
-      const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false, ...patch });
-      sim.act("h", { type: "start" });
-      sim.answerAll("best");
-      sim.act("h", { type: "next" });
-      expect(viewFor(sim.s, "h").double).toBe(false);
-    }
-  });
-
   it("every third round the last player picks the pack of the next card", () => {
-    const sim = sim3({ doubleFinal: false });
+    const sim = sim3();
     sim.act("h", { type: "start" });
     // Jano scores, the others bust: two rounds.
     for (let r = 0; r < 2; r++) {
@@ -757,7 +802,7 @@ describe("comeback rules in rooms", () => {
   });
 
   it("the controller picks for an absent chooser, and time runs out to the first pack", () => {
-    const sim = sim3({ doubleFinal: false });
+    const sim = sim3();
     sim.act("h", { type: "start" });
     for (let r = 0; r < 2; r++) {
       sim.answerAll("best");

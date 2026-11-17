@@ -19,6 +19,7 @@
   --accent-ink: #fbfcfd;
   --good: #1f6b37;
   --good-bg: #eaf4ec;
+  --good-soft: #9cc9a8;
   --bad: #b02a22;
   --bad-bg: #fbeceb;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
@@ -40,6 +41,7 @@
     --accent-ink: #0c1f3a;
     --good: #93e0a8;
     --good-bg: #163f3a;
+    --good-soft: #3e7a5b;
     --bad: #ffa59b;
     --bad-bg: #3d2a45;
     color-scheme: dark;
@@ -251,6 +253,8 @@
 
 [data-design="kartoteka"] .opt--correct { background: var(--good-bg); border-color: var(--good); }
 [data-design="kartoteka"] .opt--wrong { background: var(--bad-bg); border-color: var(--bad); }
+/* Correct options nobody picked: a lighter outline so the picked ones stand out. */
+[data-design="kartoteka"] .options--answered .opt.opt--missed { border-color: var(--good-soft); }
 [data-design="kartoteka"] .opt--wrong .opt__text {
   text-decoration: line-through; text-decoration-color: var(--bad); text-decoration-thickness: 2px;
 }

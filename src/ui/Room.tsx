@@ -6,7 +6,8 @@ import { pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
 import type { ClientState, RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
-import { DoubleNote, PackPicker, SocialList, TitleList } from "./Comeback.tsx";
+import { QuickSettings } from "./QuickSettings.tsx";
+import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
 
@@ -190,6 +191,7 @@ function Lobby({ view, send, onLeave, banner }: Inner) {
     <div class="screen screen--room screen--lobby">
       <header class="topbar">
         <span class="topbar__title">{sk.roomCode}</span>
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -282,12 +284,21 @@ function playerName(view: RoomView, id: string | null): string {
   return view.players.find((p) => p.id === id)?.name ?? "?";
 }
 
-/** Notes above a card: double points, who chose the pack. */
+function roundLabel(view: RoomView): string {
+  return view.tiebreak ? sk.tiebreakRound : sk.round(view.round, view.totalRounds);
+}
+
+/** Players who answer the current card: everyone, or the tied leaders in a tie-break. */
+function answering(view: RoomView, id: string | null): boolean {
+  return !view.tiebreak || (id != null && view.tiebreak.includes(id));
+}
+
+/** Notes above a card: who chose the pack, who plays the tie-break. */
 function CardNotes({ view }: { view: RoomView }) {
   return (
     <>
-      {view.double && <DoubleNote />}
       {view.pickedBy && <p class="q__picked">{sk.pickedBy(playerName(view, view.pickedBy))}</p>}
+      {view.tiebreak && <p class="q__tiebreak">{sk.tiebreakNote(sk.names(view.tiebreak.map((id) => playerName(view, id))))}</p>}
     </>
   );
 }
@@ -300,9 +311,10 @@ function RoomPackPick({ view, send, now, onLeave, banner }: Inner) {
   const name = chooser?.name ?? "?";
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
-        <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+      <header class="topbar topbar--sticky">
+        <span class="topbar__title">{roundLabel(view)}</span>
         <Timer view={view} now={now} />
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -322,9 +334,10 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
   const mine = view.mine;
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
-        <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+      <header class="topbar topbar--sticky">
+        <span class="topbar__title">{roundLabel(view)}</span>
         <Timer view={view} now={now} />
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -332,12 +345,18 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
         <CardHead card={card} />
         <CardNotes view={view} />
         <h1 class="q__prompt">{tie(card.prompt)}</h1>
-        {card.type === "pick" && <PickInput card={card} mine={mine?.type === "pick" ? mine : null} send={send} m={view.double ? 2 : 1} />}
-        {card.type === "order" &&
-          (mine ? <Sent /> : <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => send({ type: "submitOrder", arrangement })} />)}
-        {card.type === "number" &&
-          (mine ? <Sent /> : <NumberInput unit={card.unit} decimals={card.decimals} onSubmit={(value) => send({ type: "submitNumber", value })} />)}
-        {card.type === "choice" && <ChoiceInput card={card} mine={mine} send={send} />}
+        {!answering(view, view.you) ? (
+          <p class="notice" role="status">{sk.tiebreakWatch}</p>
+        ) : (
+          <>
+            {card.type === "pick" && <PickInput card={card} mine={mine?.type === "pick" ? mine : null} send={send} />}
+            {card.type === "order" &&
+              (mine ? <Sent /> : <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => send({ type: "submitOrder", arrangement })} />)}
+            {card.type === "number" &&
+              (mine ? <Sent /> : <NumberInput unit={card.unit} decimals={card.decimals} onSubmit={(value) => send({ type: "submitNumber", value })} />)}
+            {card.type === "choice" && <ChoiceInput card={card} mine={mine} send={send} />}
+          </>
+        )}
       </section>
       <Progress view={view} />
       {isController(view) && (
@@ -361,12 +380,10 @@ function PickInput({
   card,
   mine,
   send,
-  m,
 }: {
   card: Extract<HiddenCard, { type: "pick" }>;
   mine: Extract<MyAnswer, { type: "pick" }> | null;
   send: (a: ClientAction) => void;
-  m: number;
 }) {
   const picks = mine?.picks ?? [];
   const found = picks.filter((p) => p.correct).length;
@@ -378,7 +395,7 @@ function PickInput({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth((found + 1) * m)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
         {card.correctCount != null && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
@@ -438,7 +455,7 @@ function ChoiceInput({ card, mine, send }: { card: Extract<HiddenCard, { type: "
 
 /** Who has answered (never what), plus pick-card drama: who banked, who busted. */
 function Progress({ view }: { view: RoomView }) {
-  const live = view.players.filter((p) => p.connected);
+  const live = view.players.filter((p) => p.connected && (view.phase !== "question" || answering(view, p.id)));
   const done = live.filter((p) => p.done).length;
   const news = view.players.filter((p) => p.id !== view.you && p.pick && p.pick.status !== "playing");
   return (
@@ -461,15 +478,17 @@ function asTurns(view: RoomView): { turns: TurnResult[]; names: (r: TurnResult) 
   return { turns, names: (r) => view.players[r.player]?.name ?? "?" };
 }
 
-function RoomReveal({ view, send, onLeave, banner }: Inner) {
+function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
   const card = view.full!;
   const { turns, names } = asTurns(view);
   const me = view.players.find((p) => p.id === view.you);
   const ready = me?.done ?? false;
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
-        <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+      <header class="topbar topbar--sticky">
+        <span class="topbar__title">{roundLabel(view)}</span>
+        {view.deadline != null && <Timer view={view} now={now} />}
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -480,10 +499,16 @@ function RoomReveal({ view, send, onLeave, banner }: Inner) {
         <CardAnswer card={card} results={turns} names={names} />
         <RoundResults view={view} card={card} turns={turns} />
         <SocialList lines={view.social} name={(i) => view.players[i]?.name ?? "?"} />
+        {!view.screens && view.players.length > 1 && (
+          <section class="standings-now" aria-label={sk.standingsNow}>
+            <h2 class="field__label">{sk.standingsNow}</h2>
+            <Standings view={view} />
+          </section>
+        )}
         <CardFoot card={card} />
         <div class="actions">
           <button type="button" class="btn btn--primary btn--block" disabled={ready} onClick={() => send({ type: "ready" })}>
-            {ready ? sk.waitingOthers : view.lastRound ? sk.finalResults : sk.nextRound}
+            {ready ? sk.waitingOthers : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
           </button>
           <Progress view={view} />
           {isController(view) && ready && (
@@ -537,11 +562,25 @@ function Standings({ view }: { view: RoomView }) {
   );
 }
 
+/** The last card is done and the lead is shared: a tie-break comes next. */
+function toTiebreak(view: RoomView): boolean {
+  if (view.tiebreak || view.players.length < 2) return false;
+  const top = Math.max(...view.players.map((p) => p.score));
+  return view.players.filter((p) => p.score === top).length > 1;
+}
+
 function winnerTitle(view: RoomView): string {
   const top = Math.max(...view.players.map((p) => p.score));
   const winners = view.players.filter((p) => p.score === top);
   if (view.players.length === 1) return sk.pointsNow(top);
   return winners.length > 1 ? sk.tie : sk.winner(winners[0].name);
+}
+
+function TiebreakNote({ view }: { view: RoomView }) {
+  if (!view.tiebreak) return null;
+  const top = Math.max(...view.players.map((p) => p.score));
+  const still = view.players.filter((p) => p.score === top).length > 1;
+  return <p class="over__note">{still ? sk.tiebreakStillTied : sk.tiebreakDecided}</p>;
 }
 
 function RoomOver({ view, send, onLeave, banner }: Inner) {
@@ -551,6 +590,7 @@ function RoomOver({ view, send, onLeave, banner }: Inner) {
       <header class="over__head">
         <span class="over__label">{sk.gameOver}</span>
         <h1 class="over__title">{winnerTitle(view)}</h1>
+        <TiebreakNote view={view} />
       </header>
       <Standings view={view} />
       <TitleList titles={view.titles} name={(i) => view.players[i]?.name ?? "?"} />
@@ -603,7 +643,7 @@ function TvBody({ view, now, banner }: Inner) {
     body = (
       <>
         <header class="topbar">
-          <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+          <span class="topbar__title">{roundLabel(view)}</span>
           <Timer view={view} now={now} />
         </header>
         <PackPicker options={choice.options} lead={sk.packPickWait(playerName(view, choice.chooser))} canChoose={false} onChoose={() => {}} />
@@ -614,7 +654,7 @@ function TvBody({ view, now, banner }: Inner) {
     body = (
       <>
         <header class="topbar">
-          <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+          <span class="topbar__title">{roundLabel(view)}</span>
           <Timer view={view} now={now} />
         </header>
         <section class={`q q--${card.type}`}>
@@ -650,7 +690,8 @@ function TvBody({ view, now, banner }: Inner) {
     body = (
       <>
         <header class="topbar">
-          <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+          <span class="topbar__title">{roundLabel(view)}</span>
+          {view.deadline != null && <Timer view={view} now={now} />}
         </header>
         <section class={`q q--reveal q--${card.type}`}>
           <CardHead card={card} />
@@ -672,6 +713,7 @@ function TvBody({ view, now, banner }: Inner) {
         <header class="over__head">
           <span class="over__label">{sk.gameOver}</span>
           <h1 class="over__title">{winnerTitle(view)}</h1>
+          <TiebreakNote view={view} />
         </header>
         <div class="tv-cols">
           <Standings view={view} />

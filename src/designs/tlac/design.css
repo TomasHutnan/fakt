@@ -64,20 +64,18 @@
   letter-spacing: -0.035em; line-height: 0.95; margin-top: 12px;
 }
 [data-design="tlac"] .brand__tagline { font-size: 17px; line-height: 1.35; color: var(--ink); margin-top: 10px; max-width: 22em; }
-[data-design="tlac"] .menu { gap: 0; }
+[data-design="tlac"] .menu { gap: 12px; }
 [data-design="tlac"] .menu .btn {
   justify-content: flex-start; min-height: 56px; padding: 0;
-  border: 0; border-top: 1px solid var(--rule); background: transparent; color: var(--ink);
+  border: 0; border-bottom: 1px solid var(--rule); background: transparent; color: var(--ink);
   font-size: 19px; font-weight: 600;
 }
-[data-design="tlac"] .menu .btn:last-child { border-bottom: 1px solid var(--rule); }
 [data-design="tlac"] .menu .btn:hover:not(:disabled) { background: transparent; color: var(--signal); }
 [data-design="tlac"] .menu .btn--primary {
   background: var(--ink); color: var(--paper); padding: 0 16px; border-top-color: var(--ink);
   font-weight: 700; margin-bottom: 0;
 }
 [data-design="tlac"] .menu .btn--primary:hover:not(:disabled) { background: var(--signal-fill); color: var(--on-signal); border-top-color: var(--signal-fill); }
-[data-design="tlac"] .menu .btn--primary + .btn { border-top-color: transparent; }
 [data-design="tlac"] .home__stats { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 
 /* ── Buttons ──────────────────────────────────────────── */

@@ -23,7 +23,7 @@ export const PACK: Pack = {
     wrong: ["v", "w", "x", "y", "z", "q"].map(opt),
   })),
 };
-const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"], doubleFinal: false, lastPicks: false };
+const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"], lastPicks: false };
 
 /** A connection that records what the hub sends. */
 class FakeConn {
@@ -213,7 +213,7 @@ describe("cleanSettings", () => {
     expect(cleanSettings({ ...SETTINGS, difficulties: [1, 1, 2], packIds: ["t", "t"] })).toEqual({ ...SETTINGS, difficulties: [1, 2], packIds: ["t"] });
   });
   it("rejects anything odd", () => {
-    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }, { doubleFinal: "yes" }, { lastPicks: 1 }]) {
+    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }, { lastPicks: 1 }]) {
       expect(cleanSettings({ ...SETTINGS, ...patch }), JSON.stringify(patch)).toBeNull();
     }
     expect(cleanSettings(null)).toBeNull();
@@ -291,6 +291,8 @@ describe("big screen", () => {
     expect(tv.seat).toEqual({ t: "seat", code, id: null, token: null });
     expect(tv.view.you).toBeNull();
     expect(tv.view.players).toHaveLength(1);
+    // Phones learn that a big screen shows the standings.
+    expect(host.view.screens).toBe(1);
     join(hub, code, "Zuzka"); // keeps the question open whatever the host picks
     host.act({ type: "start" });
     host.act({ type: "pick", option: 0 });
@@ -312,6 +314,16 @@ describe("big screen", () => {
     const extra = new FakeConn(hub);
     extra.msg({ t: "watch", v: PROTOCOL, code });
     expect(extra.lastError).toBe("full");
+  });
+
+  it("tells the phones when the last big screen leaves", () => {
+    const host = create(hub);
+    expect(host.view.screens).toBe(0);
+    const tv = new FakeConn(hub);
+    tv.msg({ t: "watch", v: PROTOCOL, code: host.seat!.code });
+    expect(host.view.screens).toBe(1);
+    tv.drop();
+    expect(host.view.screens).toBe(0);
   });
 });
 
@@ -596,7 +608,6 @@ describe("snapshots from disk", () => {
       delete r.state.history;
       delete r.state.packChoice;
       delete r.state.pickedBy;
-      delete r.state.settings.doubleFinal;
       delete r.state.settings.lastPicks;
     }
     const h = new Hub({}, snap);
@@ -605,7 +616,6 @@ describe("snapshots from disk", () => {
     expect(() => back.act({ type: "close" })).not.toThrow();
     expect(h.room(code)!.phase).toBe("reveal");
     expect(h.room(code)!.history).toHaveLength(1);
-    expect(back.view.double).toBe(false);
     h.close();
   });
 

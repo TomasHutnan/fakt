@@ -4,6 +4,7 @@ import { cardFor, scoreCard, typesFor, type Answer, type Mode, type TurnResult }
 import { bringForward, isPackPickRound, lastPlace, packOptions } from "./comeback.ts";
 import { createRng } from "./rng.ts";
 import { pickPoints, type WipeRule } from "./scoring.ts";
+import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
 import { roundRecord, socialLines, titles, type RoundRecord, type SocialLine, type Title } from "./social.ts";
 
 // A room: everyone plays the same card at once on their own phone.
@@ -23,6 +24,12 @@ export const ANSWER_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, numb
 /** Seconds the last player has to pick the pack, by pace. */
 export const PACK_PICK_SECONDS: Record<Exclude<Pace, "none">, number> = { calm: 20, fast: 12 };
 
+/** Seconds the answers stay up before the room moves on by itself, by pace and card kind. */
+export const REVEAL_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, number>> = {
+  calm: { pick: 30, order: 25, number: 20, choice: 20, compare: 15 },
+  fast: { pick: 20, order: 15, number: 12, choice: 12, compare: 10 },
+};
+
 /** Answers arriving this long after the deadline still count (network delay). */
 export const GRACE_MS = 1000;
 export const MAX_PLAYERS = 12;
@@ -37,7 +44,6 @@ export interface RoomSettings {
   difficulties: number[];
   packIds: string[];
   pace: Pace;
-  doubleFinal: boolean;
   lastPicks: boolean;
 }
 
@@ -50,7 +56,6 @@ export const DEFAULT_ROOM_SETTINGS: RoomSettings = {
   difficulties: [1, 2, 3],
   packIds: [],
   pace: "calm",
-  doubleFinal: true,
   lastPicks: true,
 };
 
@@ -104,6 +109,8 @@ export interface RoomState {
   packChoice: { chooser: string; options: { id: string; title: string }[] } | null;
   /** Who picked the pack of the current card. */
   pickedBy: string | null;
+  /** Tie-break: ids of the tied leaders who answer one extra number card; stays set once the game is over. */
+  tiebreak: string[] | null;
 }
 
 /** What a device may ask for. The server adds `by` (the sender) and `now`. */
@@ -162,6 +169,7 @@ export function createRoom(input: CreateRoomInput): RoomState | null {
     history: [],
     packChoice: null,
     pickedBy: null,
+    tiebreak: null,
   };
 }
 
@@ -212,7 +220,7 @@ function isFinal(a: Answer | undefined): boolean {
 
 /** Every connected player has a final answer (players who dropped out are not waited for). */
 export function allAnswered(s: RoomState): boolean {
-  const live = s.players.filter((p) => p.connected);
+  const live = s.players.filter((p) => p.connected && answers(s, p.id));
   return live.length > 0 && live.every((p) => isFinal(s.answers[p.id]));
 }
 
@@ -220,7 +228,13 @@ export function totalRounds(s: RoomState): number | null {
   return s.settings.target == null ? Math.min(s.settings.rounds, Math.max(s.deck.length, s.round)) : null;
 }
 
+/** Whether this player answers the current card (in a tie-break only the tied leaders do). */
+export function answers(s: Pick<RoomState, "tiebreak">, id: string): boolean {
+  return !s.tiebreak || s.tiebreak.includes(id);
+}
+
 export function isLastRound(s: RoomState): boolean {
+  if (s.tiebreak) return true;
   if (s.deckPos >= s.deck.length - 1) return true;
   if (s.settings.target != null) return s.phase === "reveal" && s.players.some((p) => p.score >= s.settings.target!);
   return s.round >= s.settings.rounds;
@@ -243,7 +257,9 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
 
     case "tick":
       if (s.deadline == null || a.now <= s.deadline + GRACE_MS) return s;
-      if (s.phase === "question") return closeQuestion(s);
+      if (s.phase === "question") return closeQuestion(s, a.now);
+      // The answers were up long enough: everyone moves on.
+      if (s.phase === "reveal") return nextCard(s, a.now, packs);
       // Nobody picked in time: the first offered pack.
       if (s.phase === "choosePack" && s.packChoice) return choosePack(s, s.packChoice.options[0].id, a.now, packs);
       return s;
@@ -257,6 +273,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         answers,
         results: s.results.filter((r) => r.playerId !== a.id),
         ready: s.ready.filter((id) => id !== a.id),
+        tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
       };
       return afterChange(next, a.now, packs);
     }
@@ -311,7 +328,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
 
     case "close":
       if (s.phase !== "question" || a.by !== controllerId(s)) return s;
-      return closeQuestion(s);
+      return closeQuestion(s, a.now);
 
     case "ready": {
       if (s.phase !== "reveal" || !isPlayer(s, a.by) || s.ready.includes(a.by)) return s;
@@ -351,6 +368,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         history: [],
         packChoice: null,
         pickedBy: null,
+        tiebreak: null,
       };
     }
 
@@ -366,7 +384,7 @@ function isPlayer(s: RoomState, id: string): boolean {
 
 /** An answer from this player is accepted now. */
 function accepting(s: RoomState, a: { by: string; now: number }): boolean {
-  if (s.phase !== "question" || !isPlayer(s, a.by)) return false;
+  if (s.phase !== "question" || !isPlayer(s, a.by) || !answers(s, a.by)) return false;
   return s.deadline == null || a.now <= s.deadline + GRACE_MS;
 }
 
@@ -376,7 +394,7 @@ function answer(s: RoomState, id: string, ans: Answer, now: number, packs: Pack[
 
 /** Closes the question once everyone answered, or moves on once everyone is ready. */
 function afterChange(s: RoomState, now: number, packs: Pack[]): RoomState {
-  if (s.phase === "question" && allAnswered(s)) return closeQuestion(s);
+  if (s.phase === "question" && allAnswered(s)) return closeQuestion(s, now);
   if (s.phase === "reveal") {
     const live = s.players.filter((p) => p.connected);
     if (live.length > 0 && live.every((p) => s.ready.includes(p.id))) return nextCard(s, now, packs);
@@ -407,7 +425,7 @@ function beginQuestion(s: RoomState, card: Card, now: number): RoomState {
 }
 
 /** Scores the card: unfinished pick turns are banked; players without an answer score nothing. */
-function closeQuestion(s: RoomState): RoomState {
+function closeQuestion(s: RoomState, now: number): RoomState {
   const card = s.card!;
   const results: RoomResult[] = [];
   for (const p of s.players) {
@@ -417,8 +435,10 @@ function closeQuestion(s: RoomState): RoomState {
     results.push({ playerId: p.id, answer: a, points: 0 });
   }
   const turns: TurnResult[] = results.map((r, i) => ({ player: i, answer: r.answer, points: 0 }));
-  const m = isDouble(s) ? 2 : 1;
-  const points = scoreCard(card, turns, s.settings.wipe, s.players.length).map((p) => p * m);
+  const points =
+    s.tiebreak && card.type === "number"
+      ? tiebreakPoints(card, results.map((r) => (r.answer.type === "number" ? (r.answer.value ?? NaN) : NaN)))
+      : scoreCard(card, turns, s.settings.wipe, s.players.length);
   const scored = results.map((r, i) => ({ ...r, points: points[i] ?? 0 }));
   const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })));
   const round: RoomRound = { ...rec, results: rec.results.map((x) => ({ ...x, playerId: scored[x.player].playerId })) };
@@ -426,21 +446,20 @@ function closeQuestion(s: RoomState): RoomState {
     ...p,
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
-  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: null, ready: [] };
-}
-
-/** The current card counts double: last round of a game with a set number of rounds. */
-export function isDouble(s: RoomState): boolean {
-  return s.settings.doubleFinal && s.settings.target == null && (s.phase === "question" || s.phase === "reveal") && isLastRound(s);
+  const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
+  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [] };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
   const played = [...s.played, s.card!.key];
   const over = (): RoomState => ({ ...s, played, phase: "over", answers: {}, ready: [], deadline: null });
-  if (isLastRound(s)) return over();
-  if (s.settings.target != null && s.players.some((p) => p.score >= s.settings.target!)) return over();
+  if (s.tiebreak) return over();
+  // The game is over: a tie for first goes to a tie-break.
+  const end = (): RoomState => startTiebreak({ ...s, played }, now, packs) ?? over();
+  if (isLastRound(s)) return end();
+  if (s.settings.target != null && s.players.some((p) => p.score >= s.settings.target!)) return end();
   const next = firstCard(s.deck, packs, s.seed, s.deckPos + 1);
-  if (!next) return over();
+  if (!next) return end();
   const round = s.round + 1;
   const base: RoomState = { ...s, played, deckPos: next.pos, round, pickedBy: null, packChoice: null };
   if (s.settings.lastPicks && s.players.length > 1 && isPackPickRound(round)) {
@@ -462,6 +481,16 @@ function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
     }
   }
   return beginQuestion(base, next.card, now);
+}
+
+/** One extra number card for the players sharing the top score; null when there is no tie or no number card. */
+function startTiebreak(s: RoomState, now: number, packs: Pack[]): RoomState | null {
+  const tied = tiedLeaders(s.players.map((p) => p.score)).map((i) => s.players[i].id);
+  if (!tied.length) return null;
+  const key = tiebreakKey(s.deck, s.deckPos + 1, packs, s.settings.packIds, [...s.seen, ...s.played], s.seed);
+  const card = key ? cardFor(key, packs, s.seed, s.deck.length) : null;
+  if (!card) return null;
+  return beginQuestion({ ...s, round: s.round + 1, pickedBy: null, packChoice: null, tiebreak: tied }, card, now);
 }
 
 function choosePack(s: RoomState, packId: string, now: number, packs: Pack[]): RoomState {
@@ -566,14 +595,16 @@ export interface RoomView {
   deadline: number | null;
   mine: MyAnswer | null;
   results: RoomResult[];
-  /** The current card counts double. */
-  double: boolean;
   packChoice: RoomState["packChoice"];
   pickedBy: string | null;
   /** Reveal: remarks about this card; player numbers are indices into `players`. */
   social: SocialLine[];
   /** Game over: titles; player numbers are indices into `players`. */
   titles: Title[];
+  /** Tie-break: ids of the players who answer. */
+  tiebreak: string[] | null;
+  /** Big screens watching the room (filled in by the server). */
+  screens?: number;
 }
 
 export function viewFor(s: RoomState, you: string | null): RoomView {
@@ -593,14 +624,14 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     players: s.players.map((p) => playerView(s, p)),
     card: question ? hideCard(s.card!, s.settings.showCorrectCount) : null,
     full: reveal ? s.card : null,
-    deadline: question || s.phase === "choosePack" ? s.deadline : null,
+    deadline: question || reveal || s.phase === "choosePack" ? s.deadline : null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
-    double: isDouble(s),
     packChoice: s.phase === "choosePack" ? s.packChoice : null,
     pickedBy: question || reveal ? s.pickedBy : null,
     social: reveal ? roomSocial(s) : [],
     titles: s.phase === "over" ? roomTitles(s) : [],
+    tiebreak: s.tiebreak,
   };
 }
 
@@ -638,6 +669,6 @@ function myAnswer(s: RoomState, id: string): MyAnswer | null {
   if (card?.type !== "pick") return null;
   const picks = a.picks.map((i) => ({ option: i, correct: card.options[i].correct, why: card.options[i].why }));
   const found = picks.filter((p) => p.correct).length;
-  const points = (found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found)) * (isDouble(s) ? 2 : 1);
+  const points = (found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found));
   return { type: "pick", picks, status: a.status, points };
 }

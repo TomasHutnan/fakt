@@ -169,6 +169,12 @@
 :where(.design-choice__swatch) { width: 28px; height: 28px; grid-row: 1 / span 2; }
 :where(.design-choice__desc) { grid-column: 2; }
 
+:where(.prefs-panel) {
+  flex: 1 1 100%; order: 99; display: flex; flex-direction: column; gap: 10px; padding: 10px 0;
+  border-block: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+:where(.prefs-panel .segmented) { flex-wrap: wrap; }
+:where(.topbar__prefs) { min-width: 44px; font-size: 1.2em; line-height: 1; }
 :where(.confirm) { display: flex; flex-direction: column; gap: 10px; padding: 12px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -208,6 +214,9 @@
 :where(.q__kind) { font-weight: 700; }
 
 /* Game over: rate the cards just played */
+:where(.link-btn) { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; cursor: pointer; }
+:where(.report) { display: flex; flex-direction: column; gap: 10px; padding: 10px 0; flex: 1 1 100%; }
+:where(.report__comment) { min-height: 64px; padding: 8px 12px; resize: vertical; }
 :where(.review) { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
 :where(.review__title) { font-size: 1.05rem; font-weight: 700; }
 :where(.review__list) { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
@@ -217,8 +226,10 @@
 }
 :where(.review__prompt) { font-size: 0.92rem; line-height: 1.35; }
 :where(.review__buttons) { display: flex; gap: 2px; }
+:where(.review__item > .report) { grid-column: 1 / -1; }
 .review .review__buttons .review__btn { background: none; border: 1px solid transparent; border-radius: 8px; font-size: 1.15rem; filter: grayscale(1); opacity: 0.6; }
-.review .review__buttons .review__btn[aria-pressed="true"] {
+.review .review__buttons .review__btn[aria-pressed="true"],
+.review .review__buttons .review__btn[aria-expanded="true"] {
   filter: none; opacity: 1; border-color: var(--accent, currentColor);
   background: color-mix(in srgb, var(--accent, currentColor) 12%, transparent);
 }
@@ -274,12 +285,9 @@
 }
 :where(.room-code-input) { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .3em; text-transform: uppercase; font-size: 1.4em; }
 
-/* Comeback rules, social lines, titles: structural; designs may restyle. */
-:where(.double-note) {
-  margin: 4px 0; padding: 4px 10px; display: inline-block; font-weight: 700;
-  border: 2px solid var(--accent, currentColor); color: var(--accent, currentColor); border-radius: 999px;
-}
-:where(.handover__double) { font-weight: 700; color: var(--accent, currentColor); }
+/* Comeback rule, social lines, titles: structural; designs may restyle. */
+:where(.q__tiebreak) { margin: 2px 0; font-weight: 700; }
+:where(.over__note) { margin: 4px 0 0; opacity: 0.8; }
 :where(.q__picked) { margin: 2px 0; opacity: 0.75; font-size: 0.9em; }
 :where(.social) { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 6px; }
 :where(.social__line) {

@@ -8,8 +8,18 @@ const errors: string[] = [];
 let compareCards = 0;
 let reportLinks = 0;
 let packPicks = 0;
-let doubles = 0;
 let socialLines = 0;
+/** Form responses the app tried to send; intercepted, never reach Google. */
+const posts: URLSearchParams[] = [];
+
+async function newPage(): Promise<Page> {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.route("https://docs.google.com/forms/**", (route) => {
+    posts.push(new URLSearchParams(route.request().postData() ?? ""));
+    return route.fulfill({ status: 200, body: "" });
+  });
+  return page;
+}
 
 async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], revealEach: boolean) {
   await page.goto(base);
@@ -39,15 +49,19 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       continue;
     }
     if (await page.locator(".handover").count()) {
-      if (await page.locator(".handover__double").count()) doubles++;
       await page.locator(".handover").click();
       continue;
     }
     if (await page.locator(".turnend").count()) {
-      const report = page.locator(".q__source a", { hasText: "Nahlásiť chybu" });
-      if (await report.count()) {
-        const href = (await report.getAttribute("href")) ?? "";
-        if (!/docs\.google\.com\/forms\/.*entry\.395949983=/.test(href)) errors.push(`bad report link: ${href}`);
+      const report = page.locator(".q__source .link-btn", { hasText: "Nahlásiť chybu" });
+      // Once per game: open the report panel and send a report (the form post is intercepted).
+      if (!reportLinks && (await report.count())) {
+        await report.click();
+        await page.locator(".report .segmented__opt", { hasText: "Nuda" }).click();
+        await page.locator(".report__comment").fill("test");
+        await page.locator(".report .btn--primary").click();
+        await page.locator(".report--sent").waitFor({ timeout: 3000 });
+        await page.locator(".report--sent .btn").click();
         reportLinks++;
       }
       await page.locator(".turnend .btn--primary").click();
@@ -109,7 +123,7 @@ for (const [mode, players, revealEach] of [
   ["Mix", ["Sólo"], false],
   ["Klasika", ["Sólo"], true],
 ] as const) {
-  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  const page = await newPage();
   page.on("pageerror", (e) => errors.push(`${mode}/${players.length}: ${e.message}`));
   page.on("console", (m) => m.type() === "error" && errors.push(`${mode}/${players.length} console: ${m.text()}`));
   await playGame(page, mode, [...players], revealEach);
@@ -120,27 +134,29 @@ for (const [mode, players, revealEach] of [
 }
 // Game over: rate a card, then quick start from Home with the same players.
 {
-  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  const page = await newPage();
   page.on("pageerror", (e) => errors.push(`review: ${e.message}`));
   await playGame(page, "Klasika", ["Ana", "Bo"], true);
   await page.locator(".review__btn").first().click();
-  const send = page.locator(".review a.btn");
-  const href = (await send.getAttribute("href")) ?? "";
-  if (!href.includes("entry.295936394=") || !new URL(href).searchParams.get("entry.295936394")?.includes("👍")) errors.push(`bad review link: ${href}`);
+  // Leaving the screen sends the rating right away instead of after the delay.
   await page.getByRole("button", { name: "Domov" }).click();
+  await page.waitForTimeout(300);
+  const rating = posts.find((b) => b.get("entry.295936394") === "👍");
+  if (!rating?.get("entry.395949983")) errors.push(`rating not sent: ${posts.map(String).join(" | ")}`);
+  const report = posts.find((b) => b.get("entry.1415300164") === "Nuda");
+  if (report?.get("entry.1837133220") !== "test" || !report.get("entry.265971660")) errors.push(`report not sent: ${posts.map(String).join(" | ")}`);
   await page.getByRole("button", { name: /Rýchla hra/ }).click();
   if (!(await page.locator(".handover").count())) errors.push("quick start did not start a game");
   const round = (await page.locator(".handover__round").textContent()) ?? "";
   if (!round.includes("/ 5")) errors.push(`quick start round label: ${round}`);
-  console.log("✓ review link and quick start");
+  console.log("✓ rating and report sent, quick start");
   await page.close();
 }
 await browser.close();
-console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}, pack picks: ${packPicks}, double handovers: ${doubles}, social lines: ${socialLines}`);
+console.log(`compare cards seen: ${compareCards}, reports sent: ${reportLinks}, pack picks: ${packPicks}, social lines: ${socialLines}`);
 if (!packPicks) errors.push("no pack pick seen");
-if (!doubles) errors.push("no double final round seen");
 if (!socialLines) errors.push("no social line seen");
-if (!reportLinks) errors.push("no report link seen");
+if (!reportLinks) errors.push("no report sent");
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

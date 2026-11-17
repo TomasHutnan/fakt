@@ -1,12 +1,8 @@
 import type { SocialLine, Title } from "../engine/social.ts";
 import { sk } from "./sk.ts";
 
-// Pieces shared by one-phone games and rooms: the pack pick, the double round,
-// remarks after a card and titles at the end.
-
-export function DoubleNote() {
-  return <p class="double-note">{sk.doubleNow}</p>;
-}
+// Pieces shared by one-phone games and rooms: the pack pick, remarks after a
+// card and titles at the end.
 
 export function PackPicker({
   options,
