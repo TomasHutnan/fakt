@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: preslapy-softver
@@ -16,7 +16,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Mariner_1 https://en.wikipedia.org/wiki/Schiaparelli_EDM https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Genesis_(spacecraft) https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/20_Fenchurch_Street https://en.wikipedia.org/wiki/Lake_Peigneur https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport"
     correct:
       - { text: "Výbuch rakety Ariane 5 pri jej prvom lete (1996)", why: "Prevod 64-bitového čísla na 16-bitové pretiekol v kóde, ktorý prevzali z Ariane 4." }
-      - { text: "Zničenie sondy Mariner 1 (1962)", why: "V riadiacom programe chýbala jediná vodorovná čiarka nad symbolom; Arthur C. Clarke to nazval najdrahším spojovníkom v histórii." }
+      - { text: "Zničenie sondy Mariner 1 (1962)", why: "V ručne písanej matematickej špecifikácii navádzania chýbala jediná vodorovná čiarka nad symbolom; Arthur C. Clarke to nazval najdrahším spojovníkom v histórii." }
       - { text: "Pád pristávacieho modulu Schiaparelli na Mars (2016)", why: "Výpočet mu na chvíľu ukázal zápornú výšku, a tak sa správal, akoby už pristál – v skutočnosti bol 3,7 km nad povrchom." }
     wrong:
       - { text: "Rozmazané snímky Hubblovho teleskopu", why: "Zrkadlo vybrúsili presne, ale do zlého tvaru: šošovka v testovacom prístroji bola posunutá o 1,3 mm." }
@@ -35,7 +35,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter https://en.wikipedia.org/wiki/Gimli_Glider https://en.wikipedia.org/wiki/Laufenburg,_Germany https://www.thelocal.com/20100903/29599 https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Millennium_Bridge,_London https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/S-80_Plus-class_submarine https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport"
     correct:
       - { text: "Strata sondy Mars Climate Orbiter (1999)", why: "Jeden program počítal impulz motorov v librách-sila krát sekunda, druhý čakal newtonsekundy." }
-      - { text: "Boeing 767, ktorému v roku 1983 došlo palivo vo vzduchu", why: "Pri prepočte paliva použili hustotu v librách namiesto kilogramov; v nádržiach bolo len 45 % potrebného množstva." }
+      - { text: "Boeing 767, ktorému v roku 1983 došlo palivo vo vzduchu", why: "Pri prepočte paliva použili hustotu v librách na liter namiesto kilogramov na liter; v nádržiach bolo len 45 % potrebného množstva." }
       - { text: "Most cez Rýn v Laufenburgu, ktorého polovice sa nestretli (2003)", why: "Nemecko meria nadmorskú výšku od Severného mora, Švajčiarsko od Stredozemného; známy 27 cm rozdiel omylom zdvojnásobili na 54 cm." }
     wrong:
       - { text: "Výbuch rakety Ariane 5 (1996)", why: "Číslo sa nezmestilo do 16-bitovej premennej; jednotky boli v poriadku." }
@@ -75,7 +75,7 @@ questions:
     correct:
       - { text: "Začala sa nakláňať už počas stavby", why: "V roku 1178, keď stavba dosiahla druhé poschodie." }
       - { text: "Má základy hlboké len asi tri metre", why: "A to v mäkkom, nestabilnom podloží – chyba bola v návrhu od začiatku." }
-      - { text: "Je mierne zakrivená", why: "Stavitelia robili vyššie poschodia na jednej strane vyššie, aby sklon vyrovnali." }
+      - { text: "Je mierne zakrivená", why: "Stavitelia robili horné poschodia na jednej strane vyššie, aby sklon vyrovnali." }
       - { text: "Je to zvonica katedrály", why: "Priestor pre zvony na vrchu pridali až v roku 1372." }
       - { text: "V roku 1990 ju pre verejnosť zatvorili", why: "Znovu ju otvorili v decembri 2001 po desaťročí stabilizačných prác." }
       - { text: "Sklon zmenšili tak, že spod vyššej strany odobrali zeminu", why: "Spolu asi 70 ton zeminy." }
@@ -160,11 +160,11 @@ questions:
     correct:
       - { text: "V slepých testoch chutila ľuďom viac ako pôvodná", why: "Sladšia receptúra porážala v testoch starú Coca-Colu aj Pepsi." }
       - { text: "Pôvodná receptúra sa vrátila ešte v tom istom roku", why: "Pod názvom Coca-Cola Classic; návrat ohlásili 11. júla 1985." }
-      - { text: "Zmena prišla v roku stých narodenín Coca-Coly", why: "Firma ju načasovala na storočnicu nápoja." }
       - { text: "Zákaznícka linka dostávala vyše 1 500 hovorov denne", why: "Pred zmenou ich bolo okolo 400." }
       - { text: "New Coke sa neskôr predávala ako Coke II", why: "Premenovali ju v roku 1990 a predávala sa až do roku 2002." }
       - { text: "V roku 2019 sa na chvíľu vrátila kvôli seriálu Stranger Things", why: "Išlo o obmedzenú reklamnú spoluprácu s Netflixom." }
     wrong:
+      - { text: "Zmena prišla v roku stých narodenín Coca-Coly", why: "O rok skôr: nápoj vznikol v roku 1886, storočnicu oslavoval v roku 1986." }
       - { text: "Ľuďom nechutila už v testoch", why: "Naopak, testy jasne vyhrávala – nevadila chuť, ale zmena." }
       - { text: "Pôvodná receptúra sa vrátila až po piatich rokoch", why: "Vrátila sa už po necelých troch mesiacoch." }
       - { text: "McDonald's zostal aj potom pri New Coke", why: "McDonald's sa hneď po návrate prepol späť na pôvodnú Coca-Colu." }
@@ -188,7 +188,7 @@ questions:
       - { text: "BER postavili na mieste letiska Tempelhof", why: "Tempelhof zatvorili už v roku 2008; BER stojí pri bývalom letisku Schönefeld." }
       - { text: "Stavba stála menej, než sa plánovalo", why: "Už do konca roka 2012 sa náklady takmer zdvojnásobili." }
       - { text: "BER otvorili v roku 2012 a hneď ho zas zatvorili", why: "Otvorenie plánované na jún 2012 sa nekonalo; prvé lety prišli až v roku 2020." }
-      - { text: "Letisko Tegel funguje popri BER dodnes", why: "Tegel zatvorili v novembri 2020, keď sa doň presťahovali všetky aerolinky." }
+      - { text: "Letisko Tegel funguje popri BER dodnes", why: "Tegel zatvorili v novembri 2020, keď sa všetky aerolinky presťahovali na BER." }
 
   - id: preslapy-bizarne
     type: pick
@@ -208,7 +208,7 @@ questions:
       - { text: "Pri vytečení jazera Peigneur zahynuli desiatky ľudí", why: "Nezahynul ani jeden človek, uhynuli tri psy." }
       - { text: "Jazero Peigneur zostalo navždy vyschnuté", why: "Znovu sa naplnilo, tentoraz slanou vodou z kanála a morského zálivu." }
       - { text: "Spruce Goose preletelo Atlantik", why: "Letelo len asi míľu, teda 1,6 km." }
-      - { text: "Zo 11 člnov, ktoré jazero Peigneur pohltilo, sa už žiadny neukázal", why: "Deväť z jedenástich sa o pár dní samo vynorilo na hladinu." }
+      - { text: "Z 11 člnov, ktoré jazero Peigneur pohltilo, sa už žiadny neukázal", why: "Deväť z jedenástich sa o pár dní samo vynorilo na hladinu." }
 
   - id: preslapy-hubble
     type: pick
@@ -373,7 +373,7 @@ questions:
     items:
       - { text: "Jazero Peigneur vytečie do soľnej bane", value: 1980, why: "20. novembra 1980 v Louisiane." }
       - { text: "Boeingu 767 dôjde palivo vo výške 12 km", value: 1983, why: "23. júla; lietadlo doplachtilo na bývalú leteckú základňu v Gimli." }
-      - { text: "Coca-Cola uvedie New Coke", value: 1985, why: "23. apríla, v roku storočnice nápoja." }
+      - { text: "Coca-Cola uvedie New Coke", value: 1985, why: "23. apríla, rok pred storočnicou nápoja." }
       - { text: "Štart Hubblovho teleskopu s chybným zrkadlom", value: 1990, why: "24. apríla na palube raketoplánu Discovery." }
       - { text: "Výbuch rakety Ariane 5 pri prvom lete", value: 1996, why: "4. júna, 37 sekúnd po štarte." }
       - { text: "Strata sondy Mars Climate Orbiter", value: 1999, why: "23. septembra pri navádzaní na obežnú dráhu Marsu." }
@@ -544,4 +544,4 @@ questions:
     wrong:
       - { text: "Zo smrekového dreva", why: "Smrek je len v prezývke, ktorú lietadlu dali kritici." }
       - { text: "Z hliníka", why: "Hliník počas vojny šetrili, preto stavali z dreva." }
-      - { text: "Z ocele", why: "Bolo z drevených dyh; až do roku 2019 malo najväčšie rozpätie krídel zo všetkých lietadiel, ktoré kedy vzlietli." }
+      - { text: "Z ocele", why: "Bolo z drevených dýh; až do roku 2019 malo najväčšie rozpätie krídel zo všetkých lietadiel, ktoré kedy vzlietli." }
