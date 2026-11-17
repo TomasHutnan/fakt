@@ -23,7 +23,7 @@ export const PACK: Pack = {
     wrong: ["v", "w", "x", "y", "z", "q"].map(opt),
   })),
 };
-const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"] };
+const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"], doubleFinal: false, lastPicks: false };
 
 /** A connection that records what the hub sends. */
 class FakeConn {
@@ -213,7 +213,7 @@ describe("cleanSettings", () => {
     expect(cleanSettings({ ...SETTINGS, difficulties: [1, 1, 2], packIds: ["t", "t"] })).toEqual({ ...SETTINGS, difficulties: [1, 2], packIds: ["t"] });
   });
   it("rejects anything odd", () => {
-    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }]) {
+    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }, { doubleFinal: "yes" }, { lastPicks: 1 }]) {
       expect(cleanSettings({ ...SETTINGS, ...patch }), JSON.stringify(patch)).toBeNull();
     }
     expect(cleanSettings(null)).toBeNull();

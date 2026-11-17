@@ -576,6 +576,30 @@ export function SettingsScreen(props: {
         <p class="field__hint">{sk.showCorrectCountHint}</p>
 
         <Segmented<string>
+          id="double-final"
+          label={sk.doubleFinal}
+          value={s.doubleFinal ? "on" : "off"}
+          options={[
+            { value: "on", label: sk.on },
+            { value: "off", label: sk.off },
+          ]}
+          onChange={(v) => props.onSettings({ ...s, doubleFinal: v === "on" })}
+        />
+        <p class="field__hint">{sk.doubleFinalHint}</p>
+
+        <Segmented<string>
+          id="last-picks"
+          label={sk.lastPicks}
+          value={s.lastPicks ? "on" : "off"}
+          options={[
+            { value: "on", label: sk.on },
+            { value: "off", label: sk.off },
+          ]}
+          onChange={(v) => props.onSettings({ ...s, lastPicks: v === "on" })}
+        />
+        <p class="field__hint">{sk.lastPicksHint}</p>
+
+        <Segmented<string>
           id="reveal-each"
           label={sk.revealEach}
           value={s.revealEach ? "on" : "off"}

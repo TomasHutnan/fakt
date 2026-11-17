@@ -1,6 +1,8 @@
 import type { Pack, QuestionType } from "../content/types.ts";
 import { buildDeck, makeCard, makeCompareCard, type Card } from "./cards.ts";
+import { bringForward, isPackPickRound, lastPlace, packOptions } from "./comeback.ts";
 import { createRng, type Rng } from "./rng.ts";
+import { roundRecord, type RoundRecord } from "./social.ts";
 import {
   numberRankedPoints,
   numberSoloPoints,
@@ -35,6 +37,10 @@ export interface Settings {
   online: boolean;
   /** Time to answer in rooms. */
   pace: "none" | "calm" | "fast";
+  /** Last round counts double (only with a set number of rounds). */
+  doubleFinal: boolean;
+  /** Every third round the player in last place picks the pack. */
+  lastPicks: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -50,6 +56,8 @@ export const DEFAULT_SETTINGS: Settings = {
   packIds: [],
   online: false,
   pace: "calm",
+  doubleFinal: true,
+  lastPicks: true,
 };
 
 export interface Player {
@@ -69,7 +77,7 @@ export interface TurnResult {
   points: number;
 }
 
-export type Phase = "handover" | "play" | "turnEnd" | "reveal" | "over";
+export type Phase = "choosePack" | "handover" | "play" | "turnEnd" | "reveal" | "over";
 
 export interface GameState {
   seed: number;
@@ -90,6 +98,12 @@ export interface GameState {
   results: TurnResult[];
   /** Keys of cards played in this game. */
   played: string[];
+  /** Finished cards, for the end-of-game titles (missing in games saved before titles). */
+  history?: RoundRecord[];
+  /** Last place picks the pack: who and from which pack ids. */
+  packChoice?: { player: number; options: string[] } | null;
+  /** Who picked the pack of the current card. */
+  pickedBy?: number | null;
 }
 
 export type Action =
@@ -100,7 +114,8 @@ export type Action =
   | { type: "submitNumber"; value: number }
   | { type: "submitChoice"; option: number }
   | { type: "endTurn" } // turnEnd -> next handover or reveal
-  | { type: "nextRound" }; // reveal -> next round or over
+  | { type: "nextRound" } // reveal -> next round or over
+  | { type: "choosePack"; packId: string }; // choosePack -> handover
 
 export function typesFor(mode: Mode): QuestionType[] {
   return mode === "classic" ? ["pick"] : ["pick", "order", "number", "choice"];
@@ -226,7 +241,29 @@ export function reduce(s: GameState, a: Action, packs: Pack[]): GameState {
 
     case "nextRound":
       return s.phase === "reveal" ? nextRound(s, packs) : s;
+
+    case "choosePack": {
+      if (s.phase !== "choosePack" || !s.packChoice?.options.includes(a.packId)) return s;
+      const deck = bringForward(s.deck, s.deckPos, a.packId);
+      const card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos) ?? s.card;
+      return {
+        ...s,
+        deck,
+        card,
+        answer: initialAnswer(card),
+        phase: s.players.length > 1 ? "handover" : "play",
+        pickedBy: s.packChoice.player,
+        packChoice: null,
+      };
+    }
   }
+}
+
+/** Points multiplier of the current card: 2 in the last round when that rule is on. */
+export function multiplier(s: Pick<GameState, "settings" | "round" | "deck">): number {
+  const { settings } = s;
+  if (!settings.doubleFinal || settings.target != null) return 1;
+  return s.round >= Math.min(settings.rounds, s.deck.length) ? 2 : 1;
 }
 
 /** After a turn: hand over to the next player, or close the round. */
@@ -246,7 +283,7 @@ function nextRound(s: GameState, packs: Pack[]): GameState {
   while (pos < s.deck.length && !(card = cardFor(s.deck[pos], packs, s.seed, pos))) pos++;
   if (!card) return { ...s, played, phase: "over" };
   const round = s.round + 1;
-  return {
+  const next: GameState = {
     ...s,
     played,
     deckPos: pos,
@@ -257,7 +294,18 @@ function nextRound(s: GameState, packs: Pack[]): GameState {
     phase: s.players.length > 1 ? "handover" : "play",
     answer: initialAnswer(card),
     results: [],
+    packChoice: null,
+    pickedBy: null,
   };
+  // Every third round the player in last place picks the pack (from at least two).
+  if (s.settings.lastPicks && s.players.length > 1 && isPackPickRound(round)) {
+    const options = packOptions(s.deck, pos, s.seed, round);
+    if (options.length >= 2) {
+      const player = lastPlace(s.players.map((p) => p.score), s.seed, round);
+      return { ...next, phase: "choosePack", packChoice: { player, options } };
+    }
+  }
+  return next;
 }
 
 function finishTurn(s: GameState, packs: Pack[]): GameState {
@@ -269,13 +317,15 @@ function finishTurn(s: GameState, packs: Pack[]): GameState {
 }
 
 function reveal(s: GameState): GameState {
-  const points = scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
+  const m = multiplier(s);
+  const points = scoreCard(s.card, s.results, s.settings.wipe, s.players.length).map((p) => p * m);
   const results = s.results.map((r, i) => ({ ...r, points: points[i] }));
   const players = s.players.map((p, i) => ({
     ...p,
     score: p.score + results.filter((r) => r.player === i).reduce((n, r) => n + r.points, 0),
   }));
-  return { ...s, results, players, phase: "reveal" };
+  const history = [...(s.history ?? []), roundRecord(s.card, results)];
+  return { ...s, results, players, history, phase: "reveal" };
 }
 
 export function scoreCard(card: Card, results: TurnResult[], wipe: WipeRule, playerCount: number): number[] {
