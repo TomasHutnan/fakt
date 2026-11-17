@@ -273,3 +273,21 @@
   :where(.timer__fill) { transition: none; }
 }
 :where(.room-code-input) { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .3em; text-transform: uppercase; font-size: 1.4em; }
+
+/* Comeback rules, social lines, titles: structural; designs may restyle. */
+:where(.double-note) {
+  margin: 4px 0; padding: 4px 10px; display: inline-block; font-weight: 700;
+  border: 2px solid var(--accent, currentColor); color: var(--accent, currentColor); border-radius: 999px;
+}
+:where(.handover__double) { font-weight: 700; color: var(--accent, currentColor); }
+:where(.q__picked) { margin: 2px 0; opacity: 0.75; font-size: 0.9em; }
+:where(.social) { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 6px; }
+:where(.social__line) {
+  padding: 8px 12px; border-left: 3px solid var(--accent, currentColor);
+  background: color-mix(in srgb, var(--accent, currentColor) 8%, transparent);
+}
+:where(.titles) { margin: 12px 0; }
+:where(.titles__list) { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 8px; }
+:where(.title-row) { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; align-items: baseline; }
+:where(.title-row__name) { font-weight: 700; color: var(--accent, currentColor); }
+:where(.title-row__desc) { grid-column: 1 / -1; opacity: 0.75; font-size: 0.9em; }

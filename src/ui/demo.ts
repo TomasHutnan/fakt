@@ -160,8 +160,8 @@ export function demoState(screen: DemoScreen): GameState | null {
 
 // Room demo states (?demo=room-…, ?demo=tv-…): views as a device would get them.
 
-export type RoomDemo = "room-lobby" | "room-pick" | "room-number" | "room-reveal" | "room-over" | "tv-lobby" | "tv-question" | "tv-reveal";
-export const ROOM_DEMOS: RoomDemo[] = ["room-lobby", "room-pick", "room-number", "room-reveal", "room-over", "tv-lobby", "tv-question", "tv-reveal"];
+export type RoomDemo = "room-lobby" | "room-packpick" | "room-pick" | "room-number" | "room-reveal" | "room-over" | "tv-lobby" | "tv-question" | "tv-reveal";
+export const ROOM_DEMOS: RoomDemo[] = ["room-lobby", "room-packpick", "room-pick", "room-number", "room-reveal", "room-over", "tv-lobby", "tv-question", "tv-reveal"];
 
 const T0 = 1_800_000_000_000;
 
@@ -188,7 +188,15 @@ export function demoRoom(screen: string): { view: RoomView; now: number; screen:
   const kind = screen === "room-number" ? "number" : "pick";
   let { s, packs } = roomWith(kind);
   const act = (by: string, a: ClientAction) => (s = reduceRoom(s, { ...a, by, now: T0 } as never, packs));
-  if (screen !== "room-lobby" && screen !== "tv-lobby") {
+  if (screen === "room-packpick") {
+    act("jano", { type: "start" });
+    const options = [
+      { id: "a", title: "Slovenské rieky" },
+      { id: "b", title: "Koktaily" },
+      { id: "c", title: "Guinnessove rekordy" },
+    ];
+    s = { ...s, phase: "choosePack", round: 3, card: null, packChoice: { chooser: "zuzka", options }, deadline: T0 + 35_000 };
+  } else if (screen !== "room-lobby" && screen !== "tv-lobby") {
     act("jano", { type: "start" });
     if (kind === "pick") {
       const card = s.card as Extract<Card, { type: "pick" }>;

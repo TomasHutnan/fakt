@@ -7,6 +7,9 @@ const browser = await chromium.launch();
 const errors: string[] = [];
 let compareCards = 0;
 let reportLinks = 0;
+let packPicks = 0;
+let doubles = 0;
+let socialLines = 0;
 
 async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], revealEach: boolean) {
   await page.goto(base);
@@ -29,7 +32,14 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
 
   for (let step = 0; step < 400; step++) {
     if (await page.locator(".screen--over").count()) return;
+    // Last place picks the pack (every 3rd round with 2+ players).
+    if (await page.locator(".q--packpick").count()) {
+      packPicks++;
+      await page.locator(".q--packpick button.opt").last().click();
+      continue;
+    }
     if (await page.locator(".handover").count()) {
+      if (await page.locator(".handover__double").count()) doubles++;
       await page.locator(".handover").click();
       continue;
     }
@@ -44,6 +54,7 @@ async function playGame(page: Page, mode: "Klasika" | "Mix", players: string[], 
       continue;
     }
     if (await page.locator(".q--reveal").count()) {
+      socialLines += await page.locator(".social__line").count();
       await page.locator(".q--reveal .actions .btn--primary").click();
       continue;
     }
@@ -103,6 +114,7 @@ for (const [mode, players, revealEach] of [
   page.on("console", (m) => m.type() === "error" && errors.push(`${mode}/${players.length} console: ${m.text()}`));
   await playGame(page, mode, [...players], revealEach);
   const title = await page.locator(".over__title").textContent();
+  if (players.length > 1 && !(await page.locator(".title-row").count())) errors.push(`${mode}/${players.length}: no titles at the end`);
   console.log(`✓ ${mode} with ${players.length} player(s), answers ${revealEach ? "per turn" : "after round"}: ${title}`);
   await page.close();
 }
@@ -124,7 +136,10 @@ for (const [mode, players, revealEach] of [
   await page.close();
 }
 await browser.close();
-console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}`);
+console.log(`compare cards seen: ${compareCards}, report links checked: ${reportLinks}, pack picks: ${packPicks}, double handovers: ${doubles}, social lines: ${socialLines}`);
+if (!packPicks) errors.push("no pack pick seen");
+if (!doubles) errors.push("no double final round seen");
+if (!socialLines) errors.push("no social line seen");
 if (!reportLinks) errors.push("no report link seen");
 if (errors.length) {
   console.error(errors.join("\n"));

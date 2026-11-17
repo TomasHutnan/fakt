@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
 import { makeCard, numberDecimals, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
-import { DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState } from "./game.ts";
+import { currentPlayer, DEFAULT_SETTINGS, multiplier, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
 import { createRng } from "./rng.ts";
 import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
 
@@ -374,5 +374,85 @@ describe("interleave", () => {
     const t0 = performance.now();
     expect(interleave(one as never)).toHaveLength(50_000);
     expect(performance.now() - t0).toBeLessThan(500);
+  });
+});
+
+describe("comeback rules on one phone", () => {
+  const other: Pack = { ...pack, id: "other", title: "Other" };
+  const both = [pack, other];
+  const start = (players: string[], settings: Partial<Settings>, packs = both) =>
+    newGame({ players, settings: { ...DEFAULT_SETTINGS, mode: "classic", packIds: packs.map((p) => p.id), ...settings }, packs, seen: new Set(), seed: 5 })!;
+  /** Plays one round: player `best` finds one right option and banks, the others bust. */
+  const round = (s: GameState, best: number, packs = both): GameState => {
+    for (let t = 0; t < s.players.length; t++) {
+      s = reduce(s, { type: "continue" }, packs);
+      const card = s.card as PickCard;
+      const p = currentPlayer(s);
+      if (p === best) {
+        s = reduce(s, { type: "pick", option: card.options.findIndex((o) => o.correct) }, packs);
+        s = reduce(s, { type: "bank" }, packs);
+      } else s = reduce(s, { type: "pick", option: card.options.findIndex((o) => !o.correct) }, packs);
+      s = reduce(s, { type: "endTurn" }, packs);
+    }
+    return s;
+  };
+
+  it("the last round counts double", () => {
+    let s = start(["Ana", "Bo"], { rounds: 2, lastPicks: false });
+    expect(multiplier(s)).toBe(1);
+    s = round(s, 0);
+    expect(s.players[0].score).toBe(1);
+    s = reduce(s, { type: "nextRound" }, both);
+    expect(multiplier(s)).toBe(2);
+    s = round(s, 0);
+    expect(s.players[0].score).toBe(3);
+    expect(multiplier(start(["Ana"], { rounds: 1, target: 20 }))).toBe(1);
+    expect(multiplier(start(["Ana"], { rounds: 1, doubleFinal: false }))).toBe(1);
+  });
+
+  it("every third round the last player picks the pack", () => {
+    let s = start(["Ana", "Bo", "Cyril"], { rounds: 6, doubleFinal: false });
+    for (let r = 0; r < 2; r++) {
+      s = round(s, 0);
+      s = reduce(s, { type: "nextRound" }, both);
+    }
+    expect(s.round).toBe(3);
+    expect(s.phase).toBe("choosePack");
+    expect([1, 2]).toContain(s.packChoice!.player);
+    expect(s.packChoice!.options.slice().sort()).toEqual(["other", "test"]);
+    // Other actions wait for the choice; unknown packs are ignored.
+    expect(reduce(s, { type: "continue" }, both)).toBe(s);
+    expect(reduce(s, { type: "choosePack", packId: "nope" }, both)).toBe(s);
+    const chooser = s.packChoice!.player;
+    s = reduce(s, { type: "choosePack", packId: "other" }, both);
+    expect(s.phase).toBe("handover");
+    expect(s.card.packId).toBe("other");
+    expect(s.pickedBy).toBe(chooser);
+    expect(s.deck).toHaveLength(new Set(s.deck).size);
+    s = round(s, 0);
+    s = reduce(s, { type: "nextRound" }, both);
+    expect(s.pickedBy).toBeNull();
+  });
+
+  it("no pack pick alone, with one pack or when switched off", () => {
+    for (const s0 of [start(["Ana"], { rounds: 6 }), start(["Ana", "Bo"], { rounds: 6 }, [pack]), start(["Ana", "Bo"], { rounds: 6, lastPicks: false })]) {
+      let s = s0;
+      for (let r = 0; r < 3; r++) {
+        expect(s.phase === "choosePack").toBe(false);
+        s = round(s, 0, s0.settings.packIds.length === 1 ? [pack] : both);
+        s = reduce(s, { type: "nextRound" }, s0.settings.packIds.length === 1 ? [pack] : both);
+      }
+    }
+  });
+
+  it("keeps a history for the titles", () => {
+    let s = start(["Ana", "Bo"], { rounds: 2, lastPicks: false });
+    s = round(s, 0);
+    s = reduce(s, { type: "nextRound" }, both);
+    s = round(s, 1);
+    s = reduce(s, { type: "nextRound" }, both);
+    expect(s.phase).toBe("over");
+    expect(s.history).toHaveLength(2);
+    expect(s.history![0].results.map((r) => r.status)).toEqual(["banked", "busted"]);
   });
 });

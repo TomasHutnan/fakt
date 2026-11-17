@@ -689,3 +689,133 @@ describe("room with several packs", () => {
     expect([...used].sort()).toEqual(["a", "b"]);
   });
 });
+
+describe("comeback rules in rooms", () => {
+  const TWO = [makePack("t"), makePack("u")];
+  const sim3 = (patch: Partial<RoomSettings> = {}) => new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 6, packIds: ["t", "u"], pace: "calm", ...patch }, TWO);
+
+  it("the last round counts double, for scores and the pick preview", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false });
+    sim.act("h", { type: "start" });
+    expect(viewFor(sim.s, "h").double).toBe(false);
+    const first = pickPoints((sim.s.card as PickCard).correctCount);
+    sim.answerAll("best");
+    sim.act("h", { type: "next" });
+    expect(sim.s.round).toBe(2);
+    const v = viewFor(sim.s, "h");
+    expect(v.double).toBe(true);
+    const card = sim.s.card as PickCard;
+    sim.act("h", { type: "pick", option: card.options.findIndex((o) => o.correct) });
+    expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 2 });
+    sim.answerAll("best");
+    const second = pickPoints(card.correctCount) * 2;
+    expect(sim.s.players.map((p) => p.score)).toEqual([first + second, first + second]);
+  });
+
+  it("no double round when it is switched off or the game runs to a target", () => {
+    for (const patch of [{ doubleFinal: false }, { target: 30, rounds: 2 }] as Partial<RoomSettings>[]) {
+      const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 2, lastPicks: false, ...patch });
+      sim.act("h", { type: "start" });
+      sim.answerAll("best");
+      sim.act("h", { type: "next" });
+      expect(viewFor(sim.s, "h").double).toBe(false);
+    }
+  });
+
+  it("every third round the last player picks the pack of the next card", () => {
+    const sim = sim3({ doubleFinal: false });
+    sim.act("h", { type: "start" });
+    // Jano scores, the others bust: two rounds.
+    for (let r = 0; r < 2; r++) {
+      answerOne(sim, "h", sim.s.card!, "best");
+      answerOne(sim, "p1", sim.s.card!, "worst");
+      sim.act("p2", { type: "pick", option: (sim.s.card as PickCard).options.findIndex((o) => !o.correct) });
+      sim.act("p1", { type: "ready" });
+      sim.act("p2", { type: "ready" });
+      sim.act("h", { type: "ready" });
+    }
+    expect(sim.s.round).toBe(3);
+    expect(sim.s.phase).toBe("choosePack");
+    const choice = sim.s.packChoice!;
+    expect(["p1", "p2"]).toContain(choice.chooser);
+    expect(choice.options.map((o) => o.id).sort()).toEqual(["t", "u"]);
+    expect(choice.options[0].title).toMatch(/^Pack /);
+    // Hidden card during the pick: nobody sees a card yet.
+    expect(viewFor(sim.s, "h").card).toBeNull();
+    expect(viewFor(sim.s, "h").packChoice).toEqual(choice);
+    expect(viewFor(sim.s, "h").deadline).toBe(sim.now + 20_000);
+    // Only the chooser may choose while connected; the host's attempt is ignored.
+    sim.act("h", { type: "choosePack", packId: "u" });
+    expect(sim.s.phase).toBe("choosePack");
+    sim.act(choice.chooser, { type: "choosePack", packId: "nope" });
+    expect(sim.s.phase).toBe("choosePack");
+    sim.act(choice.chooser, { type: "choosePack", packId: "u" });
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.card!.packId).toBe("u");
+    expect(sim.s.pickedBy).toBe(choice.chooser);
+    expect(viewFor(sim.s, "p1").pickedBy).toBe(choice.chooser);
+  });
+
+  it("the controller picks for an absent chooser, and time runs out to the first pack", () => {
+    const sim = sim3({ doubleFinal: false });
+    sim.act("h", { type: "start" });
+    for (let r = 0; r < 2; r++) {
+      sim.answerAll("best");
+      sim.act("h", { type: "next" });
+    }
+    expect(sim.s.phase).toBe("choosePack");
+    const { chooser, options } = sim.s.packChoice!;
+    // A tie at the bottom: a seeded pick among all three.
+    expect(["h", "p1", "p2"]).toContain(chooser);
+    if (chooser !== "h") {
+      sim.raw({ type: "connect", id: chooser, connected: false });
+      sim.act("h", { type: "choosePack", packId: options[1].id });
+      expect(sim.s.card!.packId).toBe(options[1].id);
+    }
+    // Next pick round (6): nobody chooses in time.
+    for (let r = 0; r < 3; r++) {
+      if (sim.s.phase === "choosePack") break;
+      sim.answerAll("best");
+      sim.act("h", { type: "next" });
+    }
+    if (sim.s.phase === "choosePack") {
+      const first = sim.s.packChoice!.options[0].id;
+      sim.advance(20_000 + GRACE_MS + 1);
+      expect(sim.s.phase).toBe("question");
+      expect(sim.s.card!.packId).toBe(first);
+    }
+  });
+
+  it("no pack pick when switched off, with one pack, or alone", () => {
+    for (const sim of [sim3({ lastPicks: false }), new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 6 }), new Sim(["Jano"], { mode: "classic", rounds: 6, packIds: ["t", "u"] }, TWO)]) {
+      sim.act("h", { type: "start" });
+      for (let r = 0; r < 4 && sim.s.phase !== "over"; r++) {
+        expect(sim.s.phase).toBe("question");
+        sim.answerAll("best");
+        sim.act("h", { type: "next" });
+      }
+    }
+  });
+
+  it("social lines at the reveal and titles at the end", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 2, lastPicks: false });
+    sim.act("h", { type: "start" });
+    for (let r = 0; r < 2; r++) {
+      answerOne(sim, "h", sim.s.card!, "best");
+      answerOne(sim, "p1", sim.s.card!, "worst");
+      answerOne(sim, "p2", sim.s.card!, "worst");
+      expect(sim.s.phase).toBe("reveal");
+      const v = viewFor(sim.s, "p1");
+      expect(v.social.length).toBeGreaterThan(0);
+      expect(v.titles).toEqual([]);
+      sim.act("h", { type: "next" });
+    }
+    expect(sim.s.phase).toBe("over");
+    const t = viewFor(sim.s, "p2").titles;
+    expect(t).toContainEqual(expect.objectContaining({ player: 0, id: "vseved", value: 2 }));
+    expect(t.some((x) => x.id === "hazarder" || x.id === "moralny")).toBe(true);
+    // Again clears the history.
+    sim.act("h", { type: "again" });
+    expect(sim.s.history).toEqual([]);
+  });
+});

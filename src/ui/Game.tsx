@@ -6,6 +6,7 @@ import { formatNumber, numberDecimals } from "../engine/cards.ts";
 import { parseNumber } from "./number.ts";
 import {
   currentPlayer,
+  multiplier,
   isLastTurn,
   scoreCard,
   standings,
@@ -15,6 +16,8 @@ import {
   type TurnResult,
 } from "../engine/game.ts";
 import { orderPoints, pickPoints } from "../engine/scoring.ts";
+import { socialLines, titles } from "../engine/social.ts";
+import { DoubleNote, PackPicker, SocialList, TitleList } from "./Comeback.tsx";
 import { ratingsUrl, reportUrl } from "./links.ts";
 import { KEYS, load, save } from "./storage.ts";
 import { sk } from "./sk.ts";
@@ -48,11 +51,30 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
 
   if (s.phase === "over") return <GameOver state={s} packs={packs} onHome={onQuit} onPlayAgain={onPlayAgain} />;
 
+  if (s.phase === "choosePack" && s.packChoice) {
+    const chooser = s.players[s.packChoice.player].name;
+    return (
+      <div class="screen screen--game">
+        <header class="topbar">
+          <span class="topbar__title">{sk.round(s.round, totalRounds)}</span>
+          <ScoreStrip state={s} />
+        </header>
+        <PackPicker
+          options={s.packChoice.options.map((id) => ({ id, title: packs.find((p) => p.id === id)?.title ?? id }))}
+          lead={sk.packPickWait(chooser)}
+          canChoose
+          onChoose={(packId) => dispatch({ type: "choosePack", packId })}
+        />
+      </div>
+    );
+  }
+
   if (s.phase === "handover") {
     const name = s.players[currentPlayer(s)].name;
     return (
       <button type="button" class="handover" onClick={() => dispatch({ type: "continue" })}>
         <span class="handover__round">{sk.round(s.round, totalRounds)}</span>
+        {multiplier(s) > 1 && <span class="handover__double">{sk.doubleNow}</span>}
         <span class="handover__label">{sk.passTo}</span>
         <span class="handover__name">{name}</span>
         <span class="handover__hint">{sk.tapToContinue}</span>
@@ -127,6 +149,8 @@ function Turn({ state, dispatch }: { state: GameState; dispatch: (a: Action) => 
       class={`q q--${s.card.type}${s.answer?.type === "pick" && s.answer.status !== "playing" ? ` q--${s.answer.status}` : ""}`}
     >
       <CardHead card={s.card} />
+      {multiplier(s) > 1 && <DoubleNote />}
+      {s.pickedBy != null && s.players[s.pickedBy] && <p class="q__picked">{sk.pickedBy(s.players[s.pickedBy].name)}</p>}
       {!solo && <p class="q__player">{player.name}</p>}
       <h1 class="q__prompt">{tie(s.card.prompt)}</h1>
       {s.card.type === "pick" && s.answer?.type === "pick" && (
@@ -152,7 +176,8 @@ function PickTurn({
 }) {
   const found = answer.picks.filter((i) => card.options[i].correct).length;
   const wrong = answer.picks.length - found;
-  const points = wrong && state.settings.wipe === "always" ? 0 : pickPoints(found);
+  const m = multiplier(state);
+  const points = (wrong && state.settings.wipe === "always" ? 0 : pickPoints(found)) * m;
   const over = state.phase === "turnEnd";
   // With per-turn answers the solution is drawn into the same grid the player just used.
   const reveal = over && state.settings.revealEach;
@@ -162,7 +187,7 @@ function PickTurn({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth((found + 1) * m)}</span>}
         {state.settings.showCorrectCount && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && answer.picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
@@ -430,7 +455,7 @@ function TurnReveal({ state }: { state: GameState }) {
   const r = s.results[s.results.length - 1];
   if (!r) return <TurnEnd state={s} />;
   // Ranked number scoring needs everyone's guess, so points come after the round.
-  const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
+  const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0] * multiplier(s);
   const title =
     s.card.type === "choice"
       ? points
@@ -643,6 +668,8 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
         ))}
       </ul>
 
+      {multi && <SocialList lines={socialLines(card, s.results)} name={(i) => s.players[i]?.name ?? "?"} />}
+
       {full && <CardFoot card={card} />}
 
       <div class="actions">
@@ -814,6 +841,9 @@ function GameOver({
             </li>
           ))}
         </ol>
+      )}
+      {state.players.length > 1 && (
+        <TitleList titles={titles(state.history ?? [], state.players.map((p) => p.score))} name={(i) => state.players[i]?.name ?? "?"} />
       )}
       <Review state={state} packs={packs} />
       <div class="actions">

@@ -23,7 +23,7 @@ export const PACK: Pack = {
     wrong: ["v", "w", "x", "y", "z", "q"].map(opt),
   })),
 };
-const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"] };
+const SETTINGS: RoomSettings = { ...DEFAULT_ROOM_SETTINGS, mode: "classic", rounds: 3, packIds: ["t"], doubleFinal: false, lastPicks: false };
 
 /** A connection that records what the hub sends. */
 class FakeConn {
@@ -213,7 +213,7 @@ describe("cleanSettings", () => {
     expect(cleanSettings({ ...SETTINGS, difficulties: [1, 1, 2], packIds: ["t", "t"] })).toEqual({ ...SETTINGS, difficulties: [1, 2], packIds: ["t"] });
   });
   it("rejects anything odd", () => {
-    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }]) {
+    for (const patch of [{ mode: "x" }, { rounds: 1.5 }, { target: -1 }, { wipe: "never" }, { pace: "slow" }, { difficulties: [] }, { difficulties: [4] }, { packIds: [] }, { packIds: [1] }, { showCorrectCount: "yes" }, { doubleFinal: "yes" }, { lastPicks: 1 }]) {
       expect(cleanSettings({ ...SETTINGS, ...patch }), JSON.stringify(patch)).toBeNull();
     }
     expect(cleanSettings(null)).toBeNull();
@@ -585,6 +585,28 @@ describe("snapshots from disk", () => {
     expect(h2.room(b.seat!.code)).toBeDefined();
     h.close();
     h2.close();
+  });
+
+  it("plays on in a room saved before the comeback rules existed", () => {
+    const host = create(hub);
+    const code = host.seat!.code;
+    host.act({ type: "start" });
+    const snap = JSON.parse(JSON.stringify(hub.snapshot()));
+    for (const r of snap.rooms) {
+      delete r.state.history;
+      delete r.state.packChoice;
+      delete r.state.pickedBy;
+      delete r.state.settings.doubleFinal;
+      delete r.state.settings.lastPicks;
+    }
+    const h = new Hub({}, snap);
+    const back = new FakeConn(h, "1.1.1.1");
+    back.msg({ t: "join", v: PROTOCOL, code, token: host.seat!.token });
+    expect(() => back.act({ type: "close" })).not.toThrow();
+    expect(h.room(code)!.phase).toBe("reveal");
+    expect(h.room(code)!.history).toHaveLength(1);
+    expect(back.view.double).toBe(false);
+    h.close();
   });
 
   it("skips broken rooms instead of failing to start", () => {

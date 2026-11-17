@@ -426,13 +426,13 @@ export class Hub {
     if (room.timer) clearTimeout(room.timer);
     room.timer = null;
     const { phase, deadline } = room.state;
-    if (phase !== "question" || deadline == null) return;
+    if ((phase !== "question" && phase !== "choosePack") || deadline == null) return;
     const wait = Math.max(0, deadline + GRACE_MS + 5 - Date.now());
     room.timer = setTimeout(() => {
       room.timer = null;
       this.dispatch(room, { type: "tick", now: Date.now() });
       // A tick that arrived a little early: try again.
-      if (room.state.phase === "question" && room.timer == null) this.schedule(room);
+      if (room.timer == null) this.schedule(room);
     }, wait);
     room.timer.unref?.();
   }
@@ -505,8 +505,16 @@ export class Hub {
         : null;
     if (!packs || !packs.length || packs.some((p) => !p)) return;
     // Everyone reconnects; questions get some extra time back for the restart.
-    let state: RoomState = { ...r.state, players: r.state.players.map((p) => ({ ...p, connected: false })) };
-    if (state.phase === "question" && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
+    // Rooms saved by an older version lack the newer fields.
+    let state: RoomState = {
+      ...r.state,
+      history: Array.isArray(r.state.history) ? r.state.history : [],
+      packChoice: r.state.packChoice ?? null,
+      pickedBy: r.state.pickedBy ?? null,
+      settings: { ...r.state.settings, doubleFinal: r.state.settings?.doubleFinal ?? false, lastPicks: r.state.settings?.lastPicks ?? false },
+      players: r.state.players.map((p) => ({ ...p, connected: false })),
+    };
+    if ((state.phase === "question" || state.phase === "choosePack") && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
     const interned = this.intern(packs as Pack[]);
     if (!interned) return;
     const room: Room = {
@@ -544,7 +552,7 @@ function emptyRoom(): RoomState {
 
 const PACES: Pace[] = ["none", "calm", "fast"];
 
-const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "kick", "again"] satisfies ClientAction["type"][]);
+const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "kick", "again", "choosePack"] satisfies ClientAction["type"][]);
 
 /** Settings from a client, checked field by field; null when anything is off. */
 export function cleanSettings(raw: unknown): RoomSettings | null {
@@ -557,6 +565,9 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
   if (s.wipe !== "always" && s.wipe !== "firstFree") return null;
   if (typeof s.showCorrectCount !== "boolean") return null;
   if (!PACES.includes(s.pace as Pace)) return null;
+  // Added after the first release: older clients leave them out.
+  if (s.doubleFinal !== undefined && typeof s.doubleFinal !== "boolean") return null;
+  if (s.lastPicks !== undefined && typeof s.lastPicks !== "boolean") return null;
   const diffs = s.difficulties;
   if (!Array.isArray(diffs) || diffs.length === 0 || !diffs.every((d) => d === 1 || d === 2 || d === 3)) return null;
   const ids = s.packIds;
@@ -568,6 +579,8 @@ export function cleanSettings(raw: unknown): RoomSettings | null {
     wipe: s.wipe,
     showCorrectCount: s.showCorrectCount,
     pace: s.pace as Pace,
+    doubleFinal: s.doubleFinal !== false,
+    lastPicks: s.lastPicks !== false,
     difficulties: Array.from(new Set(diffs as number[])),
     packIds: Array.from(new Set(ids as string[])),
   };

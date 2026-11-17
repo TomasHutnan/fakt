@@ -1,8 +1,10 @@
 import type { Pack } from "../content/types.ts";
 import { buildDeck, numberDecimals, type Card } from "./cards.ts";
 import { cardFor, scoreCard, typesFor, type Answer, type Mode, type TurnResult } from "./game.ts";
+import { bringForward, isPackPickRound, lastPlace, packOptions } from "./comeback.ts";
 import { createRng } from "./rng.ts";
 import { pickPoints, type WipeRule } from "./scoring.ts";
+import { roundRecord, socialLines, titles, type RoundRecord, type SocialLine, type Title } from "./social.ts";
 
 // A room: everyone plays the same card at once on their own phone.
 // Pure reducer like game.ts: (state, action, packs) -> state. The server owns the
@@ -18,6 +20,9 @@ export const ANSWER_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, numb
   fast: { pick: 35, order: 25, number: 20, choice: 12, compare: 8 },
 };
 
+/** Seconds the last player has to pick the pack, by pace. */
+export const PACK_PICK_SECONDS: Record<Exclude<Pace, "none">, number> = { calm: 20, fast: 12 };
+
 /** Answers arriving this long after the deadline still count (network delay). */
 export const GRACE_MS = 1000;
 export const MAX_PLAYERS = 12;
@@ -32,6 +37,8 @@ export interface RoomSettings {
   difficulties: number[];
   packIds: string[];
   pace: Pace;
+  doubleFinal: boolean;
+  lastPicks: boolean;
 }
 
 export const DEFAULT_ROOM_SETTINGS: RoomSettings = {
@@ -43,6 +50,8 @@ export const DEFAULT_ROOM_SETTINGS: RoomSettings = {
   difficulties: [1, 2, 3],
   packIds: [],
   pace: "calm",
+  doubleFinal: true,
+  lastPicks: true,
 };
 
 export interface RoomPlayer {
@@ -54,7 +63,10 @@ export interface RoomPlayer {
   connected: boolean;
 }
 
-export type RoomPhase = "lobby" | "question" | "reveal" | "over";
+export type RoomPhase = "lobby" | "choosePack" | "question" | "reveal" | "over";
+
+/** A finished card for the titles, by player id (players may leave). */
+export type RoomRound = Omit<RoundRecord, "results"> & { results: (RoundRecord["results"][number] & { playerId: string })[] };
 
 export interface RoomResult {
   playerId: string;
@@ -86,6 +98,12 @@ export interface RoomState {
   ready: string[];
   /** Keys of cards played in the current game. */
   played: string[];
+  /** Finished cards of the current game, for the titles. */
+  history: RoomRound[];
+  /** Last place picks the pack of the next card. */
+  packChoice: { chooser: string; options: { id: string; title: string }[] } | null;
+  /** Who picked the pack of the current card. */
+  pickedBy: string | null;
 }
 
 /** What a device may ask for. The server adds `by` (the sender) and `now`. */
@@ -100,7 +118,8 @@ export type ClientAction =
   | { type: "ready" }
   | { type: "next" }
   | { type: "kick"; id: string }
-  | { type: "again" };
+  | { type: "again" }
+  | { type: "choosePack"; packId: string };
 
 export type RoomAction =
   | (ClientAction & { by: string; now: number; seed?: number })
@@ -140,6 +159,9 @@ export function createRoom(input: CreateRoomInput): RoomState | null {
     results: [],
     ready: [],
     played: [],
+    history: [],
+    packChoice: null,
+    pickedBy: null,
   };
 }
 
@@ -220,7 +242,10 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
     }
 
     case "tick":
-      if (s.phase === "question" && s.deadline != null && a.now > s.deadline + GRACE_MS) return closeQuestion(s);
+      if (s.deadline == null || a.now <= s.deadline + GRACE_MS) return s;
+      if (s.phase === "question") return closeQuestion(s);
+      // Nobody picked in time: the first offered pack.
+      if (s.phase === "choosePack" && s.packChoice) return choosePack(s, s.packChoice.options[0].id, a.now, packs);
       return s;
 
     case "kick": {
@@ -297,6 +322,15 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       if (s.phase !== "reveal" || a.by !== controllerId(s)) return s;
       return nextCard(s, a.now, packs);
 
+    case "choosePack": {
+      if (s.phase !== "choosePack" || !s.packChoice || typeof a.packId !== "string") return s;
+      const chooser = s.players.find((p) => p.id === s.packChoice!.chooser);
+      // The last player picks; while they are away (or gone), the controller may.
+      const allowed = a.by === s.packChoice.chooser || (a.by === controllerId(s) && !chooser?.connected);
+      if (!allowed || !s.packChoice.options.some((o) => o.id === a.packId)) return s;
+      return choosePack(s, a.packId, a.now, packs);
+    }
+
     case "again": {
       if (s.phase !== "over" || a.by !== controllerId(s)) return s;
       return {
@@ -314,6 +348,9 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         results: [],
         ready: [],
         played: [],
+        history: [],
+        packChoice: null,
+        pickedBy: null,
       };
     }
 
@@ -380,13 +417,21 @@ function closeQuestion(s: RoomState): RoomState {
     results.push({ playerId: p.id, answer: a, points: 0 });
   }
   const turns: TurnResult[] = results.map((r, i) => ({ player: i, answer: r.answer, points: 0 }));
-  const points = scoreCard(card, turns, s.settings.wipe, s.players.length);
+  const m = isDouble(s) ? 2 : 1;
+  const points = scoreCard(card, turns, s.settings.wipe, s.players.length).map((p) => p * m);
   const scored = results.map((r, i) => ({ ...r, points: points[i] ?? 0 }));
+  const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })));
+  const round: RoomRound = { ...rec, results: rec.results.map((x) => ({ ...x, playerId: scored[x.player].playerId })) };
   const players = s.players.map((p) => ({
     ...p,
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
-  return { ...s, players, results: scored, phase: "reveal", deadline: null, ready: [] };
+  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: null, ready: [] };
+}
+
+/** The current card counts double: last round of a game with a set number of rounds. */
+export function isDouble(s: RoomState): boolean {
+  return s.settings.doubleFinal && s.settings.target == null && (s.phase === "question" || s.phase === "reveal") && isLastRound(s);
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
@@ -396,7 +441,34 @@ function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
   if (s.settings.target != null && s.players.some((p) => p.score >= s.settings.target!)) return over();
   const next = firstCard(s.deck, packs, s.seed, s.deckPos + 1);
   if (!next) return over();
-  return beginQuestion({ ...s, played, deckPos: next.pos, round: s.round + 1 }, next.card, now);
+  const round = s.round + 1;
+  const base: RoomState = { ...s, played, deckPos: next.pos, round, pickedBy: null, packChoice: null };
+  if (s.settings.lastPicks && s.players.length > 1 && isPackPickRound(round)) {
+    const ids = packOptions(s.deck, next.pos, s.seed, round);
+    const options = ids.map((id) => ({ id, title: packs.find((p) => p.id === id)?.title ?? id }));
+    if (options.length >= 2) {
+      const chooser = s.players[lastPlace(s.players.map((p) => p.score), s.seed, round)].id;
+      const secs = s.settings.pace === "none" ? null : PACK_PICK_SECONDS[s.settings.pace];
+      return {
+        ...base,
+        card: next.card,
+        phase: "choosePack",
+        packChoice: { chooser, options },
+        answers: {},
+        results: [],
+        ready: [],
+        deadline: secs == null ? null : now + secs * 1000,
+      };
+    }
+  }
+  return beginQuestion(base, next.card, now);
+}
+
+function choosePack(s: RoomState, packId: string, now: number, packs: Pack[]): RoomState {
+  let deck = bringForward(s.deck, s.deckPos, packId);
+  let card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos);
+  if (!card) [deck, card] = [s.deck, s.card!];
+  return beginQuestion({ ...s, deck, pickedBy: s.packChoice?.chooser ?? null, packChoice: null }, card, now);
 }
 
 // ---------------------------------------------------------------------------
@@ -494,6 +566,14 @@ export interface RoomView {
   deadline: number | null;
   mine: MyAnswer | null;
   results: RoomResult[];
+  /** The current card counts double. */
+  double: boolean;
+  packChoice: RoomState["packChoice"];
+  pickedBy: string | null;
+  /** Reveal: remarks about this card; player numbers are indices into `players`. */
+  social: SocialLine[];
+  /** Game over: titles; player numbers are indices into `players`. */
+  titles: Title[];
 }
 
 export function viewFor(s: RoomState, you: string | null): RoomView {
@@ -513,10 +593,30 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     players: s.players.map((p) => playerView(s, p)),
     card: question ? hideCard(s.card!, s.settings.showCorrectCount) : null,
     full: reveal ? s.card : null,
-    deadline: question ? s.deadline : null,
+    deadline: question || s.phase === "choosePack" ? s.deadline : null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
+    double: isDouble(s),
+    packChoice: s.phase === "choosePack" ? s.packChoice : null,
+    pickedBy: question || reveal ? s.pickedBy : null,
+    social: reveal ? roomSocial(s) : [],
+    titles: s.phase === "over" ? roomTitles(s) : [],
   };
+}
+
+function roomSocial(s: RoomState): SocialLine[] {
+  const index = new Map(s.players.map((p, i) => [p.id, i]));
+  const scored = s.results.filter((r) => index.has(r.playerId)).map((r) => ({ player: index.get(r.playerId)!, answer: r.answer, points: r.points }));
+  return socialLines(s.card!, scored);
+}
+
+function roomTitles(s: RoomState): Title[] {
+  const index = new Map(s.players.map((p, i) => [p.id, i]));
+  const history: RoundRecord[] = (s.history ?? []).map((h) => ({
+    type: h.type,
+    results: h.results.filter((r) => index.has(r.playerId)).map(({ playerId, ...r }) => ({ ...r, player: index.get(playerId)! })),
+  }));
+  return titles(history, s.players.map((p) => p.score));
 }
 
 function playerView(s: RoomState, p: RoomPlayer): PlayerView {
@@ -538,6 +638,6 @@ function myAnswer(s: RoomState, id: string): MyAnswer | null {
   if (card?.type !== "pick") return null;
   const picks = a.picks.map((i) => ({ option: i, correct: card.options[i].correct, why: card.options[i].why }));
   const found = picks.filter((p) => p.correct).length;
-  const points = found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found);
+  const points = (found < picks.length && s.settings.wipe === "always" ? 0 : pickPoints(found)) * (isDouble(s) ? 2 : 1);
   return { type: "pick", picks, status: a.status, points };
 }

@@ -32,6 +32,13 @@ export const sk = {
       ],
     },
     {
+      title: "Šanca dobehnúť",
+      body: [
+        "Posledné kolo sa ráta dvojnásobne. Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Obe pravidlá sa dajú vypnúť v nastaveniach.",
+        "Po kole hra prezradí, kto sa na čo chytil, a na konci rozdá tituly.",
+      ],
+    },
+    {
       title: "Každý na svojom telefóne",
       body: [
         "Pri novej hre zvoľ „Každý na svojom“. Ostatní sa pridajú cez QR kód, odkaz alebo kód hry na úvodnej obrazovke, kľudne aj z iného mesta.",
@@ -257,6 +264,40 @@ export const sk = {
   groupOnLabel: (name: string) => `Zapnúť všetky v sekcii ${name}`,
   groupOffLabel: (name: string) => `Vypnúť všetky v sekcii ${name}`,
 
+  // comeback rules, social lines, titles
+  doubleNow: "Posledné kolo: body ×2",
+  packPickLabel: "Posledný vyberá",
+  packPickYou: "Si na poslednom mieste, tak vyberáš, odkiaľ bude ďalšia otázka.",
+  packPickWait: (name: string) => `${name} je na poslednom mieste a vyberá, odkiaľ bude ďalšia otázka.`,
+  packPickAway: (name: string) => `${name} nie je pripojený, môžeš vybrať ty.`,
+  packPickTimeout: "Kto nevyberie včas, dostane prvý balíček.",
+  pickedBy: (name: string) => `Balíček zvolil(a) ${name}`,
+  names: (list: string[]) => (list.length < 2 ? list.join("") : `${list.slice(0, -1).join(", ")} a ${list[list.length - 1]}`),
+  social: {
+    allRight: () => "Všetci trafili.",
+    nobodyRight: () => "Nikto netrafil presne.",
+    onlyRight: (who: string, n: number) => `Správne ${n > 1 ? "mali" : "mal(a)"} len ${who}.`,
+    lonelyWrong: (who: string, option: string) => `Jediný tip na „${option}“: ${who}.`,
+    trap: (who: string, option: string) => `Na „${option}“ sa chytili ${who}.`,
+    complete: (who: string) => `Všetky správne: ${who}.`,
+    bigBust: (who: string, lost: number) => `Najväčší pád: ${who}, mínus ${lost} ${plural(lost, "bod", "body", "bodov")}.`,
+    untouched: (option: string) => `„${option}“ nikto nevybral, a bolo to správne.`,
+    exact: (who: string) => `Presne trafené: ${who}.`,
+    closest: (who: string) => `Najbližšie: ${who}.`,
+    perfectOrder: (who: string) => `Presné poradie: ${who}.`,
+  },
+  titlesHeading: "Tituly",
+  titles: {
+    ikarus: { name: "Ikarus", desc: (v: number) => `najväčší pád: ${v} ${plural(v, "bod", "body", "bodov")} naraz` },
+    vseved: { name: "Vševed", desc: (v: number) => `všetky správne na karte: ${v}×` },
+    ostrostrelec: { name: "Ostrostrelec", desc: (v: number) => `presný odhad: ${v}×` },
+    strateg: { name: "Stratég", desc: (v: number) => `presné poradie: ${v}×` },
+    hazarder: { name: "Hazardér", desc: (v: number) => `vedľa pri výbere: ${v}×` },
+    opatrnik: { name: "Opatrník", desc: (v: number) => `stop už po jednej či dvoch správnych: ${v}×` },
+    neomylny: { name: "Bez chyby", desc: (v: number) => `${v} ${plural(v, "kolo", "kolá", "kôl")} bez jedinej chyby` },
+    moralny: { name: "Morálny víťaz", desc: () => "niekto byť posledný musí" },
+  } as Record<string, { name: string; desc: (v: number) => string }>,
+
   // settings
   design: "Vzhľad",
   wipeRule: "Chybný výber",
@@ -268,6 +309,10 @@ export const sk = {
   revealEachOn: "Hneď po ťahu",
   revealEachOff: "Všetkým po kole",
   revealEachHint: "Hneď po ťahu: každý vidí riešenie po svojej odpovedi a po kole sa ukážu už len body. Všetkým po kole: riešenie sa ukáže naraz, keď odpovedia všetci.",
+  doubleFinal: "Posledné kolo za dvojnásobok",
+  doubleFinalHint: "V poslednom kole sa body rátajú dvakrát. Pri hre do cieľového skóre neplatí.",
+  lastPicks: "Posledný vyberá balíček",
+  lastPicksHint: "Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka.",
   haptics: "Vibrácie",
   hapticsHint: "Krátke zavibrovanie pri výbere. Nie každý telefón to podporuje (iPhone nie).",
   sound: "Zvuky",

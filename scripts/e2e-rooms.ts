@@ -49,10 +49,23 @@ async function joinByLink(p: Page, code: string, name: string) {
 }
 
 /** One step for one phone on whatever its screen shows; returns false when nothing to do. */
+let packPicks = 0;
+let doubles = 0;
+let socialLines = 0;
+
 async function step(p: Page): Promise<boolean> {
   if (await p.locator(".screen--over").count()) return false;
+  const pack = p.locator(".q--packpick button.opt:not([disabled])");
+  if (await pack.count()) {
+    packPicks++;
+    await pack.last().click();
+    return true;
+  }
+  if (await p.locator(".q--packpick").count()) return false;
+  if (await p.locator(".double-note").count()) doubles++;
   const reveal = p.locator(".q--reveal .actions .btn--primary:not([disabled])");
   if (await reveal.count()) {
+    socialLines += await p.locator(".social__line").count();
     await reveal.click();
     return true;
   }
@@ -93,7 +106,7 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   const miro = await phone(browser, "miro");
   const tv = await phone(browser, "tv", { width: 1280, height: 720 });
 
-  const code = await createRoom(host, mode, pace, "5 kôl");
+  const code = await createRoom(host, mode, pace, "10 kôl");
   log(`${mode}/${pace}: room ${code}`);
 
   // Errors on the join screen: unknown code, taken name.
@@ -151,6 +164,7 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   const table = await scores(host);
   for (const [p, n] of [[zuzka, "zuzka"], [miro, "miro"], [tv, "tv"]] as const) if ((await scores(p)) !== table) errors.push(`${mode}: ${n} sees other scores`);
   log(`  final: ${table}`);
+  for (const [p, n] of [[host, "host"], [tv, "tv"]] as const) if (!(await p.locator(".title-row").count())) errors.push(`${mode}: no titles on ${n}`);
   if (shots) await tv.screenshot({ path: join(shots, `tv-over-${mode}.png`) });
 
   // Ešte jednu: everyone back in the lobby.
@@ -176,6 +190,10 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
 await playRoom("Mix", "Bez limitu");
 await playRoom("Klasika", "Rýchlo");
 await browser.close();
+log(`pack picks: ${packPicks}, double-round screens: ${doubles}, social lines: ${socialLines}`);
+if (!packPicks) errors.push("no pack pick seen");
+if (!doubles) errors.push("no double round seen");
+if (!socialLines) errors.push("no social line seen");
 if (errors.length) {
   console.log(`FAILED:\n${errors.join("\n")}`);
   process.exit(1);
