@@ -9,14 +9,35 @@ import { play, type Cue } from "./feedback.ts";
 import { Game } from "./Game.tsx";
 import { loadBuiltInPacks } from "./packs.ts";
 import { Home, Packs, Rules, SettingsScreen, Setup } from "./Screens.tsx";
+import { JoinScreen, RoomBody, RoomScreen } from "./Room.tsx";
+import { RoomClient, type StoredSeat } from "../net/client.ts";
+import { isCode, normalizeCode, PROTOCOL, type ClientMessage } from "../net/protocol.ts";
+import type { RoomSettings } from "../engine/room.ts";
+import { demoRoom } from "./demo.ts";
 import { sk } from "./sk.ts";
 import { validatePack } from "../content/validate.ts";
 import { clearAll, KEYS, load, save } from "./storage.ts";
 
-type Screen = "home" | "setup" | "game" | "packs" | "settings" | "designs" | "rules";
+type Screen = "home" | "setup" | "game" | "packs" | "settings" | "designs" | "rules" | "join" | "room";
 
 const params = new URLSearchParams(location.search);
 const demo = params.get("demo") as DemoScreen | null;
+// Room links: ?r=KTVR joins, ?tv=KTVR opens the big screen. Removed from the address
+// right away so a reload goes through the stored seat instead.
+const linkCode = (() => {
+  const r = normalizeCode(params.get("r") ?? "");
+  return isCode(r) ? r : null;
+})();
+const tvCode = (() => {
+  const t = normalizeCode(params.get("tv") ?? "");
+  return isCode(t) ? t : null;
+})();
+if (!demo && (params.has("r") || params.has("tv"))) {
+  params.delete("r");
+  params.delete("tv");
+  const q = params.toString();
+  history.replaceState(null, "", `${location.pathname}${q ? `?${q}` : ""}${location.hash}`);
+}
 
 export function App() {
   const [design, setDesign] = useState(() => applyDesign(params.get("design") ?? load(KEYS.design, DEFAULT_DESIGN)));
@@ -30,11 +51,25 @@ export function App() {
   const [game, setGame] = useState<GameState | null>(() => (demo ? demoState(demo) : loadGame()));
   const [screen, setScreen] = useState<Screen>(() => initialScreen());
   const [setupError, setSetupError] = useState<string | null>(null);
+  const [seat, setSeat] = useState<StoredSeat | null>(() => (demo ? null : load<StoredSeat | null>(KEYS.room, null)));
+  const [roomName, setRoomName] = useState<string>(() => (demo ? "" : load(KEYS.roomName, "")));
+  const [client, setClient] = useState<RoomClient | null>(null);
+  const [roomReturn, setRoomReturn] = useState<Screen>("home");
   const [packsReturn, setPacksReturn] = useState<Screen>("home");
   // Built-in question ids per pack as of the last visit to the pack list.
   const [knownQuestions, setKnownQuestions] = useState<Record<string, string[]> | null>(() =>
     demo ? null : loadKnownQuestions(),
   );
+
+  // Opening a room link or the big screen; a reload rejoins the stored seat.
+  useEffect(() => {
+    if (demo) return;
+    if (tvCode) return openRoom({ t: "watch", v: PROTOCOL, code: tvCode }, "home");
+    if (linkCode && seat?.code === linkCode && seat.role === "player" && seat.token)
+      return openRoom({ t: "join", v: PROTOCOL, code: seat.code, token: seat.token }, "home");
+    if (linkCode) return setScreen("join");
+    if (seat && location.hash !== "#designs") resumeSeat(seat);
+  }, []);
 
   useEffect(() => {
     if (demo) return;
@@ -111,8 +146,56 @@ export function App() {
     setGame(next);
   };
 
+  function storeSeat(next: StoredSeat | null) {
+    setSeat(next);
+    persist(KEYS.room, next);
+  }
+
+  function openRoom(hello: ClientMessage, back: Screen) {
+    client?.close();
+    const c = new RoomClient(hello, (st) => storeSeat(st));
+    setClient(c);
+    setRoomReturn(back);
+    setScreen("room");
+  }
+
+  function resumeSeat(st: StoredSeat) {
+    if (st.role === "screen") openRoom({ t: "watch", v: PROTOCOL, code: st.code }, "home");
+    else if (st.token) openRoom({ t: "join", v: PROTOCOL, code: st.code, token: st.token }, "home");
+  }
+
+  function leaveRoom() {
+    client?.close();
+    setClient(null);
+    storeSeat(null);
+    setScreen("home");
+  }
+
+  /** Creates a room on the server with this device's enabled packs. */
+  const createRoom = (name: string, s: Settings) => {
+    if (!name) return setSetupError(sk.roomErrors.badName);
+    const rs: RoomSettings = {
+      mode: s.mode,
+      rounds: s.rounds,
+      target: s.target,
+      wipe: s.wipe,
+      showCorrectCount: s.showCorrectCount,
+      difficulties: s.difficulties,
+      packIds: activeIds,
+      pace: s.pace,
+    };
+    setSetupError(null);
+    setSettings(s);
+    persist(KEYS.settings, s);
+    setRoomName(name);
+    persist(KEYS.roomName, name);
+    openRoom({ t: "create", v: PROTOCOL, name, settings: rs, packs: packs.filter((p) => activeIds.includes(p.id)), seen }, "setup");
+  };
+
   /** `remember: false` (quick start) plays with one-off settings without saving them as the defaults. */
   const start = (names: string[], s: Settings, remember = true) => {
+    if (s.online && remember) return createRoom(names[0] ?? "", s);
+    if (s.online) s = { ...s, online: false };
     const settingsWithPacks = { ...s, packIds: activeIds };
     const g = newGame({ players: names, settings: settingsWithPacks, packs, seen: new Set(seen), seed: randomSeed() });
     if (!g) {
@@ -139,6 +222,40 @@ export function App() {
   const lastPlayers = players.map((n) => n.trim()).filter(Boolean);
 
   if (screen === "designs") return <Designs onBack={() => setScreen("settings")} />;
+  if (demo?.startsWith("room-") || demo?.startsWith("tv-")) {
+    const d = demoRoom(demo);
+    return <RoomBody view={d.view} status="open" send={() => {}} now={() => d.now} onLeave={() => {}} screen={d.screen} />;
+  }
+  if (screen === "room" && client)
+    return (
+      <RoomScreen
+        client={client}
+        onLeave={leaveRoom}
+        onBack={() => {
+          client.close();
+          setClient(null);
+          // A seat that no longer works is forgotten.
+          if (client.state.error && client.state.error !== "busy") storeSeat(null);
+          setScreen(roomReturn);
+        }}
+      />
+    );
+  if (screen === "join")
+    return (
+      <JoinScreen
+        initialCode={linkCode ?? ""}
+        initialName={roomName || players[0] || ""}
+        makeClient={(code, name) => new RoomClient({ t: "join", v: PROTOCOL, code, name }, (st) => storeSeat(st))}
+        onJoined={(c, name) => {
+          setRoomName(name);
+          persist(KEYS.roomName, name);
+          setClient(c);
+          setRoomReturn("home");
+          setScreen("room");
+        }}
+        onBack={() => setScreen("home")}
+      />
+    );
 
   if (!builtIn && !loadError) return <div class="screen screen--loading"><p class="loading">{sk.loading}</p></div>;
   if (loadError && !builtIn) return <div class="screen screen--loading"><p class="error">{sk.loadError}</p></div>;
@@ -167,6 +284,7 @@ export function App() {
           packs={packs}
           enabled={activeIds}
           initialPlayers={players}
+          initialName={roomName}
           initialSettings={settings}
           error={setupError}
           onBack={() => {
@@ -251,6 +369,9 @@ export function App() {
       packCount={activeIds.length}
       freshCount={activeIds.reduce((n, id) => n + (fresh[id] ?? 0), 0)}
       lastPlayers={lastPlayers}
+      roomCode={seat?.code ?? null}
+      onRoom={() => seat && resumeSeat(seat)}
+      onJoin={() => setScreen("join")}
       onQuick={(rounds) => start(lastPlayers, { ...settings, rounds, target: null }, false)}
       onNew={() => {
         setSetupError(null);

@@ -29,7 +29,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule). Write the prompt to a file (`docs/.review-<name>.prompt`, deleted afterwards) and run `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt-file> <out-file>`; the prompt asks for `severity file:line — issue` lines and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS. Check findings before acting: Gemini is often wrong.
 - `agy` runs only through `scripts/agy-readonly.py` (read-only allow-list), never with `--dangerously-skip-permissions`. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
 - **Content pipeline**: a Claude subagent drafts a pack from sources it opens itself → Gemini Hydrogen fact-checks → the writer verifies each finding against a source and applies only confirmed ones (drops what can't be settled) → Hydrogen re-review to PASS → merge. WebFetch returns a model summary, so check numbers against the raw page. Long runs hit the usage limit: resume the same agent afterwards rather than starting over.
-- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; container: `docker build -t fakt . && docker run --rm -p 4180:8080 fakt`, then the e2e script against it; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
+- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; room play test (3 phones + big screen): `PORT=4180 FAKT_ROOMS_PER_IP=50 FAKT_CREATES_PER_10MIN=100 npm start` then `node scripts/e2e-rooms.ts http://localhost:4180/`; container: `docker build -t fakt . && docker run --rm -p 4180:8080 fakt`, then the e2e script against it; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
 - Commits are not signed in this repo (owner's rule): use `git -c commit.gpgsign=false commit`, never re-sign or wait for GPG pinentry. Repo-local git config sets `commit.gpgsign=false`.
 
 ## Rules for agents
@@ -71,10 +71,11 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 ```
 packs/            question packs (YAML source, CC0) + README with format and writing guide
 src/content/      pack types and validation (shared by build script and importer)
-src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
+src/engine/       game rules: seeded RNG, card drawing, scoring, reducer, room reducer + views (pure, tested)
 src/ui/           Preact screens, storage, Slovak texts (sk.ts), links (report form), feedback (vibration/sound), demo states
 src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
-src/server/       Node server in the container (static app now, rooms next); runs via type stripping
+src/server/       Node server in the container: static app, WebSocket room hub with limits and snapshots; runs via type stripping
+src/net/          room protocol (shared) and the browser's reconnecting client
 scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper), dano-drevo-counts (word counts from subtitles)
 docs/             research report
 notes/            symlink to the owner's Obsidian vault (ignored, never commit)

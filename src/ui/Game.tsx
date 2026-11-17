@@ -102,7 +102,12 @@ function ScoreStrip({ state }: { state: GameState }) {
   );
 }
 
-function CardHead({ card }: { card: Card }) {
+/** Pack, kind, difficulty and date of a card; also used for room cards whose answers are hidden. */
+export function CardHead({
+  card,
+}: {
+  card: { type: string; packTitle: string; difficulty: number; asOf?: string; compare?: "asc" | "desc" };
+}) {
   return (
     <div class="q__meta">
       <span class="q__pack">{card.packTitle}</span>
@@ -236,7 +241,21 @@ function TurnEnd({ state, children }: { state: GameState; children?: ComponentCh
 }
 
 function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameState; dispatch: (a: Action) => void }) {
-  const [arr, setArr] = useState(() => card.items.map((_, i) => i));
+  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
+  return <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => dispatch({ type: "submitOrder", arrangement })} />;
+}
+
+/** Drag-and-drop ordering of items (with ↑/↓ buttons); reports item indices in the chosen order. */
+export function OrderInput({
+  items: cardItems,
+  direction,
+  onSubmit,
+}: {
+  items: { text: string }[];
+  direction: "asc" | "desc";
+  onSubmit: (arrangement: number[]) => void;
+}) {
+  const [arr, setArr] = useState(() => cardItems.map((_, i) => i));
   const [drag, setDrag] = useState<{ item: number; y: number } | null>(null);
   const list = useRef<HTMLOListElement>(null);
   const grab = useRef(0);
@@ -251,7 +270,6 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
     const el = items()[arr.indexOf(drag.item)];
     if (el) el.style.transform = `translateY(${drag.y - el.offsetTop}px)`;
   });
-  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
 
   const move = (pos: number, d: number) => {
     const to = pos + d;
@@ -298,7 +316,7 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
   return (
     <>
       <p class="q__hint">
-        {sk.orderHint(card.direction)} {sk.dragHint}
+        {sk.orderHint(direction)} {sk.dragHint}
       </p>
       <ol class={`order-list${drag ? " order-list--dragging" : ""}`} ref={list}>
         {arr.map((item, pos) => {
@@ -313,15 +331,15 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
               onPointerCancel={onUp}
             >
               <span class="order-item__rank">{pos + 1}</span>
-              <span class="order-item__text">{tie(card.items[item].text)}</span>
+              <span class="order-item__text">{tie(cardItems[item].text)}</span>
               <span class="order-item__controls">
-                <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${card.items[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
+                <button type="button" class="btn btn--icon" aria-label={`${sk.moveUp}: ${cardItems[item].text}`} disabled={pos === 0} onClick={() => move(pos, -1)}>
                   ↑
                 </button>
                 <button
                   type="button"
                   class="btn btn--icon"
-                  aria-label={`${sk.moveDown}: ${card.items[item].text}`}
+                  aria-label={`${sk.moveDown}: ${cardItems[item].text}`}
                   disabled={pos === arr.length - 1}
                   onClick={() => move(pos, 1)}
                 >
@@ -333,7 +351,7 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
         })}
       </ol>
       <div class="actions">
-        <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "submitOrder", arrangement: arr })}>
+        <button type="button" class="btn btn--primary btn--block" onClick={() => onSubmit(arr)}>
           {sk.submit}
         </button>
       </div>
@@ -342,15 +360,19 @@ function OrderTurn({ card, state, dispatch }: { card: OrderCard; state: GameStat
 }
 
 function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameState; dispatch: (a: Action) => void }) {
+  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
+  return <NumberInput unit={card.unit} decimals={numberDecimals(card)} onSubmit={(value) => dispatch({ type: "submitNumber", value })} />;
+}
+
+/** Number guess field; `decimals` is the precision asked for. */
+export function NumberInput({ unit, decimals, onSubmit }: { unit?: string; decimals: number; onSubmit: (value: number) => void }) {
   const [raw, setRaw] = useState("");
   const [error, setError] = useState(false);
-  if (state.phase === "turnEnd") return <TurnReveal state={state} />;
-  const decimals = numberDecimals(card);
   const submit = (e: Event) => {
     e.preventDefault();
     const v = parseNumber(raw, decimals);
     if (!Number.isFinite(v)) return setError(true);
-    dispatch({ type: "submitNumber", value: v });
+    onSubmit(v);
   };
   return (
     <form class="number-input" onSubmit={submit}>
@@ -362,7 +384,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
           inputMode="decimal"
           autoComplete="off"
           placeholder={sk.numberPlaceholder}
-          aria-label={card.unit ? `${sk.numberPlaceholder} (${card.unit})` : sk.numberPlaceholder}
+          aria-label={unit ? `${sk.numberPlaceholder} (${unit})` : sk.numberPlaceholder}
           aria-describedby="number-hint"
           value={raw}
           onInput={(e) => {
@@ -370,7 +392,7 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
             setError(false);
           }}
         />
-        {card.unit && <span class="number-input__unit">{card.unit}</span>}
+        {unit && <span class="number-input__unit">{unit}</span>}
       </label>
       {error && <p class="error">{sk.numberInvalid}</p>}
       <div class="actions">
@@ -434,7 +456,7 @@ function TurnReveal({ state }: { state: GameState }) {
 }
 
 /** How an option looks once answered: picked right/wrong, missed right, or a wrong one left alone. */
-function optionMark(correct: boolean, picked: boolean, reveal: boolean): { cls: string; label: string | null } {
+export function optionMark(correct: boolean, picked: boolean, reveal: boolean): { cls: string; label: string | null } {
   if (picked) return correct ? { cls: " opt--correct", label: sk.correctMark } : { cls: " opt--wrong", label: sk.wrongMark };
   if (!reveal) return { cls: "", label: null };
   return correct ? { cls: " opt--correct opt--missed", label: sk.missedMark } : { cls: " opt--rest", label: sk.restMark };
@@ -514,7 +536,7 @@ function InPlaceAnswer({ card, result }: { card: Card; result: TurnResult }) {
 }
 
 /** The solution of a card; `names` labels who chose each option. */
-function CardAnswer({ card, results, names }: { card: Card; results: TurnResult[]; names: (r: TurnResult) => string }) {
+export function CardAnswer({ card, results, names }: { card: Card; results: TurnResult[]; names: (r: TurnResult) => string }) {
   const who = (pred: (r: TurnResult) => boolean) => results.filter(pred).map(names);
   switch (card.type) {
     case "pick":
@@ -567,7 +589,7 @@ function CardAnswer({ card, results, names }: { card: Card; results: TurnResult[
   }
 }
 
-function CardFoot({ card }: { card: Card }) {
+export function CardFoot({ card }: { card: Card }) {
   return (
     <>
       {card.note && <p class="q__note">{tie(card.note)}</p>}
@@ -643,7 +665,7 @@ function isFinalRound(s: GameState): boolean {
   return s.round >= Math.min(s.settings.rounds, s.deck.length);
 }
 
-function describe(card: Card, r: TurnResult): string {
+export function describe(card: Card, r: TurnResult): string {
   const a = r.answer;
   if (card.type === "pick" && a.type === "pick") {
     const good = a.picks.filter((i) => card.options[i].correct).length;

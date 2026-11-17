@@ -11,7 +11,8 @@
     "packs": "node scripts/build-packs.ts",
     "packs:check": "node scripts/build-packs.ts --check",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "start": "node src/server/main.ts"
   },
   "dependencies": {
     "preact": "^11.2.0",

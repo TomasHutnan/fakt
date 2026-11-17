@@ -1,5 +1,6 @@
 import type { Pack } from "../content/types.ts";
-import { makeCompareCard } from "../engine/cards.ts";
+import { makeCompareCard, type Card } from "../engine/cards.ts";
+import { createRoom, DEFAULT_ROOM_SETTINGS, reduceRoom, viewFor, type ClientAction, type RoomState, type RoomView } from "../engine/room.ts";
 import { DEFAULT_SETTINGS, newGame, reduce, type GameState } from "../engine/game.ts";
 import { createRng } from "../engine/rng.ts";
 
@@ -155,4 +156,61 @@ export function demoState(screen: DemoScreen): GameState | null {
     default:
       return null;
   }
+}
+
+// Room demo states (?demo=room-…, ?demo=tv-…): views as a device would get them.
+
+export type RoomDemo = "room-lobby" | "room-pick" | "room-number" | "room-reveal" | "room-over" | "tv-lobby" | "tv-question" | "tv-reveal";
+export const ROOM_DEMOS: RoomDemo[] = ["room-lobby", "room-pick", "room-number", "room-reveal", "room-over", "tv-lobby", "tv-question", "tv-reveal"];
+
+const T0 = 1_800_000_000_000;
+
+function roomWith(type: "pick" | "number"): { s: RoomState; packs: Pack[] } {
+  const pack: Pack = { ...DEMO_PACK, questions: DEMO_PACK.questions.filter((q) => q.type === type) };
+  const packs = [pack];
+  let s = createRoom({
+    code: "KTVR",
+    hostId: "jano",
+    hostName: "Jano",
+    settings: { ...DEFAULT_ROOM_SETTINGS, packIds: ["demo"], mode: "mix", rounds: 10 },
+    packs,
+    seen: [],
+    seed: 3,
+  })!;
+  for (const [id, name] of [["zuzka", "Zuzka"], ["miro", "Miro"], ["peta", "Peťa"], ["dano", "Dano"]]) s = reduceRoom(s, { type: "join", id, name }, packs);
+  s = reduceRoom(s, { type: "connect", id: "dano", connected: false }, packs);
+  return { s, packs };
+}
+
+export function demoRoom(screen: string): { view: RoomView; now: number; screen: boolean } {
+  const tv = screen.startsWith("tv-");
+  const you = tv ? null : "zuzka";
+  const kind = screen === "room-number" ? "number" : "pick";
+  let { s, packs } = roomWith(kind);
+  const act = (by: string, a: ClientAction) => (s = reduceRoom(s, { ...a, by, now: T0 } as never, packs));
+  if (screen !== "room-lobby" && screen !== "tv-lobby") {
+    act("jano", { type: "start" });
+    if (kind === "pick") {
+      const card = s.card as Extract<Card, { type: "pick" }>;
+      const right = card.options.map((o, i) => (o.correct ? i : -1)).filter((i) => i >= 0);
+      const wrong = card.options.findIndex((o) => !o.correct);
+      act("jano", { type: "pick", option: right[0] });
+      act("jano", { type: "pick", option: right[1] });
+      act("jano", { type: "bank" });
+      act("miro", { type: "pick", option: wrong });
+      act("zuzka", { type: "pick", option: right[2] });
+      if (screen === "room-reveal" || screen === "tv-reveal" || screen === "room-over") {
+        act("zuzka", { type: "pick", option: right[1] });
+        act("zuzka", { type: "pick", option: right[0] });
+        act("zuzka", { type: "bank" });
+        act("peta", { type: "pick", option: right[3] });
+        act("peta", { type: "bank" });
+      }
+    } else {
+      act("jano", { type: "submitNumber", value: 200000 });
+    }
+    if (screen === "room-reveal" || screen === "tv-reveal") act("jano", { type: "ready" });
+    if (screen === "room-over") s = { ...s, phase: "over", players: s.players.map((p, i) => ({ ...p, score: [21, 19, 12, 14, 9][i] })) };
+  }
+  return { view: viewFor(s, you), now: T0 + 23_000, screen: tv };
 }

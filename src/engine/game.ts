@@ -31,6 +31,10 @@ export interface Settings {
   sound: boolean;
   difficulties: number[];
   packIds: string[];
+  /** New game on several phones (a room) instead of one phone passed around. */
+  online: boolean;
+  /** Time to answer in rooms. */
+  pace: "none" | "calm" | "fast";
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -44,6 +48,8 @@ export const DEFAULT_SETTINGS: Settings = {
   sound: false,
   difficulties: [1, 2, 3],
   packIds: [],
+  online: false,
+  pace: "calm",
 };
 
 export interface Player {

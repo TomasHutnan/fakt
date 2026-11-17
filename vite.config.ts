@@ -6,6 +6,8 @@ import { VitePWA } from "vite-plugin-pwa";
 // <user>.github.io/fakt/ before the custom domain is set up.
 export default defineConfig({
   base: "./",
+  // Rooms run in the Node server (npm start); the dev server forwards the socket to it.
+  server: { proxy: { "/ws": { target: "ws://localhost:8080", ws: true } } },
   plugins: [
     preact(),
     VitePWA({
