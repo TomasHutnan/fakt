@@ -42,6 +42,7 @@ Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner
 - Do not scrape or bulk-copy question pools or chart sites. Individual facts with a cited source are fine.
 - Every question needs a `source`; time-sensitive facts need `asOf`; every pick/choice option (and every number question) needs a one-line `why`; order items should have one. Language-model facts are checked against the source before merge.
 - **Nothing hateful or untrue**, also in spicy packs. Quotes of real people verbatim as printed by a reliable source; no claims of wrongdoing beyond the source.
+- **Scandals and crimes**: only official rulings, official findings and numbers, each cited (court, prosecutor, regulator, official report) with `asOf`. Ask about the case, not who was involved; never use real people's names as options or decoys next to a scandal (being named in a document is not an accusation). Details: `notes/Content.md` → Planned packs.
 - Crude content never switches on by itself: strong material (sexual, drugs, racism, heavy vulgarity) goes into an 18+ pack; mildly crude packs may be normal with `defaultOn: false`. Either way they need `warnings` (validation enforces it).
 - Question content is primarily Slovak (Czech acceptable). Code, comments and docs are in English.
 
