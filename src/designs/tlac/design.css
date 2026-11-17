@@ -67,10 +67,9 @@
 [data-design="tlac"] .menu { gap: 12px; }
 [data-design="tlac"] .menu .btn {
   justify-content: flex-start; min-height: 56px; padding: 0;
-  border: 0; border-top: 1px solid var(--rule); background: transparent; color: var(--ink);
+  border: 0; border-bottom: 1px solid var(--rule); background: transparent; color: var(--ink);
   font-size: 19px; font-weight: 600;
 }
-[data-design="tlac"] .menu .btn { border-bottom: 1px solid var(--rule); }
 [data-design="tlac"] .menu .btn:hover:not(:disabled) { background: transparent; color: var(--signal); }
 [data-design="tlac"] .menu .btn--primary {
   background: var(--ink); color: var(--paper); padding: 0 16px; border-top-color: var(--ink);
