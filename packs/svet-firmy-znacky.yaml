@@ -1,0 +1,651 @@
+id: svet-firmy-znacky
+title: Firmy a značky
+description: "Kto komu patrí, odkiaľ sa vzali názvy, za koľko sa kupovali aplikácie a ktoré domáce značky dnes vlastnia cudzinci."
+category: historia
+lang: sk
+adult: false
+version: 2
+questions:
+  # ================================================================ KTO KOMU PATRÍ
+  - id: unilever-znacky
+    type: pick
+    prompt: Ktoré z týchto značiek patria koncernu Unilever?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [vlastníci, drogéria]
+    source: https://www.unilever.com/brands/
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Unilever, /The_Magnum_Ice_Cream_Company, /Nivea, /Fa_(brand), /Head_%26_Shoulders, /Maggi, /Old_Spice"
+    correct:
+      - { text: "Dove", why: "Mydlá a kozmetika Dove sú jednou z najväčších značiek Unileveru." }
+      - { text: "Axe", why: "V Británii a Írsku sa ten istý dezodorant predáva pod menom Lynx." }
+      - { text: "Rexona", why: "V Británii sa ten istý dezodorant volá Sure." }
+      - { text: "Knorr", why: "Polievky a bujóny Knorr kúpil Unilever v roku 2000." }
+      - { text: "Hellmann's", why: "Aj majonéza Hellmann's prišla do Unileveru v roku 2000." }
+      - { text: "Domestos", why: "Čistič na záchody je v portfóliu Unileveru." }
+      - { text: "Cif", why: "Tekutý piesok na kuchyňu je tiež značka Unileveru." }
+      - { text: "Vaseline", why: "Aj vazelína a krémy Vaseline sú z portfólia Unileveru." }
+    wrong:
+      - { text: "Nivea", why: "Patrí nemeckému Beiersdorfu; meno je z latinského niveus, snehobiely." }
+      - { text: "Fa", why: "Sprchové gély Fa patria nemeckému Henkelu." }
+      - { text: "Gillette", why: "Žiletky patria Procter & Gamble, ktorý Gillette kúpil v roku 2005." }
+      - { text: "Head & Shoulders", why: "Šampón proti lupinám vyrába Procter & Gamble." }
+      - { text: "Maggi", why: "Patrí Nestlé; Maggi vzniklo v roku 1886 vo Švajčiarsku." }
+      - { text: "Magnum", why: "Do roku 2025 áno, potom Unilever zmrzliny oddelil do samostatnej The Magnum Ice Cream Company." }
+
+  - id: nestle-znacky
+    type: pick
+    prompt: Ktoré z týchto značiek patria švajčiarskemu Nestlé?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, sladkosti]
+    source: https://en.wikipedia.org/wiki/Nestl%C3%A9
+    note: "Ďalšie zdroje: cs.wikipedia.org/wiki/Orion_(čokoládovna), en.wikipedia.org/wiki/Mars_Inc., /Mondelez_International, /Ferrero_SpA, /Haribo, /Lindt_%26_Sprüngli"
+    correct:
+      - { text: "Nescafé", why: "Instantná káva, s ktorou Nestlé prišlo v roku 1938." }
+      - { text: "Nespresso", why: "Kapsulová káva je samostatná dcérska firma Nestlé." }
+      - { text: "Nesquik", why: "Kakao Nesquik; predpona Nes- prezrádza majiteľa." }
+      - { text: "KitKat", why: "Okrem USA, kde ho na základe licencie vyrába Hershey, patrí Nestlé." }
+      - { text: "Maggi", why: "Nestlé značku vlastní od roku 1947." }
+      - { text: "Purina", why: "Krmivo pre psy a mačky Nestlé kúpilo v decembri 2001." }
+      - { text: "Orion", why: "Pražská čokoládovňa Študentskej pečate a Margot patrí pod Nestlé Česko." }
+      - { text: "Perrier", why: "Francúzska perlivá minerálka je tiež značka Nestlé." }
+    wrong:
+      - { text: "Milka", why: "Fialová krava patrí americkému koncernu Mondelez." }
+      - { text: "Twix", why: "Dve tyčinky v balení vyrába rodinná firma Mars." }
+      - { text: "Nutella", why: "Nátierka talianskeho Ferrera, na trhu od roku 1964." }
+      - { text: "Haribo", why: "Nemecké gumené medvedíky z Bonnu." }
+      - { text: "Oreo", why: "Sušienky patria koncernu Mondelez." }
+      - { text: "Lindt", why: "Švajčiarska je, ale je to samostatná firma Lindt & Sprüngli." }
+
+  - id: pg-znacky
+    type: pick
+    prompt: Ktoré z týchto značiek dnes patria americkému Procter & Gamble?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, drogéria]
+    source: https://en.wikipedia.org/wiki/Procter_%26_Gamble
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Fairy_(brand), /Downy, /Duracell, /Pringles, /Nivea, /Fa_(brand)"
+    correct:
+      - { text: "Gillette", why: "P&G kúpil Gillette v roku 2005 a stal sa tak väčším než Unilever." }
+      - { text: "Pampers", why: "Plienky sú jednou z najväčších značiek P&G." }
+      - { text: "Ariel", why: "Prací prášok P&G." }
+      - { text: "Oral-B", why: "Zubné kefky a elektrické kefky P&G." }
+      - { text: "Old Spice", why: "Pánska kozmetika P&G." }
+      - { text: "Pantene", why: "Šampóny a kondicionéry P&G." }
+      - { text: "Jar", why: "Na Západe sa ten istý prostriedok na riad volá Fairy." }
+      - { text: "Lenor", why: "Aviváž, ktorá sa v USA predáva pod menom Downy." }
+      - { text: "Braun", why: "Nemecké holiace strojčeky patria do divízie Grooming spolu s Gillette." }
+    wrong:
+      - { text: "Duracell", why: "Batérie P&G v roku 2016 vymenil s Berkshire Hathaway Warrena Buffetta." }
+      - { text: "Pringles", why: "P&G ich v roku 2012 predal Kelloggu, dnes patria firme Mars." }
+      - { text: "Nivea", why: "Krém v modrej plechovke vyrába nemecký Beiersdorf." }
+      - { text: "Fa", why: "Patrí nemeckému Henkelu." }
+      - { text: "Dove", why: "Dove je značka konkurenčného Unileveru." }
+
+  - id: vw-koncern
+    type: pick
+    prompt: Ktoré z týchto značiek patria do koncernu Volkswagen?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, autá]
+    source: https://en.wikipedia.org/wiki/Volkswagen_Group
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Rolls-Royce_Motor_Cars, /Mini_(marque), /Volvo_Cars, /Jaguar_Land_Rover, /Ferrari, /Stellantis"
+    correct:
+      - { text: "Škoda", why: "Mladoboleslavská automobilka je dnes jedna z hlavných značiek koncernu." }
+      - { text: "Audi", why: "Ingolstadtská značka so štyrmi kruhmi patrí pod VW." }
+      - { text: "SEAT", why: "Španielska automobilka z Martorellu." }
+      - { text: "Cupra", why: "Pôvodne športová verzia SEAT-ov, dnes samostatná značka." }
+      - { text: "Porsche", why: "Porsche patrí do koncernu od roku 2012; Cayenne sa vyrába v Bratislave." }
+      - { text: "Lamborghini", why: "Talianske superautá zo Sant'Agata Bolognese." }
+      - { text: "Bentley", why: "Britské luxusné autá, na rozdiel od Rolls-Royce." }
+      - { text: "Ducati", why: "Talianske motorky koncern kúpil v roku 2012." }
+      - { text: "Scania", why: "Švédske nákladiaky, súčasť koncernu od roku 2008." }
+    wrong:
+      - { text: "Rolls-Royce", why: "Bentley patrí VW, ale Rolls-Royce Motor Cars vlastní BMW." }
+      - { text: "Mini", why: "Britská značka patrí BMW, ktoré nové Mini predáva od roku 2001." }
+      - { text: "Volvo", why: "Švédske osobné autá väčšinovo vlastní čínsky Geely." }
+      - { text: "Jaguar", why: "Spolu s Land Roverom patrí indickej skupine Tata." }
+      - { text: "Ferrari", why: "Samostatná firma, od Fiatu sa oddelila v roku 2016." }
+      - { text: "Alfa Romeo", why: "Patrí koncernu Stellantis." }
+
+  - id: stellantis-znacky
+    type: pick
+    prompt: Ktoré z týchto automobilových značiek patria koncernu Stellantis?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [vlastníci, autá]
+    source: https://en.wikipedia.org/wiki/Stellantis
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Automobile_Dacia, /Lada, /Kia, /Volkswagen_Group, /Smart_(marque)"
+    correct:
+      - { text: "Peugeot", why: "Trnavský závod, kde sa kedysi robili Peugeoty, dnes patrí Stellantisu." }
+      - { text: "Citroën", why: "Spolu s Peugeotom tvoril skupinu PSA, ktorá sa v januári 2021 spojila s Fiat Chrysler." }
+      - { text: "Fiat", why: "Taliansky základ druhej polovice Stellantisu." }
+      - { text: "Opel", why: "Opel patril General Motors až do roku 2017, potom ho kúpila PSA." }
+      - { text: "Jeep", why: "Americké terénne autá prišli cez Chrysler." }
+      - { text: "Maserati", why: "Luxusná talianska značka z Modeny." }
+      - { text: "Lancia", why: "Historická talianska značka, dnes súčasť Stellantisu." }
+      - { text: "Dodge", why: "Americké svalnaté autá, tiež dedičstvo Chrysleru." }
+      - { text: "Abarth", why: "Škorpión na rýchlych Fiatoch je samostatná značka koncernu." }
+    wrong:
+      - { text: "Renault", why: "Francúzsky, ale samostatný konkurent Peugeotu." }
+      - { text: "Dacia", why: "Rumunská značka patrí Renaultu." }
+      - { text: "Kia", why: "Juhokórejská značka zo skupiny Hyundai." }
+      - { text: "Lada", why: "Patrí ruskému AvtoVAZ-u." }
+      - { text: "SEAT", why: "Španielsky SEAT patrí koncernu Volkswagen." }
+
+  - id: lvmh-znacky
+    type: pick
+    prompt: Ktoré z týchto luxusných značiek patria francúzskemu koncernu LVMH?
+    difficulty: 3
+    asOf: "2026-11"
+    tags: [vlastníci, móda]
+    source: https://en.wikipedia.org/wiki/LVMH
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Kering, /Chanel, /Hermès, /Rolex, /Cartier_(jeweler)"
+    correct:
+      - { text: "Louis Vuitton", why: "Je priamo v názve: LVMH znamená Louis Vuitton Moët Hennessy." }
+      - { text: "Moët & Chandon", why: "Šampanské je M v skratke LVMH." }
+      - { text: "Hennessy", why: "Koňak je H v skratke LVMH." }
+      - { text: "Dior", why: "Dior patrí pod LVMH, ktorý vedie Bernard Arnault." }
+      - { text: "Sephora", why: "Reťazec parfumérií je tiež súčasť LVMH." }
+      - { text: "Bulgari", why: "Rímskeho klenotníka LVMH kúpil v roku 2011 za 5,2 miliardy dolárov." }
+      - { text: "Tiffany & Co.", why: "Newyorského klenotníka LVMH kúpil po dohode z roku 2019." }
+      - { text: "Fendi", why: "Taliansky módny dom z Ríma." }
+      - { text: "Rimowa", why: "Aj nemecké hliníkové kufre patria luxusnému koncernu." }
+    wrong:
+      - { text: "Gucci", why: "Patrí konkurenčnému francúzskemu koncernu Kering." }
+      - { text: "Balenciaga", why: "Tiež značka koncernu Kering." }
+      - { text: "Yves Saint Laurent", why: "Módny dom patrí Keringu." }
+      - { text: "Chanel", why: "Súkromná firma, vlastnia ju bratia Wertheimerovci." }
+      - { text: "Hermès", why: "Rodinná firma sa po roku 2010 ubránila nákupu akcií zo strany LVMH." }
+      - { text: "Rolex", why: "Hodinky vlastní nadácia Hansa Wilsdorfa." }
+      - { text: "Cartier", why: "Patrí švajčiarskej skupine Richemont." }
+
+  - id: meta-sluzby
+    type: pick
+    prompt: Ktoré z týchto aplikácií a služieb patria spoločnosti Meta (bývalý Facebook)?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, internet]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Meta_Platforms
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Meta_Platforms, /Telegram_(software), /Viber, /Snap_Inc., /Signal_(software), /List_of_mergers_and_acquisitions_by_Amazon"
+    correct:
+      - { text: "Instagram", why: "Facebook ho kúpil v apríli 2012 za 1 miliardu dolárov." }
+      - { text: "WhatsApp", why: "Kúpa za ohlásených 19 miliárd dolárov z roku 2014 je najväčšia v histórii Mety." }
+      - { text: "Messenger", why: "Chat sa z Facebooku oddelil do samostatnej aplikácie." }
+      - { text: "Threads", why: "Textová sociálna sieť Mety, konkurent X." }
+      - { text: "Oculus", why: "Okuliare na virtuálnu realitu Facebook kúpil v roku 2014 za 2 miliardy dolárov." }
+    wrong:
+      - { text: "Telegram", why: "Založili ho bratia Pavel a Nikolaj Durovovci." }
+      - { text: "Viber", why: "Patrí japonskému Rakutenu." }
+      - { text: "Snapchat", why: "Vlastní ho Snap Inc., ktorý ovládajú zakladatelia Evan Spiegel a Bobby Murphy." }
+      - { text: "Signal", why: "Vyvíja ho nezisková Signal Foundation." }
+      - { text: "Twitch", why: "Streamovaciu platformu kúpil v roku 2014 Amazon." }
+
+  - id: alphabet-sluzby
+    type: pick
+    prompt: Ktoré z týchto služieb a firiem patria Googlu, teda skupine Alphabet?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [vlastníci, internet]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Alphabet
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Waymo, /List_of_mergers_and_acquisitions_by_Amazon, /List_of_mergers_and_acquisitions_by_Microsoft"
+    correct:
+      - { text: "YouTube", why: "Google ho kúpil v roku 2006 za 1,65 miliardy dolárov v akciách." }
+      - { text: "Android", why: "Systém Google kúpil v roku 2005 ako malý startup za zhruba 50 miliónov dolárov." }
+      - { text: "Waze", why: "Izraelskú navigáciu Google kúpil v roku 2013." }
+      - { text: "Fitbit", why: "Fitness náramky kúpil Google za 2,1 miliardy dolárov, obchod dokončil v roku 2021." }
+      - { text: "DeepMind", why: "Londýnske AI laboratórium Google kúpil v roku 2014." }
+      - { text: "Nest", why: "Inteligentné termostaty za 3,2 miliardy dolárov z roku 2014." }
+      - { text: "Waymo", why: "Robotaxíky vznikli ako projekt Googlu, dnes samostatná firma pod Alphabetom." }
+    wrong:
+      - { text: "IMDb", why: "Filmovú databázu kúpil Amazon už v roku 1998." }
+      - { text: "Audible", why: "Audioknihy patria Amazonu od roku 2008." }
+      - { text: "Minecraft", why: "Štúdio Mojang kúpil Microsoft v roku 2014 za 2,5 miliardy dolárov." }
+      - { text: "Spotify", why: "Samostatná švédska firma." }
+      - { text: "Ring", why: "Kamerové zvončeky Ring kúpil v roku 2018 Amazon." }
+
+  - id: inditex-znacky
+    type: pick
+    prompt: Ktoré z týchto módnych reťazcov patria španielskej skupine Inditex, majiteľovi Zary?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, móda]
+    source: https://en.wikipedia.org/wiki/Inditex
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Mango_(retailer), /H%26M, /Primark, /LPP_(company), /Uniqlo"
+    correct:
+      - { text: "Zara", why: "Vlajková loď Amancia Ortegu z Galície." }
+      - { text: "Bershka", why: "Lacnejšia značka Inditexu pre mladých." }
+      - { text: "Pull&Bear", why: "Tiež značka Inditexu, hoci znie skôr americky." }
+      - { text: "Massimo Dutti", why: "Znie taliansky, ale je to španielska značka Inditexu." }
+      - { text: "Stradivarius", why: "Ďalšia dámska módna značka Inditexu." }
+      - { text: "Oysho", why: "Spodná bielizeň a športové oblečenie od Inditexu." }
+      - { text: "Zara Home", why: "Domáce doplnky a textil od Inditexu." }
+    wrong:
+      - { text: "Mango", why: "Španielska, ale samostatná firma z Katalánska, ktorú založili bratia Andicovci." }
+      - { text: "H&M", why: "Švédsky konkurent z Västerås." }
+      - { text: "COS", why: "Patrí švédskej skupine H&M." }
+      - { text: "Primark", why: "Írsky reťazec založený v Dubline." }
+      - { text: "Reserved", why: "Poľská značka skupiny LPP z Gdanska." }
+      - { text: "Uniqlo", why: "Japonský reťazec skupiny Fast Retailing." }
+
+  - id: ferrero-sladkosti
+    type: pick
+    prompt: Ktoré z týchto sladkostí vyrába talianske Ferrero?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [vlastníci, sladkosti]
+    source: https://en.wikipedia.org/wiki/Ferrero_SpA
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Mars_Inc., /Mondelez_International, /Nestl%C3%A9"
+    correct:
+      - { text: "Nutella", why: "Prvýkrát sa predávala v roku 1964." }
+      - { text: "Kinder vajíčko", why: "Kinder je celá rodina sladkostí Ferrera." }
+      - { text: "Ferrero Rocher", why: "Guľky v zlatom papieri nesú meno firmy." }
+      - { text: "Raffaello", why: "Kokosové guľky, súrodenec Ferrero Rocher." }
+      - { text: "Tic Tac", why: "Mätové cukríky v priehľadnej krabičke sú od Ferrera." }
+      - { text: "Mon Chéri", why: "Bonbóny s višňou v likéri." }
+      - { text: "Hanuta", why: "Lieskovoorieškové oblátky, tiež od Ferrera." }
+      - { text: "Royal Dansk", why: "Aj dánske maslové sušienky dnes patria Ferreru." }
+    wrong:
+      - { text: "Toblerone", why: "Trojuholníková čokoláda patrí koncernu Mondelez." }
+      - { text: "Snickers", why: "Vyrába ho rodinná firma Mars." }
+      - { text: "KitKat", why: "Patrí Nestlé." }
+      - { text: "M&M's", why: "Farebné dražé tiež vyrába Mars." }
+      - { text: "Bounty", why: "Kokosová tyčinka od firmy Mars." }
+      - { text: "Milka", why: "Patrí koncernu Mondelez." }
+
+  - id: abinbev-piva
+    type: pick
+    prompt: Ktoré z týchto pív vyrába najväčší pivovarnícky koncern sveta AB InBev?
+    difficulty: 3
+    asOf: "2026-11"
+    tags: [vlastníci, pivo]
+    source: https://en.wikipedia.org/wiki/AB_InBev
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Stella_Artois, /Corona_(beer), /Beck%27s_Brewery, /Hoegaarden_Brewery, /Leffe, /Budweiser, /Staropramen_Brewery, /Guinness_(beer), /Tuborg, /Budweiser_Budvar_Brewery"
+    correct:
+      - { text: "Budweiser (americký)", why: "Americký Budweiser od Anheuser-Busch sa o meno roky súdi s českým Budvarom." }
+      - { text: "Stella Artois", why: "Belgický ležiak z Lovane." }
+      - { text: "Corona", why: "Mexické pivo; v USA ho na základe licencie predáva Constellation Brands." }
+      - { text: "Beck's", why: "Nemecké pivo z Brém." }
+      - { text: "Hoegaarden", why: "Belgické pšeničné pivo." }
+      - { text: "Leffe", why: "Belgické pivo z portfólia AB InBev." }
+    wrong:
+      - { text: "Budějovický Budvar", why: "Český pivovar je štátny podnik, nie súčasť AB InBev." }
+      - { text: "Staropramen", why: "Pražský pivovar patrí americkému Molson Coors." }
+      - { text: "Guinness", why: "Írsky stout patrí britskému Diageu." }
+      - { text: "Tuborg", why: "Patrí dánskemu Carlsbergu." }
+      - { text: "Heineken", why: "Samostatná holandská firma, vlastní aj Zlatý Bažant." }
+
+  # ================================================================ ODKIAĽ SÚ
+  - id: svedske-znacky
+    type: pick
+    prompt: Ktoré z týchto značiek pochádzajú zo Švédska?
+    difficulty: 1
+    tags: [krajiny]
+    source: https://en.wikipedia.org/wiki/Spotify
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/IKEA, /H%26M, /Ericsson, /Electrolux, /Absolut_Vodka, /Tetra_Pak, /Husqvarna_Group, /Nokia, /Carlsberg_Group, /Pandora_(jewelry), /Rovio_Entertainment, /Bang_%26_Olufsen, /Fazer, /Marimekko"
+    correct:
+      - { text: "Spotify", why: "Hudobná služba zo Štokholmu, založená v roku 2006." }
+      - { text: "IKEA", why: "Kamprad ju založil v roku 1943 v Agunnaryde; prvý obchodný dom otvorila v Älmhulte." }
+      - { text: "H&M", why: "Prvý obchod otvorili v roku 1947 v meste Västerås, vtedy pod menom Hennes." }
+      - { text: "Ericsson", why: "Telekomunikačná firma zo Štokholmu, založená v roku 1876." }
+      - { text: "Electrolux", why: "Výrobca spotrebičov, pod menom Electrolux od roku 1919." }
+      - { text: "Absolut", why: "Vodka z mestečka Åhus." }
+      - { text: "Tetra Pak", why: "Výrobca nápojových krabíc vznikol v roku 1951 v Lunde." }
+      - { text: "Husqvarna", why: "Firma vznikla v roku 1689 ako štátna továreň na pušky." }
+    wrong:
+      - { text: "Nokia", why: "Fínska firma, založená v roku 1865 v Tampere." }
+      - { text: "Carlsberg", why: "Dánsky pivovar z Kodane." }
+      - { text: "Pandora", why: "Šperky s príveskami sú z Dánska." }
+      - { text: "Rovio", why: "Tvorcovia Angry Birds sú z Helsínk; od roku 2023 ich vlastní japonská Sega." }
+      - { text: "Bang & Olufsen", why: "Dánska elektronika z mesta Struer." }
+      - { text: "Fazer", why: "Fínsky výrobca čokolády, založený v roku 1891." }
+      - { text: "Marimekko", why: "Fínska dizajnová značka, vznikla v roku 1951 v Helsinkách." }
+
+  - id: korejske-znacky
+    type: pick
+    prompt: Ktoré z týchto značiek sú z Južnej Kórey?
+    difficulty: 1
+    tags: [krajiny, elektronika]
+    source: https://en.wikipedia.org/wiki/Samsung
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/LG_Corporation, /Hyundai_Motor_Company, /Kia, /Hankook_Tire, /Kumho_Tire, /Sony, /Panasonic, /Toshiba, /Huawei, /Xiaomi, /Suzuki, /Canon_Inc., /Asus, /Hisense"
+    correct:
+      - { text: "Samsung", why: "Založený v roku 1938 ako obchodná firma, elektroniku začal vyrábať až koncom 60. rokov." }
+      - { text: "LG", why: "Pôvodne Lucky a Goldstar, odtiaľ skratka LG." }
+      - { text: "Hyundai", why: "Automobilka zo Soulu, autá vyrába aj v Česku." }
+      - { text: "Kia", why: "Sídli v Soule; slovenský závod má pri Žiline." }
+      - { text: "Hankook", why: "Pneumatiky z Kórey, v Európe ich vyrába v Maďarsku." }
+      - { text: "Kumho", why: "Výrobca pneumatík z mesta Kwangdžu." }
+    wrong:
+      - { text: "Sony", why: "Japonská firma s centrálou v Tokiu." }
+      - { text: "Panasonic", why: "Japonská firma z Kadomy pri Osake." }
+      - { text: "Toshiba", why: "Japonská firma z Kawasaki." }
+      - { text: "Huawei", why: "Čínska firma zo Šen-čenu." }
+      - { text: "Xiaomi", why: "Čínska firma z Pekingu." }
+      - { text: "Suzuki", why: "Japonská automobilka z prefektúry Šizuoka." }
+      - { text: "Asus", why: "Taiwanská firma z Tchaj-peja." }
+      - { text: "Hisense", why: "Čínsky výrobca televízorov z Čching-taa." }
+
+  # ================================================================ NÁZVY A ZAČIATKY
+  - id: nazvy-znaciek
+    type: pick
+    prompt: Ktoré z týchto tvrdení o pôvode názvov značiek sú pravdivé?
+    difficulty: 1
+    tags: [názvy]
+    source: https://en.wikipedia.org/wiki/The_Lego_Group
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/H%C3%A4agen-Dazs, /Nike,_Inc., /Audi, /Volvo, /Haribo, /IKEA, /Samsung, /Google, /Backronym, /Nokia"
+    correct:
+      - { text: "Lego pochádza z dánskeho „leg godt“ – hraj sa dobre", why: "Firmu založil v roku 1932 Ole Kirk Christiansen." }
+      - { text: "Häagen-Dazs je vymyslené slovo, ktoré malo znieť po dánsky", why: "Písmeno ä ani dvojica zs v dánčine vôbec nie sú; zmrzlina je z newyorského Bronxu." }
+      - { text: "Nike je pomenovaná po gréckej bohyni víťazstva", why: "Do roku 1971 sa firma volala Blue Ribbon Sports." }
+      - { text: "Audi je latinský preklad priezviska zakladateľa", why: "Zakladateľ sa volal August Horch; nemecké „horch“ aj latinské „audi“ znamenajú počúvaj." }
+      - { text: "Volvo znamená po latinsky „valím sa“", why: "Meno si pôvodne zaregistroval výrobca ložísk SKF." }
+      - { text: "Haribo je skratka z mena Hans Riegel, Bonn", why: "HA-RI-BO: meno zakladateľa a mesto, kde firma vznikla." }
+      - { text: "Samsung znamená po kórejsky „tri hviezdy“", why: "Tri znamená veľké a silné, hviezdy večné." }
+      - { text: "Google je skomolené slovo googol", why: "Googol je jednotka so sto nulami." }
+    wrong:
+      - { text: "Adidas je skratka „All Day I Dream About Sport“", why: "Túto skratku si ľudia vymysleli dodatočne; meno je z Adi Dassler." }
+      - { text: "IKEA znamená po švédsky „pre domov“", why: "Je to skratka: Ingvar Kamprad, statok Elmtaryd a dedina Agunnaryd." }
+      - { text: "Häagen-Dazs založili dvaja Dáni", why: "Založili ju poľskí prisťahovalci Reuben a Rose Mattusovci." }
+      - { text: "Nike bola od začiatku Nike", why: "Prvých sedem rokov sa volala Blue Ribbon Sports." }
+
+  - id: meno-zakladatela
+    type: pick
+    prompt: Ktoré z týchto značiek nesú priezvisko svojho zakladateľa?
+    difficulty: 2
+    tags: [názvy]
+    source: https://en.wikipedia.org/wiki/Ferrari
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Porsche, /Ford_Motor_Company, /Dell, /Boeing, /Honda, /Robert_Bosch_GmbH, /Lamborghini, /Michelin, /Siemens, /Tesla,_Inc., /Mercedes-Benz, /Puma_(brand), /Adidas"
+    correct:
+      - { text: "Ferrari", why: "Založil ju Enzo Ferrari." }
+      - { text: "Porsche", why: "Ferdinand Porsche ju založil spolu s Antonom Piëchom." }
+      - { text: "Ford", why: "Založil ju Henry Ford." }
+      - { text: "Dell", why: "Založil ju Michael Dell, sídli v texaskom Round Rocku." }
+      - { text: "Boeing", why: "Založil ju William E. Boeing." }
+      - { text: "Honda", why: "Založil ju Soičiró Honda." }
+      - { text: "Bosch", why: "Založil ju Robert Bosch." }
+      - { text: "Lamborghini", why: "Ferruccio Lamborghini vyrábal najprv traktory." }
+      - { text: "Michelin", why: "Bratia André a Édouard Michelinovci z Clermont-Ferrandu." }
+    wrong:
+      - { text: "Tesla", why: "Pomenovaná po vynálezcovi Nikolovi Teslovi, ktorý zomrel desaťročia pred vznikom firmy." }
+      - { text: "Mercedes", why: "Meno dostala podľa dcéry obchodníka Emila Jellinka." }
+      - { text: "Puma", why: "Rudolf Dassler firmu najprv nazval Ruda, potom ju premenoval na Puma." }
+      - { text: "Nike", why: "Grécka bohyňa víťazstva; zakladatelia sa volali Knight a Bowerman." }
+
+  - id: cim-zacinali
+    type: pick
+    prompt: Ktoré z týchto tvrdení o tom, čím firmy začínali, sú pravdivé?
+    difficulty: 2
+    tags: [história]
+    source: https://en.wikipedia.org/wiki/Nokia
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Nintendo, /Peugeot, /Lamborghini, /Toyota, /Husqvarna_Group, /Amazon_(company), /The_Lego_Group, /IKEA, /Samsung"
+    correct:
+      - { text: "Nokia začínala ako továreň na drevovinu na výrobu papiera", why: "Banský inžinier Fredrik Idestam ju založil v roku 1865." }
+      - { text: "Nintendo vyrábalo hracie karty", why: "Ručne maľované karty hanafuda od roku 1889, hračky až v 60. rokoch." }
+      - { text: "Peugeot vyrábal mlynčeky na kávu a korenie", why: "Mlynčeky na kávu okolo roku 1840, na korenie od roku 1874." }
+      - { text: "Lamborghini vyrábal traktory", why: "Traktory Lamborghini Trattori sa vyrábajú dodnes, od roku 1973 ako samostatná firma." }
+      - { text: "Toyota začínala pri tkáčskych stavoch", why: "Sakiči Tojoda vynašiel automatický tkáčsky stav." }
+      - { text: "Husqvarna vyrábala pušky", why: "Štátna zbrojovka mala začiatkom 18. storočia okolo 1 000 zamestnancov." }
+    wrong:
+      - { text: "IKEA od prvého dňa predávala nábytok", why: "Začínala ako zásielkový obchod, nábytok pribudol až o päť rokov neskôr." }
+      - { text: "Lego vyrábalo od začiatku plastové kocky", why: "Prvé roky vyrábalo drevené hračky, plastové kocky až od roku 1949." }
+      - { text: "Peugeot začínal výrobou bicyklov", why: "Bicykle prišli až okolo roku 1880, po pílach, mlynčekoch a korzetoch." }
+      - { text: "Samsung začínal ako výrobca rádií", why: "Začínal v roku 1938 ako obchodná firma, elektroniku robí až od konca 60. rokov." }
+
+  # ================================================================ AKVIZÍCIE
+  - id: akvizicie-nad-10-mld
+    type: pick
+    prompt: Ktoré z týchto akvizícií stáli viac ako 10 miliárd dolárov?
+    difficulty: 2
+    tags: [akvizície]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Microsoft
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Meta_Platforms, /List_of_mergers_and_acquisitions_by_Alphabet, /List_of_mergers_and_acquisitions_by_Amazon, /Acquisition_of_Twitter_by_Elon_Musk, /Acquisition_of_21st_Century_Fox_by_Disney, /Pixar, /Marvel_Entertainment, /Lucasfilm, /Beats_Electronics"
+    correct:
+      - { text: "Facebook kupuje WhatsApp (2014)", why: "Ohlásená cena 19 miliárd dolárov." }
+      - { text: "Microsoft kupuje LinkedIn (2016)", why: "26,2 miliardy dolárov za sociálnu sieť pre kariéru." }
+      - { text: "Microsoft kupuje Activision Blizzard (2022)", why: "Tvorcov Call of Duty a World of Warcraft kúpil za vyše 68 miliárd dolárov." }
+      - { text: "Elon Musk kupuje Twitter (2022)", why: "44 miliárd dolárov; firma sa potom premenovala na X." }
+      - { text: "Amazon kupuje Whole Foods (2017)", why: "13,7 miliardy dolárov za americký reťazec biopotravín." }
+      - { text: "Google kupuje Motorola Mobility (2011)", why: "12,5 miliardy dolárov za výrobcu mobilov." }
+      - { text: "Disney kupuje 21st Century Fox (2019)", why: "71,3 miliardy dolárov po prebíjaní s Comcastom." }
+    wrong:
+      - { text: "Google kupuje YouTube (2006)", why: "1,65 miliardy dolárov v akciách." }
+      - { text: "Microsoft kupuje Skype (2011)", why: "8,5 miliardy dolárov." }
+      - { text: "Disney kupuje Pixar (2006)", why: "7,4 miliardy dolárov." }
+      - { text: "Disney kupuje Marvel (2009)", why: "Zhruba 4 miliardy dolárov." }
+      - { text: "Apple kupuje Beats (2014)", why: "3 miliardy dolárov za slúchadlá a hudobnú službu." }
+      - { text: "Amazon kupuje MGM (2021)", why: "8,45 miliardy dolárov za filmové štúdio." }
+
+  # ================================================================ SLOVENSKO A ČESKO
+  - id: domace-znacky-cudzi-majitelia
+    type: pick
+    prompt: Ktoré z týchto českých a slovenských značiek dnes vlastní firma zo zahraničia (mimo Česka a Slovenska)?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [slovensko, česko, vlastníci]
+    source: https://en.wikipedia.org/wiki/Matador_(company)
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Pilsner_Urquell, sk.wikipedia.org/wiki/Pivovar_Šariš, sk.wikipedia.org/wiki/Zlatý_Bažant, cs.wikipedia.org/wiki/Orion_(čokoládovna), cs.wikipedia.org/wiki/Becherovka, en.wikipedia.org/wiki/Staropramen_Brewery, /Volkswagen_Group, /Budweiser_Budvar_Brewery, /Tatra_(company), /Zetor"
+    correct:
+      - { text: "Matador (pneumatiky)", why: "Firma vznikla v roku 1905 v Bratislave, pneumatiky dnes patria nemeckému Continentalu." }
+      - { text: "Pilsner Urquell", why: "Plzenský Prazdroj kúpila v roku 2017 japonská Asahi." }
+      - { text: "Šariš", why: "Pivovar vo Veľkom Šariši patrí tiež japonskej Asahi." }
+      - { text: "Zlatý Bažant", why: "Pivovar v Hurbanove patrí Heinekenu." }
+      - { text: "Orion", why: "Pražskú čokoládovňu vlastní švajčiarske Nestlé." }
+      - { text: "Becherovka", why: "Od roku 2024 ju vlastní poľský koncern Maspex." }
+      - { text: "Staropramen", why: "Pražský pivovar patrí americkému Molson Coors." }
+      - { text: "Škoda Auto", why: "Súčasť nemeckého koncernu Volkswagen." }
+    wrong:
+      - { text: "Budějovický Budvar", why: "Štátny podnik, vlastní ho česká vláda." }
+      - { text: "Tatra", why: "Kopřivnické nákladiaky patria českým skupinám Czechoslovak Group a Promet." }
+      - { text: "Zetor", why: "Brnenské traktory vlastní od roku 2002 slovenská skupina HTC." }
+
+  # ================================================================ ORDER
+  - id: rok-zalozenia-stare
+    type: order
+    prompt: Zoraď firmy a značky podľa roku založenia, od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [história]
+    source: https://en.wikipedia.org/wiki/Nokia
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Coca-Cola, /Nintendo, /The_Lego_Group, /Samsung, /IKEA, /Adidas"
+    items:
+      - { text: "Nokia", value: 1865, why: "Továreň na drevovinu pri Tampere." }
+      - { text: "Coca-Cola", value: 1886, why: "Nápoj prvýkrát predali v máji 1886 v Atlante." }
+      - { text: "Nintendo", value: 1889, why: "Hracie karty hanafuda z Kjóta." }
+      - { text: "Lego", value: 1932, why: "Firma začínala v dánskom Billunde, kde má sídlo dodnes." }
+      - { text: "Samsung", value: 1938, why: "Obchodná firma v kórejskom Tegu." }
+      - { text: "IKEA", value: 1943, why: "Zásielkový obchod 17-ročného Ingvara Kamprada." }
+      - { text: "Adidas", value: 1949, why: "Vznikla po rozchode bratov Dasslerovcov." }
+
+  - id: rok-zalozenia-tech
+    type: order
+    prompt: Zoraď technologické firmy a služby podľa roku vzniku, od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [internet, história]
+    source: https://en.wikipedia.org/wiki/Microsoft
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Apple_Inc., /Amazon_(company), /Facebook, /Spotify, /WhatsApp, /Instagram"
+    items:
+      - { text: "Microsoft", value: 1975, why: "Bill Gates a Paul Allen ho založili v Albuquerque." }
+      - { text: "Apple", value: 1976, why: "Založený 1. apríla 1976." }
+      - { text: "Amazon", value: 1994, why: "Najprv pod menom Cadabra." }
+      - { text: "Facebook", value: 2004, why: "Spustený vo februári 2004 na Harvarde." }
+      - { text: "Spotify", value: 2006, why: "Firmu založili v apríli 2006 v Štokholme." }
+
+  - id: ceny-akvizicii
+    type: order
+    prompt: Zoraď kúpy firiem podľa ceny, od najdrahšej.
+    direction: desc
+    unit: mld. USD
+    difficulty: 2
+    tags: [akvizície]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Microsoft
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Meta_Platforms, /List_of_mergers_and_acquisitions_by_Alphabet"
+    items:
+      - { text: "LinkedIn (Microsoft, 2016)", value: 26.2, why: "26,2 miliardy dolárov." }
+      - { text: "WhatsApp (Facebook, 2014)", value: 19, why: "Ohlásená cena 19 miliárd dolárov." }
+      - { text: "Skype (Microsoft, 2011)", value: 8.5, why: "8,5 miliardy dolárov." }
+      - { text: "GitHub (Microsoft, 2018)", value: 7.5, why: "7,5 miliardy dolárov." }
+      - { text: "Minecraft – Mojang (Microsoft, 2014)", value: 2.5, why: "2,5 miliardy dolárov za švédske štúdio." }
+      - { text: "Oculus (Facebook, 2014)", value: 2, why: "2 miliardy dolárov." }
+      - { text: "YouTube (Google, 2006)", value: 1.65, why: "1,65 miliardy dolárov v akciách." }
+
+  - id: trzby-fortune
+    type: order
+    prompt: Zoraď firmy podľa tržieb v rebríčku Fortune Global 500 z roku 2026, od najvyšších.
+    direction: desc
+    unit: mld. USD
+    difficulty: 3
+    asOf: "2026"
+    tags: [tržby]
+    source: https://fortune.com/ranking/global500/2026/
+    note: "Prehľad aj na en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    items:
+      - { text: "Amazon", value: 717, why: "1. miesto, prvýkrát predbehol Walmart." }
+      - { text: "Apple", value: 416, why: "6. miesto, ale zisk 112 miliárd dolárov." }
+      - { text: "Volkswagen", value: 363, why: "13. miesto, najväčšia firma Európy v rebríčku." }
+      - { text: "Toyota", value: 336, why: "14. miesto." }
+      - { text: "Microsoft", value: 282, why: "18. miesto." }
+      - { text: "Samsung Electronics", value: 235, why: "26. miesto." }
+      - { text: "Meta", value: 201, why: "30. miesto." }
+      - { text: "BMW", value: 151, why: "50. miesto, posledné v prvej päťdesiatke." }
+
+  - id: trzby-automobilky
+    type: order
+    prompt: Zoraď automobilky podľa tržieb v rebríčku Fortune Global 500 z roku 2026, od najvyšších.
+    direction: desc
+    unit: mld. USD
+    difficulty: 2
+    asOf: "2026"
+    tags: [tržby, autá]
+    source: https://fortune.com/ranking/global500/2026/
+    items:
+      - { text: "Volkswagen", value: 363, why: "Najväčšia automobilka sveta podľa tržieb, 13. miesto celkovo." }
+      - { text: "Toyota", value: 336, why: "14. miesto, so ziskom vyše 25 miliárd dolárov." }
+      - { text: "Ford", value: 187, why: "38. miesto, s miernym náskokom pred General Motors." }
+      - { text: "Stellantis", value: 173, why: "43. miesto, so stratou vyše 25 miliárd dolárov." }
+      - { text: "Honda", value: 145, why: "55. miesto." }
+
+  # ================================================================ NUMBER
+  - id: instagram-cena
+    type: number
+    prompt: Za koľko miliónov dolárov ohlásil Facebook v roku 2012 kúpu Instagramu?
+    answer: 1000
+    unit: mil. USD
+    scale: log
+    tolerance: 0.1
+    why: "Ohlásená cena bola 1 miliarda dolárov za aplikáciu, ktorá mala necelé dva roky. Akcie Facebooku potom klesli, takže pri uzavretí mal obchod hodnotu asi 715 miliónov."
+    difficulty: 1
+    tags: [akvizície]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Meta_Platforms
+
+  - id: instagram-zamestnanci
+    type: number
+    prompt: Koľko zamestnancov mal Instagram, keď ho Facebook kúpil za 1 miliardu dolárov?
+    answer: 13
+    unit: zamestnancov
+    scale: log
+    tolerance: 0.1
+    why: "Iba 13 ľudí, čo dáva vyše 75 miliónov dolárov na zamestnanca."
+    difficulty: 3
+    tags: [akvizície]
+    source: https://www.businessinsider.com/instagram-employees-and-investors-2012-4
+
+  - id: android-cena
+    type: number
+    prompt: Za koľko miliónov dolárov kúpil Google v roku 2005 malú firmu Android?
+    answer: 50
+    unit: mil. USD
+    scale: log
+    tolerance: 0.1
+    why: "Zhruba 50 miliónov dolárov, vtedy za malú firmu bez hotového telefónu."
+    difficulty: 2
+    tags: [akvizície]
+    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Alphabet
+
+  - id: kamprad-vek
+    type: number
+    prompt: Koľko rokov mal Ingvar Kamprad, keď v roku 1943 založil IKEA?
+    answer: 17
+    unit: rokov
+    scale: linear
+    tolerance: 1
+    why: "Ako 17-ročný začal so zásielkovým obchodom, nábytok predával až o päť rokov neskôr."
+    difficulty: 2
+    tags: [história]
+    source: https://en.wikipedia.org/wiki/IKEA
+
+  - id: adidas-pruhy
+    type: number
+    prompt: Za koľko eur (v prepočte) kúpil Adidas v roku 1952 svoje tri pruhy od fínskej firmy Karhu?
+    answer: 1600
+    unit: eur
+    scale: log
+    tolerance: 0.1
+    why: "Asi 1 600 eur a k tomu dve fľaše whisky."
+    difficulty: 3
+    tags: [história]
+    source: https://en.wikipedia.org/wiki/Adidas
+
+  - id: matador-rok
+    type: number
+    prompt: V ktorom roku vznikla v Bratislave gumárenská firma Matador?
+    answer: 1905
+    unit: rok
+    scale: linear
+    tolerance: 5
+    why: "Zapísali ju v septembri 1905, továreň bola v Petržalke a pneumatiky začala robiť v roku 1925."
+    difficulty: 2
+    tags: [slovensko, história]
+    source: https://en.wikipedia.org/wiki/Matador_(company)
+
+  # ================================================================ CHOICE
+  - id: nod-skratka
+    type: choice
+    prompt: Čo znamená skratka NOD v názve slovenského antivírusu NOD32 od ESET-u?
+    difficulty: 2
+    tags: [slovensko, názvy]
+    source: https://en.wikipedia.org/wiki/ESET_NOD32
+    note: "Meno firmy podľa en.wikipedia.org/wiki/ESET pochádza z egyptskej bohyne Eset (Isis)."
+    correct: { text: "Nemocnica na okraji disku", why: "Pôvodný antivírus z Bratislavy; samotné meno ESET je slovenské meno egyptskej bohyne Isis." }
+    wrong:
+      - { text: "Nový ochranný doplnok", why: "Skratka je vtipnejšia: Nemocnica na okraji disku." }
+      - { text: "Národná obrana dát", why: "Nie, ide o Nemocnicu na okraji disku." }
+      - { text: "Nezávislý odhaľovač drôtov", why: "Nie, ide o Nemocnicu na okraji disku." }
+
+  - id: google-povodny-nazov
+    type: choice
+    prompt: Ako sa volal výskumný projekt, z ktorého vznikol Google?
+    difficulty: 2
+    tags: [názvy, internet]
+    source: https://en.wikipedia.org/wiki/History_of_Google
+    correct: { text: "BackRub", why: "Projekt Larryho Pagea a Sergeja Brina na Stanforde z roku 1996." }
+    wrong:
+      - { text: "Cadabra", why: "Tak sa v roku 1994 krátko volal Amazon." }
+      - { text: "Googol", why: "Z neho sa vzalo meno Google, ale projekt sa volal BackRub." }
+      - { text: "PageSearch", why: "Projekt sa volal BackRub." }
+
+  - id: amazon-povodny-nazov
+    type: choice
+    prompt: Ako sa volal Amazon, keď ho Jeff Bezos v roku 1994 založil?
+    difficulty: 1
+    tags: [názvy, internet]
+    source: https://en.wikipedia.org/wiki/Amazon_(company)
+    correct: { text: "Cadabra", why: "V novembri 1994 ho Bezos premenoval podľa najväčšej rieky sveta." }
+    wrong:
+      - { text: "BackRub", why: "Tak sa volal výskumný projekt, z ktorého vznikol Google." }
+      - { text: "Blue Ribbon", why: "Blue Ribbon Sports bol pôvodný názov firmy Nike." }
+      - { text: "Bookworm", why: "Amazon sa najprv volal Cadabra." }
+
+  - id: puma-povodny-nazov
+    type: choice
+    prompt: Ako nazval Rudolf Dassler svoju firmu po rozchode s bratom Adim, kým ju premenoval na Puma?
+    difficulty: 3
+    tags: [názvy]
+    source: https://en.wikipedia.org/wiki/Puma_(brand)
+    correct: { text: "Ruda", why: "Z Ru-dolf Da-ssler, podobne ako Adidas z Adi Dassler." }
+    wrong:
+      - { text: "Rudas", why: "Bolo to len Ruda, bez s." }
+      - { text: "Dassler Sport", why: "Prvé meno bolo Ruda." }
+      - { text: "Gepard", why: "Mačkovitá šelma prišla až s menom Puma." }
