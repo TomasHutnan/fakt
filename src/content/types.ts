@@ -72,7 +72,7 @@ export type QuestionType = Question["type"];
 export const CATEGORIES = ["kultura", "historia", "zemepis", "veda", "tradicie", "sport"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
-export const CONTENT_WARNINGS = ["vulgar", "sexual", "drugs", "dark-humor", "racism", "abuse"] as const;
+export const CONTENT_WARNINGS = ["vulgar", "sexual", "drugs", "dark-humor", "racism", "abuse", "gross"] as const;
 export type ContentWarning = (typeof CONTENT_WARNINGS)[number];
 
 export interface Pack {

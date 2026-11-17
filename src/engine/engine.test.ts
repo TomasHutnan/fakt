@@ -325,6 +325,7 @@ describe("validator", () => {
   });
   it("accepts known content warnings and rejects unknown ones", () => {
     expect(validatePack({ ...pack, adult: true, warnings: ["vulgar", "racism"] }).pack?.warnings).toEqual(["vulgar", "racism"]);
+    expect(validatePack({ ...pack, defaultOn: false, warnings: ["gross"] }).pack?.warnings).toEqual(["gross"]);
     expect(validatePack({ ...pack, adult: true, warnings: ["gore"] }).pack).toBeNull();
     expect(validatePack(pack).pack?.warnings).toBeUndefined();
   });
