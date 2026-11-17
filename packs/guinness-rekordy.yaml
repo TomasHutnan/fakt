@@ -1,0 +1,596 @@
+id: guinness-rekordy
+title: Guinnessove rekordy
+description: Najvyšší, najstarší, najrýchlejší a najdrahší – ľudia, zvieratá, stavby, internet aj rekordy Slovákov a Čechov.
+category: kultura
+lang: sk
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: najstarsi-ludia
+    type: pick
+    prompt: Kto z týchto ľudí sa dožil aspoň 116 rokov?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people
+    tags: [ludia, vek]
+    correct:
+      - text: Jeanne Calmentová
+        why: "Francúzka z Arles sa dožila 122 rokov a 164 dní, nikto overený nežil dlhšie."
+      - text: Kane Tanaková
+        why: "Japonka sa dožila 119 rokov a 107 dní, druhý najvyšší overený vek."
+      - text: Sarah Knaussová
+        why: "Američanka sa dožila 119 rokov a 97 dní, od Tanakovej ju delí desať dní."
+      - text: Lucile Randonová
+        why: "Francúzska rehoľníčka sestra André, zomrela v januári 2023 vo veku 118 rokov."
+      - text: Nabi Tadžimová
+        why: "Japonka, ktorá sa dožila 117 rokov a 260 dní."
+      - text: Maria Branyasová
+        why: "Katalánka narodená v USA, zomrela v auguste 2024 vo veku 117 rokov."
+      - text: Džiroemon Kimura
+        why: "Japonec, 116 rokov a 54 dní – najstarší muž v histórii."
+      - text: Ethel Caterhamová
+        why: "Britka narodená v roku 1909, v novembri 2026 najstarší žijúci človek, už vyše 117 rokov."
+    wrong:
+      - text: Kráľovná matka Alžbeta
+        why: "Matka Alžbety II. sa dožila 101 rokov."
+      - text: Olivia de Havillandová
+        why: "Hviezda filmu Odviate vetrom zomrela v roku 2020 ako 104-ročná."
+      - text: Kirk Douglas
+        why: "Spartakus zomrel v roku 2020 vo veku 103 rokov."
+      - text: Johannes Heesters
+        why: "Holandský spevák a herec, na javisku ešte po stovke, zomrel ako 108-ročný."
+      - text: Leni Riefenstahlová
+        why: "Režisérka zomrela v roku 2003 vo veku 101 rokov."
+      - text: George Burns
+        why: "Komik zomrel v roku 1996 len pár týždňov po stých narodeninách."
+      - text: Bob Hope
+        why: "Komik zomrel v roku 2003 dva mesiace po stých narodeninách."
+
+  - id: rekordne-telo
+    type: pick
+    prompt: Ktoré tvrdenia o rekordných ľuďoch sú pravdivé?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Robert_Wadlow
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sultan_Kösen, /Rumeysa_Gelgi, /Jyoti_Amge, /Chandra_Bahadur_Dangi, /Shridhar_Chillal"
+    tags: [ludia, telo]
+    correct:
+      - text: Robert Wadlow, najvyšší človek v histórii, meral 272 cm
+        why: "Američan z mesta Alton v štáte Illinois, rástol až do smrti v roku 1940."
+      - text: Robert Wadlow zomrel ako 22-ročný
+        why: "Narodil sa vo februári 1918 a zomrel v júli 1940 na infekciu."
+      - text: Najvyšší žijúci muž Sultan Kösen je z Turecka
+        why: "Pri meraní v roku 2011 mal 251 cm."
+      - text: Najvyššia žijúca žena Rumeysa Gelgiová je z Turecka
+        why: "Meria 215,16 cm, titul drží od roku 2021 – Turecko tak má oba rekordy."
+      - text: Najmenšia žijúca žena Jyoti Amgeová meria menej ako 65 cm
+        why: "Indka meria 62,8 cm, hrala aj v seriáli American Horror Story."
+      - text: Najmenší overený dospelý v histórii meral 54,6 cm
+        why: "Bol to Nepálčan Chandra Bahadur Dangi, Guinness ho uznal v roku 2012."
+      - text: Šrídhar Čillal mal nechty na jednej ruke dlhé spolu vyše 9 metrov
+        why: "Spolu 909,6 cm; nestrihal si ich od roku 1952, ostrihali mu ich až v roku 2018."
+    wrong:
+      - text: Robert Wadlow meral viac ako tri metre
+        why: "Meral 272 cm, teda o necelých 30 cm menej."
+      - text: Najvyšší žijúci muž je čínsky basketbalista Jao Ming
+        why: "Jao Ming meria 229 cm, Sultan Kösen je o vyše 20 cm vyšší."
+      - text: Sultan Kösen meria viac ako 270 cm
+        why: "Meria 251 cm, na Wadlowa mu chýba viac ako 20 cm."
+      - text: Rumeysa Gelgiová meria viac ako 230 cm
+        why: "Meria 215,16 cm."
+      - text: Jyoti Amgeová pochádza z Nepálu
+        why: "Je z indického Nágpuru; z Nepálu bol najmenší muž Chandra Bahadur Dangi."
+
+  - id: slovaci-cesi-rekordy
+    type: pick
+    prompt: Ktoré z týchto rekordov naozaj patria Slovákom alebo Čechom?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Slovakia_women%27s_national_ice_hockey_team
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Zdeno_Chára, /Peter_Sagan, /Martina_Navratilova, /Ester_Ledecká, /Jaromír_Jágr, /Vezina_Trophy, /Marian_Hossa, /Anastasiya_Kuzmina"
+    tags: [slovensko, cesko, sport]
+    correct:
+      - text: "Zdeno Chára: najvyšší hráč v histórii NHL"
+        why: "Meria 206 cm, vyšší hráč v NHL nikdy nehral."
+      - text: "Zdeno Chára: najtvrdšia strela v súťaži zručností NHL"
+        why: "V roku 2012 vystrelil 108,8 míle za hodinu, teda 175,1 km/h."
+      - text: "Slovenské hokejistky: najvyššie víťazstvo v histórii IIHF"
+        why: "V roku 2008 v olympijskej kvalifikácii zdolali Bulharsko 82:0, zapísal si to aj Guinness."
+      - text: "Peter Sagan: najviac zelených dresov na Tour de France"
+        why: "Bodovaciu súťaž vyhral sedemkrát, viac ako ktokoľvek pred ním."
+      - text: "Martina Navrátilová: najviac titulov z Wimbledonu v dvojhre"
+        why: "Rodáčka z Prahy vyhrala Wimbledon deväťkrát."
+      - text: "Jarmila Kratochvílová: najstarší platný individuálny svetový rekord v atletike"
+        why: "800 m za 1:53,28 zabehla v Mníchove v roku 1983 a dodnes ho nikto neprekonal."
+      - text: "Ester Ledecká: zlato v lyžovaní aj na snouborde na jednej olympiáde"
+        why: "V Pjongčangu 2018 vyhrala super-G aj paralelný obrovský slalom, žiadna žena to predtým nedokázala."
+    wrong:
+      - text: "Jaromír Jágr: najviac bodov v histórii NHL"
+        why: "So 1 921 bodmi je druhý, Wayne Gretzky ich má 2 857."
+      - text: "Dominik Hašek: najviac Vezinových trofejí pre najlepšieho brankára NHL"
+        why: "Má ich šesť, Jacques Plante sedem."
+      - text: "Marián Hossa: najviac Stanleyho pohárov"
+        why: "Vyhral tri s Chicagom, rekordér Henri Richard ich má jedenásť."
+      - text: "Peter Sagan: najviac celkových víťazstiev na Tour de France"
+        why: "Tour celkovo nevyhral nikdy, jeho doménou bol zelený dres."
+      - text: "Anastasia Kuzminová: najviac olympijských zlatých medailí v biatlone"
+        why: "Má tri zlaté, Nór Ole Einar Bjørndalen osem."
+      - text: "Martina Navrátilová: najviac grandslamových titulov v dvojhre"
+        why: "Má ich 18, Margaret Courtová 24."
+
+  - id: internet-hudba
+    type: pick
+    prompt: Ktoré rekordy z internetu a hudby sú uvedené správne?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_most-viewed_YouTube_videos
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_most-subscribed_YouTube_channels, /List_of_most-followed_Instagram_accounts, /List_of_best-selling_albums, /List_of_highest-grossing_concert_tours, /List_of_Grammy_Award_records"
+    tags: [internet, hudba]
+    correct:
+      - text: "Najsledovanejšie video na YouTube: Baby Shark Dance"
+        why: "Despacito predbehlo v novembri 2020, dnes má vyše 17 miliárd pozretí."
+      - text: "Najviac odberateľov na YouTube: MrBeast"
+        why: "Na čelo sa dostal v júni 2024, keď predbehol indickú T-Series."
+      - text: "Najsledovanejší človek na Instagrame: Cristiano Ronaldo"
+        why: "Má vyše 680 miliónov sledujúcich, viac má len samotný účet Instagramu."
+      - text: "Najpredávanejší album: Thriller od Michaela Jacksona"
+        why: "Odhaduje sa okolo 70 miliónov predaných kusov."
+      - text: "Najzárobkovejšie koncertné turné: The Eras Tour od Taylor Swiftovej"
+        why: "Zarobilo vyše 2 miliárd dolárov, ako prvé v histórii."
+      - text: "Najviac cien Grammy: Beyoncé"
+        why: "Má ich 35, viac ako ktokoľvek iný."
+    wrong:
+      - text: "Najsledovanejšie video na YouTube: Gangnam Style"
+        why: "Bolo prvé s miliardou pozretí (2012), ale rekord už dávno stratilo."
+      - text: "Najsledovanejšie video na YouTube: Despacito"
+        why: "Kraľovalo do roku 2020, potom ho predbehol Baby Shark."
+      - text: "Najviac odberateľov na YouTube: PewDiePie"
+        why: "Na čele bol rekordne štyrikrát, naposledy do apríla 2019; dnes je ďaleko za MrBeastom."
+      - text: "Najsledovanejší človek na Instagrame: Lionel Messi"
+        why: "Je druhý s vyše 500 miliónmi, Ronaldo má o vyše 150 miliónov viac."
+      - text: "Najpredávanejší album: Back in Black od AC/DC"
+        why: "Je druhý s odhadom okolo 50 miliónov, Thriller je vyššie."
+      - text: "Najzárobkovejšie koncertné turné: U2 360° Tour"
+        why: "Rekord držalo okolo roku 2011, potom ho prekonali Ed Sheeran, Elton John aj Taylor Swiftová."
+
+  - id: sportovi-rekordmani
+    type: pick
+    prompt: Ktoré dvojice rekord – rekordér sú správne?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_NHL_players_with_1,000_points
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_National_Basketball_Association_career_scoring_leaders, /Michael_Phelps, /List_of_Grand_Slam_men's_singles_champions, /List_of_men's_footballers_with_50_or_more_international_goals, /Men's_pole_vault_world_record_progression"
+    tags: [sport]
+    correct:
+      - text: "Najviac gólov v histórii NHL: Alexander Ovečkin"
+        why: "Gretzkého 894 gólov prekonal v apríli 2025."
+      - text: "Najviac bodov v histórii NHL: Wayne Gretzky"
+        why: "2 857 bodov, druhý Jaromír Jágr má o 936 menej."
+      - text: "Najviac bodov v histórii NBA: LeBron James"
+        why: "Kareema Abdula-Jabbara predbehol v roku 2023."
+      - text: "Najviac olympijských zlatých medailí: Michael Phelps"
+        why: "23 zlatých a 28 medailí celkovo, z toho osem zlatých len v Pekingu 2008."
+      - text: "Najviac grandslamov v dvojhre mužov: Novak Djokovič"
+        why: "Má ich 24, z toho rekordných desať z Australian Open."
+      - text: "Najviac gólov za reprezentáciu: Cristiano Ronaldo"
+        why: "Za Portugalsko ich nastrieľal vyše 140, Messi je druhý."
+      - text: "Svetový rekord v skoku o žrdi: Armand Duplantis"
+        why: "Švéd ho zlepšuje po centimetri, dnes je nad 6,30 m."
+    wrong:
+      - text: "Najviac gólov v histórii NHL: Wayne Gretzky"
+        why: "Rekord 894 gólov mu v roku 2025 vzal Ovečkin; bodový rekord mu ostal."
+      - text: "Najviac bodov v histórii NBA: Kareem Abdul-Jabbar"
+        why: "Rekord držal od roku 1984 do roku 2023, kým ho nepredbehol LeBron."
+      - text: "Najviac bodov v histórii NBA: Michael Jordan"
+        why: "Jordan má 32 292 bodov, LeBron vyše 43 000."
+      - text: "Najviac grandslamov v dvojhre mužov: Rafael Nadal"
+        why: "Nadal má rekordných 14 titulov z Roland Garros, ale celkovo menej ako Djokovič."
+      - text: "Najviac gólov za reprezentáciu: Lionel Messi"
+        why: "Za Argentínu dal vyše 120 gólov, Ronaldo je však pred ním."
+      - text: "Najviac olympijských zlatých medailí: Carl Lewis"
+        why: "Lewis má deväť zlatých, Phelps 23."
+      - text: "Svetový rekord v skoku o žrdi: Sergej Bubka"
+        why: "Rekord stratil v roku 2014, keď ho prekonal Renaud Lavillenie."
+
+  - id: prirodne-rekordy
+    type: pick
+    prompt: Ktoré prírodné rekordy sú uvedené správne?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Highest_temperature_recorded_on_Earth
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Lowest_temperature_recorded_on_Earth, /Lake_Baikal, /Caspian_Sea, /Vatican_City, /Mariana_Trench"
+    tags: [priroda, geografia]
+    correct:
+      - text: "Najvyššia oficiálne uznaná teplota: Údolie smrti v USA"
+        why: "56,7 °C v júli 1913, Svetová meteorologická organizácia ju uznáva dodnes."
+      - text: "Najnižšia nameraná teplota: stanica Vostok v Antarktíde"
+        why: "−89,2 °C v júli 1983."
+      - text: "Najhlbšie jazero: Bajkal"
+        why: "Hlboké viac ako 1 600 metrov, obsahuje aj najviac sladkej vody spomedzi jazier."
+      - text: "Najväčšie jazero: Kaspické more"
+        why: "Napriek menu je to jazero, väčšie ako celé Nemecko."
+      - text: "Najmenší štát: Vatikán"
+        why: "Má necelý pol kilometra štvorcového."
+      - text: "Najhlbšie miesto oceánu: Mariánska priekopa"
+        why: "Priepasť Challenger je hlboká skoro 11 kilometrov."
+    wrong:
+      - text: "Najvyššia oficiálne uznaná teplota: Al Azízíja v Líbyi"
+        why: "57,8 °C z roku 1922 platilo 90 rokov, v roku 2012 ho WMO zrušila ako chybné meranie."
+      - text: "Najnižšia nameraná teplota: Ojmiakon na Sibíri"
+        why: "Platí za najchladnejšie trvalo obývané miesto, ale −67,7 °C na Antarktídu nestačí."
+      - text: "Najhlbšie jazero: Tanganika"
+        why: "Je druhé najhlbšie, Bajkal je hlbší."
+      - text: "Najvyšší vodopád: Niagarské vodopády"
+        why: "Sú slávne šírkou a množstvom vody, ale vysoké sú len okolo 50 metrov."
+      - text: "Najmenší štát: Monako"
+        why: "Je druhý najmenší, Vatikán je ešte menší."
+      - text: "Najväčšie jazero: Horné jazero"
+        why: "Je najväčšie sladkovodné jazero podľa rozlohy, no Kaspické more je viac ako štyrikrát väčšie."
+
+  - id: stavby-stroje
+    type: pick
+    prompt: Ktoré rekordy stavieb a strojov sú uvedené správne?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_tallest_buildings
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Statue_of_Unity, /Danyang–Kunshan_Grand_Bridge, /Kola_Superdeep_Borehole, /Land_speed_record, /Lockheed_SR-71_Blackbird, /Parker_Solar_Probe"
+    tags: [stavby, technika]
+    correct:
+      - text: "Najvyššia budova: Burdž Chalífa v Dubaji"
+        why: "828 metrov, najvyššia je od otvorenia v roku 2010."
+      - text: "Najvyššia socha: Socha jednoty v Indii"
+        why: "182 metrov, zobrazuje indického politika Vallabhbhaiho Patela."
+      - text: "Najdlhší most: Danyang–Kunshan v Číne"
+        why: "Železničný viadukt dlhý 164,8 km, otvorený v roku 2011."
+      - text: "Najhlbšia diera vyvŕtaná človekom: Kolský superhlboký vrt"
+        why: "V roku 1989 dosiahol hĺbku 12 262 metrov."
+      - text: "Rýchlostný rekord na zemi: ThrustSSC"
+        why: "V roku 1997 išiel 1 228 km/h, ako prvé auto prekonal rýchlosť zvuku."
+      - text: "Najrýchlejšie lietadlo s posádkou a prúdovým motorom: SR-71 Blackbird"
+        why: "Rekord z roku 1976 dodnes nikto neprekonal."
+      - text: "Najrýchlejší objekt vyrobený človekom: sonda Parker Solar Probe"
+        why: "Pri Slnku v decembri 2024 letela 690 000 km/h."
+    wrong:
+      - text: "Najvyššia budova: Šanghajská veža"
+        why: "Má 632 metrov a je až tretia, pred ňou je aj Merdeka 118 v Kuala Lumpur."
+      - text: "Najvyššia socha: Socha slobody v New Yorku"
+        why: "Samotná socha má okolo 46 metrov, Socha jednoty je štyrikrát vyššia."
+      - text: "Najdlhší most: Golden Gate v San Franciscu"
+        why: "Slávny visutý most má necelé 3 km."
+      - text: "Najrýchlejšie lietadlo s posádkou a prúdovým motorom: Concorde"
+        why: "Lietal okolo dvojnásobku rýchlosti zvuku, SR-71 vyše trojnásobok."
+      - text: "Rýchlostný rekord na zemi: Bugatti Chiron"
+        why: "Bugatti jazdí okolo 490 km/h, ThrustSSC vyše 1 200."
+
+  - id: zvierata-rekordmani
+    type: pick
+    prompt: Ktoré zvieracie rekordy sú uvedené správne?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Largest_and_heaviest_animals
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Fastest_animals, /Inland_taipan, /Greenland_shark"
+    tags: [zvierata]
+    correct:
+      - text: "Najväčšie zviera všetkých čias: vráskavec obrovský (modrá veľryba)"
+        why: "Väčší nebol ani žiadny dinosaurus."
+      - text: "Najrýchlejšie zviera: sokol sťahovavý"
+        why: "Strmhlav na korisť letí vyše 300 km/h."
+      - text: "Najrýchlejšie suchozemské zviera: gepard"
+        why: "Spoľahlivo nameraných je 104 km/h."
+      - text: "Najväčší žijúci vták: pštros"
+        why: "Nevie lietať, ale beží až okolo 70 km/h."
+      - text: "Najväčšia žijúca ryba: žralok veľrybí"
+        why: "Napriek veľkosti sa živí planktónom."
+      - text: "Najväčšia jašterica: varan komodský"
+        why: "Indonézsky drak meria aj okolo troch metrov."
+      - text: "Najjedovatejší had: taipan menší"
+        why: "Austrálsky had s najsilnejším jedom podľa pokusov na myšiach."
+      - text: "Najdlhšie žijúci stavovec: žralok grónsky"
+        why: "Odhadom sa dožíva aspoň 272 rokov, možno aj vyše 500."
+    wrong:
+      - text: "Najrýchlejšie suchozemské zviera: lev"
+        why: "Lev v šprinte nedosiahne ani 80 km/h, na geparda nemá."
+      - text: "Najväčší žijúci vták: emu"
+        why: "Emu je veľký, ale pštros je vyšší aj ťažší."
+      - text: "Najjedovatejší had: kobra kráľovská"
+        why: "Je najdlhší jedovatý had, ale jed taipana je oveľa silnejší."
+      - text: "Najväčšia žijúca ryba: žralok biely"
+        why: "Žralok veľrybí je oveľa väčší."
+      - text: "Najväčší žijúci plaz: anakonda"
+        why: "Najväčší plaz je krokodíl morský."
+      - text: "Najdlhšie žijúci stavovec: korytnačka obrovská"
+        why: "Korytnačky žijú aj vyše 190 rokov, žralok grónsky však podľa odhadov ešte dlhšie."
+
+  - id: peniaze-knihy
+    type: pick
+    prompt: Ktoré rekordy z umenia, kníh a peňazí sú uvedené správne?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/List_of_most_expensive_association_football_transfers, /List_of_most_expensive_cars_sold_at_auction, /List_of_literary_works_by_number_of_translations, /List_of_best-selling_books, /The_Scream"
+    tags: [umenie, knihy, peniaze]
+    correct:
+      - text: "Najdrahší predaný obraz: Salvator Mundi"
+        why: "Leonardovi pripisovaný obraz sa v roku 2017 predal za 450,3 milióna dolárov."
+      - text: "Najvyššia poistná hodnota obrazu: Mona Lisa"
+        why: "V roku 1962 ju na účely poistenia ocenili na 100 miliónov dolárov, Guinness to vedie ako rekord."
+      - text: "Najdrahší futbalový prestup: Neymar"
+        why: "PSG zaň v roku 2017 zaplatilo Barcelone 222 miliónov eur."
+      - text: "Najdrahšie auto predané na aukcii: Mercedes-Benz 300 SLR Uhlenhaut Coupé"
+        why: "V roku 2022 sa predal za 143 miliónov dolárov."
+      - text: "Najprekladanejšia kniha: Biblia"
+        why: "Aspoň časť vyšla vo viac ako 4 000 jazykoch."
+      - text: "Najprekladanejšia nenáboženská kniha: Malý princ"
+        why: "Preložili ho do vyše 600 jazykov."
+      - text: "Najpredávanejšia knižná séria: Harry Potter"
+        why: "Okolo 600 miliónov predaných kusov."
+    wrong:
+      - text: "Najdrahší predaný obraz: Mona Lisa"
+        why: "Mona Lisa sa nikdy nepredávala, patrí Francúzsku a visí v Louvri."
+      - text: "Najdrahší predaný obraz: Výkrik"
+        why: "Pastel sa v roku 2012 vydražil za necelých 120 miliónov dolárov – vtedy rekord, dnes ani zďaleka."
+      - text: "Najdrahší futbalový prestup: Kylian Mbappé"
+        why: "180 miliónov eur z Monaka do PSG, druhý najdrahší."
+      - text: "Najprekladanejšia nenáboženská kniha: Harry Potter"
+        why: "Vyšiel približne v 85 jazykoch, Malý princ vo vyše 600."
+      - text: "Najprekladanejšia nenáboženská kniha: Pinocchio"
+        why: "Druhý za Malým princom, okolo 250 jazykov."
+      - text: "Najpredávanejšia knižná séria: Husia koža"
+        why: "Strašidelná séria R. L. Stinea predala okolo 400 miliónov, Harry Potter viac."
+
+  - id: stale-platia
+    type: pick
+    prompt: Ktoré z týchto rekordov dodnes nikto neprekonal?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Valeri_Polyakov
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Jeanne_Calment, /Land_speed_record, /Lockheed_SR-71_Blackbird, /Jarmila_Kratochvílová, /Robert_Wadlow, /Statue_of_Unity, /Bobi_(dog), /List_of_highest-grossing_concert_tours"
+    tags: [historia]
+    correct:
+      - text: Najdlhší jednorazový pobyt vo vesmíre, Valerij Poľakov
+        why: "437 dní na stanici Mir v rokoch 1994 a 1995."
+      - text: Najvyšší dožitý vek, Jeanne Calmentová
+        why: "122 rokov, zomrela v roku 1997."
+      - text: Rýchlostný rekord na zemi, ThrustSSC
+        why: "1 228 km/h z roku 1997."
+      - text: Rýchlostný rekord prúdového lietadla s posádkou, SR-71
+        why: "Platí od roku 1976."
+      - text: Svetový rekord na 800 m žien, Jarmila Kratochvílová
+        why: "1:53,28 z roku 1983."
+      - text: Najvyšší človek, Robert Wadlow
+        why: "272 cm, zomrel v roku 1940."
+    wrong:
+      - text: Najvyššia socha, Budha z Chrámu jari v Číne
+        why: "So 128 metrami bol najvyšší do roku 2018, potom ho prekonala indická Socha jednoty."
+      - text: Najstarší pes, portugalský Bobi
+        why: "Guinness mu titul (30 rokov) v roku 2024 odobral pre nedostatok dôkazov o veku."
+      - text: Najzárobkovejšie turné, Ed Sheeran a jeho ÷ Tour
+        why: "Rekord z roku 2019 prekonal Elton John a potom Taylor Swiftová."
+      - text: Najdrahšie auto na aukcii, Ferrari 250 GTO
+        why: "48,4 milióna dolárov z roku 2018 prekonal v roku 2022 Mercedes za 143 miliónov."
+      - text: Najviac bodov v NBA, Kareem Abdul-Jabbar
+        why: "Rekord držal 39 rokov, v roku 2023 ho prekonal LeBron James."
+      - text: Najsledovanejšie video na YouTube, Gangnam Style
+        why: "Prvé s miliardou pozretí, no dnes ho predbehli Despacito, Baby Shark a ďalšie."
+
+  # ---------------------------------------------------------------- ORDER
+  - id: vyska-ludi
+    type: order
+    prompt: Zoraď ľudí podľa výšky od najvyššieho.
+    direction: desc
+    unit: cm
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Robert_Wadlow
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sultan_Kösen, /Rumeysa_Gelgi, /Zdeno_Chára, /Jyoti_Amge, /Chandra_Bahadur_Dangi"
+    tags: [ludia, telo]
+    items:
+      - { text: Robert Wadlow, value: 272, why: "Najvyšší človek v histórii." }
+      - { text: Sultan Kösen, value: 251, why: "Najvyšší žijúci muž, Turek." }
+      - { text: Rumeysa Gelgiová, value: 215.16, why: "Najvyššia žijúca žena, tiež z Turecka." }
+      - { text: Zdeno Chára, value: 206, why: "Najvyšší hráč v histórii NHL." }
+      - { text: Jyoti Amgeová, value: 62.8, why: "Najmenšia žijúca žena, Indka." }
+      - { text: Chandra Bahadur Dangi, value: 54.6, why: "Najmenší overený dospelý v histórii, Nepálčan." }
+
+  - id: vek-najstarsich
+    type: order
+    prompt: Zoraď najstarších ľudí v histórii podľa dožitého veku od najstaršieho.
+    direction: desc
+    unit: rokov
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people
+    tags: [ludia, vek]
+    items:
+      - { text: Jeanne Calmentová, value: 122, why: "122 rokov a 164 dní, Francúzsko." }
+      - { text: Kane Tanaková, value: 119, why: "119 rokov a 107 dní, Japonsko." }
+      - { text: Lucile Randonová, value: 118, why: "118 rokov a 340 dní, Francúzsko." }
+      - { text: Maria Branyasová, value: 117, why: "117 rokov a 168 dní, Španielsko." }
+      - { text: Džiroemon Kimura, value: 116, why: "116 rokov a 54 dní, najstarší muž v histórii." }
+
+  - id: najvyssie-budovy
+    type: order
+    prompt: Zoraď stavby od najvyššej.
+    direction: desc
+    unit: m
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_tallest_buildings
+    tags: [stavby]
+    items:
+      - { text: Burdž Chalífa (Dubaj), value: 828, why: "Najvyššia budova sveta od roku 2010." }
+      - { text: Merdeka 118 (Kuala Lumpur), value: 679, why: "Dokončená v roku 2023, druhá najvyššia." }
+      - { text: Šanghajská veža, value: 632, why: "Najvyššia budova Číny." }
+      - { text: Hodinová veža v Mekke, value: 601, why: "Má obrovské hodiny s ciferníkmi na štyroch stranách." }
+      - { text: Lotte World Tower (Soul), value: 555, why: "Najvyššia budova Južnej Kórey." }
+
+  - id: rekordne-turne
+    type: order
+    prompt: Zoraď koncertné turné podľa celkovej tržby od najvyššej.
+    direction: desc
+    unit: mil. USD
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_highest-grossing_concert_tours
+    tags: [hudba]
+    items:
+      - { text: "Taylor Swiftová – The Eras Tour", value: 2078, why: "Prvé turné nad dve miliardy dolárov." }
+      - { text: "Coldplay – Music of the Spheres", value: 1524, why: "Druhé najzárobkovejšie v histórii." }
+      - { text: "Elton John – Farewell Yellow Brick Road", value: 939, why: "Rozlúčkové turné, rekord držalo v roku 2023." }
+      - { text: "Ed Sheeran – ÷ Tour", value: 776, why: "Rekordér z roku 2019." }
+      - { text: "U2 – 360° Tour", value: 736, why: "Rekordér okolo roku 2011." }
+
+  - id: rok-rekordov
+    type: order
+    prompt: Zoraď tieto dodnes platné rekordy podľa roku, keď vznikli, od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Lockheed_SR-71_Blackbird
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Jarmila_Kratochvílová, /Kola_Superdeep_Borehole, /Valeri_Polyakov, /Land_speed_record, /Men's_100_metres_world_record_progression"
+    tags: [historia]
+    items:
+      - { text: Rýchlostný rekord lietadla SR-71, value: 1976, why: "Najrýchlejšie prúdové lietadlo s posádkou." }
+      - { text: "Kratochvílová, 800 m za 1:53,28", value: 1983, why: "Najstarší platný individuálny rekord v atletike." }
+      - { text: "Kolský vrt, 12 262 m hĺbky", value: 1989, why: "Najhlbšia diera vyvŕtaná človekom." }
+      - { text: "Poľakov, 437 dní vo vesmíre", value: 1995, why: "Na Zem sa vrátil v marci 1995." }
+      - { text: "ThrustSSC, 1 228 km/h", value: 1997, why: "Prvé auto rýchlejšie ako zvuk." }
+      - { text: "Bolt, 100 m za 9,58", value: 2009, why: "MS v Berlíne." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: cislo-calment
+    type: number
+    prompt: Koľko rokov sa dožila Jeanne Calmentová, najstarší človek v histórii?
+    answer: 122
+    unit: rokov
+    scale: linear
+    tolerance: 2
+    why: "122 rokov a 164 dní. Narodila sa v roku 1875 a fajčila skoro až do 117 rokov."
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Jeanne_Calment
+    tags: [ludia, vek]
+
+  - id: cislo-hot-dogy
+    type: number
+    prompt: Koľko párkov v rožku zjedol Joey Chestnut za 10 minút pri svojom rekorde na súťaži Nathan's?
+    answer: 76
+    unit: párkov v rožku
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: "Rekord z roku 2021. Ženský rekord drží Miki Sudo s 51 kusmi."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Nathan%27s_Hot_Dog_Eating_Contest
+    tags: [jedlo]
+
+  - id: cislo-pizza
+    type: number
+    prompt: Koľko štvorcových metrov mala najväčšia pizza na svete, upečená v Los Angeles v roku 2023?
+    answer: 1297
+    unit: m²
+    scale: log
+    tolerance: 0.2
+    asOf: "2026-11"
+    why: "Presne 1 296,72 m², zhruba ako päť tenisových kurtov. Upiekol ju youtuber Airrack s Pizza Hut."
+    difficulty: 3
+    source: https://www.guinnessworldrecords.com/world-records/largest-pizza
+    tags: [jedlo]
+
+  - id: cislo-polyakov
+    type: number
+    prompt: Koľko dní v kuse strávil vo vesmíre Valerij Poľakov, rekordér v najdlhšom jednorazovom lete?
+    answer: 437
+    unit: dní
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: "437 dní a 18 hodín na stanici Mir v rokoch 1994 a 1995."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Valeri_Polyakov
+    tags: [vesmir]
+
+  - id: cislo-hokejistky
+    type: number
+    prompt: Koľko gólov strelili slovenské hokejistky Bulharsku v rekordnom zápase olympijskej kvalifikácie v roku 2008?
+    answer: 82
+    unit: gólov
+    scale: log
+    tolerance: 0.15
+    why: "Výsledok 82:0 je najvyššie víťazstvo v histórii IIHF a zapísal ho aj Guinness."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Slovakia_women%27s_national_ice_hockey_team
+    tags: [slovensko, sport]
+
+  - id: cislo-kolsky-vrt
+    type: number
+    prompt: Do akej hĺbky sa dostal Kolský superhlboký vrt, najhlbšia diera vyvŕtaná človekom?
+    answer: 12262
+    unit: m
+    scale: log
+    tolerance: 0.1
+    why: "12 262 metrov v roku 1989."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole
+    tags: [stavby]
+
+  - id: cislo-prve-vydanie
+    type: number
+    prompt: V ktorom roku vyšlo prvé vydanie Guinnessovej knihy rekordov?
+    answer: 1955
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Zviazali ho 27. augusta 1955 a do Vianoc bolo v Británii bestsellerom."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Guinness_World_Records
+    tags: [guinness]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: spor-o-vtaka
+    type: choice
+    prompt: O čom sa v roku 1951 hádal šéf pivovaru Guinness Hugh Beaver, keď dostal nápad na knihu rekordov?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Guinness_World_Records
+    tags: [guinness]
+    correct: { text: Ktorý lovný vták v Európe je najrýchlejší, why: "Kulík zlatý alebo škótska snehuľa? Odpoveď v knihách nenašiel." }
+    wrong:
+      - { text: Ktorý írsky pub je najstarší, why: "Znie to ako téma pre pivovar, ale spor bol o vtákoch." }
+      - { text: Ktorý pivovar varí najviac piva, why: "Hádka vznikla na poľovačke, nie pri pive." }
+      - { text: Ktorý vrch na Britských ostrovoch je najvyšší, why: "Na to by mapa stačila; spor bol o najrýchlejšom lovnom vtákovi." }
+
+  - id: korytnacka-jonathan
+    type: choice
+    prompt: Kde žije korytnačka Jonathan, najstaršie žijúce suchozemské zviera?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Jonathan_(tortoise)
+    tags: [zvierata]
+    correct: { text: Na ostrove Svätá Helena, why: "Žije v záhrade guvernérovej rezidencie, odhadom sa vyliahla okolo roku 1832." }
+    wrong:
+      - { text: Na Galapágoch, why: "Galapágy majú slávne korytnačky, ale Jonathan nie je z nich." }
+      - { text: Na Seychelách, why: "Odtiaľ ho v roku 1882 priviezli na Svätú Helenu." }
+      - { text: Na Madagaskare, why: "Jonathan žije na Svätej Helene v južnom Atlantiku." }
+
+  - id: pes-bobi
+    type: choice
+    prompt: Ktorému psovi Guinness v roku 2024 odobral titul najstaršieho psa všetkých čias?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Bobi_(dog)
+    tags: [zvierata]
+    correct: { text: Bobi z Portugalska, why: "Titul dostal v roku 2023 ako 30-ročný, chýbali však dôkazy o dátume narodenia." }
+    wrong:
+      - { text: Bluey z Austrálie, why: "Austrálsky dobytkársky pes, ktorý sa dožil 29 rokov a 5 mesiacov a zomrel v roku 1939." }
+      - { text: Lajka zo Sovietskeho zväzu, why: "Prvé zviera na obežnej dráhe, rekord vo veku nikdy nemala." }
+      - { text: Hačikó z Japonska, why: "Slávny verný pes, ktorý sa dožil 11 rokov." }
+
+  - id: najvyssia-socha
+    type: choice
+    prompt: V ktorej krajine stojí najvyššia socha sveta?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Statue_of_Unity
+    tags: [stavby]
+    correct: { text: India, why: "Socha jednoty má 182 metrov, odhalili ju v roku 2018." }
+    wrong:
+      - { text: Čína, why: "Budha z Chrámu jari bol najvyšší do roku 2018." }
+      - { text: USA, why: "Socha slobody má bez podstavca okolo 46 metrov." }
+      - { text: Brazília, why: "Kristus Spasiteľ v Riu má okolo 30 metrov." }
