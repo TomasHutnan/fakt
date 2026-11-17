@@ -1,0 +1,557 @@
+id: zvlastne-jedla
+title: Zvláštne jedlá sveta
+description: Balut, hákarl, surströmming, syr s červíkmi, vyprážané tarantuly aj naša krvavnička. Pochúťky, pri ktorých sa jedni oblizujú a druhí odvracajú zrak.
+category: tradicie
+lang: sk
+adult: false
+defaultOn: false
+warnings: [gross]
+version: 1
+questions:
+  - id: zj-krajiny-europa
+    type: pick
+    prompt: "Európa a sever: ktoré dvojice „jedlo – krajina, kde je to tradičné jedlo“ sedia?"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Surstr%C3%B6mming
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Hákarl, /Casu_martzu, /Haggis, /Andouillette, /Lutefisk, /Kiviak, /Jellied_eels"
+    correct:
+      - { text: "surströmming – Švédsko", why: "Kvasený baltský sleď, súčasť švédskej kuchyne aspoň od 16. storočia." }
+      - { text: "hákarl – Island", why: "Kvasený žralok je islandské národné jedlo, najmä na zimnom sviatku þorrablót." }
+      - { text: "casu marzu – Taliansko", why: "Ovčí syr so živými larvami zo Sardínie." }
+      - { text: "haggis – Škótsko", why: "Škótske národné jedlo, aj vďaka básni Roberta Burnsa." }
+      - { text: "andouillette – Francúzsko", why: "Francúzska klobása z bravčových čriev s výrazným zápachom." }
+      - { text: "lutefisk – Nórsko", why: "Sušená treska namáčaná v lúhu, súčasť nórskeho vianočného stola julebord." }
+      - { text: "kiviak – Grónsko", why: "Zimná pochúťka Inuitov z Grónska: vtáky kvasené v tulenej koži." }
+      - { text: "želé z úhorov – Anglicko", why: "Jellied eels pochádzajú z londýnskeho East Endu z 18. storočia." }
+    wrong:
+      - { text: "surströmming – Nórsko", why: "Surströmming je švédsky; jeho názov znamená po švédsky „kyslý sleď“." }
+      - { text: "hákarl – Fínsko", why: "Kvasený žralok je islandský." }
+      - { text: "casu marzu – Grécko", why: "Syr s larvami je zo Sardínie, podobný robia na Korzike." }
+      - { text: "kiviak – Island", why: "Kiviak robia Inuiti v Grónsku; Island má svoj hákarl." }
+      - { text: "andouillette – Nemecko", why: "Andouillette je francúzska; mimo Francúzska ju vraj takmer nestretnete." }
+
+  - id: zj-krajiny-azia
+    type: pick
+    prompt: "Ázia: ktoré dvojice „jedlo – krajina, kde je to tradičné jedlo“ sedia?"
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Balut_(food)
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Century_egg, /Virgin_boy_egg, /Fugu, /Natto, /Sannakji, /Hongeohoe, /Kopi_luwak, /Fried_spider, /Stinky_tofu"
+    correct:
+      - { text: "balut – Filipíny", why: "Varené kačacie vajce s embryom je bežné pouličné jedlo na Filipínach." }
+      - { text: "pidan (storočné vajce) – Čína", why: "Čínska pochúťka známa aspoň od 17. storočia." }
+      - { text: "vajíčka varené v moči chlapcov – Čína", why: "Tongzi dan je tradícia mesta Dongyang v provincii Zhejiang." }
+      - { text: "fugu – Japonsko", why: "Jedovatú rybu smú v Japonsku pripravovať len kuchári s licenciou." }
+      - { text: "natto – Japonsko", why: "Kvasená sója s ťahavými vláknami, japonské raňajky s ryžou." }
+      - { text: "sannakji – Južná Kórea", why: "Kórejské jedlo zo surovej malej chobotnice, ktorej kúsky sa na tanieri ešte hýbu." }
+      - { text: "hongeo – Južná Kórea", why: "Kvasená raja z provincie Čolla." }
+      - { text: "kopi luwak – Indonézia", why: "Káva z bobúľ, ktoré prešli tráviacim traktom cibetky, sa robí najmä na Sumatre, Jáve či Bali." }
+      - { text: "vyprážané tarantuly – Kambodža", why: "Centrom je mestečko Skuon, 75 km od Phnom Penhu." }
+      - { text: "smradľavé tofu – Čína", why: "Čínska pochúťka z kvaseného tofu, typická pre nočné trhy." }
+    wrong:
+      - { text: "balut – Japonsko", why: "Balut sa je hlavne na Filipínach, vo Vietname a v Kambodži." }
+      - { text: "sannakji – Japonsko", why: "Sannakji je kórejský názov aj kórejské jedlo." }
+      - { text: "hongeo – Indonézia", why: "Kvasená raja je kórejská; mimo Kórey ju poznajú aj na Islande." }
+      - { text: "vyprážané tarantuly – Mongolsko", why: "Pavúky z oleja sú kambodžská špecialita." }
+      - { text: "kopi luwak – Mongolsko", why: "Cibetková káva je z Indonézie; v Mongolsku kávovník nerastie." }
+      - { text: "fugu – Thajsko", why: "Fugu je japonské slovo a japonská (aj kórejská) pochúťka." }
+
+  - id: zj-krajiny-svet
+    type: pick
+    prompt: "Amerika, Afrika, Austrália: ktoré dvojice „jedlo – krajina, kde je to tradičné jedlo“ sedia?"
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Escamoles
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Chapulines, /Corn_smut, /Witchetty_grub, /Gonimbrasia_belina, /Rocky_Mountain_oysters"
+    correct:
+      - { text: "escamoles – Mexiko", why: "Larvy mravcov sa v Mexiku jedia už od čias Aztékov." }
+      - { text: "chapulines – Mexiko", why: "Pražené kobylky, najznámejšie z Oaxacy." }
+      - { text: "huitlacoche – Mexiko", why: "Sneť na kukurici je v Mexiku pochúťka, napríklad v quesadillách." }
+      - { text: "larvy witchetty – Austrália", why: "Larvy motýľov boli dôležitou potravou austrálskych domorodcov." }
+      - { text: "mopane – Zimbabwe", why: "Húsenice mopane sa zbierajú v Zimbabwe, Botswane, Namíbii a Juhoafrickej republike." }
+      - { text: "Rocky Mountain oysters – USA", why: "Vyprážané býčie semenníky, kovbojská klasika amerického západu." }
+    wrong:
+      - { text: "escamoles – Argentína", why: "Escamoles sú mexické; ich názov je z jazyka nahuatl." }
+      - { text: "larvy witchetty – Nový Zéland", why: "Witchetty je austrálsky názov pre larvy z koreňov kríka witchetty." }
+      - { text: "mopane – Egypt", why: "Strom mopane a jeho húsenice sú z juhu Afriky." }
+      - { text: "chapulines – Kanada", why: "Slovo chapulín pochádza z nahuatlu a používa sa v Mexiku a Strednej Amerike." }
+      - { text: "huitlacoche – Austrália", why: "Kukuričná sneť je pochúťka v Mexiku." }
+      - { text: "Rocky Mountain oysters – Japonsko", why: "Sú z dobytkárskych oblastí USA a Kanady." }
+
+  - id: zj-hmyz
+    type: pick
+    prompt: Ktoré z týchto pochúťok sú hmyz alebo hmyzie larvy?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Escamoles
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Chapulines, /Witchetty_grub, /Gonimbrasia_belina, /Casu_martzu, /Rhynchophorus_ferrugineus, /Fried_spider, /Corn_smut"
+    correct:
+      - { text: "escamoles", why: "Larvy a kukly mravcov, prezývané mexický kaviár." }
+      - { text: "chapulines", why: "Kobylky rodu Sphenarium pražené na plechu comal." }
+      - { text: "larvy witchetty", why: "Veľké biele larvy, surové vraj chutia ako mandle." }
+      - { text: "mopane", why: "Húsenice veľkého motýľa z čeľade okáňovitých." }
+      - { text: "larvy v syre casu marzu", why: "Larvy mušky Piophila casei; v syre ich sú tisíce." }
+      - { text: "đuông dừa z Vietnamu", why: "Larvy nosánika palmového, vo Vietname sa jedia aj živé s rybacou omáčkou." }
+    wrong:
+      - { text: "vyprážané tarantuly", why: "Pavúky nie sú hmyz: majú osem nôh a patria medzi pavúkovce." }
+      - { text: "huitlacoche", why: "Je to huba, sneť kukuričná, ktorá napáda klasy." }
+      - { text: "kopi luwak", why: "Kávové bôby, ktoré prešli tráviacim traktom cibetky." }
+      - { text: "polievka z vtáčích hniezd", why: "Hniezda sú zo stuhnutých slín salangán." }
+      - { text: "balut", why: "Kačacie vajce s embryom." }
+      - { text: "kiviak", why: "Drobné morské vtáky z čeľade alkovitých kvasené v tulenej koži." }
+      - { text: "natto", why: "Kvasené sójové bôby." }
+
+  - id: zj-droby
+    type: pick
+    prompt: Ktoré z týchto jedál sa robia z vnútorností (drobov) alebo z krvi?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Haggis
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Black_pudding, /Head_cheese, /Andouillette, /Sweetbread, sk.wikipedia.org/wiki/Jaternica"
+    correct:
+      - { text: "haggis", why: "Ovčie srdce, pečeň a pľúca s ovsenými vločkami, varené v žalúdku." }
+      - { text: "black pudding", why: "Britská a írska klobása z bravčovej krvi a ovsa či jačmeňa." }
+      - { text: "krvavnica", why: "Jaternica plnená žemľami a krvou." }
+      - { text: "tlačenka", why: "Bravčový žalúdok plnený drobmi a zvyškami mäsa z hlavy a nôh." }
+      - { text: "andouillette", why: "Francúzska klobása z bravčových čriev." }
+      - { text: "sweetbreads", why: "Týmus alebo podžalúdková žľaza z teľaťa či jahňaťa." }
+    wrong:
+      - { text: "escamoles", why: "Larvy a kukly mravcov." }
+      - { text: "natto", why: "Kvasená sója." }
+      - { text: "lutefisk", why: "Sušená treska namáčaná v lúhu." }
+      - { text: "hákarl", why: "Kvasené mäso žraloka grónskeho." }
+      - { text: "smradľavé tofu", why: "Kvasené tofu, teda sója." }
+      - { text: "huitlacoche", why: "Huba rastúca na kukurici." }
+      - { text: "pidan", why: "Vajce konzervované v zásaditej zmesi hliny, popola a vápna." }
+
+  - id: zj-kvasenie
+    type: pick
+    prompt: Ktoré z týchto jedál vznikajú kvasením (fermentáciou)?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Surstr%C3%B6mming
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Hákarl, /Hongeohoe, /Natto, /Stinky_tofu, /Kiviak, /Casu_martzu, /Lutefisk, /Balut_(food)"
+    correct:
+      - { text: "surströmming", why: "Slabo solený sleď kvasí aspoň pol roka." }
+      - { text: "hákarl", why: "Žralok kvasí 6 až 12 týždňov pod štrkom, potom mesiace schne." }
+      - { text: "hongeo", why: "Pri kvasení raje vzniká amoniak, ktorý mäso konzervuje." }
+      - { text: "natto", why: "Sóju kvasí baktéria Bacillus subtilis var. natto." }
+      - { text: "smradľavé tofu", why: "Tofu sa namáča v kvasenom náleve so zeleninou, prípadne aj mäsom." }
+      - { text: "kiviak", why: "Až 500 vtákov kvasí tri mesiace v zašitej tulenej koži." }
+      - { text: "casu marzu", why: "Larvy rozkladajú tuky v syre a dovedú ho do pokročilého štádia kvasenia." }
+    wrong:
+      - { text: "lutefisk", why: "Ryba sa nekvasí, ale namáča v lúhu; odtiaľ názov „lúhová ryba“." }
+      - { text: "balut", why: "Vajce sa najprv inkubuje, kým sa vyvinie embryo, a potom sa uvarí." }
+      - { text: "haggis", why: "Droby sa zmiešajú s ovsom a uvaria." }
+      - { text: "vyprážané tarantuly", why: "Pavúky sa obalia v soli a cukre a vyprážajú s cesnakom." }
+      - { text: "escamoles", why: "Larvy mravcov sa zbierajú a pripravujú čerstvé." }
+      - { text: "Rocky Mountain oysters", why: "Semenníky sa obalia v múke a vyprážajú." }
+      - { text: "huitlacoche", why: "Je to huba, ktorá rastie priamo na kukurici." }
+
+  - id: zj-sever-ryby
+    type: pick
+    prompt: Ktoré tvrdenia o surströmmingu a hákarli sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Surstr%C3%B6mming
+    note: "Ďalší zdroj: https://en.wikipedia.org/wiki/Hákarl"
+    correct:
+      - { text: "Surströmming sa robí z baltského sleďa", why: "Švédi mu hovoria strömming a je menší ako atlantický sleď." }
+      - { text: "Sezóna surströmmingu tradične začína tretí štvrtok v auguste", why: "Pochádza to z nariadenia zo 40. rokov; predajcovia dátum dodržiavajú dodnes." }
+      - { text: "V roku 2006 ho viaceré aerolinky zakázali ako potenciálne výbušný", why: "Air France, British Airways, Finnair či KLM sa báli konzerv pod tlakom." }
+      - { text: "Plechovku surströmmingu ľudia často otvárajú vonku alebo pod vodou", why: "Kvôli zápachu sa často aj je vonku a konzerva sa prepichne vo vedre s vodou." }
+      - { text: "Čerstvé mäso žraloka na hákarl je jedovaté", why: "Obsahuje veľa močoviny a trimetylamínoxidu; bezpečné je až po spracovaní." }
+      - { text: "Hákarl sa často zapíja pálenkou brennivín", why: "Islandský akvavit pomáha zahnať amoniakovú pachuť." }
+      - { text: "Anthony Bourdain označil hákarl za najhoršiu vec, akú kedy jedol", why: "Vraj „najhoršia, najodpornejšia a najhoršie chutiaca vec“." }
+    wrong:
+      - { text: "Surströmming sa nakladá v octe ako zavináč", why: "Je len slabo solený a kvasí; s nakladaným sleďom ho netreba zamieňať." }
+      - { text: "Surströmming je národné jedlo Fínska", why: "Je to tradičné jedlo severného Švédska." }
+      - { text: "Hákarl sa robí z tresky", why: "Robí sa zo žraloka grónskeho alebo iného žraloka z čeľade Somniosidae." }
+      - { text: "Hákarl sa je čerstvý, hneď po ulovení žraloka", why: "Čerstvé mäso je jedovaté; žralok kvasí týždne a mesiace schne." }
+      - { text: "Sezóna surströmmingu začína na Silvestra", why: "Začína tretí štvrtok v auguste." }
+
+  - id: zj-casu-marzu
+    type: pick
+    prompt: Ktoré tvrdenia o sardínskom syre casu marzu sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Casu_martzu
+    correct:
+      - { text: "Robí sa z ovčieho syra pecorino", why: "Pecorino sa nechá vonku s narušenou kôrkou, aby doň nakládli vajíčka mušky." }
+      - { text: "Obsahuje živé larvy mušky Piophila casei", why: "V hotovom syre ich bývajú tisíce." }
+      - { text: "Ak sú larvy mŕtve, znalci syr považujú za nebezpečný", why: "Živé larvy sú pre nich znakom, že syr je v poriadku." }
+      - { text: "Guinness ho označil za najnebezpečnejší syr sveta", why: "Stalo sa tak v roku 2009 pre riziko, že larvy prežijú trávenie." }
+      - { text: "Jeho predaj je zakázaný v Taliansku aj v EÚ", why: "Predpisy EÚ o hygiene potravín ho nepripúšťajú, hoci sa zákaz nie vždy vymáha." }
+      - { text: "Zo syra môže vytekať tekutina zvaná „slza“", why: "Po sardínsky làgrima." }
+      - { text: "Jeho názov znamená „zhnitý syr“", why: "Casu martzu v sardínčine doslova." }
+    wrong:
+      - { text: "Robí sa z kravského mlieka", why: "Je to ovčí syr." }
+      - { text: "Larvy sa do syra pridávajú až tesne pred podávaním", why: "Vajíčka do syra nakladie muška sama a larvy ho mesiace rozkladajú." }
+      - { text: "Pochádza zo Sicílie", why: "Je zo Sardínie; podobný syr robia aj na Korzike." }
+      - { text: "Zreje vyše päť rokov", why: "Celý proces trvá asi tri mesiace." }
+
+  - id: zj-vajcia
+    type: pick
+    prompt: Ktoré tvrdenia o ázijských vajíčkach sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Balut_(food)
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Century_egg, https://en.wikipedia.org/wiki/Virgin_boy_egg"
+    correct:
+      - { text: "Balut je oplodnené vajce s vyvíjajúcim sa embryom", why: "Vajce sa inkubuje 2 až 3 týždne, potom uvarí alebo uparí a je sa priamo zo škrupiny." }
+      - { text: "Na balut sa najčastejšie používajú kačacie vajcia", why: "Často ide o kačice z Paterosu, domácu formu kačice divej." }
+      - { text: "Vo Vietname sa balut inkubuje dlhšie ako na Filipínach", why: "Vo Vietname 19 až 21 dní, na Filipínach zvyčajne 14 až 18." }
+      - { text: "Pidan zreje v zmesi hliny, popola, soli a páleného vápna", why: "Zásaditá zmes zvýši pH vajca až na 9 až 12." }
+      - { text: "Bielok pidanu je tmavohnedý a priesvitný ako rôsol", why: "Žĺtok zas zozelenie až zosivie." }
+      - { text: "V meste Dongyang sa vajcia varia v moči chlapcov", why: "Moč zbierajú predajcovia aj na základných školách." }
+      - { text: "Vajcia z moču sú v Dongyangu drahšie ako obyčajné", why: "V roku 2012 stáli asi 1,5 jüana, zhruba dvakrát toľko ako bežné." }
+    wrong:
+      - { text: "Pidan musí zrieť aspoň sto rokov", why: "Napriek prezývke storočné vajce zreje týždne až mesiace." }
+      - { text: "Žĺtok pidanu je žiarivo oranžový", why: "Je tmavozelenosivý s krémovou konzistenciou." }
+      - { text: "Balut sa je surový", why: "Vždy sa uvarí alebo uparí." }
+      - { text: "V Dongyangu sa vajcia varia v moči dievčat", why: "Používa sa moč chlapcov, ideálne mladších ako desať rokov." }
+
+  - id: zj-fugu
+    type: pick
+    prompt: Ktoré tvrdenia o jedovatej rybe fugu sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Fugu
+    correct:
+      - { text: "Jej jed sa volá tetrodotoxín", why: "Blokuje sodíkové kanály a ochromí svaly." }
+      - { text: "Proti jedu fugu neexistuje protijed", why: "Pomôcť môže len podpora dýchania, kým jed neodznie." }
+      - { text: "Otrávený človek ostáva pri vedomí", why: "Nemôže sa hýbať ani hovoriť, kým nezlyhá dýchanie." }
+      - { text: "Najjedovatejšia je pečeň", why: "Pritom ju mnohí pokladajú za najchutnejšiu časť." }
+      - { text: "Japonské reštaurácie nesmú podávať pečeň fugu", why: "Zákaz platí od roku 1984." }
+      - { text: "Kuchári v Japonsku musia mať na fugu licenciu", why: "Licencie sú povinné od roku 1958 a predchádza im dvoj- až trojročné učňovstvo." }
+      - { text: "James Cook sa v roku 1774 otrávil pečeňou ryby, zrejme fugu", why: "Na Novej Kaledónii; on aj dvaja prírodovedci prežili." }
+    wrong:
+      - { text: "Varenie jed fugu zničí", why: "Tetrodotoxín varenie výrazne neoslabí." }
+      - { text: "Najjedovatejšie je biele mäso filé", why: "Najviac jedu je v pečeni, vaječníkoch, očiach a koži." }
+      - { text: "Protijedom je teplé mlieko", why: "Protijed neexistuje." }
+      - { text: "Fugu sa v Japonsku nesmie predávať v obchodoch", why: "Pripravené fugu sa predáva aj v obchodoch, ktoré musia vystaviť licenciu." }
+
+  - id: zj-drahe
+    type: pick
+    prompt: Ktoré tvrdenia o káve kopi luwak a polievke z vtáčích hniezd sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Kopi_luwak
+    note: "Ďalší zdroj: https://en.wikipedia.org/wiki/Edible_bird%27s_nest"
+    correct:
+      - { text: "Kopi luwak sa robí z bobúľ, ktoré zjedla a vylúčila cibetka", why: "Bôby sa pozbierajú z trusu, vyčistia a pražia." }
+      - { text: "Kopi luwak patrí medzi najdrahšie kávy sveta", why: "Divoko zbierané bôby stoja v obchodoch až okolo 1 000 dolárov za kilogram." }
+      - { text: "Kopi luwak sa vyrába najmä v Indonézii", why: "Na Sumatre, Jáve, Bali a Sulawesi, ale aj na Filipínach a vo Východnom Timore." }
+      - { text: "Jedlé vtáčie hniezda sú zo stuhnutých slín salangán", why: "Salangany (príbuzné dážďovníkov) si nimi lepia hniezda." }
+      - { text: "Červené „krvavé hniezdo“ je drahšie ako biele", why: "Pripisujú mu aj väčšiu liečivú silu." }
+      - { text: "Hniezda sa najčastejšie jedia ako polievka", why: "Vo vode sa rozpustia na rôsolovitú hmotu." }
+    wrong:
+      - { text: "Kopi luwak je samostatná odroda kávovníka", why: "Je to spôsob spracovania, nie odroda." }
+      - { text: "Jedlé hniezda stavajú lastovičky z blata a slamy", why: "Stavajú ich salangany zo slín; lastovičie hniezda sa nejedia." }
+      - { text: "Kopi luwak pochádza z Brazílie", why: "Táto káva vznikla v 19. storočí na Jáve v holandskej kolónii." }
+      - { text: "Hniezda sa tradične varia s množstvom oleja a ostrým korením", why: "Starí Číňania radili nevariť ich s ničím mastným ani výrazným." }
+
+  - id: zj-psie-maso
+    type: pick
+    prompt: Ktoré tvrdenia o psom mäse a zákonoch sú pravdivé?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Dog_meat_consumption_in_South_Korea
+    note: "Ďalší zdroj: https://en.wikipedia.org/wiki/Dog_meat (Európa)"
+    correct:
+      - { text: "Juhokórejský parlament v januári 2024 bez jediného hlasu proti schválil zákaz chovu a predaja psov na mäso", why: "Zákon prijalo Národné zhromaždenie 9. januára 2024." }
+      - { text: "Juhokórejský zákaz začne platiť v roku 2027", why: "Trojročné prechodné obdobie má chovateľom a predajcom dať čas nájsť si inú obživu." }
+      - { text: "Za porušenie kórejského zákona hrozia až tri roky väzenia", why: "Alebo pokuta do 30 miliónov wonov." }
+      - { text: "V Rakúsku zákon zakazuje zabíjať psy a mačky na jedlo", why: "Zakazuje to rakúsky zákon na ochranu zvierat." }
+      - { text: "Vo Švajčiarsku je komerčný predaj psieho mäsa zakázaný", why: "Farmári však smú psa zabiť pre vlastnú spotrebu." }
+      - { text: "Juhokórejská vláda má pomôcť nájsť nový domov pre takmer pol milióna psov z chovov na mäso", why: "Súčasťou príprav na zákaz sú aj dotácie pre chovateľov, ktorí prechádzajú na inú činnosť." }
+    wrong:
+      - { text: "Kórejský zákon trestá samotné jedenie psieho mäsa", why: "Zakazuje chov, zabíjanie a predaj; jedenie samo osebe ostáva legálne." }
+      - { text: "Kórejský zákon prešiel tesnou väčšinou jedného hlasu", why: "Nikto nehlasoval proti." }
+      - { text: "Kórejský zákaz predaja platí už od roku 2024", why: "Účinný bude až od roku 2027." }
+      - { text: "Vo Švajčiarsku sa psie mäso bežne predáva v supermarketoch", why: "Komerčná výroba aj predaj sú tam zakázané." }
+
+  - id: zj-durian
+    type: pick
+    prompt: Ktoré tvrdenia o duriane sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Durian
+    correct:
+      - { text: "Prezýva sa „kráľ ovocia“", why: "Vďaka veľkosti, silnej vôni a tŕnistej šupke." }
+      - { text: "Šupka je pokrytá tŕňmi", why: "Názov je z malajského duri, čo znamená tŕň." }
+      - { text: "Pre zápach ho zakázali v MHD v Singapure a Bangkoku", why: "Vôňa vydrží aj niekoľko dní, preto ho nechcú ani niektoré hotely." }
+      - { text: "Plod zvyčajne váži 1 až 3 kilogramy", why: "Môže byť až 30 cm dlhý." }
+      - { text: "Alfred Russel Wallace prirovnal jeho chuť ku krému s mandľami", why: "V roku 1856 písal o „bohatom kréme silno ochutenom mandľami“." }
+      - { text: "V Indonézii pestujú vyše sto odrôd durianu", why: "Najpestovanejší druh je Durio zibethinus." }
+    wrong:
+      - { text: "Je to tropický druh cibule", why: "Je to ovocie zo stromu." }
+      - { text: "Rastie pri zemi ako melón", why: "Rastie na stromoch, niektoré sú také vysoké, že plody sa zbierajú až po páde." }
+      - { text: "Pochádza z Južnej Ameriky", why: "Je z juhovýchodnej Ázie." }
+      - { text: "Zápach vyprchá do minúty", why: "Vôňa vydrží aj niekoľko dní." }
+      - { text: "Má hladkú šupku ako avokádo", why: "Šupka je posiata tŕňmi." }
+
+  - id: zj-klamlive-nazvy
+    type: pick
+    prompt: V ktorých z týchto jedál nenájdete to, čo sľubuje názov?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Rocky_Mountain_oysters
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Bombay_duck, /Welsh_rarebit, /Scotch_woodcock, /Toad_in_the_hole, /Sweetbread, /Head_cheese, /Frog_legs, /Escargot, sk.wikipedia.org/wiki/Jaternica"
+    correct:
+      - { text: "Rocky Mountain oysters (ustrice zo Skalistých hôr)", why: "Sú to vyprážané býčie semenníky, žiadne ustrice." }
+      - { text: "Bombay duck (bombajská kačica)", why: "Je to sušená ryba z Bombaja, žiadna kačica." }
+      - { text: "Welsh rabbit (waleský králik)", why: "Toast s roztopeným syrom; už v roku 1725 vtip, lebo králik v ňom nie je." }
+      - { text: "Scotch woodcock (škótska sluka)", why: "Miešané vajíčka na toaste s ančovičkovou pastou." }
+      - { text: "Toad in the hole (ropucha v diere)", why: "Klobásky zapečené v cestíčku; žiadna ropucha." }
+      - { text: "Sweetbreads (sladké chlebíky)", why: "Teľací alebo jahňací týmus či podžalúdková žľaza." }
+      - { text: "Head cheese (hlavový syr)", why: "Je to rôsol z mäsa z hlavy, príbuzný našej tlačenky; žiadny syr." }
+    wrong:
+      - { text: "žabie stehienka", why: "Naozaj žabie zadné nohy, známa pochúťka francúzskej kuchyne." }
+      - { text: "krvavnica", why: "Naozaj je v nej krv, spolu so žemľami a drobmi." }
+      - { text: "slimáky po burgundsky", why: "Naozaj slimáky, najčastejšie slimák záhradný (Helix pomatia)." }
+      - { text: "želé z úhorov", why: "Naozaj kúsky úhora v stuhnutom vývare." }
+      - { text: "vyprážané tarantuly", why: "Naozaj tarantuly, v Kambodži vyprážané s cesnakom." }
+
+  - id: zj-zabijacka
+    type: pick
+    prompt: "Naše a britské dobroty z drobov a krvi: ktoré tvrdenia sú pravdivé?"
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Jaternica
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Head_cheese (Slovensko), https://en.wikipedia.org/wiki/Black_pudding, https://en.wikipedia.org/wiki/Haggis"
+    correct:
+      - { text: "Krvavnica je jaternica plnená aj krvou a žemľami", why: "Zdrobnene krvavnička." }
+      - { text: "Do jaterníc sa môžu pridávať pľúca, srdce, slezina alebo pečeň", why: "Mäso sa melie nahrubo, vnútornosti najemno." }
+      - { text: "Jaternici sa hovorovo hovorí aj jelito alebo hurka", why: "Po poľsky kaszanka, po nemecky Grützwurst." }
+      - { text: "Slovenská tlačenka sa plní do bravčového žalúdka", why: "S drobmi a zvyškami mäsa z hlavy a nôh, často sa aj údi." }
+      - { text: "Tlačenka sa tradične podáva s cibuľou a octom", why: "A s chlebom." }
+      - { text: "Black pudding pochádza z Británie a Írska", why: "Od iných krvavníc sa líši veľkým podielom obilnín, najčastejšie ovsa." }
+      - { text: "Haggis sa tradične varí v ovčom žalúdku", why: "Dnes často v umelom obale." }
+    wrong:
+      - { text: "Huspenina má viac mäsa ako tlačenka", why: "Je to naopak: huspenina má menej mäsa a viac želatíny." }
+      - { text: "Black pudding pochádza z Nemecka", why: "Pochádza z Británie a Írska." }
+      - { text: "Haggis sa varí v bravčovom čreve", why: "Tradične v ovčom žalúdku." }
+      - { text: "Hlavnou prísadou haggisu je ryža", why: "Je to ovsená múčka a ovčie droby." }
+
+  - id: zj-korea-more
+    type: pick
+    prompt: Ktoré tvrdenia o kórejských jedlách hongeo a sannakji sú pravdivé?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Hongeohoe
+    note: "Ďalší zdroj: https://en.wikipedia.org/wiki/Sannakji"
+    correct:
+      - { text: "Hongeo je kvasená raja", why: "Pochádza z juhozápadnej kórejskej provincie Čolla." }
+      - { text: "Zápach hongea prirovnávajú k latríne", why: "Pri kvasení vzniká veľa amoniaku." }
+      - { text: "Kvasenú raju jedia aj na Islande", why: "Kæst skata sa tam je 23. decembra, na Þorláksmessu." }
+      - { text: "Sannakji je surová malá chobotnica, ktorej kúsky sa na tanieri ešte hýbu", why: "Pohyb spôsobujú nervy v chápadlách, nie mozog." }
+      - { text: "Chobotnica má dve tretiny neurónov v ramenách", why: "Preto ramená reagujú aj po odrezaní." }
+    wrong:
+      - { text: "Hongeo sa robí zo žraloka", why: "Zo žraloka je islandský hákarl; hongeo je z raje." }
+      - { text: "Chobotnica v sannakji je vždy živá", why: "Najčastejšie ju pred krájaním zabijú, celú živú ju jedia zriedka." }
+      - { text: "Sannakji sa podáva uvarené v polievke", why: "Je to surové jedlo s olejom a sezamom." }
+      - { text: "Hongeo pochádza z Japonska", why: "Je z Kórey." }
+      - { text: "Islanďania jedia kvasenú raju na Silvestra", why: "Kæst skata sa je 23. decembra, na sviatok Þorláksmessa." }
+
+  - id: zj-sever-kiviak-lutefisk
+    type: pick
+    prompt: Ktoré tvrdenia o grónskom kiviaku a severskom lutefisku sú pravdivé?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Kiviak
+    note: "Ďalší zdroj: https://en.wikipedia.org/wiki/Lutefisk"
+    correct:
+      - { text: "Kiviak sú drobné morské vtáky kvasené v tulenej koži", why: "Celé vtáky z čeľade alkovitých sa do kože napchajú aj so zobákmi a perím." }
+      - { text: "Do jednej kože sa zmestí až 500 vtákov", why: "Koža sa zašije a utesní tulením tukom." }
+      - { text: "Kiviak kvasí asi tri mesiace pod hromadou kameňov", why: "Kameň na vrchu bráni prístupu vzduchu." }
+      - { text: "Kiviak sa je napríklad na narodeniny a svadby", why: "Počas arktickej zimy." }
+      - { text: "Lutefisk je sušená ryba namáčaná v lúhu", why: "Názov doslova znamená „lúhová ryba“." }
+      - { text: "Lutefisk sa robí najčastejšie z tresky", why: "Niekedy aj z mieňa či z morskej ryby molvy." }
+      - { text: "Lutefisk patrí k severským Vianociam", why: "Na nórskom julebord, švédskom julbord aj fínskom joulupöytä." }
+    wrong:
+      - { text: "Kiviak je tulení žalúdok plnený rybami", why: "Je to naopak: tulenia koža plná vtákov." }
+      - { text: "Lutefisk sa robí zo sleďa", why: "Robí sa z bielej ryby, najčastejšie tresky." }
+      - { text: "Kiviak sa je hneď po ulovení vtákov", why: "Vtáky kvasia v koži asi tri mesiace." }
+      - { text: "Lutefisk sa pred jedlom namáča v cukrovom sirupe", why: "Namáča sa v lúhu a potom dni vo vode." }
+
+  - id: zj-hmyz-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o jedlom hmyze a pavúkoch sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Gonimbrasia_belina
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Escamoles, /Chapulines, /Fried_spider, /Witchetty_grub"
+    correct:
+      - { text: "Escamolom sa hovorí mexický kaviár", why: "Chuť opisujú ako maslovú a orieškovú." }
+      - { text: "Na kilogram húseníc mopane stačia asi 3 kg lístia", why: "Hovädzí dobytok potrebuje na kilogram mäsa asi 10 kg krmiva." }
+      - { text: "Sušené mopane sa jedia aj ako chrumkavý snack", why: "Inak sa namočia a opečú alebo dusia s cibuľou a paradajkami." }
+      - { text: "Chapulines sa zbierajú len v časti roka", why: "Od liahnutia na začiatku mája do konca leta či začiatku jesene." }
+      - { text: "Zadoček vyprážanej tarantuly mnohí radšej nejedia", why: "Je v ňom hnedá pasta z orgánov, možno vajíčok a výkalov." }
+      - { text: "Surové larvy witchetty vraj chutia ako mandle", why: "Opečené majú chrumkavú kožu ako pečené kura." }
+    wrong:
+      - { text: "Escamoles sú larvy včiel", why: "Sú to larvy a kukly mravcov rodu Liometopum." }
+      - { text: "Húsenice mopane sa chovajú na veľkých farmách", why: "Zvyčajne sa nechovajú, zbierajú sa ručne v prírode." }
+      - { text: "Chapulines sa zbierajú celý rok", why: "Len od mája do konca leta či začiatku jesene." }
+      - { text: "Tarantuly zo Skuonu sú veľké ako necht", why: "Sú približne veľké ako ľudská dlaň." }
+
+  - id: zj-haggis
+    type: pick
+    prompt: Ktoré tvrdenia o škótskom haggise sú pravdivé?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Haggis
+    correct:
+      - { text: "Hlavné prísady sú ovčie srdce, pečeň a pľúca", why: "Zmiešané s cibuľou, ovsenými vločkami, lojom a korením." }
+      - { text: "Robert Burns o ňom napísal báseň", why: "Address to a Haggis z roku 1786." }
+      - { text: "Je hlavným chodom na Burnsovej večeri", why: "S kašou z kvaky a zemiakov a pohárikom whisky." }
+      - { text: "Tradičný haggis sa od roku 1971 nesmie dovážať do USA", why: "Pre zákaz potravín s ovčími pľúcami." }
+      - { text: "Pľúca tvoria 10 až 15 % tradičného receptu", why: "Americké verzie sa preto robia bez nich." }
+    wrong:
+      - { text: "Haggis je malé zviera žijúce v škótskych horách", why: "Je to jedlo; zviera haggis je len žartovná legenda." }
+      - { text: "Hlavnou prísadou je hovädzí jazyk", why: "Základom sú ovčie droby: srdce, pečeň a pľúca." }
+      - { text: "Tradične sa podáva s hranolkami a pivom", why: "Tradične s kvakou, zemiakmi a whisky." }
+      - { text: "Robert Burns ho vo svojej básni zosmiešnil ako jedlo chudákov", why: "Burns ho naopak oslavuje ako „veľkého náčelníka rodu pudingov“." }
+      - { text: "Haggis sa je surový", why: "Varí sa, tradične v ovčom žalúdku." }
+
+  - id: zj-scoville
+    type: order
+    asOf: "2026-11"
+    prompt: Zoraď papričky od najpálivejšej.
+    direction: desc
+    unit: SHU (Scovillových jednotiek)
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Scoville_scale
+    note: "Hodnoty: Pepper X (Guinness 2023), Carolina Reaper (meranie 2017, rekord 2013–2023), bhut jolokia (meranie 2004), habanero (väčšina 200–300 tisíc), jalapeño (niekoľko tisíc až vyše 10 tisíc); ďalšie zdroje: en.wikipedia.org/wiki/Pepper_X, /Carolina_Reaper, /Bhut_jolokia, /Habanero, /Jalapeño"
+    items:
+      - { text: "Pepper X", value: 2693000, why: "Od roku 2023 najpálivejšia paprika podľa Guinnessa, vyšľachtil ju tvorca Carolina Reaper." }
+      - { text: "Carolina Reaper", value: 1641183, why: "Najpálivejšia podľa Guinnessa v rokoch 2013 až 2023; meranie z roku 2017 dalo priemer 1 641 183 SHU." }
+      - { text: "bhut jolokia (duchová paprička)", value: 1041427, why: "Indická paprika; v roku 2007 ju Guinness vyhlásil za najpálivejšiu." }
+      - { text: "habanero", value: 250000, why: "V roku 1999 ju Guinness viedol ako najpálivejšiu, väčšina má 200 až 300 tisíc SHU." }
+      - { text: "jalapeño", value: 5000, why: "Od niekoľkých tisíc po vyše 10 000 SHU; oficiálna paprika Texasu." }
+
+  - id: zj-zakazy-roky
+    type: order
+    prompt: Zoraď tieto udalosti od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Fugu
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Haggis, /Surströmming, /Casu_martzu, /Carolina_Reaper, /Dog_meat_consumption_in_South_Korea"
+    items:
+      - { text: "USA zakázali dovoz škótskeho haggisu", value: 1971, why: "Pre zákaz potravín s ovčími pľúcami." }
+      - { text: "Japonsko zakázalo podávať v reštauráciách pečeň fugu", value: 1984, why: "Pečeň je najjedovatejšia časť ryby." }
+      - { text: "Aerolinky ako Air France a KLM zakázali na palube surströmming", value: 2006, why: "Konzervy pod tlakom pokladali za potenciálne výbušné." }
+      - { text: "Guinness označil casu marzu za najnebezpečnejší syr", value: 2009, why: "Pre riziko, že larvy prežijú v čreve." }
+      - { text: "Guinness prvýkrát vyhlásil Carolina Reaper za najpálivejšiu papriku", value: 2013, why: "Rekord držala do roku 2023, keď ju prekonala Pepper X." }
+      - { text: "Južná Kórea schválila zákaz chovu a predaja psov na mäso", value: 2024, why: "Účinný bude od roku 2027." }
+
+  - id: zj-historia-roky
+    type: order
+    prompt: Zoraď tieto udalosti z dejín zvláštnych jedál od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Fugu
+    note: "Zdroje: en.wikipedia.org/wiki/Welsh_rarebit, /Fugu, /Haggis, /Gonimbrasia_belina, /Durian"
+    items:
+      - { text: "Prvý písomný záznam názvu Welsh rabbit", value: 1725, why: "Už vtedy žartovný názov, lebo králik v jedle nie je." }
+      - { text: "James Cook sa otrávil pečeňou ryby, zrejme fugu", value: 1774, why: "Počas druhej plavby, na Novej Kaledónii." }
+      - { text: "Robert Burns napísal báseň Address to a Haggis", value: 1786, why: "Vďaka nej je haggis škótske národné jedlo." }
+      - { text: "Westwood vedecky opísal motýľa, ktorého húsenice sú mopane", value: 1849, why: "Gonimbrasia belina, motýľ s rozpätím krídel 12 cm." }
+      - { text: "Alfred Russel Wallace opísal chuť durianu", value: 1856, why: "Ako bohatý krém silno ochutený mandľami." }
+
+  - id: zj-zralok-dospelost
+    type: number
+    prompt: Koľko rokov trvá žralokovi grónskemu, z ktorého sa robí hákarl, kým pohlavne dospeje?
+    answer: 150
+    unit: rokov
+    scale: log
+    tolerance: 0.2
+    why: Niektoré jedince sa dožívajú až 400 rokov, preto je lov tohto najdlhšie žijúceho stavovca neudržateľný.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/H%C3%A1karl
+
+  - id: zj-kvasene-ryby-vek
+    type: number
+    prompt: Koľko rokov majú najstaršie archeologické nálezy kvasenia rýb, ktoré pochádzajú z územia dnešného južného Švédska?
+    answer: 9200
+    unit: rokov
+    scale: log
+    tolerance: 0.25
+    why: Švédi teda kvasia ryby oveľa dlhšie, než existuje surströmming (ten poznáme aspoň od 16. storočia).
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Surstr%C3%B6mming
+
+  - id: zj-fugu-licencia
+    type: number
+    prompt: Koľko percent uchádzačov v Japonsku prejde skúškou na licenciu kuchára fugu?
+    answer: 35
+    unit: "%"
+    scale: linear
+    tolerance: 5
+    why: Skúška má písomnú časť, poznávanie rýb aj praktickú prípravu ryby; predchádza jej dvoj- až trojročné učňovstvo.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Fugu
+
+  - id: zj-pepper-x
+    type: number
+    prompt: Koľko Scovillových jednotiek (SHU) má v priemere Pepper X, podľa Guinnessa najpálivejšia paprika sveta?
+    answer: 2693000
+    unit: SHU
+    scale: log
+    tolerance: 0.2
+    asOf: "2026-11"
+    why: Pre porovnanie jalapeño má len niekoľko tisíc SHU. Celú Pepper X podľa autora do roku 2023 zjedlo len päť ľudí.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pepper_X
+
+  - id: zj-balut-dni
+    type: number
+    prompt: Koľko dní inkubácie považuje väčšina filipínskych výrobcov za ideálny vek balutu?
+    answer: 17
+    unit: dní
+    scale: linear
+    tolerance: 2
+    why: Na Filipínach sa balut inkubuje zvyčajne 14 až 18 dní, vo Vietname až 21 dní.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Balut_(food)
+
+  - id: zj-kiviak-pocet
+    type: number
+    prompt: Koľko najviac celých morských vtákov sa napchá do jednej tulenej kože pri výrobe grónskeho kiviaku?
+    answer: 500
+    unit: vtákov
+    scale: log
+    tolerance: 0.2
+    why: Vtáky aj so zobákmi a perím kvasia v koži asi tri mesiace.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Kiviak
+
+  - id: zj-escamoles
+    type: choice
+    prompt: Z čoho sa robí mexická pochúťka escamoles?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Escamoles
+    correct: { text: "z lariev a kukiel mravcov", why: "Názov je z nahuatlu: azcatl je mravec. Jedli ich už Aztékovia." }
+    wrong:
+      - { text: "z rybích ikier", why: "Mexický kaviár je len prezývka; ikry v nich nie sú." }
+      - { text: "z lariev včiel", why: "Sú to mravce rodu Liometopum." }
+      - { text: "zo semien kaktusu", why: "Sú to mravčie larvy; chuť pripomína maslo a orechy." }
+
+  - id: zj-tongzi-dan
+    type: choice
+    prompt: V čom sa varia vajíčka tongzi dan, pýcha čínskeho mesta Dongyang?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Virgin_boy_egg
+    correct: { text: "v moči malých chlapcov", why: "Ideálne mladších ako desať rokov; predajcovia ho zbierajú v školách." }
+    wrong:
+      - { text: "v čaji so sójovou omáčkou", why: "Tak sa robia čajové vajcia, iná čínska pochúťka." }
+      - { text: "v kozom mlieku", why: "Varia sa v moči chlapcov." }
+      - { text: "v morskej vode", why: "Varia sa v moči chlapcov a ten sa počas dňa vymieňa za čerstvý." }
+
+  - id: zj-hakarl-zviera
+    type: choice
+    prompt: Z akého zvieraťa sa robí islandský hákarl?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/H%C3%A1karl
+    correct: { text: "zo žraloka", why: "Zo žraloka grónskeho alebo príbuzného druhu; čerstvé mäso je jedovaté." }
+    wrong:
+      - { text: "z veľryby", why: "Hákarl je z kvaseného žraloka." }
+      - { text: "z tuleňa", why: "V tulenej koži kvasí grónsky kiviak, hákarl je žralok." }
+      - { text: "z tresky", why: "Z tresky je lutefisk; hákarl je žralok." }
+
+  - id: zj-huitlacoche
+    type: choice
+    prompt: Čo je mexická pochúťka huitlacoche?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Corn_smut
+    correct: { text: "huba, ktorá napáda kukuricu", why: "Sneť kukuričná, ktorá nafúkne zrná; v Mexiku plní quesadilly aj polievky." }
+    wrong:
+      - { text: "larva motýľa z agáve", why: "To je červík z agáve (maguey worm); huitlacoche je huba." }
+      - { text: "druh kaktusu", why: "Je to huba, ktorá napáda kukuricu." }
+      - { text: "kvasené kukuričné pivo", why: "Je to sneť, huba rastúca na kukurici." }

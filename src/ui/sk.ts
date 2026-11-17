@@ -222,6 +222,7 @@ export const sk = {
     "dark-humor": "čierny humor",
     racism: "rasizmus",
     abuse: "zneužívanie",
+    gross: "nechutné",
   } satisfies Record<ContentWarning, string> as Record<string, string>,
   newBadge: (n: number) => `+${n} ${plural(n, "nová", "nové", "nových")}`,
   questionsCount: (n: number) => `${n} ${plural(n, "otázka", "otázky", "otázok")}`,
