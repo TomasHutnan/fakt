@@ -3,7 +3,7 @@ title: Šport vo svete
 description: Triatlon a päťboj, pravidlá a rozmery, olympiády a paralympiády, majstrovstvá sveta, Tour de France, Stanleyho pohár aj Super Bowl.
 category: sport
 lang: sk
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: triatlon-fakty
@@ -138,7 +138,7 @@ questions:
       - text: Nemecko
         why: Len raz, Garmisch-Partenkirchen 1936.
       - text: Švédsko
-        why: Zimnú olympiádu nemalo nikdy, hoci na nich získalo 73 zlatých.
+        why: Zimnú olympiádu nemalo nikdy, hoci na zimných hrách získalo 73 zlatých.
       - text: Rusko
         why: Len raz, Soči 2014.
       - text: Čína
@@ -220,7 +220,7 @@ questions:
 
   - id: loh-vitazi-hodnotenia
     type: pick
-    prompt: Ktoré krajiny aspoň raz vyhrali hodnotenie národov na letnej olympiáde?
+    prompt: Ktoré výpravy aspoň raz vyhrali hodnotenie národov podľa počtu zlatých medailí na letnej olympiáde?
     difficulty: 3
     asOf: "2024"
     source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
@@ -376,7 +376,7 @@ questions:
       - text: Body v geme sa počítajú 15, 30, 40
         why: Pôvod tejto stupnice nie je jasný, teórie o nej sa písali už v 16. storočí.
       - text: Nula sa po anglicky hlási „love“
-        why: Pravidlá ITF dovoľujú aj obyčajné „zero, one, two, three“.
+        why: Pravidlá americkej federácie USTA dovoľujú aj obyčajné „zero, one, two, three“.
       - text: Wimbledon sa hrá na tráve
         why: Je to najstarší grandslam, od roku 1877.
       - text: Roland Garros sa hrá na antuke
@@ -689,7 +689,7 @@ questions:
 
   - id: bojove-umenia-japonsko
     type: pick
-    prompt: Ktoré z týchto bojových športov pochádzajú z Japonska?
+    prompt: Ktoré z týchto bojových umení a športov pochádzajú z Japonska?
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Judo
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sumo, /Kendo, /Aikido, /Jujutsu, /Taekwondo, /Capoeira, /Muay_Thai, /Sambo_(martial_art), /Savate, /Wushu_(sport), /Brazilian_jiu-jitsu"
@@ -848,7 +848,7 @@ questions:
     note: "Tabuľka bez predchodcov (Winter Olympics excluding precursors), po hrách 2026."
     tags: [olympiáda, medaily, zimné]
     items:
-      - { text: Nórsko, value: 166, why: "Najúspešnejšia krajina v histórii zimných hier, ak sa nerátajú oba nemecké štáty spolu." }
+      - { text: Nórsko, value: 166, why: "Vedie historickú tabuľku zimných hier, kde sa jednotlivé nemecké tímy rátajú osobitne." }
       - { text: USA, value: 126, why: "Zimnú olympiádu usporiadali už štyrikrát." }
       - { text: Kanada, value: 82, why: "Zimnú olympiádu usporiadala dvakrát, v Calgary a vo Vancouveri." }
       - { text: Švajčiarsko, value: 69, why: "Dvakrát hostilo hry v St. Moritzi." }
@@ -862,7 +862,7 @@ questions:
     unit: km
     scale: log
     tolerance: 0.05
-    why: Presne 180,2 km (112 míľ); pred tým 3,86 km plávania a po tom celý maratón.
+    why: Presne 180,2 km (112 míľ); predtým 3,86 km plávania a potom celý maratón.
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Ironman_Triathlon
     tags: [triatlon]
