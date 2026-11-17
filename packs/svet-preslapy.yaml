@@ -34,7 +34,7 @@ questions:
     tags: [technika, jednotky]
     source: "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter https://en.wikipedia.org/wiki/Gimli_Glider https://en.wikipedia.org/wiki/Laufenburg,_Germany https://www.thelocal.com/20100903/29599 https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Millennium_Bridge,_London https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/S-80_Plus-class_submarine https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport"
     correct:
-      - { text: "Strata sondy Mars Climate Orbiter (1999)", why: "Jeden program počítal impulz motorov v librách-sila krát sekunda, druhý čakal newtonsekundy." }
+      - { text: "Strata sondy Mars Climate Orbiter (1999)", why: "Jeden program počítal impulz motorov v librosilách krát sekunda, druhý čakal newtonsekundy." }
       - { text: "Boeing 767, ktorému v roku 1983 došlo palivo vo vzduchu", why: "Pri prepočte paliva použili hustotu v librách na liter namiesto kilogramov na liter; v nádržiach bolo len 45 % potrebného množstva." }
       - { text: "Most cez Rýn v Laufenburgu, ktorého polovice sa nestretli (2003)", why: "Nemecko meria nadmorskú výšku od Severného mora, Švajčiarsko od Stredozemného; známy 27 cm rozdiel omylom zdvojnásobili na 54 cm." }
     wrong:
@@ -58,7 +58,7 @@ questions:
       - { text: "Voda vnikla dnu otvorenými strieľňami na delá", why: "Silnejší poryv vetra ju naklonil tak, že spodné strieľne sa ponorili pod hladinu." }
       - { text: "Z morského dna ju vyzdvihli v roku 1961", why: "Na dne preležala 333 rokov a zachovala sa takmer celá." }
       - { text: "Za potopenie nakoniec nikoho nepotrestali", why: "Vyšetrovanie pred tribunálom Tajnej rady a admirality sa skončilo bez trestu." }
-      - { text: "Stavitelia používali pravítka s rôzne dlhými stopami", why: "Našli sa štyri pravítka: dve v švédskych stopách, dve v amsterdamských." }
+      - { text: "Stavitelia používali pravítka s rôzne dlhými stopami", why: "Našli sa štyri pravítka: dve vo švédskych stopách, dve v amsterdamských." }
     wrong:
       - { text: "Potopili ju poľské lode v bitke", why: "Potopila sa sama, pár minút po stretnutí so silnejším vetrom, bez jediného nepriateľa." }
       - { text: "Na palube bol aj kráľ Gustáv II. Adolf", why: "Kráľ bol vtedy s armádou v Poľsku; netrpezlivo čakal, kedy loď vypláva." }
@@ -115,7 +115,7 @@ questions:
     source: "https://eca.europa.eu/lists/ecadocuments/sr14_21/qjab14021enc.pdf https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport"
     note: "Európsky dvor audítorov, osobitná správa č. 21/2014: Infraštruktúra letísk financovaná EÚ."
     correct:
-      - { text: "Súkromné letisko Ciudad Real pri Madride stálo asi 1,1 miliardy eur", why: "Po troch rokoch prevádzky ho v apríli 2012 zatvorili na vyše sedem rokov." }
+      - { text: "Súkromné letisko Ciudad Real južne od Madridu stálo asi 1,1 miliardy eur", why: "Po troch rokoch prevádzky ho v apríli 2012 zatvorili na vyše sedem rokov." }
       - { text: "Za letisko Ciudad Real ponúkla čínska firma 10 000 eur", why: "Súd ponuku v roku 2015 odmietol ako príliš nízku." }
       - { text: "Letisko Castellón slávnostne otvorili bez jedinej leteckej spoločnosti", why: "Stalo sa to v marci 2011; prvý komerčný let pristál až v septembri 2015." }
       - { text: "Pred letiskom Castellón stojí 24 metrov vysoká socha", why: "Stála asi 375 000 dolárov." }
@@ -143,7 +143,7 @@ questions:
       - { text: "Šťava z vreciek pre lis Juicero sa dala vytlačiť aj rukou", why: "Ukázal to Bloomberg v roku 2017; firma potom predaj lisov zastavila." }
       - { text: "Edsel bola automobilová značka Fordu", why: "Ford ju zrušil v novembri 1959, ani nie dva a pol roka po uvedení." }
     wrong:
-      - { text: "Telefóny Kin vyrábal Apple", why: "Boli to telefóny Microsoftu, vyrábala ich Sharp a predával Verizon." }
+      - { text: "Telefóny Kin vyrábal Apple", why: "Boli to telefóny Microsoftu, vyrábala ich firma Sharp a predával Verizon." }
       - { text: "Quibi vydržalo vyše troch rokov", why: "Skončilo po necelých ôsmich mesiacoch." }
       - { text: "Virtual Boy predal vyše 10 miliónov kusov", why: "Predal len 770 000 kusov a vyšlo naň iba 22 hier." }
       - { text: "Sinclair C5 jazdil na benzín", why: "Bol elektrický, na batériu." }
@@ -167,7 +167,7 @@ questions:
       - { text: "Zmena prišla v roku stých narodenín Coca-Coly", why: "O rok skôr: nápoj vznikol v roku 1886, storočnicu oslavoval v roku 1986." }
       - { text: "Ľuďom nechutila už v testoch", why: "Naopak, testy jasne vyhrávala – nevadila chuť, ale zmena." }
       - { text: "Pôvodná receptúra sa vrátila až po piatich rokoch", why: "Vrátila sa už po necelých troch mesiacoch." }
-      - { text: "McDonald's zostal aj potom pri New Coke", why: "McDonald's sa hneď po návrate prepol späť na pôvodnú Coca-Colu." }
+      - { text: "McDonald's zostal aj potom pri New Coke", why: "McDonald's sa hneď po návrate vrátil k pôvodnú Coca-Colu." }
       - { text: "New Coke bol výrobok firmy Pepsi", why: "Bol to krok samotnej Coca-Coly; sladšia Pepsi ju predtým porážala v testoch." }
       - { text: "Po návrate pôvodnej Coca-Coly zmizla New Coke okamžite z obchodov", why: "Predávala sa ďalej, od roku 1990 ako Coke II." }
 
