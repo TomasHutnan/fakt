@@ -217,7 +217,7 @@ questions:
       - { text: Vynašiel žiarovku, why: "Žiarovky vyvíjalo viac vynálezcov, najznámejší sú Edison a Swan, Tesla medzi nimi nebol." }
       - { text: Získal Nobelovu cenu za fyziku, why: "Nikdy ju nezískal." }
       - { text: Vynašiel telefón, why: "Patent na telefón dostal v roku 1876 Alexander Graham Bell." }
-      - { text: Narodil sa v USA, why: "Do USA prišiel ako 28-ročný." }
+      - { text: Narodil sa v USA, why: "Do USA prišiel ako 27-ročný." }
       - { text: Objavil röntgenové žiarenie, why: "Wilhelm Röntgen, 1895." }
 
   - id: napoleon-tvrdenia
@@ -597,7 +597,7 @@ questions:
     prompt: Kto skomponoval Štyri ročné obdobia?
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Antonio_Vivaldi
-    correct: { text: Antonio Vivaldi, why: "Benátčan, ktorý ich napísal pre husle okolo roku 1720; pre rudé vlasy ho volali Červený kňaz." }
+    correct: { text: Antonio Vivaldi, why: "Benátčan, ktorý ich napísal pre husle okolo roku 1720; pre ryšavé vlasy ho volali Červený kňaz." }
     wrong:
       - { text: Johann Sebastian Bach, why: "Skomponoval Brandenburské koncerty, nie Ročné obdobia." }
       - { text: Georg Friedrich Händel, why: "Autor Vodnej hudby a Mesiáša." }
