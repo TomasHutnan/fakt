@@ -93,7 +93,7 @@ questions:
       - text: Robert Lewandowski
         why: "Nikdy ju nevyhral; ročník 2020 sa pre covid vôbec neudeľoval."
       - text: Zlatan Ibrahimović
-        why: "Hral za Barcelonu, Juventus, Inter, Miláno aj PSG, Zlatú loptu však nikdy nezískal."
+        why: "Hral za Barcelonu, Juventus, Inter, AC Miláno aj PSG, Zlatú loptu však nikdy nezískal."
 
   - id: wimbledon-vitazi
     type: pick
@@ -122,7 +122,7 @@ questions:
         why: "Vyhrala v roku 1997, keď vo finále zdolala Janu Novotnú."
       - text: Jana Novotná
         why: "Dve finále prehrala, v roku 1998 konečne vyhrala."
-      - text: Mária Šarapovová
+      - text: Maria Šarapovová
         why: "V roku 2004 zdolala vo finále Serenu Williamsovú."
       - text: Petra Kvitová
         why: "Česká ľaváčka vyhrala v rokoch 2011 a 2014."
@@ -183,7 +183,7 @@ questions:
         why: "Hinault bol Le Blaireau, Jazvec, a tiež Le Patron."
       - text: "The Real Deal – Lennox Lewis"
         why: "The Real Deal je Evander Holyfield, jediný štvornásobný majster sveta v ťažkej váhe."
-      - text: "The Gypsy King – Wladimir Kličko"
+      - text: "The Gypsy King – Vladimir Kličko"
         why: "Cigánsky kráľ je Tyson Fury."
 
   - id: stanley-cup-hviezdy
@@ -871,7 +871,7 @@ questions:
     unit: rokov
     scale: linear
     tolerance: 2
-    why: "Presne 20 rokov a 4 mesiace; tento rekord platí dodnes."
+    why: "Mal 20 rokov a necelých 5 mesiacov; tento rekord platí dodnes."
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Mike_Tyson
     tags: [box]
