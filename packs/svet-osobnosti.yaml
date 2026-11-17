@@ -1,0 +1,637 @@
+id: svet-osobnosti
+title: Osobnosti svetových dejín
+description: Maliari, skladatelia, panovníci, vedci a objavitelia – kto čo vytvoril, kedy žil a čo sa mu naozaj pripisuje.
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ PICK
+  - id: leonardo-diela
+    type: pick
+    prompt: Ktoré z týchto diel vytvoril Leonardo da Vinci?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Leonardo_da_Vinci
+    tags: [maliarstvo, renesancia]
+    correct:
+      - { text: Mona Lisa, why: "Maľoval ju roky a nikdy ju nedodal objednávateľovi; napokon ju odviezol do Francúzska." }
+      - { text: Posledná večera, why: "Nástenná maľba v refektári milánskeho kláštora, nie klasická freska, preto začala chátrať ešte za jeho života." }
+      - { text: Dáma s hranostajom, why: "Portrét Cecilie Gallerani z konca 15. storočia." }
+      - { text: Madona v skalách, why: "Vznikala v rokoch okolo 1483 až 1493 a existujú dve verzie, v Louvri a v Londýne." }
+      - { text: Vitruviánsky muž, why: "Kresba mužskej postavy vpísanej do kruhu a štvorca, okolo roku 1490." }
+    wrong:
+      - { text: Stvorenie Adama, why: "Maľba na strope Sixtínskej kaplnky od Michelangela." }
+      - { text: Aténska škola, why: "Freska z Vatikánu od Raffaela." }
+      - { text: Zrodenie Venuše, why: "Slávny Botticelliho obraz zo Florencie." }
+      - { text: Dievča s perlovou náušnicou, why: "Holandský Vermeer, o vyše sto rokov mladší." }
+      - { text: Nočná hliadka, why: "Rembrandtov obrovský skupinový portrét z Amsterdamu." }
+      - { text: Hviezdna noc, why: "Van Gogh ju namaľoval v roku 1889, vyše 400 rokov po Leonardovi." }
+
+  - id: michelangelo-diela
+    type: pick
+    prompt: Ktoré z týchto diel vytvoril Michelangelo?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Michelangelo
+    tags: [sochárstvo, renesancia]
+    correct:
+      - { text: socha Dávid, why: "Vytesal ju z jedného bloku mramoru v rokoch 1501 až 1504; dnes stojí vo Florencii." }
+      - { text: Pieta v Bazilike svätého Petra, why: "Dokončil ju ako 23-ročný, okolo roku 1499." }
+      - { text: Stvorenie Adama, why: "Časť maľby na strope Sixtínskej kaplnky; slávny je dotyk prstov Boha a Adama." }
+      - { text: Posledný súd, why: "Obrovská freska na oltárnej stene Sixtínskej kaplnky." }
+      - { text: Madona z Brugg, why: "Mramorová socha z rokov 1503 až 1505, ktorá sa dostala do Belgicka a stojí tam dodnes." }
+    wrong:
+      - { text: Zrodenie Venuše, why: "Botticelli, nie Michelangelo." }
+      - { text: Mona Lisa, why: "Leonardo da Vinci." }
+      - { text: Mysliteľ, why: "Bronzová socha Augusta Rodina z 19. storočia." }
+      - { text: Vitruviánsky muž, why: "Leonardova kresba." }
+      - { text: Aténska škola, why: "Raffaelova freska, tiež z Vatikánu, ale z inej ruky." }
+      - { text: Nočná hliadka, why: "Rembrandt, o vyše sto rokov neskôr." }
+
+  - id: van-gogh-diela
+    type: pick
+    prompt: Ktoré z týchto obrazov namaľoval Vincent van Gogh?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Vincent_van_Gogh
+    tags: [maliarstvo, postimpresionizmus]
+    correct:
+      - { text: Hviezdna noc, why: "Vznikla v roku 1889 počas jeho pobytu v liečebni v Saint-Rémy." }
+      - { text: Slnečnice, why: "Maľoval ich v sériách; jedna z verzií vznikla už v roku 1887." }
+      - { text: Spálňa v Arles, why: "Obraz z roku 1888 zobrazuje jeho izbu v Žltom dome; namaľoval ju trikrát." }
+      - { text: Pšeničné pole s havranmi, why: "Z posledného roka jeho života, 1890." }
+      - { text: Jedáci zemiakov, why: "Tmavý obraz chudobných roľníkov z roku 1885, zo začiatku jeho kariéry." }
+    wrong:
+      - { text: Výkrik, why: "Edvard Munch, nórsky maliar." }
+      - { text: "Impresia, východ slnka", why: "Obraz Clauda Moneta, podľa ktorého dostal impresionizmus meno." }
+      - { text: Vodné ľalie, why: "Séria Clauda Moneta zo záhrady v Giverny." }
+      - { text: Pretrvávanie pamäte, why: "Slávne topiace sa hodiny namaľoval Dalí." }
+      - { text: Bozk, why: "Zlatý obraz Gustava Klimta." }
+      - { text: Guernica, why: "Picassov obraz z roku 1937." }
+
+  - id: holandski-maliari
+    type: pick
+    prompt: Ktorí z týchto maliarov a grafikov sa narodili v Holandsku?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Johannes_Vermeer
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Rembrandt, /Vincent_van_Gogh, /Frans_Hals, /Piet_Mondrian, /M._C._Escher, /Hieronymus_Bosch, /Peter_Paul_Rubens"
+    tags: [maliarstvo]
+    correct:
+      - { text: Rembrandt, why: "Narodil sa v Leidene a väčšinu života prežil v Amsterdame." }
+      - { text: Johannes Vermeer, why: "Celý život strávil v Delfte a namaľoval len niečo vyše tridsať obrazov." }
+      - { text: Vincent van Gogh, why: "Narodil sa v Zundert v provincii Severný Brabant." }
+      - { text: Frans Hals, why: "Majster smejúcich sa portrétov, pôsobil v Haarleme." }
+      - { text: Piet Mondrian, why: "Narodil sa v Amersfoorte; známy obrazmi z farebných štvorcov a čiernych čiar." }
+      - { text: M. C. Escher, why: "Narodil sa v Leeuwardene; slávny nemožnými schodiskami a premenami obrazcov." }
+      - { text: Hieronymus Bosch, why: "Pochádzal zo mesta 's-Hertogenbosch, odkiaľ si zobral aj meno." }
+    wrong:
+      - { text: Peter Paul Rubens, why: "Flámsky maliar, narodil sa v nemeckom Siegene a pôsobil v Antverpách." }
+      - { text: Francisco Goya, why: "Španiel." }
+      - { text: Claude Monet, why: "Francúz." }
+      - { text: Edvard Munch, why: "Nór." }
+      - { text: Gustav Klimt, why: "Rakúšan, narodený pri Viedni." }
+      - { text: Albrecht Dürer, why: "Nemec z Norimbergu." }
+
+  - id: beethoven-diela
+    type: pick
+    prompt: Ktoré z týchto diel napísal Ludwig van Beethoven?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Ludwig_van_Beethoven
+    tags: [hudba, klasicizmus]
+    correct:
+      - { text: Eroica (3. symfónia), why: "Pôvodne ju venoval Napoleonovi, no po jeho vyhlásení za cisára venovanie vraj zoškrabal." }
+      - { text: Mesačná sonáta, why: "Meno Mesačná jej dal až po jeho smrti básnik Ludwig Rellstab." }
+      - { text: Fidelio, why: "Jeho jediná opera, premiéra bola v roku 1805." }
+      - { text: Missa solemnis, why: "Omša, ktorú dokončil v roku 1823." }
+      - { text: 9. symfónia s Ódou na radosť, why: "Do finále zaradil zbor a sólistov; hymna Európskej únie z nej preberá melódiu." }
+      - { text: Pre Elišku, why: "Malá klavírna skladba, ktorú pozná takmer každý." }
+    wrong:
+      - { text: Malá nočná hudba, why: "Mozart, rok 1787." }
+      - { text: Čarovná flauta, why: "Mozartova opera." }
+      - { text: Štyri ročné obdobia, why: "Vivaldi." }
+      - { text: Labutie jazero, why: "Čajkovskij." }
+      - { text: Bolero, why: "Ravel, o sto rokov neskôr." }
+      - { text: Rekviem, why: "Beethoven žiadne rekviem nenapísal; slávne sú Mozartovo a Verdiho." }
+
+  - id: mozart-diela
+    type: pick
+    prompt: Ktoré z týchto diel skomponoval Wolfgang Amadeus Mozart?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart
+    tags: [hudba, klasicizmus]
+    correct:
+      - { text: Figarova svadba, why: "Opera podľa Beaumarchaisovej hry, v origináli Le nozze di Figaro." }
+      - { text: Don Giovanni, why: "Opera o zvodcovi, ktorú napísal podľa libreta Lorenza da Ponteho." }
+      - { text: Così fan tutte, why: "Tretia opera, ktorú urobil s Da Pontem; premiéra bola v roku 1790." }
+      - { text: Čarovná flauta, why: "Nemecký singspiel; Ária Kráľovnej noci letí aj na Voyageroch do vesmíru." }
+      - { text: Malá nočná hudba, why: "Serenáda Eine kleine Nachtmusik, vydaná v roku 1787." }
+      - { text: Jupiterova symfónia, why: "Jeho posledná symfónia, 41., z leta 1788." }
+    wrong:
+      - { text: Fidelio, why: "Beethovenova opera." }
+      - { text: La traviata, why: "Verdi." }
+      - { text: Carmen, why: "Francúz Bizet." }
+      - { text: Labutie jazero, why: "Čajkovskij." }
+      - { text: Tosca, why: "Puccini, o sto rokov mladšia opera." }
+      - { text: Barbier zo Sevilly, why: "Rossiniho opera, aj keď Mozart skomponoval Figarovu svadbu s tou istou postavou." }
+
+  - id: cajkovskij-diela
+    type: pick
+    prompt: Ktoré z týchto diel napísal Pjotr Iľjič Čajkovskij?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pyotr_Ilyich_Tchaikovsky
+    tags: [hudba, romantizmus]
+    correct:
+      - { text: Labutie jazero, why: "Balet, ktorý pri prvom uvedení v Moskve roku 1877 dopadol skôr neúspešne." }
+      - { text: Luskáčik, why: "Vianočný balet s Tancom cukrovej vílky." }
+      - { text: Spiaca krasavica, why: "Balet podľa rozprávky, jeho druhý veľký." }
+      - { text: Eugen Onegin, why: "Opera podľa Puškinovho veršovaného románu." }
+      - { text: Predohra 1812, why: "Sám ju označil za hlučnú a bez vrúcneho citu; hrá sa so skutočnými delami." }
+      - { text: Piková dáma, why: "Opera podľa Puškinovej poviedky." }
+    wrong:
+      - { text: Peter a vlk, why: "Detská symfonická rozprávka Sergeja Prokofieva." }
+      - { text: Bolero, why: "Maurice Ravel." }
+      - { text: Vltava, why: "Český skladateľ Bedřich Smetana." }
+      - { text: Sen noci svätojánskej, why: "Hudbu skomponoval Mendelssohn." }
+      - { text: Rapsódia v modrom, why: "Američan George Gershwin." }
+      - { text: Hungarian Rhapsody, why: "Franz Liszt." }
+
+  - id: verdi-opery
+    type: pick
+    prompt: Ktoré z týchto opier napísal Giuseppe Verdi?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Giuseppe_Verdi
+    tags: [hudba, opera]
+    correct:
+      - { text: Nabucco, why: "Zbor Va, pensiero z nej sa stal neoficiálnou hymnou talianskeho zjednotenia." }
+      - { text: Rigoletto, why: "Z roku 1851; obsahuje slávnu áriu La donna è mobile." }
+      - { text: Trubadúr, why: "Il trovatore, z roku 1853, rovnako ako La traviata." }
+      - { text: La traviata, why: "Premiéra bola vo Benátkach v roku 1853." }
+      - { text: Aida, why: "Z roku 1871; odohráva sa v starovekom Egypte." }
+      - { text: Otello, why: "Posledná tragédia, 1887, podľa Shakespeara." }
+      - { text: Macbeth, why: "Z roku 1847; zvyčajne sa považuje za jeho prvé veľké majstrovstvo." }
+    wrong:
+      - { text: Carmen, why: "Francúz Georges Bizet." }
+      - { text: Tosca, why: "Giacomo Puccini." }
+      - { text: Madama Butterfly, why: "Giacomo Puccini." }
+      - { text: La Bohème, why: "Giacomo Puccini." }
+      - { text: Barbier zo Sevilly, why: "Gioachino Rossini." }
+      - { text: Čarodejný strelec, why: "Nemec Carl Maria von Weber." }
+
+  - id: nobelova-cena
+    type: pick
+    prompt: Ktorí z týchto vedcov dostali Nobelovu cenu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Marie_Curie
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Albert_Einstein, /Niels_Bohr, /Max_Planck, /Ivan_Pavlov, /Enrico_Fermi, /Werner_Heisenberg"
+    tags: [veda, nobelovka]
+    correct:
+      - { text: Marie Curie-Skłodowská, why: "Dostala ju dvakrát: za fyziku v roku 1903 a za chémiu v roku 1911." }
+      - { text: Albert Einstein, why: "Za fyziku v roku 1921, ale nie za teóriu relativity, ale za fotoelektrický jav." }
+      - { text: Niels Bohr, why: "Dán, cenu za fyziku dostal v roku 1922 za model atómu." }
+      - { text: Max Planck, why: "Za fyziku v roku 1918, za objav energetických kvánt." }
+      - { text: Ivan Pavlov, why: "Cenu za fyziológiu alebo medicínu dostal v roku 1904 za výskum trávenia." }
+      - { text: Enrico Fermi, why: "Cenu za fyziku dostal v roku 1938; po ceremónii s rodinou emigroval do USA." }
+      - { text: Werner Heisenberg, why: "Cenu za fyziku dostal v roku 1932." }
+    wrong:
+      - { text: Isaac Newton, why: "Zomrel v roku 1727, Nobelove ceny sa udeľujú od roku 1901." }
+      - { text: Charles Darwin, why: "Zomrel v roku 1882, dávno pred prvou cenou." }
+      - { text: Galileo Galilei, why: "Zomrel v roku 1642." }
+      - { text: Nikola Tesla, why: "Cenu nikdy nezískal." }
+      - { text: Thomas Edison, why: "Cenu nikdy nedostal." }
+      - { text: Sigmund Freud, why: "Bol síce opakovane navrhnutý, no cenu nikdy nedostal." }
+      - { text: Stephen Hawking, why: "Cenu nezískal, hoci bol svetoznámy." }
+
+  - id: tesla-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o Nikolovi Teslovi sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Nikola_Tesla
+    tags: [veda, vynálezy]
+    correct:
+      - { text: Narodil sa v Smiljane v dnešnom Chorvátsku, why: "V čase jeho narodenia, v roku 1856, to bolo Rakúske cisárstvo." }
+      - { text: Krátko pracoval pre Thomasa Edisona, why: "Po príchode do USA v roku 1884; po pár mesiacoch od neho odišiel." }
+      - { text: Vyvinul striedavý indukčný motor, why: "Patenty na motory na viacfázový striedavý prúd sú jeho najznámejším dielom." }
+      - { text: V roku 1898 predviedol čln riadený rádiom, why: "Predvádzal ho v New Yorku a chcel ho predávať ako riadený torpédový čln." }
+      - { text: Podľa neho je pomenovaná cievka vysokého napätia, why: "Teslova cievka, ktorá tvorí fialové blesky." }
+      - { text: Zomrel v New Yorku v roku 1943, why: "Mal 86 rokov." }
+    wrong:
+      - { text: Vynašiel žiarovku, why: "Žiarovky vyvíjalo viac vynálezcov, najznámejší sú Edison a Swan, Tesla medzi nimi nebol." }
+      - { text: Získal Nobelovu cenu za fyziku, why: "Nikdy ju nezískal." }
+      - { text: Vynašiel telefón, why: "Patent na telefón dostal v roku 1876 Alexander Graham Bell." }
+      - { text: Narodil sa v USA, why: "Do USA prišiel ako 28-ročný." }
+      - { text: Objavil röntgenové žiarenie, why: "Wilhelm Röntgen, 1895." }
+
+  - id: napoleon-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o Napoleonovi Bonapartovi sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Napoleon
+    tags: [panovnici, napoleonske-vojny]
+    correct:
+      - { text: Narodil sa na Korzike, why: "V Ajacciu v roku 1769." }
+      - { text: Vyhral bitku pri Slavkove (Austerlitz), why: "2. decembra 1805 porazil rakúsko-ruské vojská pri dnešnom Slavkove u Brna." }
+      - { text: V roku 1803 predal Louisianu USA, why: "Územie takmer zdvojnásobilo rozlohu Spojených štátov." }
+      - { text: V roku 1804 sa sám korunoval za cisára, why: "Korunu si vzal z rúk pápeža a nasadil si ju sám." }
+      - { text: Bol vyhnaný na ostrov Elba, why: "V roku 1814; z ostrova o rok neskôr ušiel." }
+      - { text: Zomrel na ostrove Svätá Helena, why: "Rok 1821, v južnom Atlantiku, ďaleko od Európy." }
+      - { text: Bitku pri Waterloo prehral v júni 1815, why: "Porazili ho vojská Británie a Pruska." }
+    wrong:
+      - { text: Vyhral námornú bitku pri Trafalgare, why: "Vyhral ju Nelson, francúzsko-španielske loďstvo bolo porazené." }
+      - { text: Predal USA Aljašku, why: "Aljašku predalo USA v roku 1867 Rusko." }
+      - { text: Zomrel v bitke pri Waterloo, why: "Z Waterloo odišiel živý, zomrel o šesť rokov neskôr v exile." }
+      - { text: Cisárom ho korunoval pápež, why: "Pápež pri korunovácii v roku 1804 bol, ale korunu si Napoleon nasadil sám." }
+      - { text: Narodil sa v Paríži, why: "Parížan nebol, narodil sa v Ajacciu." }
+
+  - id: alexander-velky
+    type: pick
+    prompt: Ktoré tvrdenia o Alexandrovi Veľkom sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Alexander_the_Great
+    tags: [panovnici, starovek]
+    correct:
+      - { text: Jeho učiteľom bol Aristoteles, why: "Učil ho približne do veku 16 rokov." }
+      - { text: Bol macedónsky kráľ, why: "Nastúpil na trón ako dvadsaťročný po zavraždení otca Filipa II." }
+      - { text: Jeho koňom bol Bucefalos, why: "Meno znamená volská hlava; kôň ho vraj niesol až do Indie." }
+      - { text: Zomrel v Babylone, why: "V júni 323 pred Kristom, príčina smrti je dodnes sporná." }
+      - { text: Zomrel vo veku 32 rokov, why: "Za necelých trinásť rokov vlády dobyl Perziu." }
+      - { text: Založil egyptskú Alexandriu, why: "Z viac než dvadsiatich miest, ktoré založil, je najznámejšia." }
+    wrong:
+      - { text: Narodil sa v Aténach, why: "Narodil sa v macedónskej Pelle." }
+      - { text: Jeho učiteľom bol Sokrates, why: "Sokrates zomrel o vyše štyridsať rokov pred jeho narodením." }
+      - { text: Dobyl Rím, why: "Do Itálie nikdy nevtiahol." }
+      - { text: Zomrel v bitke, why: "Zomrel na lôžku v Babylone." }
+      - { text: Jeho vojská dorazili do Číny, why: "Najďalej došiel do Indie, kde sa jeho vojská odmietli pohnúť ďalej." }
+
+  - id: portugalski-moreplavci
+    type: pick
+    prompt: Ktorí z týchto moreplavcov a objaviteľov sa narodili v Portugalsku?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Ferdinand_Magellan
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Vasco_da_Gama, /Bartolomeu_Dias, /Pedro_Álvares_Cabral, /Henry_the_Navigator, /Christopher_Columbus, /James_Cook, /Roald_Amundsen, /Marco_Polo"
+    tags: [objavitelia]
+    correct:
+      - { text: Vasco da Gama, why: "V roku 1498 doplával do Indie okolo Afriky." }
+      - { text: Bartolomeu Dias, why: "V roku 1488 ako prvý Európan obišiel Mys Dobrej nádeje." }
+      - { text: Fernão de Magalhães (Magellan), why: "Portugalčan v španielskych službách; jeho výprava ako prvá obplávala svet." }
+      - { text: Pedro Álvares Cabral, why: "V roku 1500 dorazil k brazílskym brehom." }
+      - { text: Henrich Moreplavec, why: "Portugalský princ, ktorý financoval objavné plavby pozdĺž Afriky." }
+    wrong:
+      - { text: Krištof Kolumbus, why: "Narodil sa v Janove." }
+      - { text: Hernán Cortés, why: "Španiel z Extremadury." }
+      - { text: James Cook, why: "Angličan." }
+      - { text: Roald Amundsen, why: "Nór, dobyvateľ južného pólu." }
+      - { text: Marco Polo, why: "Benátčan." }
+      - { text: Abel Tasman, why: "Holanďan." }
+
+  - id: dostojevskij-diela
+    type: pick
+    prompt: Ktoré z týchto kníh napísal Fiodor Dostojevskij?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Fyodor_Dostoevsky
+    tags: [literatura]
+    correct:
+      - { text: Zločin a trest, why: "Román o študentovi Raskoľnikovovi z roku 1866." }
+      - { text: Bratia Karamazovovci, why: "Jeho posledný román, vyšiel krátko pred smrťou v roku 1881." }
+      - { text: Idiot, why: "Z roku 1869, o dobrosrdečnom kniežati Myškinovi." }
+      - { text: Besi, why: "V angličtine známe aj ako Demons." }
+      - { text: Hráč, why: "Napísal ho za 26 dní, pretože mal dlhy z hazardu." }
+      - { text: Zápisky z podzemia, why: "Krátky román z roku 1864, často sa považuje za prvý existenciálny." }
+    wrong:
+      - { text: Anna Kareninová, why: "Lev Nikolajevič Tolstoj." }
+      - { text: Vojna a mier, why: "Tolstoj." }
+      - { text: Revízor, why: "Komédia Nikolaja Gogoľa." }
+      - { text: Mŕtve duše, why: "Gogoľ." }
+      - { text: Majster a Margaréta, why: "Michail Bulgakov, 20. storočie." }
+      - { text: Doktor Živago, why: "Boris Pasternak." }
+
+  - id: grecki-mysitelia
+    type: pick
+    prompt: Ktorí z týchto mysliteľov a vedcov žili v starovekom Grécku?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hippocrates
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Socrates, /Plato, /Aristotle, /Archimedes, /Pythagoras, /Seneca_the_Younger, /Marcus_Aurelius, /Cicero"
+    tags: [starovek, filozofia]
+    correct:
+      - { text: Sokrates, why: "Nenapísal nič, o jeho myšlienkach vieme hlavne od Platóna." }
+      - { text: Platón, why: "Žiak Sokrata, zakladateľ Akadémie." }
+      - { text: Aristoteles, why: "Platónov žiak a učiteľ Alexandra Veľkého." }
+      - { text: Archimedes, why: "Z gréckeho mesta Syrakúzy na Sicílii; známy zákonom o vztlaku." }
+      - { text: Pytagoras, why: "Pochádzal z ostrova Samos, jeho veta o trojuholníku je známa dodnes." }
+      - { text: Hippokratés, why: "Z ostrova Kos; je po ňom pomenovaná lekárska prísaha." }
+    wrong:
+      - { text: Cicero, why: "Rímsky rečník a politik." }
+      - { text: Seneca, why: "Rímsky filozof, vychovávateľ cisára Nera." }
+      - { text: Marcus Aurelius, why: "Rímsky cisár a filozof, hoci písal po grécky." }
+      - { text: Konfucius, why: "Čínsky filozof." }
+      - { text: Avicenna, why: "Perzský lekár zo stredoveku." }
+      - { text: Lucretius, why: "Rímsky básnik a filozof." }
+
+  - id: panovnicky
+    type: pick
+    prompt: Ktoré z týchto žien samostatne vládli ako kráľovné alebo cisárovné?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Catherine_the_Great
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Maria_Theresa, /Queen_Victoria, /Elizabeth_I, /Cleopatra, /Elizabeth_II, /Joan_of_Arc, /Marie_Antoinette"
+    tags: [panovnici]
+    correct:
+      - { text: Mária Terézia, why: "Vládla habsburskej monarchii v rokoch 1740 až 1780, ako Uhorská kráľovná sa dala korunovať v Bratislave." }
+      - { text: Katarína II. Veľká, why: "Ruská cárovná v rokoch 1762 až 1796; sama sa dostala k moci po prevrate proti manželovi." }
+      - { text: Viktória, why: "Britská kráľovná od roku 1837, vládla vyše 63 rokov." }
+      - { text: Alžbeta I., why: "Anglická kráľovná v rokoch 1558 až 1603, posledná panovníčka z rodu Tudorovcov." }
+      - { text: Kleopatra VII., why: "Posledná panovníčka helenistického Egypta." }
+      - { text: Alžbeta II., why: "Vládla 70 rokov a 214 dní, najdlhšie zo všetkých britských panovníkov." }
+    wrong:
+      - { text: Jana z Arku, why: "Vojačka a mučenica, žiadnu krajinu nevládla." }
+      - { text: Margaret Thatcherová, why: "Britská premiérka, nie panovníčka." }
+      - { text: Angela Merkelová, why: "Nemecká kancelárka." }
+      - { text: Marie Antoinetta, why: "Manželka Ľudovíta XVI. a dcéra Márie Terézie, ale len kráľovná-manželka." }
+      - { text: Eva Perónová, why: "Prvá dáma Argentíny, nevládla samostatne." }
+      - { text: Indira Gándhíová, why: "Indická premiérka, nie panovníčka." }
+
+  - id: newton-objavy
+    type: pick
+    prompt: Čo z toho má na svedomí Isaac Newton?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Isaac_Newton
+    tags: [veda, fyzika]
+    correct:
+      - { text: Zákon všeobecnej gravitácie, why: "Podľa legendy ho inšpiroval padajúci kus ovocia, jablko mu ale nespadlo na hlavu." }
+      - { text: Tri pohybové zákony, why: "Základ klasickej mechaniky z roku 1687." }
+      - { text: Kniha Principia, why: "Philosophiae Naturalis Principia Mathematica vyšla v roku 1687." }
+      - { text: Rozklad bieleho svetla hranolom, why: "Ukázal, že biele svetlo sa skladá z farieb dúhy." }
+      - { text: Základy diferenciálneho a integrálneho počtu, why: "Rozvinul ho súčasne s Leibnizom, spor o prvenstvo trval roky." }
+      - { text: Zrkadlový ďalekohľad, why: "Zostrojil ho okolo roku 1668." }
+      - { text: Bol správcom Kráľovskej mincovne, why: "Od roku 1699 do smrti bol Master of the Mint." }
+    wrong:
+      - { text: Teória relativity, why: "Einstein, 1905 a 1915." }
+      - { text: Evolúcia prirodzeným výberom, why: "Charles Darwin." }
+      - { text: Objav rádioaktivity, why: "Becquerel a Curieovci." }
+      - { text: Penicilín, why: "Alexander Fleming, 1928." }
+      - { text: Heliocentrický model sveta, why: "Kopernik, o viac ako sto rokov skôr." }
+      - { text: Objav elektrónu, why: "J. J. Thomson, 1897." }
+
+  - id: spanielski-umelci
+    type: pick
+    prompt: Ktorí z týchto maliarov boli Španieli?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Pablo_Picasso
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Salvador_Dalí, /Francisco_Goya, /Diego_Velázquez, /Joan_Miró, /Claude_Monet, /Henri_Matisse, /Peter_Paul_Rubens"
+    tags: [maliarstvo]
+    correct:
+      - { text: Pablo Picasso, why: "Narodil sa v Málage, väčšinu života však prežil vo Francúzsku." }
+      - { text: Salvador Dalí, why: "Z Figueres; slávny rozteknutými hodinami a fúzami." }
+      - { text: Francisco Goya, why: "Dvorný maliar, ktorý maľoval aj hrôzy vojny." }
+      - { text: Diego Velázquez, why: "Dvorný maliar Filipa IV., autor Dvorných dám." }
+      - { text: Joan Miró, why: "Katalánsky surrealista z Barcelony." }
+      - { text: Bartolomé Esteban Murillo, why: "Maliar zo Sevilly zo 17. storočia." }
+    wrong:
+      - { text: Claude Monet, why: "Francúz." }
+      - { text: Henri Matisse, why: "Francúz." }
+      - { text: Gustav Klimt, why: "Rakúšan." }
+      - { text: Peter Paul Rubens, why: "Flámsky maliar, pracoval aj pre španielsky dvor, ale Španiel nebol." }
+      - { text: Caravaggio, why: "Talian." }
+      - { text: Rembrandt, why: "Holanďan." }
+
+  - id: impresionisti
+    type: pick
+    prompt: Ktorí z týchto maliarov patrili k impresionistom?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Claude_Monet
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Pierre-Auguste_Renoir, /Edgar_Degas, /Camille_Pissarro, /Alfred_Sisley, /Berthe_Morisot, /Gustave_Caillebotte, /Vincent_van_Gogh"
+    tags: [maliarstvo, impresionizmus]
+    correct:
+      - { text: Claude Monet, why: "Podľa jeho obrazu Impresia, východ slnka dostalo smerovanie meno." }
+      - { text: Pierre-Auguste Renoir, why: "Maľoval hlavne ľudí, tanec a záhradné slávnosti." }
+      - { text: Edgar Degas, why: "Slávny baletkami a dostihmi." }
+      - { text: Camille Pissarro, why: "Vystavoval na všetkých ôsmich výstavách impresionistov." }
+      - { text: Alfred Sisley, why: "Britský maliar žijúci vo Francúzsku, špecialista na krajiny." }
+      - { text: Berthe Morisotová, why: "Jedna z mála žien medzi nimi." }
+    wrong:
+      - { text: Vincent van Gogh, why: "Zaraďuje sa k postimpresionistom, nie k samotnému smeru." }
+      - { text: Pablo Picasso, why: "Kubizmus, 20. storočie." }
+      - { text: Salvador Dalí, why: "Surrealizmus." }
+      - { text: Edvard Munch, why: "Symbolizmus a expresionizmus." }
+      - { text: Gustav Klimt, why: "Secesia." }
+      - { text: Vasilij Kandinskij, why: "Priekopník abstraktného umenia." }
+
+  - id: frida-kahlo
+    type: pick
+    prompt: Ktoré tvrdenia o maliarke Fride Kahlo sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Frida_Kahlo
+    tags: [maliarstvo]
+    correct:
+      - { text: Narodila sa v mexickom Coyoacáne, why: "Dnes je to časť Mexico City; žila tam aj vo svojom modrom dome." }
+      - { text: Maľovala veľa autoportrétov, why: "Vo svojich dielach sa často zobrazovala; obrazy bývajú malé." }
+      - { text: Ťažko sa zranila pri nehode autobusu, why: "V roku 1925, v 18 rokoch; následky ju sprevádzali po celý život." }
+      - { text: Jej manželom bol maliar Diego Rivera, why: "Preslávili sa aj ako pár; Rivera bol známy veľkými nástennými maľbami." }
+      - { text: Zomrela v roku 1954, why: "Mala 47 rokov." }
+    wrong:
+      - { text: Narodila sa v Španielsku, why: "Mala španielske korene, ale narodila sa v Mexiku." }
+      - { text: Jej manželom bol Pablo Picasso, why: "Manželom bol mexický maliar Diego Rivera." }
+      - { text: Salvador Dalí bol jej manžel, why: "Nebol; manželom bol Diego Rivera." }
+      - { text: Bola zakladateľkou kubizmu, why: "Kubizmus vznikol v Paríži okolo Picassa a Braqua." }
+      - { text: Celý život žila v Paríži, why: "Väčšinu života prežila v Mexiku." }
+
+  - id: habsburgovci
+    type: pick
+    prompt: Ktorí z týchto panovníkov patrili k rodu Habsburgovcov?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Francis_Joseph_I_of_Austria
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Joseph_II,_Holy_Roman_Emperor, /Leopold_II,_Holy_Roman_Emperor, /Charles_VI,_Holy_Roman_Emperor, /Ferdinand_I_of_Austria, /Matthias_Corvinus, /Charles_IV,_Holy_Roman_Emperor, /Napoleon_III, /Louis_II_of_Hungary"
+    tags: [panovnici, habsburgovci]
+    correct:
+      - { text: František Jozef I., why: "Vládol takmer 68 rokov, od revolúcie 1848 do smrti v roku 1916." }
+      - { text: Jozef II., why: "Syn Márie Terézie, osvietený cisár, ktorý zrušil nevoľníctvo." }
+      - { text: Leopold II., why: "Brat Jozefa II. a cisár od roku 1790 do 1792." }
+      - { text: Karol VI., why: "Otec Márie Terézie, posledný muž rodu v hlavnej línii." }
+      - { text: Ferdinand I. Dobrotivý, why: "Cisár, ktorý v roku 1848 abdikoval." }
+      - { text: Karol I. (posledný cisár), why: "Cisár v rokoch 1916 až 1918, posledný Habsburgovec na rakúskom tróne." }
+    wrong:
+      - { text: Napoleon III., why: "Bonaparte, cisár Francúzov." }
+      - { text: Matej Korvín, why: "Uhorský kráľ z rodu Hunyadiovcov." }
+      - { text: Karol IV., why: "Cisár z rodu Luxemburgovcov, otec českého zlatého veku." }
+      - { text: Žigmund Luxemburský, why: "Uhorský kráľ a cisár z rodu Luxemburgovcov." }
+      - { text: Ľudovít II. Jagelovský, why: "Padol pri Moháči v roku 1526; z rodu Jagelovcov." }
+      - { text: Ľudovít XIV., why: "Francúz z rodu Bourbonovcov." }
+
+  # ================================================================ ORDER
+  - id: maliari-narodenie
+    type: order
+    prompt: Zoraď maliarov podľa roku narodenia, od najstaršieho.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Leonardo_da_Vinci
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Michelangelo, /Rembrandt, /Claude_Monet, /Vincent_van_Gogh, /Pablo_Picasso"
+    items:
+      - { text: Leonardo da Vinci, value: 1452, why: "Narodil sa 15. apríla 1452 pri Vinci." }
+      - { text: Michelangelo, value: 1475, why: "O dvadsaťtri rokov mladší než Leonardo." }
+      - { text: Rembrandt, value: 1606, why: "Zlatý vek holandského maliarstva." }
+      - { text: Claude Monet, value: 1840, why: "Zakladateľ impresionizmu." }
+      - { text: Vincent van Gogh, value: 1853, why: "Zomrel už v roku 1890." }
+      - { text: Pablo Picasso, value: 1881, why: "Zomrel v roku 1973 ako 91-ročný." }
+
+  - id: skladatelia-narodenie
+    type: order
+    prompt: Zoraď skladateľov podľa roku narodenia, od najstaršieho.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart, /Ludwig_van_Beethoven, /Frédéric_Chopin, /Pyotr_Ilyich_Tchaikovsky, /Igor_Stravinsky"
+    items:
+      - { text: Johann Sebastian Bach, value: 1685, why: "Baroko; narodil sa v Eisenachu." }
+      - { text: Wolfgang Amadeus Mozart, value: 1756, why: "Narodil sa v Salzburgu." }
+      - { text: Ludwig van Beethoven, value: 1770, why: "Narodil sa v Bonne, pokrstený bol 17. decembra 1770." }
+      - { text: Frédéric Chopin, value: 1810, why: "Poľský klavirista a skladateľ." }
+      - { text: Pjotr Iľjič Čajkovskij, value: 1840, why: "Ruský romantik." }
+      - { text: Igor Stravinskij, value: 1882, why: "Autor Svätenia jari, 20. storočie." }
+
+  - id: vek-pri-umrti
+    type: order
+    prompt: Zoraď osobnosti podľa veku, v akom zomreli, od najstaršej.
+    direction: desc
+    unit: rokov
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Pablo_Picasso, /Johann_Sebastian_Bach, /Ludwig_van_Beethoven, /Frédéric_Chopin, /Vincent_van_Gogh"
+    items:
+      - { text: Pablo Picasso, value: 91, why: "Pracoval takmer do konca, zomrel v roku 1973." }
+      - { text: Johann Sebastian Bach, value: 65, why: "Zomrel v Lipsku v roku 1750." }
+      - { text: Ludwig van Beethoven, value: 56, why: "Zomrel vo Viedni v marci 1827." }
+      - { text: Frédéric Chopin, value: 39, why: "Zomrel v Paríži v roku 1849 na tuberkulózu." }
+      - { text: Vincent van Gogh, value: 37, why: "Za niečo vyše desať rokov vytvoril okolo 2 100 diel, z toho asi 860 olejomalieb." }
+      - { text: Wolfgang Amadeus Mozart, value: 35, why: "Zomrel vo Viedni v decembri 1791." }
+
+  - id: dlzka-vlady
+    type: order
+    prompt: Zoraď panovníkov podľa dĺžky vlády, od najdlhšej.
+    direction: desc
+    unit: rokov
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Louis_XIV
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Elizabeth_II, /Francis_Joseph_I_of_Austria, /Queen_Victoria, /Elizabeth_I, /Maria_Theresa"
+    items:
+      - { text: Ľudovít XIV., value: 72, why: "Kráľ Slnko vládol od roku 1643 do 1715, je medzi najdlhšie vládnucimi panovníkmi histórie." }
+      - { text: Alžbeta II., value: 70, why: "Vládla 70 rokov a 214 dní." }
+      - { text: František Jozef I., value: 68, why: "Takmer 68 rokov, 1848 až 1916." }
+      - { text: Kráľovná Viktória, value: 63, why: "Vládla 63 rokov a 216 dní." }
+      - { text: Alžbeta I., value: 44, why: "Vládla od roku 1558 do 1603." }
+      - { text: Mária Terézia, value: 40, why: "Od roku 1740 do 1780." }
+
+  - id: vedci-narodenie
+    type: order
+    prompt: Zoraď vedcov podľa roku narodenia, od najstaršieho.
+    direction: asc
+    unit: rok narodenia
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Galileo_Galilei
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Isaac_Newton, /Charles_Darwin, /Nikola_Tesla, /Marie_Curie, /Albert_Einstein"
+    items:
+      - { text: Galileo Galilei, value: 1564, why: "Narodil sa v Pise." }
+      - { text: Isaac Newton, value: 1643, why: "Narodil sa rok po Galileovej smrti." }
+      - { text: Charles Darwin, value: 1809, why: "Rovnaký rok ako Abraham Lincoln." }
+      - { text: Nikola Tesla, value: 1856, why: "Narodil sa v Smiljane." }
+      - { text: Marie Curie, value: 1867, why: "Narodená vo Varšave." }
+      - { text: Albert Einstein, value: 1879, why: "Narodil sa v Ulme." }
+
+  # ================================================================ NUMBER
+  - id: waterloo-rok
+    type: number
+    prompt: V ktorom roku bola bitka pri Waterloo, v ktorej Napoleon definitívne prehral?
+    answer: 1815
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: "Bitka bola 18. júna 1815; Napoleona potom poslali na Svätú Helenu."
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Napoleon
+
+  - id: terezia-deti
+    type: number
+    prompt: Koľko detí porodila Mária Terézia?
+    answer: 16
+    unit: detí
+    scale: linear
+    tolerance: 1
+    why: "Za 19 rokov, od roku 1737 do 1756; trinásť prežilo detstvo a jednou z dcér bola Mária Antoinetta."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Maria_Theresa
+
+  - id: bach-deti
+    type: number
+    prompt: Koľko detí mal Johann Sebastian Bach?
+    answer: 20
+    unit: detí
+    scale: linear
+    tolerance: 2
+    why: "Sedem s prvou manželkou Mariou Barbarou a zvyšok s druhou, Annou Magdalenou; štyria synovia sa stali známymi skladateľmi."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+
+  - id: origin-rok
+    type: number
+    prompt: V ktorom roku vyšla Darwinova kniha O pôvode druhov?
+    answer: 1859
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Celé prvé vydanie, 1 250 kusov, kníhkupci rozobrali hneď pri novembrovom predaji roku 1859."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Charles_Darwin
+
+  - id: magellan-okolo-sveta
+    type: number
+    prompt: V ktorom roku sa výprava Ferdinanda Magellana vrátila do Španielska a dokončila prvé obplávanie Zeme?
+    answer: 1522
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Samotný Magellan sa nevrátil, zomrel v roku 1521 na Filipínach; loď doviedol domov Juan Sebastián Elcano."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Ferdinand_Magellan
+
+  # ================================================================ CHOICE
+  - id: vivaldi-obdobia
+    type: choice
+    prompt: Kto skomponoval Štyri ročné obdobia?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Antonio_Vivaldi
+    correct: { text: Antonio Vivaldi, why: "Benátčan, ktorý ich napísal pre husle okolo roku 1720; pre rudé vlasy ho volali Červený kňaz." }
+    wrong:
+      - { text: Johann Sebastian Bach, why: "Skomponoval Brandenburské koncerty, nie Ročné obdobia." }
+      - { text: Georg Friedrich Händel, why: "Autor Vodnej hudby a Mesiáša." }
+      - { text: Joseph Haydn, why: "Svoje oratórium Ročné obdobia napísal, ale je iné a o osemdesiat rokov neskoršie." }
+
+  - id: vermeer-dievca
+    type: choice
+    prompt: Kto namaľoval Dievča s perlovou náušnicou?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Johannes_Vermeer
+    correct: { text: Johannes Vermeer, why: "Delftský maliar; obraz sa niekedy nazýva holandská Mona Lisa." }
+    wrong:
+      - { text: Rembrandt, why: "Maľoval skôr dramatické portréty a skupinové obrazy." }
+      - { text: Frans Hals, why: "Majster uvoľnených portrétov." }
+      - { text: Vincent van Gogh, why: "O dvesto rokov neskôr." }
+
+  - id: prvy-rimsky-cisar
+    type: choice
+    prompt: Kto bol prvým rímskym cisárom?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Augustus
+    correct: { text: Augustus, why: "Pôvodne Octavianus, Caesarov adoptívny syn; cisárom bol od roku 27 pred Kristom do smrti v roku 14." }
+    wrong:
+      - { text: Július Caesar, why: "Bol diktátor, ale titul cisára nikdy nemal." }
+      - { text: Nero, why: "Posledný z rodu Júliovcov a Claudiovcov." }
+      - { text: Konštantín Veľký, why: "Prvý kresťanský cisár, o tristo rokov neskôr." }
+
+  - id: penicilin-objavitel
+    type: choice
+    prompt: Kto v roku 1928 objavil penicilín?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Alexander_Fleming
+    correct: { text: Alexander Fleming, why: "Škótsky bakteriológ si všimol, že plesň na misce zabila baktérie." }
+    wrong:
+      - { text: Louis Pasteur, why: "Vynašiel pasterizáciu a vakcínu proti besnote." }
+      - { text: Robert Koch, why: "Objavil pôvodcu tuberkulózy." }
+      - { text: Marie Curie, why: "Objavila polónium a rádium." }
