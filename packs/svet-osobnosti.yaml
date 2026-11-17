@@ -39,7 +39,7 @@ questions:
       - { text: Pieta v Bazilike svätého Petra, why: "Dokončil ju okolo roku 1499, ešte pred 25. narodeninami." }
       - { text: Stvorenie Adama, why: "Časť maľby na strope Sixtínskej kaplnky; slávny je dotyk prstov Boha a Adama." }
       - { text: Posledný súd, why: "Obrovská freska na oltárnej stene Sixtínskej kaplnky." }
-      - { text: Madona z Brugg, why: "Mramorová socha z rokov 1501 až 1504, ktorá sa dostala do Belgicka a stojí tam dodnes." }
+      - { text: Madona z Brúgg, why: "Mramorová socha z rokov 1501 až 1504, ktorá sa dostala do Belgicka a stojí tam dodnes." }
     wrong:
       - { text: Zrodenie Venuše, why: "Botticelli, nie Michelangelo." }
       - { text: Mona Lisa, why: "Leonardo da Vinci." }
@@ -167,7 +167,7 @@ questions:
       - { text: La traviata, why: "Premiéra bola v Benátkach v roku 1853." }
       - { text: Aida, why: "Z roku 1871; odohráva sa v starovekom Egypte." }
       - { text: Otello, why: "Posledná tragédia, 1887, podľa Shakespeara." }
-      - { text: Macbeth, why: "Z roku 1847; zvyčajne sa považuje za jeho prvé veľké majstrovstvo." }
+      - { text: Macbeth, why: "Z roku 1847; zvyčajne sa považuje za jeho prvé veľké majstrovské dielo." }
     wrong:
       - { text: Carmen, why: "Francúz Georges Bizet." }
       - { text: Tosca, why: "Giacomo Puccini." }
@@ -327,7 +327,7 @@ questions:
 
   - id: panovnicky
     type: pick
-    prompt: Ktoré z týchto žien samostatne vládli ako kráľovné alebo cisárovné?
+    prompt: Ktoré z týchto žien vládli ako panovníčky z vlastného práva, nie ako manželky panovníka?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Catherine_the_Great
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Maria_Theresa, /Queen_Victoria, /Elizabeth_I, /Cleopatra, /Elizabeth_II, /Joan_of_Arc, /Marie_Antoinette"
@@ -337,14 +337,14 @@ questions:
       - { text: Katarína II. Veľká, why: "Ruská cárovná v rokoch 1762 až 1796; k moci sa dostala prevratom proti manželovi s pomocou gardy." }
       - { text: Viktória, why: "Britská kráľovná od roku 1837, vládla vyše 63 rokov." }
       - { text: Alžbeta I., why: "Anglická kráľovná v rokoch 1558 až 1603, posledná panovníčka z rodu Tudorovcov." }
-      - { text: Kleopatra VII., why: "Posledná panovníčka helenistického Egypta." }
+      - { text: Kleopatra VII., why: "Posledná panovníčka helenistického Egypta, časť vlády formálne so spoluvládcami." }
       - { text: Alžbeta II., why: "Vládla 70 rokov a 214 dní, najdlhšie zo všetkých britských panovníkov." }
     wrong:
       - { text: Jana z Arku, why: "Vojačka a mučenica, žiadnej krajine nevládla." }
       - { text: Margaret Thatcherová, why: "Britská premiérka, nie panovníčka." }
       - { text: Angela Merkelová, why: "Nemecká kancelárka." }
       - { text: Mária Antoinetta, why: "Manželka Ľudovíta XVI. a dcéra Márie Terézie, ale len kráľovná-manželka." }
-      - { text: Eva Perónová, why: "Prvá dáma Argentíny, nevládla samostatne." }
+      - { text: Eva Perónová, why: "Prvá dáma Argentíny, nie panovníčka." }
       - { text: Indira Gándhíová, why: "Indická premiérka, nie panovníčka." }
 
   - id: newton-objavy
@@ -360,7 +360,7 @@ questions:
       - { text: Rozklad bieleho svetla hranolom, why: "Ukázal, že biele svetlo sa skladá z farieb dúhy." }
       - { text: Základy diferenciálneho a integrálneho počtu, why: "Rozvinul ho súčasne s Leibnizom, spor o prvenstvo trval roky." }
       - { text: Zrkadlový ďalekohľad, why: "Zostrojil ho okolo roku 1668." }
-      - { text: Bol správcom Kráľovskej mincovne, why: "Od roku 1699 do smrti bol správcom Kráľovskej mincovne." }
+      - { text: Bol správcom Kráľovskej mincovne, why: "Od roku 1696 pôsobil v Kráľovskej mincovni, od roku 1699 do smrti ju viedol." }
     wrong:
       - { text: Teória relativity, why: "Einstein, 1905 a 1915." }
       - { text: Evolúcia prirodzeným výberom, why: "Charles Darwin." }
@@ -554,7 +554,7 @@ questions:
     unit: detí
     scale: linear
     tolerance: 1
-    why: "Za 19 rokov, od roku 1737 do 1756; trinásť prežilo dojčenský vek a desať sa dožilo dospelosti a jednou z dcér bola Mária Antoinetta."
+    why: "Za 19 rokov, od roku 1737 do 1756; trinásť prežilo dojčenský vek a desať sa dožilo dospelosti; jednou z dcér bola Mária Antoinetta."
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Maria_Theresa
 
