@@ -527,21 +527,21 @@ describe("housekeeping", () => {
     expect(host.view.phase).toBe("over");
     for (let i = 0; i < 5; i++) {
       vi.advanceTimersByTime(10 * 60 * 1000);
-      host.msg({ t: "ping" });
+      host.act({ type: "ready" }); // any action keeps the room active
     }
     host.act({ type: "again" });
     vi.advanceTimersByTime(15 * 60 * 1000);
-    host.msg({ t: "ping" });
+    host.act({ type: "ready" }); // any action keeps the room active
     h.sweep();
     expect(h.room(code)).toBeDefined();
     // Keep it active, but past the hour since the new game.
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 6 && !host.closed; i++) {
       vi.advanceTimersByTime(9 * 60 * 1000);
-      host.msg({ t: "ping" });
+      if (!host.closed) host.act({ type: "ready" }); // any action keeps the room active
     }
     h.sweep();
     expect(h.room(code)).toBeUndefined();
-    expect(host.lastError).toBe("expired");
+    expect(host.sent.some((m) => m.t === "error" && m.error === "expired")).toBe(true);
     expect(host.closed?.code).toBe(CLOSE.shutdown);
     h.close();
   });

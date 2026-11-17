@@ -56,10 +56,10 @@ export function RoomScreen({ client, onLeave, onBack }: { client: RoomClient; on
   }
   return (
     <>
-      {state.error && ["kicked", "expired", "noRoom"].includes(state.error) ? (
+      {state.error && LOST_SEAT.includes(state.error) ? (
         <div class="screen screen--room">
           <p class="error" role="alert">
-            {sk.roomErrors[state.error]}
+            {state.error === "needName" ? sk.seatLost : sk.roomErrors[state.error]}
           </p>
           <div class="actions">
             <button type="button" class="btn btn--primary btn--block" onClick={onLeave}>
@@ -73,6 +73,9 @@ export function RoomScreen({ client, onLeave, onBack }: { client: RoomClient; on
     </>
   );
 }
+
+/** Errors after which this device is no longer in the room (an action refused as invalid is not one). */
+const LOST_SEAT: string[] = ["kicked", "expired", "noRoom", "needName", "full", "nameTaken", "badName", "proto", "busy"];
 
 export function RoomBody(props: RoomBodyProps) {
   const { view } = props;

@@ -185,7 +185,8 @@ export class Hub {
     }
     if (!msg || typeof msg !== "object" || typeof msg.t !== "string") return this.fail(c, "invalid", true);
     if (msg.t !== "create" && raw.length > this.limits.maxMessage) return this.fail(c, "invalid", true);
-    if (c.room) c.room.lastActive = Date.now();
+    // Heartbeats keep the connection, not the room, alive: idle rooms still expire.
+    if (c.room && msg.t !== "ping") c.room.lastActive = Date.now();
     switch (msg.t) {
       case "ping":
         return this.send(c, { t: "pong", now: Date.now() });

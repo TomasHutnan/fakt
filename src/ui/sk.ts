@@ -193,6 +193,7 @@ export const sk = {
     kicked: "Zakladateľ hry ťa z nej odstránil.",
     expired: "Hra dosiahla časový limit hodinu a skončila. Založ novú.",
   } as Record<string, string>,
+  seatLost: "Tvoje miesto v hre už neplatí. Pripoj sa znova s kódom hry.",
   answered: (n: number, total: number) => `Odpovedali ${n} z ${total}`,
   readyCount: (n: number, total: number) => `Pripravení ${n} z ${total}`,
   waitingOthers: "Čakáme na ostatných…",
