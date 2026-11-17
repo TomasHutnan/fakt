@@ -357,7 +357,7 @@ questions:
       - text: Grécko
         why: Nie je to severský kríž.
       - text: Veľká Británia
-        why: Union Jack zložený z viacerých krížov, ale nejde o severský kríž.
+        why: Union Jack je zložený z viacerých krížov, ale nejde o severský kríž.
       - text: Estónsko
         why: Modro-čierno-biela vodorovná trikolóra.
       - text: Holandsko
@@ -489,19 +489,19 @@ questions:
         why: Rovník prechádza cez Indonéziu.
     wrong:
       - text: Nigéria
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Tanzánia
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Peru
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Venezuela
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Etiópia
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Filipíny
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Madagaskar
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
 
   - id: poradie-vrcholy
     type: order
@@ -512,7 +512,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Seven_Summits
     items:
       - { text: Aconcagua, value: 6961 }
-      - { text: Denali, value: 6194 }
+      - { text: Denali, value: 6190 }
       - { text: Kilimandžáro, value: 5895 }
       - { text: Elbrus, value: 5642 }
       - { text: Vinson, value: 4892 }
@@ -651,7 +651,7 @@ questions:
       - text: Japonsko
         why: Nikdy nebolo súčasťou Britského impéria, jazdí sa tam však tiež vľavo.
       - text: India
-        why: Ľavostranná premávka zostala zo čias britskej vlády.
+        why: Ľavostranná premávka zostala z čias britskej vlády.
       - text: Austrália
         why: Jazdí sa vľavo, rovnako ako na Novom Zélande.
       - text: Írsko
@@ -778,7 +778,7 @@ questions:
       - text: Hormuzský prieliv
         why: Prirodzený prieliv medzi Perzským a Ománskym zálivom.
       - text: Malacký prieliv
-        why: Prirodzený prieliv medzi Malajzijským polostrovom a Sumatrou.
+        why: Prirodzený prieliv medzi Malajským polostrovom a Sumatrou.
       - text: Magellanov prieliv
         why: Prirodzený prieliv na južnom cípe Južnej Ameriky.
 
@@ -888,13 +888,13 @@ questions:
     source: https://en.wikipedia.org/wiki/South_Africa
     correct: { text: "Juhoafrická republika", why: "Vláda sídli v Pretórii, parlament v Kapskom Meste a najvyšší odvolací súd v Bloemfonteine." }
     wrong:
-      - { text: "Bolívia", why: "Má dve: ústavnou je Sucre a sídlom vlády La Paz." }
+      - { text: "Bolívia", why: "Má dve: ústavným je Sucre a sídlom vlády La Paz." }
       - { text: "Holandsko", why: "Hlavné mesto je Amsterdam, vláda a parlament sídlia v Haagu." }
-      - { text: "Srí Lanka", why: "Má dve: Colombo a Šrí Džajavardanapura Kotte." }
+      - { text: "Srí Lanka", why: "Úradným hlavným mestom je Šrí Džajavardanapura Kotte, Colombo je obchodné centrum." }
 
   - id: choice-stara-hlavne-mjanmarsko
     type: choice
-    prompt: Ktoré mesto bolo hlavným mestom Mjanmarska predtým, než vláda postavila a presunula tam hlavné mesto Naypyidaw?
+    prompt: Ktoré mesto bolo hlavným mestom Mjanmarska predtým, než vláda postavila Naypyidaw a presunula tam hlavné mesto?
     difficulty: 3
     source: https://en.wikipedia.org/wiki/Naypyidaw
     correct: { text: "Rangún", why: "Dnes sa volá Yangon a je stále najväčším mestom krajiny." }
