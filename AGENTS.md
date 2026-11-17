@@ -15,11 +15,11 @@ Goals, in the owner's words:
 - Not too obscure. A wrong answer should still be something to laugh about.
 - Packs can be switched off if a topic does not interest the group.
 
-## Status (2026-11-16)
+## Status (2026-11-17)
 
-Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. All branches merged, nothing in progress.
+Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. Playtest feedback round on `feat/playtest-feedback` (until merged); favourite topics decided but not built (see `notes/Decisions.md`).
 
-- Built: Mix (default) and Classic modes, rooms (everyone on own phone + big screen), comeback rules (double final round, last place picks the pack every 3rd round), social lines and end titles, all formats, per-turn answers drawn in place, 4 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
+- Built: Mix (default) and Classic modes, rooms (everyone on own phone + big screen), last place picks the pack every 3rd round (the double final round was dropped), tie-break for a shared lead (one number card for the tied leaders), social lines and end titles, all formats, per-turn answers drawn in place, 4 designs (Kartotéka default, gallery at `#designs`), post-game ratings (👍/😐/👎) and per-card reports sent in the background to the owner's Google Form, quick settings (design, sound, vibration) during a game, rooms: answers count down and move on with a pace, standings on phones without a big screen, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
 - Content: **31 packs / 836 questions** (4 adult, 5 opt-in: Dano Drevo, Politické hlášky, athletics legends and season, Zvláštne jedlá sveta). Target 1,000.
 - Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).
@@ -58,7 +58,7 @@ Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner
 - **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
 - **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and the room server on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`); the owner pulls updates by hand in Dockge. GitHub Pages is retired.
 - **Multiplayer** (2026-11-17): rooms on the same server, everyone on their own phone, optional big screen, remote play allowed; creator uploads enabled packs, the room runs the engine. See `notes/Decisions.md`.
-- **Reports/ratings**: owner's prefilled Google Form (`src/ui/links.ts`), not GitHub issues.
+- **Reports/ratings**: owner's Google Form (`src/ui/links.ts`), posted in the background from the app (prefilled link only as an offline fallback), not GitHub issues.
 - **App store**: keep possible as long as it does not limit the web version.
 
 ## Key research findings
