@@ -374,6 +374,9 @@ describe("interleave", () => {
     const t0 = performance.now();
     expect(interleave(one as never)).toHaveLength(50_000);
     expect(performance.now() - t0).toBeLessThan(500);
+  });
+});
+
 describe("comeback rules on one phone", () => {
   const other: Pack = { ...pack, id: "other", title: "Other" };
   const both = [pack, other];
