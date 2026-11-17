@@ -1,0 +1,724 @@
+id: svet-ekonomika
+title: Svetová ekonomika a meny
+description: "Najväčšie ekonomiky, z čoho žijú štáty, svetoví producenti kakaa či kávy, meny, hyperinflácia a kto má najviac (alebo najmenej) detí."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ PICK
+  - id: ek-top10-hdp
+    type: pick
+    prompt: Ktoré z týchto krajín patria medzi 10 najväčších ekonomík sveta podľa HDP v bežných cenách (Svetová banka)?
+    difficulty: 1
+    asOf: "2025"
+    tags: [HDP]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) https://data.worldbank.org/indicator/NY.GDP.MKTP.CD"
+    correct:
+      - { text: USA, why: "Približne 30,8 bilióna dolárov, vyše štvrtiny svetového HDP." }
+      - { text: Čína, why: "Druhá s približne 19,5 bilióna dolárov." }
+      - { text: Nemecko, why: "Tretia, približne 5 biliónov; najväčšia ekonomika Európy." }
+      - { text: Japonsko, why: "Štvrté, približne 4,4 bilióna dolárov." }
+      - { text: Spojené kráľovstvo, why: "Približne 4,0 bilióna dolárov, päté miesto." }
+      - { text: India, why: "Približne 3,96 bilióna a rýchlo rastie; Spojené kráľovstvo ju predbieha len tesne." }
+      - { text: Francúzsko, why: "Siedme, približne 3,4 bilióna dolárov." }
+      - { text: Taliansko, why: "Približne 2,55 bilióna dolárov." }
+    wrong:
+      - { text: Južná Kórea, why: "Približne 1,9 bilióna dolárov, mimo prvej desiatky." }
+      - { text: Španielsko, why: "Približne 1,9 bilióna dolárov, mimo prvej desiatky." }
+      - { text: Mexiko, why: "Približne 1,8 bilióna dolárov; viac ľudí než Nemecko, ale menšie HDP." }
+      - { text: Austrália, why: "Približne 1,8 bilióna dolárov." }
+      - { text: Turecko, why: "Približne 1,6 bilióna dolárov." }
+      - { text: Indonézia, why: "Aj pri 285 miliónoch obyvateľov má HDP len okolo 1,4 bilióna dolárov." }
+      - { text: Saudská Arábia, why: "Približne 1,3 bilióna dolárov, napriek ropnému bohatstvu." }
+      - { text: Holandsko, why: "Približne 1,3 bilióna dolárov." }
+
+  - id: ek-hdp-na-hlavu-nad-nemecko
+    type: pick
+    prompt: Ktoré krajiny majú vyššie HDP na obyvateľa než Nemecko (Svetová banka, bežné ceny)?
+    difficulty: 2
+    asOf: "2025"
+    tags: [HDP]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita https://data.worldbank.org/indicator/NY.GDP.PCAP.CD"
+    correct:
+      - { text: Luxembursko, why: "Bez mikroštátov číslo jedna: približne 147 000 dolárov na hlavu." }
+      - { text: Írsko, why: "Okolo 130 000 dolárov, no nafúknuté účtovaním nadnárodných firiem." }
+      - { text: Švajčiarsko, why: "Približne 115 000 dolárov." }
+      - { text: Nórsko, why: "Približne 95 000 dolárov, hlavne vďaka rope a plynu." }
+      - { text: Singapur, why: "Mestský štát s približne 99 000 dolármi na hlavu." }
+      - { text: USA, why: "Približne 90 000 dolárov na hlavu." }
+      - { text: Dánsko, why: "Približne 77 000 dolárov na hlavu." }
+      - { text: Holandsko, why: "Približne 74 000 dolárov na hlavu." }
+      - { text: Austrália, why: "Približne 65 000 dolárov na hlavu." }
+    wrong:
+      - { text: Spojené kráľovstvo, why: "Okolo 58 000 dolárov, teda o niečo menej než Nemecko." }
+      - { text: Kanada, why: "Okolo 56 000 dolárov na hlavu." }
+      - { text: Francúzsko, why: "Okolo 49 000 dolárov na hlavu." }
+      - { text: Taliansko, why: "Okolo 43 000 dolárov na hlavu." }
+      - { text: Japonsko, why: "Okolo 36 000 dolárov; slabý jen ťahá výsledok nadol." }
+      - { text: Španielsko, why: "Okolo 39 000 dolárov na hlavu." }
+      - { text: Česko, why: "Okolo 36 000 dolárov na hlavu." }
+      - { text: Slovensko, why: "Okolo 28 500 dolárov na hlavu." }
+
+  - id: ek-populacia-nad-150m
+    type: pick
+    prompt: Ktoré z týchto krajín majú viac ako 150 miliónov obyvateľov?
+    difficulty: 2
+    asOf: "2025"
+    tags: [demografia]
+    source: "https://data.worldbank.org/indicator/SP.POP.TOTL https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    correct:
+      - { text: India, why: "Okolo 1,46 miliardy; od roku 2023 je najľudnatejšou krajinou sveta." }
+      - { text: Čína, why: "Okolo 1,41 miliardy a mierne ubúda." }
+      - { text: USA, why: "Okolo 342 miliónov ľudí." }
+      - { text: Indonézia, why: "Okolo 286 miliónov, štvrtá najľudnatejšia krajina." }
+      - { text: Pakistan, why: "Okolo 255 miliónov." }
+      - { text: Nigéria, why: "Okolo 237 miliónov; najľudnatejšia krajina Afriky." }
+      - { text: Brazília, why: "Okolo 213 miliónov." }
+      - { text: Bangladéš, why: "Okolo 176 miliónov ľudí na malom území; hustota osídlenia patrí k najvyšším na svete." }
+    wrong:
+      - { text: Rusko, why: "Najväčšia krajina sveta rozlohou, ale len okolo 144 miliónov ľudí." }
+      - { text: Mexiko, why: "Okolo 132 miliónov." }
+      - { text: Japonsko, why: "Okolo 123 miliónov a ubúda." }
+      - { text: Etiópia, why: "Okolo 135 miliónov." }
+      - { text: Egypt, why: "Okolo 118 miliónov." }
+      - { text: Filipíny, why: "Okolo 117 miliónov." }
+      - { text: Nemecko, why: "Najľudnatejšia krajina EÚ, no len okolo 83 miliónov." }
+      - { text: Turecko, why: "Okolo 86 miliónov." }
+
+  - id: ek-podiel-pohonne-latky-vyvoz
+    type: pick
+    prompt: Pri ktorých krajinách tvoria palivá (ropa, plyn, uhlie) viac než polovicu vývozu tovaru?
+    difficulty: 3
+    asOf: "2025"
+    tags: [ropa, export]
+    source: "https://data.worldbank.org/indicator/TX.VAL.FUEL.ZS.UN https://api.worldbank.org/v2/country/all/indicator/TX.VAL.FUEL.ZS.UN?format=json&date=2025"
+    correct:
+      - { text: Kuvajt, why: "Palivá tvoria približne 93 % vývozu tovaru." }
+      - { text: Angola, why: "Palivá tvoria približne 91 % vývozu tovaru." }
+      - { text: Azerbajdžan, why: "Palivá tvoria približne 86 % vývozu." }
+      - { text: Nigéria, why: "Palivá tvoria približne 86 % vývozu napriek obrovskej populácii." }
+      - { text: Saudská Arábia, why: "Palivá tvoria približne 79 % vývozu tovaru." }
+      - { text: Omán, why: "Palivá tvoria približne 72 % vývozu." }
+      - { text: Nórsko, why: "Palivá (ropa a plyn) tvoria približne 62 % vývozu tovaru." }
+      - { text: Kazachstan, why: "Palivá tvoria približne 55 % vývozu." }
+    wrong:
+      - { text: Kanada, why: "Je veľkým ťažiarom ropy, ale palivá tvoria len okolo 27 % vývozu." }
+      - { text: USA, why: "Najväčší ťažiar ropy sveta, no palivá tvoria len približne 17 % vývozu." }
+      - { text: Mexiko, why: "Palivá tvoria len okolo 3 % vývozu; hlavné sú autá a elektronika." }
+      - { text: Nemecko, why: "Palivá tvoria menej než 2 % vývozu." }
+      - { text: Holandsko, why: "Palivá tvoria okolo 11 % vývozu, hlavne cez rotterdamský prístav." }
+      - { text: Brazília, why: "Palivá tvoria okolo 16 % vývozu; väčšinu tvorí soja, železná ruda a mäso." }
+      - { text: Spojené kráľovstvo, why: "Palivá tvoria len okolo 7 % vývozu." }
+
+  - id: ek-remitancie
+    type: pick
+    prompt: Ktoré krajiny dostávajú od svojich ľudí pracujúcich v zahraničí sumy, ktoré tvoria viac ako 15 % ich HDP?
+    difficulty: 3
+    asOf: "2025"
+    tags: [remitancie]
+    source: "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&date=2025"
+    correct:
+      - { text: Tadžikistan, why: "Peniaze poslané domov tvoria viac než polovicu HDP, najviac na svete." }
+      - { text: Nepál, why: "Približne 32 % HDP." }
+      - { text: Honduras, why: "Približne 30 % HDP." }
+      - { text: Salvádor, why: "Približne 27,5 % HDP; krajina používa dolár." }
+      - { text: Samoa, why: "Približne 22 % HDP." }
+      - { text: Guatemala, why: "Približne 21 % HDP." }
+      - { text: Kosovo, why: "Približne 17 % HDP." }
+      - { text: Jamajka, why: "Približne 16 % HDP." }
+    wrong:
+      - { text: Mexiko, why: "Domov posiela veľa peňazí, ale v pomere k veľkému HDP to je len okolo 3,6 %." }
+      - { text: India, why: "Najväčší príjemca sveta v dolároch, no pri tak veľkej ekonomike je to len okolo 3,8 % HDP." }
+      - { text: Filipíny, why: "Približne 8,5 % HDP." }
+      - { text: Pakistan, why: "Približne 10 % HDP." }
+      - { text: Poľsko, why: "Menej než 1 % HDP." }
+      - { text: Nemecko, why: "Prijíma len okolo 0,5 % HDP." }
+      - { text: Čína, why: "Len okolo 0,2 % HDP." }
+
+  - id: ek-brazilia-jednotka
+    type: pick
+    prompt: Ktoré z týchto plodín sú podľa údajov FAO za rok 2024 najviac pestovanými v Brazílii (je číslo jeden na svete)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities https://en.wikipedia.org/wiki/List_of_countries_by_coffee_production"
+    correct:
+      - { text: Káva, why: "V roku 2023 dala približne 31 % svetovej úrody zelenej kávy." }
+      - { text: Cukrová trstina, why: "Z nej sa u nich vyrába cukor aj etanol do áut." }
+      - { text: Pomaranče, why: "Prvé miesto pred Čínou a Mexikom." }
+      - { text: Sója, why: "Ďalšie dve miesta patria USA a Argentíne." }
+    wrong:
+      - { text: Kakao, why: "Číslo jedna je Pobrežie Slonoviny." }
+      - { text: Banány, why: "Prvá je India, nasleduje Čína." }
+      - { text: Pšenica, why: "Prvá je Čína, potom India a Rusko." }
+      - { text: Čaj, why: "Prvá je Čína, potom India a Keňa." }
+      - { text: Bavlna, why: "Prvá je Čína, Brazília je tretia." }
+      - { text: Kukurica, why: "Prvé sú USA, druhá Čína; Brazília je tretia." }
+      - { text: Kaučuk, why: "Prvé je Thajsko." }
+
+  - id: ek-cina-jednotka
+    type: pick
+    prompt: Ktoré z týchto plodín pestuje Čína viac než ktorákoľvek iná krajina sveta (FAO, 2024)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
+    correct:
+      - { text: Čaj, why: "Rodisko čaju je dodnes jeho najväčším producentom." }
+      - { text: Pšenica, why: "Pred Indiou a Ruskom." }
+      - { text: Zemiaky, why: "Pred Indiou a Ukrajinou." }
+      - { text: Paradajky, why: "Pred Indiou a Tureckom." }
+      - { text: Jablká, why: "Pred USA a Tureckom." }
+      - { text: Bavlna, why: "Pred Indiou a Brazíliou." }
+      - { text: Hrozno, why: "Pred Talianskom a Francúzskom." }
+    wrong:
+      - { text: Ryža, why: "Prekvapenie: podľa údajov FAO za rok 2024 je prvá India." }
+      - { text: Banány, why: "Prvá je India, Čína je druhá." }
+      - { text: Olivy, why: "Prvé je Španielsko." }
+      - { text: Kukurica, why: "Prvé sú USA." }
+      - { text: Sója, why: "Prvá je Brazília." }
+      - { text: Cukrová trstina, why: "Prvá je Brazília." }
+      - { text: Mlieko, why: "Prvá je India." }
+
+  - id: ek-kakao-top
+    type: pick
+    prompt: Ktoré krajiny patria medzi štyroch najväčších producentov kakaových bôbov (FAO, 2024)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [kakao, poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
+    correct:
+      - { text: Pobrežie Slonoviny, why: "Číslo jedna medzi producentmi kakaa." }
+      - { text: Indonézia, why: "Prekvapivá dvojka, ďaleko od Afriky." }
+      - { text: Ghana, why: "Tradičný kakaový gigant západnej Afriky." }
+      - { text: Ekvádor, why: "Najväčší producent kakaa v Latinskej Amerike." }
+    wrong:
+      - { text: Švajčiarsko, why: "Čokoládová veľmoc, no kakao tam vôbec nerastie." }
+      - { text: Belgicko, why: "Slávne pralinky, ale kakaovníky sa tam nedajú pestovať." }
+      - { text: Peru, why: "Pestuje kakao, ale nie v prvej štvorke." }
+      - { text: Kolumbia, why: "Známa hlavne kávou, nie kakaom." }
+      - { text: Mexiko, why: "Kakao sa tam pestovalo už dávno, dnes je však malým producentom." }
+      - { text: Venezuela, why: "Kedysi bola najväčším producentom sveta; dnes už nie." }
+      - { text: Dominikánska republika, why: "Pestuje ho, ale nepatrí medzi najväčších." }
+
+  - id: ek-kava-top
+    type: pick
+    prompt: Ktoré krajiny patria medzi štyroch najväčších producentov kávy na svete (FAO, 2024)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [káva, poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities https://en.wikipedia.org/wiki/List_of_countries_by_coffee_production"
+    correct:
+      - { text: Brazília, why: "Najväčší producent už od roku 1852; v roku 2023 približne tretina svetovej úrody." }
+      - { text: Vietnam, why: "Dvojka, väčšinou lacnejšia robusta." }
+      - { text: Indonézia, why: "Tretia v poradí." }
+      - { text: Kolumbia, why: "Štvrtá, známa vysoko kvalitnou arabikou." }
+    wrong:
+      - { text: Taliansko, why: "Espresso je ich národný symbol, ale kávu tam nepestujú." }
+      - { text: Jamajka, why: "Horská káva Blue Mountain je vzácna a drahá, ale objemy sú malé." }
+      - { text: Kostarika, why: "Kvalitná káva, no malé objemy." }
+      - { text: Kuba, why: "Pestuje malé množstvo." }
+      - { text: Turecko, why: "Pije ju veľa, ale kávovník tam nerastie." }
+      - { text: Keňa, why: "Kvalitná káva, no do prvej štvorky sa nedostane." }
+      - { text: Mexiko, why: "Pestuje ju, ale nie v prvej štvorke." }
+
+  - id: ek-caj-top
+    type: pick
+    prompt: Ktoré krajiny patria medzi päť najväčších producentov čaju (FAO, 2024)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [čaj, poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
+    correct:
+      - { text: Čína, why: "Rodisko čaju a jeho najväčší producent." }
+      - { text: India, why: "Darjeeling a Assam sú svetovo známe čaje." }
+      - { text: Keňa, why: "Veľký vývozca čierneho čaju." }
+      - { text: Srí Lanka, why: "Ceylonský čaj dal meno bývalému Cejlónu." }
+      - { text: Turecko, why: "Pestuje sa hlavne pri Čiernom mori." }
+    wrong:
+      - { text: Japonsko, why: "Slávny zelený čaj, no objemy sú malé." }
+      - { text: Spojené kráľovstvo, why: "Pijú ho s mliekom, ale čajovník tam nerastie." }
+      - { text: Rusko, why: "Veľký konzument, producent skôr malý." }
+      - { text: Irán, why: "Pestuje ho pri Kaspickom mori, no do prvej päťky nepatrí." }
+      - { text: Brazília, why: "Skôr káva než čaj." }
+      - { text: Argentína, why: "Pestuje čaj a maté, ale v malých objemoch." }
+
+  - id: ek-turecko-jednotka
+    type: pick
+    prompt: V ktorých plodinách je Turecko podľa FAO (2024) producentom číslo jedna na svete?
+    difficulty: 3
+    asOf: "2024"
+    tags: [poľnohospodárstvo]
+    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
+    correct:
+      - { text: Lieskové orechy, why: "Najväčší svetový producent lieskových orechov." }
+      - { text: Marhule, why: "Pred Uzbekistanom a Iránom." }
+      - { text: Čerešne, why: "Pred Čile a USA." }
+      - { text: Figy, why: "Pred Egyptom a Alžírskom." }
+      - { text: Duľa obyčajná, why: "Pred Čínou a Uzbekistanom." }
+    wrong:
+      - { text: Pistácie, why: "Prvé sú USA, Turecko je tretie." }
+      - { text: Mandle, why: "Prvé sú USA." }
+      - { text: Olivy, why: "Prvé je Španielsko." }
+      - { text: Pomaranče, why: "Prvá je Brazília." }
+      - { text: Avokádo, why: "Prvé je Mexiko." }
+      - { text: Kokos, why: "Prvá je Indonézia." }
+      - { text: Banány, why: "Prvá je India." }
+
+  - id: ek-euro-mimo-eu
+    type: pick
+    prompt: Ktoré štáty, ktoré nie sú v Európskej únii, používajú ako oficiálnu menu euro?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [meny, euro]
+    source: "https://en.wikipedia.org/wiki/Euro"
+    correct:
+      - { text: Čierna Hora, why: "Používa euro jednostranne, bez dohody s EÚ." }
+      - { text: Kosovo, why: "Používa euro jednostranne, bez dohody s EÚ." }
+      - { text: Andorra, why: "Euro používa na základe dohody s EÚ." }
+      - { text: Monako, why: "Razí vlastné euromince." }
+      - { text: San Maríno, why: "Má dohodu s EÚ a razí vlastné euromince." }
+      - { text: Vatikán, why: "Euromince s portrétom pápeža razí vlastný štát." }
+    wrong:
+      - { text: Švajčiarsko, why: "Platí vlastným frankom." }
+      - { text: Lichtenštajnsko, why: "Používa švajčiarsky frank." }
+      - { text: Srbsko, why: "Má vlastný dinár." }
+      - { text: Albánsko, why: "Má vlastný lek." }
+      - { text: Nórsko, why: "Platí nórskymi korunami." }
+      - { text: Bosna a Hercegovina, why: "Má konvertibilnú marku, ktorá je pevne viazaná na euro." }
+      - { text: Ukrajina, why: "Platí hrivnou." }
+
+  - id: ek-eu-bez-eura
+    type: pick
+    prompt: Ktoré členské štáty EÚ ešte v roku 2026 nepoužívajú euro?
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [meny, euro]
+    source: "https://en.wikipedia.org/wiki/Euro"
+    correct:
+      - { text: Česko, why: "Platí korunou; euro sa zaviazalo prijať, ale bez termínu." }
+      - { text: Maďarsko, why: "Platí forintom." }
+      - { text: Poľsko, why: "Platí zlotým." }
+      - { text: Rumunsko, why: "Platí lejom." }
+      - { text: Švédsko, why: "Platí švédskou korunou; euro v referende odmietlo v roku 2003." }
+      - { text: Dánsko, why: "Má výnimku zo zmluvy, platí dánskou korunou." }
+    wrong:
+      - { text: Slovensko, why: "Euro zaviedlo 1. januára 2009." }
+      - { text: Rakúsko, why: "Euro používa od roku 1999 (hotovosť od 2002)." }
+      - { text: Chorvátsko, why: "Euro zaviedlo 1. januára 2023." }
+      - { text: Bulharsko, why: "Euro zaviedlo 1. januára 2026." }
+      - { text: Fínsko, why: "Euro používa od začiatku." }
+      - { text: Estónsko, why: "Euro zaviedlo v roku 2011." }
+      - { text: Slovinsko, why: "Euro zaviedlo ako prvá postkomunistická krajina v roku 2007." }
+      - { text: Litva, why: "Euro zaviedla v roku 2015." }
+
+  - id: ek-usd-oficialna
+    type: pick
+    prompt: Ktoré štáty alebo územia používajú americký dolár ako oficiálnu menu?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [meny, dolarizácia]
+    source: "https://en.wikipedia.org/wiki/Currency_substitution"
+    correct:
+      - { text: Ekvádor, why: "Dolár používa od roku 2000." }
+      - { text: Panama, why: "Používa dolár od roku 1904, vlastné balboy existujú len ako mince." }
+      - { text: Salvádor, why: "Používa dolár a popri ňom aj bitcoin." }
+      - { text: Marshallove ostrovy, why: "Dolár používajú ako oficiálnu menu." }
+      - { text: Mikronézia, why: "Dolár používa od roku 1944." }
+      - { text: Palau, why: "Dolár používa od roku 1944." }
+    wrong:
+      - { text: Honduras, why: "Má vlastnú lempiru, hoci dolár je rozšírený." }
+      - { text: Kostarika, why: "Platí colónom." }
+      - { text: Guatemala, why: "Platí quetzalom, ktorý je pomenovaný po vtákovi." }
+      - { text: Mexiko, why: "Platí pesom." }
+      - { text: Argentína, why: "Dolár tam ľudia používajú neoficiálne, no oficiálne platí peso." }
+      - { text: Bahamy, why: "Majú bahamský dolár viazaný na americký 1 : 1, no je to vlastná mena." }
+      - { text: Peru, why: "Platí soľom, hoci dolár sa používa pri veľkých nákupoch." }
+
+  - id: ek-dolar-vlastny
+    type: pick
+    prompt: Ktoré z týchto štátov alebo území majú vlastnú menu, ktorá sa volá dolár, no nie je to americký dolár?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [meny]
+    source: "https://en.wikipedia.org/wiki/List_of_circulating_currencies"
+    correct:
+      - { text: Kanada, why: "Jej jednodolárovú mincu poznajú ako „loonie“." }
+      - { text: Austrália, why: "Austrálsky dolár je vlastná mena." }
+      - { text: Nový Zéland, why: "Jeho dolár volajú „kiwi“." }
+      - { text: Singapur, why: "Singapurský dolár je vlastná mena; platí vedľa bruneiského v pomere 1 : 1." }
+      - { text: Hongkong, why: "Hongkongský dolár je vlastná mena." }
+      - { text: Jamajka, why: "Jamajský dolár je vlastná mena." }
+      - { text: Fidži, why: "Fidžijský dolár je vlastná mena." }
+    wrong:
+      - { text: Mexiko, why: "Platí pesom, hoci peso aj dolár používajú značku $." }
+      - { text: Chile, why: "Platí chilským pesom, ktoré tiež používa značku $." }
+      - { text: Spojené kráľovstvo, why: "Platí librou šterlingov." }
+      - { text: Japonsko, why: "Platí jenom." }
+      - { text: Švajčiarsko, why: "Platí frankom." }
+      - { text: India, why: "Platí rupiou." }
+      - { text: Brazília, why: "Platí realom." }
+
+  - id: ek-hyperinflacia-krajiny
+    type: pick
+    prompt: Ktoré z týchto krajín zažili v histórii hyperinfláciu (ceny rástli o desiatky percent mesačne)?
+    difficulty: 2
+    tags: [hyperinflácia, história]
+    source: "https://en.wikipedia.org/wiki/Hyperinflation"
+    correct:
+      - { text: Maďarsko (1945 – 1946), why: "Najhoršia hyperinflácia v dejinách: v júli 1946 sa ceny zdvojnásobovali približne každých 15 hodín." }
+      - { text: Weimarské Nemecko (1923), why: "Najvyššia bankovka mala hodnotu 100 biliónov mariek." }
+      - { text: Zimbabwe (2008), why: "Vydalo bankovku s hodnotou 100 biliónov zimbabwianskych dolárov." }
+      - { text: Venezuela, why: "Hyperinflácia tam vypukla v druhej polovici 2010-tych rokov." }
+      - { text: Juhoslávia (1992 – 1994), why: "Hyperinflácia sprevádzala rozpad štátu a vojnu." }
+      - { text: Rakúsko (1921 – 1922), why: "Ceny vzrástli od roku 1914 do januára 1923 vyše 11 000-násobne." }
+      - { text: Bolívia (1985), why: "V roku 1985 tam inflácia presiahla 20 000 % ročne." }
+    wrong:
+      - { text: Švajčiarsko, why: "Frank sa stal symbolom stability." }
+      - { text: Japonsko, why: "Naopak, dlho trápila deflácia." }
+      - { text: Nórsko, why: "Žiadna hyperinflácia v histórii." }
+      - { text: Kanada, why: "Žiadna hyperinflácia v histórii." }
+      - { text: Austrália, why: "Žiadna hyperinflácia v histórii." }
+      - { text: Švédsko, why: "Žiadna hyperinflácia v histórii." }
+      - { text: USA, why: "Aj najvyššia inflácia bola ďaleko pod hranicou hyperinflácie." }
+
+  - id: ek-zaniknute-meny
+    type: pick
+    prompt: Ktoré z týchto mien už neexistujú, lebo ich nahradilo euro?
+    difficulty: 1
+    tags: [meny, euro]
+    source: "https://en.wikipedia.org/wiki/Euro https://en.wikipedia.org/wiki/Slovak_koruna https://en.wikipedia.org/wiki/Deutsche_Mark"
+    correct:
+      - { text: Nemecká marka, why: "Euro ju nahradilo na začiatku roku 2002." }
+      - { text: Talianska líra, why: "Euro ju nahradilo v roku 2002." }
+      - { text: Španielska peseta, why: "Euro ju nahradilo v roku 2002." }
+      - { text: Grécka drachma, why: "Euro ju nahradilo v roku 2002." }
+      - { text: Slovenská koruna, why: "Euro ju nahradilo v roku 2009." }
+      - { text: Holandský gulden, why: "Euro ho nahradilo v roku 2002." }
+      - { text: Rakúsky šiling, why: "Euro ho nahradilo v roku 2002." }
+      - { text: Írska libra, why: "Euro ju nahradilo v roku 2002." }
+    wrong:
+      - { text: Česká koruna, why: "Platí dodnes, Česko euro nezaviedlo." }
+      - { text: Švajčiarsky frank, why: "Platí dodnes." }
+      - { text: Britská libra, why: "Platí dodnes." }
+      - { text: Poľský zlotý, why: "Platí dodnes." }
+      - { text: Švédska koruna, why: "Platí dodnes." }
+      - { text: Maďarský forint, why: "Platí dodnes." }
+      - { text: Dánska koruna, why: "Platí dodnes." }
+
+  - id: ek-fertilita-vysoka
+    type: pick
+    prompt: Ktoré z týchto krajín majú podľa OSN pôrodnosť nad 4 deti na ženu?
+    difficulty: 2
+    asOf: "2026"
+    tags: [demografia]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_total_fertility_rate"
+    correct:
+      - { text: Čad, why: "Okolo 5,8 dieťaťa na ženu, najviac na svete." }
+      - { text: Somálsko, why: "Okolo 5,8 dieťaťa na ženu." }
+      - { text: Niger, why: "Okolo 5,6 dieťaťa na ženu; zároveň majú najnižší medián veku na svete." }
+      - { text: Mali, why: "Okolo 5,3 dieťaťa na ženu." }
+      - { text: Angola, why: "Okolo 4,9 dieťaťa na ženu." }
+      - { text: Afganistan, why: "Okolo 4,6 dieťaťa na ženu." }
+      - { text: Nigéria, why: "Okolo 4,2 dieťaťa na ženu." }
+    wrong:
+      - { text: Izrael, why: "Okolo 2,7 – najvyššia pôrodnosť medzi bohatými krajinami." }
+      - { text: Egypt, why: "Okolo 2,7 dieťaťa na ženu." }
+      - { text: Indonézia, why: "Okolo 2,1 dieťaťa na ženu." }
+      - { text: India, why: "Okolo 1,9 – pod hranicou 2,1 potrebnou na udržanie počtu obyvateľov." }
+      - { text: Mexiko, why: "Okolo 1,85 dieťaťa na ženu." }
+      - { text: Irán, why: "Okolo 1,7 dieťaťa na ženu." }
+      - { text: USA, why: "Okolo 1,6 dieťaťa na ženu." }
+
+  - id: ek-fertilita-nizka
+    type: pick
+    prompt: Ktoré z týchto krajín majú podľa OSN pôrodnosť pod 1,3 dieťaťa na ženu?
+    difficulty: 3
+    asOf: "2026"
+    tags: [demografia]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_total_fertility_rate"
+    correct:
+      - { text: Južná Kórea, why: "Okolo 0,76 – najnižšia na svete medzi väčšími krajinami." }
+      - { text: Singapur, why: "Okolo 0,87 dieťaťa na ženu." }
+      - { text: Ukrajina, why: "Okolo 1,0 dieťaťa na ženu." }
+      - { text: Čína, why: "Okolo 1,03, po desaťročiach politiky jedného dieťaťa." }
+      - { text: Taliansko, why: "Okolo 1,22 dieťaťa na ženu." }
+      - { text: Japonsko, why: "Okolo 1,23 dieťaťa na ženu." }
+      - { text: Španielsko, why: "Okolo 1,24 dieťaťa na ženu." }
+    wrong:
+      - { text: Francúzsko, why: "Okolo 1,64 – jedna z najvyšších pôrodností v Európe." }
+      - { text: USA, why: "Okolo 1,63 dieťaťa na ženu." }
+      - { text: Spojené kráľovstvo, why: "Okolo 1,53 dieťaťa na ženu." }
+      - { text: Maďarsko, why: "Okolo 1,5 dieťaťa na ženu." }
+      - { text: Nemecko, why: "Okolo 1,46 dieťaťa na ženu." }
+      - { text: Brazília, why: "Okolo 1,59 dieťaťa na ženu." }
+      - { text: Turecko, why: "Okolo 1,62 dieťaťa na ženu." }
+
+  - id: ek-median-veku-nad-40
+    type: pick
+    prompt: Ktoré krajiny majú medián veku obyvateľov nad 40 rokov (CIA World Factbook, 2024)?
+    difficulty: 2
+    asOf: "2024"
+    tags: [demografia]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_median_age"
+    correct:
+      - { text: Japonsko, why: "Okolo 50 rokov – jedna z najstarších populácií sveta." }
+      - { text: Taliansko, why: "Okolo 48 rokov." }
+      - { text: Nemecko, why: "Okolo 47 rokov." }
+      - { text: Španielsko, why: "Okolo 47 rokov." }
+      - { text: Poľsko, why: "Okolo 43 rokov." }
+      - { text: Slovensko, why: "Okolo 43 rokov." }
+      - { text: Francúzsko, why: "Okolo 43 rokov." }
+      - { text: Čína, why: "Okolo 40 rokov, starnúca populácia." }
+    wrong:
+      - { text: USA, why: "Okolo 39 rokov – mladšie než Európa." }
+      - { text: Brazília, why: "Okolo 35 rokov." }
+      - { text: Turecko, why: "Okolo 34 rokov." }
+      - { text: India, why: "Okolo 30 rokov – o 20 rokov mladšia než Japonsko." }
+      - { text: Egypt, why: "Okolo 24 rokov." }
+      - { text: Nigéria, why: "Okolo 19 rokov." }
+      - { text: Niger, why: "Okolo 15 rokov – najmladšia populácia sveta." }
+
+  - id: ek-dlzka-zivota-nad-80
+    type: pick
+    prompt: Ktoré z týchto krajín majú podľa Svetovej banky priemernú dĺžku života pri narodení nad 80 rokov?
+    difficulty: 2
+    asOf: "2024"
+    tags: [demografia]
+    source: "https://data.worldbank.org/indicator/SP.DYN.LE00.IN https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&date=2024"
+    correct:
+      - { text: Japonsko, why: "Približne 84 rokov." }
+      - { text: Švajčiarsko, why: "Približne 84,4 roka." }
+      - { text: Švédsko, why: "Približne 84 rokov." }
+      - { text: Taliansko, why: "Približne 84 rokov." }
+      - { text: Španielsko, why: "Približne 83,9 roka." }
+      - { text: Nemecko, why: "Približne 80,8 roka." }
+    wrong:
+      - { text: USA, why: "Približne 78,9 roka – nižšie než väčšina bohatých krajín." }
+      - { text: Čína, why: "Približne 78 rokov." }
+      - { text: Slovensko, why: "Približne 78,4 roka." }
+      - { text: Poľsko, why: "Približne 78,4 roka." }
+      - { text: Brazília, why: "Približne 76 rokov." }
+      - { text: Rusko, why: "Približne 73,4 roka." }
+      - { text: India, why: "Približne 72 rokov." }
+
+  # ================================================================ ORDER
+  - id: ek-poradie-hdp
+    type: order
+    prompt: Zoraď krajiny podľa veľkosti HDP v bežných cenách (od najväčšieho).
+    direction: desc
+    unit: mld. USD
+    difficulty: 2
+    asOf: "2025"
+    tags: [HDP]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)"
+    note: "Svetová banka, údaje za rok 2025 (v miliardách dolárov)."
+    items:
+      - { text: Nemecko, value: 5051, why: "Tretia najväčšia ekonomika sveta." }
+      - { text: Japonsko, value: 4435, why: "Štvrtá najväčšia ekonomika sveta." }
+      - { text: India, value: 3956, why: "Šiesta najväčšia ekonomika a rýchlo rastie." }
+      - { text: Francúzsko, value: 3366, why: "Siedma najväčšia ekonomika sveta." }
+      - { text: Taliansko, value: 2552, why: "Približne polovica nemeckého HDP." }
+      - { text: Brazília, value: 2280, why: "Najväčšia ekonomika Južnej Ameriky." }
+
+  - id: ek-poradie-hdp-na-hlavu
+    type: order
+    prompt: Zoraď krajiny podľa HDP na obyvateľa (od najvyššieho).
+    direction: desc
+    unit: USD
+    difficulty: 2
+    asOf: "2025"
+    tags: [HDP]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita"
+    note: "Svetová banka, údaje za rok 2025 v bežných cenách."
+    items:
+      - { text: Švajčiarsko, value: 114769, why: "Jedna z najbohatších krajín sveta." }
+      - { text: USA, value: 90027, why: "Aj pri 342 miliónoch obyvateľov vysoko nad Európou." }
+      - { text: Nemecko, value: 60496, why: "Najväčšia ekonomika Európy, ale nie najbohatšia na hlavu." }
+      - { text: Taliansko, value: 43309, why: "Ekonomika stagnuje už dve desaťročia." }
+      - { text: Slovensko, value: 28544, why: "Pod priemerom EÚ, no výrazne nad Ukrajinou." }
+      - { text: Čína, value: 13862, why: "Obrovské HDP celkovo, ale na hlavu stále stredný príjem." }
+
+  - id: ek-poradie-populacia
+    type: order
+    prompt: Zoraď krajiny podľa počtu obyvateľov (od najľudnatejšej).
+    direction: desc
+    unit: mil.
+    difficulty: 2
+    asOf: "2025"
+    tags: [demografia]
+    source: "https://data.worldbank.org/indicator/SP.POP.TOTL"
+    note: "Svetová banka, údaje za rok 2025 (v miliónoch)."
+    items:
+      - { text: Nigéria, value: 237.5, why: "Najľudnatejšia krajina Afriky." }
+      - { text: Brazília, value: 212.8, why: "Najľudnatejšia krajina Južnej Ameriky." }
+      - { text: Rusko, value: 143.5, why: "Najväčšia rozlohou, no ľudí je menej než v Bangladéši." }
+      - { text: Mexiko, value: 131.9, why: "Najľudnatejšia španielsky hovoriaca krajina." }
+      - { text: Japonsko, value: 123.4, why: "Počet obyvateľov klesá." }
+      - { text: Egypt, value: 118.4, why: "Väčšina ľudí žije pozdĺž Nílu." }
+
+  - id: ek-poradie-median-veku
+    type: order
+    prompt: Zoraď krajiny podľa mediánu veku obyvateľov (od najstaršej).
+    direction: desc
+    unit: rokov
+    difficulty: 2
+    asOf: "2024"
+    tags: [demografia]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_median_age"
+    note: "CIA World Factbook 2024."
+    items:
+      - { text: Japonsko, value: 49.9, why: "Jedna z najstarších populácií sveta." }
+      - { text: Nemecko, value: 46.8, why: "Medián veku je tu vyšší než v USA či vo Francúzsku." }
+      - { text: USA, value: 38.9, why: "Mladšie než Európa vďaka prisťahovalectvu." }
+      - { text: India, value: 29.8, why: "Mladá populácia je veľkou ekonomickou šancou." }
+      - { text: Nigéria, value: 19.3, why: "Polovica ľudí má menej než 19 rokov." }
+
+  - id: ek-poradie-porodnost
+    type: order
+    prompt: Zoraď krajiny podľa pôrodnosti (od najvyššej).
+    direction: desc
+    unit: detí na ženu
+    difficulty: 2
+    asOf: "2026"
+    tags: [demografia]
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_total_fertility_rate"
+    note: "Odhad OSN (World Population Prospects) pre rok 2026."
+    items:
+      - { text: Nigéria, value: 4.21, why: "Rastúca populácia, ale pôrodnosť klesá." }
+      - { text: Izrael, value: 2.73, why: "Najvyššia pôrodnosť medzi bohatými krajinami." }
+      - { text: India, value: 1.93, why: "Pod hranicou 2,1 potrebnou na udržanie počtu obyvateľov." }
+      - { text: USA, value: 1.63, why: "Dlhodobo pod hranicou 2,1." }
+      - { text: Japonsko, value: 1.23, why: "Populácia starne a ubúda." }
+      - { text: Južná Kórea, value: 0.76, why: "Najnižšia pôrodnosť medzi väčšími krajinami sveta." }
+
+  # ================================================================ NUMBER
+  - id: ek-cislo-india-obyvatelia
+    type: number
+    prompt: Koľko miliónov obyvateľov má India?
+    answer: 1464
+    unit: mil.
+    scale: log
+    tolerance: 0.05
+    asOf: "2025"
+    why: "Od roku 2023 predbehla Čínu; asi každý šiesty človek na Zemi je Ind."
+    difficulty: 1
+    source: "https://data.worldbank.org/indicator/SP.POP.TOTL https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    tags: [demografia]
+
+  - id: ek-cislo-vzacne-zeminy
+    type: number
+    prompt: Koľko percent svetovej ťažby vzácnych zemín (prvkov ako neodým či lantán) pripadá na Čínu?
+    answer: 69
+    unit: "%"
+    scale: linear
+    tolerance: 5
+    asOf: "2024"
+    why: "Čína vyťažila 270 000 z 390 000 ton oxidov vzácnych zemín; spracovanie ovláda ešte viac."
+    difficulty: 3
+    source: "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf"
+    tags: [suroviny]
+
+  - id: ek-cislo-norsko-palivo
+    type: number
+    prompt: Koľko percent nórskeho vývozu tovaru tvoria palivá, teda ropa a zemný plyn?
+    answer: 62
+    unit: "%"
+    scale: linear
+    tolerance: 5
+    asOf: "2025"
+    why: "Nórsko žije z ropy a plynu, ale peniaze ukladá do najväčšieho štátneho fondu sveta."
+    difficulty: 3
+    source: "https://api.worldbank.org/v2/country/all/indicator/TX.VAL.FUEL.ZS.UN?format=json&date=2025"
+    tags: [ropa]
+
+  - id: ek-cislo-honduras-remitancie
+    type: number
+    prompt: Koľko percent HDP Hondurasu tvoria peniaze, ktoré posielajú domov Honduranci pracujúci v zahraničí?
+    answer: 30
+    unit: "%"
+    scale: linear
+    tolerance: 5
+    asOf: "2025"
+    why: "Takmer každá tretia lempira v krajine pochádza zo zahraničia, väčšinou z USA."
+    difficulty: 3
+    source: "https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&date=2025"
+    tags: [remitancie]
+
+  - id: ek-cislo-panamsky-prieplav
+    type: number
+    prompt: V ktorom roku prevzala Panama pod svoju plnú kontrolu Panamský prieplav?
+    answer: 1999
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Prieplav sa otvoril v roku 1914 a dovtedy ho spravovali USA."
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Panama_Canal"
+    tags: [prieplav]
+
+  - id: ek-cislo-eurozona
+    type: number
+    prompt: Koľko štátov používa euro ako členské štáty eurozóny (stav koncom roka 2026)?
+    answer: 21
+    unit: štátov
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: "Naposledy sa pridalo Bulharsko 1. januára 2026."
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/Euro"
+    tags: [euro]
+
+  # ================================================================ CHOICE
+  - id: ek-vyber-auta-na-hlavu
+    type: choice
+    prompt: Ktorá krajina vyrába najviac áut na obyvateľa na svete (v rokoch 2007 – 2024)?
+    difficulty: 1
+    asOf: "2024"
+    tags: [autá, priemysel]
+    source: "https://en.wikipedia.org/wiki/Automotive_industry_in_Slovakia"
+    correct: { text: Slovensko, why: "Okolo milióna áut ročne na päť miliónov obyvateľov." }
+    wrong:
+      - { text: Česko, why: "Aj tam vyrábajú veľa áut, ale na hlavu menej než Slovensko." }
+      - { text: Nemecko, why: "Vyrába viac áut celkovo, ale na obyvateľa menej." }
+      - { text: Južná Kórea, why: "Obrovský výrobca, ale pri 51 miliónoch ľudí je to na hlavu menej." }
+
+  - id: ek-vyber-forint
+    type: choice
+    prompt: Ktorá mena nahradila maďarský pengő po hyperinflácii v roku 1946?
+    difficulty: 2
+    tags: [hyperinflácia, meny]
+    source: "https://en.wikipedia.org/wiki/Hyperinflation"
+    correct: { text: Forint, why: "Zaviedli ho v auguste 1946 a platí dodnes." }
+    wrong:
+      - { text: Koruna, why: "Tú používalo Česko a Slovensko." }
+      - { text: Marka, why: "Tú používalo Nemecko." }
+      - { text: Zlotý, why: "Tým platí Poľsko." }
+
+  - id: ek-vyber-statny-fond
+    type: choice
+    prompt: Ktorej krajine patrí najväčší štátny investičný fond na svete, ktorý vznikol z príjmov z ropy?
+    difficulty: 2
+    asOf: "2026-06"
+    tags: [ropa, fondy]
+    source: "https://en.wikipedia.org/wiki/Government_Pension_Fund_of_Norway"
+    correct: { text: Nórsko, why: "Vlastní približne 1,5 % hodnoty všetkých svetových firiem na burze." }
+    wrong:
+      - { text: Saudská Arábia, why: "Má veľké fondy, no menšie než nórsky." }
+      - { text: Spojené arabské emiráty, why: "Abú Zabí má veľký fond, ale nie najväčší." }
+      - { text: Rusko, why: "Má menší fond než Nórsko." }
+
+  - id: ek-vyber-ekvador
+    type: choice
+    prompt: Ktorou menou platí Ekvádor od roku 2000, keď prestal používať vlastnú menu sucre?
+    difficulty: 2
+    tags: [dolarizácia, meny]
+    source: "https://en.wikipedia.org/wiki/Currency_substitution"
+    correct: { text: Americký dolár, why: "Dolár prijal v roku 2000 namiesto vlastnej meny." }
+    wrong:
+      - { text: Euro, why: "Euro používajú v Latinskej Amerike len malé zámorské územia." }
+      - { text: Kolumbijské peso, why: "Susedná krajina má vlastné peso." }
+      - { text: Peruánsky sol, why: "Susedná krajina má vlastný sol." }
