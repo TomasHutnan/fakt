@@ -273,6 +273,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         answers,
         results: s.results.filter((r) => r.playerId !== a.id),
         ready: s.ready.filter((id) => id !== a.id),
+        tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
       };
       return afterChange(next, a.now, packs);
     }
