@@ -270,6 +270,8 @@
 :where(.room-progress__avatars) { display: flex; gap: 4px; flex-wrap: wrap; }
 :where(.timer) { display: flex; align-items: center; gap: 8px; flex: 1 1 110px; font-variant-numeric: tabular-nums; }
 :where(.timer__bar) { flex: 1; height: 6px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, currentColor 18%, transparent); }
+/* Fixed width, right-aligned: the bar must not grow when "10 s" turns into "9 s". */
+.timer .timer__text { flex: none; min-width: 3.6em; text-align: right; white-space: nowrap; }
 :where(.timer__fill) { display: block; height: 100%; background: currentColor; transition: width .25s linear; }
 :where(.timer--low .timer__fill) { background: #c0392b; }
 :where(.room-banner) { text-align: center; }
