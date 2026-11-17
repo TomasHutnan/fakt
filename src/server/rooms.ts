@@ -515,6 +515,7 @@ export class Hub {
       history: Array.isArray(r.state.history) ? r.state.history : [],
       packChoice: r.state.packChoice ?? null,
       pickedBy: r.state.pickedBy ?? null,
+      tiebreak: r.state.tiebreak ?? null,
       settings: { ...r.state.settings, lastPicks: r.state.settings?.lastPicks ?? false },
       players: r.state.players.map((p) => ({ ...p, connected: false })),
     };

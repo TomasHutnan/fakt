@@ -6,6 +6,7 @@ import { formatNumber, numberDecimals } from "../engine/cards.ts";
 import { parseNumber } from "./number.ts";
 import {
   currentPlayer,
+  headsToTiebreak,
   isLastTurn,
   scoreCard,
   standings,
@@ -57,7 +58,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
     return (
       <div class="screen screen--game">
         <header class="topbar">
-          <span class="topbar__title">{sk.round(s.round, totalRounds)}</span>
+          <span class="topbar__title">{s.tiebreak ? sk.tiebreakRound : sk.round(s.round, totalRounds)}</span>
           <ScoreStrip state={s} />
           <QuickSettings />
         </header>
@@ -75,7 +76,8 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
     const name = s.players[currentPlayer(s)].name;
     return (
       <button type="button" class="handover" onClick={() => dispatch({ type: "continue" })}>
-        <span class="handover__round">{sk.round(s.round, totalRounds)}</span>
+        <span class="handover__round">{s.tiebreak ? sk.tiebreakRound : sk.round(s.round, totalRounds)}</span>
+        {s.tiebreak && <span class="handover__hint">{sk.tiebreakHint}</span>}
         <span class="handover__label">{sk.passTo}</span>
         <span class="handover__name">{name}</span>
         <span class="handover__hint">{sk.tapToContinue}</span>
@@ -86,7 +88,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
   return (
     <div class="screen screen--game">
       <header class="topbar">
-        <span class="topbar__title">{sk.round(s.round, totalRounds)}</span>
+        <span class="topbar__title">{s.tiebreak ? sk.tiebreakRound : sk.round(s.round, totalRounds)}</span>
         <ScoreStrip state={s} />
         <QuickSettings />
         <button type="button" class="btn btn--ghost btn--small topbar__quit" onClick={() => setConfirmQuit(true)}>
@@ -152,6 +154,7 @@ function Turn({ state, dispatch }: { state: GameState; dispatch: (a: Action) => 
     >
       <CardHead card={s.card} />
       {s.pickedBy != null && s.players[s.pickedBy] && <p class="q__picked">{sk.pickedBy(s.players[s.pickedBy].name)}</p>}
+      {s.tiebreak && <p class="q__tiebreak">{sk.tiebreakNote(sk.names(s.tiebreak.players.map((i) => s.players[i]?.name ?? "?")))}</p>}
       {!solo && <p class="q__player">{player.name}</p>}
       <h1 class="q__prompt">{tie(s.card.prompt)}</h1>
       {s.card.type === "pick" && s.answer?.type === "pick" && (
@@ -641,7 +644,7 @@ export function CardFoot({ card }: { card: Card }) {
 function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) => void }) {
   const s = state;
   const card = s.card;
-  const over = useMemo(() => isFinalRound(s), [s]);
+  const over = useMemo(() => !!s.tiebreak || isFinalRound(s), [s]);
   const multi = s.players.length > 1;
   // Each player already saw the answer on their turn: the round ends with scores only.
   const full = !s.settings.revealEach;
@@ -676,7 +679,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
 
       <div class="actions">
         <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "nextRound" })}>
-          {over ? sk.finalResults : sk.nextRound}
+          {over ? (headsToTiebreak(s) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
         </button>
       </div>
     </section>
@@ -857,6 +860,7 @@ function GameOver({
               ? sk.tie
               : sk.winner(winners[0].player.name)}
         </h1>
+        {state.tiebreak && <p class="over__note">{winners.length > 1 ? sk.tiebreakStillTied : sk.tiebreakDecided}</p>}
       </header>
       {state.players.length > 1 && (
         <ol class="scoreboard">

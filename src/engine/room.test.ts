@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Pack } from "../content/types.ts";
-import type { Card, OrderCard, PickCard } from "./cards.ts";
+import type { Card, NumberCard, OrderCard, PickCard } from "./cards.ts";
 import { DEFAULT_SETTINGS, newGame } from "./game.ts";
 import {
   allAnswered,
@@ -501,7 +501,10 @@ describe("room rounds and game end", () => {
     while (sim.s.phase !== "over") {
       keys.push(sim.s.card!.key);
       expect(viewFor(sim.s, "h").lastRound).toBe(sim.s.round === 5);
-      sim.answerAll(sim.s.round % 2 ? "best" : "worst");
+      // Jano wins (no tie-break).
+      const card = sim.s.card!;
+      answerOne(sim, "h", card, sim.s.round % 2 ? "best" : "worst");
+      if (sim.s.phase === "question") answerOne(sim, "p1", card, "worst");
       for (const id of sim.ids) sim.act(id, { type: "ready" });
     }
     expect(keys).toHaveLength(5);
@@ -550,12 +553,46 @@ describe("room rounds and game end", () => {
     sim.act("h", { type: "start", seed: 7 });
     const second: string[] = [];
     while (sim.s.phase !== "over") {
-      second.push(sim.s.card!.key);
+      // The tie-break card may come again (the test packs have one number question).
+      if (!sim.s.tiebreak) second.push(sim.s.card!.key);
       sim.act("h", { type: "close" });
       sim.act("h", { type: "next" });
     }
     // 6 pick questions: the second game of 3 uses the other 3.
     expect(second.filter((k) => first.includes(k))).toEqual([]);
+  });
+
+  it("a tie for first goes to a tie-break that only the tied leaders answer", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    answerOne(sim, "p2", card, "worst");
+    expect(viewFor(sim.s, "p2").lastRound).toBe(true);
+    sim.act("h", { type: "next" });
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.tiebreak).toEqual(["h", "p1"]);
+    expect(sim.s.card!.type).toBe("number");
+    expect(viewFor(sim.s, "p2").tiebreak).toEqual(["h", "p1"]);
+    const n = sim.s.card as NumberCard;
+    // Miro is out of it: his answer is ignored and nobody waits for him.
+    const before = sim.s;
+    sim.act("p2", { type: "submitNumber", value: n.answer });
+    expect(sim.s).toBe(before);
+    sim.act("h", { type: "submitNumber", value: n.answer * 3 });
+    sim.act("p1", { type: "submitNumber", value: n.answer });
+    expect(sim.s.phase).toBe("reveal");
+    expect(sim.s.results.map((r) => [r.playerId, r.points])).toEqual([
+      ["h", 0],
+      ["p1", 1],
+    ]);
+    sim.act("h", { type: "next" });
+    expect(sim.s.phase).toBe("over");
+    expect(viewFor(sim.s, "h").tiebreak).toEqual(["h", "p1"]);
+    // A new game starts without it.
+    sim.act("h", { type: "again", seed: 3 });
+    expect(sim.s.tiebreak).toBeNull();
   });
 
   it("is deterministic for a seed", () => {
@@ -689,7 +726,9 @@ describe("room fuzz", () => {
         sim.act(sim.ids[0], { type: sim.s.phase === "question" ? "close" : "next" });
       }
       expect(sim.s.phase).toBe("over");
-      expect(new Set(sim.s.played).size).toBe(sim.s.played.length);
+      // A tie-break may reuse a number card when the packs have no other.
+      const regular = sim.s.tiebreak ? sim.s.played.slice(0, -1) : sim.s.played;
+      expect(new Set(regular).size).toBe(regular.length);
     }
   });
 });

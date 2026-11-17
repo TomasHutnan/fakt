@@ -286,6 +286,8 @@
 :where(.room-code-input) { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .3em; text-transform: uppercase; font-size: 1.4em; }
 
 /* Comeback rule, social lines, titles: structural; designs may restyle. */
+:where(.q__tiebreak) { margin: 2px 0; font-weight: 700; }
+:where(.over__note) { margin: 4px 0 0; opacity: 0.8; }
 :where(.q__picked) { margin: 2px 0; opacity: 0.75; font-size: 0.9em; }
 :where(.social) { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 6px; }
 :where(.social__line) {

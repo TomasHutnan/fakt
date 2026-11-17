@@ -3,6 +3,7 @@ import { buildDeck, makeCard, makeCompareCard, type Card } from "./cards.ts";
 import { bringForward, isPackPickRound, lastPlace, packOptions } from "./comeback.ts";
 import { createRng, type Rng } from "./rng.ts";
 import { roundRecord, type RoundRecord } from "./social.ts";
+import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
 import {
   numberRankedPoints,
   numberSoloPoints,
@@ -101,6 +102,8 @@ export interface GameState {
   packChoice?: { player: number; options: string[] } | null;
   /** Who picked the pack of the current card. */
   pickedBy?: number | null;
+  /** Tie-break: the tied leaders who play one extra number card (stays set once the game is over). */
+  tiebreak?: { players: number[] } | null;
 }
 
 export type Action =
@@ -268,12 +271,15 @@ function advance(s: GameState, packs: Pack[]): GameState {
 
 function nextRound(s: GameState, packs: Pack[]): GameState {
   const played = [...s.played, s.card.key];
-  if (isGameOver(s)) return { ...s, played, phase: "over" };
+  if (s.tiebreak) return { ...s, played, phase: "over" };
+  // The game is over: a tie for first goes to a tie-break.
+  const end = (): GameState => startTiebreak({ ...s, played }, packs) ?? { ...s, played, phase: "over" };
+  if (isGameOver(s)) return end();
   // Skip keys whose question disappeared (e.g. an imported pack was removed).
   let pos = s.deckPos + 1;
   let card: Card | null = null;
   while (pos < s.deck.length && !(card = cardFor(s.deck[pos], packs, s.seed, pos))) pos++;
-  if (!card) return { ...s, played, phase: "over" };
+  if (!card) return end();
   const round = s.round + 1;
   const next: GameState = {
     ...s,
@@ -291,13 +297,42 @@ function nextRound(s: GameState, packs: Pack[]): GameState {
   };
   // Every third round the player in last place picks the pack (from at least two).
   if (s.settings.lastPicks && s.players.length > 1 && isPackPickRound(round)) {
-    const options = packOptions(s.deck, pos, s.seed, round).filter((id) => packs.some((p) => p.id === id));
+    const options = packOptions(s.deck, pos, s.seed, round, (id) => packs.some((p) => p.id === id));
     if (options.length >= 2) {
       const player = lastPlace(s.players.map((p) => p.score), s.seed, round);
       return { ...next, phase: "choosePack", packChoice: { player, options } };
     }
   }
   return next;
+}
+
+/** One extra number card for the players sharing the top score; null when there is no tie or no number card. */
+function startTiebreak(s: GameState, packs: Pack[]): GameState | null {
+  if (s.tiebreak) return null;
+  const tied = tiedLeaders(s.players.map((p) => p.score));
+  if (!tied.length) return null;
+  const key = tiebreakKey(s.deck, s.deckPos + 1, packs, s.settings.packIds, s.played, s.seed);
+  // Its own position after the deck, so the card is drawn the same way after a reload.
+  const card = key ? cardFor(key, packs, s.seed, s.deck.length) : null;
+  if (!card) return null;
+  return {
+    ...s,
+    round: s.round + 1,
+    card,
+    order: tied,
+    turn: 0,
+    phase: "handover",
+    answer: initialAnswer(card),
+    results: [],
+    packChoice: null,
+    pickedBy: null,
+    tiebreak: { players: tied },
+  };
+}
+
+/** The finished round will lead to a tie-break (scores at the reveal already include the round). */
+export function headsToTiebreak(s: Pick<GameState, "players" | "tiebreak">): boolean {
+  return !s.tiebreak && tiedLeaders(s.players.map((p) => p.score)).length > 0;
 }
 
 function finishTurn(s: GameState, packs: Pack[]): GameState {
@@ -309,7 +344,10 @@ function finishTurn(s: GameState, packs: Pack[]): GameState {
 }
 
 function reveal(s: GameState): GameState {
-  const points = scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
+  const points =
+    s.tiebreak && s.card.type === "number"
+      ? tiebreakPoints(s.card, s.results.map((r) => (r.answer.type === "number" ? (r.answer.value ?? NaN) : NaN)))
+      : scoreCard(s.card, s.results, s.settings.wipe, s.players.length);
   const results = s.results.map((r, i) => ({ ...r, points: points[i] }));
   const players = s.players.map((p, i) => ({
     ...p,

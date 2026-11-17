@@ -17,9 +17,13 @@ export function isPackPickRound(round: number): boolean {
   return round > 1 && round % PACK_PICK_EVERY === 0;
 }
 
-/** Up to three different packs that still have cards in the deck from `pos` on, in a seeded order. */
-export function packOptions(deck: string[], pos: number, seed: number, round: number): string[] {
-  const ids = Array.from(new Set(deck.slice(pos).map((k) => k.split("/")[0])));
+/**
+ * Up to three different packs that still have cards in the deck from `pos` on, in a seeded
+ * order. `available` drops packs that are gone (an imported pack removed mid-game) before
+ * the three are chosen, so the others can take their place.
+ */
+export function packOptions(deck: string[], pos: number, seed: number, round: number, available: (id: string) => boolean = () => true): string[] {
+  const ids = Array.from(new Set(deck.slice(pos).map((k) => k.split("/")[0]))).filter(available);
   return shuffle(createRng((seed ^ 0x2f6b) + round * 101), ids).slice(0, PACK_PICK_OPTIONS);
 }
 
