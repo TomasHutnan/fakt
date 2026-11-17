@@ -743,6 +743,7 @@ describe("comeback rules in rooms", () => {
     // Hidden card during the pick: nobody sees a card yet.
     expect(viewFor(sim.s, "h").card).toBeNull();
     expect(viewFor(sim.s, "h").packChoice).toEqual(choice);
+    expect(viewFor(sim.s, "h").deadline).toBe(sim.now + 20_000);
     // Only the chooser may choose while connected; the host's attempt is ignored.
     sim.act("h", { type: "choosePack", packId: "u" });
     expect(sim.s.phase).toBe("choosePack");

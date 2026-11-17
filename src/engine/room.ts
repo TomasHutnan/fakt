@@ -592,7 +592,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     players: s.players.map((p) => playerView(s, p)),
     card: question ? hideCard(s.card!, s.settings.showCorrectCount) : null,
     full: reveal ? s.card : null,
-    deadline: question ? s.deadline : null,
+    deadline: question || s.phase === "choosePack" ? s.deadline : null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
     double: isDouble(s),

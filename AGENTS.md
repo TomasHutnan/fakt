@@ -19,7 +19,7 @@ Goals, in the owner's words:
 
 Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. All branches merged, nothing in progress.
 
-- Built: Mix (default) and Classic modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
+- Built: Mix (default) and Classic modes, rooms (everyone on own phone + big screen), comeback rules (double final round, last place picks the pack every 3rd round), social lines and end titles, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
 - Content: **31 packs / 836 questions** (4 adult, 5 opt-in: Dano Drevo, Politické hlášky, athletics legends and season, Zvláštne jedlá sveta). Target 1,000.
 - Next: playtest, then fandom and culture packs (cult films, Slovak TV, YouTube, 80s/90s music, games, ads), a Wikidata generator with a fame filter. Full list: `notes/Roadmap.md`.
 - Owner's notes (not in the repo): `notes/Description.md` is the hub; `notes/Decisions.md` holds the decision log and open questions; `notes/Content.md` the pack list and pipeline. `docs/research-report.html` is pre-decision research (the notes win where they disagree).

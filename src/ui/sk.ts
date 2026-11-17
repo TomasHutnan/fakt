@@ -32,6 +32,13 @@ export const sk = {
       ],
     },
     {
+      title: "Šanca dobehnúť",
+      body: [
+        "Posledné kolo sa ráta dvojnásobne. Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Obe pravidlá sa dajú vypnúť v nastaveniach.",
+        "Po kole hra prezradí, kto sa na čo chytil, a na konci rozdá tituly.",
+      ],
+    },
+    {
       title: "Každý na svojom telefóne",
       body: [
         "Pri novej hre zvoľ „Každý na svojom“. Ostatní sa pridajú cez QR kód, odkaz alebo kód hry na úvodnej obrazovke, kľudne aj z iného mesta.",
