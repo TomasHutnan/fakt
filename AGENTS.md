@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status (2026-11-16)
 
-Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
+Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. All branches merged, nothing in progress.
 
 - Built: Mix (default) and Classic modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
 - Content: **27 packs / 716 questions** (4 adult, 4 opt-in: Dano Drevo, Politické hlášky, athletics legends and season). Target 1,000.
@@ -56,7 +56,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - **Content**: adult packs welcome (labelled, off by default, content-warning tags); niche or mildly crude packs can be normal but off by default (`defaultOn: false`, 2026-11-16); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
 - **Packs**: YAML in `packs/`, built to per-pack JSON + index with hashes; importer accepts YAML and JSON, stores imports in the browser. Packs CC0 (per-pack `license` allowed); code MIT. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
 - **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
-- **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and, later, the room server, on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`). GitHub Pages still deploys until the domain moves.
+- **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and the room server on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`); the owner pulls updates by hand in Dockge. GitHub Pages is retired.
 - **Multiplayer** (2026-11-17): rooms on the same server, everyone on their own phone, optional big screen, remote play allowed; creator uploads enabled packs, the room runs the engine. See `notes/Decisions.md`.
 - **Reports/ratings**: owner's prefilled Google Form (`src/ui/links.ts`), not GitHub issues.
 - **App store**: keep possible as long as it does not limit the web version.

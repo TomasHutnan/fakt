@@ -2,8 +2,7 @@ import preact from "@preact/preset-vite";
 import { defineConfig } from "vitest/config";
 import { VitePWA } from "vite-plugin-pwa";
 
-// base "./" keeps the build working both at fakt.hutnan.dev and at
-// <user>.github.io/fakt/ before the custom domain is set up.
+// base "./" keeps the build working under any path (the server, vite preview, a subfolder).
 export default defineConfig({
   base: "./",
   // Rooms run in the Node server (npm start); the dev server forwards the socket to it.

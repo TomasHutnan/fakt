@@ -1,5 +1,5 @@
-# Tests every push. On main: deploys GitHub Pages (until the VPS takes over the domain)
-# and publishes the image ghcr.io/tomashutnan/fakt, tagged latest and by commit.
+# Tests every push. On main, publishes the image ghcr.io/tomashutnan/fakt (app + room
+# server), tagged latest and by commit. The VPS pulls it by hand (compose.vps.yaml).
 name: CI
 
 on:
@@ -26,27 +26,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          path: dist
 
-  deploy:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    concurrency:
-      group: pages
-      cancel-in-progress: false
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
 
   image:
     if: github.ref == 'refs/heads/main'

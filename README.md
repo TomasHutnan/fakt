@@ -2,7 +2,7 @@
 
 A free Slovak party quiz for one phone passed around a table of friends, or for playing alone. Each card shows ten options; pick the true ones, stop whenever you like, and lose the card's points on a wrong pick.
 
-Live at https://fakt.hutnan.dev (once DNS is set up).
+Live at https://fakt.hutnan.dev.
 
 ## Develop
 
