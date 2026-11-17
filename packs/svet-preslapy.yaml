@@ -42,7 +42,7 @@ questions:
       - { text: "Chybne vybrúsené zrkadlo Hubblovho teleskopu", why: "Chybu spôsobila zle zložená testovacia optika, šošovka posunutá o 1,3 mm." }
       - { text: "Kolísanie londýnskeho mosta Millennium", why: "Most rozkývali chodci, ktorí nevedomky prispôsobili krok jeho kmitaniu." }
       - { text: "Francúzske vlaky širšie ako nástupištia", why: "Údaje o nástupištiach boli neúplné, nie v zlých jednotkách." }
-      - { text: "Ťažké španielske ponorky S-80", why: "Konštruktéri prepočítali hmotnosť asi o 100 ton; o jednotky nešlo." }
+      - { text: "Ťažké španielske ponorky S-80", why: "Konštruktéri sa v hmotnosti pomýlili asi o 100 ton; o jednotky nešlo." }
       - { text: "Šikmá veža v Pise", why: "Za sklon môže mäkké podložie a plytké základy." }
       - { text: "Letisko Castellón, ktoré roky stálo bez lietadiel", why: "Otvorili ho v roku 2011 bez leteckých spoločností aj bez povolenia na prevádzku." }
 
@@ -140,7 +140,7 @@ questions:
       - { text: "Nintendo Virtual Boy zobrazoval hry len v červenej a čiernej", why: "Je to najmenej predávaná konzola Nintenda, predali len 770 000 kusov." }
       - { text: "Elektrické vozidlo Sinclair C5 išlo najviac 24 km/h", why: "Zo 14 000 vyrobených kusov predali len 5 000." }
       - { text: "Amazon kvôli telefónu Fire Phone odpísal 170 miliónov dolárov", why: "Výrobu zastavil v auguste 2015, rok po uvedení." }
-      - { text: "Šťavu z vreciek pre lis Juicero sa dalo vytlačiť aj rukou", why: "Ukázal to Bloomberg v roku 2017; firma potom predaj lisov zastavila." }
+      - { text: "Šťava z vreciek pre lis Juicero sa dala vytlačiť aj rukou", why: "Ukázal to Bloomberg v roku 2017; firma potom predaj lisov zastavila." }
       - { text: "Edsel bola automobilová značka Fordu", why: "Ford ju zrušil v novembri 1959, ani nie dva a pol roka po uvedení." }
     wrong:
       - { text: "Telefóny Kin vyrábal Apple", why: "Boli to telefóny Microsoftu, vyrábala ich Sharp a predával Verizon." }
@@ -169,7 +169,7 @@ questions:
       - { text: "Pôvodná receptúra sa vrátila až po piatich rokoch", why: "Vrátila sa už po necelých troch mesiacoch." }
       - { text: "McDonald's zostal aj potom pri New Coke", why: "McDonald's sa hneď po návrate prepol späť na pôvodnú Coca-Colu." }
       - { text: "New Coke bol výrobok firmy Pepsi", why: "Bol to krok samotnej Coca-Coly; sladšia Pepsi ju predtým porážala v testoch." }
-      - { text: "Po návrate Classic New Coke okamžite zmizla z obchodov", why: "Predávala sa ďalej, od roku 1990 ako Coke II." }
+      - { text: "Po návrate pôvodnej Coca-Coly zmizla New Coke okamžite z obchodov", why: "Predávala sa ďalej, od roku 1990 ako Coke II." }
 
   - id: preslapy-ber
     type: pick
@@ -236,7 +236,7 @@ questions:
     tags: [stavby, peniaze]
     source: "https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Scottish_Parliament_Building https://en.wikipedia.org/wiki/Olympic_Stadium_(Montreal) https://en.wikipedia.org/wiki/Garden_Bridge"
     correct:
-      - { text: "Opera v Sydney mala podľa odhadu z roku 1957 stáť 7 miliónov dolárov", why: "Nakoniec stála 102 miliónov a dokončili ju v roku 1973." }
+      - { text: "Opera v Sydney mala podľa odhadu z roku 1957 stáť 7 miliónov austrálskych dolárov", why: "Nakoniec stála 102 miliónov a dokončili ju v roku 1973." }
       - { text: "Budovu škótskeho parlamentu odhadovali na 10 až 40 miliónov libier", why: "Konečná suma bola asi 414 miliónov libier." }
       - { text: "Montreal splácal olympijský štadión z roku 1976 vyše 30 rokov", why: "Dlh splatili v novembri 2006; štadiónu sa prezýva The Big Owe, veľký dlh." }
       - { text: "Na montrealský štadión sa skladali fajčiari", why: "Splácal sa zo špeciálnej dane z tabaku; zákaz fajčenia v roku 2006 splátky spomalil." }
@@ -380,7 +380,7 @@ questions:
 
   - id: preslapy-ako-dlho
     type: order
-    prompt: "Zoraď podľa toho, ako dlho vydržali v prevádzke alebo na trhu (od najkratšie)."
+    prompt: "Zoraď podľa toho, ako dlho vydržali v prevádzke alebo na trhu (od najkratšieho)."
     direction: asc
     unit: dní
     difficulty: 3
@@ -519,7 +519,7 @@ questions:
     correct: { text: "Brian Poole and the Tremeloes", why: "Mali konkurz v ten istý deň a boli miestni, takže vychádzali lacnejšie na cestovné." }
     wrong:
       - { text: "The Rolling Stones", why: "Tých Decca podpísala až neskôr – po tom, čo odmietla Beatles." }
-      - { text: "Gerry and the Pacemakers", why: "Rovnako ako Beatles ich viedol Brian Epstein a nahrávali pre Columbiu, sesterskú značku EMI." }
+      - { text: "Gerry and the Pacemakers", why: "Rovnako ako Beatles ich viedol Brian Epstein a nahrávali pre Columbiu, ďalšiu značku EMI." }
       - { text: "The Shadows", why: "Sprievodná kapela Cliffa Richarda; do roku 2007 piaty najúspešnejší interpret britskej hitparády." }
 
   - id: preslapy-ariane
