@@ -6,6 +6,7 @@ import { pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
 import type { ClientState, RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
+import { QuickSettings } from "./QuickSettings.tsx";
 import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
@@ -190,6 +191,7 @@ function Lobby({ view, send, onLeave, banner }: Inner) {
     <div class="screen screen--room screen--lobby">
       <header class="topbar">
         <span class="topbar__title">{sk.roomCode}</span>
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -298,6 +300,7 @@ function RoomPackPick({ view, send, now, onLeave, banner }: Inner) {
       <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
         <Timer view={view} now={now} />
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -320,6 +323,7 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
       <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
         <Timer view={view} now={now} />
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -464,6 +468,7 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
       <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
         {view.deadline != null && <Timer view={view} now={now} />}
+        <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}

@@ -15,6 +15,8 @@ const log = (...a: unknown[]) => console.log(...a);
 
 async function phone(b: Browser, label: string, viewport = { width: 390, height: 844 }): Promise<Page> {
   const ctx = await b.newContext({ viewport });
+  // Reports and ratings never reach the real form.
+  await ctx.route("https://docs.google.com/forms/**", (r) => r.fulfill({ status: 200, body: "" }));
   const page = await ctx.newPage();
   page.on("pageerror", (e) => errors.push(`${label}: ${e.message}`));
   page.on("console", (m) => {

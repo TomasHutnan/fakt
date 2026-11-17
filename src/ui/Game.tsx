@@ -16,8 +16,10 @@ import {
 } from "../engine/game.ts";
 import { orderPoints, pickPoints } from "../engine/scoring.ts";
 import { socialLines, titles } from "../engine/social.ts";
+import { QuickSettings } from "./QuickSettings.tsx";
 import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
-import { ratingsUrl, reportUrl } from "./links.ts";
+import { cardRef, ratingFields, type CardRef } from "./links.ts";
+import { DEMO, ReportPanel, send } from "./Report.tsx";
 import { KEYS, load, save } from "./storage.ts";
 import { sk } from "./sk.ts";
 import { tie } from "./typo.ts";
@@ -57,6 +59,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
         <header class="topbar">
           <span class="topbar__title">{sk.round(s.round, totalRounds)}</span>
           <ScoreStrip state={s} />
+          <QuickSettings />
         </header>
         <PackPicker
           options={s.packChoice.options.map((id) => ({ id, title: packs.find((p) => p.id === id)?.title ?? id }))}
@@ -85,6 +88,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
       <header class="topbar">
         <span class="topbar__title">{sk.round(s.round, totalRounds)}</span>
         <ScoreStrip state={s} />
+        <QuickSettings />
         <button type="button" class="btn btn--ghost btn--small topbar__quit" onClick={() => setConfirmQuit(true)}>
           {sk.quit}
         </button>
@@ -611,6 +615,7 @@ export function CardAnswer({ card, results, names }: { card: Card; results: Turn
 }
 
 export function CardFoot({ card }: { card: Card }) {
+  const [reporting, setReporting] = useState(false);
   return (
     <>
       {card.note && <p class="q__note">{tie(card.note)}</p>}
@@ -624,10 +629,11 @@ export function CardFoot({ card }: { card: Card }) {
           card.source
         )}
         {" · "}
-        <a href={reportUrl(card)} target="_blank" rel="noopener noreferrer">
+        <button type="button" class="link-btn" aria-expanded={reporting} onClick={() => setReporting(!reporting)}>
           {sk.reportCard}
-        </a>
+        </button>
       </p>
+      {reporting && <ReportPanel key={card.key} card={cardRef(card)} onClose={() => setReporting(false)} />}
     </>
   );
 }
@@ -712,9 +718,7 @@ function prettySource(url: string): string {
   }
 }
 
-const DEMO = new URLSearchParams(location.search).has("demo");
-
-type Rating = "up" | "down" | "flag";
+type Rating = "up" | "meh" | "down";
 interface StoredRating {
   rating: Rating;
   /** Pack version when rated, so later fixes can be told apart. */
@@ -722,19 +726,25 @@ interface StoredRating {
 }
 const RATINGS: { value: Rating; icon: string; label: string }[] = [
   { value: "up", icon: "👍", label: sk.reviewUp },
+  { value: "meh", icon: "😐", label: sk.reviewMeh },
   { value: "down", icon: "👎", label: sk.reviewDown },
-  { value: "flag", icon: "⚠️", label: sk.reviewFlag },
 ];
+/** A rating is sent once it has stayed the same this long (quick changes send only the last one). */
+const RATING_DELAY_MS = 1500;
 
-/** Cards of the finished game, rated 👍 / 👎 / ⚠️; ratings stay on the device and can be sent as one issue. */
+/**
+ * Cards of the finished game, rated 👍 / 😐 / 👎 and sent in the background, one
+ * response per card; ⚠️ opens the report panel for that card. Ratings are also
+ * kept on the device so they show again after a reload.
+ */
 function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
   const cards = useMemo(
     () =>
-      state.played.flatMap((key) => {
+      state.played.flatMap((key): CardRef[] => {
         const [packId, qid] = key.split("/");
         const pack = packs.find((p) => p.id === packId);
         const q = pack?.questions.find((x) => x.id === qid);
-        return pack && q ? [{ key, prompt: q.prompt, version: pack.version }] : [];
+        return pack && q ? [{ key, question: q.prompt, version: pack.version }] : [];
       }),
     [state.played, packs],
   );
@@ -748,19 +758,39 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
       ),
     ) as Record<string, StoredRating>;
   });
+  const [reporting, setReporting] = useState<string | null>(null);
+  // Ratings waiting to be sent, by card key; flushed when the screen closes.
+  const pending = useRef(new Map<string, { timer: ReturnType<typeof setTimeout>; go: () => void }>());
+  useEffect(
+    () => () => {
+      for (const p of pending.current.values()) {
+        clearTimeout(p.timer);
+        p.go();
+      }
+      pending.current.clear();
+    },
+    [],
+  );
   if (cards.length === 0) return null;
-  const rate = (key: string, version: number, rating: Rating) => {
+  const rate = (c: CardRef, rating: Rating) => {
     const next = { ...ratings };
-    if (next[key]?.rating === rating) delete next[key];
-    else next[key] = { rating, version };
+    const off = next[c.key]?.rating === rating;
+    if (off) delete next[c.key];
+    else next[c.key] = { rating, version: c.version };
     setRatings(next);
     // The design gallery (?demo=) must not touch real data.
     if (!DEMO) save(KEYS.ratings, next);
+    const old = pending.current.get(c.key);
+    if (old) clearTimeout(old.timer);
+    pending.current.delete(c.key);
+    if (off) return;
+    const go = () => void send(ratingFields(c, RATINGS.find((r) => r.value === rating)!.icon));
+    const timer = setTimeout(() => {
+      pending.current.delete(c.key);
+      go();
+    }, RATING_DELAY_MS);
+    pending.current.set(c.key, { timer, go });
   };
-  const rated = cards.filter((c) => ratings[c.key]);
-  const lines = rated.map(
-    (c) => `${RATINGS.find((r) => r.value === ratings[c.key].rating)!.icon} ${c.key} (v${ratings[c.key].version ?? c.version}): ${c.prompt}`,
-  );
   return (
     <section class="review" aria-labelledby="review-title">
       <h2 class="review__title" id="review-title">
@@ -769,8 +799,8 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
       <ol class="review__list">
         {cards.map((c) => (
           <li class="review__item" key={c.key}>
-            <span class="review__prompt">{tie(c.prompt)}</span>
-            <span class="review__buttons" role="group" aria-label={c.prompt}>
+            <span class="review__prompt">{tie(c.question)}</span>
+            <span class="review__buttons" role="group" aria-label={c.question}>
               {RATINGS.map((r) => (
                 <button
                   type="button"
@@ -778,26 +808,27 @@ function Review({ state, packs }: { state: GameState; packs: Pack[] }) {
                   aria-pressed={ratings[c.key]?.rating === r.value}
                   aria-label={r.label}
                   title={r.label}
-                  onClick={() => rate(c.key, c.version, r.value)}
+                  onClick={() => rate(c, r.value)}
                 >
                   {r.icon}
                 </button>
               ))}
+              <button
+                type="button"
+                class="btn btn--icon review__btn review__btn--report"
+                aria-expanded={reporting === c.key}
+                aria-label={sk.reportCard}
+                title={sk.reportCard}
+                onClick={() => setReporting(reporting === c.key ? null : c.key)}
+              >
+                ⚠️
+              </button>
             </span>
+            {reporting === c.key && <ReportPanel key={c.key} card={c} onClose={() => setReporting(null)} />}
           </li>
         ))}
       </ol>
       <p class="field__hint">{sk.reviewHint}</p>
-      {rated.length > 0 && (
-        <a
-          class="btn btn--small"
-          href={ratingsUrl(lines)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {sk.reviewSend(rated.length)}
-        </a>
-      )}
     </section>
   );
 }

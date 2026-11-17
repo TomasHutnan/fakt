@@ -113,7 +113,7 @@ export function Home(props: {
   );
 }
 
-function Segmented<T extends string | number>(props: {
+export function Segmented<T extends string | number>(props: {
   id: string;
   label: string;
   value: T;
