@@ -233,3 +233,43 @@
 :where(.options--answered .opt) { justify-content: flex-start; }
 :where(.order-item__mark) { font-weight: 700; }
 :where(.order-item__should) { grid-column: 2 / -1; font-size: 0.85em; font-style: italic; }
+
+/* Rooms (everyone on their own phone) and the big screen. Neutral styling that
+   inherits each design's colours; player colours come inline from the room. */
+:where(.room-code) {
+  font: 700 clamp(40px, 14vw, 64px)/1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  letter-spacing: .18em; text-align: center; padding-left: .18em;
+}
+:where(.qr) { display: block; width: min(220px, 62vw); height: auto; align-self: center; border-radius: 6px; }
+:where(.room-center) { text-align: center; }
+:where(.room-row) { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+:where(.room-players) { display: flex; flex-direction: column; gap: 6px; }
+:where(.room-player) { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+:where(.room-player__name) { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+:where(.room-player__tag) { font-size: .8em; opacity: .7; }
+:where(.room-player--away) { opacity: .55; }
+:where(.avatar) {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 1.75em; height: 1.75em; border-radius: 50%; vertical-align: middle;
+  color: #fff; font-weight: 700; font-size: .85em; line-height: 1;
+}
+:where(.avatar--waiting) { background: transparent; color: inherit; border: 1.5px dashed currentColor; opacity: .5; }
+:where(.result__name .avatar, .score-row__name .avatar) { margin-right: 4px; font-size: .75em; }
+:where(.room-progress) { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .9em; }
+:where(.room-progress__avatars) { display: flex; gap: 4px; flex-wrap: wrap; }
+:where(.timer) { display: flex; align-items: center; gap: 8px; flex: 1 1 110px; font-variant-numeric: tabular-nums; }
+:where(.timer__bar) { flex: 1; height: 6px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, currentColor 18%, transparent); }
+:where(.timer__fill) { display: block; height: 100%; background: currentColor; transition: width .25s linear; }
+:where(.timer--low .timer__fill) { background: #c0392b; }
+:where(.room-banner) { text-align: center; }
+:where(.screen--tv) { max-width: 760px; }
+:where(.tv-lobby) { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; min-height: 80vh; }
+:where(.tv-lobby .qr) { width: 260px; }
+:where(.tv-cols) { display: grid; grid-template-columns: 3fr 2fr; gap: 20px; align-items: start; }
+@media (max-width: 640px) {
+  :where(.tv-lobby, .tv-cols) { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.timer__fill) { transition: none; }
+}
+:where(.room-code-input) { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .3em; text-transform: uppercase; font-size: 1.4em; }

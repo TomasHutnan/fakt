@@ -31,6 +31,10 @@ export interface Settings {
   sound: boolean;
   difficulties: number[];
   packIds: string[];
+  /** New game on several phones (a room) instead of one phone passed around. */
+  online: boolean;
+  /** Time to answer in rooms. */
+  pace: "none" | "calm" | "fast";
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -44,6 +48,8 @@ export const DEFAULT_SETTINGS: Settings = {
   sound: false,
   difficulties: [1, 2, 3],
   packIds: [],
+  online: false,
+  pace: "calm",
 };
 
 export interface Player {
@@ -136,7 +142,8 @@ export function newGame({ players, settings, packs, seen, seed }: NewGameInput):
   };
 }
 
-function cardFor(key: string, packs: Pack[], seed: number, pos: number): Card | null {
+/** The card at deck position `pos`, drawn the same way on every device for a given seed. */
+export function cardFor(key: string, packs: Pack[], seed: number, pos: number): Card | null {
   const [packId, qid] = key.split("/");
   const pack = packs.find((p) => p.id === packId);
   const q = pack?.questions.find((x) => x.id === qid);

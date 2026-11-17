@@ -33,6 +33,10 @@ export function Home(props: {
   freshCount: number;
   /** Players of the last game; quick starts are offered when there are some. */
   lastPlayers: string[];
+  /** Code of a room this device is still seated in. */
+  roomCode: string | null;
+  onRoom: () => void;
+  onJoin: () => void;
   onQuick: (rounds: number) => void;
   onNew: () => void;
   onResume: () => void;
@@ -50,6 +54,11 @@ export function Home(props: {
         <p class="brand__tagline">{sk.tagline}</p>
       </div>
       <nav class="menu">
+        {props.roomCode && (
+          <button type="button" class="btn btn--primary btn--block" onClick={props.onRoom}>
+            {sk.backToRoom(props.roomCode)}
+          </button>
+        )}
         {props.canResume && (
           <button type="button" class="btn btn--primary btn--block" onClick={props.onResume}>
             {sk.resume}
@@ -60,7 +69,7 @@ export function Home(props: {
             {QUICK.map((q, i) => (
               <button
                 type="button"
-                class={`btn quick__btn${!props.canResume && i === 0 ? " btn--primary" : ""}`}
+                class={`btn quick__btn${!props.canResume && !props.roomCode && i === 0 ? " btn--primary" : ""}`}
                 onClick={() => props.onQuick(q.rounds)}>
                 <span class="quick__label">{q.label}</span>
                 <span class="quick__meta">{sk.quickWith(props.lastPlayers, q.rounds)}</span>
@@ -70,10 +79,14 @@ export function Home(props: {
         )}
         <button
           type="button"
-          class={`btn btn--block${props.canResume || props.lastPlayers.length > 0 ? "" : " btn--primary"}`}
+          class={`btn btn--block${props.canResume || props.roomCode || props.lastPlayers.length > 0 ? "" : " btn--primary"}`}
           onClick={props.onNew}
         >
           {sk.newGame}
+        </button>
+        <button type="button" class="btn btn--block quick__btn" onClick={props.onJoin}>
+          <span class="quick__label">{sk.joinGame}</span>
+          <span class="quick__meta">{sk.joinGameHint}</span>
         </button>
         <button type="button" class="btn btn--block" onClick={props.onPacks}>
           {sk.packs}
@@ -130,6 +143,8 @@ export function Setup(props: {
   packs: Pack[];
   enabled: string[];
   initialPlayers: string[];
+  /** Name used last time in a room. */
+  initialName: string;
   initialSettings: Settings;
   error: string | null;
   onBack: () => void;
@@ -139,7 +154,9 @@ export function Setup(props: {
 }) {
   const [players, setPlayers] = useState<string[]>(props.initialPlayers.length ? props.initialPlayers : ["", ""]);
   const [settings, setSettings] = useState<Settings>(props.initialSettings);
+  const [name, setName] = useState(props.initialName || props.initialPlayers[0] || "");
   const set = (patch: Partial<Settings>) => setSettings({ ...settings, ...patch });
+  const online = settings.online;
   // Keep unsaved edits in App, so visiting the pack list does not lose them.
   useEffect(() => props.onDraft(players, settings), [players, settings]);
   const names = players.map((p, i) => p.trim() || sk.playerPlaceholder(i + 1));
@@ -152,9 +169,36 @@ export function Setup(props: {
         class="stack"
         onSubmit={(e) => {
           e.preventDefault();
-          props.onStart(names, settings);
+          props.onStart(online ? [name.trim()] : names, settings);
         }}
       >
+        <Segmented<string>
+          id="where"
+          label={sk.where}
+          value={online ? "own" : "one"}
+          options={[
+            { value: "one", label: sk.whereOne },
+            { value: "own", label: sk.whereOwn },
+          ]}
+          onChange={(v) => set({ online: v === "own" })}
+        />
+        {online && <p class="field__hint">{sk.whereOwnHint}</p>}
+
+        {online ? (
+          <label class="field">
+            <span class="field__label">{sk.yourName}</span>
+            <input
+              id="room-name"
+              class="input"
+              value={name}
+              maxLength={24}
+              required
+              autoComplete="nickname"
+              placeholder={sk.yourNamePlaceholder}
+              onInput={(e) => setName((e.target as HTMLInputElement).value)}
+            />
+          </label>
+        ) : (
         <fieldset class="field">
           <legend class="field__label">{sk.players}</legend>
           <ul class="player-list">
@@ -189,6 +233,7 @@ export function Setup(props: {
           )}
           {players.length === 1 && <p class="field__hint">{sk.soloHint}</p>}
         </fieldset>
+        )}
 
         <Segmented<Mode>
           id="mode"
@@ -216,6 +261,23 @@ export function Setup(props: {
             v.startsWith("t") ? set({ target: Number(v.slice(1)) }) : set({ target: null, rounds: Number(v.slice(1)) })
           }
         />
+
+        {online && (
+          <>
+            <Segmented<Settings["pace"]>
+              id="pace"
+              label={sk.pace}
+              value={settings.pace}
+              options={[
+                { value: "none", label: sk.paceNone },
+                { value: "calm", label: sk.paceCalm },
+                { value: "fast", label: sk.paceFast },
+              ]}
+              onChange={(pace) => set({ pace })}
+            />
+            <p class="field__hint">{sk.paceHint}</p>
+          </>
+        )}
 
         <fieldset class="field">
           <legend class="field__label">{sk.difficulty}</legend>
@@ -255,7 +317,7 @@ export function Setup(props: {
         {props.error && <p class="error">{props.error}</p>}
         <div class="actions">
           <button type="submit" class="btn btn--primary btn--block">
-            {sk.start}
+            {online ? sk.createRoom : sk.start}
           </button>
         </div>
       </form>

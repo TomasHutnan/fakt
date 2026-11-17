@@ -17,7 +17,7 @@ Goals, in the owner's words:
 
 ## Status (2026-11-16)
 
-Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches merged, nothing in progress.
+Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner pulls it. All branches merged, nothing in progress.
 
 - Built: Mix (default) and Classic modes, all formats, per-turn answers drawn in place, 6 designs (Kartotéka default, gallery at `#designs`), post-game ratings and per-card reports via the owner's Google Form, quick starts, "+N nové" badges, opt-in packs (`defaultOn: false`), pack categories (collapsible sections, 18+ last) and search, sticky back bar, vibration/sound settings, import, offline PWA.
 - Content: **27 packs / 716 questions** (4 adult, 4 opt-in: Dano Drevo, Politické hlášky, athletics legends and season). Target 1,000.
@@ -29,7 +29,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - Work on branches. **Merging into `main` and pushing require a passing review by Gemini Hydrogen** (owner's rule). Write the prompt to a file (`docs/.review-<name>.prompt`, deleted afterwards) and run `python scripts/agy-readonly.py gemini-4-hydrogen-high <prompt-file> <out-file>`; the prompt asks for `severity file:line — issue` lines and a final `VERDICT: PASS|FAIL`. Fix blocker/major findings and re-run until PASS. Check findings before acting: Gemini is often wrong.
 - `agy` runs only through `scripts/agy-readonly.py` (read-only allow-list), never with `--dangerously-skip-permissions`. Tell Gemini not to open `notes/` (symlink outside the repo): a denied read makes the whole run return nothing.
 - **Content pipeline**: a Claude subagent drafts a pack from sources it opens itself → Gemini Hydrogen fact-checks → the writer verifies each finding against a source and applies only confirmed ones (drops what can't be settled) → Hydrogen re-review to PASS → merge. WebFetch returns a model summary, so check numbers against the raw page. Long runs hit the usage limit: resume the same agent afterwards rather than starting over.
-- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; container: `docker build -t fakt . && docker run --rm -p 4180:8080 fakt`, then the e2e script against it; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
+- Checks: `npm test`, `npm run packs:check`, `npm run build`; UI play test: `npx vite preview --port 4174` then `node scripts/e2e.ts http://localhost:4174/`; room play test (3 phones + big screen): `PORT=4180 FAKT_ROOMS_PER_IP=50 FAKT_CREATES_PER_10MIN=100 npm start` then `node scripts/e2e-rooms.ts http://localhost:4180/`; container: `docker build -t fakt . && docker run --rm -p 4180:8080 fakt`, then the e2e script against it; screenshots: `BASE_URL=http://localhost:4174/ node scripts/screenshots.ts <dir> [designId…]` (check all six designs, light and dark, after UI changes).
 - Commits are not signed in this repo (owner's rule): use `git -c commit.gpgsign=false commit`, never re-sign or wait for GPG pinentry. Repo-local git config sets `commit.gpgsign=false`.
 
 ## Rules for agents
@@ -56,7 +56,7 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 - **Content**: adult packs welcome (labelled, off by default, content-warning tags); niche or mildly crude packs can be normal but off by default (`defaultOn: false`, 2026-11-16); spicy packs live in the public repo. Targets: 1,000 questions before sharing widely.
 - **Packs**: YAML in `packs/`, built to per-pack JSON + index with hashes; importer accepts YAML and JSON, stores imports in the browser. Packs CC0 (per-pack `license` allowed); code MIT. CC BY-SA sources (Open Trivia DB, OpenTriviaQA) cannot go into CC0 packs.
 - **Stack**: TypeScript + Vite + Preact, static SPA + PWA. Pure TS engine (state + action → state), decks from a seed.
-- **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and, later, the room server, on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`). GitHub Pages still deploys until the domain moves.
+- **Hosting** (2026-11-17): one Docker image (`ghcr.io/tomashutnan/fakt`, built by CI on `main`) serves the app and the room server on the owner's VPS behind caddy-docker-proxy (`compose.vps.yaml`); the owner pulls updates by hand in Dockge. GitHub Pages is retired.
 - **Multiplayer** (2026-11-17): rooms on the same server, everyone on their own phone, optional big screen, remote play allowed; creator uploads enabled packs, the room runs the engine. See `notes/Decisions.md`.
 - **Reports/ratings**: owner's prefilled Google Form (`src/ui/links.ts`), not GitHub issues.
 - **App store**: keep possible as long as it does not limit the web version.
@@ -71,10 +71,11 @@ Live at `fakt.hutnan.dev`, deployed from `main` by GitHub Actions. All branches 
 ```
 packs/            question packs (YAML source, CC0) + README with format and writing guide
 src/content/      pack types and validation (shared by build script and importer)
-src/engine/       game rules: seeded RNG, card drawing, scoring, reducer (pure, tested)
+src/engine/       game rules: seeded RNG, card drawing, scoring, reducer, room reducer + views (pure, tested)
 src/ui/           Preact screens, storage, Slovak texts (sk.ts), links (report form), feedback (vibration/sound), demo states
 src/designs/      switchable designs: <id>/meta.ts + <id>/design.css (see README there)
-src/server/       Node server in the container (static app now, rooms next); runs via type stripping
+src/server/       Node server in the container: static app, WebSocket room hub with limits and snapshots; runs via type stripping
+src/net/          room protocol (shared) and the browser's reconnecting client
 scripts/          build-packs, screenshots, e2e play test, agy-readonly (Gemini wrapper), dano-drevo-counts (word counts from subtitles)
 docs/             research report
 notes/            symlink to the owner's Obsidian vault (ignored, never commit)

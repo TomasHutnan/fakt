@@ -51,4 +51,8 @@ export const KEYS = {
   mixDefault: "mixDefault",
   /** Pack list sections the player has opened. */
   openGroups: "openGroups",
+  /** The room this device is seated in: { code, token, role }. */
+  room: "room",
+  /** Name used in rooms. */
+  roomName: "roomName",
 } as const;
