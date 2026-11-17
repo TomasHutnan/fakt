@@ -4,7 +4,7 @@ description: "Kto komu patrí, odkiaľ sa vzali názvy, za koľko sa kupovali ap
 category: historia
 lang: sk
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ KTO KOMU PATRÍ
   - id: unilever-znacky
@@ -46,8 +46,8 @@ questions:
       - { text: "Nesquik", why: "Kakao Nesquik; predpona Nes- prezrádza majiteľa." }
       - { text: "KitKat", why: "Okrem USA, kde ho z licencie vyrába Hershey, patrí Nestlé." }
       - { text: "Maggi", why: "Nestlé značku vlastní od roku 1947." }
-      - { text: "Purina", why: "Krmivo pre psy a mačky Nestlé kúpilo v roku 2002." }
-      - { text: "Orion", why: "Pražská čokoládovňa Studentskej pečate a Margot patrí pod Nestlé Česko." }
+      - { text: "Purina", why: "Krmivo pre psy a mačky Nestlé kúpilo v decembri 2001." }
+      - { text: "Orion", why: "Pražská čokoládovňa Študentskej pečate a Margot patrí pod Nestlé Česko." }
       - { text: "Perrier", why: "Francúzska perlivá minerálka je tiež značka Nestlé." }
     wrong:
       - { text: "Milka", why: "Fialová krava patrí americkému koncernu Mondelez." }
@@ -288,7 +288,7 @@ questions:
       - { text: "IKEA", why: "Prevádzkové sídlo má dodnes v Älmhulte, kde všetko začalo." }
       - { text: "H&M", why: "Prvý obchod otvorili v roku 1947 v meste Västerås, vtedy pod menom Hennes." }
       - { text: "Ericsson", why: "Telekomunikačná firma zo Štokholmu, založená v roku 1876." }
-      - { text: "Electrolux", why: "Výrobca spotrebičov založený v roku 1910." }
+      - { text: "Electrolux", why: "Výrobca spotrebičov, pod menom Electrolux od roku 1919." }
       - { text: "Absolut", why: "Vodka z mestečka Åhus." }
       - { text: "Tetra Pak", why: "Výrobca nápojových krabíc vznikol v roku 1951 v Lunde." }
       - { text: "Husqvarna", why: "Firma vznikla v roku 1689 ako štátna továreň na pušky." }
@@ -387,7 +387,7 @@ questions:
       - { text: "Husqvarna vyrábala pušky", why: "Štátna zbrojovka mala začiatkom 18. storočia okolo 1 000 zamestnancov." }
     wrong:
       - { text: "IKEA od prvého dňa predávala nábytok", why: "Začínala ako zásielkový obchod, nábytok pribudol až o päť rokov neskôr." }
-      - { text: "Lego vyrábalo od začiatku plastové kocky", why: "Prvé roky vyrábalo drevené hračky, plastové kocky až od roku 1947." }
+      - { text: "Lego vyrábalo od začiatku plastové kocky", why: "Prvé roky vyrábalo drevené hračky, plastové kocky až od roku 1949." }
       - { text: "Peugeot začínal výrobou bicyklov", why: "Bicykle prišli až okolo roku 1880, po pílach, mlynčekoch a korzetoch." }
       - { text: "Samsung začínal ako výrobca rádií", why: "Začínal v roku 1938 ako obchodná firma, elektroniku robí až od konca 60. rokov." }
 
@@ -402,7 +402,7 @@ questions:
     correct:
       - { text: "Facebook kupuje WhatsApp (2014)", why: "Ohlásená cena 19 miliárd dolárov." }
       - { text: "Microsoft kupuje LinkedIn (2016)", why: "26,2 miliardy dolárov za sociálnu sieť pre kariéru." }
-      - { text: "Microsoft kupuje Activision Blizzard (2022)", why: "Ohlásený obchod za vyše 68 miliárd dolárov, tvorcov Call of Duty a World of Warcraft." }
+      - { text: "Microsoft kupuje Activision Blizzard (2022)", why: "Tvorcov Call of Duty a World of Warcraft kúpil za vyše 68 miliárd dolárov." }
       - { text: "Elon Musk kupuje Twitter (2022)", why: "44 miliárd dolárov; firma sa potom premenovala na X." }
       - { text: "Amazon kupuje Whole Foods (2017)", why: "13,7 miliardy dolárov za americký reťazec biopotravín." }
       - { text: "Google kupuje Motorola Mobility (2011)", why: "12,5 miliardy dolárov za výrobcu mobilov." }
@@ -452,7 +452,7 @@ questions:
       - { text: "Nokia", value: 1865, why: "Továreň na drevovinu pri Tampere." }
       - { text: "Coca-Cola", value: 1886, why: "Nápoj prvýkrát predali v máji 1886 v Atlante." }
       - { text: "Nintendo", value: 1889, why: "Hracie karty hanafuda z Kjóta." }
-      - { text: "Lego", value: 1932, why: "Začínala v dánskom Billunde, kde má sídlo dodnes." }
+      - { text: "Lego", value: 1932, why: "Firma začínala v dánskom Billunde, kde má sídlo dodnes." }
       - { text: "Samsung", value: 1938, why: "Obchodná firma v kórejskom Tegu." }
       - { text: "IKEA", value: 1943, why: "Zásielkový obchod 17-ročného Ingvara Kamprada." }
       - { text: "Adidas", value: 1949, why: "Vznikla po rozchode bratov Dasslerovcov." }
@@ -471,7 +471,7 @@ questions:
       - { text: "Apple", value: 1976, why: "Založený 1. apríla 1976." }
       - { text: "Amazon", value: 1994, why: "Najprv pod menom Cadabra." }
       - { text: "Facebook", value: 2004, why: "Spustený vo februári 2004 na Harvarde." }
-      - { text: "Spotify", value: 2006, why: "Založená v apríli 2006 v Štokholme." }
+      - { text: "Spotify", value: 2006, why: "Firmu založili v apríli 2006 v Štokholme." }
 
   - id: ceny-akvizicii
     type: order
@@ -530,12 +530,12 @@ questions:
   # ================================================================ NUMBER
   - id: instagram-cena
     type: number
-    prompt: Za koľko miliónov dolárov kúpil Facebook v roku 2012 Instagram?
+    prompt: Za koľko miliónov dolárov ohlásil Facebook v roku 2012 kúpu Instagramu?
     answer: 1000
     unit: mil. USD
     scale: log
     tolerance: 0.1
-    why: "Presne 1 miliarda dolárov za aplikáciu, ktorá mala necelé dva roky."
+    why: "Ohlásená cena bola 1 miliarda dolárov za aplikáciu, ktorá mala necelé dva roky. Akcie Facebooku potom klesli, takže pri uzavretí mal obchod hodnotu asi 715 miliónov."
     difficulty: 1
     tags: [akvizície]
     source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Meta_Platforms
