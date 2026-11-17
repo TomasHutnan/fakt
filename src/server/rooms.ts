@@ -505,8 +505,16 @@ export class Hub {
         : null;
     if (!packs || !packs.length || packs.some((p) => !p)) return;
     // Everyone reconnects; questions get some extra time back for the restart.
-    let state: RoomState = { ...r.state, players: r.state.players.map((p) => ({ ...p, connected: false })) };
-    if (state.phase === "question" && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
+    // Rooms saved by an older version lack the newer fields.
+    let state: RoomState = {
+      ...r.state,
+      history: Array.isArray(r.state.history) ? r.state.history : [],
+      packChoice: r.state.packChoice ?? null,
+      pickedBy: r.state.pickedBy ?? null,
+      settings: { ...r.state.settings, doubleFinal: r.state.settings?.doubleFinal ?? false, lastPicks: r.state.settings?.lastPicks ?? false },
+      players: r.state.players.map((p) => ({ ...p, connected: false })),
+    };
+    if ((state.phase === "question" || state.phase === "choosePack") && state.deadline != null) state = { ...state, deadline: Math.max(state.deadline, now + 15_000) };
     const interned = this.intern(packs as Pack[]);
     if (!interned) return;
     const room: Room = {

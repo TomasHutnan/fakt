@@ -426,7 +426,7 @@ function closeQuestion(s: RoomState): RoomState {
     ...p,
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
-  return { ...s, players, results: scored, history: [...s.history, round], phase: "reveal", deadline: null, ready: [] };
+  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: null, ready: [] };
 }
 
 /** The current card counts double: last round of a game with a set number of rounds. */
@@ -465,8 +465,9 @@ function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
 }
 
 function choosePack(s: RoomState, packId: string, now: number, packs: Pack[]): RoomState {
-  const deck = bringForward(s.deck, s.deckPos, packId);
-  const card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos) ?? s.card!;
+  let deck = bringForward(s.deck, s.deckPos, packId);
+  let card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos);
+  if (!card) [deck, card] = [s.deck, s.card!];
   return beginQuestion({ ...s, deck, pickedBy: s.packChoice?.chooser ?? null, packChoice: null }, card, now);
 }
 
@@ -611,7 +612,7 @@ function roomSocial(s: RoomState): SocialLine[] {
 
 function roomTitles(s: RoomState): Title[] {
   const index = new Map(s.players.map((p, i) => [p.id, i]));
-  const history: RoundRecord[] = s.history.map((h) => ({
+  const history: RoundRecord[] = (s.history ?? []).map((h) => ({
     type: h.type,
     results: h.results.filter((r) => index.has(r.playerId)).map(({ playerId, ...r }) => ({ ...r, player: index.get(playerId)! })),
   }));

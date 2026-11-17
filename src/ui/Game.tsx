@@ -455,7 +455,7 @@ function TurnReveal({ state }: { state: GameState }) {
   const r = s.results[s.results.length - 1];
   if (!r) return <TurnEnd state={s} />;
   // Ranked number scoring needs everyone's guess, so points come after the round.
-  const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0];
+  const points = s.card.type === "number" && s.players.length > 1 ? null : scoreCard(s.card, [r], s.settings.wipe, 1)[0] * multiplier(s);
   const title =
     s.card.type === "choice"
       ? points

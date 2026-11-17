@@ -587,6 +587,28 @@ describe("snapshots from disk", () => {
     h2.close();
   });
 
+  it("plays on in a room saved before the comeback rules existed", () => {
+    const host = create(hub);
+    const code = host.seat!.code;
+    host.act({ type: "start" });
+    const snap = JSON.parse(JSON.stringify(hub.snapshot()));
+    for (const r of snap.rooms) {
+      delete r.state.history;
+      delete r.state.packChoice;
+      delete r.state.pickedBy;
+      delete r.state.settings.doubleFinal;
+      delete r.state.settings.lastPicks;
+    }
+    const h = new Hub({}, snap);
+    const back = new FakeConn(h, "1.1.1.1");
+    back.msg({ t: "join", v: PROTOCOL, code, token: host.seat!.token });
+    expect(() => back.act({ type: "close" })).not.toThrow();
+    expect(h.room(code)!.phase).toBe("reveal");
+    expect(h.room(code)!.history).toHaveLength(1);
+    expect(back.view.double).toBe(false);
+    h.close();
+  });
+
   it("skips broken rooms instead of failing to start", () => {
     const good = create(hub);
     const snap = JSON.parse(JSON.stringify(hub.snapshot()));

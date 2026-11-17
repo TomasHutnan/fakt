@@ -244,8 +244,10 @@ export function reduce(s: GameState, a: Action, packs: Pack[]): GameState {
 
     case "choosePack": {
       if (s.phase !== "choosePack" || !s.packChoice?.options.includes(a.packId)) return s;
-      const deck = bringForward(s.deck, s.deckPos, a.packId);
-      const card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos) ?? s.card;
+      let deck = bringForward(s.deck, s.deckPos, a.packId);
+      let card = cardFor(deck[s.deckPos], packs, s.seed, s.deckPos);
+      // The pack is gone (an import removed mid-game): keep the card already dealt.
+      if (!card) [deck, card] = [s.deck, s.card];
       return {
         ...s,
         deck,
@@ -299,7 +301,7 @@ function nextRound(s: GameState, packs: Pack[]): GameState {
   };
   // Every third round the player in last place picks the pack (from at least two).
   if (s.settings.lastPicks && s.players.length > 1 && isPackPickRound(round)) {
-    const options = packOptions(s.deck, pos, s.seed, round);
+    const options = packOptions(s.deck, pos, s.seed, round).filter((id) => packs.some((p) => p.id === id));
     if (options.length >= 2) {
       const player = lastPlace(s.players.map((p) => p.score), s.seed, round);
       return { ...next, phase: "choosePack", packChoice: { player, options } };

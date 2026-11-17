@@ -58,7 +58,8 @@ export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[
       if (complete.length) add({ kind: "complete", players: complete.map((r) => r.player) }, 7);
       for (const r of results) {
         const a = picks(r);
-        if (a?.status !== "busted") continue;
+        // Only when the card was wiped (not when a wrong pick just ends the turn).
+        if (a?.status !== "busted" || r.points > 0) continue;
         const found = a.picks.filter((i) => card.options[i].correct).length;
         if (found >= 3) add({ kind: "bigBust", player: r.player, lost: (found * (found + 1)) / 2 }, 6 + found);
       }
@@ -157,7 +158,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
         if (r.status === "busted") {
           p.busts++;
           p.wrong++;
-          p.maxLost = Math.max(p.maxLost, ((r.found ?? 0) * ((r.found ?? 0) + 1)) / 2);
+          if (r.points === 0) p.maxLost = Math.max(p.maxLost, ((r.found ?? 0) * ((r.found ?? 0) + 1)) / 2);
         }
         if (r.status === "complete") p.completes++;
         if (r.status === "banked" && (r.found ?? 0) <= 2) p.banksLow++;
