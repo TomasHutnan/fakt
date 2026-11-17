@@ -16,7 +16,7 @@ export interface WsOptions {
   heartbeatMs: number;
 }
 
-export const DEFAULT_WS: WsOptions = { publicOrigin: "", maxPayload: 4 * 1024 * 1024, heartbeatMs: 25_000 };
+export const DEFAULT_WS: WsOptions = { publicOrigin: "", maxPayload: 2 * 1024 * 1024, heartbeatMs: 25_000 };
 
 export function attachRooms(server: Server, hub: Hub, opts: Partial<WsOptions> = {}): WebSocketServer {
   const o = { ...DEFAULT_WS, ...opts };
