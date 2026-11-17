@@ -1,0 +1,816 @@
+id: svet-zvierata
+title: Zvieratá
+description: "Kto naozaj lieta, kto má koľko nôh, kde kto žije, kto už vyhynul a kto sa len tvári ako medveď."
+category: zemepis
+lang: sk
+adult: false
+version: 2
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: zv-naozaj-lietaju
+    type: pick
+    prompt: Ktoré z týchto zvierat naozaj lietajú, a nielen plachtia vzduchom?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Flying_and_gliding_animals
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Bat, /Hummingbird, /Dragonfly, /Flying_fish, /Flying_squirrel, /Colugo, /Sugar_glider"
+    tags: [lietanie]
+    correct:
+      - text: netopier
+        why: "Netopiere sú jediné cicavce, ktoré vedia vytrvalo lietať."
+      - text: kaloň
+        why: "Kaloň je veľký netopier, takže mávajúce krídla má aj on."
+      - text: kolibrík
+        why: "Najmenšie vtáky sveta žijú len v Amerike."
+      - text: vážka
+        why: "Krídla poháňané svalmi majú zo živočíchov len hmyz, vtáky a netopiere."
+      - text: lienka
+        why: "Pod tvrdými krovkami má schované blanité krídla."
+      - text: komár
+        why: "Hmyz s jedným párom krídel – druhý pár sa zmenil na drobné kyvadielka."
+    wrong:
+      - text: lietajúca ryba
+        why: "Vyskočí z vody a na veľkých prsných plutvách plachtí nad hladinou, ale nemáva nimi."
+      - text: poletuška
+        why: "Má kožnú blanu medzi končatinami a len plachtí zo stromu na strom."
+      - text: letucha
+        why: "Volá sa aj „lietajúci lemur“, žije v juhovýchodnej Ázii a len plachtí."
+      - text: vakoveverica
+        why: "Malý austrálsky vačkovec, ktorý plachtí ako lietajúca veverica."
+      - text: lietajúci had
+        why: "Ázijský had, ktorý sa zo stromu skĺzne vzduchom, no lietať nevie."
+      - text: lietajúca žaba
+        why: "Zo stromu na strom len plachtí."
+      - text: dráčik lietavý
+        why: "Ázijská jašterica, ktorá zo stromu len plachtí."
+
+  - id: zv-nelietave-vtaky
+    type: pick
+    prompt: Ktoré z týchto vtákov nevedia lietať?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Flightless_bird
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Common_ostrich, /Kākāpō, /Takahē, /Rhea_(bird), /Cassowary, /Wild_turkey, /Mute_swan, /Flamingo, /Andean_condor"
+    tags: [lietanie, vtaky]
+    correct:
+      - text: pštros
+        why: "Lietať nevie, ale beží rýchlosťou vyše 70 km/h."
+      - text: emu
+        why: "Najvyšší pôvodný vták Austrálie."
+      - text: kivi
+        why: "Novozélandský symbol; na obrovskom vajci sedí samec, u niektorých druhov striedavo so samicou."
+      - text: tučniak
+        why: "Krídla mu slúžia ako plutvy pod vodou."
+      - text: kazuár
+        why: "Jeho vajcia sú po pštrosích a emu najväčšie zo všetkých vtákov."
+      - text: nandu
+        why: "Juhoamerický príbuzný pštrosa."
+      - text: kakapo
+        why: "Novozélandský papagáj – jediný papagáj na svete, ktorý nelieta."
+      - text: takahe
+        why: "Novozélandský vták, ktorého mali za vyhynutého, kým ho v roku 1948 znovu neobjavili."
+    wrong:
+      - text: páv
+        why: "Lieta, dlhá vlečka pier mu v tom nebráni."
+      - text: moriak divý
+        why: "Patrí medzi najťažšie lietajúce vtáky sveta."
+      - text: labuť veľká
+        why: "Aj ona patrí medzi najťažšie vtáky, ktoré ešte vedia lietať."
+      - text: plameniak
+        why: "Lieta dobre; v zoo im často strihajú krídla, aby neuleteli."
+      - text: pelikán
+        why: "Ťažký vták s obrovským zobákom, a predsa lieta."
+      - text: kondor veľký
+        why: "Rozpätie krídel má až 3,3 metra."
+
+  - id: zv-hmyz
+    type: pick
+    prompt: Ktoré z týchto živočíchov sú hmyz?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Insect
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Spider, /Tick, /Scorpion, /Centipede, /Millipede, /Woodlouse"
+    tags: [nohy]
+    correct:
+      - text: mravec
+        why: "Ako každý hmyz má tri páry nôh."
+      - text: termit
+        why: "Napriek prezývke „biele mravce“ je bližšie príbuzný švábom."
+      - text: šváb
+        why: "Šesť nôh a tykadlá – učebnicový hmyz."
+      - text: blcha
+        why: "Hmyz bez krídel, zato so skvelými skokanskými nohami."
+      - text: komár
+        why: "Dvojkrídly hmyz, príbuzný múch."
+      - text: vážka
+        why: "Hmyz so štyrmi krídlami a obrovskými zloženými očami."
+    wrong:
+      - text: pavúk
+        why: "Má osem nôh, je to pavúkovec."
+      - text: kliešť
+        why: "Dospelý kliešť má osem nôh, patrí medzi pavúkovce."
+      - text: škorpión
+        why: "Aj on je pavúkovec s ôsmimi nohami."
+      - text: stonožka
+        why: "Má 30 až 382 nôh, hmyz to nie je."
+      - text: mnohonôžka
+        why: "Má desiatky až stovky nôh, rekordérka vyše tisíc."
+      - text: žižiavka
+        why: "Malý suchozemský kôrovec, bližšie má k rakom ako k chrobákom."
+
+  - id: zv-naozaj-ryby
+    type: pick
+    prompt: Ktoré z týchto morských tvorov sú naozaj ryby?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Fish
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Seahorse, /Shark, /Flying_fish, /Starfish, /Cuttlefish, /Manatee, /Sea_cucumber"
+    tags: [more]
+    correct:
+      - text: morský koník
+        why: "Vyzerá ako šachová figúrka, ale je to ryba so žiabrami a plutvami."
+      - text: žralok
+        why: "Ryba, ktorej kostra je z chrupky, nie z kostí."
+      - text: raja
+        why: "Plochá príbuzná žralokov."
+      - text: lietajúca ryba
+        why: "Ryba, ktorá vie na plutvách plachtiť nad hladinou."
+      - text: úhor
+        why: "Vyzerá ako had, no je to ryba."
+      - text: tuniak
+        why: "Rýchla dravá ryba otvoreného mora."
+    wrong:
+      - text: hviezdica
+        why: "Ostnokožec bez chrbtice, príbuzný ježoviek."
+      - text: medúza
+        why: "Pŕhlivec bez mozgu, srdca aj kostí."
+      - text: sépia
+        why: "Hlavonožec, príbuzný chobotnice."
+      - text: delfín
+        why: "Cicavec, ktorý dýcha vzduch a dojčí mláďatá."
+      - text: lamantín
+        why: "Morský cicavec, ktorého volajú aj morská krava."
+      - text: morská uhorka
+        why: "Ostnokožec ako hviezdica, nie ryba ani zelenina."
+
+  - id: zv-len-amerika
+    type: pick
+    prompt: Ktoré z týchto zvierat žijú vo voľnej prírode pôvodne len v Amerike?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Armadillo
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sloth, /Giant_anteater, /Hummingbird, /Capybara, /Jaguar, /Andean_condor, /Opossum, /Tapir, /Chinese_alligator"
+    tags: [kde-zije]
+    correct:
+      - text: pásavec
+        why: "Všetky druhy pásavcov sú pôvodom z Ameriky."
+      - text: leňoch
+        why: "Žije v pralesoch Strednej a Južnej Ameriky."
+      - text: mravčiar veľký
+        why: "Žije v Strednej a Južnej Amerike, od Hondurasu po severnú Argentínu."
+      - text: kolibrík
+        why: "Kolibríky žijú len na americkom kontinente."
+      - text: kapybara
+        why: "Najväčší hlodavec sveta žije vo všetkých krajinách Južnej Ameriky okrem Čile."
+      - text: jaguár
+        why: "Najväčšia mačkovitá šelma Ameriky, tretia najväčšia na svete."
+      - text: kondor veľký
+        why: "Žije v Andách a na pobreží západnej Južnej Ameriky."
+      - text: vačica
+        why: "Vačice sú vačkovce, ktoré žijú len v Amerike, nie v Austrálii."
+    wrong:
+      - text: tapír
+        why: "Žije v Južnej Amerike, ale aj v juhovýchodnej Ázii."
+      - text: aligátor
+        why: "Okrem amerického existuje aj aligátor čínsky."
+      - text: plameniak
+        why: "Plameniaky žijú aj v Afrike, Ázii a južnej Európe."
+      - text: ťava
+        why: "Ťavy sú z Afriky a Ázie, v Amerike žijú ich príbuzné lamy."
+      - text: leopard
+        why: "Žije v Afrike a Ázii; americká veľká mačka je jaguár."
+
+  - id: zv-australia
+    type: pick
+    prompt: Ktoré z týchto zvierat žijú vo voľnej prírode v Austrálii?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Fauna_of_Australia
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Kangaroo, /Emu, /Dingo, /Cockatoo, /Tasmanian_devil, /Wombat, /Kiwi_(bird), /Opossum"
+    tags: [kde-zije]
+    correct:
+      - text: klokan
+        why: "Najznámejší austrálsky vačkovec."
+      - text: emu
+        why: "Najvyšší pôvodný vták Austrálie."
+      - text: dingo
+        why: "Divoký pes Austrálie."
+      - text: kakadu
+        why: "Papagáje kakadu žijú v Austrálii, na Novej Guinei a okolitých ostrovoch."
+      - text: diabol tasmánsky
+        why: "Vo voľnej prírode žije takmer len na Tasmánii, ktorá patrí Austrálii."
+      - text: vombat
+        why: "Podsaditý austrálsky vačkovec, ktorý si hrabe nory."
+    wrong:
+      - text: kivi
+        why: "Žije len na Novom Zélande, nie v Austrálii."
+      - text: jaguár
+        why: "Žije v Amerike."
+      - text: vačica
+        why: "Vačkovec, ale z Ameriky."
+      - text: kolibrík
+        why: "Žije len v Amerike."
+      - text: okapia
+        why: "Žije len v pralesoch Konga."
+
+  - id: zv-arktida
+    type: pick
+    prompt: Ktoré z týchto zvierat žijú v Arktíde?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Arctic
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Walrus, /Muskox, /Arctic_fox, /Narwhal, /Beluga_whale, /Snowy_owl, /Reindeer, /Orca, /Emperor_penguin, /Weddell_seal, /Leopard_seal, /Snowy_albatross, /Penguin"
+    tags: [kde-zije]
+    correct:
+      - text: mrož
+        why: "Ako jediný plutvonožec dojčí mláďatá aj vo vode."
+      - text: pižmoň
+        why: "Huňatý bylinožravec arktickej tundry."
+      - text: líška polárna
+        why: "V zime má biely kožuch."
+      - text: narval
+        why: "Veľryba s dlhým klom je pôvodná len v Arktíde."
+      - text: bieluha
+        why: "Biela veľryba arktických a subarktických morí."
+      - text: belaňa tundrová
+        why: "Snežná sova z arktickej tundry."
+      - text: sob
+        why: "Žije okolo celého severného pólu."
+      - text: kosatka
+        why: "Žije vo všetkých oceánoch, od Arktídy po Antarktídu."
+    wrong:
+      - text: tučniak obrovský
+        why: "Tučniaky žijú takmer výhradne na južnej pologuli, ľadové medvede ich nikdy nestretnú."
+      - text: tuleň Weddellov
+        why: "Žije okolo Antarktídy."
+      - text: tuleň leopardí
+        why: "Dravý tuleň z Antarktídy."
+      - text: albatros sťahovavý
+        why: "Brázdi Južný oceán okolo Antarktídy."
+
+  - id: zv-madagaskar
+    type: pick
+    prompt: Ktoré z týchto zvierat žijú vo voľnej prírode len na Madagaskare?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Ring-tailed_lemur
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sifaka, /Aye-aye, /Fossa_(animal), /Galago, /Chimpanzee, /Meerkat, /Mandrill, /Okapi"
+    tags: [kde-zije]
+    correct:
+      - text: lemur kata
+        why: "Ako všetky lemury pochádza len z Madagaskaru."
+      - text: sifaka
+        why: "Lemur, ktorého všetky druhy sú ohrozené."
+      - text: aj-aj
+        why: "Lemur s dlhým prstom a zubami, ktoré mu stále rastú ako hlodavcovi."
+      - text: fosa
+        why: "Šelma podobná mačke, no príbuzná skôr mangustám; živí sa najmä lemurmi."
+    wrong:
+      - text: galago
+        why: "Vyzerá ako malý lemur, ale žije na africkej pevnine."
+      - text: šimpanz
+        why: "Žije v rovníkovej Afrike, na Madagaskare nie."
+      - text: surikata
+        why: "Žije na juhu Afriky."
+      - text: mandril
+        why: "Africká opica s pestrou tvárou."
+      - text: okapia
+        why: "Žije len v pralesoch Konžskej demokratickej republiky."
+      - text: gorila
+        why: "Žije len v pralesoch rovníkovej Afriky."
+
+  - id: zv-len-afrika
+    type: pick
+    prompt: Ktoré z týchto zvierat žijú vo voľnej prírode len v Afrike?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Zebra
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Gorilla, /Chimpanzee, /Okapi, /Meerkat, /Wildebeest, /Asiatic_lion, /Asiatic_cheetah, /Leopard, /Rhinoceros, /Striped_hyena"
+    tags: [kde-zije]
+    correct:
+      - text: zebra
+        why: "Všetky tri druhy zebier sú africké."
+      - text: gorila
+        why: "Žije len v pralesoch rovníkovej Afriky."
+      - text: šimpanz
+        why: "Žije v lesoch a savanách rovníkovej Afriky."
+      - text: okapia
+        why: "Lesná príbuzná žirafy z Konga."
+      - text: surikata
+        why: "Mangusta z púští a polopúští juhu Afriky."
+      - text: pakôň
+        why: "Africká antilopa známa veľkými sťahovaniami."
+    wrong:
+      - text: lev
+        why: "Malá populácia levov žije aj v Indii."
+      - text: gepard
+        why: "Hŕstka kriticky ohrozených gepardov žije ešte v Iráne."
+      - text: leopard
+        why: "Žije v Afrike aj v Ázii."
+      - text: nosorožec
+        why: "Tri z piatich druhov žijú v južnej a juhovýchodnej Ázii."
+      - text: hyena pruhovaná
+        why: "Žije aj na Blízkom východe, v Strednej Ázii a v Indii."
+
+  - id: zv-vyhynute
+    type: pick
+    prompt: Ktoré z týchto zvierat už úplne vyhynuli?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Dodo
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Passenger_pigeon, /Thylacine, /Great_auk, /Aurochs, /Quagga, /Coelacanth, /Takahē, /Przewalski's_horse, /Kākāpō"
+    tags: [vyhynute]
+    correct:
+      - text: dodo
+        why: "Nelietavý vták z Maurícia, naposledy spoľahlivo videný v roku 1662."
+      - text: holub sťahovavý
+        why: "Kedysi najpočetnejší vták Severnej Ameriky, odhadom 3 miliardy jedincov."
+      - text: vakovlk
+        why: "Tasmánsky tiger, dravý vačkovec; posledný uhynul v zoo v Hobarte."
+      - text: alka veľká
+        why: "Nelietavý morský vták severného Atlantiku; posledný pár zabili v roku 1844."
+      - text: tur
+        why: "Divý predok dobytka; posledná krava uhynula v roku 1627 v Poľsku."
+      - text: kvaga
+        why: "Juhoafrická zebra pruhovaná len spredu; posledná uhynula v Amsterdame."
+    wrong:
+      - text: latiméria
+        why: "Ryba, ktorú mali za vyhynutú 66 miliónov rokov, kým ju v roku 1938 nechytili."
+      - text: takahe
+        why: "Znovuobjavený v roku 1948 na Novom Zélande."
+      - text: kôň Przewalského
+        why: "Vo voľnej prírode vyhynul, ale zo zoo ho vrátili do Mongolska."
+      - text: kakapo
+        why: "Kriticky ohrozený, no stále žije."
+      - text: vtákopysk
+        why: "Vyzerá ako vtip prírody, ale v Austrálii žije."
+
+  - id: zv-iucn-kriticky
+    type: pick
+    prompt: Ktoré z týchto zvierat sú v Červenom zozname IUCN vedené ako kriticky ohrozené?
+    difficulty: 3
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Vaquita
+    note: "Status podľa infoboxov anglickej Wikipédie (IUCN 3.1). Ďalšie: en.wikipedia.org/wiki/Sumatran_orangutan, /Western_gorilla, /Black_rhinoceros, /Kākāpō, /African_penguin, /Gharial, /Polar_bear, /Cheetah, /Lion, /Koala, /Giraffe, /Tiger, /African_bush_elephant, /Chimpanzee"
+    tags: [ohrozene]
+    correct:
+      - text: sviňucha kalifornská (vakita)
+        why: "Najmenšia veľryba sveta, hynie najmä v rybárskych sieťach."
+      - text: orangutan sumatriansky
+        why: "Kriticky ohrozený je aj orangutan bornejský."
+      - text: gorila západná
+        why: "Kriticky ohrozená, rovnako ako gorila východná."
+      - text: nosorožec čierny
+        why: "Kriticky ohrozený je aj nosorožec jávsky."
+      - text: kakapo
+        why: "Nelietavý papagáj z Nového Zélandu."
+      - text: tučniak africký
+        why: "Kedysi veľmi početný; v roku 2023 klesol pod 10 000 párov a v roku 2024 ho IUCN preradila medzi kriticky ohrozené."
+      - text: gaviál
+        why: "Indický krokodíl s úzkym pyskom, kriticky ohrozený od roku 2007."
+    wrong:
+      - text: ľadový medveď
+        why: "Vedený ako zraniteľný, o stupeň lepšie ako ohrozený."
+      - text: gepard
+        why: "Ako druh je zraniteľný; kriticky ohrozený je len ázijský gepard."
+      - text: lev
+        why: "Zraniteľný."
+      - text: koala
+        why: "Podľa IUCN zraniteľná."
+      - text: pštros dvojprstý
+        why: "Najmenej dotknutý, napriek lovu pre perie v minulosti."
+      - text: tiger
+        why: "Ohrozený, no nie kriticky."
+      - text: šimpanz
+        why: "Ohrozený, no nie kriticky."
+
+  - id: zv-telo-pravda
+    type: pick
+    prompt: Ktoré tvrdenia o tele zvierat sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Cervical_vertebrae
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Polar_bear, /Flamingo, /Shark, /Horse, /Kiwi_(bird), /Camel, /Goldfish, /Bat, /Hippopotamus, /Octopus"
+    tags: [telo]
+    correct:
+      - text: Žirafa má v krku sedem stavcov, rovnako ako človek
+        why: "Krk má dlhý vďaka dlhým stavcom, každý meria vyše 28 cm."
+      - text: Ľadový medveď má čiernu kožu
+        why: "Biela je len srsť; čierna koža vrátane nosa pohlcuje teplo."
+      - text: Plameniaky sú ružové vďaka potrave
+        why: "Farbu im dávajú karotenoidy z planktónu, ktorý jedia."
+      - text: Kostra žraloka je z chrupky, nie z kostí
+        why: "Žraloky patria medzi chrupkovité ryby."
+      - text: Kone nevedia vracať
+        why: "Preto sú pre ne tráviace problémy také nebezpečné."
+      - text: Vajce kivi môže vážiť až pätinu hmotnosti samice
+        why: "V pomere k telu patrí medzi najväčšie vtáčie vajcia."
+    wrong:
+      - text: Ťava má v hrboch zásobu vody
+        why: "Hrby sú zásobárne tuku, nie vody."
+      - text: Zlatá rybka si pamätá len tri sekundy
+        why: "Pamätá si aspoň tri mesiace a rozlišuje tvary, farby aj zvuky."
+      - text: Netopiere sú slepé
+        why: "Žiadny druh netopiera nie je naozaj slepý."
+      - text: Hroch sa potí krvou
+        why: "Vylučuje červenkastý prirodzený opaľovací krém, ktorý nie je ani krv, ani pot."
+      - text: Chobotnica má desať ramien
+        why: "Má osem ramien; sépie a kalamáre majú osem ramien a dve chápadlá."
+
+  - id: zv-vajcia
+    type: pick
+    prompt: Ktoré z týchto zvierat kladú vajcia?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Monotreme
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Platypus, /Echidna, /Pythonidae, /Green_anaconda, /Common_slow_worm"
+    tags: [rozmnozovanie]
+    correct:
+      - text: vtákopysk
+        why: "Cicavec, ktorý znáša vajcia, a samec má navyše jedovatú ostrohu."
+      - text: ježura
+        why: "Druhý cicavec kladúci vajcia, príbuzná vtákopyska."
+      - text: pytón
+        why: "Samica vajcia aj sama zahrieva, kým sa nevyliahnu."
+      - text: krokodíl
+        why: "Všetky krokodíly znášajú vajcia na súši."
+      - text: morská korytnačka
+        why: "Na znášku sa vracia na piesočné pláže."
+    wrong:
+      - text: anakonda zelená
+        why: "Rodí živé mláďatá, často 20 až 40 naraz."
+      - text: slepúch
+        why: "Mláďatá sa liahnu z tenkého obalu hneď pri pôrode."
+      - text: delfín
+        why: "Cicavec, rodí živé mláďatá."
+      - text: netopier
+        why: "Rodí živé mláďatá a dojčí ich."
+      - text: klokan
+        why: "Rodí drobné mláďa, ktoré dorastá vo vaku."
+
+  - id: zv-otcovia
+    type: pick
+    prompt: Pri ktorých z týchto zvierat sa o vajcia alebo mladé stará hlavne samec?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Seahorse
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Emperor_penguin, /Emu, /Rhea_(bird), /Cassowary, /Kiwi_(bird), /Common_cuckoo, /Giant_panda, /Polar_bear, /Sumatran_orangutan"
+    tags: [rozmnozovanie]
+    correct:
+      - text: morský koník
+        why: "Samica naklade až 1 500 vajíčok do vaku samca a ten ich nosí až do „pôrodu“."
+      - text: tučniak obrovský
+        why: "Samec zahrieva vajce vyše dvoch mesiacov, kým samica loví v mori."
+      - text: emu
+        why: "Samec sedí na vajciach a takmer neje ani nepije."
+      - text: nandu
+        why: "Samec zahrieva aj desiatky vajec od viacerých samíc."
+      - text: kazuár
+        why: "Samec zahrieva vajcia asi 50 dní a potom stráži mláďatá."
+      - text: kivi hnedý
+        why: "Na obrovskom vajci sedí samec."
+    wrong:
+      - text: kukučka
+        why: "O vajcia sa nestará ani samec, ani samica – podhodia ich iným vtákom."
+      - text: panda veľká
+        why: "Otec sa na výchove mláďaťa vôbec nepodieľa."
+      - text: ľadový medveď
+        why: "Mláďatá zostávajú až dva a pol roka s matkou."
+      - text: orangutan
+        why: "Mláďa nosí, kŕmi aj uspáva vo svojom hniezde matka."
+
+  - id: zv-plazy
+    type: pick
+    prompt: Ktoré z týchto zvierat sú plazy?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Reptile
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Tuatara, /Gharial, /Common_slow_worm, /Caecilian, /Olm"
+    tags: [triedy]
+    correct:
+      - text: krokodíl
+        why: "Najbližšími žijúcimi príbuznými krokodílov sú vtáky."
+      - text: korytnačka
+        why: "Plaz s pancierom zrasteným s chrbticou."
+      - text: hatéria
+        why: "Novozélandský plaz, ktorý vyzerá ako jašterica, ale je posledným z inej vývojovej línie."
+      - text: gaviál
+        why: "Indický krokodíl s úzkymi čeľusťami na ryby."
+      - text: chameleón
+        why: "Jašterica, ktorá loví lepkavým jazykom."
+      - text: slepúch
+        why: "Vyzerá ako had, ale je to beznohá jašterica."
+    wrong:
+      - text: mlok
+        why: "Obojživelník, nie plaz."
+      - text: salamandra
+        why: "Obojživelník s vlhkou kožou, nie plaz."
+      - text: červoň
+        why: "Beznohý obojživelník podobný dážďovke."
+      - text: jaskyniar vodný
+        why: "Slepý jaskynný obojživelník, príbuzný mlokov."
+      - text: rosnička
+        why: "Stromová žaba, teda obojživelník."
+
+  - id: zv-naozaj-medvede
+    type: pick
+    prompt: Ktoré z týchto zvierat sú naozaj medvede?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Bear
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Giant_panda, /Red_panda, /Raccoon, /Tardigrade, /Koala"
+    tags: [mena-klamu]
+    correct:
+      - text: panda veľká
+        why: "Hoci žerie bambus, je to medveď."
+      - text: medveď malajský
+        why: "Najmenší medveď, žije v juhovýchodnej Ázii."
+      - text: medveď pyskatý
+        why: "Indický medveď, ktorý vysáva termity."
+      - text: medveď okuliarnatý
+        why: "Jediný žijúci medveď Južnej Ameriky."
+      - text: grizly
+        why: "Severoamerický medveď hnedý."
+      - text: baribal
+        why: "Čierny medveď Severnej Ameriky."
+    wrong:
+      - text: koala
+        why: "Hovorí sa jej „koala medveď“, ale je to vačkovec."
+      - text: panda červená
+        why: "S pandou veľkou nie je blízko príbuzná; bližšie má k mývalom a lasicovitým."
+      - text: medvedík čistotný
+        why: "Napriek menu to nie je medveď, ale šelma z čeľade medvedíkovitých."
+      - text: pomalka
+        why: "Mikroskopický živočích, ktorému hovoria „vodný medvedík“."
+
+  - id: zv-primaty
+    type: pick
+    prompt: Ktoré z týchto zvierat sú primáty, teda príbuzní opíc a ľudí?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Primate
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Ring-tailed_lemur, /Galago, /Gibbon, /Mandrill, /Marmoset, /Colugo, /Treeshrew, /Kinkajou"
+    tags: [triedy]
+    correct:
+      - text: lemur kata
+        why: "Lemury sú primáty z Madagaskaru."
+      - text: galago
+        why: "Malý africký nočný primát."
+      - text: gibon
+        why: "Malý ľudoop z Ázie."
+      - text: mandril
+        why: "Africká opica s pestrou tvárou."
+      - text: kosmáč
+        why: "Drobná juhoamerická opička."
+      - text: orangutan
+        why: "Veľký ľudoop z Bornea a Sumatry."
+    wrong:
+      - text: letucha
+        why: "Hovorí sa jej „lietajúci lemur“ a je najbližší príbuzný primátov, ale primát nie je."
+      - text: tana
+        why: "Vyzerá ako veverica, má vlastný rad cicavcov."
+      - text: kinkažu
+        why: "Patrí medzi medvedíkovité, príbuzný mývala."
+      - text: leňoch
+        why: "Príbuzný mravčiarov a pásavcov."
+      - text: surikata
+        why: "Mangusta, teda šelma."
+
+  - id: zv-vackovce
+    type: pick
+    prompt: Ktoré z týchto zvierat sú vačkovce?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Marsupial
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Kangaroo, /Koala, /Wombat, /Tasmanian_devil, /Opossum, /Common_brushtail_possum, /Sugar_glider, /Platypus, /Echidna"
+    tags: [triedy]
+    correct:
+      - text: klokan
+        why: "Mláďa sa narodí drobné a dorastá vo vaku."
+      - text: koala
+        why: "Austrálsky vačkovec, žiadny medveď."
+      - text: vombat
+        why: "Austrálsky vačkovec, ktorý si hrabe nory."
+      - text: diabol tasmánsky
+        why: "Najväčší dnes žijúci dravý vačkovec."
+      - text: vačica
+        why: "Americký vačkovec."
+      - text: kusu líščí
+        why: "Austrálsky vačkovec, ktorý žije aj na predmestiach."
+      - text: vakoveverica
+        why: "Plachtiaci vačkovec, ktorý mlsá miazgu a nektár."
+    wrong:
+      - text: vtákopysk
+        why: "Vajcorodý cicavec, nie vačkovec."
+      - text: ježura
+        why: "Tiež kladie vajcia, patrí s vtákopyskom k vajcorodým."
+      - text: dingo
+        why: "Austrálsky divoký pes, placentálny cicavec."
+      - text: pásavec
+        why: "Americký cicavec s pancierom, bez vaku."
+      - text: kaloň
+        why: "Netopier, nie vačkovec."
+
+  # ---------------------------------------------------------------- ORDER
+  - id: zv-poradie-vyhynutia
+    type: order
+    prompt: Zoraď vyhynuté zvieratá podľa roku, keď posledného jedinca naposledy spoľahlivo videli živého (od najdávnejšieho).
+    direction: asc
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Steller%27s_sea_cow
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Aurochs, /Dodo, /Great_auk, /Quagga, /Thylacine, /Pyrenean_ibex"
+    tags: [vyhynute]
+    items:
+      - { text: tur, value: 1627, why: "Posledná krava uhynula v lese Jaktorów v Poľsku." }
+      - { text: dodo, value: 1662, why: "Posledné spoľahlivé pozorovanie na Maurícii." }
+      - { text: morská krava Stellerova, value: 1768, why: "Vyhubili ju 27 rokov po tom, čo ju Európania objavili." }
+      - { text: alka veľká, value: 1844, why: "Posledný pár zabili na islandskom ostrove Eldey." }
+      - { text: kvaga, value: 1883, why: "Posledná uhynula v zoo v Amsterdame." }
+      - { text: vakovlk, value: 1936, why: "Posledný uhynul v zoo v Hobarte 59 dní po tom, čo ho vyhlásili za chránený." }
+      - { text: kozorožec pyrenejský, value: 2000, why: "Poslednú samicu Celiu zabil padajúci strom." }
+
+  - id: zv-poradie-dozitie
+    type: order
+    prompt: Zoraď zvieratá podľa najvyššieho zaznamenaného veku (od najdlhšie žijúceho).
+    direction: desc
+    unit: rokov
+    difficulty: 1
+    source: https://genomics.senescence.info/species/entry.php?species=Balaena_mysticetus
+    note: "Databáza AnAge, záznamy Chelonoidis_nigra, Homo_sapiens, Elephas_maximus, Equus_caballus, Felis_catus, Mus_musculus."
+    tags: [vek]
+    items:
+      - { text: veľryba grónska, value: 211, why: "Údaj z voľnej prírody." }
+      - { text: korytnačka slonia z Galapág, value: 177, why: "Toľko vydržala v zajatí." }
+      - { text: človek, value: 122.5, why: "Jeanne Calmentová." }
+      - { text: slon ázijský, value: 79.6, why: "Najstarší slon v zajatí." }
+      - { text: kôň, value: 57, why: "Najstarší kôň v zajatí." }
+      - { text: mačka domáca, value: 30, why: "Nepotvrdené rekordy hovoria aj o 37 rokoch." }
+      - { text: myš domová, value: 4, why: "Najstaršia myš v zajatí." }
+
+  - id: zv-poradie-gravidita
+    type: order
+    prompt: Zoraď cicavce podľa dĺžky gravidity (od najdlhšej).
+    direction: desc
+    unit: dní
+    difficulty: 2
+    source: https://genomics.senescence.info/species/entry.php?species=Loxodonta_africana
+    note: "Databáza AnAge, záznamy Giraffa_camelopardalis, Equus_caballus, Homo_sapiens, Hippopotamus_amphibius, Canis_familiaris, Mus_musculus."
+    tags: [rozmnozovanie]
+    items:
+      - { text: slon africký, value: 670, why: "Takmer 22 mesiacov." }
+      - { text: žirafa, value: 457, why: "Vyše 15 mesiacov." }
+      - { text: kôň, value: 337, why: "Približne 11 mesiacov." }
+      - { text: človek, value: 280, why: "Deväť mesiacov, teda zhruba 40 týždňov." }
+      - { text: hroch, value: 234, why: "Napriek veľkosti kratšie ako u človeka." }
+      - { text: pes, value: 63, why: "Asi dva mesiace." }
+      - { text: myš domová, value: 19, why: "Necelé tri týždne." }
+
+  - id: zv-poradie-hmotnost
+    type: order
+    prompt: Zoraď zvieratá podľa priemernej hmotnosti dospelého jedinca (od najťažšieho).
+    direction: desc
+    unit: kg
+    difficulty: 2
+    source: https://genomics.senescence.info/species/entry.php?species=Ceratotherium_simum
+    note: "Databáza AnAge, záznamy Odobenus_rosmarus, Bison_bison, Ursus_maritimus, Panthera_leo, Struthio_camelus, Macropus_rufus."
+    tags: [velkost]
+    items:
+      - { text: nosorožec biely, value: 2175, why: "Vyše dvoch ton." }
+      - { text: mrož, value: 1012, why: "Zhruba tona." }
+      - { text: bizón americký, value: 630, why: "Viac ako pol tony." }
+      - { text: ľadový medveď, value: 475, why: "Najväčší medveď a najväčšia suchozemská šelma." }
+      - { text: lev, value: 175, why: "Samce sú výrazne ťažšie ako levice." }
+      - { text: pštros, value: 111, why: "Najťažší žijúci vták." }
+      - { text: klokan červený, value: 55, why: "Najväčší klokan a najväčší pôvodný suchozemský cicavec Austrálie." }
+
+  - id: zv-poradie-nohy
+    type: order
+    prompt: Zoraď zvieratá podľa počtu nôh (od najviac).
+    direction: desc
+    unit: nôh
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Decapoda
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Spider, /Insect"
+    tags: [nohy]
+    items:
+      - { text: homár, value: 10, why: "Desaťnožec – klepetá sú prvý pár nôh." }
+      - { text: pavúk, value: 8, why: "Štyri páry nôh má každý pavúkovec." }
+      - { text: mravec, value: 6, why: "Tri páry nôh, ako všetok hmyz." }
+      - { text: pes, value: 4, why: "Štvornožec ako väčšina cicavcov." }
+      - { text: sliepka, value: 2, why: "Vtáky chodia po dvoch, krídla sú premenené predné končatiny." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: zv-najviac-noh
+    type: number
+    prompt: Koľko nôh mala samica mnohonôžky Eumillipes persephone, zviera s najviac nohami na Zemi?
+    answer: 1306
+    unit: nôh
+    scale: log
+    tolerance: 0.15
+    why: "Našli ju v roku 2020 v austrálskom vrte 60 metrov pod zemou; prvá mnohonôžka, ktorá má naozaj viac ako tisíc nôh."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Eumillipes
+    tags: [nohy]
+
+  - id: zv-martha
+    type: number
+    prompt: V ktorom roku uhynula v zoo v Cincinnati holubica Martha, posledný holub sťahovavý na svete?
+    answer: 1914
+    unit: rok
+    scale: linear
+    tolerance: 10
+    why: "1. septembra 1914 – z druhu, ktorý mal kedysi miliardy jedincov."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Martha_(passenger_pigeon)
+    tags: [vyhynute]
+
+  - id: zv-steller-roky
+    type: number
+    prompt: Koľko rokov prežila morská krava Stellerova od chvíle, keď ju v roku 1741 objavili Európania?
+    answer: 27
+    unit: rokov
+    scale: linear
+    tolerance: 5
+    why: "Pomalé zviera ľahko ulovili pre mäso, tuk a kožu; do roku 1768 zmizlo."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Steller%27s_sea_cow
+    tags: [vyhynute]
+
+  - id: zv-rybar-km
+    type: number
+    prompt: Koľko kilometrov preletia v priemere za rok rybáre dlhochvosté z Islandu a Grónska na ceste do Antarktídy a späť?
+    answer: 70900
+    unit: km
+    scale: log
+    tolerance: 0.2
+    why: "Rybár dlhochvostý zažije každý rok dve letá; jeden vták preletel za desať mesiacov až 96 000 km."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Arctic_tern
+    tags: [stahovanie]
+
+  - id: zv-panda-mlada
+    type: number
+    prompt: Koľko gramov váži novonarodené mláďa pandy veľkej?
+    answer: 110
+    unit: g
+    scale: log
+    tolerance: 0.25
+    why: "Iba 90 až 130 gramov, asi osemstotinu hmotnosti matky – je ružové, slepé a bez zubov."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Giant_panda
+    tags: [rozmnozovanie]
+
+  - id: zv-latimeria-rok
+    type: number
+    prompt: V ktorom roku pri Južnej Afrike vylovili prvú živú latimériu, rybu, ktorú mali za vyhynutú spolu s dinosaurami?
+    answer: 1938
+    unit: rok
+    scale: linear
+    tolerance: 10
+    why: "22. decembra 1938; dovtedy ju poznali len z fosílií."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Coelacanth
+    tags: [vyhynute]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: zv-chobotnica-srdcia
+    type: choice
+    prompt: Koľko sŕdc má chobotnica?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Octopus
+    tags: [telo]
+    correct: { text: tri, why: "Jedno poháňa krv telom a dve ju pumpujú cez žiabre." }
+    wrong:
+      - { text: jedno, why: "Jedno je hlavné, ale k nemu má ešte dve žiabrové." }
+      - { text: dve, why: "Dve má len pri žiabrach, k tomu ešte hlavné srdce." }
+      - { text: osem, why: "Osem má ramien, nie sŕdc." }
+
+  - id: zv-hroch-pribuzny
+    type: choice
+    prompt: Ktoré zvieratá sú najbližšími žijúcimi príbuznými hrocha?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Hippopotamus
+    tags: [pribuzni]
+    correct: { text: veľryby a delfíny, why: "Potvrdzujú to gény aj fosílie." }
+    wrong:
+      - { text: prasatá, why: "Podobajú sa mu, ale veľryby majú k hrochovi bližšie." }
+      - { text: nosorožce, why: "Nosorožce sú nepárnokopytníky, príbuzné koňom." }
+      - { text: slony, why: "Slony patria do úplne inej vetvy cicavcov." }
+
+  - id: zv-tucniaky-kontinent
+    type: choice
+    prompt: Na ktorom z týchto kontinentov žijú vo voľnej prírode tučniaky?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/African_penguin
+    note: "Ďalší zdroj: en.wikipedia.org/wiki/Penguin"
+    tags: [kde-zije]
+    correct: { text: Afrika, why: "Tučniak africký hniezdi na pobreží Južnej Afriky a Namíbie." }
+    wrong:
+      - { text: Európa, why: "Tučniaky žijú takmer výhradne na južnej pologuli." }
+      - { text: Ázia, why: "Do Ázie sa tučniaky nedostali." }
+      - { text: Severná Amerika, why: "Najsevernejšie žije tučniak galapágsky, tesne za rovníkom." }
+
+  - id: zv-stonozka-100
+    type: choice
+    prompt: Koľko nôh nemôže mať žiadna stonožka?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Centipede
+    tags: [nohy]
+    correct: { text: "100", why: "Párov nôh má stonožka vždy nepárny počet, takže presne 100 nôh nemá žiadna." }
+    wrong:
+      - { text: "30", why: "15 párov je najmenší počet, aký má dospelá stonožka." }
+      - { text: "42", why: "21 párov nôh majú mnohé veľké stonožky." }
+      - { text: "46", why: "23 párov nôh majú niektoré veľké stonožky." }
