@@ -1,0 +1,523 @@
+id: co-je-v-tom
+title: Čo je v tom?
+description: Z čoho sa varia známe jedlá zo Slovenska aj zo sveta a odkiaľ pochádzajú.
+category: tradicie
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  - id: bryndzove-halusky-suroviny
+    type: pick
+    prompt: Čo patrí do klasických bryndzových halušiek?
+    difficulty: 1
+    source: https://sk.wikipedia.org/wiki/Bryndzové_halušky
+    correct:
+      - { text: surové zemiaky, why: "Strúhajú sa najemno a sú základom cesta." }
+      - { text: múka, why: "Spája nastrúhané zemiaky do cesta." }
+      - { text: soľ, why: "Ide do cesta aj do vody, v ktorej sa halušky varia." }
+      - { text: bryndza, why: "Bez nej by to boli len halušky; mieša sa s horúcimi haluškami." }
+      - { text: slanina, why: "Opražená ide navrch aj s vypraženou masťou." }
+    wrong:
+      - { text: kyslá kapusta, why: "Halušky s kapustou sú strapačky, iné jedlo." }
+      - { text: tvaroh, why: "S tvarohom sa robia skôr sladké pirohy či šúľance, nie bryndzové halušky." }
+      - { text: oštiepok, why: "Údený syr sa na halušky nedáva, tam patrí bryndza." }
+      - { text: šunka, why: "Navrch ide slanina, nie šunka." }
+      - { text: mak, why: "Mak patrí na sladké šúľance alebo bobáľky, nie na halušky." }
+      - { text: parmezán, why: "Taliansky syr na cestoviny, do slovenskej klasiky nepatrí." }
+      - { text: krupica, why: "Cesto na halušky je z múky a zemiakov, krupica sa dáva do kaše či knedlí." }
+
+  - id: segedinsky-gulas-suroviny
+    type: pick
+    prompt: Čo sa dáva do klasického segedínskeho guláša?
+    difficulty: 2
+    source: https://sk.wikipedia.org/wiki/Segedínsky_guláš
+    note: "Aj https://cs.wikipedia.org/wiki/Segedínský_guláš"
+    correct:
+      - { text: bravčové mäso, why: "Segedín sa varí najmä z bravčového, z pleca alebo bôčika." }
+      - { text: kyslá kapusta, why: "Hlavná surovina, bez nej to nie je segedín." }
+      - { text: cibuľa, why: "Na nej sa kapusta s mäsom dusí." }
+      - { text: mletá sladká paprika, why: "Dodá farbu aj chuť, podobne ako pri iných gulášoch." }
+      - { text: rasca, why: "Klasické korenie ku kyslej kapuste." }
+      - { text: kyslá smotana, why: "Zjemní kyslú kapustu na konci varenia." }
+    wrong:
+      - { text: sušené hríby, why: "Tie patria do vianočnej kapustnice, nie do segedínu." }
+      - { text: sušené slivky, why: "Typické pre kapustnicu, do segedínu sa nedávajú." }
+      - { text: ryža, why: "Segedín sa podáva s knedľou alebo chlebom, ryža v ňom nie je." }
+      - { text: fazuľa, why: "Fazuľa patrí do fazuľovice, segedín je kapustový." }
+      - { text: zelený hrášok, why: "V recepte segedínu sa neobjavuje." }
+      - { text: kukurica, why: "Do segedínu nepatrí." }
+
+  - id: svieckova-suroviny
+    type: pick
+    prompt: Čo patrí do sviečkovej na smotane alebo k nej na tanier?
+    difficulty: 1
+    source: https://cs.wikipedia.org/wiki/Svíčková_na_smetaně
+    note: "Aj https://sk.wikipedia.org/wiki/Sviečkovica_na_smotane"
+    correct:
+      - { text: hovädzie mäso, why: "Najčastejšie takzvaná falošná sviečkovica, čiže časť zadného hovädzieho." }
+      - { text: mrkva, why: "Patrí do koreňovej zeleniny, z ktorej je omáčka." }
+      - { text: zeler, why: "Ďalšia koreňová zelenina, rozmixuje sa do omáčky." }
+      - { text: petržlen, why: "Koreň petržlenu je tretia klasická koreňová zelenina v omáčke." }
+      - { text: smotana, why: "Veď je to sviečková na smotane." }
+      - { text: brusnice, why: "Podávajú sa na plátku citróna so šľahačkou." }
+      - { text: knedľa, why: "Klasická príloha, najčastejšie žemľová." }
+    wrong:
+      - { text: kyslá kapusta, why: "Tá patrí k segedínu alebo kapustnici, nie k sviečkovej." }
+      - { text: paradajkový pretlak, why: "Paradajková je rajská omáčka, sviečková je zo zeleniny a smotany." }
+      - { text: kôpor, why: "Kôpor robí kôprovú omáčku, iné jedlo." }
+      - { text: sušené hríby, why: "Hríbová omáčka je iné jedlo, do sviečkovej sa nedávajú." }
+      - { text: mletá pálivá paprika, why: "Paprika patrí do gulášu, omáčka na sviečkovú je bez nej." }
+      - { text: ryža, why: "Ku sviečkovej patrí knedľa, nie ryža." }
+
+  - id: carbonara-suroviny
+    type: pick
+    prompt: Čo patrí do carbonary tak, ako ju dnes bežne varia v Taliansku?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Carbonara
+    correct:
+      - { text: vajcia alebo žĺtky, why: "Zmiešajú sa so syrom a s horúcimi cestovinami vytvoria krémovú omáčku." }
+      - { text: pecorino romano, why: "Ovčí syr je bežný syr pre carbonaru." }
+      - { text: guanciale, why: "Sušené bravčové líčko je tradičné mäso, niekedy sa nahrádza pancettou." }
+      - { text: čierne korenie, why: "Dáva sa ho poriadne veľa." }
+      - { text: špagety, why: "Najčastejšie cestoviny pre carbonaru." }
+    wrong:
+      - { text: smotana, why: "Väčšina talianskych receptov ju nemá; staršie recepty ju mali, z väčšiny receptov zmizla až v 90. rokoch." }
+      - { text: zelený hrášok, why: "Hrášok sa pridáva len vo verziách mimo Talianska." }
+      - { text: šampiňóny, why: "Huby pridávajú len verzie mimo Talianska alebo vegetariánske recepty." }
+      - { text: šunka, why: "Šunkou nahrádzajú guanciale len mimo Talianska." }
+      - { text: brokolica, why: "Zelenina do carbonary sa dáva len v zahraničných verziách." }
+      - { text: pór, why: "Patrí medzi zahraničné zeleninové „vylepšenia“." }
+
+  - id: paella-valenciana-suroviny
+    type: pick
+    prompt: Čo patrí do tradičnej paelly valenciany, ktorú Valencijčania považujú za jedinú pravú?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Paella
+    correct:
+      - { text: ryža, why: "Základ jedla, najčastejšie odroda bomba." }
+      - { text: králik, why: "Spolu s kuracím hlavné mäso valencijskej paelly." }
+      - { text: kuracie mäso, why: "Klasika valencijskej paelly spolu s králikom." }
+      - { text: šafran, why: "Tradične dáva ryži žltú farbu." }
+      - { text: zelené fazuľky, why: "Ploché zelené fazuľky (ferraura) patria do valencijskej verzie." }
+      - { text: olivový olej, why: "Na ňom sa mäso v panvici opečie." }
+      - { text: paradajky, why: "Patria do tradičného zoznamu surovín." }
+    wrong:
+      - { text: krevety, why: "Morské plody sú v paelle de marisco; do valencijskej podľa Valencijčanov absolútne nepatria." }
+      - { text: mušle, why: "Patria do morskej paelly, nie do valencijskej." }
+      - { text: kalamáre, why: "Morské plody do paelly valenciany nepatria." }
+      - { text: losos, why: "Ryby sú vo valencijskej paelle podľa Valencijčanov úplne vylúčené." }
+      - { text: syr, why: "Do paelly žiadny syr nepatrí." }
+
+  - id: tiramisu-suroviny
+    type: pick
+    prompt: Z čoho sa robí klasické tiramisu?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Tiramisu
+    correct:
+      - { text: piškóty (savoiardi), why: "Podlhovasté piškóty sa namáčajú v káve." }
+      - { text: káva, why: "Do nej sa namáčajú piškóty; „tirami su“ znamená „povzbuď ma“." }
+      - { text: mascarpone, why: "Krémový taliansky syr je základ krému." }
+      - { text: vaječné žĺtky, why: "Šľahajú sa s cukrom do krému." }
+      - { text: cukor, why: "Šľahá sa so žĺtkami." }
+      - { text: kakao, why: "Posype sa ním vrch." }
+    wrong:
+      - { text: tvaroh, why: "Tvarohový krém je domáca náhrada, klasika má mascarpone." }
+      - { text: ricotta, why: "Taliansky syr, ale do tiramisu patrí mascarpone." }
+      - { text: jahody, why: "Ovocné verzie sú variácie, klasika je kávová." }
+      - { text: želatína, why: "Krém drží vďaka mascarpone a žĺtkom, nie želatíne." }
+      - { text: banány, why: "Ovocie v klasickom recepte nie je." }
+      - { text: puding, why: "Pudingový krém je lacná napodobenina." }
+
+  - id: musaka-suroviny
+    type: pick
+    prompt: Čo patrí do klasickej gréckej musaky (podľa receptu Nikolaosa Tselementesa)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Moussaka
+    correct:
+      - { text: baklažán, why: "Spodná vrstva z opečených plátkov baklažánu." }
+      - { text: mleté jahňacie mäso, why: "Stredná vrstva; v Grécku je mäso najčastejšie jahňacie." }
+      - { text: paradajky, why: "Dusia sa s mletým mäsom." }
+      - { text: cibuľa, why: "Patrí do mäsovej vrstvy." }
+      - { text: bešamel, why: "Vrchná vrstva z bešamelu sa zapečie dozlatista." }
+      - { text: škorica, why: "Tselementes ochucoval mäso škoricou, novým korením a čiernym korením." }
+    wrong:
+      - { text: cestoviny, why: "Zapekané cestoviny s mäsom a bešamelom sú pastitsio, iné grécke jedlo." }
+      - { text: kyslá kapusta, why: "Do musaky nepatrí." }
+      - { text: ryža, why: "Musaka je vrstvená z baklažánu a mäsa, ryža v nej nie je." }
+      - { text: mozzarella, why: "Navrch ide bešamel, nie mozzarella." }
+      - { text: kukurica, why: "Do musaky nepatrí." }
+
+  - id: pho-suroviny
+    type: pick
+    prompt: Čo sa dáva do vietnamskej polievky phở (hovädzej verzie) alebo do jej vývaru?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Pho
+    correct:
+      - { text: ryžové rezance, why: "Ploché ryžové rezance bánh phở dali polievke meno." }
+      - { text: hovädzie kosti, why: "Varia sa celé hodiny, aby vznikol vývar." }
+      - { text: badián, why: "Hviezdicovitý aníz je typické korenie vývaru." }
+      - { text: škorica, why: "Často sa používa vietnamská (saigonská) škorica." }
+      - { text: opekaný zázvor, why: "Pripáli sa a ide do vývaru, tlmí vôňu hovädziny." }
+      - { text: opekaná cibuľa, why: "Tiež sa najprv pripáli a potom varí vo vývare." }
+      - { text: klinčeky, why: "Patria medzi koreniny vývaru." }
+    wrong:
+      - { text: kokosové mlieko, why: "Vývar na phở je číry, kokosové mlieko patrí skôr do thajských kari." }
+      - { text: vaječné pšeničné rezance, why: "Phở má ryžové rezance, nie pšeničné." }
+      - { text: arašidové maslo, why: "Do phở nepatrí." }
+      - { text: smotana, why: "Vývar je číry, bez mliečnych výrobkov." }
+      - { text: kari pasta, why: "Phở nie je kari, jeho vôňa je z badiánu, škorice a zázvoru." }
+
+  - id: sushi-druhy
+    type: pick
+    prompt: Ktoré z týchto japonských jedál sú druhy sushi?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Sushi
+    correct:
+      - { text: nigiri, why: "Ryžová guľka s plátkom ryby navrchu, najznámejší druh sushi." }
+      - { text: maki, why: "Rolka zabalená v riasach nori." }
+      - { text: temaki, why: "Kornútok z nori, ktorý sa je rukami." }
+      - { text: chirashi, why: "Sushi ryža v miske s rybou a zeleninou poukladanou navrchu." }
+      - { text: inari, why: "Vrecúško z vyprážaného tofu naplnené sushi ryžou." }
+      - { text: oshizushi, why: "Lisované sushi z drevenej formy, špecialita Osaky." }
+    wrong:
+      - { text: sashimi, why: "Len tenko krájaná surová ryba bez sushi ryže; často sa s sushi zamieňa." }
+      - { text: tempura, why: "Zelenina či krevety vyprážané v cestíčku." }
+      - { text: gyoza, why: "Plnené taštičky pôvodom z Číny." }
+      - { text: yakitori, why: "Grilované kuracie špízy." }
+      - { text: udon, why: "Hrubé pšeničné rezance." }
+      - { text: mochi, why: "Koláčiky z lepkavej ryže, často sladké." }
+
+  - id: jedlo-hlavna-surovina
+    type: pick
+    prompt: Pri ktorých dvojiciach je správne uvedená hlavná surovina jedla?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Baba_ghanoush
+    note: "Ďalšie zdroje: en.wikipedia Guacamole, Tzatziki, Borscht, Polenta, Couscous, Tofu, Gazpacho, Hummus"
+    correct:
+      - { text: guacamole – avokádo, why: "Mexický dip, názov pochádza z jazyka nahuatl a znamená „avokádová omáčka“." }
+      - { text: baba ghanoush – baklažán, why: "Levantský dip z opečeného baklažánu s tahini a citrónom." }
+      - { text: tzatziki – jogurt, why: "Grécka omáčka z jogurtu, uhorky a cesnaku." }
+      - { text: boršč – cvikla, why: "Ukrajinský boršč vďačí za červenú farbu práve cvikle." }
+      - { text: polenta – kukuričná múka, why: "Talianska kaša z kukuričnej múky (kedysi aj z iných obilnín)." }
+      - { text: kuskus – pšeničná krupica, why: "Drobné guľôčky z krupice, základ severoafrickej kuchyne." }
+      - { text: tofu – sója, why: "Vyrába sa zrážaním sójového mlieka." }
+      - { text: gazpacho – paradajky, why: "Studená andalúzska polievka z mixovanej surovej zeleniny, najmä paradajok." }
+    wrong:
+      - { text: hummus – šošovica, why: "Hummus je arabsky „cícer“ a z cíceru sa aj robí." }
+      - { text: tzatziki – kyslá smotana, why: "Základ tzatziki je jogurt, nie smotana." }
+      - { text: polenta – zemiaky, why: "Polenta je z kukuričnej múky, zemiaky v nej nie sú." }
+      - { text: kuskus – ryža, why: "Kuskus nie je ryža, ale guľôčky z pšeničnej krupice." }
+      - { text: tofu – ryža, why: "Tofu je zo sóje, s ryžou sa len často podáva." }
+      - { text: guacamole – zelený hrášok, why: "Pravé guacamole je z avokáda, hrášok doň nepatrí." }
+      - { text: baba ghanoush – cuketa, why: "Je z baklažánu, nie z cukety." }
+      - { text: gazpacho – tekvica, why: "Gazpacho je paradajkové, tekvica do neho nepatrí." }
+
+  - id: hummus-suroviny
+    type: pick
+    prompt: Z čoho sa robí klasický hummus?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Hummus
+    correct:
+      - { text: cícer, why: "Slovo hummus znamená po arabsky priamo „cícer“." }
+      - { text: tahini, why: "Pasta z mletého sezamu; celý názov je hummus bi tahini." }
+      - { text: citrónová šťava, why: "Dodá hummusu sviežu kyslosť." }
+      - { text: cesnak, why: "Patrí k základným surovinám." }
+      - { text: olivový olej, why: "Leje sa navrch ako obloha spolu s paprikou a petržlenovou vňaťou." }
+    wrong:
+      - { text: arašidové maslo, why: "Do klasického hummusu nepatrí, sezamovú pastu nenahrádza." }
+      - { text: jogurt, why: "Hummus je bez mliečnych výrobkov; jogurt je v tzatziki." }
+      - { text: avokádo, why: "To je guacamole." }
+      - { text: šošovica, why: "Hummus je z cíceru, nie zo šošovice." }
+      - { text: kyslá smotana, why: "Do hummusu nepatrí." }
+      - { text: baklažán, why: "Baklažánový dip je baba ghanoush." }
+
+  - id: caesar-povodny
+    type: pick
+    prompt: Čo podľa dcéry Caesara Cardiniho a ďalších svedkov patrilo do pôvodného šalátu Caesar?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Caesar_salad
+    correct:
+      - { text: rímsky šalát, why: "Celé listy sa pôvodne jedli rukami, držané za stopku." }
+      - { text: krutóny, why: "Opečené na oleji s cesnakom." }
+      - { text: parmezán, why: "Strúhaný parmezán patrí aj do pôvodnej verzie." }
+      - { text: vajce, why: "Krátko povarené (coddled) vajce." }
+      - { text: olivový olej, why: "Základ dresingu." }
+      - { text: worcestrová omáčka, why: "Podľa Cardiniho dcéry bola v pôvodnom recepte namiesto ančovičiek." }
+      - { text: citrónová šťava, why: "Dodáva dresingu kyslosť." }
+    wrong:
+      - { text: ančovičky, why: "Dnes bežné, ale Cardini ich podľa dcéry považoval za príliš výrazné." }
+      - { text: grilované kuracie mäso, why: "Kuracie je neskoršia variácia, originál bol bez mäsa." }
+      - { text: dijonská horčica, why: "Horčicu podľa Cardiniho dcéry pôvodný recept nemal." }
+      - { text: slanina, why: "Mäso sa do šalátu dostalo až vo variáciách." }
+      - { text: majonéza, why: "Moderné dresingy bývajú majonézové, originál ju nemal." }
+
+  - id: pizza-margherita-eu
+    type: pick
+    prompt: Čo podľa pravidiel EÚ pre chránenú Pizza Napoletana patrí na pizzu Margherita alebo do jej cesta?
+    difficulty: 2
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R0097
+    correct:
+      - { text: lúpané paradajky, why: "Rozotierajú sa na cesto špirálovitým pohybom." }
+      - { text: mozzarella, why: "Mozzarella di Bufala Campana alebo Mozzarella ZTŠ, 80 až 100 g na pizzu." }
+      - { text: čerstvá bazalka, why: "Pár lístkov navrch; spolu s paradajkou a mozzarellou farby talianskej vlajky." }
+      - { text: extra panenský olivový olej, why: "Pokvapká sa 4 až 5 g od stredu von." }
+      - { text: soľ, why: "Ide do cesta aj na paradajky." }
+      - { text: droždie, why: "Pivovarské droždie je v ceste spolu s múkou, vodou a soľou." }
+    wrong:
+      - { text: oregano, why: "Oregano s cesnakom patrí na neapolskú Marinaru, na Margheritu nie." }
+      - { text: cesnak, why: "Patrí na Marinaru, nie na Margheritu." }
+      - { text: šunka, why: "Margherita je bez mäsa." }
+      - { text: eidam, why: "Syrom je mozzarella, nie eidam." }
+      - { text: šampiňóny, why: "Huby na Margheritu nepatria." }
+      - { text: kukurica, why: "Na klasickú neapolskú pizzu nepatrí." }
+      - { text: olivy, why: "V predpise pre Margheritu nie sú." }
+
+  - id: grecky-salat-suroviny
+    type: pick
+    prompt: Čo patrí do klasického gréckeho šalátu (horiatiki), ako sa robí v Grécku?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Greek_salad
+    correct:
+      - { text: paradajky, why: "Krájajú sa na mesiačiky." }
+      - { text: uhorka, why: "Spolu s paradajkami základ šalátu." }
+      - { text: cibuľa, why: "Krája sa na tenké kolieska." }
+      - { text: feta, why: "Biely syr v slanom náleve." }
+      - { text: olivy, why: "Typicky kalamata." }
+      - { text: oregano, why: "Grécke oregano spolu so soľou a olivovým olejom tvorí dresing." }
+      - { text: olivový olej, why: "Šťava z oleja a zeleniny sa vytiera chlebom." }
+    wrong:
+      - { text: hlávkový šalát, why: "Pravý horiatiki sa vyznačuje práve tým, že šalát v ňom nie je." }
+      - { text: mozzarella, why: "Syrom je feta." }
+      - { text: kukurica, why: "Do horiatiki nepatrí." }
+      - { text: krutóny, why: "Tie patria do šalátu Caesar." }
+      - { text: varené vajce, why: "Do gréckeho šalátu nepatrí." }
+      - { text: tuniak, why: "Ryba v klasickom horiatiki nie je." }
+
+  - id: pesto-genovese-suroviny
+    type: pick
+    prompt: Čo patrí do tradičného pesta alla genovese?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Pesto
+    correct:
+      - { text: bazalka, why: "Janovská bazalka je hlavná surovina." }
+      - { text: píniové oriešky, why: "Tradičný oriešok, drví sa spolu s cesnakom." }
+      - { text: cesnak, why: "Drví sa v mažiari ako prvý, spolu s píniami." }
+      - { text: extra panenský olivový olej, why: "Spája všetko do pasty." }
+      - { text: parmezán, why: "Mieša sa s ovčím pecorinom." }
+      - { text: pecorino sardo, why: "Sardínsky ovčí syr dopĺňa parmezán." }
+    wrong:
+      - { text: mandle, why: "Mandle s paradajkami má sicílske pesto alla trapanese." }
+      - { text: sušené paradajky, why: "Červené pestá sú iné variácie, janovské je zelené." }
+      - { text: špenát, why: "Pridáva sa len mimo Talianska, tradičné pesto má z listov len bazalku." }
+      - { text: smotana, why: "Objavila sa až v americkom recepte z roku 1928." }
+      - { text: rukola, why: "Rukolové pesto je moderná variácia." }
+      - { text: kešu oriešky, why: "Náhrada pínií mimo Talianska." }
+
+  - id: japonske-jedla
+    type: pick
+    prompt: Ktoré z týchto jedál patria do japonskej kuchyne?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_Japanese_dishes
+    correct:
+      - { text: tempura, why: "Vyprážanie v cestíčku priniesli do Japonska v 16. storočí portugalskí jezuiti." }
+      - { text: okonomiyaki, why: "Slaná palacinka s mäsom a zeleninou." }
+      - { text: takoyaki, why: "Vyprážané guľky z cestíčka s kúskom chobotnice, pouličné jedlo." }
+      - { text: sukiyaki, why: "Tenké plátky hovädzieho so zeleninou, varia sa priamo pri stole." }
+      - { text: miso polievka, why: "Vývar dashi s miso pastou, tofu či riasami." }
+      - { text: onigiri, why: "Ryžová guľa či trojuholník zabalený v nori." }
+      - { text: tonkatsu, why: "Vyprážaný obaľovaný bravčový rezeň po japonsky." }
+    wrong:
+      - { text: kimči, why: "Kvasená zelenina, symbol kórejskej kuchyne." }
+      - { text: bibimbap, why: "Kórejská ryža so zeleninou, mäsom a vajcom." }
+      - { text: pad thai, why: "Smažené ryžové rezance, národné jedlo Thajska." }
+      - { text: phở, why: "Vietnamská polievka s ryžovými rezancami." }
+      - { text: bánh mì, why: "Vietnamská bageta, dedičstvo francúzskej kolónie." }
+      - { text: pekinská kačica, why: "Čínska špecialita z Pekingu." }
+      - { text: tom yum, why: "Kyslo-pálivá thajská polievka." }
+
+  - id: francuzske-jedla
+    type: pick
+    prompt: Ktoré z týchto jedál pochádzajú z Francúzska?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/French_cuisine
+    note: "Ďalšie zdroje: en.wikipedia Ratatouille, Bouillabaisse, Cassoulet, Tarte Tatin"
+    correct:
+      - { text: ratatouille, why: "Dusená zelenina z Provensalska, známa aj z animáku o potkanovi." }
+      - { text: bouillabaisse, why: "Rybacia polievka marseillských rybárov." }
+      - { text: cassoulet, why: "Zapekaná fazuľa s mäsom a klobásou z mestečka Castelnaudary." }
+      - { text: tarte Tatin, why: "Obrátený jablkový koláč, pomenovaný po sestrách Tatinových." }
+      - { text: coq au vin, why: "Kohút dusený vo víne." }
+      - { text: bœuf bourguignon, why: "Hovädzie dusené v burgundskom víne." }
+    wrong:
+      - { text: tiramisu, why: "Taliansky dezert zo severovýchodu Talianska." }
+      - { text: gazpacho, why: "Studená polievka z juhu Pyrenejského polostrova." }
+      - { text: musaka, why: "Známa najmä z Grécka a Balkánu, vrstvy baklažánu a mäsa." }
+      - { text: risotto, why: "Talianska krémová ryža." }
+      - { text: pierogi, why: "Poľské plnené taštičky." }
+      - { text: kuskus, why: "Severoafrické jedlo; vo Francúzsku je obľúbené, ale prišlo z Maghrebu." }
+
+  - id: spanielske-jedla
+    type: pick
+    prompt: Ktoré z týchto jedál pochádzajú zo Španielska (nie z Mexika ani z Latinskej Ameriky)?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Spanish_cuisine
+    note: "Ďalšie zdroje: en.wikipedia Gazpacho, Patatas bravas, Crema catalana"
+    correct:
+      - { text: paella, why: "Ryžové jedlo z Valencie." }
+      - { text: gazpacho, why: "Studená polievka z Andalúzie." }
+      - { text: tortilla de patatas, why: "Španielska tortilla je hrubá omeleta so zemiakmi, nie placka." }
+      - { text: patatas bravas, why: "Vyprážané zemiaky s pikantnou omáčkou, klasické tapas." }
+      - { text: crema catalana, why: "Katalánsky krém s karamelovou kôrkou, takmer ako crème brûlée." }
+    wrong:
+      - { text: tacos, why: "Mexická kukuričná placka s plnkou." }
+      - { text: quesadilla, why: "Mexická tortilla so syrom." }
+      - { text: enchiladas, why: "Mexické zapečené plnené tortilly s omáčkou." }
+      - { text: nachos, why: "Vymyslené v mexickom meste Piedras Negras pri hraniciach s Texasom." }
+      - { text: ceviche, why: "Surová ryba marinovaná v limetke, národné jedlo Peru." }
+      - { text: feijoada, why: "Fazuľa s bravčovým mäsom, národné jedlo Brazílie." }
+
+  - id: scoville-papricky
+    type: order
+    prompt: Zoraď papričky od najpálivejšej (podľa hornej hranice na Scovilleho stupnici).
+    direction: desc
+    unit: SHU
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Scoville_scale
+    items:
+      - { text: Carolina Reaper, value: 2500000, why: "1,5 až 2,5 milióna SHU." }
+      - { text: bhut jolokia (ghost pepper), value: 1500000, why: "750-tisíc až 1,5 milióna SHU." }
+      - { text: habanero, value: 350000, why: "100- až 350-tisíc SHU." }
+      - { text: kajenské korenie, value: 50000, why: "25- až 50-tisíc SHU." }
+      - { text: jalapeño, value: 10000, why: "2 500 až 10 000 SHU." }
+      - { text: sladká paprika, value: 0, why: "Žiadny kapsaicín, 0 SHU." }
+
+  - id: jedla-rok-vzniku
+    type: order
+    prompt: Zoraď jedlá podľa roku ich vzniku alebo prvej zmienky, od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Carbonara
+    note: "Ďalšie zdroje: nariadenie EÚ 97/2010 (Marinara 1734), en.wikipedia Wiener schnitzel, Tiramisu, Sushi (California roll)"
+    items:
+      - { text: pizza Marinara, value: 1734, why: "Podľa nariadenia EÚ o Pizza Napoletana vznikla v roku 1734." }
+      - { text: Wiener Schnitzel, value: 1831, why: "Prvá známa zmienka v kuchárskej knihe je z roku 1831." }
+      - { text: carbonara (prvý známy recept), value: 1952, why: "Prvý známy recept vyšiel v roku 1952 v Chicagu." }
+      - { text: tiramisu (verzia z Trevisa), value: 1969, why: "Podľa reštaurácie Le Beccherie vzniklo 24. decembra 1969." }
+      - { text: California roll, value: 1979, why: "Prvá zmienka v tlači je z novembra 1979." }
+
+  - id: kalorie-suroviny
+    type: order
+    prompt: Zoraď suroviny podľa energetickej hodnoty na 100 g, od najvyššej.
+    direction: desc
+    unit: kcal na 100 g
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Olive_oil
+    note: "Hodnoty z nutričných tabuliek en.wikipedia (USDA): Olive oil 880, Butter 717, Almond 579, Avocado 160, Cucumber 16"
+    items:
+      - { text: olivový olej, value: 880, why: "Čistý tuk, okolo 880 kcal." }
+      - { text: maslo, value: 717, why: "Asi štyri pätiny tvorí tuk, 717 kcal." }
+      - { text: mandle, value: 579, why: "Orechy sú plné tuku, 579 kcal." }
+      - { text: avokádo, value: 160, why: "Na ovocie veľa tuku, ale stále len 160 kcal." }
+      - { text: uhorka, value: 16, why: "Takmer samá voda, 16 kcal." }
+
+  - id: pizza-napoletana-teplota
+    type: number
+    prompt: Pri akej teplote sa podľa pravidiel EÚ pre chránenú Pizza Napoletana pečie pizza na dne pece na drevo?
+    answer: 485
+    unit: °C
+    scale: log
+    tolerance: 0.05
+    why: "Približne 485 °C na dne pece, pod klenbou okolo 430 °C; pečie sa 60 až 90 sekúnd."
+    difficulty: 2
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R0097
+
+  - id: pizza-napoletana-priemer
+    type: number
+    prompt: Aký najväčší priemer smie mať podľa pravidiel EÚ pravá Pizza Napoletana?
+    answer: 35
+    unit: cm
+    scale: linear
+    tolerance: 2
+    why: "Priemer je ľubovoľný, ale najviac 35 cm; stred má hrúbku 0,4 cm a okraj 1 až 2 cm."
+    difficulty: 2
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R0097
+
+  - id: pepper-x-shu
+    type: number
+    prompt: Koľko jednotiek SHU na Scovilleho stupnici má v priemere Pepper X, ktorú Guinness v roku 2023 uznal za najpálivejšiu papričku?
+    answer: 2693000
+    unit: SHU
+    scale: log
+    tolerance: 0.15
+    asOf: "2026-11"
+    why: "Okolo 2,69 milióna SHU; vyšľachtil ju Ed Currie, autor aj Carolina Reaper."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Pepper_X
+
+  - id: caesar-rok
+    type: number
+    prompt: V ktorom roku podľa tradície vymyslel Caesar Cardini šalát Caesar?
+    answer: 1924
+    unit: rok
+    scale: linear
+    tolerance: 5
+    why: "4. júla 1924, keď mu cez sviatok Dňa nezávislosti dochádzali v kuchyni zásoby."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Caesar_salad
+
+  - id: wiener-schnitzel-hrubka
+    type: number
+    prompt: Na akú hrúbku v milimetroch sa podľa klasického postupu krája a vyklepáva teľacie mäso na Wiener Schnitzel?
+    answer: 4
+    unit: mm
+    scale: linear
+    tolerance: 1
+    why: "Asi 4 mm; rezeň sa potom vypráža v masti či prepustenom masle pri 160 až 170 °C."
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Wiener_schnitzel
+
+  - id: wiener-schnitzel-maso
+    type: choice
+    prompt: Z akého mäsa musí byť podľa rakúskeho práva Wiener Schnitzel?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Wiener_schnitzel
+    correct: { text: teľacie, why: "Bravčový sa musí volať „Wiener Schnitzel vom Schwein“ alebo „Schnitzel Wiener Art“." }
+    wrong:
+      - { text: bravčové, why: "Je lacnejšie a bežné, ale smie sa volať len „Wiener Schnitzel vom Schwein“ alebo „Schnitzel Wiener Art“." }
+      - { text: kuracie, why: "Kurací rezeň je populárny napríklad v Izraeli, ale viedenský nie je." }
+      - { text: hovädzie, why: "Viedenský rezeň sa robí z teľaťa, nie z dospelého hovädzieho." }
+
+  - id: caesar-mesto
+    type: choice
+    prompt: V ktorom meste vznikol šalát Caesar?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Caesar_salad
+    correct: { text: Tijuana, why: "V Cardiniho reštaurácii v Mexiku, kam chodili Američania obchádzať prohibíciu." }
+    wrong:
+      - { text: Rím, why: "S Júliom Cézarom šalát nemá nič spoločné, to je mýtus." }
+      - { text: Las Vegas, why: "Šalát vznikol v Mexiku, nie v Nevade." }
+      - { text: San Diego, why: "Cardini v San Diegu býval, ale šalát vymyslel v reštaurácii v Tijuane." }
+
+  - id: pizza-bez-syra
+    type: choice
+    prompt: Ktorá z týchto klasických pizz sa robí bez syra?
+    difficulty: 2
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R0097
+    correct: { text: Marinara, why: "Podľa pravidiel EÚ: paradajky, soľ, oregano, cesnak a olivový olej, žiadna mozzarella." }
+    wrong:
+      - { text: Margherita, why: "Má mozzarellu, paradajky a bazalku." }
+      - { text: Quattro formaggi, why: "Štyri syry, čiže presný opak." }
+      - { text: Capricciosa, why: "Má mozzarellu a k tomu šunku, huby či artičoky." }
+
+  - id: tahini-zaklad
+    type: choice
+    prompt: Z čoho sa vyrába tahini, pasta do hummusu?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Tahini
+    correct: { text: zo sezamu, why: "Mleté sezamové semienka, najčastejšie lúpané." }
+    wrong:
+      - { text: z arašidov, why: "Z nich je arašidové maslo." }
+      - { text: z cíceru, why: "Cícer je druhá hlavná surovina hummusu, tahini však nie." }
+      - { text: zo slnečnicových semienok, why: "Tahini je sezamová pasta." }
