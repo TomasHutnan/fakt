@@ -1,0 +1,641 @@
+id: svet-pamiatky
+title: Pamiatky sveta a UNESCO
+description: "Slávne stavby a kde stoja, zázraky sveta starovekého aj moderného, najnavštevovanejšie miesta, rekordné výšky a zoznam svetového dedičstva UNESCO."
+category: zemepis
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ ZÁZRAKY SVETA
+  - id: pam-novych-7-zazrakov
+    type: pick
+    prompt: "Ktoré z týchto pamiatok zvíťazili v internetovej ankete Nových sedem divov sveta z roku 2007?"
+    difficulty: 2
+    tags: [zázraky, pamiatky]
+    source: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World"
+    correct:
+      - { text: "Petra", why: "Skalné mesto Nabatejcov v Jordánsku; do ankety sa dostalo ako jedno zo siedmich víťazov." }
+      - { text: "Koloseum", why: "Rímsky amfiteáter, dokončený v roku 80 n. l., je jediným víťazom z Európy." }
+      - { text: "Chichén Itzá", why: "Mayské mesto na Yucatáne v Mexiku s pyramídou El Castillo." }
+      - { text: "Veľký čínsky múr", why: "Tiahne sa naprieč severom Číny; stavať sa začala už pred viac než dvoma tisícročiami." }
+      - { text: "Machu Picchu", why: "Inkské mesto v Peru; v krajine ho po víťazstve oslavovali celonárodne." }
+      - { text: "Tádž Mahal", why: "Mauzóleum v Agre, ktoré dal postaviť šáh Džahán pre manželku." }
+      - { text: "Socha Krista Spasiteľa", why: "Rio de Janeiro viedlo masívnu kampaň; socha z roku 1931 je najmladšia z víťazov." }
+    wrong:
+      - { text: "Angkor Wat", why: "Bol medzi 21 finalistami, ale medzi sedem víťazov sa nedostal." }
+      - { text: "Alhambra", why: "Granadský palác bol finalistom, no nezvíťazil." }
+      - { text: "Eiffelova veža", why: "Medzi finalistami bola, no neprešla do prvej siedmičky." }
+      - { text: "Socha Slobody", why: "Finalistka, ktorá medzi víťazov nepatrila." }
+      - { text: "Hagia Sofia", why: "Finalistka z Istanbulu; víťazom sa nestala." }
+      - { text: "Stonehenge", why: "Finalista s vekom okolo 4 400 rokov, ale bez víťazstva." }
+      - { text: "Akropola v Aténach", why: "Bola medzi finalistami, ale neprešla." }
+      - { text: "Opera v Sydney", why: "Najmladší finalista z roku 1973, víťazom sa nestal." }
+      - { text: "Kremeľ a Červené námestie", why: "Ruský finalista, ktorý neuspel." }
+
+  - id: pam-starovek-7-zazrakov
+    type: pick
+    prompt: "Ktoré z týchto stavieb patrili medzi tradičných sedem divov starovekého sveta?"
+    difficulty: 2
+    tags: [zázraky, starovek]
+    source: "https://en.wikipedia.org/wiki/Seven_Wonders_of_the_Ancient_World"
+    correct:
+      - { text: "Veľká pyramída v Gíze", why: "Jediná zo siedmich, ktorá stojí dodnes." }
+      - { text: "Visuté záhrady Semiramidiny", why: "Ich existencia je dodnes nepotvrdená." }
+      - { text: "Socha Dia v Olympii", why: "Stála v Olympii v Grécku, kde sa konali staroveké olympijské hry." }
+      - { text: "Artemidin chrám v Efeze", why: "Efez leží v dnešnom Turecku." }
+      - { text: "Mauzóleum v Halikarnasse", why: "Hrobka vládcu Mausola dala všetkým „mauzóleám“ meno." }
+      - { text: "Rodoský kolos", why: "Obrovská socha boha slnka Hélia na gréckom ostrove Rodos." }
+      - { text: "Alexandrijský maják", why: "Maják v egyptskej Alexandrii; jeho ostatky zmizli v stredoveku." }
+    wrong:
+      - { text: "Parthenón", why: "Slávny chrám Atény na aténskej Akropole, no na kanonický zoznam sa nedostal." }
+      - { text: "Stonehenge", why: "Prehistorická stavba v Anglicku, nie súčasť tradičnej siedmičky." }
+      - { text: "Petra", why: "Nabatejské mesto v Jordánsku; do zázrakov sa dostalo až v ankete z roku 2007." }
+      - { text: "Veľký čínsky múr", why: "Medzi starovekými zázrakmi nefiguruje; tradičný zoznam je stredomorský." }
+      - { text: "Hagia Sofia", why: "Postavili ju až v roku 537 n. l., teda dávno po antických zoznamoch." }
+      - { text: "Perzepolis", why: "Ceremoniálne hlavné mesto Achaimenovskej ríše; v kanonickom zozname nie je." }
+      - { text: "Alhambra", why: "Stredoveký maurský palác, až príliš mladý na zoznam z antiky." }
+      - { text: "Terakotová armáda", why: "Pochádza z čínskej hrobky cisára Čchin Š’-chuang-tiho, nie zo stredomorského zoznamu." }
+
+  - id: pam-nove-zazraky-prirody
+    type: pick
+    prompt: "Ktoré z týchto prírodných miest vyhrali anketu Nových sedem divov prírody (výsledky 2011)?"
+    difficulty: 3
+    tags: [zázraky, príroda]
+    source: "https://en.wikipedia.org/wiki/New7Wonders_of_Nature"
+    correct:
+      - { text: "Amazonský dažďový prales", why: "Rozprestiera sa cez osem štátov a Francúzsku Guyanu." }
+      - { text: "Zátoka Ha Long", why: "Vietnamská zátoka s tisíckami vápencových ostrovčekov." }
+      - { text: "Ostrov Čedžu", why: "Sopečný ostrov v Južnej Kórei." }
+      - { text: "Vodopády Iguazú", why: "Ležia na hranici Argentíny a Brazílie." }
+      - { text: "Podzemná rieka Puerto Princesa", why: "Jaskynná rieka na filipínskom ostrove Palawan." }
+      - { text: "Ostrov Komodo", why: "Domov najväčšieho žijúceho druhu jašterice, draka komodského." }
+      - { text: "Stolová hora", why: "Dominanta Kapského Mesta v Juhoafrickej republike." }
+    wrong:
+      - { text: "Veľký bariérový útes", why: "Bol medzi 28 finalistami, no medzi siedmich sa nedostal." }
+      - { text: "Grand Canyon", why: "Finalista, ktorý medzi víťazov nepatril." }
+      - { text: "Uluru", why: "Ikonický austrálsky monolit bol finalistom, ale neuspel." }
+      - { text: "Kilimandžáro", why: "Najvyššia hora Afriky bola finalistom, ale neuspela." }
+      - { text: "Matterhorn", why: "Finalista z hraníc Švajčiarska a Talianska bez víťazstva." }
+      - { text: "Mŕtve more", why: "Finalista, ktorý medzi víťazov nepatril." }
+      - { text: "Fundyjský záliv", why: "Kanadská zátoka s extrémnymi prílivmi bola finalistom, ale neuspela." }
+      - { text: "Mazurské jazerá", why: "Poľský finalista bez víťazstva." }
+
+  # ================================================================ KDE TO STOJÍ
+  - id: pam-lat-amerika
+    type: pick
+    prompt: "Ktoré z týchto slávnych miest a pamiatok sa nachádzajú v Latinskej Amerike?"
+    difficulty: 1
+    tags: [pamiatky, Amerika]
+    source: "https://en.wikipedia.org/wiki/Teotihuacan https://en.wikipedia.org/wiki/Tikal https://en.wikipedia.org/wiki/Rapa_Nui_National_Park https://en.wikipedia.org/wiki/Iguazu_Falls https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)"
+    correct:
+      - { text: "Machu Picchu", why: "Inkské mesto vysoko v Andách v Peru." }
+      - { text: "Chichén Itzá", why: "Mayské mesto v Mexiku." }
+      - { text: "Socha Krista Spasiteľa", why: "Dominanta Rio de Janeira v Brazílii." }
+      - { text: "Moai na Veľkonočnom ostrove", why: "Kamenné sochy na ostrove Rapa Nui, ktorý patrí Čile." }
+      - { text: "Teotihuacán", why: "Starobylé mesto neďaleko Mexico City s Pyramídou Slnka." }
+      - { text: "Tikal", why: "Mayské mesto v guatemalskom pralese." }
+      - { text: "Vodopády Iguazú", why: "Ležia na hranici Argentíny a Brazílie." }
+    wrong:
+      - { text: "Borobudur", why: "Budhistický chrám na indonézskom ostrove Jáva." }
+      - { text: "Karnak", why: "Obrovský chrámový komplex pri Luxore v Egypte." }
+      - { text: "Persepolis", why: "Staroveké perzské ceremoniálne mesto v Iráne." }
+      - { text: "Veľké Zimbabwe", why: "Kamenné mesto v juhovýchodnej Afrike, podľa ktorého sa volá štát Zimbabwe." }
+
+  - id: pam-afrika
+    type: pick
+    prompt: "Ktoré z týchto pamiatok stoja v Afrike?"
+    difficulty: 2
+    tags: [pamiatky, Afrika]
+    source: "https://en.wikipedia.org/wiki/Lalibela https://en.wikipedia.org/wiki/Great_Zimbabwe https://en.wikipedia.org/wiki/Robben_Island https://en.wikipedia.org/wiki/Karnak https://en.wikipedia.org/wiki/Timbuktu https://en.wikipedia.org/wiki/Abu_Simbel_temples"
+    correct:
+      - { text: "Abu Simbel", why: "Skalné chrámy v južnom Egypte." }
+      - { text: "Karnak", why: "Obrovský chrámový komplex pri Luxore v Egypte." }
+      - { text: "Lalibela", why: "Skalné kostoly v Etiópii, vytesané priamo do skaly." }
+      - { text: "Veľké Zimbabwe", why: "Ruiny kamenného mesta, ktoré dalo meno celej krajine." }
+      - { text: "Timbuktu", why: "Mesto v Mali, kedysi centrum obchodu a učenosti na okraji Sahary." }
+      - { text: "Robbenov ostrov", why: "Pri Kapskom Meste; väzenie, v ktorom bol Nelson Mandela." }
+    wrong:
+      - { text: "Perzepolis", why: "Perzské ceremoniálne mesto v Iráne." }
+      - { text: "Efez", why: "Antické mesto na pobreží dnešného Turecka." }
+      - { text: "Baalbek", why: "Rímske chrámy v Libanone, ktoré sa niekedy mýlia s egyptskými." }
+      - { text: "Borobudur", why: "Budhistický chrám v Indonézii." }
+      - { text: "Teotihuacán", why: "Stará metropola v Mexiku." }
+      - { text: "Alhambra", why: "Maurský palác v španielskej Granade." }
+
+  - id: pam-nemecko
+    type: pick
+    prompt: "Ktoré z týchto pamiatok stoja v Nemecku?"
+    difficulty: 1
+    tags: [pamiatky, Európa]
+    source: "https://en.wikipedia.org/wiki/Neuschwanstein_Castle https://en.wikipedia.org/wiki/Brandenburg_Gate https://en.wikipedia.org/wiki/Cologne_Cathedral https://en.wikipedia.org/wiki/Heidelberg_Castle https://en.wikipedia.org/wiki/Sanssouci https://en.wikipedia.org/wiki/Wartburg https://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace https://en.wikipedia.org/wiki/Hohensalzburg_Fortress https://en.wikipedia.org/wiki/Prague_Castle"
+    correct:
+      - { text: "Zámok Neuschwanstein", why: "Rozprávkový zámok bavorského kráľa Ľudovíta II., stavba sa začala v roku 1869." }
+      - { text: "Brandenburská brána", why: "Klasicistický symbol Berlína z 18. storočia." }
+      - { text: "Kolínsky dóm", why: "Najvyšší kostol s dvoma vežami na svete, 157 metrov." }
+      - { text: "Heidelberský zámok", why: "Renesančné ruiny nad mestom Heidelberg." }
+      - { text: "Zámok Sanssouci", why: "Letné sídlo Fridricha Veľkého v Postupime pri Berlíne." }
+      - { text: "Hrad Wartburg", why: "Hrad v Durínsku, kde Martin Luther prekladal Nový zákon." }
+    wrong:
+      - { text: "Zámok Schönbrunn", why: "Letná rezidencia Habsburgovcov vo Viedni." }
+      - { text: "Pevnosť Hohensalzburg", why: "Stojí v rakúskom Salzburgu." }
+      - { text: "Pražský hrad", why: "Sídlo českého prezidenta v Prahe." }
+      - { text: "Hrad Chillon", why: "Ostrovný hrad na Ženevskom jazere vo Švajčiarsku." }
+      - { text: "Mont-Saint-Michel", why: "Prílivový ostrov s kláštorom v Normandii vo Francúzsku." }
+      - { text: "Zámok Chambord", why: "Najväčší zámok na Loire vo Francúzsku." }
+
+  - id: pam-taliansko
+    type: pick
+    prompt: "Ktoré z týchto stavieb a miest nájdeš v Taliansku?"
+    difficulty: 1
+    tags: [pamiatky, Európa]
+    source: "https://en.wikipedia.org/wiki/Colosseum https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/Pantheon,_Rome https://en.wikipedia.org/wiki/Trevi_Fountain https://en.wikipedia.org/wiki/Florence_Cathedral https://en.wikipedia.org/wiki/Pompeii https://en.wikipedia.org/wiki/Castel_Sant%27Angelo"
+    correct:
+      - { text: "Koloseum", why: "V Ríme; mohlo pojať 50 000 až 80 000 divákov." }
+      - { text: "Šikmá veža v Pise", why: "Jej stavba trvala od roku 1173 do 1372." }
+      - { text: "Panteón", why: "Rímsky chrám postavený za Augusta a prestavaný za Hadriána." }
+      - { text: "Fontána di Trevi", why: "Dokončená v roku 1762, hádzanie mincí do nej je slávny rituál." }
+      - { text: "Dóm Santa Maria del Fiore", why: "Florentská katedrála s kupolou Filippa Brunelleschiho." }
+      - { text: "Pompeje", why: "Mesto zasypané popolom z Vezuvu, dnes pri Neapole." }
+      - { text: "Anjelský hrad", why: "Hadriánovo mauzóleum v Ríme, ktoré sa neskôr zmenilo na pevnosť." }
+    wrong:
+      - { text: "Park Güell", why: "Gaudího park v Barcelone v Španielsku." }
+      - { text: "Mont-Saint-Michel", why: "Prílivový ostrov v Normandii vo Francúzsku." }
+      - { text: "Notre-Dame", why: "Gotická katedrála v Paríži." }
+      - { text: "Brandenburská brána", why: "Berlínska pamiatka v Nemecku." }
+      - { text: "Pont du Gard", why: "Rímsky akvadukt v južnom Francúzsku." }
+      - { text: "Alcázar v Seville", why: "Kráľovský palác v Španielsku." }
+
+  - id: pam-spanielsko
+    type: pick
+    prompt: "Ktoré z týchto slávnych miest sa nachádzajú v Španielsku?"
+    difficulty: 2
+    tags: [pamiatky, Európa]
+    source: "https://en.wikipedia.org/wiki/Alhambra https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia https://en.wikipedia.org/wiki/Park_G%C3%BCell https://en.wikipedia.org/wiki/Alc%C3%A1zar_of_Seville https://en.wikipedia.org/wiki/Guggenheim_Museum_Bilbao https://en.wikipedia.org/wiki/Aqueduct_of_Segovia"
+    correct:
+      - { text: "Alhambra", why: "Palác a pevnosť v Granade, jedna z najslávnejších pamiatok islamskej architektúry." }
+      - { text: "Sagrada Família", why: "Barcelonský chrám, ktorý sa stavia od roku 1882." }
+      - { text: "Park Güell", why: "Gaudího park v Barcelone." }
+      - { text: "Alcázar v Seville", why: "Kráľovský palác, ktorý je dodnes jedným z oficiálnych sídiel španielskej kráľovskej rodiny." }
+      - { text: "Guggenheimovo múzeum v Bilbau", why: "Múzeum moderného umenia vo svojráznej budove." }
+      - { text: "Akvadukt v Segovii", why: "Rímsky akvadukt z 1. storočia nášho letopočtu." }
+    wrong:
+      - { text: "Pont du Gard", why: "Rímsky akvadukt, ale v južnom Francúzsku." }
+      - { text: "Fontána di Trevi", why: "Barokový klenot Ríma v Taliansku." }
+      - { text: "Hradná pevnosť Chillon", why: "Švajčiarsky hrad na Ženevskom jazere." }
+      - { text: "Zámok Schönbrunn", why: "Habsburská rezidencia vo Viedni." }
+      - { text: "Brandenburská brána", why: "Berlínska pamiatka v Nemecku." }
+      - { text: "Pražský hrad", why: "Komplex v Prahe, v Česku." }
+      - { text: "Šikmá veža v Pise", why: "Taliansky kampanila pri Pisanskom dóme." }
+
+  - id: pam-paris
+    type: pick
+    prompt: "Ktoré z týchto pamiatok stoja priamo v Paríži (nie niekde inde vo Francúzsku)?"
+    difficulty: 2
+    tags: [pamiatky, Francúzsko]
+    source: "https://en.wikipedia.org/wiki/Arc_de_Triomphe https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris https://en.wikipedia.org/wiki/Palais_Garnier https://en.wikipedia.org/wiki/Centre_Pompidou https://en.wikipedia.org/wiki/Sainte-Chapelle https://en.wikipedia.org/wiki/Louvre https://en.wikipedia.org/wiki/Palace_of_Versailles https://en.wikipedia.org/wiki/Carcassonne https://en.wikipedia.org/wiki/Mont-Saint-Michel"
+    correct:
+      - { text: "Víťazný oblúk", why: "Stojí na západnom konci Champs-Élysées." }
+      - { text: "Louvre", why: "Najnavštevovanejšie umelecké múzeum sveta stojí v 1. parížskom obvode." }
+      - { text: "Bazilika Sacré-Cœur", why: "Biela bazilika na kopci Montmartre." }
+      - { text: "Opera Garnier", why: "Opera z rokov 1861 – 1875 postavená za Napoleona III." }
+      - { text: "Centre Pompidou", why: "Múzeum moderného umenia, známe svojimi vonkajšími rúrami." }
+      - { text: "Sainte-Chapelle", why: "Kráľovská kaplnka na ostrove Cité uprostred Seiny." }
+      - { text: "Notre-Dame", why: "Katedrála na ostrove Île de la Cité; stavala sa v rokoch 1163 – 1345." }
+    wrong:
+      - { text: "Versailleský palác", why: "Stojí v meste Versailles juhozápadne od Paríža." }
+      - { text: "Mont-Saint-Michel", why: "Prílivový ostrov v Normandii, stovky kilometrov od Paríža." }
+      - { text: "Carcassonne", why: "Opevnené mesto v južnom Francúzsku." }
+      - { text: "Pont du Gard", why: "Rímsky akvadukt neďaleko Nîmes." }
+      - { text: "Zámok Chambord", why: "Renesančný zámok v údolí Loiry." }
+      - { text: "Maison Carrée", why: "Rímsky chrám v meste Nîmes." }
+
+  - id: pam-londyn
+    type: pick
+    prompt: "Ktoré z týchto pamiatok stoja priamo v Londýne?"
+    difficulty: 1
+    tags: [pamiatky, Británia]
+    source: "https://en.wikipedia.org/wiki/Tower_Bridge https://en.wikipedia.org/wiki/Buckingham_Palace https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral https://en.wikipedia.org/wiki/Tower_of_London https://en.wikipedia.org/wiki/Big_Ben https://en.wikipedia.org/wiki/Windsor_Castle https://en.wikipedia.org/wiki/Edinburgh_Castle https://en.wikipedia.org/wiki/Stonehenge https://en.wikipedia.org/wiki/Roman_Baths_(Bath)"
+    correct:
+      - { text: "Tower Bridge", why: "Stavala sa v rokoch 1886 – 1894; často sa zamieňa s Londýnskym mostom." }
+      - { text: "Buckingham Palace", why: "Oficiálna rezidencia britského panovníka vo Westminsteri." }
+      - { text: "Katedrála svätého Pavla", why: "Sídlo londýnskeho biskupa na Ludgate Hill." }
+      - { text: "Tower of London", why: "Pevnosť na severnom brehu Temže." }
+      - { text: "Big Ben", why: "Meno patrí zvonu; veža sa oficiálne volá Elizabeth Tower, vysoká 96 m." }
+    wrong:
+      - { text: "Windsorský hrad", why: "Kráľovské sídlo asi 40 km západne od centra Londýna." }
+      - { text: "Edinburský hrad", why: "Stojí na skale v škótskom Edinburghu." }
+      - { text: "Stonehenge", why: "Prehistorická stavba na Salisburskej planine." }
+      - { text: "Rímske kúpele v Bathe", why: "Ležia v meste Bath, nie v Londýne." }
+      - { text: "Hadriánov múr", why: "Rímska pohraničná stavba na severe Anglicka." }
+
+  - id: pam-usa
+    type: pick
+    prompt: "Ktoré z týchto stavieb a pamiatok stoja v USA?"
+    difficulty: 1
+    tags: [pamiatky, Amerika]
+    source: "https://en.wikipedia.org/wiki/Mount_Rushmore https://en.wikipedia.org/wiki/Golden_Gate_Bridge https://en.wikipedia.org/wiki/Hoover_Dam https://en.wikipedia.org/wiki/Space_Needle https://en.wikipedia.org/wiki/CN_Tower https://en.wikipedia.org/wiki/Sydney_Opera_House"
+    correct:
+      - { text: "Mount Rushmore", why: "V Čiernych horách v Južnej Dakote; na skale sú vytesané štyri hlavy prezidentov." }
+      - { text: "Most Golden Gate", why: "Visutý most cez prieliv pri San Franciscu." }
+      - { text: "Hooverova priehrada", why: "Stojí medzi štátmi Nevada a Arizona; stavala sa v rokoch 1931 – 1936." }
+      - { text: "Space Needle", why: "Pozorovateľňa, ktorá je symbolom Seattlu." }
+    wrong:
+      - { text: "CN Tower", why: "553 metrov vysoká veža v Toronte v Kanade." }
+      - { text: "Opera v Sydney", why: "Austrálsky symbol; od roku 2007 je na zozname UNESCO." }
+      - { text: "Socha Krista Spasiteľa", why: "Stojí v Rio de Janeiro." }
+      - { text: "Chichén Itzá", why: "Mayské mesto v Mexiku." }
+      - { text: "Teotihuacán", why: "Mesto pyramíd pri Mexico City." }
+      - { text: "Moai na Veľkonočnom ostrove", why: "Patria Čile." }
+
+  # ================================================================ ROZDIELNE KATEGÓRIE
+  - id: pam-hrobky
+    type: pick
+    prompt: "Ktoré z týchto slávnych stavieb boli pôvodne postavené ako hrobky či mauzóleá?"
+    difficulty: 2
+    tags: [pamiatky, história]
+    source: "https://en.wikipedia.org/wiki/Taj_Mahal https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus https://en.wikipedia.org/wiki/Humayun%27s_Tomb https://en.wikipedia.org/wiki/Castel_Sant%27Angelo https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor https://en.wikipedia.org/wiki/Parthenon https://en.wikipedia.org/wiki/Hagia_Sophia"
+    correct:
+      - { text: "Tádž Mahal", why: "Mauzóleum postavené v rokoch 1631 – 1653 pre Mumtáz Mahal." }
+      - { text: "Veľká pyramída v Gíze", why: "Slúžila ako hrobka faraóna Chufua." }
+      - { text: "Mauzóleum v Halikarnasse", why: "Hrobka Mausola z rokov 353 – 351 pred n. l.; práve podľa nej sa hovorí mauzóleum." }
+      - { text: "Humájúnova hrobka v Dillí", why: "Mauzóleum mogulského cisára v Dillí; vzor pre neskoršie Tádž Mahal." }
+      - { text: "Anjelský hrad v Ríme", why: "Postavený v rokoch 123 – 139 n. l. pre cisára Hadriána ako mauzóleum." }
+      - { text: "Hrobka Čchin Š’-chuang-tiho", why: "Mauzóleum prvého čínskeho cisára, ktoré stráži terakotová armáda." }
+    wrong:
+      - { text: "Brandenburská brána", why: "Berlínska brána postavená v 18. storočí, nie hrobka." }
+      - { text: "Parthenón", why: "Chrám bohyne Atény." }
+      - { text: "Hagia Sofia", why: "Bola kostolom, neskôr mešitou a múzeom." }
+      - { text: "Opera v Sydney", why: "Koncertná sála a divadlo, otvorená v roku 1973." }
+      - { text: "Zámok Neuschwanstein", why: "Rozprávkový zámok Ľudovíta II., nie hrobka." }
+      - { text: "Big Ben", why: "Hodinová veža britského parlamentu." }
+
+  - id: pam-rimania-postavili
+    type: pick
+    prompt: "Ktoré z týchto stavieb postavili starovekí Rimania?"
+    difficulty: 2
+    tags: [pamiatky, starovek]
+    source: "https://en.wikipedia.org/wiki/Pont_du_Gard https://en.wikipedia.org/wiki/Aqueduct_of_Segovia https://en.wikipedia.org/wiki/Hadrian%27s_Wall https://en.wikipedia.org/wiki/Pantheon,_Rome https://en.wikipedia.org/wiki/Baths_of_Caracalla https://en.wikipedia.org/wiki/Maison_Carr%C3%A9e https://en.wikipedia.org/wiki/Trevi_Fountain https://en.wikipedia.org/wiki/Parthenon"
+    correct:
+      - { text: "Pont du Gard", why: "Rímsky akvadukt z 1. storočia n. l., ktorý viedol vodu 50 km do mesta Nîmes." }
+      - { text: "Akvadukt v Segovii", why: "Rímsky akvadukt v Španielsku z prvého storočia n. l." }
+      - { text: "Hadriánov múr", why: "Rímska pohraničná stavba v severnej Británii." }
+      - { text: "Panteón v Ríme", why: "Pôvodne postavený za Augusta a prestavaný za Hadriána." }
+      - { text: "Caracallove kúpele", why: "Druhý najväčší rímsky kúpeľný komplex v Ríme, z rokov 212 – 217 n. l." }
+      - { text: "Maison Carrée v Nîmes", why: "Jeden z najlepšie zachovaných rímskych chrámov." }
+    wrong:
+      - { text: "Parthenón", why: "Grécky chrám z 5. storočia pred n. l." }
+      - { text: "Fontána di Trevi", why: "Barokové dielo dokončené v roku 1762, hoci stojí v Ríme." }
+      - { text: "Chichén Itzá", why: "Mayské mesto na druhej strane Atlantiku." }
+      - { text: "Notre-Dame", why: "Gotická katedrála z 12. – 14. storočia." }
+      - { text: "Angkor Wat", why: "Khmérsky chrám z 12. storočia v Kambodži." }
+
+  - id: pam-najvyssi-svet
+    type: pick
+    prompt: "Ktoré z týchto stavieb boli v istom období najvyššou stavbou či budovou sveta?"
+    difficulty: 3
+    tags: [pamiatky, rekordy]
+    source: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza https://en.wikipedia.org/wiki/Cologne_Cathedral https://en.wikipedia.org/wiki/Washington_Monument https://en.wikipedia.org/wiki/Eiffel_Tower https://en.wikipedia.org/wiki/Chrysler_Building https://en.wikipedia.org/wiki/Empire_State_Building https://en.wikipedia.org/wiki/Petronas_Towers https://en.wikipedia.org/wiki/Shanghai_Tower https://en.wikipedia.org/wiki/Big_Ben"
+    correct:
+      - { text: "Veľká pyramída v Gíze", why: "Bola najvyššou stavbou sveta zhruba od roku 2600 pred n. l. do roku 1221 n. l." }
+      - { text: "Kolínsky dóm", why: "Od roku 1880 bol najvyššou stavbou sveta, kým ho nepredbehol Washingtonov monument." }
+      - { text: "Washingtonov monument", why: "V rokoch 1884 – 1889 predbehol aj Kolínsky dóm." }
+      - { text: "Eiffelova veža", why: "V rokoch 1889 – 1930 bola najvyššou stavbou sveta." }
+      - { text: "Chrysler Building", why: "Titul držal len necelý rok, od mája 1930 do mája 1931." }
+      - { text: "Empire State Building", why: "Najvyššia budova sveta bola od roku 1931 do roku 1970 (s krátkou prestávkou)." }
+      - { text: "Petronas Towers", why: "V rokoch 1998 – 2004 boli najvyššími budovami sveta." }
+    wrong:
+      - { text: "Šikmá veža v Pise", why: "Meria len 55,86 m." }
+      - { text: "Big Ben", why: "Elizabeth Tower má len 96,3 m." }
+      - { text: "Shanghai Tower", why: "Patrí k najvyšším budovám sveta, no rekord nikdy nedržala." }
+      - { text: "Socha Slobody", why: "Vysoká 93 m od zeme po pochodeň, na rekord ďaleko." }
+      - { text: "Neuschwanstein", why: "Zámok, ale nie rekordná výška." }
+
+  # ================================================================ UNESCO
+  - id: pam-unesco-krajiny-35
+    type: pick
+    prompt: "Ktoré z týchto krajín majú v zozname svetového dedičstva UNESCO aspoň 35 lokalít?"
+    difficulty: 3
+    tags: [UNESCO, štatistika]
+    asOf: "2026-07"
+    source: "https://en.wikipedia.org/wiki/World_Heritage_Site"
+    correct:
+      - { text: "Taliansko", why: "Vedie so 62 lokalitami." }
+      - { text: "Čína", why: "Má 61 lokalít." }
+      - { text: "Francúzsko", why: "Má 56 lokalít." }
+      - { text: "Nemecko", why: "Má 55 lokalít." }
+      - { text: "Španielsko", why: "Má 50 lokalít." }
+      - { text: "India", why: "Má 45 lokalít." }
+      - { text: "Mexiko", why: "Má 36 lokalít, najviac v Amerike." }
+      - { text: "Spojené kráľovstvo", why: "Má presne 35 lokalít." }
+    wrong:
+      - { text: "Rusko", why: "Má 33 lokalít, teda tesne pod hranicou." }
+      - { text: "Irán", why: "Má 30 lokalít." }
+      - { text: "Japonsko", why: "Má 27 lokalít." }
+      - { text: "USA", why: "Má 27 lokalít." }
+      - { text: "Brazília", why: "Má 26 lokalít." }
+      - { text: "Grécko", why: "Má 21 lokalít, hoci je kolískou antiky." }
+      - { text: "Turecko", why: "Má 22 lokalít." }
+      - { text: "Austrália", why: "Má 21 lokalít." }
+
+  - id: pam-unesco-prekvapenia
+    type: pick
+    prompt: "Ktoré z týchto miest nečakane patria do zoznamu svetového dedičstva UNESCO?"
+    difficulty: 3
+    tags: [UNESCO, prekvapenia]
+    source: "https://en.wikipedia.org/wiki/Statue_of_Liberty https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Bras%C3%ADlia https://en.wikipedia.org/wiki/Fray_Bentos https://en.wikipedia.org/wiki/Rjukan%E2%80%93Notodden_Industrial_Heritage_Site"
+    correct:
+      - { text: "Socha Slobody", why: "Do zoznamu sa dostala v roku 1984." }
+      - { text: "Opera v Sydney", why: "Zapísaná v roku 2007, medzi vtedy najmladšie pamiatky zoznamu." }
+      - { text: "Brasília", why: "Hlavné mesto Brazílie z 20. storočia, zapísané v roku 1987." }
+      - { text: "Priemyselná krajina Fray Bentos", why: "Priemyselná krajina bývalého mäsopriemyslu v Uruguaji." }
+      - { text: "Priemyselné dedičstvo Rjukan–Notodden", why: "Priemyselná krajina okolo vodnej elektrárne Vemork v nórskom Telemarku." }
+    wrong:
+      - { text: "Most Golden Gate", why: "Slávny, ale na zozname UNESCO nie je." }
+      - { text: "Mount Rushmore", why: "Národný pamätník USA, no nie lokalita UNESCO." }
+      - { text: "Empire State Building", why: "Newyorský mrakodrap v zozname nie je." }
+      - { text: "Hooverova priehrada", why: "Veľké dielo americkej techniky, ale nie lokalita UNESCO." }
+      - { text: "Burdž Chalífa", why: "Najvyššia budova sveta nie je v zozname UNESCO." }
+      - { text: "Space Needle", why: "Symbol Seattlu v zozname nie je." }
+      - { text: "CN Tower", why: "Torontská veža v zozname UNESCO nie je." }
+      - { text: "Petronas Towers", why: "Kuala Lumpur má veže, no do zoznamu sa nedostali." }
+
+  - id: pam-unesco-hranice
+    type: pick
+    prompt: "Ktoré z týchto lokalít UNESCO sa rozprestierajú na území viac než jednej krajiny?"
+    difficulty: 3
+    tags: [UNESCO]
+    source: "https://en.wikipedia.org/wiki/Struve_Geodetic_Arc https://en.wikipedia.org/wiki/Wadden_Sea https://en.wikipedia.org/wiki/Frontiers_of_the_Roman_Empire https://en.wikipedia.org/wiki/Iguazu_Falls https://whc.unesco.org/en/statesparties/sk https://en.wikipedia.org/wiki/World_Heritage_Site"
+    correct:
+      - { text: "Struveho geodetický oblúk", why: "Reťaz meračských bodov od Nórska po Čierne more vedie cez desať krajín." }
+      - { text: "Waddenské more", why: "Spoločná lokalita Dánska, Nemecka a Holandska." }
+      - { text: "Hranice Rímskej ríše", why: "Súčasť tvorí aj dunajský limes, ktorý zasahuje aj na Slovensko." }
+      - { text: "Pralesy a bukové lesy Karpát a iných regiónov Európy", why: "Zapísané spoločne viacerými štátmi, aj Slovenskom." }
+      - { text: "Dielo Le Corbusiera", why: "Rozptýlené v siedmich krajinách od Argentíny po Japonsko." }
+      - { text: "Vodopády Iguazú", why: "Národné parky Argentíny a Brazílie." }
+    wrong:
+      - { text: "Machu Picchu", why: "Leží celé v Peru." }
+      - { text: "Teotihuacán", why: "Celé v Mexiku." }
+      - { text: "Veľký čínsky múr", why: "Ako lokalita UNESCO leží v Číne." }
+      - { text: "Borobudur", why: "Celý na ostrove Jáva v Indonézii." }
+      - { text: "Akropola v Aténach", why: "Leží celá v Grécku." }
+
+  - id: pam-unesco-ohrozene
+    type: pick
+    prompt: "Ktoré z týchto lokalít sú dnes na zozname svetového dedičstva v ohrození?"
+    difficulty: 3
+    tags: [UNESCO, ohrozené]
+    asOf: "2026-05"
+    source: "https://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger"
+    correct:
+      - { text: "Staré mesto Aleppo", why: "Na zozname je od roku 2013 kvôli sýrskej občianskej vojne." }
+      - { text: "Starý Jeruzalem a jeho hradby", why: "Na zozname je od roku 1982." }
+      - { text: "Timbuktu", why: "Pamiatky mesta poškodili islamistické skupiny." }
+      - { text: "Katedrála svätej Sofie v Kyjeve", why: "Na zozname ju drží vojna na Ukrajine." }
+      - { text: "Historické centrum Ľvova", why: "Ohrozené vojnou na Ukrajine." }
+      - { text: "Mesto Potosí", why: "Banícka hora Cerro Rico je od ťažby dierava a nestabilná." }
+      - { text: "Národný park Virunga", why: "Na zozname je od roku 1994; ohrozujú ho pytliactvo a násilie v regióne." }
+      - { text: "Staré mesto Sanaa", why: "Ohrozený občianskou vojnou v Jemene." }
+    wrong:
+      - { text: "Angkor", why: "Zo zoznamu ohrozených zmizol už v roku 2004." }
+      - { text: "Dubrovník", why: "Po vojne v 90. rokoch bol na zozname len v rokoch 1991 – 1998." }
+      - { text: "Galapágy", why: "Ohrozené boli v rokoch 2007 – 2010." }
+      - { text: "Yellowstonský národný park", why: "Na zozname bol v rokoch 1995 – 2003." }
+      - { text: "Kotorský záliv", why: "Po zemetrasení z roku 1979 ohrozený, no do roku 2003." }
+      - { text: "Kolínsky dóm", why: "V rokoch 2004 – 2006 ho ohrozoval plán výškovej budovy neďaleko." }
+      - { text: "Belizský bariérový útes", why: "Ohrozený bol v rokoch 2009 – 2018." }
+      - { text: "Liverpool – námorné obchodné mesto", why: "Zo zoznamu UNESCO ho úplne vyškrtli v roku 2021." }
+
+  - id: pam-najnavstevovanejsie-muzea
+    type: pick
+    prompt: "Ktoré z týchto múzeí malo v poslednom zverejnenom roku (2024 alebo 2025) viac než 6 miliónov návštevníkov?"
+    difficulty: 2
+    tags: [múzeá, návštevnosť]
+    asOf: "2025"
+    source: "https://en.wikipedia.org/wiki/List_of_most-visited_museums"
+    correct:
+      - { text: "Louvre v Paríži", why: "Okolo 9 miliónov návštevníkov." }
+      - { text: "Palácové múzeum v Pekingu", why: "Zakázané mesto malo okolo 19 miliónov návštevníkov." }
+      - { text: "Prírodovedné múzeum v Londýne", why: "Okolo 7,1 milióna návštevníkov." }
+      - { text: "Vatikánske múzeá", why: "Okolo 6,9 milióna návštevníkov." }
+      - { text: "Britské múzeum", why: "Okolo 6,4 milióna návštevníkov." }
+    wrong:
+      - { text: "Metropolitné múzeum umenia v New Yorku", why: "Malo okolo 5,98 milióna, tesne pod hranicou 6 miliónov." }
+      - { text: "Prado v Madride", why: "Okolo 3,5 milióna návštevníkov." }
+      - { text: "Ermitáž v Petrohrade", why: "Okolo 3,8 milióna návštevníkov." }
+      - { text: "Musée d’Orsay", why: "Spolu s Orangerie okolo 3,75 milióna návštevníkov." }
+      - { text: "Tate Modern", why: "Okolo 4,6 milióna návštevníkov." }
+      - { text: "Victoria and Albert Museum", why: "Okolo 3,5 milióna návštevníkov." }
+      - { text: "Americké múzeum prírodnej histórie", why: "Okolo 5,4 milióna návštevníkov." }
+
+  - id: pam-turizmus-top10
+    type: pick
+    prompt: "Ktoré z týchto krajín patrili podľa zoznamu Wikipédie, ktorý vychádza zo štatistík z rokov 2024 – 2025, medzi desať najnavštevovanejších na svete?"
+    difficulty: 2
+    tags: [turizmus, štatistika]
+    asOf: "2025"
+    source: "https://en.wikipedia.org/wiki/World_Tourism_rankings"
+    correct:
+      - { text: "Taliansko", why: "V roku 2025 viedlo so 87,9 milióna príchodov." }
+      - { text: "Španielsko", why: "Takmer 80 miliónov príchodov." }
+      - { text: "USA", why: "Okolo 68 miliónov príchodov." }
+      - { text: "Francúzsko", why: "Okolo 59 miliónov príchodov v ubytovacích zariadeniach." }
+      - { text: "Turecko", why: "Takmer 49 miliónov príchodov." }
+      - { text: "Mexiko", why: "Takmer 48 miliónov príchodov." }
+      - { text: "Japonsko", why: "Takmer 43 miliónov príchodov." }
+      - { text: "Spojené kráľovstvo", why: "Okolo 42,6 milióna príchodov (údaj z roku 2024)." }
+    wrong:
+      - { text: "Egypt", why: "Slávne pamiatky, no v prvej desiatke nie je." }
+      - { text: "Brazília", why: "Napriek veľkosti a Riu medzi desiatku nepatrí." }
+      - { text: "Austrália", why: "Je ďaleko a na desiatku nestačí." }
+      - { text: "India", why: "Má obrovskú populáciu, ale zahraničných turistov podstatne menej." }
+      - { text: "Švajčiarsko", why: "Drahá krajina Álp, medzi desiatku sa nedostala." }
+      - { text: "Južná Afrika", why: "V prvej desiatke nie je." }
+      - { text: "Argentína", why: "V prvej desiatke nie je." }
+      - { text: "Holandsko", why: "V prvej desiatke nie je." }
+
+  # ================================================================ ORDER
+  - id: pam-poradie-vysky
+    type: order
+    prompt: "Zoraď stavby od najvyššej."
+    direction: desc
+    unit: m
+    difficulty: 2
+    tags: [pamiatky, výška]
+    source: "https://en.wikipedia.org/wiki/Eiffel_Tower https://en.wikipedia.org/wiki/Washington_Monument https://en.wikipedia.org/wiki/Cologne_Cathedral https://en.wikipedia.org/wiki/Big_Ben https://en.wikipedia.org/wiki/Statue_of_Liberty"
+    items:
+      - { text: "Eiffelova veža", value: 330, why: "330 m vrátane antény; od roku 1889 do 1930 najvyššia stavba sveta." }
+      - { text: "Washingtonov monument", value: 169, why: "169 m; v rokoch 1884 – 1889 najvyššia stavba sveta." }
+      - { text: "Kolínsky dóm", value: 157, why: "157 m, najvyšší dvojvežový kostol na svete." }
+      - { text: "Big Ben (Elizabeth Tower)", value: 96, why: "96,3 m; len tretia najvyššia hodinová veža v Británii." }
+      - { text: "Socha Slobody (od zeme po pochodeň)", value: 93, why: "93 m s podstavcom; samotná socha má iba 46 m." }
+
+  - id: pam-poradie-zaciatok-stavby
+    type: order
+    prompt: "Zoraď stavby podľa roku začiatku stavby, od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [pamiatky, história]
+    source: "https://en.wikipedia.org/wiki/Colosseum https://en.wikipedia.org/wiki/Hagia_Sophia https://en.wikipedia.org/wiki/Notre-Dame_de_Paris https://en.wikipedia.org/wiki/Taj_Mahal https://en.wikipedia.org/wiki/Neuschwanstein_Castle https://en.wikipedia.org/wiki/Eiffel_Tower"
+    items:
+      - { text: "Koloseum", value: 72, why: "Stavba sa začala v roku 72 za Vespasiana, dokončená bola v roku 80." }
+      - { text: "Hagia Sofia (dnešná stavba)", value: 532, why: "Dnešnú stavbu dal postaviť Justinián I. a dokončená bola už v roku 537." }
+      - { text: "Notre-Dame v Paríži", value: 1163, why: "Stavala sa až do roku 1345." }
+      - { text: "Tádž Mahal", value: 1631, why: "Stavba trvala do roku 1653." }
+      - { text: "Zámok Neuschwanstein", value: 1869, why: "Ľudovít II. zomrel v roku 1886 a zámok sprístupnili krátko po jeho smrti." }
+      - { text: "Eiffelova veža", value: 1887, why: "Dokončená bola v roku 1889 na svetovú výstavu." }
+
+  - id: pam-poradie-muzea
+    type: order
+    prompt: "Zoraď múzeá podľa návštevnosti v roku 2025, od najnavštevovanejšieho."
+    direction: desc
+    unit: mil. návštevníkov
+    difficulty: 2
+    asOf: "2025"
+    tags: [múzeá, návštevnosť]
+    source: "https://en.wikipedia.org/wiki/List_of_most-visited_museums"
+    items:
+      - { text: "Louvre", value: 9.0, why: "Najnavštevovanejšie umelecké múzeum sveta." }
+      - { text: "Prírodovedné múzeum v Londýne", value: 7.1, why: "Bezplatný vstup láka najmä rodiny." }
+      - { text: "Vatikánske múzeá", value: 6.9, why: "Končia Sixtínskou kaplnkou." }
+      - { text: "Britské múzeum", value: 6.4, why: "Má v zbierkach Rosettskú dosku." }
+      - { text: "Metropolitné múzeum umenia", value: 6.0, why: "Tesne pod hranicou 6 miliónov návštevníkov." }
+
+  - id: pam-poradie-unesco-pocet
+    type: order
+    prompt: "Zoraď krajiny podľa počtu lokalít v zozname svetového dedičstva UNESCO, od najviac."
+    direction: desc
+    unit: lokalít
+    difficulty: 2
+    asOf: "2026-07"
+    tags: [UNESCO, štatistika]
+    source: "https://en.wikipedia.org/wiki/World_Heritage_Site https://whc.unesco.org/en/statesparties/sk"
+    items:
+      - { text: "Taliansko", value: 62, why: "Najviac na svete." }
+      - { text: "Nemecko", value: 55, why: "Štvrté najviac na svete." }
+      - { text: "Japonsko", value: 27, why: "Napriek bohatej histórii má menej než polovicu toho, čo Nemecko." }
+      - { text: "Česko", value: 17, why: "Spolu 17 lokalít." }
+      - { text: "Slovensko", value: 8, why: "Osem lokalít: šesť kultúrnych a dve prírodné." }
+
+  - id: pam-poradie-sochy
+    type: order
+    prompt: "Zoraď sochy podľa výšky samotnej sochy (bez podstavca), od najvyššej."
+    direction: desc
+    unit: m
+    difficulty: 2
+    tags: [sochy, výška]
+    source: "https://en.wikipedia.org/wiki/Statue_of_Unity https://en.wikipedia.org/wiki/Spring_Temple_Buddha https://en.wikipedia.org/wiki/Statue_of_Liberty https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)"
+    items:
+      - { text: "Socha jednoty v Indii", value: 182, why: "Najvyššia socha sveta, otvorená v roku 2018." }
+      - { text: "Budha Jarného chrámu v Číne", value: 128, why: "Postavená z medi a dokončená v roku 2008." }
+      - { text: "Socha Slobody", value: 46, why: "Od zeme po pochodeň má 93 m, no samotná meď je len 46 m." }
+      - { text: "Socha Krista Spasiteľa v Riu", value: 30, why: "Má 30 m, s podstavcom 38 m; rozpätie rúk je 28 m." }
+
+  # ================================================================ NUMBER
+  - id: pam-pocet-unesco-svet
+    type: number
+    prompt: "Koľko lokalít je približne na zozname svetového dedičstva UNESCO?"
+    answer: 1273
+    unit: lokalít
+    scale: log
+    tolerance: 0.05
+    asOf: "2026-07"
+    why: "Rozložené na 173 krajín; z nich 991 je kultúrnych, 240 prírodných a 42 zmiešaných."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/World_Heritage_Site
+
+  - id: pam-pocet-unesco-slovensko
+    type: number
+    prompt: "Koľko lokalít z územia Slovenska je zapísaných v zozname svetového dedičstva UNESCO?"
+    answer: 8
+    unit: lokalít
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: "Šesť kultúrnych a dve prírodné; najmladší je dunajský limes z roku 2021."
+    difficulty: 1
+    source: https://whc.unesco.org/en/statesparties/sk
+
+  - id: pam-sagrada-zaciatok
+    type: number
+    prompt: "V ktorom roku sa začala stavať barcelonská Sagrada Família, ktorá sa stavia dodnes?"
+    answer: 1882
+    unit: rok
+    scale: linear
+    tolerance: 5
+    why: "Gaudí prevzal projekt po pár rokoch a venoval mu zvyšok života; hlavná veža bola dokončená až vo februári 2026."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia
+
+  - id: pam-pisa-trvanie
+    type: number
+    prompt: "Koľko rokov (približne) trvala stavba Šikmej veže v Pise od prvého kameňa po dokončenie?"
+    answer: 199
+    unit: rokov
+    scale: log
+    tolerance: 0.1
+    why: "Od roku 1173 do 1372; stavba sa kvôli vojnám Pisy zastavila na takmer storočie."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa
+
+  - id: pam-louvre-navstevnost
+    type: number
+    prompt: "Koľko miliónov návštevníkov (približne) prišlo v roku 2025 do parížskeho Louvru?"
+    answer: 9
+    unit: mil. návštevníkov
+    scale: log
+    tolerance: 0.15
+    asOf: "2025"
+    why: "Je to najnavštevovanejšie umelecké múzeum sveta."
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Louvre
+
+  # ================================================================ CHOICE
+  - id: pam-alhambra-mesto
+    type: choice
+    prompt: "V ktorom španielskom meste stojí palác a pevnosť Alhambra?"
+    difficulty: 2
+    tags: [pamiatky, Španielsko]
+    source: https://en.wikipedia.org/wiki/Alhambra
+    correct: { text: "Granada", why: "Stojí na kopci nad mestom v Andalúzii." }
+    wrong:
+      - { text: "Sevilla", why: "Má Alcázar, no Alhambra v nej nestojí." }
+      - { text: "Córdoba", why: "Preslávila ju mešita-katedrála, nie Alhambra." }
+      - { text: "Madrid", why: "Je hlavným mestom Španielska, ale Alhambra je inde." }
+
+  - id: pam-chichen-itza-ludia
+    type: choice
+    prompt: "Ktorá starobylá civilizácia postavila Chichén Itzá s pyramídou El Castillo?"
+    difficulty: 1
+    tags: [pamiatky, história]
+    source: https://en.wikipedia.org/wiki/Chichen_Itza
+    correct: { text: "Mayovia", why: "Chichén Itzá bolo veľkým mayským mestom na polostrove Yucatán v Mexiku." }
+    wrong:
+      - { text: "Inkovia", why: "Ich ríša bola v Andách; ich slávne mesto je Machu Picchu." }
+      - { text: "Aztékovia", why: "Ich hlavné mesto Tenochtitlán stálo tam, kde je dnes Mexico City." }
+      - { text: "Olmékovia", why: "Staršia mezoamerická kultúra, známa kolosálnymi kamennými hlavami." }
+
+  - id: pam-neuschwanstein-kral
+    type: choice
+    prompt: "Ktorý bavorský kráľ dal postaviť rozprávkový zámok Neuschwanstein?"
+    difficulty: 2
+    tags: [pamiatky, história]
+    source: https://en.wikipedia.org/wiki/Neuschwanstein_Castle
+    correct: { text: "Ľudovít II.", why: "Zámok začal stavať v roku 1869; nazývali ho aj „rozprávkový kráľ“." }
+    wrong:
+      - { text: "Maximilián II.", why: "Otec Ľudovíta II. dal vybudovať susedný zámok Hohenschwangau." }
+      - { text: "Fridrich Veľký", why: "Pruský kráľ, ktorý dal postaviť Sanssouci v Postupime." }
+      - { text: "Vilhelm II.", why: "Posledný nemecký cisár, nie bavorský kráľ." }
+
+  - id: pam-liverpool-2021
+    type: choice
+    prompt: "Ktoré mesto prišlo v roku 2021 o status lokality svetového dedičstva UNESCO?"
+    difficulty: 3
+    tags: [UNESCO]
+    source: https://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger
+    correct: { text: "Liverpool", why: "Dôvodom bol rozvoj nábrežia Liverpool Waters, ktorý podľa UNESCO ničil jeho vzhľad." }
+    wrong:
+      - { text: "Drážďany", why: "O status prišli už v roku 2009 pre stavbu mosta cez dolinu Labe." }
+      - { text: "Viedeň", why: "Bola ohrozená pre výškové projekty, no status ju neopustil." }
+      - { text: "Dubrovník", why: "Bol len dočasne na zozname ohrozených pamiatok po vojne v 90. rokoch." }
