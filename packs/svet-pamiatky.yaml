@@ -182,7 +182,7 @@ questions:
     wrong:
       - { text: "Pont du Gard", why: "Rímsky akvadukt, ale v južnom Francúzsku." }
       - { text: "Fontána di Trevi", why: "Barokový klenot Ríma v Taliansku." }
-      - { text: "Hradná pevnosť Chillon", why: "Švajčiarsky hrad na Ženevskom jazere." }
+      - { text: "Hrad Chillon", why: "Švajčiarsky hrad na Ženevskom jazere." }
       - { text: "Zámok Schönbrunn", why: "Habsburská rezidencia vo Viedni." }
       - { text: "Brandenburská brána", why: "Berlínska pamiatka v Nemecku." }
       - { text: "Pražský hrad", why: "Komplex v Prahe, v Česku." }
@@ -302,7 +302,7 @@ questions:
       - { text: "Washingtonov monument", why: "V rokoch 1884 – 1889 predbehol aj Kolínsky dóm." }
       - { text: "Eiffelova veža", why: "V rokoch 1889 – 1930 bola najvyššou stavbou sveta." }
       - { text: "Chrysler Building", why: "Titul držal len necelý rok, od mája 1930 do mája 1931." }
-      - { text: "Empire State Building", why: "Najvyššia budova sveta bola nepretržite od roku 1931 do roku 1970." }
+      - { text: "Empire State Building", why: "Najvyššou budovou sveta bol nepretržite od roku 1931 do roku 1970." }
       - { text: "Petronas Towers", why: "V rokoch 1998 – 2004 boli najvyššími budovami sveta." }
     wrong:
       - { text: "Šikmá veža v Pise", why: "Meria len 55,86 m." }
@@ -377,7 +377,7 @@ questions:
       - { text: "Teotihuacán", why: "Celé v Mexiku." }
       - { text: "Veľký čínsky múr", why: "Ako lokalita UNESCO leží v Číne." }
       - { text: "Borobudur", why: "Celý na ostrove Jáva v Indonézii." }
-      - { text: "Vodopády Iguazú", why: "UNESCO ju zapísalo ako dve samostatné lokality, argentínsku (1984) a brazílsku (1986)." }
+      - { text: "Vodopády Iguazú", why: "UNESCO ich zapísalo ako dve samostatné lokality, argentínsku (1984) a brazílsku (1986)." }
       - { text: "Akropola v Aténach", why: "Leží celá v Grécku." }
 
   - id: pam-unesco-ohrozene
@@ -408,7 +408,7 @@ questions:
 
   - id: pam-najnavstevovanejsie-muzea
     type: pick
-    prompt: "Ktoré z týchto múzeí malo v poslednom zverejnenom roku (2024 alebo 2025) viac než 6 miliónov návštevníkov?"
+    prompt: "Ktoré z týchto múzeí mali v poslednom zverejnenom roku (2024 alebo 2025) viac než 6 miliónov návštevníkov?"
     difficulty: 2
     tags: [múzeá, návštevnosť]
     asOf: "2025"
