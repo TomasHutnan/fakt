@@ -5,7 +5,7 @@ category: zemepis
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ ZÁZRAKY SVETA
   - id: pam-novych-7-zazrakov
@@ -15,10 +15,10 @@ questions:
     tags: [zázraky, pamiatky]
     source: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World"
     correct:
-      - { text: "Petra", why: "Skalné mesto Nabatejcov v Jordánsku; do ankety sa dostalo ako jedno zo siedmich víťazov." }
+      - { text: "Petra", why: "Skalné mesto Nabatejcov v Jordánsku; do ankety sa dostalo ako jedna zo siedmich víťazných pamiatok." }
       - { text: "Koloseum", why: "Rímsky amfiteáter, dokončený v roku 80 n. l., je jediným víťazom z Európy." }
       - { text: "Chichén Itzá", why: "Mayské mesto na Yucatáne v Mexiku s pyramídou El Castillo." }
-      - { text: "Veľký čínsky múr", why: "Tiahne sa naprieč severom Číny; stavať sa začala už pred viac než dvoma tisícročiami." }
+      - { text: "Veľký čínsky múr", why: "Tiahne sa naprieč severom Číny; stavať sa začal už pred viac než dvoma tisícročiami." }
       - { text: "Machu Picchu", why: "Inkské mesto v Peru; v krajine ho po víťazstve oslavovali celonárodne." }
       - { text: "Tádž Mahal", why: "Mauzóleum v Agre, ktoré dal postaviť šáh Džahán pre manželku." }
       - { text: "Socha Krista Spasiteľa", why: "Rio de Janeiro viedlo masívnu kampaň; socha z roku 1931 je najmladšia z víťazov." }
@@ -41,7 +41,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Seven_Wonders_of_the_Ancient_World"
     correct:
       - { text: "Veľká pyramída v Gíze", why: "Jediná zo siedmich, ktorá stojí dodnes." }
-      - { text: "Visuté záhrady Semiramidiny", why: "Ich existencia je dodnes nepotvrdená." }
+      - { text: "Semiramidine visuté záhrady", why: "Ich existencia je dodnes nepotvrdená." }
       - { text: "Socha Dia v Olympii", why: "Stála v Olympii v Grécku, kde sa konali staroveké olympijské hry." }
       - { text: "Artemidin chrám v Efeze", why: "Efez leží v dnešnom Turecku." }
       - { text: "Mauzóleum v Halikarnasse", why: "Hrobka vládcu Mausola dala všetkým „mauzóleám“ meno." }
@@ -99,7 +99,7 @@ questions:
     wrong:
       - { text: "Borobudur", why: "Budhistický chrám na indonézskom ostrove Jáva." }
       - { text: "Karnak", why: "Obrovský chrámový komplex pri Luxore v Egypte." }
-      - { text: "Persepolis", why: "Staroveké perzské ceremoniálne mesto v Iráne." }
+      - { text: "Perzepolis", why: "Staroveké perzské ceremoniálne mesto v Iráne." }
       - { text: "Veľké Zimbabwe", why: "Kamenné mesto v juhovýchodnej Afrike, podľa ktorého sa volá štát Zimbabwe." }
 
   - id: pam-afrika
@@ -153,7 +153,7 @@ questions:
     correct:
       - { text: "Koloseum", why: "V Ríme; mohlo pojať 50 000 až 80 000 divákov." }
       - { text: "Šikmá veža v Pise", why: "Jej stavba trvala od roku 1173 do 1372." }
-      - { text: "Panteón", why: "Rímsky chrám postavený za Augusta a prestavaný za Hadriána." }
+      - { text: "Panteón v Ríme", why: "Rímsky chrám postavený za Augusta a prestavaný za Hadriána." }
       - { text: "Fontána di Trevi", why: "Dokončená v roku 1762, hádzanie mincí do nej je slávny rituál." }
       - { text: "Dóm Santa Maria del Fiore", why: "Florentská katedrála s kupolou Filippa Brunelleschiho." }
       - { text: "Pompeje", why: "Mesto zasypané popolom z Vezuvu, dnes pri Neapole." }
@@ -186,7 +186,7 @@ questions:
       - { text: "Zámok Schönbrunn", why: "Habsburská rezidencia vo Viedni." }
       - { text: "Brandenburská brána", why: "Berlínska pamiatka v Nemecku." }
       - { text: "Pražský hrad", why: "Komplex v Prahe, v Česku." }
-      - { text: "Šikmá veža v Pise", why: "Taliansky kampanila pri Pisanskom dóme." }
+      - { text: "Šikmá veža v Pise", why: "Talianska kampanila pri Pisanskom dóme." }
 
   - id: pam-paris
     type: pick
@@ -217,7 +217,7 @@ questions:
     tags: [pamiatky, Británia]
     source: "https://en.wikipedia.org/wiki/Tower_Bridge https://en.wikipedia.org/wiki/Buckingham_Palace https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral https://en.wikipedia.org/wiki/Tower_of_London https://en.wikipedia.org/wiki/Big_Ben https://en.wikipedia.org/wiki/Windsor_Castle https://en.wikipedia.org/wiki/Edinburgh_Castle https://en.wikipedia.org/wiki/Stonehenge https://en.wikipedia.org/wiki/Roman_Baths_(Bath)"
     correct:
-      - { text: "Tower Bridge", why: "Stavala sa v rokoch 1886 – 1894; často sa zamieňa s Londýnskym mostom." }
+      - { text: "Tower Bridge", why: "Staval sa v rokoch 1886 – 1894; často sa zamieňa s Londýnskym mostom." }
       - { text: "Buckingham Palace", why: "Oficiálna rezidencia britského panovníka vo Westminsteri." }
       - { text: "Katedrála svätého Pavla", why: "Sídlo londýnskeho biskupa na Ludgate Hill." }
       - { text: "Tower of London", why: "Pevnosť na severnom brehu Temže." }
@@ -302,7 +302,7 @@ questions:
       - { text: "Washingtonov monument", why: "V rokoch 1884 – 1889 predbehol aj Kolínsky dóm." }
       - { text: "Eiffelova veža", why: "V rokoch 1889 – 1930 bola najvyššou stavbou sveta." }
       - { text: "Chrysler Building", why: "Titul držal len necelý rok, od mája 1930 do mája 1931." }
-      - { text: "Empire State Building", why: "Najvyššia budova sveta bola od roku 1931 do roku 1970 (s krátkou prestávkou)." }
+      - { text: "Empire State Building", why: "Najvyššia budova sveta bola nepretržite od roku 1931 do roku 1970." }
       - { text: "Petronas Towers", why: "V rokoch 1998 – 2004 boli najvyššími budovami sveta." }
     wrong:
       - { text: "Šikmá veža v Pise", why: "Meria len 55,86 m." }
@@ -346,7 +346,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Statue_of_Liberty https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Bras%C3%ADlia https://en.wikipedia.org/wiki/Fray_Bentos https://en.wikipedia.org/wiki/Rjukan%E2%80%93Notodden_Industrial_Heritage_Site"
     correct:
       - { text: "Socha Slobody", why: "Do zoznamu sa dostala v roku 1984." }
-      - { text: "Opera v Sydney", why: "Zapísaná v roku 2007, medzi vtedy najmladšie pamiatky zoznamu." }
+      - { text: "Opera v Sydney", why: "Zapísaná v roku 2007, vtedy patrila medzi najmladšie pamiatky zoznamu." }
       - { text: "Brasília", why: "Hlavné mesto Brazílie z 20. storočia, zapísané v roku 1987." }
       - { text: "Priemyselná krajina Fray Bentos", why: "Priemyselná krajina bývalého mäsopriemyslu v Uruguaji." }
       - { text: "Priemyselné dedičstvo Rjukan–Notodden", why: "Priemyselná krajina okolo vodnej elektrárne Vemork v nórskom Telemarku." }
@@ -369,15 +369,15 @@ questions:
     correct:
       - { text: "Struveho geodetický oblúk", why: "Reťaz meračských bodov od Nórska po Čierne more vedie cez desať krajín." }
       - { text: "Waddenské more", why: "Spoločná lokalita Dánska, Nemecka a Holandska." }
-      - { text: "Hranice Rímskej ríše", why: "Súčasť tvorí aj dunajský limes, ktorý zasahuje aj na Slovensko." }
+      - { text: "Hranice Rímskej ríše", why: "Dunajský limes, ktorý zasahuje aj na Slovensko, UNESCO zapísalo v roku 2021 ako samostatnú lokalitu." }
       - { text: "Pralesy a bukové lesy Karpát a iných regiónov Európy", why: "Zapísané spoločne viacerými štátmi, aj Slovenskom." }
       - { text: "Dielo Le Corbusiera", why: "Rozptýlené v siedmich krajinách od Argentíny po Japonsko." }
-      - { text: "Vodopády Iguazú", why: "Národné parky Argentíny a Brazílie." }
     wrong:
       - { text: "Machu Picchu", why: "Leží celé v Peru." }
       - { text: "Teotihuacán", why: "Celé v Mexiku." }
       - { text: "Veľký čínsky múr", why: "Ako lokalita UNESCO leží v Číne." }
       - { text: "Borobudur", why: "Celý na ostrove Jáva v Indonézii." }
+      - { text: "Vodopády Iguazú", why: "UNESCO ju zapísalo ako dve samostatné lokality, argentínsku (1984) a brazílsku (1986)." }
       - { text: "Akropola v Aténach", why: "Leží celá v Grécku." }
 
   - id: pam-unesco-ohrozene
@@ -395,7 +395,7 @@ questions:
       - { text: "Historické centrum Ľvova", why: "Ohrozené vojnou na Ukrajine." }
       - { text: "Mesto Potosí", why: "Banícka hora Cerro Rico je od ťažby dierava a nestabilná." }
       - { text: "Národný park Virunga", why: "Na zozname je od roku 1994; ohrozujú ho pytliactvo a násilie v regióne." }
-      - { text: "Staré mesto Sanaa", why: "Ohrozený občianskou vojnou v Jemene." }
+      - { text: "Staré mesto Saná", why: "Ohrozené občianskou vojnou v Jemene." }
     wrong:
       - { text: "Angkor", why: "Zo zoznamu ohrozených zmizol už v roku 2004." }
       - { text: "Dubrovník", why: "Po vojne v 90. rokoch bol na zozname len v rokoch 1991 – 1998." }
@@ -436,7 +436,7 @@ questions:
     asOf: "2025"
     source: "https://en.wikipedia.org/wiki/World_Tourism_rankings"
     correct:
-      - { text: "Taliansko", why: "V roku 2025 viedlo so 87,9 milióna príchodov." }
+      - { text: "Taliansko", why: "V roku 2025 viedlo s 87,9 milióna príchodov." }
       - { text: "Španielsko", why: "Takmer 80 miliónov príchodov." }
       - { text: "USA", why: "Okolo 68 miliónov príchodov." }
       - { text: "Francúzsko", why: "Okolo 59 miliónov príchodov v ubytovacích zariadeniach." }
@@ -500,7 +500,7 @@ questions:
       - { text: "Prírodovedné múzeum v Londýne", value: 7.1, why: "Bezplatný vstup láka najmä rodiny." }
       - { text: "Vatikánske múzeá", value: 6.9, why: "Končia Sixtínskou kaplnkou." }
       - { text: "Britské múzeum", value: 6.4, why: "Má v zbierkach Rosettskú dosku." }
-      - { text: "Metropolitné múzeum umenia", value: 6.0, why: "Tesne pod hranicou 6 miliónov návštevníkov." }
+      - { text: "Metropolitné múzeum umenia", value: 5.98, why: "Takmer 6 miliónov návštevníkov." }
 
   - id: pam-poradie-unesco-pocet
     type: order
@@ -564,7 +564,7 @@ questions:
     unit: rok
     scale: linear
     tolerance: 5
-    why: "Gaudí prevzal projekt po pár rokoch a venoval mu zvyšok života; hlavná veža bola dokončená až vo februári 2026."
+    why: "Gaudí prevzal projekt v roku 1883, rok po začiatku stavby, a venoval mu zvyšok života; hlavná veža bola dokončená až vo februári 2026."
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia
 
