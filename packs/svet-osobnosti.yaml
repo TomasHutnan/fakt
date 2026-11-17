@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ PICK
   - id: leonardo-diela
@@ -18,7 +18,7 @@ questions:
       - { text: Mona Lisa, why: "Maľoval ju roky a nikdy ju nedodal objednávateľovi; napokon ju odviezol do Francúzska." }
       - { text: Posledná večera, why: "Nástenná maľba v refektári milánskeho kláštora, nie klasická freska, preto začala chátrať ešte za jeho života." }
       - { text: Dáma s hranostajom, why: "Portrét Cecilie Gallerani z konca 15. storočia." }
-      - { text: Madona v skalách, why: "Vznikala v rokoch okolo 1483 až 1493 a existujú dve verzie, v Louvri a v Londýne." }
+      - { text: Madona v skalách, why: "Existujú dve verzie: v Louvri (od roku 1483) a v Londýne, dokončená okolo roku 1508." }
       - { text: Vitruviánsky muž, why: "Kresba mužskej postavy vpísanej do kruhu a štvorca, okolo roku 1490." }
     wrong:
       - { text: Stvorenie Adama, why: "Maľba na strope Sixtínskej kaplnky od Michelangela." }
@@ -46,7 +46,7 @@ questions:
       - { text: Mysliteľ, why: "Bronzová socha Augusta Rodina z 19. storočia." }
       - { text: Vitruviánsky muž, why: "Leonardova kresba." }
       - { text: Aténska škola, why: "Raffaelova freska, tiež z Vatikánu, ale z inej ruky." }
-      - { text: Nočná hliadka, why: "Rembrandt, o vyše sto rokov neskôr." }
+      - { text: Nočná hliadka, why: "Rembrandt, takmer 80 rokov po Michelangelovej smrti." }
 
   - id: van-gogh-diela
     type: pick
@@ -63,7 +63,7 @@ questions:
     wrong:
       - { text: Výkrik, why: "Edvard Munch, nórsky maliar." }
       - { text: "Impresia, východ slnka", why: "Obraz Clauda Moneta, podľa ktorého dostal impresionizmus meno." }
-      - { text: Vodné ľalie, why: "Séria Clauda Moneta zo záhrady v Giverny." }
+      - { text: Lekná, why: "Séria Clauda Moneta zo záhrady v Giverny." }
       - { text: Pretrvávanie pamäte, why: "Slávne topiace sa hodiny namaľoval Dalí." }
       - { text: Bozk, why: "Zlatý obraz Gustava Klimta." }
       - { text: Guernica, why: "Picassov obraz z roku 1937." }
@@ -78,12 +78,12 @@ questions:
     correct:
       - { text: Rembrandt, why: "Narodil sa v Leidene a väčšinu života prežil v Amsterdame." }
       - { text: Johannes Vermeer, why: "Celý život strávil v Delfte a namaľoval len niečo vyše tridsať obrazov." }
-      - { text: Vincent van Gogh, why: "Narodil sa v Zundert v provincii Severný Brabant." }
-      - { text: Frans Hals, why: "Majster smejúcich sa portrétov, pôsobil v Haarleme." }
+      - { text: Vincent van Gogh, why: "Narodil sa v Zunderte v provincii Severný Brabant." }
       - { text: Piet Mondrian, why: "Narodil sa v Amersfoorte; známy obrazmi z farebných štvorcov a čiernych čiar." }
       - { text: M. C. Escher, why: "Narodil sa v Leeuwardene; slávny nemožnými schodiskami a premenami obrazcov." }
-      - { text: Hieronymus Bosch, why: "Pochádzal zo mesta 's-Hertogenbosch, odkiaľ si zobral aj meno." }
+      - { text: Hieronymus Bosch, why: "Pochádzal z mesta 's-Hertogenbosch, odkiaľ si zobral aj meno." }
     wrong:
+      - { text: Frans Hals, why: "Majster smejúcich sa portrétov z Haarlemu, narodil sa však v Antverpách v dnešnom Belgicku." }
       - { text: Peter Paul Rubens, why: "Flámsky maliar, narodil sa v nemeckom Siegene a pôsobil v Antverpách." }
       - { text: Francisco Goya, why: "Španiel." }
       - { text: Claude Monet, why: "Francúz." }
@@ -123,7 +123,7 @@ questions:
       - { text: Don Giovanni, why: "Opera o zvodcovi, ktorú napísal podľa libreta Lorenza da Ponteho." }
       - { text: Così fan tutte, why: "Tretia opera, ktorú urobil s Da Pontem; premiéra bola v roku 1790." }
       - { text: Čarovná flauta, why: "Nemecký singspiel; Ária Kráľovnej noci letí aj na Voyageroch do vesmíru." }
-      - { text: Malá nočná hudba, why: "Serenáda Eine kleine Nachtmusik, vydaná v roku 1787." }
+      - { text: Malá nočná hudba, why: "Serenádu Eine kleine Nachtmusik dokončil v roku 1787, vydali ju až po jeho smrti." }
       - { text: Jupiterova symfónia, why: "Jeho posledná symfónia, 41., z leta 1788." }
     wrong:
       - { text: Fidelio, why: "Beethovenova opera." }
@@ -141,7 +141,7 @@ questions:
     tags: [hudba, romantizmus]
     correct:
       - { text: Labutie jazero, why: "Balet, ktorý pri prvom uvedení v Moskve roku 1877 dopadol skôr neúspešne." }
-      - { text: Luskáčik, why: "Vianočný balet s Tancom cukrovej vílky." }
+      - { text: Luskáčik, why: "Vianočný balet s Tancom cukrovej víly." }
       - { text: Spiaca krasavica, why: "Balet podľa rozprávky, jeho druhý veľký." }
       - { text: Eugen Onegin, why: "Opera podľa Puškinovho veršovaného románu." }
       - { text: Predohra 1812, why: "Sám ju označil za hlučnú a bez vrúcneho citu; hrá sa so skutočnými delami." }
@@ -152,7 +152,7 @@ questions:
       - { text: Vltava, why: "Český skladateľ Bedřich Smetana." }
       - { text: Sen noci svätojánskej, why: "Hudbu skomponoval Mendelssohn." }
       - { text: Rapsódia v modrom, why: "Američan George Gershwin." }
-      - { text: Hungarian Rhapsody, why: "Franz Liszt." }
+      - { text: Uhorské rapsódie, why: "Franz Liszt." }
 
   - id: verdi-opery
     type: pick
@@ -164,7 +164,7 @@ questions:
       - { text: Nabucco, why: "Zbor Va, pensiero z nej sa stal neoficiálnou hymnou talianskeho zjednotenia." }
       - { text: Rigoletto, why: "Z roku 1851; obsahuje slávnu áriu La donna è mobile." }
       - { text: Trubadúr, why: "Il trovatore, z roku 1853, rovnako ako La traviata." }
-      - { text: La traviata, why: "Premiéra bola vo Benátkach v roku 1853." }
+      - { text: La traviata, why: "Premiéra bola v Benátkach v roku 1853." }
       - { text: Aida, why: "Z roku 1871; odohráva sa v starovekom Egypte." }
       - { text: Otello, why: "Posledná tragédia, 1887, podľa Shakespeara." }
       - { text: Macbeth, why: "Z roku 1847; zvyčajne sa považuje za jeho prvé veľké majstrovstvo." }
@@ -184,7 +184,7 @@ questions:
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Albert_Einstein, /Niels_Bohr, /Max_Planck, /Ivan_Pavlov, /Enrico_Fermi, /Werner_Heisenberg"
     tags: [veda, nobelovka]
     correct:
-      - { text: Marie Curie-Skłodowská, why: "Dostala ju dvakrát: za fyziku v roku 1903 a za chémiu v roku 1911." }
+      - { text: Maria Curieová-Skłodowská, why: "Dostala ju dvakrát: za fyziku v roku 1903 a za chémiu v roku 1911." }
       - { text: Albert Einstein, why: "Za fyziku v roku 1921, ale nie za teóriu relativity, ale za fotoelektrický jav." }
       - { text: Niels Bohr, why: "Dán, cenu za fyziku dostal v roku 1922 za model atómu." }
       - { text: Max Planck, why: "Za fyziku v roku 1918, za objav energetických kvánt." }
@@ -316,7 +316,7 @@ questions:
       - { text: Aristoteles, why: "Platónov žiak a učiteľ Alexandra Veľkého." }
       - { text: Archimedes, why: "Z gréckeho mesta Syrakúzy na Sicílii; známy zákonom o vztlaku." }
       - { text: Pytagoras, why: "Pochádzal z ostrova Samos, jeho veta o trojuholníku je známa dodnes." }
-      - { text: Hippokratés, why: "Z ostrova Kos; je po ňom pomenovaná lekárska prísaha." }
+      - { text: Hippokrates, why: "Z ostrova Kos; je po ňom pomenovaná lekárska prísaha." }
     wrong:
       - { text: Cicero, why: "Rímsky rečník a politik." }
       - { text: Seneca, why: "Rímsky filozof, vychovávateľ cisára Nera." }
@@ -333,17 +333,17 @@ questions:
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Maria_Theresa, /Queen_Victoria, /Elizabeth_I, /Cleopatra, /Elizabeth_II, /Joan_of_Arc, /Marie_Antoinette"
     tags: [panovnici]
     correct:
-      - { text: Mária Terézia, why: "Vládla habsburskej monarchii v rokoch 1740 až 1780, ako Uhorská kráľovná sa dala korunovať v Bratislave." }
+      - { text: Mária Terézia, why: "Vládla habsburskej monarchii v rokoch 1740 až 1780, ako uhorská kráľovná sa dala korunovať v Bratislave." }
       - { text: Katarína II. Veľká, why: "Ruská cárovná v rokoch 1762 až 1796; sama sa dostala k moci po prevrate proti manželovi." }
       - { text: Viktória, why: "Britská kráľovná od roku 1837, vládla vyše 63 rokov." }
       - { text: Alžbeta I., why: "Anglická kráľovná v rokoch 1558 až 1603, posledná panovníčka z rodu Tudorovcov." }
       - { text: Kleopatra VII., why: "Posledná panovníčka helenistického Egypta." }
       - { text: Alžbeta II., why: "Vládla 70 rokov a 214 dní, najdlhšie zo všetkých britských panovníkov." }
     wrong:
-      - { text: Jana z Arku, why: "Vojačka a mučenica, žiadnu krajinu nevládla." }
+      - { text: Jana z Arku, why: "Vojačka a mučenica, žiadnej krajine nevládla." }
       - { text: Margaret Thatcherová, why: "Britská premiérka, nie panovníčka." }
       - { text: Angela Merkelová, why: "Nemecká kancelárka." }
-      - { text: Marie Antoinetta, why: "Manželka Ľudovíta XVI. a dcéra Márie Terézie, ale len kráľovná-manželka." }
+      - { text: Mária Antoinetta, why: "Manželka Ľudovíta XVI. a dcéra Márie Terézie, ale len kráľovná-manželka." }
       - { text: Eva Perónová, why: "Prvá dáma Argentíny, nevládla samostatne." }
       - { text: Indira Gándhíová, why: "Indická premiérka, nie panovníčka." }
 
@@ -399,7 +399,7 @@ questions:
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Pierre-Auguste_Renoir, /Edgar_Degas, /Camille_Pissarro, /Alfred_Sisley, /Berthe_Morisot, /Gustave_Caillebotte, /Vincent_van_Gogh"
     tags: [maliarstvo, impresionizmus]
     correct:
-      - { text: Claude Monet, why: "Podľa jeho obrazu Impresia, východ slnka dostalo smerovanie meno." }
+      - { text: Claude Monet, why: "Podľa jeho obrazu Impresia, východ slnka dostal umelecký smer meno." }
       - { text: Pierre-Auguste Renoir, why: "Maľoval hlavne ľudí, tanec a záhradné slávnosti." }
       - { text: Edgar Degas, why: "Slávny baletkami a dostihmi." }
       - { text: Camille Pissarro, why: "Vystavoval na všetkých ôsmich výstavách impresionistov." }
@@ -415,7 +415,7 @@ questions:
 
   - id: frida-kahlo
     type: pick
-    prompt: Ktoré tvrdenia o maliarke Fride Kahlo sú pravdivé?
+    prompt: Ktoré tvrdenia o maliarke Fride Kahlovej sú pravdivé?
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Frida_Kahlo
     tags: [maliarstvo]
@@ -449,7 +449,7 @@ questions:
     wrong:
       - { text: Napoleon III., why: "Bonaparte, cisár Francúzov." }
       - { text: Matej Korvín, why: "Uhorský kráľ z rodu Hunyadiovcov." }
-      - { text: Karol IV., why: "Cisár z rodu Luxemburgovcov, otec českého zlatého veku." }
+      - { text: Karol IV. Luxemburský, why: "Cisár z rodu Luxemburgovcov, otec českého zlatého veku." }
       - { text: Žigmund Luxemburský, why: "Uhorský kráľ a cisár z rodu Luxemburgovcov." }
       - { text: Ľudovít II. Jagelovský, why: "Padol pri Moháči v roku 1526; z rodu Jagelovcov." }
       - { text: Ľudovít XIV., why: "Francúz z rodu Bourbonovcov." }
@@ -630,7 +630,7 @@ questions:
     prompt: Kto v roku 1928 objavil penicilín?
     difficulty: 1
     source: https://en.wikipedia.org/wiki/Alexander_Fleming
-    correct: { text: Alexander Fleming, why: "Škótsky bakteriológ si všimol, že plesň na misce zabila baktérie." }
+    correct: { text: Alexander Fleming, why: "Škótsky bakteriológ si všimol, že pleseň na miske zabila baktérie." }
     wrong:
       - { text: Louis Pasteur, why: "Vynašiel pasterizáciu a vakcínu proti besnote." }
       - { text: Robert Koch, why: "Objavil pôvodcu tuberkulózy." }
