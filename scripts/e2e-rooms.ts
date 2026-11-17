@@ -104,7 +104,12 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   const host = await phone(browser, "host");
   const zuzka = await phone(browser, "zuzka");
   const miro = await phone(browser, "miro");
-  const tv = await phone(browser, "tv", { width: 1280, height: 720 });
+  const tv = await phone(browser, "tv", { width: 1920, height: 1080 });
+  /** The big screen must never need scrolling by hand. */
+  const tvFits = async (where: string) => {
+    const over = await tv.evaluate(() => document.documentElement.scrollHeight - window.innerHeight);
+    if (over > 1) errors.push(`${mode}: tv ${where} scrolls by ${over}px`);
+  };
 
   const code = await createRoom(host, mode, pace, "10 kôl");
   log(`${mode}/${pace}: room ${code}`);
@@ -123,8 +128,14 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
 
   await joinByLink(zuzka, code, "Zuzka");
   await joinByLink(miro, code, "Miro");
-  await tv.goto(`${base}?tv=${code}`);
+  if (mode === "Mix") await tv.goto(`${base}?tv=${code}`);
+  else {
+    // The same link as the phones: the TV says it is the big screen.
+    await tv.goto(`${base}?r=${code}`);
+    await tv.getByRole("button", { name: /Toto je veľká obrazovka/ }).click();
+  }
   await tv.locator(".screen--tv .room-code").waitFor();
+  await tvFits("lobby");
   await host.locator(".room-player", { hasText: "Miro" }).waitFor();
   if ((await tv.locator(".room-player").count()) !== 3) errors.push("tv lobby does not list 3 players");
   if (shots) await tv.screenshot({ path: join(shots, `tv-lobby-${mode}.png`) });
@@ -133,14 +144,29 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   await host.getByRole("button", { name: "Začať hru" }).click();
   await tv.locator(".screen--tv-question").waitFor();
   if (shots) await tv.screenshot({ path: join(shots, `tv-question-${mode}.png`) });
+  await tvFits("question");
 
   let reloaded = false;
   let reveals = 0;
+  let pauses = 0;
   for (let i = 0; i < 600; i++) {
     const phones = [host, zuzka, miro];
     const did = await Promise.all(phones.map((p) => step(p).catch(() => true)));
     if (await tv.locator(".screen--tv-reveal").count()) {
-      if (!reveals++ && shots) await tv.screenshot({ path: join(shots, `tv-reveal-${mode}.png`) });
+      if (!reveals++) {
+        if (shots) await tv.screenshot({ path: join(shots, `tv-reveal-${mode}.png`) });
+        await tvFits("reveal");
+        if (pace !== "Bez limitu" && !(await tv.locator(".screen--tv-reveal .timer").count())) errors.push(`${mode}: no timer on the tv reveal`);
+        // The host pauses the answers on show, the big screen says so, then it goes on.
+        const pause = host.locator(".topbar__pause");
+        if (await pause.count()) {
+          await pause.click();
+          await tv.locator(".screen--tv-reveal .paused").waitFor({ timeout: 3000 }).catch(() => errors.push(`${mode}: tv does not show the pause`));
+          await zuzka.locator(".notice", { hasText: "pozastavil" }).waitFor({ timeout: 3000 }).catch(() => errors.push(`${mode}: zuzka does not see the pause`));
+          await host.locator(".topbar__pause").click();
+          pauses++;
+        }
+      }
     }
     // Reload a phone in the middle of the game: it must rejoin its seat.
     if (!reloaded && reveals >= 2) {
@@ -166,12 +192,17 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   log(`  final: ${table}`);
   for (const [p, n] of [[host, "host"], [tv, "tv"]] as const) if (!(await p.locator(".title-row").count())) errors.push(`${mode}: no titles on ${n}`);
   if (shots) await tv.screenshot({ path: join(shots, `tv-over-${mode}.png`) });
+  await tvFits("results");
+  if (!pauses) errors.push(`${mode}: the host never paused`);
 
   // Ešte jednu: everyone back in the lobby.
   if (await zuzka.getByRole("button", { name: "Ešte jednu" }).count()) errors.push("non-host sees Ešte jednu");
   await host.getByRole("button", { name: "Ešte jednu" }).click();
   await miro.locator(".screen--lobby").waitFor();
   await tv.locator(".screen--tv-lobby").waitFor();
+  // The big screen can always leave.
+  await tv.getByRole("button", { name: "Zavrieť" }).click();
+  await tv.locator(".screen--home").waitFor();
 
   // Leaving clears the seat: Home no longer offers to go back.
   await miro.getByRole("button", { name: "Odísť" }).click();

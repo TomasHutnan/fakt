@@ -178,13 +178,13 @@ function Lobby({ view, send, onLeave, banner }: Inner) {
   const url = joinUrl(view.code);
   const ctrl = isController(view);
   const controller = view.players.find((p) => p.id === view.controller);
-  const share = async () => {
+  const copy = async () => {
     try {
-      if (navigator.share) return await navigator.share({ title: sk.appName, text: sk.shareText(view.code), url });
       await navigator.clipboard.writeText(url);
       setHint(sk.linkCopied);
     } catch {
-      /* cancelled */
+      // No clipboard (e.g. not a secure page): show the link to copy by hand.
+      setHint(url);
     }
   };
   return (
@@ -201,7 +201,7 @@ function Lobby({ view, send, onLeave, banner }: Inner) {
       <Qr text={url} label={sk.roomScan(location.host)} />
       <p class="field__hint room-center">{sk.roomScan(location.host)}</p>
       <div class="room-row">
-        <button type="button" class="btn btn--small" onClick={share}>
+        <button type="button" class="btn btn--small" onClick={copy}>
           {sk.shareLink}
         </button>
         <button type="button" class="btn btn--small" aria-expanded={hint === "tv"} onClick={() => setHint(hint === "tv" ? null : "tv")}>
@@ -487,11 +487,13 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
     <div class="screen screen--game screen--room">
       <header class="topbar topbar--sticky">
         <span class="topbar__title">{roundLabel(view)}</span>
-        {view.deadline != null && <Timer view={view} now={now} />}
+        {view.paused ? <span class="topbar__meta paused">{sk.paused}</span> : view.deadline != null && <Timer view={view} now={now} />}
+        {isController(view) && <PauseButton view={view} send={send} />}
         <QuickSettings />
         <Leave onLeave={onLeave} />
       </header>
       {banner}
+      {view.paused && !isController(view) && <p class="notice" role="status">{sk.pausedBy(playerName(view, view.controller))}</p>}
       <section class={`q q--reveal q--${card.type}`}>
         <CardHead card={card} />
         <CardNotes view={view} />
@@ -519,6 +521,16 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
         </div>
       </section>
     </div>
+  );
+}
+
+/** The host holds the answers on show (no countdown, nobody moves on) to talk them through. */
+function PauseButton({ view, send }: { view: RoomView; send: (a: ClientAction) => void }) {
+  const label = view.paused ? sk.unpause : sk.pause;
+  return (
+    <button type="button" class="btn btn--ghost btn--small topbar__pause" aria-pressed={view.paused} aria-label={label} title={label} onClick={() => send({ type: view.paused ? "resume" : "pause" })}>
+      {view.paused ? "\u25B6\uFE0E" : "\u23F8\uFE0E"}
+    </button>
   );
 }
 
@@ -611,31 +623,127 @@ function RoomOver({ view, send, onLeave, banner }: Inner) {
 // ---------------------------------------------------------------------------
 // Big screen: read-only, large type, the shared drama.
 
-function useTvZoom(): number {
-  const calc = () => Math.max(1, Math.min(2.4, Math.min(window.innerWidth / 720, window.innerHeight / 560)));
-  const [z, setZ] = useState(calc);
+/** Zoom that scales the big screen's column to the window, and the page height in zoomed pixels. */
+function useTvFit(): { zoom: number; height: number } {
+  const calc = () => {
+    const zoom = Math.max(1, Math.min(2.4, Math.min(window.innerWidth / 720, window.innerHeight / 560)));
+    return { zoom, height: window.innerHeight / zoom };
+  };
+  const [fit, setFit] = useState(calc);
   useEffect(() => {
-    const on = () => setZ(calc());
+    const on = () => setFit(calc());
     window.addEventListener("resize", on);
     return () => window.removeEventListener("resize", on);
   }, []);
-  return z;
+  return fit;
 }
 
-function TvBody({ view, now, banner }: Inner) {
-  const zoom = useTvZoom();
+/** Pixels per second, and the pause at each end, of the big screen's slow scrolling. */
+const SCROLL_SPEED = 28;
+const SCROLL_HOLD_MS = 3500;
+
+/**
+ * A region of the big screen that never needs a hand on the mouse: when its content is
+ * taller than the space, it scrolls down slowly, holds, goes back up and starts over.
+ * With reduced motion it flips between the top and the bottom instead.
+ */
+function AutoScroll({ class: cls, children }: { class?: string; children: preact.ComponentChildren }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduced = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let pos = 0;
+    let dir = 1;
+    let last = performance.now();
+    let holdUntil = last + SCROLL_HOLD_MS;
+    let raf = 0;
+    const step = (t: number) => {
+      const dt = Math.min(100, t - last);
+      last = t;
+      const max = el.scrollHeight - el.clientHeight;
+      if (max <= 2) {
+        pos = 0;
+        el.scrollTop = 0;
+        holdUntil = t + SCROLL_HOLD_MS;
+      } else if (t >= holdUntil) {
+        if (reduced) {
+          pos = dir > 0 ? max : 0;
+          dir = -dir;
+          holdUntil = t + SCROLL_HOLD_MS * 2;
+        } else {
+          // Back up three times as fast as down.
+          pos += dir * SCROLL_SPEED * (dir > 0 ? 1 : 3) * (dt / 1000);
+          if (pos >= max || pos <= 0) {
+            pos = Math.max(0, Math.min(max, pos));
+            dir = -dir;
+            holdUntil = t + SCROLL_HOLD_MS;
+          }
+        }
+        el.scrollTop = pos;
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  return (
+    <div ref={ref} class={`autoscroll${cls ? ` ${cls}` : ""}`}>
+      {children}
+    </div>
+  );
+}
+
+/** Corner buttons of the big screen: full screen (where the browser allows it) and leave. */
+function TvTools({ onLeave }: { onLeave: () => void }) {
+  const [full, setFull] = useState(() => !!document.fullscreenElement);
+  useEffect(() => {
+    const on = () => setFull(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", on);
+    return () => document.removeEventListener("fullscreenchange", on);
+  }, []);
+  const toggle = () => {
+    if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+    else void document.documentElement.requestFullscreen?.().catch(() => {});
+  };
+  return (
+    <div class="tv-tools">
+      {document.fullscreenEnabled && (
+        <button type="button" class="btn btn--ghost btn--small" onClick={toggle}>
+          {full ? sk.fullscreenOff : sk.fullscreenOn}
+        </button>
+      )}
+      <button
+        type="button"
+        class="btn btn--ghost btn--small"
+        onClick={() => {
+          if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+          onLeave();
+        }}
+      >
+        {sk.tvClose}
+      </button>
+    </div>
+  );
+}
+
+function TvBody({ view, now, onLeave, banner }: Inner) {
+  const { zoom, height } = useTvFit();
   const host = view.players.find((p) => p.id === view.controller);
+  const clock = view.paused ? <span class="topbar__meta paused">{sk.paused}</span> : view.deadline != null && <Timer view={view} now={now} />;
   let body;
   if (view.phase === "lobby") {
     body = (
       <div class="tv-lobby">
         <Qr text={joinUrl(view.code)} label={sk.tvJoinAt(location.host)} />
-        <div class="stack">
-          <span class="field__label">{sk.tvJoinAt(location.host)}</span>
-          <div class="room-code">{view.code}</div>
-          {view.players.length ? <PlayerList view={view} /> : <p class="field__hint">{sk.tvWaiting}</p>}
-          <p class="field__hint">{sk.tvStartedBy(host?.name ?? "")}</p>
-        </div>
+        <AutoScroll class="tv-lobby__side">
+          <div class="stack">
+            <span class="field__label">{sk.tvJoinAt(location.host)}</span>
+            <div class="room-code">{view.code}</div>
+            {view.players.length ? <PlayerList view={view} /> : <p class="field__hint">{sk.tvWaiting}</p>}
+            <p class="field__hint">{sk.tvStartedBy(host?.name ?? "")}</p>
+          </div>
+        </AutoScroll>
       </div>
     );
   } else if (view.phase === "choosePack") {
@@ -644,9 +752,11 @@ function TvBody({ view, now, banner }: Inner) {
       <>
         <header class="topbar">
           <span class="topbar__title">{roundLabel(view)}</span>
-          <Timer view={view} now={now} />
+          {clock}
         </header>
-        <PackPicker options={choice.options} lead={sk.packPickWait(playerName(view, choice.chooser))} canChoose={false} onChoose={() => {}} />
+        <AutoScroll class="tv-fill">
+          <PackPicker options={choice.options} lead={sk.packPickWait(playerName(view, choice.chooser))} canChoose={false} onChoose={() => {}} />
+        </AutoScroll>
       </>
     );
   } else if (view.phase === "question") {
@@ -655,31 +765,33 @@ function TvBody({ view, now, banner }: Inner) {
       <>
         <header class="topbar">
           <span class="topbar__title">{roundLabel(view)}</span>
-          <Timer view={view} now={now} />
+          {clock}
         </header>
-        <section class={`q q--${card.type}`}>
+        <section class={`q q--${card.type} tv-card`}>
           <CardHead card={card} />
           <CardNotes view={view} />
           <h1 class="q__prompt">{tie(card.prompt)}</h1>
-          {(card.type === "pick" || card.type === "choice") && (
-            <ul class={`options${card.type === "choice" ? " options--choice" : ""}`}>
-              {card.options.map((o) => (
-                <li class="opt opt--static">
-                  <span class="opt__text">{tie(o.text)}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-          {card.type === "order" && (
-            <ul class="order-list">
-              {card.items.map((it) => (
-                <li class="order-item">
-                  <span class="order-item__text">{tie(it.text)}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-          {card.type === "number" && card.unit && <p class="q__hint">{card.unit}</p>}
+          <AutoScroll class="tv-fill">
+            {(card.type === "pick" || card.type === "choice") && (
+              <ul class={`options${card.type === "choice" ? " options--choice" : ""}`}>
+                {card.options.map((o) => (
+                  <li class="opt opt--static">
+                    <span class="opt__text">{tie(o.text)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {card.type === "order" && (
+              <ul class="order-list">
+                {card.items.map((it) => (
+                  <li class="order-item">
+                    <span class="order-item__text">{tie(it.text)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {card.type === "number" && card.unit && <p class="q__hint">{card.unit}</p>}
+          </AutoScroll>
         </section>
         <Progress view={view} />
       </>
@@ -691,18 +803,22 @@ function TvBody({ view, now, banner }: Inner) {
       <>
         <header class="topbar">
           <span class="topbar__title">{roundLabel(view)}</span>
-          {view.deadline != null && <Timer view={view} now={now} />}
+          {clock}
         </header>
-        <section class={`q q--reveal q--${card.type}`}>
+        <section class={`q q--reveal q--${card.type} tv-card`}>
           <CardHead card={card} />
           <CardNotes view={view} />
           <h1 class="q__prompt">{tie(card.prompt)}</h1>
           <div class="tv-cols">
-            <CardAnswer card={card} results={turns} names={names} />
-            <div class="stack">
-              <RoundResults view={view} card={card} turns={turns} />
-              <SocialList lines={view.social} name={(i) => view.players[i]?.name ?? "?"} />
-            </div>
+            <AutoScroll key={`a-${view.round}`}>
+              <CardAnswer card={card} results={turns} names={names} />
+            </AutoScroll>
+            <AutoScroll key={`r-${view.round}`}>
+              <div class="stack">
+                <RoundResults view={view} card={card} turns={turns} />
+                <SocialList lines={view.social} name={(i) => view.players[i]?.name ?? "?"} />
+              </div>
+            </AutoScroll>
           </div>
         </section>
       </>
@@ -716,14 +832,19 @@ function TvBody({ view, now, banner }: Inner) {
           <TiebreakNote view={view} />
         </header>
         <div class="tv-cols">
-          <Standings view={view} />
-          <TitleList titles={view.titles} name={(i) => view.players[i]?.name ?? "?"} />
+          <AutoScroll>
+            <Standings view={view} />
+          </AutoScroll>
+          <AutoScroll>
+            <TitleList titles={view.titles} name={(i) => view.players[i]?.name ?? "?"} />
+          </AutoScroll>
         </div>
       </>
     );
   }
   return (
-    <div class={`screen screen--tv screen--tv-${view.phase}`} style={{ zoom }}>
+    <div class={`screen screen--tv screen--tv-${view.phase}`} style={{ zoom, height: `${height}px` }}>
+      <TvTools onLeave={onLeave} />
       {banner}
       {body}
     </div>
@@ -759,12 +880,15 @@ export function JoinScreen({
   initialName,
   makeClient,
   onJoined,
+  onWatch,
   onBack,
 }: {
   initialCode: string;
   initialName: string;
   makeClient: (code: string, name: string) => RoomClient;
   onJoined: (client: RoomClient, name: string) => void;
+  /** Open the room as a big screen instead (the same link works for the TV). */
+  onWatch: (code: string) => void;
   onBack: () => void;
 }) {
   const [code, setCode] = useState(initialCode);
@@ -774,9 +898,17 @@ export function JoinScreen({
   const client = useRef<RoomClient | null>(null);
   useEffect(() => () => client.current?.close(), []);
 
+  const cleanCode = () => code.toUpperCase().replace(/[^A-Z]/g, "");
+  const watch = () => {
+    const c = cleanCode();
+    if (c.length !== 4) return setError(sk.roomErrors.noRoom);
+    client.current?.close();
+    client.current = null;
+    onWatch(c);
+  };
   const submit = (e: Event) => {
     e.preventDefault();
-    const c = code.toUpperCase().replace(/[^A-Z]/g, "");
+    const c = cleanCode();
     if (c.length !== 4) return setError(sk.roomErrors.noRoom);
     if (!name.trim()) return setError(sk.roomErrors.badName);
     setBusy(true);
@@ -843,6 +975,12 @@ export function JoinScreen({
           <button type="submit" class="btn btn--primary btn--block" disabled={busy}>
             {busy ? sk.connecting : sk.enter}
           </button>
+        </div>
+        <div class="stack join-watch">
+          <button type="button" class="btn btn--block" disabled={busy} onClick={watch}>
+            {sk.watchHere}
+          </button>
+          <p class="field__hint">{sk.watchHereHint}</p>
         </div>
       </form>
     </div>

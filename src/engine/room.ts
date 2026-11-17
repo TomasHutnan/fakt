@@ -30,6 +30,9 @@ export const REVEAL_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, numb
   fast: { pick: 20, order: 15, number: 12, choice: 12, compare: 10 },
 };
 
+/** After a pause, the answers stay up at least this long. */
+export const RESUME_MIN_MS = 5000;
+
 /** Answers arriving this long after the deadline still count (network delay). */
 export const GRACE_MS = 1000;
 export const MAX_PLAYERS = 12;
@@ -111,6 +114,8 @@ export interface RoomState {
   pickedBy: string | null;
   /** Tie-break: ids of the tied leaders who answer one extra number card; stays set once the game is over. */
   tiebreak: string[] | null;
+  /** The host paused the answers on show: ms that were left on the clock (0 without a time limit); null when running. */
+  paused: number | null;
 }
 
 /** What a device may ask for. The server adds `by` (the sender) and `now`. */
@@ -124,6 +129,8 @@ export type ClientAction =
   | { type: "close" }
   | { type: "ready" }
   | { type: "next" }
+  | { type: "pause" }
+  | { type: "resume" }
   | { type: "kick"; id: string }
   | { type: "again" }
   | { type: "choosePack"; packId: string };
@@ -170,6 +177,7 @@ export function createRoom(input: CreateRoomInput): RoomState | null {
     packChoice: null,
     pickedBy: null,
     tiebreak: null,
+    paused: null,
   };
 }
 
@@ -339,6 +347,18 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       if (s.phase !== "reveal" || a.by !== controllerId(s)) return s;
       return nextCard(s, a.now, packs);
 
+    // The host holds the answers on show to talk them through: no countdown, and
+    // the room waits even when everyone is ready. "next" still moves on.
+    case "pause":
+      if (s.phase !== "reveal" || a.by !== controllerId(s) || s.paused != null) return s;
+      return { ...s, paused: s.deadline == null ? 0 : Math.max(0, s.deadline - a.now), deadline: null };
+
+    case "resume": {
+      if (s.phase !== "reveal" || a.by !== controllerId(s) || s.paused == null) return s;
+      const deadline = s.settings.pace === "none" ? null : a.now + Math.max(s.paused, RESUME_MIN_MS);
+      return afterChange({ ...s, paused: null, deadline }, a.now, packs);
+    }
+
     case "choosePack": {
       if (s.phase !== "choosePack" || !s.packChoice || typeof a.packId !== "string") return s;
       const chooser = s.players.find((p) => p.id === s.packChoice!.chooser);
@@ -369,6 +389,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         packChoice: null,
         pickedBy: null,
         tiebreak: null,
+        paused: null,
       };
     }
 
@@ -395,7 +416,7 @@ function answer(s: RoomState, id: string, ans: Answer, now: number, packs: Pack[
 /** Closes the question once everyone answered, or moves on once everyone is ready. */
 function afterChange(s: RoomState, now: number, packs: Pack[]): RoomState {
   if (s.phase === "question" && allAnswered(s)) return closeQuestion(s, now);
-  if (s.phase === "reveal") {
+  if (s.phase === "reveal" && s.paused == null) {
     const live = s.players.filter((p) => p.connected);
     if (live.length > 0 && live.every((p) => s.ready.includes(p.id))) return nextCard(s, now, packs);
   }
@@ -447,10 +468,11 @@ function closeQuestion(s: RoomState, now: number): RoomState {
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
   const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
-  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [] };
+  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
+  s = { ...s, paused: null };
   const played = [...s.played, s.card!.key];
   const over = (): RoomState => ({ ...s, played, phase: "over", answers: {}, ready: [], deadline: null });
   if (s.tiebreak) return over();
@@ -603,6 +625,8 @@ export interface RoomView {
   titles: Title[];
   /** Tie-break: ids of the players who answer. */
   tiebreak: string[] | null;
+  /** The host paused the answers on show. */
+  paused: boolean;
   /** Big screens watching the room (filled in by the server). */
   screens?: number;
 }
@@ -632,6 +656,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     social: reveal ? roomSocial(s) : [],
     titles: s.phase === "over" ? roomTitles(s) : [],
     tiebreak: s.tiebreak,
+    paused: s.phase === "reveal" && s.paused != null,
   };
 }
 
