@@ -273,13 +273,33 @@
 :where(.timer__fill) { display: block; height: 100%; background: currentColor; transition: width .25s linear; }
 :where(.timer--low .timer__fill) { background: #c0392b; }
 :where(.room-banner) { text-align: center; }
+/* Big screen: exactly one window tall (height set inline in zoomed pixels), never
+   scrolled by hand; regions that do not fit scroll themselves (.autoscroll). Not
+   :where(), so a design's .screen or .q rules cannot break the fit. */
 :where(.screen--tv) { max-width: 760px; }
-:where(.tv-lobby) { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; min-height: 80vh; }
+.screen.screen--tv { min-height: 0; overflow: hidden; box-sizing: border-box; position: relative; }
+.screen--tv > * { flex: none; }
+/* The card keeps its natural height and only shrinks (its lists then scroll themselves). */
+.screen--tv > .tv-card, .screen--tv > .autoscroll { flex: 0 1 auto; min-height: 0; }
+.screen--tv > .tv-cols, .screen--tv > .tv-lobby { flex: 1 1 auto; min-height: 0; }
+.screen--tv .tv-card { display: flex; flex-direction: column; overflow: hidden; }
+.screen--tv .tv-card > * { flex: none; }
+.screen--tv .tv-card > .tv-cols, .screen--tv .tv-card > .autoscroll { flex: 1 1 auto; min-height: 0; }
+.autoscroll { overflow: hidden; min-height: 0; }
+.tv-cols > .autoscroll { height: 100%; }
+:where(.tv-lobby) { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+.tv-lobby > .autoscroll { max-height: 100%; }
 :where(.tv-lobby .qr) { width: 260px; }
-:where(.tv-cols) { display: grid; grid-template-columns: 3fr 2fr; gap: 20px; align-items: start; }
+:where(.tv-cols) { display: grid; grid-template-columns: 3fr 2fr; grid-template-rows: minmax(0, 1fr); gap: 20px; }
 @media (max-width: 640px) {
   :where(.tv-lobby, .tv-cols) { grid-template-columns: 1fr; }
+  :where(.tv-cols) { grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
 }
+/* Full screen and leave: out of the way until pointed at. */
+:where(.tv-tools) { position: absolute; top: 4px; right: 4px; z-index: 5; display: flex; gap: 6px; opacity: 0.35; transition: opacity .2s; }
+:where(.tv-tools:hover, .tv-tools:focus-within) { opacity: 1; }
+.screen--tv > .topbar { margin-right: 15rem; }
+:where(.paused) { font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   :where(.timer__fill) { transition: none; }
 }

@@ -12,6 +12,7 @@ import {
   joinError,
   MAX_PLAYERS,
   reduceRoom,
+  RESUME_MIN_MS,
   REVEAL_SECONDS,
   viewFor,
   type ClientAction,
@@ -331,6 +332,49 @@ describe("room questions", () => {
     sim.advance(GRACE_MS + 1);
     expect(sim.s.phase).toBe("question");
     expect(sim.s.round).toBe(2);
+  });
+
+  it("the host can pause the answers on show; the room waits until they resume", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast", rounds: 3 });
+    sim.act("h", { type: "start" });
+    sim.answerAll("best");
+    const left = REVEAL_SECONDS.fast.pick * 1000;
+    sim.now += 4000;
+    // Only the host may pause.
+    const before = sim.s;
+    sim.act("p1", { type: "pause" });
+    expect(sim.s).toBe(before);
+    sim.act("h", { type: "pause" });
+    expect(sim.s.paused).toBe(left - 4000);
+    expect(sim.s.deadline).toBeNull();
+    expect(viewFor(sim.s, "p1").paused).toBe(true);
+    // Neither time nor everyone being ready moves on.
+    sim.advance(10 * 60 * 1000);
+    sim.act("h", { type: "ready" });
+    sim.act("p1", { type: "ready" });
+    expect(sim.s.phase).toBe("reveal");
+    // Resume: the time that was left, and everyone was ready, so it moves on right away.
+    sim.act("h", { type: "resume" });
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.paused).toBeNull();
+    expect(viewFor(sim.s, "h").paused).toBe(false);
+  });
+
+  it("after a pause the clock gets back what was left, at least a few seconds", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast", rounds: 3 });
+    sim.act("h", { type: "start" });
+    sim.answerAll("best");
+    sim.now = sim.s.deadline! - 1000;
+    sim.act("h", { type: "pause" });
+    sim.now += 60_000;
+    sim.act("h", { type: "resume" });
+    expect(sim.s.phase).toBe("reveal");
+    expect(sim.s.deadline).toBe(sim.now + RESUME_MIN_MS);
+    // The host can still move everyone on while paused.
+    sim.act("h", { type: "pause" });
+    sim.act("h", { type: "next" });
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.paused).toBeNull();
   });
 
   it("without a time limit the question waits; the controller can close it", () => {

@@ -516,6 +516,7 @@ export class Hub {
       packChoice: r.state.packChoice ?? null,
       pickedBy: r.state.pickedBy ?? null,
       tiebreak: r.state.tiebreak ?? null,
+      paused: r.state.paused ?? null,
       settings: { ...r.state.settings, lastPicks: r.state.settings?.lastPicks ?? false },
       players: r.state.players.map((p) => ({ ...p, connected: false })),
     };
@@ -557,7 +558,7 @@ function emptyRoom(): RoomState {
 
 const PACES: Pace[] = ["none", "calm", "fast"];
 
-const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "kick", "again", "choosePack"] satisfies ClientAction["type"][]);
+const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "pause", "resume", "kick", "again", "choosePack"] satisfies ClientAction["type"][]);
 
 /** Settings from a client, checked field by field; null when anything is off. */
 export function cleanSettings(raw: unknown): RoomSettings | null {

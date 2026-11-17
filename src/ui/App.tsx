@@ -268,6 +268,7 @@ export function App() {
             setRoomReturn("home");
             setScreen("room");
           }}
+          onWatch={(code) => openRoom({ t: "watch", v: PROTOCOL, code }, "home")}
           onBack={() => setScreen("home")}
         />
       );
