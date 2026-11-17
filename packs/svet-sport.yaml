@@ -257,7 +257,7 @@ questions:
 
   - id: zoh-vitazi-hodnotenia
     type: pick
-    prompt: Ktoré krajiny aspoň raz vyhrali hodnotenie národov na zimnej olympiáde?
+    prompt: Ktoré krajiny aspoň raz vyhrali hodnotenie národov podľa počtu zlatých medailí na zimnej olympiáde?
     difficulty: 3
     asOf: "2026-02"
     source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
@@ -454,7 +454,7 @@ questions:
         why: V roku 1956 ako rehabilitáciu pre zranených vojakov.
       - text: Ragby na vozíku vzniklo v Kanade
         why: Vymysleli ho v roku 1976 vo Winnipegu.
-      - text: Prvá zimná paralympiáda bola v Švédsku
+      - text: Prvá zimná paralympiáda bola vo Švédsku
         why: V Örnsköldsviku v roku 1976.
       - text: Predpona „para“ dnes znamená „vedľa“, teda hry popri olympiáde
         why: Pôvodne vznikol názov spojením slov paraplegik a olympiáda.
