@@ -265,6 +265,7 @@ export const sk = {
   groupOffLabel: (name: string) => `Vypnúť všetky v sekcii ${name}`,
 
   // comeback rules, social lines, titles
+  standingsNow: "Priebežné poradie",
   packPickLabel: "Posledný vyberá",
   packPickYou: "Si na poslednom mieste, tak vyberáš, odkiaľ bude ďalšia otázka.",
   packPickWait: (name: string) => `${name} je na poslednom mieste a vyberá, odkiaľ bude ďalšia otázka.`,

@@ -12,6 +12,7 @@ import {
   joinError,
   MAX_PLAYERS,
   reduceRoom,
+  REVEAL_SECONDS,
   viewFor,
   type ClientAction,
   type RoomSettings,
@@ -318,6 +319,20 @@ describe("room questions", () => {
     expect(sim.s).toBe(before);
   });
 
+  it("with a pace the answers stay up for a while, then the room moves on", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast" });
+    sim.act("h", { type: "start" });
+    sim.answerAll("best");
+    expect(sim.s.phase).toBe("reveal");
+    expect(sim.s.deadline).toBe(sim.now + REVEAL_SECONDS.fast.pick * 1000);
+    expect(viewFor(sim.s, "h").deadline).toBe(sim.s.deadline);
+    sim.advance(REVEAL_SECONDS.fast.pick * 1000);
+    expect(sim.s.phase).toBe("reveal");
+    sim.advance(GRACE_MS + 1);
+    expect(sim.s.phase).toBe("question");
+    expect(sim.s.round).toBe(2);
+  });
+
   it("without a time limit the question waits; the controller can close it", () => {
     const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "none" });
     sim.act("h", { type: "start" });
@@ -327,6 +342,10 @@ describe("room questions", () => {
     sim.act("p1", { type: "close" });
     expect(sim.s.phase).toBe("question");
     sim.act("h", { type: "close" });
+    expect(sim.s.phase).toBe("reveal");
+    // The answers wait too.
+    expect(sim.s.deadline).toBeNull();
+    sim.advance(10 * 60 * 1000);
     expect(sim.s.phase).toBe("reveal");
   });
 

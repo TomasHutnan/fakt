@@ -23,6 +23,12 @@ export const ANSWER_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, numb
 /** Seconds the last player has to pick the pack, by pace. */
 export const PACK_PICK_SECONDS: Record<Exclude<Pace, "none">, number> = { calm: 20, fast: 12 };
 
+/** Seconds the answers stay up before the room moves on by itself, by pace and card kind. */
+export const REVEAL_SECONDS: Record<Exclude<Pace, "none">, Record<CardKind, number>> = {
+  calm: { pick: 30, order: 25, number: 20, choice: 20, compare: 15 },
+  fast: { pick: 20, order: 15, number: 12, choice: 12, compare: 10 },
+};
+
 /** Answers arriving this long after the deadline still count (network delay). */
 export const GRACE_MS = 1000;
 export const MAX_PLAYERS = 12;
@@ -241,7 +247,9 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
 
     case "tick":
       if (s.deadline == null || a.now <= s.deadline + GRACE_MS) return s;
-      if (s.phase === "question") return closeQuestion(s);
+      if (s.phase === "question") return closeQuestion(s, a.now);
+      // The answers were up long enough: everyone moves on.
+      if (s.phase === "reveal") return nextCard(s, a.now, packs);
       // Nobody picked in time: the first offered pack.
       if (s.phase === "choosePack" && s.packChoice) return choosePack(s, s.packChoice.options[0].id, a.now, packs);
       return s;
@@ -309,7 +317,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
 
     case "close":
       if (s.phase !== "question" || a.by !== controllerId(s)) return s;
-      return closeQuestion(s);
+      return closeQuestion(s, a.now);
 
     case "ready": {
       if (s.phase !== "reveal" || !isPlayer(s, a.by) || s.ready.includes(a.by)) return s;
@@ -374,7 +382,7 @@ function answer(s: RoomState, id: string, ans: Answer, now: number, packs: Pack[
 
 /** Closes the question once everyone answered, or moves on once everyone is ready. */
 function afterChange(s: RoomState, now: number, packs: Pack[]): RoomState {
-  if (s.phase === "question" && allAnswered(s)) return closeQuestion(s);
+  if (s.phase === "question" && allAnswered(s)) return closeQuestion(s, now);
   if (s.phase === "reveal") {
     const live = s.players.filter((p) => p.connected);
     if (live.length > 0 && live.every((p) => s.ready.includes(p.id))) return nextCard(s, now, packs);
@@ -405,7 +413,7 @@ function beginQuestion(s: RoomState, card: Card, now: number): RoomState {
 }
 
 /** Scores the card: unfinished pick turns are banked; players without an answer score nothing. */
-function closeQuestion(s: RoomState): RoomState {
+function closeQuestion(s: RoomState, now: number): RoomState {
   const card = s.card!;
   const results: RoomResult[] = [];
   for (const p of s.players) {
@@ -423,7 +431,8 @@ function closeQuestion(s: RoomState): RoomState {
     ...p,
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
-  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: null, ready: [] };
+  const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
+  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [] };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
@@ -564,6 +573,8 @@ export interface RoomView {
   social: SocialLine[];
   /** Game over: titles; player numbers are indices into `players`. */
   titles: Title[];
+  /** Big screens watching the room (filled in by the server). */
+  screens?: number;
 }
 
 export function viewFor(s: RoomState, you: string | null): RoomView {
@@ -583,7 +594,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     players: s.players.map((p) => playerView(s, p)),
     card: question ? hideCard(s.card!, s.settings.showCorrectCount) : null,
     full: reveal ? s.card : null,
-    deadline: question || s.phase === "choosePack" ? s.deadline : null,
+    deadline: question || reveal || s.phase === "choosePack" ? s.deadline : null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
     packChoice: s.phase === "choosePack" ? s.packChoice : null,

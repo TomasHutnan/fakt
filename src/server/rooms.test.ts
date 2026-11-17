@@ -291,6 +291,8 @@ describe("big screen", () => {
     expect(tv.seat).toEqual({ t: "seat", code, id: null, token: null });
     expect(tv.view.you).toBeNull();
     expect(tv.view.players).toHaveLength(1);
+    // Phones learn that a big screen shows the standings.
+    expect(host.view.screens).toBe(1);
     join(hub, code, "Zuzka"); // keeps the question open whatever the host picks
     host.act({ type: "start" });
     host.act({ type: "pick", option: 0 });
@@ -312,6 +314,16 @@ describe("big screen", () => {
     const extra = new FakeConn(hub);
     extra.msg({ t: "watch", v: PROTOCOL, code });
     expect(extra.lastError).toBe("full");
+  });
+
+  it("tells the phones when the last big screen leaves", () => {
+    const host = create(hub);
+    expect(host.view.screens).toBe(0);
+    const tv = new FakeConn(hub);
+    tv.msg({ t: "watch", v: PROTOCOL, code: host.seat!.code });
+    expect(host.view.screens).toBe(1);
+    tv.drop();
+    expect(host.view.screens).toBe(0);
   });
 });
 

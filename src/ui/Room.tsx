@@ -295,7 +295,7 @@ function RoomPackPick({ view, send, now, onLeave, banner }: Inner) {
   const name = chooser?.name ?? "?";
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
+      <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
         <Timer view={view} now={now} />
         <Leave onLeave={onLeave} />
@@ -317,7 +317,7 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
   const mine = view.mine;
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
+      <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
         <Timer view={view} now={now} />
         <Leave onLeave={onLeave} />
@@ -454,15 +454,16 @@ function asTurns(view: RoomView): { turns: TurnResult[]; names: (r: TurnResult) 
   return { turns, names: (r) => view.players[r.player]?.name ?? "?" };
 }
 
-function RoomReveal({ view, send, onLeave, banner }: Inner) {
+function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
   const card = view.full!;
   const { turns, names } = asTurns(view);
   const me = view.players.find((p) => p.id === view.you);
   const ready = me?.done ?? false;
   return (
     <div class="screen screen--game screen--room">
-      <header class="topbar">
+      <header class="topbar topbar--sticky">
         <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+        {view.deadline != null && <Timer view={view} now={now} />}
         <Leave onLeave={onLeave} />
       </header>
       {banner}
@@ -473,6 +474,12 @@ function RoomReveal({ view, send, onLeave, banner }: Inner) {
         <CardAnswer card={card} results={turns} names={names} />
         <RoundResults view={view} card={card} turns={turns} />
         <SocialList lines={view.social} name={(i) => view.players[i]?.name ?? "?"} />
+        {!view.screens && view.players.length > 1 && (
+          <section class="standings-now" aria-label={sk.standingsNow}>
+            <h2 class="field__label">{sk.standingsNow}</h2>
+            <Standings view={view} />
+          </section>
+        )}
         <CardFoot card={card} />
         <div class="actions">
           <button type="button" class="btn btn--primary btn--block" disabled={ready} onClick={() => send({ type: "ready" })}>
@@ -644,6 +651,7 @@ function TvBody({ view, now, banner }: Inner) {
       <>
         <header class="topbar">
           <span class="topbar__title">{sk.round(view.round, view.totalRounds)}</span>
+          {view.deadline != null && <Timer view={view} now={now} />}
         </header>
         <section class={`q q--reveal q--${card.type}`}>
           <CardHead card={card} />
