@@ -281,7 +281,7 @@ questions:
     correct:
       - { text: "Deepwater Horizon explodovala 20. apríla 2010", why: "Plošina bola v Mexickom zálive pri vrte Macondo." }
       - { text: "Pri výbuchu Deepwater Horizon zahynulo 11 pracovníkov", why: "Ďalších 17 bolo zranených." }
-      - { text: "Ropa z vrtu Macondo unikala 87 dní", why: "Vrt vyhlásili za zapečatený 19. septembra 2010." }
+      - { text: "Ropa z vrtu Macondo unikala 87 dní", why: "Vrt definitívne zapečatili až 19. septembra 2010." }
       - { text: "Deepwater Horizon sa považuje za najväčší únik ropy do mora v histórii ropného priemyslu", why: "Bol väčší než predchádzajúci rekordér, únik Ixtoc I." }
       - { text: "Exxon Valdez nasadol na útes v Prince William Sound na Aljaške", why: "Stalo sa to 24. marca 1989." }
       - { text: "BP sa v roku 2016 dohodla na pokute a vyrovnaní 20,8 miliardy dolárov", why: "Ide o najväčšie vyrovnanie za škody na životnom prostredí v histórii USA." }
@@ -470,7 +470,7 @@ questions:
     unit: dní
     scale: log
     tolerance: 0.15
-    why: "Ropa unikala 87 dní; vrt vyhlásili za zapečatený 19. septembra 2010."
+    why: "Ropa tiekla do mora 87 dní; vrt definitívne zapečatili až 19. septembra 2010."
     difficulty: 3
     tags: [ropa]
     source: https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill
