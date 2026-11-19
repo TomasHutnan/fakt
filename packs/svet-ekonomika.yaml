@@ -549,7 +549,7 @@ questions:
     unit: rok
     scale: linear
     tolerance: 3
-    why: "Prieplav sa otvoril v roku 1914; USA ho postupne odovzdali Panamě do konca roka 1999."
+    why: "Prieplav sa otvoril v roku 1914; USA ho postupne odovzdali Paname do konca roka 1999."
     difficulty: 2
     source: "https://en.wikipedia.org/wiki/Panama_Canal"
     tags: [prieplav]
