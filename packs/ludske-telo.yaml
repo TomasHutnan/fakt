@@ -1,0 +1,551 @@
+id: ludske-telo
+title: Ľudské telo
+description: "Orgány, kosti, krv, zmysly, rekordné čísla, lekárske objavy a mýty o tom, čo sa deje v našom tele."
+category: veda
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ PICK
+  - id: telo-chute
+    type: pick
+    prompt: "Ktoré z týchto vecí vníma ľudský jazyk ako chuť, teda cez chuťové poháriky?"
+    difficulty: 1
+    tags: [zmysly]
+    source: "https://en.wikipedia.org/wiki/Taste"
+    correct:
+      - { text: "sladkú", why: "Jedna z piatich základných chutí." }
+      - { text: "slanú", why: "Jedna z piatich základných chutí." }
+      - { text: "kyslú", why: "Jedna z piatich základných chutí." }
+      - { text: "horkú", why: "Jedna z piatich základných chutí." }
+      - { text: "umami", why: "Piata základná chuť, signalizuje glutamát; objavil ju japonský chemik Kikunae Ikeda." }
+    wrong:
+      - { text: "štipľavosť papriky", why: "Pálenie spôsobuje podráždenie nervov (kapsaicín), nie chuťové poháriky." }
+      - { text: "chlad mentolu", why: "Chladivý pocit vzniká podráždením nervov, nie chuťou." }
+      - { text: "teplotu horúceho čaju", why: "Teplotu vnímajú teplotné receptory, nie chuťové." }
+      - { text: "pálenie alkoholu", why: "Etanol dráždi nervy podobne ako kapsaicín, chuťou to nie je." }
+      - { text: "chrumkavosť čipsov", why: "Textúru vnímame hmatom v ústach (a sluchom), nie chuťou." }
+
+  - id: telo-krv-zlozky
+    type: pick
+    prompt: "Ktoré z týchto vecí sú súčasťou ľudskej krvi?"
+    difficulty: 1
+    tags: [krv]
+    source: "https://en.wikipedia.org/wiki/Blood"
+    correct:
+      - { text: "červené krvinky", why: "Prenášajú kyslík a tvoria asi 45 % objemu krvi." }
+      - { text: "biele krvinky", why: "Bránia telo pred infekciami; je ich omnoho menej než červených." }
+      - { text: "krvné doštičky", why: "Pomáhajú zrážať krv, keď sa poraníme." }
+      - { text: "krvná plazma", why: "Tekutá časť krvi, asi 92 % tvorí voda." }
+      - { text: "albumín", why: "Bielkovina krvnej plazmy." }
+      - { text: "protilátky", why: "Imunoglobulíny sú bielkoviny v krvnej plazme." }
+    wrong:
+      - { text: "žlč", why: "Vyrába ju pečeň a zbiera sa v žlčníku; do krvi nepatrí." }
+      - { text: "sliny", why: "Vylučujú ich slinné žľazy do úst." }
+      - { text: "moč", why: "Obličky ho z krvi odfiltrujú, krvou však nie je." }
+      - { text: "pot", why: "Vylučujú ho potné žľazy v koži." }
+      - { text: "mozgovomiechový mok", why: "Tekutina, ktorá obklopuje mozog a miechu; cirkuluje oddelene od krvi." }
+
+  - id: telo-dvojice
+    type: pick
+    prompt: "Ktoré z týchto orgánov alebo žliaz má človek normálne po dvoch?"
+    difficulty: 2
+    tags: [orgány]
+    source: "https://en.wikipedia.org/wiki/Adrenal_gland https://en.wikipedia.org/wiki/Kidney https://en.wikipedia.org/wiki/Lung https://en.wikipedia.org/wiki/Thyroid"
+    correct:
+      - { text: "oblička", why: "Máme dve obličky, ale vystačíme si aj s jednou." }
+      - { text: "pľúcne krídlo", why: "Pravé a ľavé; ľavé má výrez pre srdce." }
+      - { text: "nadoblička", why: "Žľaza, ktorá sedí na každej obličke a vyrába napríklad adrenalín." }
+      - { text: "slzná žľaza", why: "Každé oko má svoju, nad vonkajším kútikom." }
+      - { text: "mozgová hemisféra", why: "Mozog má pravú a ľavú pologuľu, spojené nervovými vláknami." }
+    wrong:
+      - { text: "štítna žľaza", why: "Je len jedna; majú ju dva laloky spojené úzkym mostíkom, preto ju ľahko pomýliť s dvojicou." }
+      - { text: "pečeň", why: "Jedna, má však dva nerovnaké laloky." }
+      - { text: "slezina", why: "Máme jednu, vľavo v hornej časti brucha." }
+      - { text: "pankreas", why: "Jedna podžalúdková žľaza." }
+      - { text: "žalúdok", why: "Len jeden." }
+      - { text: "srdce", why: "Jedno, so štyrmi dutinami." }
+
+  - id: telo-zlazy-hormony
+    type: pick
+    prompt: "Ktoré z týchto žliaz vyrábajú hormóny a vypúšťajú ich priamo do krvi?"
+    difficulty: 2
+    tags: [hormóny, orgány]
+    source: "https://en.wikipedia.org/wiki/Endocrine_system"
+    correct:
+      - { text: "štítna žľaza", why: "Vyrába hormóny, ktoré riadia rýchlosť metabolizmu." }
+      - { text: "hypofýza", why: "Podmozgová žľaza veľkosti hrášku, ktorá riadi mnohé ďalšie žľazy." }
+      - { text: "nadobličky", why: "Vyrábajú adrenalín a kortizol." }
+      - { text: "epifýza", why: "Šišinka v mozgu; vyrába melatonín, hormón spánku." }
+      - { text: "prištítne telieska", why: "Malé žľazy pri štítnej žľaze, ktoré regulujú vápnik v krvi." }
+      - { text: "pankreas", why: "Okrem tráviacich štiav vyrába aj inzulín a glukagón." }
+    wrong:
+      - { text: "slinné žľazy", why: "Vylučujú sliny do úst, nie hormóny do krvi." }
+      - { text: "potné žľazy", why: "Vylučujú pot na povrch kože." }
+      - { text: "slzné žľazy", why: "Vylučujú slzy na povrch oka." }
+      - { text: "mazové žľazy", why: "Vylučujú kožný maz do vlasových folikulov." }
+      - { text: "mliečne žľazy", why: "Vylučujú mlieko von z tela, nie hormóny do krvi." }
+
+  - id: telo-svaly
+    type: pick
+    prompt: "Ktoré z týchto vecí sú skutočné svaly?"
+    difficulty: 2
+    tags: [svaly]
+    source: "https://en.wikipedia.org/wiki/List_of_muscles_of_the_human_body"
+    correct:
+      - { text: "biceps", why: "Dvojhlavý sval ramena." }
+      - { text: "triceps", why: "Trojhlavý sval na zadnej strane ramena." }
+      - { text: "deltový sval", why: "Zaoblený sval na pleci." }
+      - { text: "trapézový sval", why: "Veľký sval medzi krkom, plecami a chrbtom." }
+      - { text: "veľký sedací sval", why: "Gluteus maximus, najväčší sval ľudského tela." }
+      - { text: "priamy sval brušný", why: "Sval, ktorý pri vysokom stupni vypracovania tvorí „kocky“ na bruchu." }
+    wrong:
+      - { text: "Achillova šľacha", why: "Šľacha, ktorá spája lýtkový sval s pätovou kosťou; sama sval nie je." }
+      - { text: "predný skrížený väz", why: "Väz v kolene; spája kosti, nie je sval." }
+      - { text: "meniskus", why: "Chrupkový tlmič v kolene." }
+      - { text: "platnička chrbtice", why: "Chrupkový tlmič medzi stavcami." }
+      - { text: "jabĺčko", why: "Kosť, nie sval." }
+
+  - id: telo-oko-nie-ucho
+    type: pick
+    prompt: "Ktoré z týchto častí patria k oku, a nie k uchu?"
+    difficulty: 1
+    tags: [zmysly]
+    source: "https://en.wikipedia.org/wiki/Human_eye https://en.wikipedia.org/wiki/Ear"
+    correct:
+      - { text: "rohovka", why: "Priehľadná predná vrstva oka." }
+      - { text: "dúhovka", why: "Farebná časť oka, ktorá upravuje veľkosť zrenice." }
+      - { text: "zrenica", why: "Otvor v dúhovke, ktorým vstupuje svetlo." }
+      - { text: "šošovka", why: "Zaostruje svetlo na sietnicu." }
+      - { text: "sietnica", why: "Vrstva citlivá na svetlo na zadnej strane oka." }
+      - { text: "sklovec", why: "Rôsolovitá hmota, ktorá vypĺňa vnútro oka." }
+    wrong:
+      - { text: "bubienok", why: "Blana, ktorá sa rozochvieva zvukom; je v uchu." }
+      - { text: "slimák", why: "Špirálový orgán vo vnútornom uchu, ktorý mení zvuk na nervové signály." }
+      - { text: "polkruhovité kanáliky", why: "Orgán rovnováhy vo vnútornom uchu." }
+      - { text: "Eustachova trubica", why: "Spája stredné ucho s hltanom, preto nám v lietadle „puká“ v ušiach." }
+      - { text: "kladivko", why: "Kostička v strednom uchu." }
+
+  - id: telo-najviac
+    type: pick
+    prompt: "Ktoré z týchto „najviac“ tvrdení o ľudskom tele sú pravdivé?"
+    difficulty: 1
+    tags: [rekordy, anatómia]
+    source: "https://en.wikipedia.org/wiki/Human_skin https://en.wikipedia.org/wiki/Bone https://en.wikipedia.org/wiki/Tooth_enamel https://en.wikipedia.org/wiki/Liver https://en.wikipedia.org/wiki/Gluteus_maximus"
+    correct:
+      - { text: "Najväčší orgán tela je koža.", why: "Tvorí zhruba 16 % telesnej hmotnosti." }
+      - { text: "Najdlhšia kosť je stehenná kosť.", why: "Femur je najväčšia kosť tela." }
+      - { text: "Najmenšia kosť je strmienok v strednom uchu.", why: "Meria zopár milimetrov." }
+      - { text: "Najtvrdšia látka v tele je zubná sklovina.", why: "Je z 96 % z minerálov." }
+      - { text: "Najťažší vnútorný orgán je pečeň.", why: "Váži okolo 1,5 kg." }
+      - { text: "Najväčší sval je veľký sedací sval.", why: "Gluteus maximus." }
+    wrong:
+      - { text: "Najväčší orgán tela je pečeň.", why: "Pečeň je najväčší vnútorný orgán, ale koža je väčšia." }
+      - { text: "Najdlhšia kosť je holenná kosť.", why: "Je druhá najdlhšia; stehenná je dlhšia." }
+      - { text: "Najmenšia kosť je kladivko.", why: "Kladivko je väčšie než strmienok." }
+      - { text: "Najtvrdšia látka v tele je kosť.", why: "Tvrdšia je zubná sklovina." }
+      - { text: "Najväčší sval je biceps.", why: "Biceps je slávny, ale veľký sedací sval je väčší." }
+
+  - id: telo-mozog-pravda
+    type: pick
+    prompt: "Ktoré tvrdenia o ľudskom mozgu sú pravdivé?"
+    difficulty: 2
+    tags: [mozog]
+    source: "https://en.wikipedia.org/wiki/Human_brain"
+    correct:
+      - { text: "Dospelý mozog váži asi 1,2 až 1,4 kg.", why: "Zhruba ako väčší grep." }
+      - { text: "Mozog tvorí len asi 2 % telesnej hmotnosti.", why: "Napriek tomu je to energeticky najnáročnejší orgán." }
+      - { text: "Mozog spotrebuje až 20 % energie tela.", why: "Pritom tvorí len asi 2 % hmotnosti tela." }
+      - { text: "Hematoencefalická bariéra chráni mozog pred časťou látok v krvi.", why: "Prepúšťa vodu, kyslík či oxid uhličitý, ale väčšie molekuly zadrží." }
+      - { text: "U väčšiny ľudí je reč spojená s ľavou hemisférou.", why: "Pravá hemisféra sa zas viac podieľa na priestorovej predstavivosti." }
+    wrong:
+      - { text: "Dospelý mozog váži okolo 5 kg.", why: "Váži asi štvrtinu: 1,2 až 1,4 kg." }
+      - { text: "Mozog tvorí štvrtinu hmotnosti tela.", why: "Len asi 2 %." }
+      - { text: "Mozog je najväčší orgán ľudského tela.", why: "Najväčšia je koža, z vnútorných je najťažšia pečeň." }
+      - { text: "Mozog má len asi miliardu neurónov.", why: "Okolo 86 miliárd." }
+      - { text: "Mozog sa počas spánku úplne vypína.", why: "V spánku je aktívny a mení režimy; vypnúť sa nedá." }
+
+  - id: telo-mytus
+    type: pick
+    prompt: "Ktoré z týchto rozšírených tvrdení o tele a zdraví sú MÝTY?"
+    difficulty: 1
+    tags: [mýty]
+    source: "https://en.wikipedia.org/wiki/List_of_common_misconceptions_about_science,_technology,_and_mathematics"
+    correct:
+      - { text: "Mrkva výrazne zlepšuje videnie v tme", why: "Betakarotén pomáha len pri nedostatku vitamínu A; mýtus podporila vojnová propaganda." }
+      - { text: "Čítanie pri slabom svetle natrvalo poškodí oči", why: "Oči sa unavia, ale trvalý zrak tým nestratíme." }
+      - { text: "Cukor robí deti hyperaktívnymi", why: "Štúdie klinickú hyperaktivitu pri cukre nepotvrdili." }
+      - { text: "Po jedle sa nesmie plávať, lebo hrozia kŕče a utopenie", why: "Riziko kŕčov ani utopenia sa tým významne nezvyšuje." }
+      - { text: "Alkohol nás zahreje", why: "Rozširuje cievy, takže sa nám zdá teplejšie, no telo tak teplo stráca." }
+      - { text: "Teplou vodou a mydlom si ruky umyjeme od baktérií lepšie ako studenou a mydlom", why: "Pri umývaní mydlom nezáleží na teplote vody." }
+    wrong:
+      - { text: "Pečeň sa dokáže po poškodení obnoviť", why: "Pravda; pečeň má veľkú schopnosť regenerácie." }
+      - { text: "Srdce človeka má štyri dutiny", why: "Pravda: dve predsiene a dve komory." }
+      - { text: "Dospelý človek má menej kostí než novorodenec", why: "Pravda; mnohé kosti dieťaťa sa časom zrastú." }
+      - { text: "Zubná sklovina je tvrdšia než kosť", why: "Pravda, je to najtvrdšia látka v tele." }
+      - { text: "Kosti sa v tele celý život prestavujú", why: "Pravda; staré tkanivo odbúravajú osteoklasty a nové tvoria osteoblasty." }
+
+  - id: telo-lekarske-objavy
+    type: pick
+    prompt: "Ktoré z týchto dvojíc „osobnosť a čin“ sú správne?"
+    difficulty: 2
+    tags: [dejiny medicíny]
+    source: "https://en.wikipedia.org/wiki/Alexander_Fleming https://en.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen https://en.wikipedia.org/wiki/Edward_Jenner https://en.wikipedia.org/wiki/Karl_Landsteiner https://en.wikipedia.org/wiki/Christiaan_Barnard https://en.wikipedia.org/wiki/Ignaz_Semmelweis"
+    correct:
+      - { text: "Alexander Fleming objavil penicilín", why: "V roku 1928; bolo to prvé antibiotikum na svete." }
+      - { text: "Wilhelm Röntgen objavil röntgenové lúče", why: "V roku 1895 vo Würzburgu; za objav dostal prvú Nobelovu cenu za fyziku." }
+      - { text: "Edward Jenner vyvinul očkovanie proti pravým kiahňam", why: "V roku 1796 očkoval chlapca hnisom z kravských kiahní." }
+      - { text: "Karl Landsteiner opísal krvné skupiny systému ABO", why: "V roku 1901; neskôr za to dostal Nobelovu cenu." }
+      - { text: "Christiaan Barnard vykonal prvú transplantáciu ľudského srdca", why: "V decembri 1967 v Kapskom Meste." }
+      - { text: "Ignác Semmelweis zaviedol dezinfekciu rúk v pôrodniciach", why: "Od roku 1847 tak výrazne znížil úmrtnosť rodičiek." }
+    wrong:
+      - { text: "Louis Pasteur objavil penicilín", why: "Pasteur je spojený s vakcínou proti besnote a s pasterizáciou; penicilín objavil Fleming." }
+      - { text: "Marie Curie objavila röntgenové lúče", why: "Curie objavila rádium a polónium; röntgenové lúče objavil Röntgen." }
+      - { text: "Edward Jenner opísal krvné skupiny", why: "Jenner je spojený s očkovaním; krvné skupiny opísal Landsteiner." }
+      - { text: "Alexander Fleming vykonal prvú transplantáciu srdca", why: "Fleming je od penicilínu; srdce prvý transplantoval Barnard." }
+      - { text: "Karl Landsteiner zaviedol dezinfekciu rúk v pôrodniciach", why: "To bol Semmelweis; Landsteiner skúmal krvné skupiny." }
+
+  - id: telo-srdce
+    type: pick
+    prompt: "Ktoré tvrdenia o ľudskom srdci sú pravdivé?"
+    difficulty: 1
+    tags: [srdce]
+    source: "https://en.wikipedia.org/wiki/Heart"
+    correct:
+      - { text: "Srdce má štyri dutiny: dve predsiene a dve komory.", why: "Pravá strana posiela krv do pľúc, ľavá do celého tela." }
+      - { text: "Dospelé srdce váži zhruba 250 až 350 gramov.", why: "Zhruba ako tri tabuľky čokolády." }
+      - { text: "Srdce leží v strede hrudníka, mierne vychýlené doľava.", why: "Preto ho cítime vľavo; väčšia časť je však za hrudnou kosťou." }
+      - { text: "Chlopne v srdci zabezpečujú, aby krv tiekla jedným smerom.", why: "Zabraňujú spätnému toku." }
+      - { text: "Srdce začne biť už v embryu v prvých týždňoch vývoja.", why: "Prvé údery sa objavia už v prvých týždňoch po počatí." }
+    wrong:
+      - { text: "Srdce má len tri dutiny.", why: "Štyri: dve predsiene a dve komory." }
+      - { text: "Srdce leží celé na ľavej strane hrudníka.", why: "Je v strede, len jeho hrot je mierne vľavo." }
+      - { text: "Tepny vždy vedú okysličenú krv.", why: "Pľúcna tepna vedie z pravej komory krv bez kyslíka do pľúc." }
+      - { text: "Dospelé srdce váži okolo 3 kg.", why: "Asi desaťkrát menej." }
+      - { text: "Srdce začne biť až po narodení.", why: "Bije už v embryu, dávno pred pôrodom." }
+
+  - id: telo-odtlacky
+    type: pick
+    prompt: "Ktoré tvrdenia o odtlačkoch prstov sú pravdivé?"
+    difficulty: 2
+    tags: [koža, kriminalistika]
+    source: "https://en.wikipedia.org/wiki/Fingerprint https://en.wikipedia.org/wiki/Jan_Evangelista_Purkyn%C4%9B"
+    correct:
+      - { text: "Vznikajú ešte pred narodením.", why: "Zhruba v 13. až 15. týždni vývoja plodu." }
+      - { text: "Majú ich aj jednovaječné dvojčatá, no nie sú rovnaké.", why: "Sú si veľmi podobné, ale nie identické." }
+      - { text: "Počas života sa zásadne nemenia.", why: "Zostávajú v zásade rovnaké až do smrti." }
+      - { text: "Prvú klasifikáciu odtlačkov navrhol český fyziológ Jan Evangelista Purkyně.", why: "V roku 1823 rozlíšil deväť základných typov." }
+      - { text: "Slúžia na identifikáciu osôb pre políciu.", why: "Sú jedinečné a ťažko sa menia." }
+    wrong:
+      - { text: "Jednovaječné dvojčatá majú úplne rovnaké odtlačky.", why: "Podobné áno, rovnaké nie." }
+      - { text: "Odtlačky sa vytvoria až po narodení.", why: "Tvoria sa už v plode." }
+      - { text: "Odtlačky sa menia každých desať rokov.", why: "Vzor ostáva celý život rovnaký." }
+      - { text: "Prvú klasifikáciu odtlačkov vytvoril Alexander Fleming.", why: "Fleming objavil penicilín; odtlačky klasifikoval Purkyně." }
+      - { text: "Odtlačky prstov majú len dospelí.", why: "Vytvoria sa pred narodením, takže ich majú aj bábätká." }
+
+  - id: telo-krvne-skupiny
+    type: pick
+    prompt: "Ktoré tvrdenia o krvných skupinách sú pravdivé?"
+    difficulty: 2
+    tags: [krv]
+    source: "https://en.wikipedia.org/wiki/Blood_type https://en.wikipedia.org/wiki/Karl_Landsteiner"
+    correct:
+      - { text: "Skupina 0 negatívna sa nazýva univerzálny darca.", why: "Dá sa podať ľuďom s inou skupinou, preto je pre nemocnice taká cenná." }
+      - { text: "Skupina AB pozitívna sa nazýva univerzálny príjemca.", why: "Môže prijať červené krvinky od všetkých skupín." }
+      - { text: "Základné krvné skupiny A, B a 0 opísal Karl Landsteiner.", why: "Objav z roku 1901 mu o tri desaťročia neskôr priniesol Nobelovu cenu." }
+      - { text: "Skupiny ABO určuje prítomnosť antigénov na červených krvinkách.", why: "Skupina 0 nemá ani antigén A, ani B." }
+      - { text: "Krvnú skupinu dieťa dedí od rodičov.", why: "Skupinu určujú gény." }
+    wrong:
+      - { text: "Skupina AB je univerzálny darca červených krviniek.", why: "Môže darovať len ľuďom so skupinou AB; univerzálny príjemca je." }
+      - { text: "Krvné skupiny objavil Louis Pasteur.", why: "Opísal ich Landsteiner v roku 1901." }
+      - { text: "Skupina 0 má na červených krvinkách oba antigény, A aj B.", why: "Práve naopak, nemá žiaden." }
+      - { text: "Krvnú skupinu si človek počas života mení podľa stravy.", why: "Zostáva celý život rovnaká." }
+      - { text: "Landsteiner opísal krvné skupiny až po druhej svetovej vojne.", why: "Urobil to už v roku 1901." }
+
+  - id: telo-pecen
+    type: pick
+    prompt: "Ktoré z týchto tvrdení o pečeni sú pravdivé?"
+    difficulty: 2
+    tags: [orgány]
+    source: "https://en.wikipedia.org/wiki/Liver"
+    correct:
+      - { text: "vyrába žlč", why: "Žlč pomáha tráviť tuky a zbiera sa v žlčníku." }
+      - { text: "odbúrava alkohol a mnohé jedy", why: "Metabolizuje aj lieky." }
+      - { text: "ukladá zásoby glukózy ako glykogén", why: "Ak je treba, uvoľní ich do krvi." }
+      - { text: "vyrába časť bielkovín krvnej plazmy", why: "Napríklad albumín." }
+      - { text: "dokáže sa po poškodení sčasti obnoviť", why: "Má veľkú schopnosť regenerácie." }
+    wrong:
+      - { text: "vyrába inzulín", why: "Inzulín vyrába pankreas." }
+      - { text: "filtruje krv a vytvára moč", why: "To robia obličky." }
+      - { text: "vyrába adrenalín", why: "Vyrábajú ho nadobličky." }
+      - { text: "ukladá moč", why: "Moč sa zbiera v močovom mechúre." }
+      - { text: "vyrába kyselinu chlorovodíkovú", why: "To robí žalúdok." }
+
+  - id: telo-zuby
+    type: pick
+    prompt: "Ktoré tvrdenia o zuboch sú pravdivé?"
+    difficulty: 1
+    tags: [zuby]
+    source: "https://en.wikipedia.org/wiki/Human_tooth https://en.wikipedia.org/wiki/Tooth_enamel"
+    correct:
+      - { text: "Dieťa má 20 mliečnych zubov.", why: "Neskôr ich nahradí 32 trvalých." }
+      - { text: "Dospelý má pôvodne 32 trvalých zubov vrátane zubov múdrosti.", why: "Niektorým ľuďom však zuby múdrosti chýbajú." }
+      - { text: "Zubná sklovina je najtvrdšia látka v tele.", why: "Pozostáva z 96 % z minerálov." }
+      - { text: "Zuby nie sú kosti.", why: "Tvoria ich sklovina, zubovina a zubná dreň." }
+      - { text: "Poškodená sklovina sa sama neobnoví.", why: "Nie je z buniek, takže ju telo nedokáže nahradiť." }
+    wrong:
+      - { text: "Dospelý má 36 zubov.", why: "Pôvodne 32." }
+      - { text: "Zuby sú kosti pokryté sklovinou.", why: "Zuby sú iné tkanivo než kosti." }
+      - { text: "Sklovina sa po poškodení zregeneruje ako pečeň.", why: "Sklovina nie je z buniek a sama sa nedorastie." }
+      - { text: "Dieťa sa rodí s 32 zubami.", why: "Mliečne zuby rastú v prvých rokoch života; dieťa ich má 20." }
+      - { text: "Zuby múdrosti má každý človek.", why: "Niektorým nikdy nenarastú." }
+
+  - id: telo-kosti-pravda
+    type: pick
+    prompt: "Ktoré tvrdenia o kostiach sú pravdivé?"
+    difficulty: 2
+    tags: [kosti]
+    source: "https://en.wikipedia.org/wiki/Bone https://en.wikipedia.org/wiki/Skull"
+    correct:
+      - { text: "Novorodenec má približne 300 kostí.", why: "Počas rastu sa mnohé zrastú, takže dospelý má 206." }
+      - { text: "Kosti sú živé tkanivo, ktoré sa celý život prestavuje.", why: "Staré kosti odbúravajú osteoklasty, nové tvoria osteoblasty." }
+      - { text: "Kostná dreň je miesto, kde sa tvoria krvinky.", why: "Červená kostná dreň je krvotvorná." }
+      - { text: "Lebka dospelého sa skladá z 22 kostí (bez sluchových kostičiek).", why: "Osem kostí mozgovej časti a štrnásť kostí tváre." }
+      - { text: "Hrudný kôš má dvanásť párov rebier.", why: "Spolu 24 rebier." }
+    wrong:
+      - { text: "Novorodenec má menej kostí než dospelý.", why: "Má ich viac, lebo sa časom zrastú." }
+      - { text: "Dospelá kosť je neživá a nemení sa.", why: "Neustále sa obnovuje." }
+      - { text: "Lebka je jedna celistvá kosť.", why: "Skladá sa z 22 kostí." }
+      - { text: "Krvinky sa tvoria v kĺbových väzoch.", why: "Tvoria sa v kostnej dreni." }
+      - { text: "Dospelý človek má 12 rebier.", why: "Má ich 24, teda dvanásť párov." }
+
+  # ================================================================ ORDER
+  - id: telo-objavy-roky
+    type: order
+    prompt: "Zoraď lekárske prielomy od najstaršieho."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [dejiny medicíny]
+    source: "https://en.wikipedia.org/wiki/Edward_Jenner"
+    note: "Roky: Jenner 1796, Semmelweis 1847, Röntgen 1895 (https://en.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen), Fleming 1928 (https://en.wikipedia.org/wiki/Alexander_Fleming), Barnard 1967 (https://en.wikipedia.org/wiki/Christiaan_Barnard)."
+    items:
+      - { text: "prvá vakcína (proti kiahňam)", value: 1796, why: "Edward Jenner očkoval v máji 1796." }
+      - { text: "dezinfekcia rúk v pôrodniciach", value: 1847, why: "Ignác Semmelweis ju zaviedol vo Viedni." }
+      - { text: "objav röntgenových lúčov", value: 1895, why: "Wilhelm Röntgen ich objavil vo Würzburgu." }
+      - { text: "objav penicilínu", value: 1928, why: "Alexander Fleming si v Londýne všimol plesňou zničené baktérie." }
+      - { text: "prvá transplantácia srdca", value: 1967, why: "Christiaan Barnard operoval v Kapskom Meste." }
+
+  - id: telo-hmotnost-organov
+    type: order
+    prompt: "Zoraď orgány dospelého človeka od najťažšieho."
+    direction: desc
+    unit: g
+    difficulty: 2
+    tags: [orgány]
+    source: "https://en.wikipedia.org/wiki/Liver"
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Heart (250 až 350 g), https://en.wikipedia.org/wiki/Thyroid (25 g), https://en.wikipedia.org/wiki/Kidney (80 až 175 g)."
+    items:
+      - { text: "pečeň", value: 1500, why: "Najťažší vnútorný orgán, okolo 1,5 kg." }
+      - { text: "srdce", value: 300, why: "Okolo 250 až 350 gramov." }
+      - { text: "oblička (jedna)", value: 150, why: "Zhruba 80 až 175 gramov." }
+      - { text: "štítna žľaza", value: 25, why: "Dospelému váži asi 25 gramov." }
+
+  - id: telo-zivot-buniek
+    type: order
+    prompt: "Zoraď podľa toho, ako dlho zhruba trvá, kým sa obnovia, od najkratšieho času."
+    direction: asc
+    unit: dní
+    difficulty: 3
+    tags: [bunky]
+    source: "https://en.wikipedia.org/wiki/Intestinal_epithelium"
+    note: "Ďalšie zdroje: https://en.wikipedia.org/wiki/Epidermis (48 dní), https://en.wikipedia.org/wiki/Platelet (8 až 9 dní), https://en.wikipedia.org/wiki/Red_blood_cell (100 až 120 dní). Hodnoty sú priemerné odhady."
+    items:
+      - { text: "výstelka čreva", value: 4, why: "Bunky sa obnovia za 4 až 5 dní." }
+      - { text: "krvné doštičky", value: 8, why: "V obehu žijú v priemere 8 až 9 dní." }
+      - { text: "vrchná vrstva kože", value: 48, why: "Celá pokožka sa vymení približne za 48 dní." }
+      - { text: "červené krvinky", value: 120, why: "V obehu vydržia 100 až 120 dní." }
+
+  # ================================================================ NUMBER
+  - id: telo-prvy-transplant
+    type: number
+    prompt: "V ktorom roku sa uskutočnila prvá transplantácia ľudského srdca?"
+    answer: 1967
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: "Christiaan Barnard v Kapskom Meste 3. decembra 1967 prenesol srdce zosnulej Denise Darvallovej do hrude Louisa Washkanského."
+    difficulty: 2
+    tags: [dejiny medicíny]
+    source: "https://en.wikipedia.org/wiki/Christiaan_Barnard"
+
+  - id: telo-tep-za-den
+    type: number
+    prompt: "Približne koľkokrát za deň uderí srdce dospelého človeka v pokoji?"
+    answer: 100000
+    unit: úderov
+    scale: log
+    tolerance: 0.2
+    why: "Pri pokojovej frekvencii okolo 72 úderov za minútu vychádza zhruba 100 000 úderov denne."
+    difficulty: 1
+    tags: [srdce]
+    source: "https://en.wikipedia.org/wiki/Heart"
+
+  - id: telo-litre-krvi
+    type: number
+    prompt: "Koľko litrov krvi má v tele dospelý človek?"
+    answer: 5
+    unit: litrov
+    scale: log
+    tolerance: 0.2
+    why: "Typický dospelý má asi päť litrov, ženy trochu menej než muži."
+    difficulty: 1
+    tags: [krv]
+    source: "https://en.wikipedia.org/wiki/Blood_volume"
+
+  - id: telo-pocet-neuronov
+    type: number
+    prompt: "Približne koľko miliárd neurónov má ľudský mozog?"
+    answer: 86
+    unit: miliárd
+    scale: log
+    tolerance: 0.3
+    why: "Odhad z roku 2009 hovorí o 86 miliardách; najviac z nich je v mozočku."
+    difficulty: 3
+    tags: [mozog]
+    source: "https://en.wikipedia.org/wiki/Neuron"
+
+  - id: telo-calment
+    type: number
+    prompt: "Koľko rokov sa dožila Francúzka Jeanne Calmentová, najstarší človek s overeným vekom v histórii?"
+    answer: 122
+    unit: rokov
+    scale: linear
+    tolerance: 3
+    asOf: "2026-11"
+    why: "Žila 122 rokov a 164 dní; zomrela v roku 1997 a rekord drží dodnes."
+    difficulty: 1
+    tags: [rekordy]
+    source: "https://en.wikipedia.org/wiki/Jeanne_Calment"
+
+  - id: telo-krvinky-za-sekundu
+    type: number
+    prompt: "Približne koľko nových červených krviniek vyrobí telo dospelého človeka každú sekundu?"
+    answer: 2400000
+    unit: krviniek
+    scale: log
+    tolerance: 0.3
+    why: "Kostná dreň vyrobí okolo 2,4 milióna červených krviniek za sekundu."
+    difficulty: 3
+    tags: [krv]
+    source: "https://en.wikipedia.org/wiki/Red_blood_cell"
+
+  - id: telo-dlzka-travenia
+    type: number
+    prompt: "Koľko metrov by merala celá tráviaca trubica od úst po konečník, keby sme ju uvoľnenú vystreli?"
+    answer: 9
+    unit: metrov
+    scale: log
+    tolerance: 0.25
+    why: "Pri pitve meria približne deväť metrov; v živom tele je kratšia, lebo svalový tonus črevá sťahuje."
+    difficulty: 2
+    tags: [trávenie]
+    source: "https://en.wikipedia.org/wiki/Gastrointestinal_tract"
+
+  - id: telo-farboslepost
+    type: number
+    prompt: "Koľko percent mužov severoeurópskeho pôvodu má červeno-zelenú farbosleposť?"
+    answer: 8
+    unit: "%"
+    scale: linear
+    tolerance: 2
+    why: "Postihuje asi 8 % mužov a len okolo 0,5 % žien, lebo gény ležia na chromozóme X."
+    difficulty: 2
+    tags: [zmysly]
+    source: "https://en.wikipedia.org/wiki/Color_blindness"
+
+  - id: telo-pocet-zubov
+    type: number
+    prompt: "Koľko trvalých zubov má dospelý človek, ak mu nechýba žiadny a rastú aj zuby múdrosti?"
+    answer: 32
+    unit: zubov
+    scale: linear
+    tolerance: 1
+    why: "Osem rezákov, štyri očné zuby, osem zubov pred stoličkami a dvanásť stoličiek vrátane zubov múdrosti."
+    difficulty: 1
+    tags: [zuby]
+    source: "https://en.wikipedia.org/wiki/Human_tooth"
+
+  # ================================================================ CHOICE
+  - id: telo-vitamin-slnko
+    type: choice
+    prompt: "Ktorý vitamín si telo vie samo vyrobiť v koži, keď naň dopadá slnečné žiarenie?"
+    difficulty: 1
+    tags: [vitamíny]
+    source: "https://en.wikipedia.org/wiki/Vitamin_D"
+    correct: { text: "vitamín D", why: "Pôsobením UVB žiarenia z derivátu cholesterolu v koži." }
+    wrong:
+      - { text: "vitamín C", why: "Musíme ho prijať z potravy, napríklad z citrusov a papriky." }
+      - { text: "vitamín A", why: "Prijímame ho z potravy, napríklad z mrkvy a pečene." }
+      - { text: "vitamín B12", why: "Telo ho nevyrába; je v živočíšnych potravinách." }
+
+  - id: telo-inzulin
+    type: choice
+    prompt: "Ktorý orgán vyrába inzulín, hormón regulujúci hladinu cukru v krvi?"
+    difficulty: 1
+    tags: [hormóny, orgány]
+    source: "https://en.wikipedia.org/wiki/Insulin"
+    correct: { text: "pankreas", why: "Vyrábajú ho beta bunky Langerhansových ostrovčekov v podžalúdkovej žľaze." }
+    wrong:
+      - { text: "pečeň", why: "Ukladá glykogén, ale inzulín nevyrába." }
+      - { text: "oblička", why: "Filtruje krv a tvorí moč." }
+      - { text: "žlčník", why: "Zbiera a zahusťuje žlč." }
+
+  - id: telo-hemoglobin
+    type: choice
+    prompt: "Ktorá bielkovina v červených krvinkách prenáša kyslík z pľúc do tkanív?"
+    difficulty: 1
+    tags: [krv]
+    source: "https://en.wikipedia.org/wiki/Hemoglobin"
+    correct: { text: "hemoglobín", why: "Obsahuje železo a farbí krv na červeno." }
+    wrong:
+      - { text: "albumín", why: "Bielkovina krvnej plazmy, ktorá zadržiava vodu v cievach." }
+      - { text: "kolagén", why: "Základná bielkovina väziva, šliach a kože." }
+      - { text: "keratín", why: "Bielkovina vlasov a nechtov." }
+
+  - id: telo-kde-krvinky
+    type: choice
+    prompt: "Kde sa v tele dospelého človeka tvoria krvinky?"
+    difficulty: 1
+    tags: [krv, kosti]
+    source: "https://en.wikipedia.org/wiki/Bone_marrow"
+    correct: { text: "v kostnej dreni", why: "Červená kostná dreň je krvotvorná." }
+    wrong:
+      - { text: "v slezine", why: "Slezina staré krvinky skôr odstraňuje." }
+      - { text: "v pankrease", why: "Podžalúdková žľaza vyrába tráviace šťavy a hormóny." }
+      - { text: "v štítnej žľaze", why: "Vyrába hormóny, krvinky netvorí." }
+
+  - id: telo-jesenius
+    type: choice
+    prompt: "Čím sa v roku 1600 preslávil lekár Ján Jesenský (Jessenius), ktorý pôsobil v Prahe?"
+    difficulty: 3
+    tags: [dejiny medicíny, Slovensko]
+    source: "https://en.wikipedia.org/wiki/Jan_Jesenius"
+    correct: { text: "vykonal verejnú pitvu v Prahe", why: "Urobil ju na mŕtvole popraveného muža; o rok neskôr z toho vyšlo dielo Anatomiae Pragae." }
+    wrong:
+      - { text: "objavil krvný obeh", why: "Ten opísal Angličan William Harvey." }
+      - { text: "vynašiel očkovanie proti kiahňam", why: "To je Edward Jenner z Anglicka, o dvesto rokov neskôr." }
+      - { text: "objavil röntgenové lúče", why: "To urobil Wilhelm Röntgen v roku 1895." }
+
+  - id: telo-jansky
+    type: choice
+    prompt: "Čím sa do dejín medicíny zapísal český lekár Jan Janský?"
+    difficulty: 3
+    tags: [krv, dejiny medicíny]
+    source: "https://en.wikipedia.org/wiki/Jan_Jansk%C3%BD"
+    correct: { text: "rozdelil ľudskú krv na štyri skupiny", why: "Označil ich rímskymi číslicami I až IV; dnes sa používa Landsteinerovo označenie A, B, AB a 0." }
+    wrong:
+      - { text: "vynašiel mäkké kontaktné šošovky", why: "To bol český chemik Otto Wichterle." }
+      - { text: "objavil penicilín", why: "Penicilín objavil Škót Alexander Fleming." }
+      - { text: "vykonal prvú transplantáciu srdca", why: "To urobil Južnoafričan Christiaan Barnard v roku 1967." }
