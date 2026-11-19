@@ -1,0 +1,573 @@
+id: svet-katastrofy
+title: Katastrofy
+description: "Od Pompejí po Fukušimu: príčiny, dátumy a súvislosti veľkých katastrof, ktoré spôsobila príroda aj človek, vrátane tých na Slovensku."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: katastrofy-ludia
+    type: pick
+    prompt: "Ktoré z týchto katastrof spôsobil človek, nie príroda?"
+    difficulty: 1
+    tags: [katastrofy, príčiny]
+    source: "https://en.wikipedia.org/wiki/Chernobyl_disaster https://en.wikipedia.org/wiki/Bhopal_disaster https://en.wikipedia.org/wiki/2020_Beirut_explosion https://en.wikipedia.org/wiki/Halifax_Explosion https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill https://en.wikipedia.org/wiki/Aral_Sea https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora https://en.wikipedia.org/wiki/1755_Lisbon_earthquake https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull"
+    correct:
+      - { text: "Výbuch reaktora v Černobyle (1986)", why: "Reaktor č. 4 explodoval počas bezpečnostného testu." }
+      - { text: "Únik plynu v indickom Bhópále (1984)", why: "V závode na pesticídy unikol metylizokyanát a väčšina bezpečnostných systémov bola vtedy mimo prevádzky." }
+      - { text: "Výbuch v bejrútskom prístave (2020)", why: "Dusičnan amónny bol šesť rokov uskladnený bez dostatočných bezpečnostných opatrení." }
+      - { text: "Výbuch v prístave Halifax (1917)", why: "Spôsobila ho zrážka lodí, z ktorých jedna viezla výbušniny." }
+      - { text: "Únik ropy z plošiny Deepwater Horizon (2010)", why: "Vrt vybuchol po tom, čo sa z neho prudko uvoľnil metán." }
+      - { text: "Zmiznutie Aralského mora", why: "Rieky, ktoré ho napájali, odklonili na zavlažovanie polí." }
+    wrong:
+      - { text: "Erupcia Vezuvu (79)", why: "Prírodná udalosť: sopka pochovala Pompeje a Herculaneum." }
+      - { text: "Erupcia sopky Tambora (1815)", why: "Prírodná udalosť, po ktorej nasledoval rok 1816 bez leta." }
+      - { text: "Lisabonské zemetrasenie (1755)", why: "Prírodná udalosť: zemetrasenie, cunami a požiare takmer zničili mesto." }
+      - { text: "Cunami v Indickom oceáne (2004)", why: "Spustilo ho podmorské zemetrasenie pri Sumatre." }
+      - { text: "Erupcia sopky Krakatoa (1883)", why: "Prírodná udalosť v Sundskom prielive." }
+      - { text: "Erupcia sopky Mount St. Helens (1980)", why: "Prírodná udalosť: zosuv severného svahu a výbuch." }
+      - { text: "Erupcia sopky Eyjafjallajökull (2010)", why: "Prírodná udalosť na Islande, ktorej popol zastavil lety nad Európou." }
+
+  - id: katastrofy-cernobyl
+    type: pick
+    prompt: "Ktoré tvrdenia o havárii v Černobyle sú pravdivé?"
+    difficulty: 1
+    tags: [jadro, černobyľ]
+    source: https://en.wikipedia.org/wiki/Chernobyl_disaster
+    correct:
+      - { text: "Výbuch nastal v reaktore č. 4 počas bezpečnostného testu", why: "Test mal overiť, ako dlho dokáže dobiehajúca turbína napájať čerpadlá pri výpadku prúdu." }
+      - { text: "Mesto Pripiať evakuovali až ráno po výbuchu", why: "K výbuchu došlo 26. apríla 1986 a evakuáciu nariadili skoro ráno 27. apríla." }
+      - { text: "Sovietske úrady informovali verejnosť až po tom, čo radiáciu zaznamenali vo Švédsku", why: "Zvýšená radiácia spustila poplach v jadrovej elektrárni Forsmark vo Švédsku; verejnosť sa o havárii dozvedela až o dva dni." }
+      - { text: "Nad zničeným reaktorom dostavali v rokoch 2016 až 2018 nový ochranný kryt", why: "Nový kryt prekryl starý betónový sarkofág, ktorý vznikol v mesiacoch po nehode." }
+      - { text: "Elektráreň stojí na území dnešnej Ukrajiny", why: "Vtedy bola súčasťou Sovietskeho zväzu." }
+      - { text: "Dostala najvyšší, siedmy stupeň na stupnici INES", why: "Ide o stupeň veľkej havárie; rovnako ju hodnotia aj Fukušimu." }
+    wrong:
+      - { text: "Príčinou bolo zemetrasenie", why: "Reaktor explodoval pri teste, nie po prírodnej udalosti." }
+      - { text: "Elektráreň stála v Bielorusku", why: "Stála na Ukrajine, vtedy v Sovietskom zväze." }
+      - { text: "Havária nastala v roku 1989", why: "Nastala 26. apríla 1986." }
+      - { text: "Zakázaná zóna mala od prvého dňa polomer 30 km", why: "Najprv mala polomer 10 km a až neskôr ju rozšírili na 30 km." }
+      - { text: "Sovietska televízia o výbuchu informovala hneď prvé ráno", why: "Vláda sa k havárii verejne priznala až dva dni po nej." }
+      - { text: "Pripiať evakuovali v priebehu hodiny po výbuchu", why: "Obyvateľom sa nič nehlásilo celú noc; evakuáciu nariadili až ráno nasledujúceho dňa." }
+
+  - id: katastrofy-bhopal
+    type: pick
+    prompt: "Ktoré tvrdenia o katastrofe v indickom Bhópále (1984) sú pravdivé?"
+    difficulty: 2
+    tags: [chémia, bhópál]
+    source: https://en.wikipedia.org/wiki/Bhopal_disaster
+    correct:
+      - { text: "Stala sa v noci z 2. na 3. decembra 1984", why: "Plyn unikol v noci a zasiahol obyvateľov okolia závodu." }
+      - { text: "Unikol metylizokyanát", why: "Látka sa používala na výrobu pesticídu karbarylu." }
+      - { text: "Závod patril spoločnosti Union Carbide India Limited", why: "Išlo o indickú pobočku americkej spoločnosti Union Carbide." }
+      - { text: "Vyrábali v ňom pesticídy", why: "Zariadenie vyrábalo najmä pesticíd karbaryl." }
+      - { text: "Voda sa pravdepodobne dostala do nádrže pri čistení potrubia", why: "Reakcia s vodou sa urýchlila a v nádrži prudko vzrástol tlak." }
+      - { text: "Spoločnosť Dow Chemical kúpila Union Carbide až v roku 2001", why: "Teda sedemnásť rokov po katastrofe." }
+    wrong:
+      - { text: "Unikol chlór", why: "Unikol metylizokyanát." }
+      - { text: "Stala sa v Pakistane", why: "Bhópál je mesto v indickom štáte Madhjapradéš." }
+      - { text: "Závod vyrábal umelé hnojivá", why: "Išlo o závod na pesticídy." }
+      - { text: "Spôsobil ju výbuch dusičnanu amónneho", why: "To bola príčina výbuchu v Bejrúte v roku 2020." }
+      - { text: "Stala sa v roku 1994", why: "Stala sa v roku 1984." }
+
+  - id: katastrofy-fukusima
+    type: pick
+    prompt: "Ktoré tvrdenia o havárii jadrovej elektrárne Fukušima I (2011) sú pravdivé?"
+    difficulty: 2
+    tags: [jadro, japonsko]
+    source: https://en.wikipedia.org/wiki/Fukushima_nuclear_accident
+    correct:
+      - { text: "Začala 11. marca 2011", why: "V ten deň zasiahlo Japonsko zemetrasenie Tóhoku s následným cunami." }
+      - { text: "Priamou príčinou bolo zemetrasenie a cunami", why: "Zemetrasenie poškodilo elektrické vedenie a cunami zatopilo záložné napájanie." }
+      - { text: "Najväčšia vlna cunami mala 13 až 14 metrov", why: "Prekonala ochrannú hrádzu a prišla asi 50 minút po zemetrasení." }
+      - { text: "Dieselové generátory stáli v suterénoch elektrárne", why: "Boli asi 7 až 8 metrov pod úrovňou terénu, takže ich cunami zaplavilo." }
+      - { text: "Hodnotili ju najvyšším stupňom 7 na stupnici INES", why: "Tento stupeň predtým dostal len Černobyľ." }
+      - { text: "Podľa komisie OSN (UNSCEAR) sa u obyvateľov nepreukázali zdravotné následky priamo spôsobené radiáciou", why: "Komisia pri hodnotení vychádza z dostupných meraní a štúdií." }
+    wrong:
+      - { text: "Spustil ju teroristický útok", why: "Príčinou bola prírodná udalosť, zemetrasenie a cunami." }
+      - { text: "Elektráreň mala len jeden reaktor", why: "Mala šesť reaktorov a v čase zemetrasenia ich fungovali tri." }
+      - { text: "Cunami pri elektrárni nepresiahlo tri metre", why: "Najväčšia vlna mala 13 až 14 metrov." }
+      - { text: "Bola to prvá havária stupňa 7 v histórii", why: "Prvou bola havária v Černobyle v roku 1986." }
+      - { text: "Stala sa pri teste reaktora", why: "Test bol príčinou havárie v Černobyle, nie vo Fukušime." }
+
+  - id: katastrofy-titanic
+    type: pick
+    prompt: "Ktoré tvrdenia o potopení Titanicu sú pravdivé?"
+    difficulty: 1
+    tags: [lode, titanic]
+    source: https://en.wikipedia.org/wiki/Titanic
+    correct:
+      - { text: "Plavila sa z Southamptonu do New Yorku", why: "Bola to jej prvá plavba." }
+      - { text: "S ľadovcom sa zrazila v noci na 15. apríla 1912", why: "Strážny zbadal ľadovec o 23.40 lodného času 14. apríla." }
+      - { text: "Mala 20 záchranných člnov", why: "Ich kapacita stačila na 1 178 ľudí." }
+      - { text: "Na palube bolo 2 208 ľudí", why: "Záchranné člny teda stačili len zhruba na polovicu z nich." }
+      - { text: "Postavili ju v Belfaste", why: "Postavila ju lodenica Harland and Wolff." }
+      - { text: "Preživších vzala na palubu loď Carpathia", why: "Zachránila všetkých, ktorí sa dostali do záchranných člnov." }
+      - { text: "Vrak našli v roku 1985", why: "Objavil ho Robert Ballard a potvrdilo sa, že sa loď pri potopení rozlomila." }
+    wrong:
+      - { text: "Plavba mala začať v Liverpoole", why: "Zapísaná bola v Liverpoole, ale plavbu začala v Southamptone." }
+      - { text: "Mala smerovať do Bostonu", why: "Mala smerovať do New Yorku." }
+      - { text: "Záchranné člny stačili pre všetkých na palube", why: "Mali kapacitu len pre 1 178 z 2 208 ľudí." }
+      - { text: "Vrak objavili v 50. rokoch 20. storočia", why: "Vrak bol objavený až v roku 1985." }
+      - { text: "Preživších zachránila loď Californian", why: "Californian dorazila, keď už preživších vzala na palubu Carpathia." }
+
+  - id: katastrofy-slovensko
+    type: pick
+    prompt: "Ktoré z týchto katastrof zasiahli územie dnešného Slovenska?"
+    difficulty: 1
+    tags: [slovensko, katastrofy]
+    source: "https://sk.wikipedia.org/wiki/Hav%C3%A1ria_jadrovej_elektr%C3%A1rne_A1 https://sk.wikipedia.org/wiki/Tatransk%C3%BD_n%C3%A1rodn%C3%BD_park https://sk.wikipedia.org/wiki/Povode%C5%88_na_v%C3%BDchodnom_Slovensku_(1998) https://en.wikipedia.org/wiki/Ajka_alumina_plant_accident https://en.wikipedia.org/wiki/1997_Central_European_flood https://en.wikipedia.org/wiki/Chernobyl_disaster https://en.wikipedia.org/wiki/2020_Beirut_explosion https://en.wikipedia.org/wiki/Halifax_Explosion https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill https://en.wikipedia.org/wiki/Aral_Sea"
+    correct:
+      - { text: "Havária v jadrovej elektrárni A1 v Jaslovských Bohuniciach (1977)", why: "Ide o najzávažnejšiu jadrovú nehodu v bývalom Československu." }
+      - { text: "Veterná kalamita vo Vysokých Tatrách (2004)", why: "Víchrica z 19. novembra 2004 poškodila les na ploche vyše 12 000 hektárov." }
+      - { text: "Povodeň na východnom Slovensku (1998)", why: "Prívalová búrka 20. júla 1998 zasiahla 82 obcí, najviac Jarovnice." }
+    wrong:
+      - { text: "Havária v Černobyle (1986)", why: "Černobyľ leží na Ukrajine, vtedy v Sovietskom zväze." }
+      - { text: "Únik červeného kalu v Ajke (2010)", why: "Stalo sa to v Maďarsku, v hlinikárni pri meste Ajka." }
+      - { text: "Povodeň na Odre (1997)", why: "Zasiahla Poľsko, Česko a Nemecko, nie Slovensko." }
+      - { text: "Výbuch v bejrútskom prístave (2020)", why: "Stal sa v Libanone." }
+      - { text: "Výbuch v prístave Halifax (1917)", why: "Stal sa v kanadskom Novom Škótsku." }
+      - { text: "Únik ropy z plošiny Deepwater Horizon (2010)", why: "Stal sa v Mexickom zálive." }
+      - { text: "Vysychanie Aralského mora", why: "Aralské more leží v Kazachstane a Uzbekistane." }
+
+  - id: katastrofy-a1
+    type: pick
+    prompt: "Ktoré tvrdenia o jadrovej elektrárni A1 v Jaslovských Bohuniciach a jej havárii z roku 1977 sú pravdivé?"
+    difficulty: 3
+    tags: [slovensko, jadro]
+    source: "https://sk.wikipedia.org/wiki/Hav%C3%A1ria_jadrovej_elektr%C3%A1rne_A1 https://sk.wikipedia.org/wiki/Jadrov%C3%A1_elektr%C3%A1re%C5%88_Bohunice_A1"
+    correct:
+      - { text: "Bola to prvá jadrová elektráreň v Československu", why: "Jej výstavba sa začala v roku 1958 a do siete ju pripojili 25. decembra 1972." }
+      - { text: "Reaktor chladil plyn (oxid uhličitý) a ako moderátor mal ťažkú vodu", why: "Išlo o experimentálny reaktor československej konštrukcie." }
+      - { text: "Ako palivo používala prírodný urán", why: "Vďaka ťažkej vode nebolo treba palivo obohacovať." }
+      - { text: "Havária z 22. februára 1977 nastala pri výmene paliva počas prevádzky reaktora", why: "Reaktor bol konštruovaný tak, aby sa palivo dalo meniť bez jeho odstavenia." }
+      - { text: "Havárii pomohli guľôčky silikagélu, ktoré uviazli v palivovej kazete", why: "Zabránili prúdeniu chladiva, palivo sa lokálne prehrialo a roztavilo." }
+      - { text: "Havária dostala stupeň 4 na stupnici INES", why: "Stupnica má sedem stupňov; Černobyľ má stupeň 7." }
+    wrong:
+      - { text: "Išlo o sovietsky reaktor typu VVER", why: "Reaktor A1 bol československej konštrukcie a nepatril k typu VVER." }
+      - { text: "Reaktor chladila obyčajná voda", why: "Chladila ho plynný oxid uhličitý." }
+      - { text: "Ako palivo používala obohatený urán", why: "Používala prírodný kovový urán." }
+      - { text: "Havária dostala najvyšší stupeň 7 na stupnici INES", why: "Havária z roku 1977 mala stupeň 4." }
+      - { text: "Elektráreň stála pri Mochovciach", why: "Stála pri Jaslovských Bohuniciach, asi 60 km od Bratislavy." }
+
+  - id: katastrofy-svinka
+    type: pick
+    prompt: "Ktoré tvrdenia o povodni na východnom Slovensku z júla 1998 sú pravdivé?"
+    difficulty: 3
+    tags: [slovensko, povodne]
+    source: https://sk.wikipedia.org/wiki/Povode%C5%88_na_v%C3%BDchodnom_Slovensku_(1998)
+    correct:
+      - { text: "Stala sa 20. júla 1998", why: "Búrka sa začala o 15. hodine." }
+      - { text: "Voda zaplavila obce za necelú polhodinu", why: "Prívalová vlna prišla veľmi rýchlo po búrke." }
+      - { text: "Zasiahla 82 obcí v oblasti Šarišskej vrchoviny", why: "Dotkla sa aj Levočských vrchov a Braniska." }
+      - { text: "Najhoršie postihnutou obcou boli Jarovnice v okrese Sabinov", why: "Najviac obetí pochádzalo práve odtiaľ." }
+      - { text: "Povodňové vlny vznikli aj na tokoch Svinka, Žehrica a Torysa", why: "Voda strhávala mosty a vymlela cesty." }
+      - { text: "Zaplavených bolo vyše 2 000 domov", why: "Priame škody dosiahli 850 miliónov slovenských korún." }
+    wrong:
+      - { text: "Vznikla pri topení snehu na jar", why: "Spôsobila ju prívalová búrka v lete." }
+      - { text: "Zasiahla najmä Záhorie a okolie Bratislavy", why: "Postihla východné Slovensko, nie západné." }
+      - { text: "Spôsobilo ju pretrhnutie priehrady", why: "Príčinou bola extrémna prívalová búrka." }
+      - { text: "Prišla po viacerých týždňoch dažďov", why: "Voda stúpla za necelú polhodinu." }
+      - { text: "Zasiahla najmä Oravu a okolie Žiliny", why: "Postihla východné Slovensko; Šarišskú vrchovinu, Levočské vrchy a Branisko." }
+
+  - id: katastrofy-vezuv
+    type: pick
+    prompt: "Ktoré tvrdenia o erupcii Vezuvu a zániku Pompejí sú pravdivé?"
+    difficulty: 2
+    tags: [sopky, antika]
+    source: https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD
+    correct:
+      - { text: "Erupcia nastala v roku 79 nášho letopočtu", why: "Presný deň sa odhaduje a historici ho dodnes upresňujú." }
+      - { text: "Pochovala nielen Pompeje, ale aj Herculaneum", why: "Pochovala aj Oplontis a Stabiae." }
+      - { text: "Pompeje poškodilo zemetrasenie už v roku 62", why: "Časť škôd ešte nebola opravená, keď sopka vybuchla." }
+      - { text: "Mestá zasiahli najmä pyroklastické prúdy a popol", why: "Horúca zmes plynu a popola zasypala Pompeje a Herculaneum." }
+      - { text: "Očitý opis erupcie zanechal Plínius mladší", why: "Dva listy napísal Tacitovi približne o 25 rokov neskôr." }
+      - { text: "Celkový počet obetí nie je známy", why: "Pozostatky vyše 1 500 ľudí našli v Pompejach a Herculaneu, ale súčet nepoznáme." }
+    wrong:
+      - { text: "Pompeje zničil prúd lávy", why: "Mestá pochovali popol a pyroklastické prúdy, nie láva." }
+      - { text: "Erupcia nastala v roku 79 pred naším letopočtom", why: "Nastala v roku 79 nášho letopočtu." }
+      - { text: "Pompeje zničila sopka Etna na Sicílii", why: "Vezuv leží v Kampánii pri Neapole." }
+      - { text: "Všetci obyvatelia Pompejí stihli utiecť", why: "Pozostatky vyše 1 500 ľudí našli v Pompejach a Herculaneu." }
+      - { text: "Erupciu opísal Plínius starší vo svojich listoch", why: "Listy napísal jeho synovec; Plínius starší zomrel pri záchrannej výprave." }
+
+  - id: katastrofy-sopky
+    type: pick
+    prompt: "Ktoré tvrdenia o týchto sopečných erupciách sú pravdivé?"
+    difficulty: 2
+    tags: [sopky]
+    source: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull"
+    correct:
+      - { text: "Tambora leží na indonézskom ostrove Sumbawa", why: "Vtedy to bola súčasť Holandskej východnej Indie." }
+      - { text: "Po erupcii Tambory klesla globálna teplota", why: "Rok 1816 sa označuje ako rok bez leta." }
+      - { text: "Krakatoa leží v Sundskom prielive medzi Jávou a Sumatrou", why: "Hlavná erupcia nastala 27. augusta 1883." }
+      - { text: "Po erupcii Krakataa boli po celom svete výrazné červené západy slnka", why: "Popol v atmosfére spôsobil, že červené západy slnka trvali mesiace." }
+      - { text: "Pri Mount St. Helens sa zosunula severná strana sopky", why: "Zosuv z 18. mája 1980 je najväčší zaznamenaný zosuv nad hladinou mora." }
+      - { text: "Eyjafjallajökull leží na Islande", why: "Erupcia v roku 2010 narušila leteckú dopravu v Európe." }
+    wrong:
+      - { text: "Krakatoa leží pri Filipínach", why: "Leží v Indonézii." }
+      - { text: "Tambora leží v Japonsku", why: "Leží na ostrove Sumbawa v Indonézii." }
+      - { text: "Mount St. Helens leží na Aljaške", why: "Leží v štáte Washington." }
+      - { text: "Eyjafjallajökull leží v Nórsku", why: "Leží na Islande." }
+      - { text: "Tambora vybuchla v apríli 1915", why: "Vybuchla v apríli 1815." }
+
+  - id: katastrofy-eyjafjallajokull
+    type: pick
+    prompt: "Ktoré tvrdenia o erupcii Eyjafjallajökullu v roku 2010 sú pravdivé?"
+    difficulty: 1
+    tags: [sopky, letectvo]
+    source: https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull
+    correct:
+      - { text: "Sopka leží na Islande", why: "Erupcia sa začala v marci 2010." }
+      - { text: "Okolo 20 krajín zatvorilo vzdušný priestor pre komerčné lety", why: "Zasiahlo to približne 10 miliónov cestujúcich." }
+      - { text: "Išlo o najväčšie narušenie leteckej dopravy od druhej svetovej vojny", why: "Veľká časť letov do, z a v rámci Európy sa zrušila." }
+      - { text: "Popol je pre lietadlá veľmi nebezpečný", why: "Prúd vetra ho zaniesol do husto využívaného vzdušného priestoru nad Európou." }
+      - { text: "Vzdušný priestor bol zatvorený zhruba od 15. do 20. apríla", why: "Druhá, silnejšia fáza erupcie sa začala 14. apríla." }
+      - { text: "Zrušili sa tisíce letov", why: "Veľká časť letov do, z a v rámci Európy sa zrušila." }
+    wrong:
+      - { text: "Erupcia sa začala v roku 2002", why: "Začala sa v marci 2010." }
+      - { text: "Zatvorili len letiská na Islande", why: "Zatvorili sa letiská a vzdušný priestor vo veľkej časti Európy." }
+      - { text: "Lety zastavilo na vyše mesiaca", why: "Uzávera trvala približne od 15. do 20. apríla." }
+      - { text: "Erupciu spôsobila sopka Katla", why: "Erupciu spôsobil Eyjafjallajökull; Katla je jeho susedná sopka." }
+      - { text: "Popol ohrozoval len malé lietadlá", why: "Popol je nebezpečný pre všetky prúdové lietadlá." }
+
+  - id: katastrofy-hirosima
+    type: pick
+    prompt: "Ktoré tvrdenia o atómových bombardovaniach Hirošimy a Nagasaki sú pravdivé?"
+    difficulty: 2
+    tags: [vojna, japonsko]
+    source: https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki
+    correct:
+      - { text: "Hirošimu bombardovali 6. augusta 1945", why: "Bomba mala názov Little Boy." }
+      - { text: "Nagasaki bombardovali 9. augusta 1945", why: "Bomba mala názov Fat Man." }
+      - { text: "Bomba na Hirošimu bola uránová", why: "Little Boy bola uránová bomba delového typu." }
+      - { text: "Bomba na Nagasaki bola plutóniová", why: "Fat Man bola plutóniová bomba implozívneho typu." }
+      - { text: "Pôvodným cieľom z 9. augusta bola Kokura", why: "Nagasaki bombardovali namiesto nej." }
+      - { text: "Tsutomu Yamaguchi bol v roku 2009 uznaný za človeka, ktorý prežil oba útoky", why: "Japonská vláda ho oficiálne uznala za dvojitého hibakušu." }
+    wrong:
+      - { text: "Prvé bombardovali Nagasaki", why: "Prvá bola Hirošima." }
+      - { text: "Obe bomby boli rovnakého typu", why: "Jedna bola uránová, druhá plutóniová." }
+      - { text: "Pôvodným cieľom pre 9. august bolo Kjóto", why: "Pôvodným cieľom bola Kokura." }
+      - { text: "Obe bomby zhodili v ten istý deň", why: "Medzi útokmi boli tri dni." }
+      - { text: "Bombardér, ktorý zhodil Little Boy, sa volal Bockscar", why: "Bockscar zhodil Fat Man; Little Boy zhodila Enola Gay." }
+
+  - id: katastrofy-aral
+    type: pick
+    prompt: "Ktoré tvrdenia o Aralskom mori sú pravdivé?"
+    difficulty: 2
+    tags: [životné prostredie, ázia]
+    source: https://en.wikipedia.org/wiki/Aral_Sea
+    asOf: "2026-11"
+    correct:
+      - { text: "V roku 1960 bolo štvrtým najväčším jazerom sveta", why: "Malo plochu asi 68 000 km²." }
+      - { text: "Do roku 2007 sa zmenšilo na asi desatinu pôvodnej veľkosti", why: "Rozpadlo sa na niekoľko menších jazier." }
+      - { text: "Leží medzi Kazachstanom a Uzbekistanom", why: "Dnes ho tvorí severná a južná časť." }
+      - { text: "Východná časť južného Aralu sa v roku 2014 úplne vysušila", why: "Satelitné snímky NASA to potvrdili prvýkrát v modernej histórii." }
+      - { text: "Priehrada Kokaral z roku 2005 pomohla obnoviť severnú časť", why: "Hladina stúpla a vrátili sa ryby, takže rybolov je tam opäť možný." }
+      - { text: "Prístavné mesto Moynaq je dnes desiatky kilometrov od pobrežia", why: "Voda ustúpila o 30 až 90 kilometrov." }
+    wrong:
+      - { text: "Voda zmizla po zemetrasení", why: "Zmiznutie spôsobilo odklonenie riek na zavlažovanie." }
+      - { text: "Leží v Mongolsku", why: "Leží v strednej Ázii, medzi Kazachstanom a Uzbekistanom." }
+      - { text: "Priehrada Kokaral zachránila celé more vrátane južnej časti", why: "Pomohla len severnej časti." }
+      - { text: "Rybolov v Aralskom mori dnes prekvitá ako v roku 1960", why: "Rybárske hospodárstvo bolo zdevastované; vo väčšine oblasti nie je voda." }
+      - { text: "Napája ho najmä rieka Volga", why: "Napájali ho Amudarja a Syrdarja." }
+
+  - id: katastrofy-ropa
+    type: pick
+    prompt: "Ktoré tvrdenia o veľkých únikoch ropy do mora sú pravdivé?"
+    difficulty: 2
+    tags: [ropa, životné prostredie]
+    source: "https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill https://en.wikipedia.org/wiki/Exxon_Valdez_oil_spill"
+    correct:
+      - { text: "Deepwater Horizon explodovala 20. apríla 2010", why: "Plošina bola v Mexickom zálive pri vrte Macondo." }
+      - { text: "Pri výbuchu Deepwater Horizon zahynulo 11 pracovníkov", why: "Ďalších 17 bolo zranených." }
+      - { text: "Ropa z vrtu Macondo unikala 87 dní", why: "Vrt vyhlásili za zapečatený 19. septembra 2010." }
+      - { text: "Deepwater Horizon sa považuje za najväčší únik ropy do mora v histórii", why: "Bol väčší než predchádzajúci rekordér, únik Ixtoc I." }
+      - { text: "Exxon Valdez nasadol na útes v Prince William Sound na Aljaške", why: "Stalo sa to 24. marca 1989." }
+      - { text: "BP sa v roku 2016 dohodla na pokute a vyrovnaní 20,8 miliardy dolárov", why: "Ide o najväčšie vyrovnanie za škody na životnom prostredí v histórii USA." }
+    wrong:
+      - { text: "Exxon Valdez sa stal v Severnom mori", why: "Stal sa na Aljaške." }
+      - { text: "Deepwater Horizon sa stala pri Aljaške", why: "Stala sa v Mexickom zálive." }
+      - { text: "Pri havárii Deepwater Horizon nikto nezahynul", why: "Zahynulo 11 pracovníkov." }
+      - { text: "Únik z Exxon Valdez bol väčší než z Deepwater Horizon", why: "Najväčším únikom ropy do mora sa považuje Deepwater Horizon." }
+      - { text: "Deepwater Horizon bola plošina spoločnosti Shell", why: "Prevádzkovala ju spoločnosť Transocean pre BP." }
+
+  - id: katastrofy-cina-1931
+    type: pick
+    prompt: "Ktoré tvrdenia o povodniach v Číne v roku 1931 sú pravdivé?"
+    difficulty: 3
+    tags: [čína, povodne]
+    source: https://en.wikipedia.org/wiki/1931_China_floods
+    correct:
+      - { text: "Postihli najmä povodie Jang-c'-ťiangu a rieky Huai", why: "Zasiahli aj veľké mestá Wu-chan a Nan-ťing." }
+      - { text: "Predchádzalo im niekoľkoročné sucho", why: "Čínu od roku 1928 do roku 1931 sužovalo dlhé sucho." }
+      - { text: "Zima 1930 až 1931 bola mimoriadne tuhá", why: "V horách sa nahromadilo veľa snehu, ktorý sa na jar roztopil." }
+      - { text: "Odhady počtu obetí sa líšia o stovky tisíc až milióny", why: "Odhady siahajú od vyše 400 000 po 4 milióny." }
+      - { text: "V júli 1931 zasiahlo región dokonca deväť cyklón", why: "Obvykle ich bývajú dve za rok." }
+      - { text: "Vrcholom bolo pretrhnutie hrádze pri jazere Gaoyou 25. augusta", why: "Voda zaplavila široké okolie." }
+    wrong:
+      - { text: "Spôsobilo ich zemetrasenie", why: "Príčinou boli snehové a dažďové zrážky po suchu." }
+      - { text: "Spôsobil ich jediný tajfún", why: "Pôsobilo viac príčin: topiaci sa sneh, jarné dažde a deväť cyklón v júli." }
+      - { text: "Postihli najmä Tibet a Sin-ťiang", why: "Najviac zasiahli provincie ako Anhui, Hubei, Hunan a Jiangsu." }
+      - { text: "Počet obetí sa odhaduje na menej než 10 000", why: "Odhady sú rádovo vyššie, od 400 000 vyššie." }
+      - { text: "Stali sa v roku 1949", why: "Stali sa v lete 1931." }
+
+  - id: katastrofy-lisabon
+    type: pick
+    prompt: "Ktoré tvrdenia o zemetrasení v Lisabone v roku 1755 sú pravdivé?"
+    difficulty: 2
+    tags: [zemetrasenia, portugalsko]
+    source: https://en.wikipedia.org/wiki/1755_Lisbon_earthquake
+    correct:
+      - { text: "Stalo sa 1. novembra, na sviatok Všetkých svätých", why: "Zemetrasenie prišlo ráno, približne o 9.40 miestneho času." }
+      - { text: "Po zemetrasení prišlo cunami a požiare", why: "Požiare vznikli aj od zhasnutých sviečok z cirkevného sviatku." }
+      - { text: "Epicentrum bolo v Atlantickom oceáne", why: "Bolo juhozápadne od mysu Svätého Vincenta." }
+      - { text: "Voltaire o ňom napísal báseň", why: "Báseň o lisabonskej katastrofe spochybňovala myšlienku, že všetko je na svete zariadené k najlepšiemu." }
+      - { text: "Obnovu mesta organizoval ministerský predseda markíz de Pombal", why: "Obnovená dolná časť mesta dostala pravidelnú sieť ulíc." }
+      - { text: "Pomáha sa mu pripisovať zrod modernej seizmológie", why: "Bolo to prvé zemetrasenie, ktoré sa vedecky skúmalo na veľkom území." }
+    wrong:
+      - { text: "Stalo sa v lete", why: "Stalo sa 1. novembra." }
+      - { text: "Epicentrum bolo priamo pod Lisabonom", why: "Bolo v Atlantickom oceáne, juhozápadne od mysu Svätého Vincenta." }
+      - { text: "Zničilo najmä mesto Porto", why: "Zničilo najmä Lisabon a jeho okolie." }
+      - { text: "Cunami zasiahlo len portugalské pobrežie", why: "Zasiahlo aj Maroko a južné pobrežie Británie a Írska." }
+      - { text: "Bolo to prvé veľké zemetrasenie v histórii Lisabonu", why: "Bolo tretie známe po zemetraseniach z rokov 1356 a 1531." }
+
+  - id: katastrofy-tsunami-2004
+    type: pick
+    prompt: "Ktoré tvrdenia o cunami v Indickom oceáne v roku 2004 sú pravdivé?"
+    difficulty: 1
+    tags: [cunami, ázia]
+    source: https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami
+    correct:
+      - { text: "Stalo sa 26. decembra 2004", why: "Ide o deň po Vianociach, v niektorých krajinách známy ako Boxing Day." }
+      - { text: "Zemetrasenie nastalo pri Sumatre", why: "Epicentrum bolo pri provincii Aceh." }
+      - { text: "Zasiahlo pobrežia 14 krajín", why: "Najviac Indonéziu, Srí Lanku, Indiu a Thajsko." }
+      - { text: "Považuje sa za najsmrteľnejšie cunami v histórii", why: "Zahynulo vyše 200-tisíc ľudí." }
+      - { text: "V Indickom oceáne vtedy nebol výstražný systém na cunami", why: "Takmer všetky obete boli zaskočené." }
+      - { text: "Výstražný systém pre Indický oceán vznikol začiatkom roku 2005", why: "Vytvorili ho v reakcii na túto katastrofu." }
+    wrong:
+      - { text: "Stalo sa v Tichom oceáne pri Japonsku", why: "Stalo sa v Indickom oceáne." }
+      - { text: "Zasiahlo len Indonéziu", why: "Zasiahlo 14 krajín, aj vzdialené Somálsko." }
+      - { text: "Spustila ho sopečná erupcia", why: "Spustilo ho podmorské zemetrasenie." }
+      - { text: "Do Južnej Afriky sa dostalo za pár minút", why: "Vlna sa do Južnej Afriky dostala približne za 11 hodín." }
+      - { text: "Varovný systém existoval, ale nikto ho nepoužil", why: "V Indickom oceáne žiadny nebol." }
+
+  - id: katastrofy-bejrut
+    type: pick
+    prompt: "Ktoré tvrdenia o výbuchu v bejrútskom prístave (4. augusta 2020) sú pravdivé?"
+    difficulty: 2
+    tags: [libanon, výbuch]
+    source: https://en.wikipedia.org/wiki/2020_Beirut_explosion
+    correct:
+      - { text: "Vybuchlo asi 2 750 ton dusičnanu amónneho", why: "Šlo o náklad, ktorý sa v prístave skladoval od roku 2014." }
+      - { text: "Náklad pochádzal z lode Rhosus plaviacej sa pod moldavskou vlajkou", why: "Loď zakotvila v Bejrúte v roku 2013." }
+      - { text: "Náklad bol v prístave uskladnený šesť rokov", why: "Bol vo sklade č. 12, bez primeraných bezpečnostných opatrení." }
+      - { text: "Výbuch nasledoval po požiari v susednom sklade", why: "Požiar zasiahol sklad pred hlavnou explóziou." }
+      - { text: "Výbuch bolo cítiť až na Cypre", why: "Cyprus leží na druhej strane Stredozemného mora." }
+      - { text: "Americký geologický ústav (USGS) ho zaznamenal ako seizmickú udalosť s magnitúdou 3,3", why: "Je to jeden z najsilnejších nejadrových výbuchov, aké kedy zaznamenali." }
+    wrong:
+      - { text: "Vybuchol skladovaný palivový olej", why: "Vybuchol dusičnan amónny." }
+      - { text: "Náklad bol v prístave len pol roka", why: "Bol tam šesť rokov." }
+      - { text: "Výbuch zaznamenali len v samotnom Bejrúte", why: "Bolo ho cítiť aj v Sýrii, Izraeli a na Cypre." }
+      - { text: "Loď Rhosus plávala pod libanonskou vlajkou", why: "Plávala pod vlajkou Moldavska." }
+      - { text: "K výbuchu došlo v roku 2010", why: "Došlo k nemu 4. augusta 2020." }
+
+  - id: katastrofy-katrina
+    type: pick
+    prompt: "Ktoré tvrdenia o hurikáne Katrina (2005) sú pravdivé?"
+    difficulty: 2
+    tags: [hurikány, usa]
+    source: https://en.wikipedia.org/wiki/Hurricane_Katrina
+    correct:
+      - { text: "Pri pobreží Louisiany dorazil 29. augusta 2005", why: "Pristál ako silný hurikán 3. kategórie pri Buras-Triumph." }
+      - { text: "Najprv zasiahol Floridu", why: "Na Floride pristál 25. augusta." }
+      - { text: "Najviac obetí si vyžiadalo zlyhanie hrádzí pri New Orleans", why: "Podľa vyšetrovateľov zlyhali pre chyby v konštrukcii protipovodňovej ochrany." }
+      - { text: "Zaplavených bolo asi 80 % mesta New Orleans", why: "Zaplavené boli aj veľké oblasti okolitých okresov." }
+      - { text: "New Orleans nariadilo prvú povinnú evakuáciu mesta v histórii", why: "Podľa správy NOAA mesto opustilo asi 80 % obyvateľov." }
+      - { text: "Podľa pripočítania inflácie ide o najnákladnejší hurikán v histórii", why: "Škody dosiahli približne 125 miliárd dolárov." }
+    wrong:
+      - { text: "Pri pobreží Louisiany dorazil ako hurikán 5. kategórie", why: "Piatu kategóriu mal nad otvoreným morom; pri pristátí bol slabší, 3. kategórie." }
+      - { text: "Najviac zasiahol Houston", why: "Najviac zasiahol New Orleans a pobrežie Louisiany a Mississippi." }
+      - { text: "Hrádze v New Orleanse vydržali a mesto zaplavili len dažde", why: "Protipovodňové hrádze a múry sa pretrhli." }
+      - { text: "Na Floridu nedorazil, mieril rovno na Louisianu", why: "Na Floride pristál ako hurikán 25. augusta." }
+      - { text: "Evakuovala sa necelá desatina obyvateľov New Orleansu", why: "Mesto podľa NOAA opustilo okolo 80 % obyvateľov." }
+
+  # ---------------------------------------------------------------- ORDER
+  - id: katastrofy-poradie-prirodne
+    type: order
+    prompt: "Zoraď prírodné katastrofy od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [sopky, zemetrasenia]
+    source: "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD https://en.wikipedia.org/wiki/1755_Lisbon_earthquake https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens"
+    items:
+      - { text: "Erupcia Vezuvu a zánik Pompejí", value: 79, why: "Pochovala Pompeje, Herculaneum a ďalšie mestá." }
+      - { text: "Lisabonské zemetrasenie", value: 1755, why: "Stalo sa 1. novembra 1755." }
+      - { text: "Erupcia sopky Tambora", value: 1815, why: "Nasledoval rok 1816 bez leta." }
+      - { text: "Erupcia sopky Krakatoa", value: 1883, why: "Hlavná erupcia nastala 27. augusta 1883." }
+      - { text: "Erupcia sopky Mount St. Helens", value: 1980, why: "Stala sa 18. mája 1980 v štáte Washington." }
+
+  - id: katastrofy-poradie-20-storocie
+    type: order
+    prompt: "Zoraď katastrofy 20. storočia od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [technika, katastrofy]
+    source: "https://en.wikipedia.org/wiki/Titanic https://en.wikipedia.org/wiki/Halifax_Explosion https://sk.wikipedia.org/wiki/Hav%C3%A1ria_jadrovej_elektr%C3%A1rne_A1 https://en.wikipedia.org/wiki/Bhopal_disaster https://en.wikipedia.org/wiki/Chernobyl_disaster"
+    items:
+      - { text: "Potopenie Titanicu", value: 1912, why: "Loď sa potopila v noci na 15. apríla 1912." }
+      - { text: "Výbuch v prístave Halifax", value: 1917, why: "Stal sa 6. decembra 1917." }
+      - { text: "Havária jadrovej elektrárne A1 v Bohuniciach", value: 1977, why: "Stala sa 22. februára 1977." }
+      - { text: "Únik plynu v Bhópále", value: 1984, why: "Stal sa v noci z 2. na 3. decembra 1984." }
+      - { text: "Havária v Černobyle", value: 1986, why: "Stala sa 26. apríla 1986." }
+
+  - id: katastrofy-poradie-21-storocie
+    type: order
+    prompt: "Zoraď katastrofy 21. storočia od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [katastrofy, súčasnosť]
+    source: "https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami https://en.wikipedia.org/wiki/Hurricane_Katrina https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull https://en.wikipedia.org/wiki/Fukushima_nuclear_accident https://en.wikipedia.org/wiki/2020_Beirut_explosion"
+    items:
+      - { text: "Cunami v Indickom oceáne", value: 2004, why: "Nastalo 26. decembra 2004." }
+      - { text: "Hurikán Katrina", value: 2005, why: "Pri pobreží Louisiany pristál 29. augusta 2005." }
+      - { text: "Erupcia Eyjafjallajökullu", value: 2010, why: "Popol zastavil lety nad Európou v apríli 2010." }
+      - { text: "Havária jadrovej elektrárne vo Fukušime", value: 2011, why: "Začala sa 11. marca 2011." }
+      - { text: "Výbuch v bejrútskom prístave", value: 2020, why: "Stal sa 4. augusta 2020." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: katastrofy-krakatoa-hluk
+    type: number
+    prompt: "Do akej vzdialenosti (v km) bolo počuť hlavný výbuch sopky Krakatoa 27. augusta 1883, napríklad na ostrove Rodrigues pri Maurícii?"
+    answer: 4800
+    unit: km
+    scale: log
+    tolerance: 0.15
+    why: "Hlavný výbuch 27. augusta 1883 bolo počuť na ostrove Rodrigues, vzdialenom asi 4 800 km; zvuková vlna obehla Zem viac než trikrát."
+    difficulty: 3
+    tags: [sopky]
+    source: https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa
+
+  - id: katastrofy-aral-plocha
+    type: number
+    prompt: "Akú rozlohu malo Aralské more v roku 1960, keď bolo štvrtým najväčším jazerom sveta?"
+    answer: 68000
+    unit: km²
+    scale: log
+    tolerance: 0.15
+    why: "Rozloha 68 000 km² je viac než celé Slovensko (asi 49 000 km²); do roku 2007 sa more zmenšilo na asi desatinu."
+    difficulty: 2
+    tags: [životné prostredie]
+    source: https://en.wikipedia.org/wiki/Aral_Sea
+
+  - id: katastrofy-st-helens-obete
+    type: number
+    prompt: "Zhruba koľko ľudí zahynulo pri erupcii sopky Mount St. Helens 18. mája 1980?"
+    answer: 57
+    unit: ľudí
+    scale: log
+    tolerance: 0.1
+    why: "Pri najničivejšej a ekonomicky najnákladnejšej erupcii v histórii súvislého územia USA zahynulo približne 57 ľudí."
+    difficulty: 3
+    tags: [sopky, usa]
+    source: https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens
+
+  - id: katastrofy-tatry-kalamita
+    type: number
+    prompt: "Na akej ploche (v hektároch) poškodila víchrica 19. novembra 2004 lesy vo Vysokých Tatrách? Číslo je zaokrúhlené na tisíce."
+    answer: 12000
+    unit: ha
+    scale: log
+    tolerance: 0.15
+    why: "Víchrica poškodila v Tatrách les na ploche vyše 12 000 hektárov, od Podbanského po Tatranskú Kotlinu."
+    difficulty: 3
+    tags: [slovensko, vysoké tatry]
+    source: https://sk.wikipedia.org/wiki/Tatransk%C3%BD_n%C3%A1rodn%C3%BD_park
+
+  - id: katastrofy-cernobyl-zona
+    type: number
+    prompt: "Aký polomer (v kilometroch) mala neskôr rozšírená zakázaná zóna okolo černobyľskej elektrárne?"
+    answer: 30
+    unit: km
+    scale: log
+    tolerance: 0.1
+    why: "Zóna mala najprv polomer 10 km; neskôr ju rozšírili na 30 km."
+    difficulty: 2
+    tags: [jadro]
+    source: https://en.wikipedia.org/wiki/Chernobyl_disaster
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: katastrofy-plinius
+    type: choice
+    prompt: "Kto zanechal očitý opis erupcie Vezuvu z roku 79?"
+    difficulty: 3
+    tags: [antika, sopky]
+    source: https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD
+    correct: { text: "Plínius mladší", why: "Erupciu videl z Misena a opísal ju v dvoch listoch Tacitovi." }
+    wrong:
+      - { text: "Plínius starší", why: "Bol jeho strýkom; zomrel pri záchrannej výprave a list o tom napísal jeho synovec." }
+      - { text: "Suetonius", why: "Zachytil zemetrasenie z roku 64 pri Nerovom vystúpení, ale erupciu tak podrobne neopísal." }
+      - { text: "Flavius Josephus", why: "Erupciu zmienil len stručne, ako udalosť z čias cisára Tita." }
+
+  - id: katastrofy-katrina-mesto
+    type: choice
+    prompt: "Ktoré americké mesto zaplavili po zlyhaní hrádzí počas hurikánu Katrina?"
+    difficulty: 1
+    tags: [hurikány, usa]
+    source: https://en.wikipedia.org/wiki/Hurricane_Katrina
+    correct: { text: "New Orleans", why: "Zaplavených bolo asi 80 % mesta." }
+    wrong:
+      - { text: "Houston", why: "Houston Katrina nezasiahla; hlavný úder prišiel do Louisiany a Mississippi." }
+      - { text: "Miami", why: "Katrina prešla južnou Floridou, ničivé záplavy z pretrhnutých hrádzí však nastali v Louisiane." }
+      - { text: "Charleston", why: "Mesto leží na atlantickom pobreží, Katrina zasiahla Mexický záliv." }
+
+  - id: katastrofy-halifax-priciny
+    type: choice
+    prompt: "Čo spôsobilo ničivý výbuch v prístave Halifax v roku 1917?"
+    difficulty: 1
+    tags: [lode, kanada]
+    source: https://en.wikipedia.org/wiki/Halifax_Explosion
+    correct: { text: "Zrážka dvoch lodí, z ktorých jedna viezla výbušniny", why: "Z francúzskej lode Mont-Blanc po zrážke s loďou Imo unikol benzol, ktorý sa vznietil, a o 20 minút loď vybuchla." }
+    wrong:
+      - { text: "Torpédo nemeckej ponorky", why: "Príčinou bola zrážka lodí v prístave." }
+      - { text: "Výbuch muničného skladu na brehu", why: "Vybuchla loď Mont-Blanc plná výbušnín." }
+      - { text: "Požiar v rafinérii pri prístave", why: "Nešlo o rafinériu; vznietil sa benzol na palube lode." }
+
+  - id: katastrofy-tambora-rok-bez-leta
+    type: choice
+    prompt: "Erupcia ktorej sopky stála za rokom 1816, nazývaným rok bez leta?"
+    difficulty: 2
+    tags: [sopky, klíma]
+    source: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora https://en.wikipedia.org/wiki/Year_Without_a_Summer"
+    correct: { text: "Tambora", why: "Erupcia v apríli 1815 vyhodila do atmosféry popol, ktorý znížil globálnu teplotu a spôsobil neúrodu." }
+    wrong:
+      - { text: "Krakatoa", why: "Krakatoa vybuchla až v roku 1883." }
+      - { text: "Vezuv", why: "Jeho slávna erupcia bola v roku 79." }
+      - { text: "Mount St. Helens", why: "Vybuchla až v roku 1980." }
+
+  - id: katastrofy-fukusima-priciny
+    type: choice
+    prompt: "Čo spustilo haváriu jadrovej elektrárne Fukušima I v roku 2011?"
+    difficulty: 1
+    tags: [jadro, japonsko]
+    source: https://en.wikipedia.org/wiki/Fukushima_nuclear_accident
+    correct: { text: "Zemetrasenie a po ňom cunami", why: "Cunami zatopilo záložné napájanie a chladenie reaktorov vypadlo." }
+    wrong:
+      - { text: "Chyba pri teste reaktora", why: "Takto vznikla havária v Černobyle v roku 1986." }
+      - { text: "Teroristický útok", why: "Príčinou bola prírodná udalosť." }
+      - { text: "Pád lietadla na reaktor", why: "O ničom takom sa nehovorí; príčinou bolo cunami." }
+
+  - id: katastrofy-aral-priciny
+    type: choice
+    prompt: "Čo najviac prispelo k vysychaniu Aralského mora?"
+    difficulty: 1
+    tags: [životné prostredie]
+    source: https://en.wikipedia.org/wiki/Aral_Sea
+    correct: { text: "Odklonenie riek Amudarja a Syrdarja na polia", why: "Sovietske zavlažovanie od 60. rokov odviedlo vodu, najmä na pestovanie bavlny." }
+    wrong:
+      - { text: "Zemetrasenie, ktoré zmenilo tok riek", why: "Príčinou boli zavlažovacie kanály, nie zemetrasenie." }
+      - { text: "Ťažba ropy pod morským dnom", why: "Príčinou bolo odklonenie riek." }
+      - { text: "Sopečná erupcia", why: "Žiadna erupcia ho nevysušila." }
