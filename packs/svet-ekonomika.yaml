@@ -18,7 +18,7 @@ questions:
     correct:
       - { text: USA, why: "Približne 30,8 bilióna dolárov, vyše štvrtiny svetového HDP." }
       - { text: Čína, why: "Druhá s približne 19,5 bilióna dolárov." }
-      - { text: Nemecko, why: "Tretia, približne 5 biliónov; najväčšia ekonomika Európy." }
+      - { text: Nemecko, why: "Tretie, približne 5 biliónov; najväčšia ekonomika Európy." }
       - { text: Japonsko, why: "Štvrté, približne 4,4 bilióna dolárov." }
       - { text: Spojené kráľovstvo, why: "Približne 4,0 bilióna dolárov, piate miesto." }
       - { text: India, why: "Približne 3,96 bilióna a rýchlo rastie; Spojené kráľovstvo ju predbieha len tesne." }
@@ -130,7 +130,6 @@ questions:
       - { text: Kukurica, why: "Prvé sú USA." }
       - { text: Sója, why: "Prvá je Brazília." }
       - { text: Cukrová trstina, why: "Prvá je Brazília." }
-      - { text: Mlieko, why: "Prvá je India." }
 
   - id: ek-kakao-top
     type: pick
@@ -161,7 +160,7 @@ questions:
     tags: [káva, poľnohospodárstvo]
     source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities https://en.wikipedia.org/wiki/List_of_countries_by_coffee_production"
     correct:
-      - { text: Brazília, why: "Najväčší producent už od roku 1852; v roku 2023 približne tretina svetovej úrody." }
+      - { text: Brazília, why: "Najväčší producent už od roku 1852; približne tretina svetovej úrody." }
       - { text: Vietnam, why: "Dvojka, väčšinou lacnejšia robusta." }
       - { text: Indonézia, why: "Patrí k štyrom najväčším pestovateľom kávy." }
       - { text: Kolumbia, why: "Patrí k štyrom najväčším pestovateľom, známa kvalitnou arabikou." }
@@ -197,7 +196,7 @@ questions:
 
   - id: ek-euro-mimo-eu
     type: pick
-    prompt: Ktoré štáty, ktoré nie sú v Európskej únii, používajú ako oficiálnu menu euro?
+    prompt: Ktoré štáty alebo územia mimo Európskej únie používajú ako oficiálnu menu euro?
     difficulty: 2
     asOf: "2026-11"
     tags: [meny, euro]
@@ -254,7 +253,6 @@ questions:
       - { text: Panama, why: "Používa dolár od roku 1904, vlastné balboy existujú len ako mince." }
       - { text: Salvádor, why: "Dolár je tu oficiálnou menou od roku 2001." }
       - { text: Marshallove ostrovy, why: "Dolár používajú ako oficiálnu menu." }
-      - { text: Mikronézia, why: "Dolár používa od roku 1944." }
       - { text: Palau, why: "Dolár používa od roku 1944." }
     wrong:
       - { text: Honduras, why: "Má vlastnú lempiru, hoci dolár je rozšírený." }
@@ -276,7 +274,7 @@ questions:
       - { text: Kanada, why: "Jej jednodolárovú mincu poznajú ako „loonie“." }
       - { text: Austrália, why: "Austrálsky dolár je vlastná mena." }
       - { text: Nový Zéland, why: "Jeho dolár volajú „kiwi“." }
-      - { text: Singapur, why: "Singapurský dolár je vlastná mena; platí vedľa brunejského v pomere 1 : 1." }
+      - { text: Singapur, why: "Singapurský dolár je vlastná mena; je zameniteľný za brunejský v pomere 1 : 1." }
       - { text: Hongkong, why: "Hongkongský dolár je vlastná mena." }
       - { text: Jamajka, why: "Jamajský dolár je vlastná mena." }
       - { text: Fidži, why: "Fidžijský dolár je vlastná mena." }
@@ -317,14 +315,14 @@ questions:
     tags: [meny, euro]
     source: "https://en.wikipedia.org/wiki/Euro https://en.wikipedia.org/wiki/Slovak_koruna https://en.wikipedia.org/wiki/Deutsche_Mark"
     correct:
-      - { text: Nemecká marka, why: "Euro ju nahradilo na začiatku roku 2002." }
-      - { text: Talianska líra, why: "Euro ju nahradilo v roku 2002." }
-      - { text: Španielska peseta, why: "Euro ju nahradilo v roku 2002." }
-      - { text: Grécka drachma, why: "Euro ju nahradilo v roku 2002." }
-      - { text: Slovenská koruna, why: "Euro ju nahradilo v roku 2009." }
-      - { text: Holandský gulden, why: "Euro ho nahradilo v roku 2002." }
-      - { text: Rakúsky šiling, why: "Euro ho nahradilo v roku 2002." }
-      - { text: Írska libra, why: "Euro ju nahradilo v roku 2002." }
+      - { text: Nemecká marka, why: "Euro ju nahradilo ako hotovosť na začiatku roku 2002." }
+      - { text: Talianska líra, why: "Hotovostné euro ju nahradilo v roku 2002." }
+      - { text: Španielska peseta, why: "Hotovostné euro ju nahradilo v roku 2002." }
+      - { text: Grécka drachma, why: "Hotovostné euro ju nahradilo v roku 2002." }
+      - { text: Slovenská koruna, why: "Euro ju nahradilo 1. januára 2009." }
+      - { text: Holandský gulden, why: "Hotovostné euro ho nahradilo v roku 2002." }
+      - { text: Rakúsky šiling, why: "Hotovostné euro ho nahradilo v roku 2002." }
+      - { text: Írska libra, why: "Hotovostné euro ju nahradilo v roku 2002." }
     wrong:
       - { text: Česká koruna, why: "Platí dodnes, Česko euro nezaviedlo." }
       - { text: Švajčiarsky frank, why: "Platí dodnes." }
@@ -367,7 +365,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/List_of_countries_by_total_fertility_rate"
     correct:
       - { text: Južná Kórea, why: "Okolo 0,76 – najnižšia na svete medzi väčšími krajinami." }
-      - { text: Singapur, why: "Okolo 0,87 dieťaťa na ženu." }
+      - { text: Singapur, why: "Okolo 0,9 dieťaťa na ženu." }
       - { text: Ukrajina, why: "Okolo 1,0 dieťaťa na ženu." }
       - { text: Čína, why: "Okolo 1,03, po desaťročiach politiky jedného dieťaťa." }
       - { text: Taliansko, why: "Okolo 1,22 dieťaťa na ženu." }
@@ -397,7 +395,6 @@ questions:
       - { text: Poľsko, why: "Okolo 43 rokov." }
       - { text: Slovensko, why: "Okolo 43 rokov." }
       - { text: Francúzsko, why: "Okolo 43 rokov." }
-      - { text: Čína, why: "Okolo 40 rokov, starnúca populácia." }
     wrong:
       - { text: USA, why: "Okolo 39 rokov – mladšie než Európa." }
       - { text: Brazília, why: "Okolo 35 rokov." }
