@@ -49,7 +49,7 @@ questions:
 
   - id: telo-dvojice
     type: pick
-    prompt: "Ktoré z týchto orgánov alebo žliaz má človek normálne po dvoch?"
+    prompt: "Ktoré z týchto orgánov, žliaz alebo ich častí má človek normálne po dvoch?"
     difficulty: 2
     tags: [orgány]
     source: "https://en.wikipedia.org/wiki/Adrenal_gland https://en.wikipedia.org/wiki/Kidney https://en.wikipedia.org/wiki/Lung https://en.wikipedia.org/wiki/Thyroid"
@@ -60,7 +60,7 @@ questions:
       - { text: "slzná žľaza", why: "Každé oko má svoju, nad vonkajším kútikom." }
       - { text: "mozgová hemisféra", why: "Mozog má pravú a ľavú pologuľu, spojené nervovými vláknami." }
     wrong:
-      - { text: "štítna žľaza", why: "Je len jedna; majú ju dva laloky spojené úzkym mostíkom, preto ju ľahko pomýliť s dvojicou." }
+      - { text: "štítna žľaza", why: "Je len jedna; má dva laloky spojené úzkym mostíkom, preto ju ľahko pomýliť s dvojicou." }
       - { text: "pečeň", why: "Jedna, má však dva nerovnaké laloky." }
       - { text: "slezina", why: "Máme jednu, vľavo v hornej časti brucha." }
       - { text: "pankreas", why: "Jedna podžalúdková žľaza." }
@@ -157,7 +157,7 @@ questions:
       - { text: "Dospelý mozog váži asi 1,2 až 1,4 kg.", why: "Zhruba ako väčší grep." }
       - { text: "Mozog tvorí len asi 2 % telesnej hmotnosti.", why: "Napriek tomu je to energeticky najnáročnejší orgán." }
       - { text: "Mozog spotrebuje až 20 % energie tela.", why: "Pritom tvorí len asi 2 % hmotnosti tela." }
-      - { text: "Hematoencefalická bariéra chráni mozog pred časťou látok v krvi.", why: "Prepúšťa vodu, kyslík či oxid uhličitý, ale väčšie molekuly zadrží." }
+      - { text: "Hematoencefalická bariéra chráni mozog pred časťou látok v krvi.", why: "Voľne prepúšťa napríklad vodu, kyslík či oxid uhličitý, no mnohé iné látky zadrží." }
       - { text: "U väčšiny ľudí je reč spojená s ľavou hemisférou.", why: "Pravá hemisféra sa zas viac podieľa na priestorovej predstavivosti." }
     wrong:
       - { text: "Dospelý mozog váži okolo 5 kg.", why: "Váži asi štvrtinu: 1,2 až 1,4 kg." }
@@ -251,7 +251,7 @@ questions:
     tags: [krv]
     source: "https://en.wikipedia.org/wiki/Blood_type https://en.wikipedia.org/wiki/Karl_Landsteiner"
     correct:
-      - { text: "Skupina 0 negatívna sa nazýva univerzálny darca.", why: "Dá sa podať ľuďom s inou skupinou, preto je pre nemocnice taká cenná." }
+      - { text: "Skupina 0 negatívna je univerzálny darca červených krviniek.", why: "Dá sa podať ľuďom s inou skupinou, preto je pre nemocnice taká cenná." }
       - { text: "Skupina AB pozitívna sa nazýva univerzálny príjemca.", why: "Môže prijať červené krvinky od všetkých skupín." }
       - { text: "Základné krvné skupiny A, B a 0 opísal Karl Landsteiner.", why: "Objav z roku 1901 mu o tri desaťročia neskôr priniesol Nobelovu cenu." }
       - { text: "Skupiny ABO určuje prítomnosť antigénov na červených krvinkách.", why: "Skupina 0 nemá ani antigén A, ani B." }
@@ -297,7 +297,7 @@ questions:
     wrong:
       - { text: "Dospelý má 36 zubov.", why: "Pôvodne 32." }
       - { text: "Zuby sú kosti pokryté sklovinou.", why: "Zuby sú iné tkanivo než kosti." }
-      - { text: "Sklovina sa po poškodení zregeneruje ako pečeň.", why: "Sklovina nie je z buniek a sama sa nedorastie." }
+      - { text: "Sklovina sa po poškodení zregeneruje ako pečeň.", why: "Sklovina nie je z buniek a sama nedorastie." }
       - { text: "Dieťa sa rodí s 32 zubami.", why: "Mliečne zuby rastú v prvých rokoch života; dieťa ich má 20." }
       - { text: "Zuby múdrosti má každý človek.", why: "Niektorým nikdy nenarastú." }
 
