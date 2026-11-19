@@ -140,7 +140,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
     correct:
       - { text: Pobrežie Slonoviny, why: "Číslo jedna medzi producentmi kakaa." }
-      - { text: Indonézia, why: "Prekvapivá dvojka, ďaleko od Afriky." }
+      - { text: Indonézia, why: "Podľa FAO prekvapivá dvojka, ďaleko od Afriky." }
       - { text: Ghana, why: "Tradičný kakaový gigant západnej Afriky." }
       - { text: Ekvádor, why: "Najväčší producent kakaa v Latinskej Amerike." }
     wrong:
@@ -196,7 +196,7 @@ questions:
 
   - id: ek-euro-mimo-eu
     type: pick
-    prompt: Ktoré štáty alebo územia mimo Európskej únie používajú ako oficiálnu menu euro?
+    prompt: Ktoré štáty alebo územia mimo Európskej únie používajú euro ako svoju menu?
     difficulty: 2
     asOf: "2026-11"
     tags: [meny, euro]
@@ -306,7 +306,6 @@ questions:
       - { text: Kanada, why: "Žiadna hyperinflácia v histórii." }
       - { text: Austrália, why: "Žiadna hyperinflácia v histórii." }
       - { text: Švédsko, why: "Žiadna hyperinflácia v histórii." }
-      - { text: USA, why: "Ani počas vojny za nezávislosť nedosiahla inflácia hranicu hyperinflácie (50 % mesačne)." }
 
   - id: ek-zaniknute-meny
     type: pick
@@ -358,7 +357,7 @@ questions:
 
   - id: ek-fertilita-nizka
     type: pick
-    prompt: Ktoré z týchto krajín majú podľa OSN pôrodnosť pod 1,3 dieťaťa na ženu?
+    prompt: Ktoré z týchto krajín majú podľa odhadu OSN na rok 2026 pôrodnosť pod 1,3 dieťaťa na ženu?
     difficulty: 3
     asOf: "2026"
     tags: [demografia]
@@ -430,7 +429,7 @@ questions:
   # ================================================================ ORDER
   - id: ek-poradie-hdp
     type: order
-    prompt: Zoraď krajiny podľa veľkosti HDP v bežných cenách (od najväčšieho).
+    prompt: Zoraď krajiny podľa veľkosti HDP v bežných cenách (Svetová banka, 2025; od najväčšieho).
     direction: desc
     unit: mld. USD
     difficulty: 2
@@ -466,7 +465,7 @@ questions:
 
   - id: ek-poradie-populacia
     type: order
-    prompt: Zoraď krajiny podľa počtu obyvateľov (od najľudnatejšej).
+    prompt: Zoraď krajiny podľa počtu obyvateľov (Svetová banka, 2025; od najľudnatejšej).
     direction: desc
     unit: mil.
     difficulty: 2
@@ -533,7 +532,7 @@ questions:
 
   - id: ek-cislo-vzacne-zeminy
     type: number
-    prompt: Koľko percent svetovej ťažby vzácnych zemín (prvkov ako neodým či lantán) pripadá na Čínu?
+    prompt: Koľko percent svetovej ťažby vzácnych zemín (prvkov ako neodým či lantán) pripadalo v roku 2024 na Čínu?
     answer: 69
     unit: "%"
     scale: linear
