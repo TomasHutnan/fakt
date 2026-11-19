@@ -5,7 +5,7 @@ category: tradicie
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ PICK
   - id: stereo-potvrdene-ciselami
@@ -21,7 +21,6 @@ questions:
       - { text: "Turci pijú najviac čaju na obyvateľa", why: "Turecko vedie svetový rebríček s odstupom, asi 3,2 kg suchého čaju na osobu ročne (údaje za rok 2016)." }
       - { text: "Švajčiari majú úkryty pre celé obyvateľstvo", why: "Švajčiarsko malo okolo roku 2006 v úkrytoch 8,6 milióna miest, čo je 114 % obyvateľov." }
       - { text: "Vo Fínsku je aspoň jedna sauna na každých troch obyvateľov", why: "Oficiálne registre uvádzajú aspoň 2 milióny sáun pre 5,5 milióna obyvateľov; Fínska sauna spoločnosť odhaduje až 3,2 milióna." }
-      - { text: "Poliaci jedia najviac ražného chleba a múky na obyvateľa", why: "Podľa FAO bolo v Poľsku v roku 2022 k dispozícii asi 25 kg raže na osobu, najviac zo všetkých krajín." }
     wrong:
       - { text: "Nemci pracujú najviac hodín zo všetkých krajín OECD", why: "Naopak: v roku 2023 mali s 1 338 hodinami na pracovníka najmenej v zozname OECD." }
       - { text: "Japonci pracujú ročne viac hodín než Američania", why: "Podľa OECD v roku 2023 asi 1 610 hodín oproti 1 804 hodinám v USA." }
@@ -83,31 +82,6 @@ questions:
       - { text: "Poľsko", why: "Asi 22,5 %." }
       - { text: "Holandsko", why: "Asi 20,2 %." }
 
-  - id: stereo-tabak-pod-patnast
-    type: pick
-    prompt: "Ktoré z týchto krajín majú podľa odhadov WHO menej než 15 % dospelých užívajúcich tabak?"
-    difficulty: 2
-    tags: [stereotypy, zdravie, WHO]
-    asOf: "2022"
-    source: "https://ghoapi.azureedge.net/api/M_Est_tob_curr"
-    correct:
-      - { text: "Kanada", why: "Asi 11,5 %: patrí k najnižším podielom medzi bohatými krajinami." }
-      - { text: "Austrália", why: "Asi 11,8 %." }
-      - { text: "Spojené kráľovstvo", why: "Asi 13,0 %." }
-      - { text: "Nórsko", why: "Asi 14,2 %." }
-      - { text: "Island", why: "Asi 10,0 %." }
-      - { text: "Nový Zéland", why: "Asi 9,6 %." }
-      - { text: "Brazília", why: "Asi 12,6 %." }
-    wrong:
-      - { text: "Spojené štáty", why: "Asi 16,8 %." }
-      - { text: "Japonsko", why: "Asi 16,3 %." }
-      - { text: "Mexiko", why: "Asi 15,8 %: tesne nad hranicou." }
-      - { text: "Dánsko", why: "Asi 16,9 %." }
-      - { text: "Nemecko", why: "Asi 20,2 %." }
-      - { text: "Taliansko", why: "Asi 20,7 %." }
-      - { text: "Francúzsko", why: "Asi 28,6 %." }
-      - { text: "Slovensko", why: "Asi 27,7 %." }
-
   - id: stereo-zemiaky-viac-nez-nemci
     type: pick
     prompt: "Ktoré z týchto krajín majú podľa FAO viac zemiakov na obyvateľa než Nemecko (asi 61 kg ročne)?"
@@ -132,30 +106,6 @@ questions:
       - { text: "Maďarsko", why: "Asi 36 kg: veľmi málo na krajinu s gulášom a lángošom." }
       - { text: "Nórsko", why: "Asi 37 kg." }
       - { text: "Grécko", why: "Asi 58 kg: tesne pod Nemeckom." }
-
-  - id: stereo-bravcove-viac-nez-cesi
-    type: pick
-    prompt: "Ktoré z týchto krajín majú podľa FAO viac bravčového mäsa na obyvateľa než Česko (asi 46 kg ročne)?"
-    difficulty: 2
-    tags: [stereotypy, jedlo, FAO]
-    asOf: "2022"
-    source: "https://www.fao.org/faostat/en/#data/FBS"
-    correct:
-      - { text: "Chorvátsko", why: "Asi 59 kg na osobu: na prvom mieste." }
-      - { text: "Poľsko", why: "Asi 54 kg na osobu ročne." }
-      - { text: "Španielsko", why: "Asi 53 kg: krajina šunky a chorizo." }
-      - { text: "Dánsko", why: "Asi 52 kg; Dánsko je veľký exportér bravčového." }
-      - { text: "Litva", why: "Asi 50 kg." }
-      - { text: "Maďarsko", why: "Asi 48,5 kg na osobu." }
-    wrong:
-      - { text: "Slovensko", why: "Asi 42 kg: o pár kíl menej než v Česku." }
-      - { text: "Rakúsko", why: "Asi 42 kg." }
-      - { text: "Nemecko", why: "Asi 39 kg, hoci Nemci sú známi klobásami." }
-      - { text: "Taliansko", why: "Asi 34 kg." }
-      - { text: "Francúzsko", why: "Asi 33 kg." }
-      - { text: "Spojené štáty", why: "Asi 30 kg." }
-      - { text: "Grécko", why: "Asi 27 kg." }
-      - { text: "Švédsko", why: "Asi 28 kg." }
 
   - id: stereo-caj-viac-nez-cina
     type: pick
@@ -231,31 +181,6 @@ questions:
       - { text: "Slovensko", why: "Asi 66 kg." }
       - { text: "India", why: "Len asi 8 kg na osobu; veľká časť obyvateľov je vegetariánska." }
 
-  - id: stereo-vajcia-viac-nez-francuzi
-    type: pick
-    prompt: "Ktoré z týchto krajín majú podľa FAO viac vajec na obyvateľa než Francúzsko (asi 13 kg ročne)?"
-    difficulty: 2
-    tags: [stereotypy, jedlo, FAO]
-    asOf: "2022"
-    source: "https://ourworldindata.org/grapher/per-capita-egg-consumption-kilograms-per-year"
-    correct:
-      - { text: "Holandsko", why: "Asi 25 kg na osobu: prvé miesto medzi štátmi." }
-      - { text: "Čína", why: "Asi 22 kg na osobu." }
-      - { text: "Mexiko", why: "Asi 21 kg: vajcia sú základ raňajok huevos rancheros." }
-      - { text: "Japonsko", why: "Asi 20 kg; Japonci jedia vajcia aj surové, napríklad na ryži." }
-      - { text: "Belgicko", why: "Asi 19 kg." }
-      - { text: "Argentína", why: "Asi 18 kg." }
-      - { text: "Nemecko", why: "Asi 15,5 kg." }
-    wrong:
-      - { text: "Slovensko", why: "Asi 10 kg." }
-      - { text: "Česko", why: "Asi 8 kg." }
-      - { text: "Poľsko", why: "Asi 5,6 kg." }
-      - { text: "Spojené kráľovstvo", why: "Asi 10 kg." }
-      - { text: "Grécko", why: "Asi 9 kg." }
-      - { text: "Portugalsko", why: "Asi 12 kg." }
-      - { text: "Island", why: "Asi 10 kg." }
-      - { text: "Nórsko", why: "Asi 12 kg." }
-
   - id: stereo-olivovy-olej
     type: pick
     prompt: "Ktoré z týchto krajín majú podľa FAO viac olivového oleja na obyvateľa než Francúzsko (asi 2 kg ročne)?"
@@ -280,54 +205,6 @@ questions:
       - { text: "India", why: "Asi 0,04 kg." }
       - { text: "Írsko", why: "Asi 1,1 kg." }
 
-  - id: stereo-baranina-viac-nez-grecko
-    type: pick
-    prompt: "Ktoré z týchto krajín majú podľa FAO viac baraniny a kozieho mäsa na obyvateľa než Grécko (asi 8,5 kg ročne)?"
-    difficulty: 3
-    tags: [stereotypy, jedlo, FAO]
-    asOf: "2022"
-    source: "https://www.fao.org/faostat/en/#data/FBS"
-    correct:
-      - { text: "Mongolsko", why: "Asi 67 kg na osobu: viac než ktokoľvek iný." }
-      - { text: "Island", why: "Asi 15 kg; ovce sa tam pasú vo voľnej prírode." }
-      - { text: "Nový Zéland", why: "Asi 13 kg." }
-      - { text: "Austrália", why: "Asi 10 kg." }
-      - { text: "Kuvajt", why: "Asi 14 kg." }
-    wrong:
-      - { text: "Írsko", why: "Asi 4 kg, hoci ovce sú tam symbolom vidieka." }
-      - { text: "Nórsko", why: "Asi 4,5 kg." }
-      - { text: "Španielsko", why: "Asi 1,9 kg." }
-      - { text: "Francúzsko", why: "Asi 2,4 kg." }
-      - { text: "Nemecko", why: "Asi 0,8 kg." }
-      - { text: "Spojené štáty", why: "Asi 0,7 kg." }
-      - { text: "Brazília", why: "Asi 0,7 kg." }
-      - { text: "Slovensko", why: "Asi 0,1 kg." }
-
-  - id: stereo-raz-viac-nez-cesi
-    type: pick
-    prompt: "Ktoré z týchto krajín majú podľa FAO viac raže (ražného chleba a múky) na obyvateľa než Česko (asi 8,5 kg ročne)?"
-    difficulty: 3
-    tags: [stereotypy, jedlo, FAO]
-    asOf: "2022"
-    source: "https://www.fao.org/faostat/en/#data/FBS"
-    correct:
-      - { text: "Poľsko", why: "Asi 25 kg: prvé miesto zo všetkých krajín s údajmi." }
-      - { text: "Lotyšsko", why: "Asi 20 kg." }
-      - { text: "Fínsko", why: "Asi 15 kg; fínsky ražný chlieb ruisleipä je národná klasika." }
-      - { text: "Litva", why: "Asi 15 kg." }
-      - { text: "Dánsko", why: "Asi 13,5 kg; ražný chlieb je základ smørrebrødu." }
-      - { text: "Bielorusko", why: "Asi 13 kg." }
-      - { text: "Švédsko", why: "Asi 11 kg." }
-    wrong:
-      - { text: "Nemecko", why: "Asi 7,4 kg: menej než v Česku." }
-      - { text: "Estónsko", why: "Asi 6,8 kg." }
-      - { text: "Nórsko", why: "Asi 3,7 kg." }
-      - { text: "Slovensko", why: "Asi 3 kg." }
-      - { text: "Francúzsko", why: "Asi 0,4 kg." }
-      - { text: "Taliansko", why: "Asi 0,2 kg." }
-      - { text: "Španielsko", why: "Asi 0,9 kg." }
-      - { text: "Spojené štáty", why: "Asi 0,9 kg." }
-
   - id: stereo-jedla-s-klamlivym-nazvom
     type: pick
     prompt: "Ktoré z týchto jedál majú v názve krajinu alebo mesto, odkiaľ pravdepodobne nepochádzajú?"
@@ -347,26 +224,6 @@ questions:
       - { text: "Camembert", why: "Prvýkrát sa vyrobil koncom 18. storočia v obci Camembert v Normandii." }
       - { text: "Guláš", why: "Maďarský mäsový a zeleninový guláš pochádza z Maďarska." }
       - { text: "Yorkshirsky puding", why: "Vymysleli ho kuchári na severe Anglicka, v Yorkshire, pri pečení mäsa." }
-
-  - id: stereo-eskimaci-sneh
-    type: pick
-    prompt: "Ktoré tvrdenia o povestnom „Eskimáci majú 50 (či 100) slov pre sneh“ sú pravdivé?"
-    difficulty: 3
-    tags: [stereotypy, jazyk, mýty]
-    source: "https://en.wikipedia.org/wiki/Eskimo_words_for_snow"
-    correct:
-      - { text: "Franz Boas v roku 1911 uviedol ako príklad iba štyri inuitské slová pre sneh", why: "Boas spomenul aput, qana, piqsirpoq a qimuqsuq; Wikipédia to uvádza ako prvú zmienku o tejto téme." }
-      - { text: "Neskoršie texty číslo nafúkli: v roku 1978 sa uvádzalo 50 slov", why: "Podľa Wikipédie sa číslo v populárnych textoch rýchlo zväčšovalo." }
-      - { text: "Redakčný článok New York Times z roku 1984 uviedol až 100 slov", why: "Ide o spomínaný „There's Snow Synonym“ z 9. februára 1984." }
-      - { text: "Inuitské jazyky tvoria nové slová pripájaním prípon, takže ich možno vyrobiť takmer neobmedzene mnoho", why: "Rovnako dlhé slová sa v angličtine tvoria ako spojenia; počítať „slová“ je preto zavádzajúce." }
-      - { text: "Štúdia z roku 2010 našla v dialekte Nunavik aspoň 53 výrazov pre sneh", why: "Podľa Igora Krupnika a kol.; v stredosibírskej yupičtine 40, a bohatšia je slovná zásoba pre morský ľad." }
-    wrong:
-      - { text: "Boas v roku 1911 napísal, že Inuiti majú 100 slov pre sneh", why: "Boas žiadne takéto číslo nenapísal." }
-      - { text: "Laura Martin v roku 1986 dokázala, že Inuiti majú presne 50 slov pre sneh", why: "Martin naopak vystopovala, ako sa mýtus rozšíril, a kritizovala ho." }
-      - { text: "Angličtina má len jedno slovo pre sneh", why: "Existuje snow, slush, sleet, blizzard či drift a ďalšie; ani angličtina nemá jedno slovo." }
-      - { text: "Inuitské jazyky nevedia tvoriť nové slová pre sneh", why: "Vedia, a to prakticky bez obmedzenia." }
-      - { text: "Sámčina má len päť výrazov pre sneh a ľad", why: "Podľa jazykovedca Ole Henrika Maggu má sámčina aspoň 180 slov súvisiacich so snehom a ľadom." }
-      - { text: "Jazykovedec Geoffrey Pullum tvrdí, že Inuiti majú pre sneh o stovky koreňov viac než angličtina", why: "Pullum tvrdí presný opak: počet koreňov je v inuitských jazykoch a angličtine zhruba rovnaký." }
 
   # ================================================================ ORDER
   - id: stereo-poradie-hodiny
@@ -416,21 +273,6 @@ questions:
       - { text: Rusko, value: 1.38, why: "Čaj sa tam tradične pije zo samovaru." }
       - { text: Japonsko, value: 0.97, why: "Pije sa najmä zelený čaj." }
       - { text: Čína, value: 0.57, why: "Najväčší pestovateľ čaju, ale na osobu pijú len málo." }
-
-  - id: stereo-poradie-olej
-    type: order
-    prompt: "Zoraď krajiny podľa množstva olivového oleja na obyvateľa (od najviac)."
-    direction: desc
-    unit: "kg na osobu ročne"
-    difficulty: 2
-    asOf: "2022"
-    source: "https://www.fao.org/faostat/en/#data/FBS"
-    items:
-      - { text: Španielsko, value: 8.69, why: "Na čele rebríčka, len tesne pred Talianskom." }
-      - { text: Grécko, value: 6.72, why: "Grécka kuchyňa sa bez neho nezaobíde." }
-      - { text: Portugalsko, value: 4.82, why: "Tretí z veľkých stredomorských konzumentov." }
-      - { text: Francúzsko, value: 1.98, why: "Francúzi viac používajú maslo." }
-      - { text: Nemecko, value: 0.89, why: "Najčastejšie sa používa repkový a slnečnicový olej." }
 
   - id: stereo-poradie-ryby
     type: order
@@ -522,18 +364,6 @@ questions:
     difficulty: 1
     source: "https://en.wikipedia.org/wiki/Napoleon"
 
-  - id: stereo-svajciarske-ukryty
-    type: number
-    prompt: "Na koľko percent obyvateľov Švajčiarska mala okolo roku 2006 krajina miesta v protiatómových úkrytoch?"
-    answer: 114
-    unit: "%"
-    scale: linear
-    tolerance: 10
-    asOf: "2006"
-    why: "Švajčiarsko malo 8,6 milióna miest v asi 300 000 súkromných a 5 100 verejných úkrytoch; Nemecko podľa tej istej Wikipédie len pre 3 % obyvateľov."
-    difficulty: 3
-    source: "https://en.wikipedia.org/wiki/Fallout_shelter"
-
   # ================================================================ CHOICE
   - id: stereo-vikingske-prilby
     type: choice
@@ -559,29 +389,3 @@ questions:
       - { text: "Írsko", why: "Asi 85 kg; nie je ani v prvej desiatke." }
       - { text: "Nemecko", why: "Asi 61 kg." }
       - { text: "Poľsko", why: "Asi 96 kg: štvrté miesto, no ďaleko za Bieloruskom." }
-
-  - id: stereo-vajcia-najviac
-    type: choice
-    prompt: "Ktorá z týchto krajín má podľa FAO najviac vajec na obyvateľa?"
-    difficulty: 2
-    tags: [stereotypy, jedlo, FAO]
-    asOf: "2022"
-    source: "https://ourworldindata.org/grapher/per-capita-egg-consumption-kilograms-per-year"
-    correct: { text: "Holandsko", why: "Asi 25 kg na osobu ročne." }
-    wrong:
-      - { text: "Japonsko", why: "Asi 20 kg." }
-      - { text: "Mexiko", why: "Asi 21 kg." }
-      - { text: "Francúzsko", why: "Asi 13 kg." }
-
-  - id: stereo-cestoviny-druhe
-    type: choice
-    prompt: "Ktorá krajina je po Taliansku druhá v spotrebe cestovín na obyvateľa (2015)?"
-    difficulty: 3
-    tags: [stereotypy, jedlo]
-    asOf: "2015"
-    source: "https://en.wikipedia.org/wiki/Pasta"
-    correct: { text: "Tunisko", why: "Asi 16 kg na osobu; cestoviny tam priniesli talianski prisťahovalci a obľúbili si ich." }
-    wrong:
-      - { text: "Spojené štáty", why: "Podľa Wikipédie okolo 9 kg na osobu (odhad z roku 2008), hoci celkovo ich USA spotrebujú najviac." }
-      - { text: "Grécko", why: "Štvrté miesto, asi 11 kg." }
-      - { text: "Nemecko", why: "Podstatne menej než v prvej štvorke." }
