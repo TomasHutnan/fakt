@@ -1,6 +1,6 @@
 import type { Card } from "./cards.ts";
 import type { Answer } from "./game.ts";
-import { numberError } from "./scoring.ts";
+import { numberError, pickPoints } from "./scoring.ts";
 
 // The jokes the table makes anyway: "only Dano picked Trenčín", end-of-game titles.
 // Pure and structured; the UI turns them into Slovak sentences (sk.ts).
@@ -61,7 +61,7 @@ export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[
         // Only when the card was wiped (not when a wrong pick just ends the turn).
         if (a?.status !== "busted" || r.points > 0) continue;
         const found = a.picks.filter((i) => card.options[i].correct).length;
-        if (found >= 3) add({ kind: "bigBust", player: r.player, lost: (found * (found + 1)) / 2 }, 6 + found);
+        if (found >= 3) add({ kind: "bigBust", player: r.player, lost: pickPoints(found) }, 6 + found);
       }
       for (const [i, o] of card.options.entries()) {
         const who = results.filter((r) => picks(r)?.picks.includes(i));
@@ -158,7 +158,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
         if (r.status === "busted") {
           p.busts++;
           p.wrong++;
-          if (r.points === 0) p.maxLost = Math.max(p.maxLost, ((r.found ?? 0) * ((r.found ?? 0) + 1)) / 2);
+          if (r.points === 0) p.maxLost = Math.max(p.maxLost, pickPoints(r.found ?? 0));
         }
         if (r.status === "complete") p.completes++;
         if (r.status === "banked" && (r.found ?? 0) <= 2) p.banksLow++;

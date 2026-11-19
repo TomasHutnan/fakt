@@ -6,7 +6,7 @@ import { currentPlayer, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings,
 import { createRng } from "./rng.ts";
 import { packOptions } from "./comeback.ts";
 import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
-import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
+import { numberError, numberRankedPoints, numberSoloPoints, nextPickWorth, pickPoints, pickTurnPoints } from "./scoring.ts";
 
 const opt = (text: string) => ({ text, why: `${text} why` });
 
@@ -113,6 +113,7 @@ describe("pick cards", () => {
     const right = card.options.map((o, i) => (o.correct ? i : -1)).filter((i) => i >= 0);
     const wrong = card.options.findIndex((o) => !o.correct);
     expect(pickPoints(0)).toBe(0);
+    expect([0, 1, 2, 3, 5].map(nextPickWorth)).toEqual([1, 2, 3, 3, 3]);
     expect(pickTurnPoints(card, right.slice(0, 2), "always")).toBe(3);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "always")).toBe(0);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "firstFree")).toBe(3);

@@ -2,7 +2,7 @@ import qrcode from "qrcode-generator";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import type { Card } from "../engine/cards.ts";
 import type { TurnResult } from "../engine/game.ts";
-import { pickPoints } from "../engine/scoring.ts";
+import { nextPickWorth, pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
 import type { ClientState, RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
@@ -408,7 +408,7 @@ function PickInput({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth(nextPickWorth(found))}</span>}
         {card.correctCount != null && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
