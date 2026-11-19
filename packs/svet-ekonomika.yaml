@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 3
+version: 4
 questions:
   # ================================================================ PICK
   - id: ek-top10-hdp
@@ -86,56 +86,6 @@ questions:
       - { text: Filipíny, why: "Okolo 117 miliónov." }
       - { text: Nemecko, why: "Najľudnatejšia krajina EÚ, no len okolo 83 miliónov." }
       - { text: Turecko, why: "Okolo 86 miliónov." }
-
-  - id: ek-podiel-pohonne-latky-vyvoz
-    type: pick
-    prompt: Pri ktorých krajinách tvoria palivá (ropa, plyn, uhlie) viac než polovicu vývozu tovaru?
-    difficulty: 3
-    asOf: "2025"
-    tags: [ropa, export]
-    source: "https://data.worldbank.org/indicator/TX.VAL.FUEL.ZS.UN https://api.worldbank.org/v2/country/all/indicator/TX.VAL.FUEL.ZS.UN?format=json&date=2025"
-    correct:
-      - { text: Kuvajt, why: "Palivá tvoria približne 93 % vývozu tovaru." }
-      - { text: Angola, why: "Palivá tvoria približne 91 % vývozu tovaru." }
-      - { text: Azerbajdžan, why: "Palivá tvoria približne 86 % vývozu." }
-      - { text: Nigéria, why: "Palivá tvoria približne 86 % vývozu napriek obrovskej populácii." }
-      - { text: Saudská Arábia, why: "Palivá tvoria približne 79 % vývozu tovaru." }
-      - { text: Omán, why: "Palivá tvoria približne 72 % vývozu." }
-      - { text: Nórsko, why: "Palivá (ropa a plyn) tvoria približne 62 % vývozu tovaru." }
-      - { text: Kazachstan, why: "Palivá tvoria približne 55 % vývozu." }
-    wrong:
-      - { text: Kanada, why: "Je veľkým ťažiarom ropy, ale palivá tvoria len okolo 27 % vývozu." }
-      - { text: USA, why: "Najväčší ťažiar ropy sveta, no palivá tvoria len približne 17 % vývozu." }
-      - { text: Mexiko, why: "Palivá tvoria len okolo 3 % vývozu; hlavné sú autá a elektronika." }
-      - { text: Nemecko, why: "Palivá tvoria menej než 2 % vývozu." }
-      - { text: Holandsko, why: "Palivá tvoria okolo 11 % vývozu, hlavne cez rotterdamský prístav." }
-      - { text: Brazília, why: "Palivá tvoria okolo 16 % vývozu; väčšinu tvorí sója, železná ruda a mäso." }
-      - { text: Spojené kráľovstvo, why: "Palivá tvoria len okolo 7 % vývozu." }
-
-  - id: ek-remitancie
-    type: pick
-    prompt: Ktoré krajiny dostávajú od svojich ľudí pracujúcich v zahraničí sumy, ktoré tvoria viac ako 15 % ich HDP?
-    difficulty: 3
-    asOf: "2025"
-    tags: [remitancie]
-    source: "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&date=2025"
-    correct:
-      - { text: Tadžikistan, why: "Peniaze poslané domov tvoria viac než polovicu HDP, najviac na svete." }
-      - { text: Nepál, why: "Približne 32 % HDP." }
-      - { text: Honduras, why: "Približne 30 % HDP." }
-      - { text: Salvádor, why: "Približne 27,5 % HDP; krajina používa dolár." }
-      - { text: Samoa, why: "Približne 22 % HDP." }
-      - { text: Guatemala, why: "Približne 21 % HDP." }
-      - { text: Kosovo, why: "Približne 17 % HDP." }
-      - { text: Jamajka, why: "Približne 16 % HDP." }
-    wrong:
-      - { text: Mexiko, why: "Domov posiela veľa peňazí, ale v pomere k veľkému HDP to je len okolo 3,6 %." }
-      - { text: India, why: "Najväčší príjemca sveta v dolároch, no pri tak veľkej ekonomike je to len okolo 3,8 % HDP." }
-      - { text: Filipíny, why: "Približne 8,5 % HDP." }
-      - { text: Pakistan, why: "Približne 10 % HDP." }
-      - { text: Poľsko, why: "Menej než 1 % HDP." }
-      - { text: Nemecko, why: "Prijíma len okolo 0,5 % HDP." }
-      - { text: Čína, why: "Len okolo 0,2 % HDP." }
 
   - id: ek-brazilia-jednotka
     type: pick
@@ -245,28 +195,6 @@ questions:
       - { text: Brazília, why: "Skôr káva než čaj." }
       - { text: Argentína, why: "Pestuje čaj a maté, ale v malých objemoch." }
 
-  - id: ek-turecko-jednotka
-    type: pick
-    prompt: V ktorých plodinách je Turecko podľa FAO (2024) producentom číslo jedna na svete?
-    difficulty: 3
-    asOf: "2024"
-    tags: [poľnohospodárstvo]
-    source: "https://en.wikipedia.org/wiki/List_of_largest_producing_countries_of_agricultural_commodities"
-    correct:
-      - { text: Lieskové orechy, why: "Najväčší svetový producent lieskových orechov." }
-      - { text: Marhule, why: "Pred Uzbekistanom a Iránom." }
-      - { text: Čerešne, why: "Pred Čile a USA." }
-      - { text: Figy, why: "Pred Egyptom a Alžírskom." }
-      - { text: Duľa obyčajná, why: "Pred Čínou a Uzbekistanom." }
-    wrong:
-      - { text: Pistácie, why: "Najviac pistácií pestujú USA." }
-      - { text: Mandle, why: "Prvé sú USA." }
-      - { text: Olivy, why: "Prvé je Španielsko." }
-      - { text: Pomaranče, why: "Prvá je Brazília." }
-      - { text: Avokádo, why: "Prvé je Mexiko." }
-      - { text: Kokos, why: "Prvá je Indonézia." }
-      - { text: Banány, why: "Prvá je India." }
-
   - id: ek-euro-mimo-eu
     type: pick
     prompt: Ktoré štáty, ktoré nie sú v Európskej únii, používajú ako oficiálnu menu euro?
@@ -373,8 +301,6 @@ questions:
       - { text: Zimbabwe (2008), why: "Vydalo bankovku s hodnotou 100 biliónov zimbabwianskych dolárov." }
       - { text: Venezuela, why: "Hyperinflácia tam vypukla v druhej polovici desiatych rokov 21. storočia." }
       - { text: Juhoslávia (1992 – 1994), why: "Hyperinflácia sprevádzala rozpad štátu a vojnu." }
-      - { text: Rakúsko (1921 – 1922), why: "Ceny vzrástli od roku 1914 do januára 1923 vyše 11 000-násobne." }
-      - { text: Bolívia (1985), why: "V roku 1985 tam inflácia presiahla 20 000 % ročne." }
     wrong:
       - { text: Švajčiarsko, why: "Frank sa stal symbolom stability." }
       - { text: Japonsko, why: "Naopak, dlho ho trápila deflácia." }
@@ -620,32 +546,6 @@ questions:
     difficulty: 3
     source: "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf"
     tags: [suroviny]
-
-  - id: ek-cislo-norsko-palivo
-    type: number
-    prompt: Koľko percent nórskeho vývozu tovaru tvoria palivá, teda ropa a zemný plyn?
-    answer: 62
-    unit: "%"
-    scale: linear
-    tolerance: 5
-    asOf: "2025"
-    why: "Nórsko žije z ropy a plynu, ale peniaze ukladá do najväčšieho štátneho fondu sveta."
-    difficulty: 3
-    source: "https://api.worldbank.org/v2/country/all/indicator/TX.VAL.FUEL.ZS.UN?format=json&date=2025"
-    tags: [ropa]
-
-  - id: ek-cislo-honduras-remitancie
-    type: number
-    prompt: Koľko percent HDP Hondurasu tvoria peniaze, ktoré posielajú domov Hondurasania pracujúci v zahraničí?
-    answer: 30
-    unit: "%"
-    scale: linear
-    tolerance: 5
-    asOf: "2025"
-    why: "Takmer každá tretia lempira v krajine pochádza zo zahraničia, väčšinou z USA."
-    difficulty: 3
-    source: "https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&date=2025"
-    tags: [remitancie]
 
   - id: ek-cislo-panamsky-prieplav
     type: number
