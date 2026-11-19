@@ -523,7 +523,7 @@ questions:
     tags: [doprava, lode]
     source: "https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction https://en.wikipedia.org/wiki/Ever_Given"
     correct:
-      - { text: "Loď je dlhá 400 metrov", why: "Preto sa zaklinila naprieč prieplavom a jej prova aj záď uviazli na opačných brehoch." }
+      - { text: "Loď je dlhá 400 metrov", why: "Preto sa zaklinila naprieč prieplavom a jej prova aj korma uviazli na opačných brehoch." }
       - { text: "Prieplav bol zablokovaný šesť dní", why: "Od 23. do 29. marca 2021, kým loď uvoľnilo štrnásť remorkérov." }
       - { text: "Pri nehode hral rolu silný vietor a piesočná búrka", why: "Vietor dosahoval vyše 40 uzlov (asi 74 km/h), egyptské úrady však pripustili aj technické alebo ľudské chyby." }
       - { text: "Loď pomohol uvoľniť vysoký príliv", why: "Remorkéry sa pustili do práce počas prílivu pri superúplnku." }
@@ -564,7 +564,7 @@ questions:
     source: "https://en.wikipedia.org/wiki/Pentium_FDIV_bug"
     correct: { text: "V delení desatinných čísel", why: "Chýbali hodnoty v tabuľke pre delenie. Chybu našiel matematik Thomas Nicely pri počítaní prvočíselných dvojíc; Intel nakoniec zaúčtoval náklady 475 miliónov dolárov na výmenu a odpis procesorov." }
     wrong:
-      - { text: "V sčítaní", why: "Chyba sedela v tabuľke algoritmu pre delenie, nie v sčítaní." }
+      - { text: "V sčítaní", why: "Chyba bola v tabuľke algoritmu pre delenie, nie v sčítaní." }
       - { text: "V násobení", why: "Násobenie fungovalo správne; mýlilo sa delenie." }
       - { text: "V ukladaní dát na pevný disk", why: "Chyba bola v jednotke procesora pre desatinné čísla, nie v práci s diskom." }
 
