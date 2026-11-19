@@ -170,7 +170,7 @@ questions:
       - { text: "Francúzsko", why: "Asi 83 kg." }
       - { text: "Spojené kráľovstvo", why: "Asi 84 kg." }
       - { text: "Taliansko", why: "Asi 72 kg." }
-      - { text: "Japonsko", why: "Asi 60 kg." }
+      - { text: "Japonsko", why: "Výrazne menej než 100 kg." }
       - { text: "Čína", why: "Asi 70 kg na osobu." }
       - { text: "Poľsko", why: "Asi 87 kg." }
       - { text: "Slovensko", why: "Výrazne menej než 100 kg." }
@@ -228,7 +228,7 @@ questions:
     items:
       - { text: Turecko, value: 31.1, why: "Takmer tretina dospelých." }
       - { text: Francúzsko, value: 28.6, why: "Francúzska povesť fajčiarov sa čiastočne potvrdzuje." }
-      - { text: Nemecko, value: 20.2, why: "Nižšie než v celej strednej a južnej Európe." }
+      - { text: Nemecko, value: 20.2, why: "Nižšie než vo Francúzsku či v Turecku." }
       - { text: Japonsko, value: 16.3, why: "Podiel tu v posledných desaťročiach klesol." }
       - { text: Spojené kráľovstvo, value: 13.0, why: "Medzi najnižšími v Európe." }
 
