@@ -6,7 +6,7 @@ lang: sk
 license: CC0-1.0
 adult: false
 defaultOn: true
-version: 1
+version: 2
 questions:
   - id: mojito-suroviny
     type: pick
@@ -342,28 +342,6 @@ questions:
       - { text: "Aperol Spritz", why: "Podáva sa vo vínovom pohári s ľadom." }
       - { text: "Espresso Martini", why: "Podáva sa vo vychladenom koktailovom pohári." }
 
-  - id: limetka-nie-citron
-    type: pick
-    prompt: Do ktorých z týchto koktailov patrí podľa receptu IBA limetka (nie citrón)?
-    difficulty: 3
-    source: https://iba-world.com/cocktails/all-cocktails/
-    correct:
-      - { text: "Mojito", why: "20 ml limetkovej šťavy." }
-      - { text: "Margarita", why: "15 ml limetkovej šťavy." }
-      - { text: "Daiquiri", why: "Rum, cukor a 20 ml limetkovej šťavy." }
-      - { text: "Cuba Libre", why: "10 ml limetkovej šťavy a limetka na ozdobu." }
-      - { text: "Caipirinha", why: "Celá limetka nakrájaná na kúsky a roztlačená s cukrom." }
-      - { text: "Moscow Mule", why: "10 ml limetkovej šťavy." }
-      - { text: "Cosmopolitan", why: "15 ml limetkovej šťavy, citrón je len kôrka na ozdobu." }
-      - { text: "Mai Tai", why: "30 ml čerstvej limetkovej šťavy." }
-    wrong:
-      - { text: "Whiskey Sour", why: "Kyslosť mu dáva 25 ml citrónovej šťavy." }
-      - { text: "Bloody Mary", why: "IBA uvádza citrónovú šťavu a citrón na ozdobu." }
-      - { text: "Gin Fizz", why: "30 ml citrónovej šťavy." }
-      - { text: "French 75", why: "15 ml citrónovej šťavy." }
-      - { text: "Long Island Iced Tea", why: "25 ml citrónovej šťavy." }
-      - { text: "Bramble", why: "25 ml citrónovej šťavy." }
-
   - id: nazov-miesto
     type: pick
     prompt: Ktoré z týchto koktailov majú v názve zemepisné miesto (mesto, ostrov, krajinu alebo pláž)?
@@ -450,21 +428,6 @@ questions:
       - { text: "Jägermeister", value: 1935 }
       - { text: "Baileys", value: 1974 }
 
-  - id: ml-destilatu-iba
-    type: order
-    prompt: Zoraď koktaily podľa množstva hlavného destilátu v oficiálnom recepte IBA, od najväčšieho.
-    direction: desc
-    unit: ml
-    difficulty: 3
-    source: https://iba-world.com/cocktails/all-cocktails/
-    note: "Caipirinha 60 ml cachaçy, Cuba Libre 50 ml rumu, Mojito 45 ml rumu, Sex on the Beach 40 ml vodky, Negroni 30 ml ginu."
-    items:
-      - { text: "Caipirinha (cachaça)", value: 60 }
-      - { text: "Cuba Libre (rum)", value: 50 }
-      - { text: "Mojito (rum)", value: 45 }
-      - { text: "Sex on the Beach (vodka)", value: 40 }
-      - { text: "Negroni (gin)", value: 30 }
-
   - id: long-island-pocet-alkoholov
     type: number
     prompt: Koľko rôznych alkoholických nápojov obsahuje Long Island Iced Tea podľa receptu IBA?
@@ -486,28 +449,6 @@ questions:
     why: Ian Fleming v ňom dal Bondovi recept na tri miery ginu Gordon's, jednu vodky a pol miery Kina Lillet.
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Vesper_(cocktail)
-
-  - id: hugo-rok
-    type: number
-    prompt: V ktorom roku vymyslel barman Roland Gruber v Južnom Tirolsku drink Hugo?
-    answer: 2005
-    unit: rok
-    scale: linear
-    tolerance: 3
-    why: Vznikol v bare v Naturns a odtiaľ sa rozšíril do Rakúska, Švajčiarska a Nemecka.
-    difficulty: 2
-    source: https://en.wikipedia.org/wiki/Hugo_(cocktail)
-
-  - id: pina-colada-narodny-napoj
-    type: number
-    prompt: V ktorom roku vyhlásilo Portoriko piña coladu za svoj oficiálny nápoj?
-    answer: 1978
-    unit: rok
-    scale: linear
-    tolerance: 4
-    why: Hotel Caribe Hilton v San Juane tvrdí, že ju tam v roku 1954 vymyslel barman Ramón Marrero.
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Pi%C3%B1a_colada
 
   - id: espresso-martini-zrnka
     type: number

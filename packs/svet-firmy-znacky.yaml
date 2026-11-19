@@ -4,7 +4,7 @@ description: "Kto komu patrí, odkiaľ sa vzali názvy, za koľko sa kupovali ap
 category: historia
 lang: sk
 adult: false
-version: 2
+version: 3
 questions:
   # ================================================================ KTO KOMU PATRÍ
   - id: unilever-znacky
@@ -60,7 +60,7 @@ questions:
   - id: pg-znacky
     type: pick
     prompt: Ktoré z týchto značiek dnes patria americkému Procter & Gamble?
-    difficulty: 1
+    difficulty: 2
     asOf: "2026-11"
     tags: [vlastníci, drogéria]
     source: https://en.wikipedia.org/wiki/Procter_%26_Gamble
@@ -552,18 +552,6 @@ questions:
     tags: [akvizície]
     source: https://www.businessinsider.com/instagram-employees-and-investors-2012-4
 
-  - id: android-cena
-    type: number
-    prompt: Za koľko miliónov dolárov kúpil Google v roku 2005 malú firmu Android?
-    answer: 50
-    unit: mil. USD
-    scale: log
-    tolerance: 0.1
-    why: "Zhruba 50 miliónov dolárov, vtedy za malú firmu bez hotového telefónu."
-    difficulty: 2
-    tags: [akvizície]
-    source: https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Alphabet
-
   - id: kamprad-vek
     type: number
     prompt: Koľko rokov mal Ingvar Kamprad, keď v roku 1943 založil IKEA?
@@ -587,18 +575,6 @@ questions:
     difficulty: 3
     tags: [história]
     source: https://en.wikipedia.org/wiki/Adidas
-
-  - id: matador-rok
-    type: number
-    prompt: V ktorom roku vznikla v Bratislave gumárenská firma Matador?
-    answer: 1905
-    unit: rok
-    scale: linear
-    tolerance: 5
-    why: "Zapísali ju v septembri 1905, továreň bola v Petržalke a pneumatiky začala robiť v roku 1925."
-    difficulty: 2
-    tags: [slovensko, história]
-    source: https://en.wikipedia.org/wiki/Matador_(company)
 
   # ================================================================ CHOICE
   - id: nod-skratka
@@ -629,7 +605,7 @@ questions:
   - id: amazon-povodny-nazov
     type: choice
     prompt: Ako sa volal Amazon, keď ho Jeff Bezos v roku 1994 založil?
-    difficulty: 1
+    difficulty: 2
     tags: [názvy, internet]
     source: https://en.wikipedia.org/wiki/Amazon_(company)
     correct: { text: "Cadabra", why: "V novembri 1994 ho Bezos premenoval podľa najväčšej rieky sveta." }

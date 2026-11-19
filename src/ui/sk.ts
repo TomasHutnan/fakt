@@ -17,8 +17,8 @@ export const sk = {
     {
       title: "Klasika",
       body: [
-        "Každá karta má otázku a desať možností. Pravdivé sú dve až osem z nich.",
-        "Na ťahu ťukáš na možnosti, o ktorých si myslíš, že sú pravdivé. Prvá správna je za 1 bod, druhá za 2, tretia za 3 a tak ďalej.",
+        "Každá karta má otázku a desať možností. Pravdivé sú dve až šesť z nich.",
+        "Na ťahu ťukáš na možnosti, o ktorých si myslíš, že sú pravdivé. Prvá správna je za 1 bod, druhá za 2, tretia a každá ďalšia za 3.",
         "Kedykoľvek môžeš povedať stop a body si vziať. Ak ťukneš na nesprávnu, body z tejto karty prepadnú.",
         "Potom podáš telefón ďalšiemu. Každý hrá tú istú kartu sám, kým to nevidia ostatní.",
         "Správnu odpoveď s vysvetlením uvidíš hneď po svojom ťahu. V nastaveniach to môžeš zmeniť tak, aby sa odpovede ukázali všetkým naraz až po poslednom hráčovi.",
@@ -34,8 +34,8 @@ export const sk = {
     {
       title: "Šanca dobehnúť",
       body: [
-        "Každé tretie kolo vyberie hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Dá sa to vypnúť v nastaveniach.",
-        "Po kole hra prezradí, kto sa na čo chytil, a na konci rozdá tituly.",
+        "Pri dvoch a viac hráčoch vyberie každé tretie kolo hráč na poslednom mieste z troch balíčkov, odkiaľ bude ďalšia otázka. Dá sa to vypnúť v nastaveniach.",
+        "Po každom kole hra prezradí, kto sa na čo chytil, a na konci rozdá tituly.",
       ],
     },
     {
@@ -48,7 +48,11 @@ export const sk = {
     },
     {
       title: "Koniec hry",
-      body: ["Hrá sa 10 kôl alebo do zvoleného počtu bodov. Kolo sa vždy dohrá, aby mal každý rovnako ťahov."],
+      body: [
+        "Hrá sa pevný počet kôl (5, 10 alebo 20) alebo do 50 bodov.",
+        "Na jednom telefóne sa kolo vždy dohrá, aby mal každý rovnako ťahov. Keď hráte každý na svojom, odpovedajú všetci naraz.",
+        "Ak sa o prvé miesto delí viac hráčov, príde rozstrel: jedna číselná otázka len pre nich. Vyhráva najbližší tip, pri rovnakej vzdialenosti sa výhra delí.",
+      ],
     },
   ],
   designs: "Vzhľady",
@@ -288,6 +292,7 @@ export const sk = {
 
   // comeback rules, social lines, titles
   standingsNow: "Priebežné poradie",
+  yourPlace: (rank: number, score: number) => `Si na ${rank}. mieste: ${score} ${plural(score, "bod", "body", "bodov")}`,
   packPickLabel: "Posledný vyberá",
   packPickYou: "Si na poslednom mieste, tak vyberáš, odkiaľ bude ďalšia otázka.",
   packPickWait: (name: string) => `${name} je na poslednom mieste a vyberá, odkiaľ bude ďalšia otázka.`,
@@ -305,6 +310,7 @@ export const sk = {
     bigBust: (who: string, lost: number) => `Najväčší pád: ${who}, mínus ${lost} ${plural(lost, "bod", "body", "bodov")}.`,
     untouched: (option: string) => `„${option}“ nikto nevybral, a bolo to správne.`,
     exact: (who: string) => `Presne trafené: ${who}.`,
+    near: (who: string) => `Skoro presne: ${who}.`,
     closest: (who: string) => `Najbližšie: ${who}.`,
     perfectOrder: (who: string) => `Presné poradie: ${who}.`,
   },

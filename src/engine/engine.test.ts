@@ -6,7 +6,7 @@ import { currentPlayer, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings,
 import { createRng } from "./rng.ts";
 import { packOptions } from "./comeback.ts";
 import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
-import { numberError, numberRankedPoints, numberSoloPoints, pickPoints, pickTurnPoints } from "./scoring.ts";
+import { numberError, numberRankedPoints, numberSoloPoints, nextPickWorth, pickPoints, pickTurnPoints } from "./scoring.ts";
 
 const opt = (text: string) => ({ text, why: `${text} why` });
 
@@ -74,7 +74,7 @@ const pack: Pack = {
 };
 
 describe("pick cards", () => {
-  it("always shows 10 options with 2–8 correct, across many seeds", () => {
+  it("always shows 10 options with 2–6 correct, across many seeds", () => {
     for (let seed = 0; seed < 200; seed++) {
       for (const q of pack.questions.filter((q) => q.type === "pick")) {
         const card = makeCard(pack, q, createRng(seed)) as PickCard;
@@ -82,16 +82,38 @@ describe("pick cards", () => {
         const correct = card.options.filter((o) => o.correct).length;
         expect(correct).toBe(card.correctCount);
         expect(correct).toBeGreaterThanOrEqual(2);
-        expect(correct).toBeLessThanOrEqual(8);
+        expect(correct).toBeLessThanOrEqual(6);
+      }
+    }
+  });
+
+  it("keeps at least 2 wrong options and never asks for more correct ones than exist", () => {
+    const opt2 = (t: string) => ({ text: t, why: "w" });
+    const lopsided: Pack = {
+      ...pack,
+      questions: [
+        { id: "many", type: "pick", prompt: "p", difficulty: 1, source: "s", correct: Array.from({ length: 12 }, (_, i) => opt2(`c${i}`)), wrong: ["x", "y"].map(opt2) },
+        { id: "few", type: "pick", prompt: "p", difficulty: 1, source: "s", correct: ["a", "b"].map(opt2), wrong: Array.from({ length: 12 }, (_, i) => opt2(`w${i}`)) },
+      ],
+    } as Pack;
+    for (let seed = 0; seed < 100; seed++) {
+      for (const q of lopsided.questions) {
+        const card = makeCard(lopsided, q, createRng(seed)) as PickCard;
+        expect(card.options).toHaveLength(10);
+        expect(card.options.filter((o) => !o.correct).length).toBeGreaterThanOrEqual(2);
+        expect(card.correctCount).toBeGreaterThanOrEqual(2);
+        expect(card.correctCount).toBeLessThanOrEqual(q.type === "pick" ? q.correct.length : 0);
       }
     }
   });
 
   it("scores escalating points and applies wipe rules", () => {
-    expect([1, 2, 3, 4, 5].map(pickPoints)).toEqual([1, 3, 6, 10, 15]);
+    expect([1, 2, 3, 4, 5, 6].map(pickPoints)).toEqual([1, 3, 6, 9, 12, 15]);
     const card = makeCard(pack, pack.questions[0], createRng(1)) as PickCard;
     const right = card.options.map((o, i) => (o.correct ? i : -1)).filter((i) => i >= 0);
     const wrong = card.options.findIndex((o) => !o.correct);
+    expect(pickPoints(0)).toBe(0);
+    expect([0, 1, 2, 3, 5].map(nextPickWorth)).toEqual([1, 2, 3, 3, 3]);
     expect(pickTurnPoints(card, right.slice(0, 2), "always")).toBe(3);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "always")).toBe(0);
     expect(pickTurnPoints(card, [...right.slice(0, 2), wrong], "firstFree")).toBe(3);

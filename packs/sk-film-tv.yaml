@@ -3,7 +3,7 @@ title: Film a televízia
 description: Slovenské a československé filmy, herci, seriály, rozprávky a televízne šou.
 category: kultura
 lang: sk
-version: 1
+version: 2
 questions:
   - id: film-sulik-rezia
     type: pick
@@ -199,7 +199,7 @@ questions:
   - id: film-sarlatan-fakty
     type: pick
     prompt: Ktoré tvrdenia o filme Šarlatán (2020) sú pravdivé?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Charlatan_(2020_film)
     correct:
       - { text: Režírovala ho Agnieszka Holland, why: "Poľská režisérka." }
@@ -239,27 +239,6 @@ questions:
       - { text: Získal Zlatú palmu v Cannes, why: "V Cannes dostal len čestné uznanie." }
       - { text: Hudbu zložil Ilja Zeljenka, why: "Zeljenka skomponoval hudbu k Slnku v sieti." }
       - { text: Hlavný hrdina Tóno Brtko je mäsiar, why: "Je to stolár." }
-
-  - id: film-slnko-v-sieti-cena
-    type: pick
-    prompt: Ktoré tvrdenia o filmovej cene Slnko v sieti sú pravdivé?
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://sk.wikipedia.org/wiki/Slnko_v_sieti_(cena)
-    correct:
-      - { text: Udeľuje ju Slovenská filmová a televízna akadémia, why: "Skratka SFTA." }
-      - { text: Je pomenovaná po filme Štefana Uhera, why: "Film Slnko v sieti je klasikou československej novej vlny." }
-      - { text: Sošku navrhol sklársky umelec Oliver Leššo, why: "Soška je sklenená plastika." }
-      - { text: Prvý ročník v roku 2004 odovzdal len cenu za celoživotné dielo, why: "Súťažné ceny pribudli od ročníka 2006." }
-      - { text: Najviac cien získal film Piargy, why: "Má 11 výhier." }
-      - { text: Hraný film musí mať viac ako 70 minút, why: "Musí mať aj kinodistribúciu a aspoň sedem verejných predstavení." }
-    wrong:
-      - { text: Udeľuje ju Slovenský filmový ústav, why: "Udeľuje ju akadémia SFTA." }
-      - { text: Je pomenovaná po Jakubiskovom filme Tisícročná včela, why: "Je pomenovaná po filme Slnko v sieti." }
-      - { text: Prvý ročník už rozdal ceny vo všetkých kategóriách, why: "V roku 2004 bola len cena za celoživotné dielo." }
-      - { text: Film musí mať minimálne 120 minút, why: "Stačí viac ako 70 minút." }
-      - { text: Víťazov vyberajú diváci v hlasovaní, why: "Hlasuje akadémia, vo dvoch kolách." }
-      - { text: Najviac cien získala Čiara, why: "Najviac má Piargy." }
 
   - id: film-perinbaba-fakty
     type: pick
@@ -396,18 +375,6 @@ questions:
     why: Bežal s prestávkou od roku 2008 do roku 2017.
     difficulty: 2
     source: https://sk.wikipedia.org/wiki/Panel%C3%A1k_(seri%C3%A1l)
-
-  - id: film-piargy-ceny
-    type: number
-    prompt: Koľko cien Slnko v sieti získal film Piargy, najocenenejší film v histórii týchto cien?
-    answer: 11
-    unit: cien
-    scale: linear
-    tolerance: 1
-    asOf: "2026-11"
-    why: Má aj najviac nominácií, až 16.
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Zoznam_laure%C3%A1tov_a_kandid%C3%A1tov_cien_Slnko_v_sieti
 
   - id: film-fontana-rok
     type: number

@@ -58,6 +58,8 @@ export function socialText(line: SocialLine, name: (player: number) => string): 
       return sk.social.untouched(line.option);
     case "exact":
       return sk.social.exact(who(line.players));
+    case "near":
+      return sk.social.near(who(line.players));
     case "closest":
       return sk.social.closest(name(line.player));
     case "perfectOrder":

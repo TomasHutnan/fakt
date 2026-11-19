@@ -3,7 +3,7 @@ title: Slovenčina a nárečia
 description: Písmená, pravopis, prevzaté slová, nárečia a rozdiely oproti češtine.
 category: tradicie
 lang: sk
-version: 1
+version: 2
 questions:
   # ---------- pick ----------
   - id: abeceda-pismena
@@ -99,7 +99,7 @@ questions:
   - id: nemecky-povod
     type: pick
     prompt: "Ktoré z týchto slov máme z nemčiny?"
-    difficulty: 1
+    difficulty: 2
     source: https://en.wiktionary.org/wiki/Category:Slovak_terms_borrowed_from_German
     tags: [výpožičky, nemčina]
     correct:
@@ -362,32 +362,6 @@ questions:
       - { text: "Oficiálne uznanie štúrovskej slovenčiny na prvom zasadaní Tatrína", value: 1844 }
       - { text: "Kompromisná reforma (októbrové stretnutie)", value: 1851 }
       - { text: "Vznik Matice slovenskej", value: 1863 }
-
-  - id: poradie-pravopis
-    type: order
-    prompt: "Zoraď vydania Pravidiel slovenského pravopisu od najstaršieho."
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Pravidl%C3%A1_slovensk%C3%A9ho_pravopisu
-    items:
-      - { text: "Pravidlá: Vážny (prvé vydanie)", value: 1931 }
-      - { text: "Pravidlá: Peciar", value: 1953 }
-      - { text: "Pravidlá: Kačala a kol. (prvé vydanie)", value: 1991 }
-      - { text: "Pravidlá: Kačala a kol. (neskoršie vydanie)", value: 2013 }
-
-  - id: poradie-predstur
-    type: order
-    prompt: "Zoraď jazykové pamiatky a gramatiky na Slovensku od najstaršej."
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Dejiny_sloven%C4%8Diny
-    items:
-      - { text: "Preklad Lutherovho katechizmu vydaný v Bardejove", value: 1581 }
-      - { text: "Krmanovo vydanie Biblie v biblickej češtine", value: 1722 }
-      - { text: "Doležalova Grammatica Slavico-Bohemica", value: 1746 }
-      - { text: "Hattalova Krátka mluvnica slovenská", value: 1852 }
 
   # ---------- number ----------
   - id: pocet-pismen

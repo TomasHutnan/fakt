@@ -31,7 +31,7 @@ Every question has `id` (unique in the pack), `type`, `prompt`, `difficulty` (1 
 
 ### pick — the main format
 
-Players see 10 options and pick the true ones. The game draws 10 from the lists with 2–8 correct, so a question needs **at least 10 options in total** and at least 2 in each list. More is better (12–16): the card varies between games.
+Players see 10 options and pick the true ones. The game draws 10 from the lists with 2–6 correct, so a question needs **at least 10 options in total** and at least 2 in each list. More is better (12–16): the card varies between games.
 
 ```yaml
 - id: ryby-sladkovodne

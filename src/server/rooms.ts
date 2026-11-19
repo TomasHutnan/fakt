@@ -393,7 +393,7 @@ export class Hub {
     c.room = null;
     if (c.watcher) for (const x of room.clients) this.pushView(room, x);
     if (c.playerId && ![...room.clients].some((x) => x.playerId === c.playerId)) {
-      this.dispatch(room, { type: "connect", id: c.playerId, connected: false });
+      this.dispatch(room, { type: "connect", id: c.playerId, connected: false, now: Date.now() });
     }
   }
 
@@ -558,7 +558,7 @@ function emptyRoom(): RoomState {
 
 const PACES: Pace[] = ["none", "calm", "fast"];
 
-const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "close", "ready", "next", "pause", "resume", "kick", "again", "choosePack"] satisfies ClientAction["type"][]);
+const CLIENT_ACTIONS = new Set<string>(["start", "pick", "bank", "submitOrder", "submitNumber", "submitChoice", "draft", "close", "ready", "next", "pause", "resume", "kick", "again", "choosePack"] satisfies ClientAction["type"][]);
 
 /** Settings from a client, checked field by field; null when anything is off. */
 export function cleanSettings(raw: unknown): RoomSettings | null {

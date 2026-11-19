@@ -3,12 +3,12 @@ title: Svet a zemepis
 description: Hlavné mestá, susedia, rieky, vrchy, vlajky, meny a slávne pamiatky z celého sveta.
 category: zemepis
 lang: sk
-version: 1
+version: 3
 questions:
   - id: hlavne-mesta-miesanie
     type: pick
     prompt: Ktoré z týchto miest sú hlavnými mestami svojich štátov?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/List_of_national_capitals
     correct:
       - text: Canberra
@@ -50,7 +50,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Germany
     correct:
       - text: Dánsko
-        why: Jediná pozemná hranica pevninského Dánska je práve s Nemeckom (cez Grónsko má od roku 2022 hranicu aj s Kanadou).
+        why: Jediná pozemná hranica pevninského Dánska je práve s Nemeckom (cez Grónsko má od dohody o ostrove Hans hranicu aj s Kanadou).
       - text: Poľsko
         why: Hranica vedie hlavne po Odre a Nise.
       - text: Česko
@@ -357,7 +357,7 @@ questions:
       - text: Grécko
         why: Nie je to severský kríž.
       - text: Veľká Británia
-        why: Union Jack zložený z viacerých krížov, ale nejde o severský kríž.
+        why: Union Jack je zložený z viacerých krížov, ale nejde o severský kríž.
       - text: Estónsko
         why: Modro-čierno-biela vodorovná trikolóra.
       - text: Holandsko
@@ -489,19 +489,19 @@ questions:
         why: Rovník prechádza cez Indonéziu.
     wrong:
       - text: Nigéria
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Tanzánia
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Peru
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Venezuela
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Etiópia
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Filipíny
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
       - text: Madagaskar
-        why: Rovník ňou po súši neprechádza.
+        why: Rovník cez túto krajinu po súši neprechádza.
 
   - id: poradie-vrcholy
     type: order
@@ -512,7 +512,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Seven_Summits
     items:
       - { text: Aconcagua, value: 6961 }
-      - { text: Denali, value: 6194 }
+      - { text: Denali, value: 6190 }
       - { text: Kilimandžáro, value: 5895 }
       - { text: Elbrus, value: 5642 }
       - { text: Vinson, value: 4892 }
@@ -621,7 +621,7 @@ questions:
   - id: choice-machu-picchu
     type: choice
     prompt: V ktorej krajine leží inkské mesto Machu Picchu?
-    difficulty: 2
+    difficulty: 1
     source: https://en.wikipedia.org/wiki/Machu_Picchu
     correct: { text: "Peru", why: "Leží v regióne Cusco, asi 80 km severozápadne od mesta Cusco." }
     wrong:
@@ -639,3 +639,277 @@ questions:
       - { text: "Maďarsko", why: "Má červeno-bielo-zelenú vlajku, ale pruhy sú vodorovné." }
       - { text: "Mexiko", why: "Pruhy sú rovnaké, no v strede má štátny znak s orlom." }
       - { text: "Írsko", why: "Zvislé pruhy, ale zelená, biela a oranžová." }
+
+  - id: vlavo-jazda
+    type: pick
+    prompt: V ktorých štátoch jazdia autá po ľavej strane cesty?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic
+    correct:
+      - text: Veľká Británia
+        why: Ľavostranná premávka tu platí stáročia a s impériom sa rozšírila do sveta.
+      - text: Japonsko
+        why: Nikdy nebolo súčasťou Britského impéria, jazdí sa tam však tiež vľavo.
+      - text: India
+        why: Ľavostranná premávka zostala z čias britskej vlády.
+      - text: Austrália
+        why: Jazdí sa vľavo, rovnako ako na Novom Zélande.
+      - text: Írsko
+        why: Ostrov pri Británii, kde sa jazdí vľavo rovnako ako tam.
+      - text: Cyprus
+        why: Člen EÚ, v ktorom sa jazdí vľavo, podobne ako na Malte.
+      - text: Malta
+        why: Bývalá britská kolónia, jazdí sa vľavo.
+      - text: Thajsko
+        why: Jazdí sa vľavo, hoci Kambodža, Laos aj Mjanmarsko jazdia vpravo.
+    wrong:
+      - text: Švédsko
+        why: Vľavo sa jazdilo až do roku 1967, potom sa celá krajina prešla na pravú stranu.
+      - text: USA
+        why: Pravostranná premávka.
+      - text: Kanada
+        why: Pravostranná premávka.
+      - text: Francúzsko
+        why: Pravostranná premávka.
+      - text: Brazília
+        why: Pravostranná premávka.
+      - text: Čína
+        why: Pravostranná premávka.
+      - text: Mexiko
+        why: Pravostranná premávka.
+
+  - id: dagen-h-rok
+    type: number
+    prompt: V ktorom roku Švédsko zo dňa na deň prešlo z ľavostrannej na pravostrannú premávku?
+    answer: 1967
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: Stalo sa to v nedeľu 3. septembra 1967 a akcia sa volala Dagen H.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Dagen_H
+
+  - id: casove-pasma-francuzsko
+    type: number
+    prompt: Koľko časových pásiem má Francúzsko, ak rátame aj zámorské územia?
+    answer: 12
+    unit: pásiem
+    scale: linear
+    tolerance: 1
+    asOf: "2026-11"
+    why: Rozhodujú ostrovy v Tichom a Indickom oceáne a v Karibiku; pevninské Francúzsko má jedno.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/List_of_time_zones_by_country
+
+  - id: najvyssia-hora-sveta
+    type: number
+    prompt: Aký vysoký je Mount Everest, najvyššia hora sveta, v metroch nad morom?
+    answer: 8849
+    unit: m n. m.
+    scale: linear
+    tolerance: 50
+    asOf: "2026-11"
+    why: Spoločné meranie Nepálu a Číny z roku 2020 dalo 8 848,86 m.
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Mount_Everest
+
+  - id: staty-afriky
+    type: number
+    prompt: Koľko suverénnych štátov leží v Afrike?
+    answer: 54
+    unit: štátov
+    scale: linear
+    tolerance: 2
+    asOf: "2026-11"
+    why: Je to takmer tretina všetkých členov OSN.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Africa
+
+  - id: poradie-pustatiny
+    type: order
+    prompt: Zoraď púšte od najrozľahlejšej.
+    direction: desc
+    unit: km2
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_deserts_by_area
+    items:
+      - { text: Sahara, value: 9200000 }
+      - { text: Arabská púšť, value: 2330000 }
+      - { text: Gobi, value: 1295000 }
+      - { text: Kalahari, value: 900000 }
+      - { text: Patagónska púšť, value: 673000 }
+
+  - id: poradie-najmensie-staty
+    type: order
+    prompt: Zoraď štáty od najmenšieho.
+    direction: asc
+    unit: km2
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
+    items:
+      - { text: Vatikán, value: 0.44 }
+      - { text: Monako, value: 2 }
+      - { text: Nauru, value: 21 }
+      - { text: San Maríno, value: 61 }
+      - { text: Lichtenštajnsko, value: 160 }
+
+  - id: umele-kanaly
+    type: pick
+    prompt: Ktoré z týchto vodných ciest vykopali ľudia ako umelé kanály?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Corinth_Canal
+    correct:
+      - text: Suezský prieplav
+        why: Spája Stredozemné a Červené more; otvorili ho v roku 1869.
+      - text: Panamský prieplav
+        why: Spája Atlantik s Tichým oceánom, otvorili ho v roku 1914.
+      - text: Kielsky prieplav
+        why: Spája Severné a Baltské more, takže lode nemusia obchádzať Dánsko.
+      - text: Korintský prieplav
+        why: V Grécku, dokončený v roku 1893.
+    wrong:
+      - text: Gibraltársky prieliv
+        why: Prirodzený prieliv medzi Španielskom a Marokom.
+      - text: Bospor
+        why: Prirodzený prieliv cez Istanbul.
+      - text: Lamanšský prieliv
+        why: Prirodzený prieliv medzi Anglickom a Francúzskom.
+      - text: Hormuzský prieliv
+        why: Prirodzený prieliv medzi Perzským a Ománskym zálivom.
+      - text: Malacký prieliv
+        why: Prirodzený prieliv medzi Malajským polostrovom a Sumatrou.
+      - text: Magellanov prieliv
+        why: Prirodzený prieliv na južnom cípe Južnej Ameriky.
+
+  - id: pohoria-azie
+    type: pick
+    prompt: Ktoré z týchto pohorí ležia v Ázii?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_mountain_ranges
+    correct:
+      - text: Himaláje
+        why: Najvyššie pohorie sveta s Mount Everestom.
+      - text: Karakoram
+        why: Leží tu K2, druhá najvyššia hora sveta.
+      - text: Hindúkuš
+        why: Tiahne sa z Afganistanu do Pakistanu.
+      - text: Ťan-šan
+        why: Názov znamená Nebeské hory.
+      - text: Altaj
+        why: Spája Rusko, Kazachstan, Mongolsko a Čínu.
+    wrong:
+      - text: Andy
+        why: Najdlhšie pohorie sveta, v Južnej Amerike.
+      - text: Alpy
+        why: Pohorie v strednej Európe.
+      - text: Pyreneje
+        why: Hraničné pohorie medzi Španielskom a Francúzskom.
+      - text: Skalnaté hory
+        why: Pohorie v Severnej Amerike.
+      - text: Atlas
+        why: Pohorie v severnej Afrike.
+      - text: Apalačské pohorie
+        why: Pohorie na východe Severnej Ameriky.
+
+  - id: zeme-podla-osob
+    type: pick
+    prompt: Ktoré štáty majú názov odvodený od mena konkrétneho človeka alebo rodu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_country-name_etymologies
+    correct:
+      - text: Bolívia
+        why: Pomenovaná po Simónovi Bolívarovi, vodcovi bojov za nezávislosť.
+      - text: Kolumbia
+        why: Názov znamená Kolumbova zem.
+      - text: Filipíny
+        why: Pomenované po španielskom kráľovi Filipovi II.
+      - text: Saudská Arábia
+        why: Pomenovaná po vládnucej dynastii Saudovcov.
+      - text: Maurícius
+        why: Ostrov dostal meno po Mauricovi Oranžskom, holandskom štátnom správcovi.
+    wrong:
+      - text: Argentína
+        why: Názov pochádza z latinského argentum, strieborný.
+      - text: Ekvádor
+        why: Po španielsky znamená rovník.
+      - text: Brazília
+        why: Pomenovaná po farbiarskom dreve brazil, nie po osobe.
+      - text: Austrália
+        why: Z latinského australis, južný.
+      - text: Kostarika
+        why: Po španielsky bohaté pobrežie.
+      - text: Island
+        why: Názov znamená krajina ľadu.
+
+  - id: obklopene-staty
+    type: pick
+    prompt: Ktoré štáty sú celé obklopené územím jediného iného štátu?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/List_of_enclaves_and_exclaves
+    correct:
+      - text: Lesotho
+        why: Leží celé vnútri Juhoafrickej republiky.
+      - text: San Maríno
+        why: Celé obklopené Talianskom.
+      - text: Vatikán
+        why: Najmenší štát sveta leží vnútri Ríma.
+    wrong:
+      - text: Monako
+        why: Hraničí iba s Francúzskom, no má pobrežie Stredozemného mora.
+      - text: Andorra
+        why: Hraničí s dvoma štátmi, Španielskom a Francúzskom.
+      - text: Lichtenštajnsko
+        why: Hraničí s dvoma štátmi, Švajčiarskom a Rakúskom.
+      - text: Luxembursko
+        why: Hraničí s tromi štátmi.
+      - text: Brunej
+        why: Obklopuje ho Malajzia, ale má aj pobrežie Juhočínskeho mora.
+      - text: Eswatini
+        why: Hraničí s dvoma štátmi, Juhoafrickou republikou a Mozambikom.
+      - text: Malta
+        why: Ostrovný štát obklopený morom.
+
+  - id: choice-dvojnasobne-vnutrozemsky
+    type: choice
+    prompt: Ktorý z týchto štátov je dvojnásobne vnútrozemský, teda obklopený len krajinami bez prístupu k moru?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Liechtenstein
+    correct: { text: "Lichtenštajnsko", why: "Susedí len so Švajčiarskom a Rakúskom; dvojnásobne vnútrozemský je ešte Uzbekistan." }
+    wrong:
+      - { text: "Luxembursko", why: "Susedí aj s Belgickom a Francúzskom, ktoré more majú." }
+      - { text: "Slovensko", why: "Susedí s Poľskom a Ukrajinou, ktoré k moru prístup majú." }
+      - { text: "Maďarsko", why: "Susedí s Chorvátskom a Rumunskom, ktoré majú more." }
+
+  - id: choice-tri-hlavne-mesta
+    type: choice
+    prompt: Ktorý z týchto štátov má tri hlavné mestá, pre vládu, parlament a súdnictvo?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/South_Africa
+    correct: { text: "Juhoafrická republika", why: "Vláda sídli v Pretórii, parlament v Kapskom Meste a najvyšší odvolací súd v Bloemfonteine." }
+    wrong:
+      - { text: "Bolívia", why: "Má dve: ústavným je Sucre a sídlom vlády La Paz." }
+      - { text: "Holandsko", why: "Hlavné mesto je Amsterdam, vláda a parlament sídlia v Haagu." }
+      - { text: "Srí Lanka", why: "Úradným hlavným mestom je Šrí Džajavardanapura Kotte, Colombo je obchodné centrum." }
+
+  - id: choice-stara-hlavne-mjanmarsko
+    type: choice
+    prompt: Ktoré mesto bolo hlavným mestom Mjanmarska predtým, než vláda postavila Naypyidaw a presunula tam hlavné mesto?
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Naypyidaw
+    correct: { text: "Rangún", why: "Dnes sa volá Yangon a je stále najväčším mestom krajiny." }
+    wrong:
+      - { text: "Mandalaj", why: "Druhé najväčšie mesto, hlavným mestom bolo naposledy v 19. storočí." }
+      - { text: "Bagan", why: "Stredoveké chrámové mesto." }
+      - { text: "Bangkok", why: "Hlavné mesto susedného Thajska." }
+
+  - id: choice-najvacsi-ostrov
+    type: choice
+    prompt: Ktorý je najväčší ostrov sveta, ak sa Austrália počíta ako kontinent?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/List_of_islands_by_area
+    correct: { text: "Grónsko", why: "Má viac ako 2 milióny km2 a patrí Dánsku." }
+    wrong:
+      - { text: "Nová Guinea", why: "Druhý najväčší, delia sa oň Indonézia a Papua-Nová Guinea." }
+      - { text: "Borneo", why: "Tretí najväčší, delia sa oň tri štáty." }
+      - { text: "Madagaskar", why: "Štvrtý najväčší ostrov sveta." }

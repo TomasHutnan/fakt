@@ -4,7 +4,7 @@ description: Najvyšší, najstarší, najrýchlejší a najdrahší – ľudia,
 category: kultura
 lang: sk
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: najstarsi-ludia
@@ -391,21 +391,6 @@ questions:
       - { text: Jyoti Amgeová, value: 62.8, why: "Najmenšia žijúca žena, Indka." }
       - { text: Chandra Bahadur Dangi, value: 54.6, why: "Najmenší overený dospelý v histórii, Nepálčan." }
 
-  - id: vek-najstarsich
-    type: order
-    prompt: Zoraď najstarších ľudí v histórii podľa dožitého veku od najstaršieho.
-    direction: desc
-    unit: rokov
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people
-    tags: [ludia, vek]
-    items:
-      - { text: Jeanne Calmentová, value: 122, why: "122 rokov a 164 dní, Francúzsko." }
-      - { text: Kane Tanaková, value: 119, why: "119 rokov a 107 dní, Japonsko." }
-      - { text: Lucile Randonová, value: 118, why: "118 rokov a 340 dní, Francúzsko." }
-      - { text: Maria Branyasová, value: 117, why: "117 rokov a 168 dní, Španielsko." }
-      - { text: Džiroemon Kimura, value: 116, why: "116 rokov a 54 dní, najstarší muž v histórii." }
-
   - id: najvyssie-budovy
     type: order
     prompt: Zoraď stavby od najvyššej.
@@ -480,19 +465,6 @@ questions:
     why: "Rekord z roku 2021. Ženský rekord drží Miki Sudo s 51 kusmi."
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Nathan%27s_Hot_Dog_Eating_Contest
-    tags: [jedlo]
-
-  - id: cislo-pizza
-    type: number
-    prompt: Koľko štvorcových metrov mala najväčšia pizza na svete, upečená v Los Angeles v roku 2023?
-    answer: 1297
-    unit: m²
-    scale: log
-    tolerance: 0.2
-    asOf: "2026-11"
-    why: "Presne 1 296,72 m², zhruba ako päť tenisových kurtov. Upiekol ju youtuber Airrack s Pizza Hut."
-    difficulty: 3
-    source: https://www.guinnessworldrecords.com/world-records/largest-pizza
     tags: [jedlo]
 
   - id: cislo-polyakov

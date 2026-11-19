@@ -353,7 +353,7 @@ function reveal(s: GameState): GameState {
     ...p,
     score: p.score + results.filter((r) => r.player === i).reduce((n, r) => n + r.points, 0),
   }));
-  const history = [...(s.history ?? []), roundRecord(s.card, results)];
+  const history = [...(s.history ?? []), roundRecord(s.card, results, !!s.tiebreak)];
   return { ...s, results, players, history, phase: "reveal" };
 }
 

@@ -5,7 +5,7 @@ category: kultura
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: pelisky-hlasky
     type: pick
@@ -124,7 +124,7 @@ questions:
   - id: casablanca-hlasky
     type: pick
     prompt: "Ktoré z týchto viet zaznejú vo filme Casablanca (1942)?"
-    difficulty: 2
+    difficulty: 3
     source: "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movie_Quotes https://en.wikipedia.org/wiki/Play_it_again,_Sam"
     correct:
       - { text: "Here's looking at you, kid.", why: "V ankete AFI piata najlepšia filmová hláška." }
@@ -332,17 +332,6 @@ questions:
       - { text: "Karol Polák", why: "Legendárny komentátor, autor hlášky „Beží nám pätnásta minúta!“" }
       - { text: "Peter Bondra", why: "Ten zlatý gól strelil, nekomentoval ho." }
 
-  - id: satan-absolutne-vitazstvo
-    type: choice
-    prompt: "Kto po finále v Göteborgu 2002 povedal: „Neviem o ničom porovnateľnom. Je to absolútne víťazstvo. Nie je nič viac, čo by sme mohli dokázať“?"
-    difficulty: 2
-    source: "https://www.teraz.sk/ms-v-hokeji-2022/hokej-ms2002-zlato-od-triumfalneho-go/632448-clanok.html https://www.teraz.sk/ms-v-hokeji-2022/bondra-zlaty-gol-ktory-som-dal-bol/632449-clanok.html"
-    correct: { text: "Miroslav Šatan", why: "Kapitán tímu, najproduktívnejší hráč a MVP turnaja." }
-    wrong:
-      - { text: "Peter Bondra", why: "Strelec zlatého gólu; po rokoch povedal, že to bol „gól celého mužstva“." }
-      - { text: "Ján Filc", why: "Tréner zlatého tímu." }
-      - { text: "Žigmund Pálffy", why: "Ten Bondrovi prihral na zlatý gól." }
-
   - id: bondra-sekundy
     type: number
     prompt: "Koľko sekúnd pred koncom finále MS 2002 strelil Peter Bondra víťazný gól na 4:3?"
@@ -357,7 +346,7 @@ questions:
   - id: jagr-barcelona
     type: choice
     prompt: "Kto po zápase so Slovenskom na MS 2011 žartoval: „My hrajeme jako Barcelona, akorát nám první dvě třetiny chyběl Messi“?"
-    difficulty: 2
+    difficulty: 1
     source: "https://cs.wikiquote.org/wiki/Jarom%C3%ADr_J%C3%A1gr"
     correct: { text: "Jaromír Jágr", why: "Povedal to v rozhovore pre Českú televíziu; Česi federálne derby vyhrali." }
     wrong:
@@ -422,7 +411,7 @@ questions:
   - id: elvis-left-the-building
     type: choice
     prompt: "Kto prvý raz ohlásil „Elvis has left the building“ (Elvis opustil budovu)?"
-    difficulty: 3
+    difficulty: 2
     source: "https://en.wikipedia.org/wiki/Elvis_has_left_the_building"
     correct: { text: "Promotér Horace Logan", why: "V decembri 1956 v Shreveporte, aby sa fanúšikovia prestali dožadovať prídavku." }
     wrong:
