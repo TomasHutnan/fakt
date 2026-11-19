@@ -7,7 +7,7 @@ license: CC0-1.0
 adult: false
 defaultOn: false         # off by default: a few quotes are vulgar
 warnings: [vulgar]
-version: 1
+version: 2
 questions:
   - id: hlasky-danko
     type: pick
@@ -328,7 +328,7 @@ questions:
   - id: hlasky-zeny
     type: pick
     prompt: "Ktoré z týchto výrokov povedali ženy?"
-    difficulty: 1
+    difficulty: 2
     source: "https://www.pravda.sk/spravy/domace/clanok/168940-povedali-v-roku-2010 https://www.topky.sk/cl/10/9278921/Bitky--stiplave-urazky-aj-palenka--TOP-hlasky-politikov--ktore-ovladli-rok-2025--VIDEO-Parlament-ako-reality-show https://www.topky.sk/cl/10/2919945/Pojdete-do-kolien--TOTO-su-TOP-hlasky-politikov-za-rok-2024--ktore-sa-stali-viralnymi https://dennikn.sk/833687/vladimir-meciar-toto-je-desat-prihod-z-jeho-zivota-ktore-by-ste-mali-poznat-80/"
     correct:
       - { text: "Riško, drž balónik a čakaj", why: "Iveta Radičová, volebná noc 2010." }
@@ -502,7 +502,7 @@ questions:
     scale: linear
     tolerance: 1
     why: "Približne 12 percent; Radičová potom zostavila vládu aj so SaS a Sulík sa stal predsedom parlamentu."
-    difficulty: 2
+    difficulty: 3
     source: "https://dennikn.sk/1751269/sulik-nechce-drzat-balonik-a-drzi-sa-kampane-ktora-mu-pred-styrmi-rokmi-priniesla-12-percent/"
 
   - id: rok-spanombohom

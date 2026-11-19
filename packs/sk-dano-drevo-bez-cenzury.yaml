@@ -5,7 +5,7 @@ category: kultura
 lang: sk
 adult: true
 warnings: [vulgar, sexual, racism, abuse, dark-humor]
-version: 1
+version: 2
 questions:
   # --- Starý Jano ---
 
@@ -370,7 +370,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Kurva, kurvy, kurvu, kurví a podobné tvary začínajúce na „kurv-“: 23-krát v prvom filme a 34-krát v Turnaji (bez názvu skladby Špinavá kurva). Tvary so „skurv-“ (skurvený, skurvysyn) sú navyše ďalších 18."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
     tags: [pocet]
 
@@ -394,7 +394,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Cigán, Cigáň, cigánsky, Cigánka, Cigoš a ďalšie tvary: 5-krát v prvom filme a 38-krát v Turnaji. Slovo „Róm“ a jeho tvary (Romák, rómsky) je v titulkoch len 7-krát."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
     tags: [pocet]
 
@@ -406,7 +406,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Slová začínajúce na „maďar-“: 2-krát v prvom filme a 22-krát v Turnaji, od „mančaftu Maďarov zo Stredy nad Bodrogom“ po Šlotove hodiny dejepisu. „Staromaďarčinu“ z prvého filmu nerátame."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a tajomná komnata a Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
     tags: [pocet]
 
@@ -430,7 +430,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Starý Jano, Starého Jana, Starému Janovi, so Starým Janom: 37-krát v prvom filme. V Turnaji ešte 12-krát, ak rátame aj „Starého Jánoša“ z maďarského súdu."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a tajomná komnata (titulky, počet výskytov)"
     tags: [pocet]
 

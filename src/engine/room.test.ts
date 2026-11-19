@@ -499,6 +499,66 @@ describe("room card formats", () => {
     expect(sim.s.results.map((r) => r.points)).toEqual([worth, worth, worth]);
   });
 
+  it("drafts: unsent order, number and choice answers are scored when time runs out", () => {
+    for (const kind of ["order", "number", "choice"] as const) {
+      const sim = mix();
+      const card = until(sim, (c) => c.type === kind);
+      if (card.type === "order") {
+        sim.act("h", { type: "draft", arrangement: card.solution });
+        sim.act("p1", { type: "draft", arrangement: card.solution.slice().reverse() });
+      } else if (card.type === "number") {
+        sim.act("h", { type: "draft", value: card.answer });
+        sim.act("p1", { type: "draft", value: card.answer * 1000 });
+      } else if (card.type === "choice") {
+        const right = card.options.findIndex((o) => o.correct);
+        sim.act("h", { type: "draft", option: right });
+        sim.act("p1", { type: "draft", option: (right + 1) % card.options.length });
+      }
+      expect(sim.s.phase).toBe("question"); // a draft is not an answer
+      sim.advance(120_000);
+      expect(sim.s.phase).toBe("reveal");
+      // h scored its draft, p1 scored its (bad) draft, p2 sent nothing.
+      expect(sim.s.results.map((r) => r.playerId)).toEqual(["h", "p1"]);
+      expect(sim.s.results[0].points).toBeGreaterThan(sim.s.results[1].points);
+      expect(sim.s.drafts).toEqual({});
+    }
+  });
+
+  it("drafts: a submitted answer wins, the last draft counts, bad drafts are refused", () => {
+    const sim = mix();
+    const card = until(sim, (c) => c.type === "order") as OrderCard;
+    const n = card.items.length;
+    const before = sim.s;
+    sim.act("h", { type: "draft", arrangement: [0, 0, 1, 2, 3].slice(0, n) });
+    sim.act("h", { type: "draft", arrangement: [0] });
+    sim.act("h", { type: "draft", value: 5 });
+    sim.act("h", { type: "draft", option: 1 });
+    sim.act("nobody", { type: "draft", arrangement: card.solution });
+    expect(sim.s).toBe(before);
+    sim.act("h", { type: "draft", arrangement: card.solution.slice().reverse() });
+    sim.act("h", { type: "draft", arrangement: card.solution });
+    sim.act("p1", { type: "draft", arrangement: card.solution });
+    sim.act("p1", { type: "submitOrder", arrangement: card.solution.slice().reverse() });
+    const after = sim.s;
+    sim.act("p1", { type: "draft", arrangement: card.solution }); // too late: already submitted
+    expect(sim.s).toBe(after);
+    sim.act("h", { type: "close" });
+    expect(sim.s.results.find((r) => r.playerId === "h")!.points).toBe(n * POINTS.orderPerPosition + POINTS.orderPerfectBonus);
+    expect(sim.s.results.find((r) => r.playerId === "p1")!.answer).toEqual({ type: "order", arrangement: card.solution.slice().reverse() });
+  });
+
+  it("drafts never reach any view", () => {
+    const sim = mix();
+    const card = until(sim, (c) => c.type === "number");
+    if (card.type !== "number") throw new Error();
+    sim.act("p1", { type: "draft", value: 123456.789 });
+    for (const you of ["h", "p1", "p2", null]) {
+      const v = viewFor(sim.s, you);
+      expect(JSON.stringify(v)).not.toContain("123456.789");
+      expect(v.mine).toBeNull();
+    }
+  });
+
   it("timers depend on the card kind", () => {
     const sim = new Sim(["Jano"], { mode: "mix", pace: "calm", rounds: 20 });
     sim.act("h", { type: "start" });
@@ -604,6 +664,51 @@ describe("room rounds and game end", () => {
     }
     // 6 pick questions: the second game of 3 uses the other 3.
     expect(second.filter((k) => first.includes(k))).toEqual([]);
+  });
+
+  it("tie-break reveal: only the closer leader wins and is named, nobody is called exact", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    sim.act("h", { type: "next" });
+    const n = sim.s.card as NumberCard;
+    const near = n.scale === "log" ? n.answer * (1 + n.tolerance / 4) : n.answer + n.tolerance / 4;
+    const farther = n.scale === "log" ? n.answer * (1 + n.tolerance / 2) : n.answer + n.tolerance / 2;
+    sim.act("h", { type: "submitNumber", value: near });
+    sim.act("p1", { type: "submitNumber", value: farther });
+    const v = viewFor(sim.s, "h");
+    expect(v.players[0].score - v.players[1].score).toBe(1);
+    expect(v.social).toEqual([{ kind: "near", players: [0] }]);
+    sim.act("h", { type: "next" });
+    const scores = viewFor(sim.s, "h").players.map((p) => p.score);
+    expect(scores[0]).toBeGreaterThan(scores[1]);
+  });
+
+  it("a player dropping out closes the question when everyone else has answered", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 3, pace: "none", lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    expect(sim.s.phase).toBe("question");
+    sim.raw({ type: "connect", id: "p2", connected: false, now: sim.now });
+    expect(sim.s.phase).toBe("reveal");
+  });
+
+  it("kicking a tied leader during the tie-break ends the game on the standings", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    answerOne(sim, "p2", card, "worst");
+    sim.act("h", { type: "next" });
+    expect(sim.s.tiebreak).toEqual(["h", "p1"]);
+    sim.act("h", { type: "kick", id: "p1" });
+    expect(sim.s.phase).toBe("over");
+    expect(sim.s.tiebreak).toBeNull();
   });
 
   it("a tie for first goes to a tie-break that only the tied leaders answer", () => {
@@ -715,6 +820,20 @@ describe("room views", () => {
     expect(v.card).toBeNull();
     expect(v.results).toHaveLength(2);
     expect(v.you).toBeNull();
+  });
+
+  it("the finished game lists the played cards, and only then", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 3, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const keys: string[] = [];
+    while (sim.s.phase !== "over") {
+      expect(viewFor(sim.s, "h").played).toEqual([]);
+      keys.push(sim.s.card!.key);
+      sim.act("h", { type: "close" });
+      sim.act("h", { type: "next" });
+    }
+    expect(viewFor(sim.s, "h").played).toEqual(keys);
+    expect(viewFor(sim.s, null).played).toEqual(keys);
   });
 
   it("a stranger's view has no seat", () => {

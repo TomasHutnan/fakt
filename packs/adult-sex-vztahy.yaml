@@ -6,7 +6,7 @@ lang: sk
 license: CC0-1.0
 adult: true
 warnings: [sexual]
-version: 2
+version: 3
 questions:
   # ---------- PICK ----------
   - id: antikoncepcia-pod-1-percento
@@ -635,17 +635,6 @@ questions:
       - { text: Šafran, why: Šafran sa pestuje dodnes. }
       - { text: Mandragora, why: Mandragora rastie dodnes. }
       - { text: Myrta, why: Myrta rastie dodnes. }
-
-  - id: predejakulat
-    type: choice
-    prompt: Koľko mužov z 27 malo v štúdii z roku 2011 spermie v predejakulačnej tekutine?
-    difficulty: 2
-    source: https://en.wikipedia.org/wiki/Withdrawal_method
-    correct: { text: "11", why: "Teda 41 %, a 10 z nich malo pohyblivé spermie. Prerušovaný styk preto bežne zlyhá asi u 20 % žien za rok." }
-    wrong:
-      - { text: "Ani jeden", why: "Staršie malé štúdie to tvrdili, táto ich vyvrátila." }
-      - { text: "2", why: Bolo ich 11 z 27. }
-      - { text: Všetci, why: Bolo ich 11 z 27. }
 
   - id: fetis-casti-tela
     type: choice

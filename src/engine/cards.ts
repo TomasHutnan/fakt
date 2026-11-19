@@ -5,7 +5,7 @@ import { int, shuffle, type Rng } from "./rng.ts";
 
 export const PICK_OPTIONS = 10;
 export const PICK_MIN_CORRECT = 2;
-export const PICK_MAX_CORRECT = 8;
+export const PICK_MAX_CORRECT = 6;
 export const ORDER_MIN = 4;
 export const ORDER_MAX = 5;
 
@@ -90,7 +90,7 @@ export function makeCard(pack: Pack, q: Question, rng: Rng): Card {
   switch (q.type) {
     case "pick": {
       const total = Math.min(PICK_OPTIONS, q.correct.length + q.wrong.length);
-      // Number of correct options: 2..8, limited by what the question has.
+      // Number of correct options: 2..6, limited by what the question has.
       const lo = Math.max(PICK_MIN_CORRECT, total - q.wrong.length);
       const hi = Math.min(PICK_MAX_CORRECT, q.correct.length, total - PICK_MIN_CORRECT);
       const k = int(rng, lo, Math.max(lo, hi));

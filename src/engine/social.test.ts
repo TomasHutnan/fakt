@@ -67,10 +67,25 @@ describe("social lines", () => {
   });
 
   it("number cards: exact hits beat the closest", () => {
-    expect(socialLines(number, [nm(0, 101), nm(1, 300)])[0]).toEqual({ kind: "exact", players: [0] });
+    expect(socialLines(number, [nm(0, 100), nm(1, 300)])[0]).toEqual({ kind: "exact", players: [0] });
+    // Within tolerance but not the answer: never called exact.
+    expect(socialLines(number, [nm(0, 101), nm(1, 300)])[0]).toEqual({ kind: "near", players: [0] });
     expect(socialLines(number, [nm(0, 150), nm(1, 300)])[0]).toEqual({ kind: "closest", player: 0 });
     // A tie for closest is not news.
     expect(socialLines(number, [nm(0, 200), nm(1, 50)])).toEqual([]);
+  });
+
+  it("tie-break: only the closest guess is named, and nobody is called exact unless they were", () => {
+    // Both within tolerance, one closer: only the closer one.
+    expect(socialLines(number, [nm(0, 101), nm(1, 104)], 2, true)).toEqual([{ kind: "near", players: [0] }]);
+    // Neither within tolerance, one closer.
+    expect(socialLines(number, [nm(0, 150), nm(1, 300)], 2, true)).toEqual([{ kind: "closest", player: 0 }]);
+    // One exact hit.
+    expect(socialLines(number, [nm(0, 100), nm(1, 101)], 2, true)).toEqual([{ kind: "exact", players: [0] }]);
+    // Both exact: shared.
+    expect(socialLines(number, [nm(0, 100), nm(1, 100)], 2, true)).toEqual([{ kind: "exact", players: [0, 1] }]);
+    // Equal distance, not exact: a shared win, nobody singled out.
+    expect(socialLines(number, [nm(0, 200), nm(1, 50)], 2, true)).toEqual([]);
   });
 
   it("order cards: perfect order", () => {
@@ -105,7 +120,7 @@ describe("titles", () => {
       ]),
     ];
     const t = titles(history, [22, 0, 8]);
-    expect(t).toContainEqual({ player: 1, id: "ikarus", value: 10 });
+    expect(t).toContainEqual({ player: 1, id: "ikarus", value: 9 });
     expect(t).toContainEqual({ player: 0, id: "vseved", value: 1 });
     expect(t).toContainEqual({ player: 2, id: "ostrostrelec", value: 1 });
     expect(new Set(t.map((x) => x.player)).size).toBe(t.length);
@@ -130,5 +145,18 @@ describe("titles", () => {
     expect(roundRecord(pick, [pk(0, [0, 1, 7], "busted")]).results[0]).toEqual({ player: 0, points: 0, status: "busted", found: 2 });
     expect(roundRecord(number, [nm(0, 100)]).results[0].hit).toBe(true);
     expect(roundRecord(choice, [ch(0, 2)]).results[0].hit).toBe(false);
+  });
+
+  it("titles: a player who misses every number card is not flawless; ties for last still get the consolation title", () => {
+    const rec = (hits: boolean[]): RoundRecord => ({ type: "number", results: hits.map((hit, player) => ({ player, points: hit ? 1 : 0, hit })) });
+    const t = titles([rec([false, true]), rec([false, true]), rec([false, true])], [0, 3]);
+    expect(t.find((x) => x.id === "neomylny")?.player).not.toBe(0);
+    const three = titles([rec([true, false, false])], [3, 0, 0]);
+    expect(three.map((x) => x.id)).toContain("moralny");
+  });
+
+  it("a tie-break loser within tolerance does not get a number hit", () => {
+    const r = roundRecord(number, [{ player: 0, answer: { type: "number", value: 101 }, points: 1 }, { player: 1, answer: { type: "number", value: 104 }, points: 0 }], true);
+    expect(r.results.map((x) => x.hit)).toEqual([true, false]);
   });
 });

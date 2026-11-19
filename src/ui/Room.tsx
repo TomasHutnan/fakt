@@ -2,7 +2,7 @@ import qrcode from "qrcode-generator";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import type { Card } from "../engine/cards.ts";
 import type { TurnResult } from "../engine/game.ts";
-import { pickPoints } from "../engine/scoring.ts";
+import { nextPickWorth, pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
 import type { ClientState, RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
@@ -329,9 +329,22 @@ function RoomPackPick({ view, send, now, onLeave, banner }: Inner) {
   );
 }
 
+/** Sends the phone's unsent answer to the room shortly after it stops changing, so time running out still counts it. */
+function useDraft(send: (a: ClientAction) => void): (a: ClientAction) => void {
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latest = useRef(send);
+  latest.current = send;
+  useEffect(() => () => void (timer.current && clearTimeout(timer.current)), []);
+  return (a) => {
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(() => latest.current(a), 300);
+  };
+}
+
 function Question({ view, send, now, onLeave, banner }: Inner) {
   const card = view.card!;
   const mine = view.mine;
+  const draft = useDraft(send);
   return (
     <div class="screen screen--game screen--room">
       <header class="topbar topbar--sticky">
@@ -351,9 +364,9 @@ function Question({ view, send, now, onLeave, banner }: Inner) {
           <>
             {card.type === "pick" && <PickInput card={card} mine={mine?.type === "pick" ? mine : null} send={send} />}
             {card.type === "order" &&
-              (mine ? <Sent /> : <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => send({ type: "submitOrder", arrangement })} />)}
+              (mine ? <Sent /> : <OrderInput items={card.items} direction={card.direction} onSubmit={(arrangement) => send({ type: "submitOrder", arrangement })} onDraft={(arrangement) => draft({ type: "draft", arrangement })} />)}
             {card.type === "number" &&
-              (mine ? <Sent /> : <NumberInput unit={card.unit} decimals={card.decimals} onSubmit={(value) => send({ type: "submitNumber", value })} />)}
+              (mine ? <Sent /> : <NumberInput unit={card.unit} decimals={card.decimals} onSubmit={(value) => send({ type: "submitNumber", value })} onDraft={(value) => draft({ type: "draft", value })} />)}
             {card.type === "choice" && <ChoiceInput card={card} mine={mine} send={send} />}
           </>
         )}
@@ -395,7 +408,7 @@ function PickInput({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth(nextPickWorth(found))}</span>}
         {card.correctCount != null && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
@@ -504,13 +517,14 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
         {!view.screens && view.players.length > 1 && (
           <section class="standings-now" aria-label={sk.standingsNow}>
             <h2 class="field__label">{sk.standingsNow}</h2>
-            <Standings view={view} />
+            <Standings view={view} gains />
           </section>
         )}
+        {view.screens ? me && view.players.length > 1 && <p class="standings-line" role="status">{sk.yourPlace(rankOf(view, me), me.score)}</p> : null}
         <CardFoot card={card} />
         <div class="actions">
           <button type="button" class="btn btn--primary btn--block" disabled={ready} onClick={() => send({ type: "ready" })}>
-            {ready ? sk.waitingOthers : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
+            {ready ? (view.paused ? sk.paused : sk.waitingOthers) : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
           </button>
           <Progress view={view} />
           {isController(view) && ready && (
@@ -539,6 +553,8 @@ function RoundResults({ view, card, turns }: { view: RoomView; card: Card; turns
   return (
     <ul class="results">
       {view.players.map((p, i) => {
+        // In a tie-break only the tied leaders played.
+        if (!answering(view, p.id)) return null;
         const t = byPlayer.get(i);
         return (
           <li class={`result${t && t.points > 0 ? " result--scored" : ""}${p.id === view.you ? " result--you" : ""}`} key={p.id}>
@@ -554,7 +570,13 @@ function RoundResults({ view, card, turns }: { view: RoomView; card: Card; turns
   );
 }
 
-function Standings({ view }: { view: RoomView }) {
+function rankOf(view: RoomView, p: PlayerView): number {
+  return view.players.filter((o) => o.score > p.score).length + 1;
+}
+
+/** The ranking; with `gains`, each row also shows what this card was worth. */
+function Standings({ view, gains }: { view: RoomView; gains?: boolean }) {
+  const gained = new Map(view.results.map((r) => [r.playerId, r.points]));
   const sorted = view.players.slice().sort((a, b) => b.score - a.score);
   return (
     <ol class="scoreboard">
@@ -566,7 +588,10 @@ function Standings({ view }: { view: RoomView }) {
             <span class="score-row__name">
               <Avatar player={p} /> {p.name}
             </span>
-            <span class="score-row__score">{p.score}</span>
+            <span class="score-row__score">
+              {gains && (gained.get(p.id) ?? 0) > 0 && <span class="score-row__gain">+{gained.get(p.id)} </span>}
+              {p.score}
+            </span>
           </li>
         );
       })}
@@ -781,10 +806,12 @@ function TvBody({ view, now, onLeave, banner }: Inner) {
                 ))}
               </ul>
             )}
+            {card.type === "choice" && card.compare && <p class="q__hint">{sk.compareHint(card.compare)}</p>}
+            {card.type === "order" && <p class="q__hint">{sk.orderHint(card.direction)}</p>}
             {card.type === "order" && (
               <ul class="order-list">
                 {card.items.map((it) => (
-                  <li class="order-item">
+                  <li class="order-item order-item--static">
                     <span class="order-item__text">{tie(it.text)}</span>
                   </li>
                 ))}
@@ -816,6 +843,12 @@ function TvBody({ view, now, onLeave, banner }: Inner) {
             <AutoScroll key={`r-${view.round}`}>
               <div class="stack">
                 <RoundResults view={view} card={card} turns={turns} />
+                {view.players.length > 1 && (
+                  <section class="standings-now" aria-label={sk.standingsNow}>
+                    <h2 class="field__label">{sk.standingsNow}</h2>
+                    <Standings view={view} gains />
+                  </section>
+                )}
                 <SocialList lines={view.social} name={(i) => view.players[i]?.name ?? "?"} />
               </div>
             </AutoScroll>

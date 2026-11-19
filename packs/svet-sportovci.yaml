@@ -3,7 +3,7 @@ title: Slávni športovci
 description: Jordan, Gretzky, Federer, Pelé, Merckx a ďalšie svetové hviezdy – tituly, kluby, prezývky a rekordy.
 category: sport
 lang: sk
-version: 2
+version: 3
 questions:
   # ---------------------------------------------------------------- PICK
   - id: f1-majstri-sveta
@@ -147,7 +147,7 @@ questions:
   - id: prezyvky-sportovcov
     type: pick
     prompt: Ktoré prezývky patria správnemu športovcovi?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Michael_Jordan
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Diego_Maradona, /Franz_Beckenbauer, /Eddy_Merckx, /Mike_Tyson, /Ronnie_O%27Sullivan, /Jack_Nicklaus, /Kobe_Bryant, /Roberto_Baggio, /Kimi_R%C3%A4ikk%C3%B6nen, /Gerd_M%C3%BCller, /Bernard_Hinault, /Evander_Holyfield, /Tyson_Fury"
     tags: [prezyvky]
@@ -425,49 +425,6 @@ questions:
         why: "Zlatý chlapec, šampión v ľahších kategóriách."
       - text: Marvin Hagler
         why: "Legenda strednej váhy, meno si úradne zmenil na Marvelous Marvin Hagler."
-
-  - id: masters-vitazi
-    type: pick
-    prompt: Kto z týchto golfistov vyhral turnaj Masters v Auguste?
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://en.wikipedia.org/wiki/List_of_Masters_Tournament_champions
-    note: "Ďalšie zdroje: en.wikipedia.org/wiki/2026_Masters_Tournament, /Greg_Norman, /Colin_Montgomerie, /Lee_Westwood, /Ernie_Els, /Brooks_Koepka"
-    tags: [golf]
-    correct:
-      - text: Jack Nicklaus
-        why: "Rekordných šesť víťazstiev, posledné ako 46-ročný."
-      - text: Tiger Woods
-        why: "Päť zelených sák, posledné v roku 2019 po 11 rokoch bez majoru."
-      - text: Arnold Palmer
-        why: "Štyrikrát víťaz Masters."
-      - text: Seve Ballesteros
-        why: "Španiel vyhral dvakrát."
-      - text: Nick Faldo
-        why: "Trikrát víťaz, Angličan."
-      - text: Bernhard Langer
-        why: "Nemec vyhral dvakrát."
-      - text: Rory McIlroy
-        why: "Vyhral v rokoch 2025 a 2026, druhýkrát o úder pred Schefflerom."
-      - text: Scottie Scheffler
-        why: "Dvakrát víťaz, v roku 2026 druhý."
-      - text: Sergio García
-        why: "V roku 2017 v rozstrele proti Justinovi Roseovi."
-      - text: Hideki Matsuyama
-        why: "Japonec, víťaz z roku 2021."
-    wrong:
-      - text: Greg Norman
-        why: "Žralok strávil 331 týždňov na čele svetového rebríčka, Masters nevyhral."
-      - text: Justin Rose
-        why: "Prehral rozstrel v roku 2017 aj v roku 2025."
-      - text: Colin Montgomerie
-        why: "Rekordných osem víťazstiev v rebríčku Európskej túry, ani jeden major."
-      - text: Lee Westwood
-        why: "Svetovou jednotkou bol v rokoch 2010 a 2011, major však nevyhral nikdy."
-      - text: Ernie Els
-        why: "The Big Easy vyhral iné majory, nie Masters."
-      - text: Brooks Koepka
-        why: "Päť majorov, no v Auguste bol v roku 2023 len druhý za Rahmom."
 
   - id: sach-majstri-sveta
     type: pick
@@ -787,7 +744,7 @@ questions:
     prompt: Zoraď olympionikov podľa počtu olympijských zlatých medailí od najviac.
     direction: desc
     unit: zlatých
-    difficulty: 2
+    difficulty: 3
     asOf: "2026-11"
     source: https://en.wikipedia.org/wiki/Michael_Phelps
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Katie_Ledecky, /Marit_Bjørgen, /Simone_Biles, /Nadia_Comăneci, /Katarina_Witt"
@@ -899,18 +856,6 @@ questions:
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov
     tags: [sach]
-
-  - id: cislo-messier-pohare
-    type: number
-    prompt: Koľko Stanleyho pohárov vyhral Mark Messier?
-    answer: 6
-    unit: pohárov
-    scale: linear
-    tolerance: 1
-    why: "Päť s Edmontonom a jeden s Rangers; ako jediný bol kapitánom víťazov s dvoma rôznymi tímami."
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Mark_Messier
-    tags: [hokej, nhl]
 
   # ---------------------------------------------------------------- CHOICE
   - id: velky-jeden

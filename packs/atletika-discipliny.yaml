@@ -3,7 +3,7 @@ title: "Atletika: disciplíny a pravidlá"
 description: Desaťboj, prekážky, chybné štarty, náčinie, kvalifikačné limity, Diamantová liga a prémie – kráľovná športov od preťahovania lanom po Budapešť.
 category: sport
 lang: sk
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: olympijske-discipliny-historicke
@@ -171,7 +171,7 @@ questions:
   - id: halove-ms-discipliny
     type: pick
     prompt: Ktoré disciplíny sa súťažia na halových majstrovstvách sveta?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/2025_World_Athletics_Indoor_Championships
     tags: [hala]
     correct:
@@ -331,86 +331,6 @@ questions:
         why: Disk vietor oproti dokonca nesie ďalej, no limit tu neplatí.
       - text: vrh guľou
         why: 7,26 kg vietor veľmi nepostrčí.
-
-  - id: ultimate-2026-discipliny
-    type: pick
-    prompt: Ktoré mužské disciplíny boli na prvom World Athletics Ultimate Championship v Budapešti 2026?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/World_Athletics_Ultimate_Championship
-    asOf: "2026-11"
-    tags: [Ultimate Championship]
-    correct:
-      - text: beh na 100 m
-        why: Šprinty boli jadrom programu orientovaného na televíziu.
-      - text: beh na 400 m
-        why: V programe mužov aj žien.
-      - text: beh na 800 m
-        why: Stredné trate do 5000 m v programe zostali.
-      - text: beh na 5000 m
-        why: Najdlhší beh programu.
-      - text: beh na 110 m prekážok
-        why: Prekážky boli krátke aj dlhé.
-      - text: beh na 400 m prekážok
-        why: V programe mužov aj žien.
-      - text: skok o žrdi
-        why: Technické disciplíny vyberali podľa toho, ktoré diváci na MS sledovali najradšej.
-      - text: hod kladivom
-        why: U mužov áno, zato ženy kladivo v programe nemali.
-      - text: hod oštepom
-        why: Jediný hod spoločný pre mužov aj ženy.
-    wrong:
-      - text: beh na 10 000 m
-        why: Vyradený, lebo je pre televíziu pridlhý.
-      - text: beh na 3000 m prekážok
-        why: Prekážky s vodnou priekopou tiež vypadli.
-      - text: maratón
-        why: Cestné disciplíny program nemal.
-      - text: vrh guľou
-        why: Muži ani ženy guľu nemali.
-      - text: hod diskom
-        why: Disk v programe chýbal.
-      - text: trojskok
-        why: U mužov nie, ale ženy ho v programe mali.
-      - text: desaťboj
-        why: Viacboje v programe neboli.
-
-  - id: diamantova-liga-pravidla
-    type: pick
-    prompt: Ktoré tvrdenia o Diamantovej lige sú pravdivé?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Diamond_League
-    asOf: "2026-11"
-    tags: [Diamantová liga]
-    correct:
-      - text: Diamantová liga vznikla v roku 2010
-        why: Nahradila Zlatú ligu, ktorá sa konala od roku 1998.
-      - text: Na mítingoch dostáva body najlepších osem (8, 7, 6 … 1)
-        why: Systém platí od roku 2017; body slúžia len na postup do finále.
-      - text: Víťaza disciplíny určí jediné finále, nie súčet bodov
-        why: Od roku 2017 rozhoduje len výsledok finále.
-      - text: Finále je od roku 2021 jeden dvojdňový míting
-        why: Do roku 2019 sa delilo medzi Zürich a Brusel, finále 2020 zrušil covid.
-      - text: Od roku 2024 sa finále strieda medzi Zürichom a Bruselom
-        why: Brusel 2024 a 2026, Zürich 2025; v roku 2023 bolo výnimočne v Eugene.
-      - text: Víťazi Diamantovej ligy 2022 mali voľnú kartu na MS 2023
-        why: Wild card dostali úradujúci majstri sveta a víťazi Diamantovej ligy.
-      - text: Víťazi finále 2026 mali isté miesto na Ultimate Championship
-        why: Finále v Bruseli sa konalo týždeň pred Budapešťou.
-      - text: Víťaz bežnej disciplíny na mítingu dostal v roku 2026 10 000 dolárov
-        why: Vo vybraných disciplínach Diamond+ to bolo dvojnásobne, 20 000 dolárov.
-    wrong:
-      - text: Diamantová liga vznikla v roku 2000
-        why: Prvá sezóna bola 2010.
-      - text: Víťazom sa stane ten, kto má po sezóne najviac bodov
-        why: Tak to bolo v rokoch 2010–2016, odvtedy rozhoduje finále.
-      - text: Body na mítingu dostávajú len prví traja
-        why: Len v rokoch 2010–2015 (4, 2 a 1 bod); dnes boduje osem.
-      - text: Finále sa koná vždy v Zürichu
-        why: Od roku 2024 sa strieda s Bruselom; v roku 2026 bolo v Bruseli.
-      - text: Finále Diamantovej ligy 2023 bolo v Bruseli
-        why: V roku 2023 sa finále výnimočne konalo v Eugene.
-      - text: Víťaz bežnej disciplíny na mítingu dostal v roku 2026 100 000 dolárov
-        why: Bežné víťazstvo na mítingu je za 10 000, v disciplínach Diamond+ za 20 000 dolárov.
 
   - id: premie-v-atletike
     type: pick
@@ -711,19 +631,6 @@ questions:
     tolerance: 0.05
     asOf: "2024"
     why: Presne 10,00 s; rovnaký limit platil aj pre MS 2025 v Tokiu. Ženy potrebovali 11,07 s.
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics_%E2%80%93_Qualification
-    tags: [kvalifikácia, Paríž 2024]
-
-  - id: limit-desatboj-pariz
-    type: number
-    prompt: Koľko bodov bol kvalifikačný limit v desaťboji pre olympiádu v Paríži 2024?
-    answer: 8460
-    unit: bodov
-    scale: log
-    tolerance: 0.02
-    asOf: "2024"
-    why: 8460 bodov; limity rozdelili zhruba polovicu miest, zvyšok svetový rebríček.
     difficulty: 3
     source: https://en.wikipedia.org/wiki/Athletics_at_the_2024_Summer_Olympics_%E2%80%93_Qualification
     tags: [kvalifikácia, Paríž 2024]

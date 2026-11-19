@@ -1,0 +1,498 @@
+id: svet-preslapy
+title: Slávne prešľapy
+description: "Lode, ktoré sa potopili hneď v prístave, sondy zničené chybou v jednotkách, letiská bez lietadiel a výrobky, ktoré nikto nechcel – všetko zdokumentované."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+version: 3
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: preslapy-softver
+    type: pick
+    prompt: "Ktoré z týchto nehôd spôsobila chyba v softvéri alebo v riadiacom programe?"
+    difficulty: 2
+    tags: [vesmír, technika]
+    source: "https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Mariner_1 https://en.wikipedia.org/wiki/Schiaparelli_EDM https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Genesis_(spacecraft) https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/20_Fenchurch_Street https://en.wikipedia.org/wiki/Lake_Peigneur https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport"
+    correct:
+      - { text: "Výbuch rakety Ariane 5 pri jej prvom lete (1996)", why: "Prevod 64-bitového čísla na 16-bitové pretiekol v kóde, ktorý prevzali z Ariane 4." }
+      - { text: "Zničenie sondy Mariner 1 (1962)", why: "V ručne písanej matematickej špecifikácii navádzania chýbala jediná vodorovná čiarka nad symbolom; Arthur C. Clarke to nazval najdrahším spojovníkom v histórii." }
+      - { text: "Pád pristávacieho modulu Schiaparelli na Mars (2016)", why: "Výpočet mu na chvíľu ukázal zápornú výšku, a tak sa správal, akoby už pristál – v skutočnosti bol 3,7 km nad povrchom." }
+    wrong:
+      - { text: "Rozmazané snímky Hubblovho teleskopu", why: "Zrkadlo vybrúsili presne, ale do zlého tvaru: šošovka v testovacom prístroji bola posunutá o 1,3 mm." }
+      - { text: "Neotvorený padák kapsuly Genesis (2004)", why: "Snímač zrýchlenia bol navrhnutý a namontovaný naopak – chyba hardvéru, nie programu." }
+      - { text: "Sklon šikmej veže v Pise", why: "Za sklon môže mäkké podložie a základy hlboké len asi tri metre." }
+      - { text: "Roztavené časti auta pod londýnskym mrakodrapom Walkie-Talkie", why: "Prehnutá sklenená fasáda sústreďovala slnečné lúče na ulicu." }
+      - { text: "Zmiznutie jazera Peigneur v Louisiane (1980)", why: "Vrták ropnej plošiny prerazil strop soľnej bane pod jazerom a voda sa vliala dnu." }
+      - { text: "Francúzske vlaky širšie ako nástupištia (2014)", why: "Železnice dostali neúplné rozmery: údaje zahŕňali len nástupištia mladšie ako 30 rokov." }
+      - { text: "Krach letiska Ciudad Real v Španielsku", why: "Prevádzkovateľ skrachoval v roku 2012, keď odtiaľ odišla posledná letecká spoločnosť." }
+
+  - id: preslapy-jednotky
+    type: pick
+    prompt: "Pri ktorých prešľapoch zohrala hlavnú úlohu zámena jednotiek alebo rozdielne meracie systémy?"
+    difficulty: 2
+    tags: [technika, jednotky]
+    source: "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter https://en.wikipedia.org/wiki/Gimli_Glider https://en.wikipedia.org/wiki/Laufenburg,_Germany https://www.thelocal.com/20100903/29599 https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Millennium_Bridge,_London https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/S-80_Plus-class_submarine https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport"
+    correct:
+      - { text: "Strata sondy Mars Climate Orbiter (1999)", why: "Jeden program počítal impulz motorov v librosilách krát sekunda, druhý čakal newtonsekundy." }
+      - { text: "Boeing 767, ktorému v roku 1983 došlo palivo vo vzduchu", why: "Pri prepočte paliva použili hustotu v librách na liter namiesto kilogramov na liter; v nádržiach bolo len 45 % potrebného množstva." }
+      - { text: "Most cez Rýn v Laufenburgu, ktorého polovice sa nestretli (2003)", why: "Nemecko meria nadmorskú výšku od Severného mora, Švajčiarsko od Stredozemného; známy 27 cm rozdiel omylom zdvojnásobili na 54 cm." }
+    wrong:
+      - { text: "Výbuch rakety Ariane 5 (1996)", why: "Číslo sa nezmestilo do 16-bitovej premennej; jednotky boli v poriadku." }
+      - { text: "Chybne vybrúsené zrkadlo Hubblovho teleskopu", why: "Chybu spôsobila zle zložená testovacia optika, šošovka posunutá o 1,3 mm." }
+      - { text: "Kolísanie londýnskeho mosta Millennium", why: "Most rozkývali chodci, ktorí nevedomky prispôsobili krok jeho kmitaniu." }
+      - { text: "Francúzske vlaky širšie ako nástupištia", why: "Údaje o nástupištiach boli neúplné, nie v zlých jednotkách." }
+      - { text: "Ťažké španielske ponorky S-80", why: "Konštruktéri sa v hmotnosti pomýlili asi o 100 ton; o jednotky nešlo." }
+      - { text: "Šikmá veža v Pise", why: "Za sklon môže mäkké podložie a plytké základy." }
+      - { text: "Letisko Castellón, ktoré roky stálo bez lietadiel", why: "Otvorili ho v roku 2011 bez leteckých spoločností aj bez povolenia na prevádzku." }
+
+  - id: preslapy-vasa
+    type: pick
+    prompt: "Ktoré tvrdenia o švédskej vojnovej lodi Vasa sú pravdivé?"
+    difficulty: 2
+    tags: [lode, história]
+    source: https://en.wikipedia.org/wiki/Vasa_(ship)
+    correct:
+      - { text: "Potopila sa na svojej prvej plavbe v roku 1628", why: "Vyplávala 10. augusta 1628 a potopila sa ešte v štokholmskom prístave." }
+      - { text: "Pri skúške stability po jej palube pobehovalo 30 mužov", why: "Admirál skúšku zastavil po troch behoch, lebo sa bál, že sa loď prevráti – a aj tak ju poslali na more." }
+      - { text: "Voda vnikla dnu otvorenými strieľňami na delá", why: "Silnejší poryv vetra ju naklonil tak, že spodné strieľne sa ponorili pod hladinu." }
+      - { text: "Z morského dna ju vyzdvihli v roku 1961", why: "Na dne preležala 333 rokov a zachovala sa takmer celá." }
+      - { text: "Za potopenie nakoniec nikoho nepotrestali", why: "Vyšetrovanie pred tribunálom Tajnej rady a admirality sa skončilo bez trestu." }
+      - { text: "Stavitelia používali pravítka s rôzne dlhými stopami", why: "Našli sa štyri pravítka: dve vo švédskych stopách, dve v amsterdamských." }
+    wrong:
+      - { text: "Potopili ju poľské lode v bitke", why: "Potopila sa sama, pár minút po stretnutí so silnejším vetrom, bez jediného nepriateľa." }
+      - { text: "Na palube bol aj kráľ Gustáv II. Adolf", why: "Kráľ bol vtedy s armádou v Poľsku; netrpezlivo čakal, kedy loď vypláva." }
+      - { text: "Vrak dodnes leží na dne mora", why: "Stojí v Múzeu Vasa v Štokholme; od roku 1961 ju videlo vyše 45 miliónov ľudí." }
+      - { text: "Potopila sa v prístave v Göteborgu", why: "Potopila sa v Štokholme, kde ju aj postavili." }
+      - { text: "Všetky jej bronzové delá našli až v roku 1961", why: "Vyše 50 z nich vylovili potápači s jednoduchým potápačským zvonom už v 17. storočí." }
+
+  - id: preslapy-pisa
+    type: pick
+    prompt: "Ktoré tvrdenia o šikmej veži v Pise sú pravdivé?"
+    difficulty: 1
+    tags: [stavby, taliansko]
+    source: https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa
+    correct:
+      - { text: "Začala sa nakláňať už počas stavby", why: "V roku 1178, keď stavba dosiahla druhé poschodie." }
+      - { text: "Má základy hlboké len asi tri metre", why: "A to v mäkkom, nestabilnom podloží – chyba bola v návrhu od začiatku." }
+      - { text: "Je mierne zakrivená", why: "Stavitelia robili horné poschodia na jednej strane vyššie, aby sklon vyrovnali." }
+      - { text: "Je to zvonica katedrály", why: "Priestor pre zvony na vrchu pridali až v roku 1372." }
+      - { text: "V roku 1990 ju pre verejnosť zatvorili", why: "Znovu ju otvorili v decembri 2001 po desaťročí stabilizačných prác." }
+      - { text: "Sklon zmenšili tak, že spod vyššej strany odobrali zeminu", why: "Spolu asi 70 ton zeminy." }
+      - { text: "Mäkká pôda ju chráni pred zemetraseniami", why: "Podľa štúdie z roku 2018 veža vďaka nej nerezonuje s otrasmi pôdy." }
+    wrong:
+      - { text: "Naklonila sa po bombardovaní v 2. svetovej vojne", why: "Nakláňala sa už od 12. storočia." }
+      - { text: "Po oprave stojí úplne rovno", why: "Sklon zmenšili z 5,5° na 3,97°, nakláňa sa dodnes." }
+      - { text: "Sklon spôsobilo zemetrasenie", why: "Za sklon môže mäkké podložie; zemetrasenia naopak prečkala." }
+      - { text: "Ako protiváhu k nej pristavili betónový blok", why: "Protiváha bola z olova – 870 ton, uložených od roku 1993." }
+      - { text: "Sklon sa dnes rok čo rok zväčšuje", why: "Po prácach v rokoch 1993 – 2001 ju vyhlásili za stabilnú najmenej na 300 rokov." }
+
+  - id: preslapy-mosty
+    type: pick
+    prompt: "Ktoré tvrdenia o londýnskom moste Millennium a americkom moste Tacoma Narrows sú pravdivé?"
+    difficulty: 1
+    tags: [stavby, mosty]
+    source: "https://en.wikipedia.org/wiki/Millennium_Bridge,_London https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)"
+    correct:
+      - { text: "Most Millennium zatvorili dva dni po otvorení", why: "Londýnčania mu začali hovoriť Wobbly Bridge, kolísavý most." }
+      - { text: "Most Millennium rozkývali samotní chodci", why: "Nevedomky prispôsobovali krok jeho kývaniu, čím ho rozkývali ešte viac." }
+      - { text: "Most Millennium upokojili desiatky tlmičov", why: "37 kvapalinových a 52 ďalších tlmičov; oprava stála 5 miliónov libier." }
+      - { text: "Most Tacoma Narrows sa zrútil v tom istom roku, keď ho otvorili", why: "Otvorili ho 1. júla 1940 a zrútil sa 7. novembra 1940." }
+      - { text: "Robotníci dali mostu Tacoma prezývku Cválajúca Gertie", why: "Vlnil sa vo vetre už počas stavby." }
+      - { text: "Jedinou obeťou zrútenia mosta Tacoma bol pes", why: "Trojnohý kokeršpaniel Tubby zostal v aute uprostred mosta." }
+    wrong:
+      - { text: "Most Tacoma zničil hurikán", why: "Stačil mierny vietor okolo 64 km/h, ktorý most rozkrútil." }
+      - { text: "Most Millennium museli zbúrať a postaviť nanovo", why: "Opravili ho tlmičmi a vo februári 2002 znovu otvorili." }
+      - { text: "Most Millennium je určený aj pre autá", why: "Je to oceľová visutá lávka len pre chodcov." }
+      - { text: "Na mieste mosta Tacoma už nikdy nepostavili nový", why: "Nový most otvorili na tom istom mieste v roku 1950." }
+      - { text: "Most Millennium otvorili presne načas", why: "Otvorili ho 10. júna 2000 s mesačným oneskorením." }
+
+  - id: preslapy-produkty
+    type: pick
+    prompt: "Ktoré tvrdenia o výrobkoch, ktoré prepadli, sú pravdivé?"
+    difficulty: 2
+    tags: [výrobky, technika]
+    source: "https://en.wikipedia.org/wiki/Microsoft_Kin https://en.wikipedia.org/wiki/Quibi https://en.wikipedia.org/wiki/Virtual_Boy https://en.wikipedia.org/wiki/Sinclair_C5 https://en.wikipedia.org/wiki/Fire_Phone https://en.wikipedia.org/wiki/Juicero https://en.wikipedia.org/wiki/Edsel https://en.wikipedia.org/wiki/Zune https://en.wikipedia.org/wiki/N-Gage_(device) https://en.wikipedia.org/wiki/Google%2B"
+    correct:
+      - { text: "Microsoft stiahol telefóny Kin z predaja ešte v roku ich uvedenia", why: "Predávali sa od mája do 30. júna 2010." }
+      - { text: "Streamovacia služba Quibi získala od investorov 1,75 miliardy dolárov", why: "Spustili ju v apríli 2020 a v decembri 2020 skončila." }
+      - { text: "Nintendo Virtual Boy zobrazoval hry len v červenej a čiernej", why: "Je to najmenej predávaná konzola Nintenda, predali len 770 000 kusov." }
+      - { text: "Elektrické vozidlo Sinclair C5 išlo najviac 24 km/h", why: "Zo 14 000 vyrobených kusov predali len 5 000." }
+      - { text: "Amazon kvôli telefónu Fire Phone odpísal 170 miliónov dolárov", why: "Výrobu zastavil v auguste 2015, rok po uvedení." }
+      - { text: "Šťava z vreciek pre lis Juicero sa dala vytlačiť aj rukou", why: "Ukázal to Bloomberg v roku 2017; firma potom predaj lisov zastavila." }
+      - { text: "Edsel bola automobilová značka Fordu", why: "Ford ju zrušil v novembri 1959, ani nie dva a pol roka po uvedení." }
+    wrong:
+      - { text: "Telefóny Kin vyrábal Apple", why: "Boli to telefóny Microsoftu, vyrábala ich firma Sharp a predával Verizon." }
+      - { text: "Quibi vydržalo vyše troch rokov", why: "Skončilo po necelých ôsmich mesiacoch." }
+      - { text: "Virtual Boy predal vyše 10 miliónov kusov", why: "Predal len 770 000 kusov a vyšlo naň iba 22 hier." }
+      - { text: "Sinclair C5 jazdil na benzín", why: "Bol elektrický, na batériu." }
+      - { text: "Hudobný prehrávač Zune vyrábala Sony", why: "Zune predával Microsoft v rokoch 2006 – 2012." }
+      - { text: "Herný telefón N-Gage vyrábal Samsung", why: "Vyrábala ho Nokia; za dva roky predala len 3 milióny kusov." }
+      - { text: "Sociálnu sieť Google+ zrušili po roku", why: "Fungovala od roku 2011 do apríla 2019." }
+
+  - id: preslapy-new-coke
+    type: pick
+    prompt: "V roku 1985 nahradila Coca-Cola svoju receptúru novou, New Coke. Ktoré tvrdenia o tom sú pravdivé?"
+    difficulty: 1
+    tags: [výrobky, reklama]
+    source: https://en.wikipedia.org/wiki/New_Coke
+    correct:
+      - { text: "V slepých testoch chutila ľuďom viac ako pôvodná", why: "Sladšia receptúra porážala v testoch starú Coca-Colu aj Pepsi." }
+      - { text: "Pôvodná receptúra sa vrátila ešte v tom istom roku", why: "Pod názvom Coca-Cola Classic; návrat ohlásili 11. júla 1985." }
+      - { text: "Zákaznícka linka dostávala vyše 1 500 hovorov denne", why: "Pred zmenou ich bolo okolo 400." }
+      - { text: "New Coke sa neskôr predávala ako Coke II", why: "Premenovali ju v roku 1990 a predávala sa až do roku 2002." }
+      - { text: "V roku 2019 sa na chvíľu vrátila kvôli seriálu Stranger Things", why: "Išlo o obmedzenú reklamnú spoluprácu s Netflixom." }
+    wrong:
+      - { text: "Zmena prišla v roku stých narodenín Coca-Coly", why: "O rok skôr: nápoj vznikol v roku 1886, storočnicu oslavoval v roku 1986." }
+      - { text: "Ľuďom nechutila už v testoch", why: "Naopak, testy jasne vyhrávala – nevadila chuť, ale zmena." }
+      - { text: "Pôvodná receptúra sa vrátila až po piatich rokoch", why: "Vrátila sa už po necelých troch mesiacoch." }
+      - { text: "McDonald's zostal aj potom pri New Coke", why: "McDonald's sa hneď po návrate vrátil k pôvodnú Coca-Colu." }
+      - { text: "New Coke bol výrobok firmy Pepsi", why: "Bol to krok samotnej Coca-Coly; sladšia Pepsi ju predtým porážala v testoch." }
+      - { text: "Po návrate pôvodnej Coca-Coly zmizla New Coke okamžite z obchodov", why: "Predávala sa ďalej, od roku 1990 ako Coke II." }
+
+  - id: preslapy-ber
+    type: pick
+    prompt: "Ktoré tvrdenia o novom berlínskom letisku BER sú pravdivé?"
+    difficulty: 1
+    tags: [letiská, nemecko]
+    source: https://en.wikipedia.org/wiki/Berlin_Brandenburg_Airport
+    correct:
+      - { text: "Pôvodne ho mali otvoriť v roku 2011", why: "Plán počítal s otvorením v októbri 2011." }
+      - { text: "Otvorili ho napokon v októbri 2020", why: "31. októbra 2020, uprostred pandémie." }
+      - { text: "Najväčším problémom bol protipožiarny systém", why: "Práve protipožiarna ochrana a signalizácia boli hlavnou príčinou odkladov." }
+      - { text: "Deutsche Bahn žalovala letisko za nevyužívanú stanicu", why: "Vlaková stanica pod letiskom stála bez cestujúcich; letisko muselo platiť odškodné." }
+      - { text: "Druhý terminál otvorili až v roku 2022", why: "Pre pandémiu ho otvorili 24. marca 2022." }
+      - { text: "Po otvorení BER zatvorili letisko Tegel", why: "Posledné aerolinky sa z Tegelu presťahovali do 8. novembra 2020." }
+    wrong:
+      - { text: "BER postavili na mieste letiska Tempelhof", why: "Tempelhof zatvorili už v roku 2008; BER stojí pri bývalom letisku Schönefeld." }
+      - { text: "Stavba stála menej, než sa plánovalo", why: "Už do konca roka 2012 sa náklady takmer zdvojnásobili." }
+      - { text: "BER otvorili v roku 2012 a hneď ho zas zatvorili", why: "Otvorenie plánované na jún 2012 sa nekonalo; prvé lety prišli až v roku 2020." }
+      - { text: "Letisko Tegel funguje popri BER dodnes", why: "Tegel zatvorili v novembri 2020, keď sa všetky aerolinky presťahovali na BER." }
+
+  - id: preslapy-bizarne
+    type: pick
+    prompt: "Ktoré z týchto bizarných príhod sa naozaj stali?"
+    difficulty: 1
+    tags: [kuriozity]
+    source: "https://en.wikipedia.org/wiki/20_Fenchurch_Street https://en.wikipedia.org/wiki/Hughes_H-4_Hercules https://en.wikipedia.org/wiki/Lake_Peigneur https://telex.hu/english/2023/05/08/the-canopy-walkway-without-a-canopy-built-from-eu-funds https://en.wikipedia.org/wiki/Genesis_(spacecraft)"
+    correct:
+      - { text: "Odraz slnka od londýnskeho mrakodrapu roztavil časti zaparkovaného auta", why: "Majiteľovi zaplatili 946 libier za opravu; budove začali hovoriť Walkie-Scorchie." }
+      - { text: "Novinár usmažil pod tým istým mrakodrapom vajce na chodníku", why: "Lúč odrazený od fasády bol až šesťkrát silnejší ako priame slnko." }
+      - { text: "Obrovské drevené lietadlo Spruce Goose vzlietlo jediný raz", why: "V roku 1947 letelo 26 sekúnd asi 21 metrov nad vodou." }
+      - { text: "Celé jazero v Louisiane vytieklo do soľnej bane", why: "V roku 1980 prerazil vrták strop bane; pri spätnom prúdení vznikol 50-metrový vodopád." }
+      - { text: "V Maďarsku postavili z eurofondov chodník v korunách stromov, pri ktorom stromy nie sú", why: "Les pri obci Nyírmártonfalva vyrúbali v roku 2022; starosta sľúbil novú výsadbu." }
+      - { text: "Kapsulu so vzorkami zo Slnka mala chytiť vo vzduchu helikoptéra", why: "Plán misie Genesis; padák sa však neotvoril a kapsula v roku 2004 narazila do púšte v Utahu." }
+    wrong:
+      - { text: "Mrakodrap Walkie-Talkie dostal cenu za najlepšiu novú budovu", why: "Naopak, v roku 2015 dostal Carbuncle Cup pre najhoršiu novú budovu v Británii." }
+      - { text: "Pri vytečení jazera Peigneur zahynuli desiatky ľudí", why: "Nezahynul ani jeden človek, uhynuli tri psy." }
+      - { text: "Jazero Peigneur zostalo navždy vyschnuté", why: "Znovu sa naplnilo, tentoraz slanou vodou z kanála a morského zálivu." }
+      - { text: "Spruce Goose preletelo Atlantik", why: "Letelo len asi míľu, teda 1,6 km." }
+      - { text: "Z 11 člnov, ktoré jazero Peigneur pohltilo, sa už žiadny neukázal", why: "Deväť z jedenástich sa o pár dní samo vynorilo na hladinu." }
+
+  - id: preslapy-hubble
+    type: pick
+    prompt: "Ktoré tvrdenia o chybe Hubblovho vesmírneho teleskopu sú pravdivé?"
+    difficulty: 2
+    tags: [vesmír]
+    source: https://en.wikipedia.org/wiki/Hubble_Space_Telescope
+    correct:
+      - { text: "Zrkadlo bolo na okraji príliš ploché", why: "Asi o 2 200 nanometrov, čo stačilo na rozmazaný obraz." }
+      - { text: "Zrkadlo vybrúsili veľmi presne, ale do zlého tvaru", why: "Preto sa dalo opraviť ako zrak: „okuliarmi“ s rovnakou chybou naopak." }
+      - { text: "Chybu spôsobil zle zložený testovací prístroj", why: "Jedna jeho šošovka bola posunutá o 1,3 mm." }
+      - { text: "Opravu urobili astronauti v roku 1993", why: "Misia raketoplánu STS-61 nainštalovala korekčnú optiku COSTAR." }
+      - { text: "Záložné zrkadlo vyrobil Kodak", why: "Nikdy neletelo, dnes je vystavené v Národnom múzeu letectva a kozmonautiky." }
+    wrong:
+      - { text: "Astronauti vymenili zrkadlo priamo na obežnej dráhe", why: "Výmena na orbite nebola možná, teleskop dostal korekčnú optiku." }
+      - { text: "Teleskop priviezli na opravu späť na Zem", why: "Bolo by to príliš drahé a zdĺhavé." }
+      - { text: "Zrkadlo bolo krivé o niekoľko milimetrov", why: "Chyba mala asi 2,2 mikrometra, vyše tisíckrát menej." }
+      - { text: "Hubble vyniesla ruská raketa", why: "Vyniesol ho raketoplán Discovery 24. apríla 1990." }
+      - { text: "Chybu napravili až v roku 2009", why: "Prvá servisná misia STS-61 ju napravila už v decembri 1993." }
+
+  - id: preslapy-rozpocty
+    type: pick
+    prompt: "Ktoré tvrdenia o predražených a nedokončených stavbách sú pravdivé?"
+    difficulty: 2
+    tags: [stavby, peniaze]
+    source: "https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Scottish_Parliament_Building https://en.wikipedia.org/wiki/Olympic_Stadium_(Montreal) https://en.wikipedia.org/wiki/Garden_Bridge"
+    correct:
+      - { text: "Opera v Sydney mala podľa odhadu z roku 1957 stáť 7 miliónov austrálskych dolárov", why: "Nakoniec stála 102 miliónov a dokončili ju v roku 1973." }
+      - { text: "Budovu škótskeho parlamentu odhadovali na 10 až 40 miliónov libier", why: "Konečná suma bola asi 414 miliónov libier." }
+      - { text: "Montreal splácal olympijský štadión z roku 1976 vyše 30 rokov", why: "Dlh splatili v novembri 2006; štadiónu sa prezýva The Big Owe, veľký dlh." }
+      - { text: "Na montrealský štadión sa skladali fajčiari", why: "Splácal sa zo špeciálnej dane z tabaku; zákaz fajčenia v roku 2006 splátky spomalil." }
+      - { text: "Za londýnsky Garden Bridge minuli 53 miliónov libier, hoci ho nepostavili", why: "Z toho 43 miliónov boli verejné peniaze; projekt ukončili v auguste 2017." }
+    wrong:
+      - { text: "Operu v Sydney dostaval jej autor Jørn Utzon", why: "Utzon v roku 1966 odstúpil, budovu dokončil austrálsky tím." }
+      - { text: "Garden Bridge dnes spája oba brehy Temže", why: "Lávku pre chodcov nikdy nepostavili." }
+      - { text: "Škótsky parlament zasadá vo svojej budove od roku 1999", why: "Do roku 2004 zasadal v sále cirkvi Church of Scotland na The Mound." }
+      - { text: "Strechu montrealského štadióna stihli dokončiť na olympiádu", why: "Veža a strecha boli hotové až v roku 1987." }
+      - { text: "Opera v Sydney stála nakoniec dvojnásobok odhadu", why: "Stála takmer 15-krát viac: 102 miliónov namiesto 7." }
+
+  - id: preslapy-prilezitosti
+    type: pick
+    prompt: "Ktoré tvrdenia o zmeškaných príležitostiach sú pravdivé?"
+    difficulty: 1
+    tags: [hudba, biznis]
+    asOf: "2026-11"
+    source: "https://en.wikipedia.org/wiki/Decca_audition https://en.wikipedia.org/wiki/The_Rolling_Stones https://en.wikipedia.org/wiki/Steven_Sasson https://en.wikipedia.org/wiki/Kodak https://en.wikipedia.org/wiki/Blockbuster_(retailer)"
+    correct:
+      - { text: "Vydavateľstvo Decca odmietlo Beatles po konkurze v roku 1962", why: "Konkurz bol 1. januára 1962; Beatles na ňom nahrali 15 piesní." }
+      - { text: "Decca neskôr podpísala zmluvu s Rolling Stones", why: "Vydavateľstvo, ktoré odmietlo Beatles, dalo Stones zmluvu s výhodnými podmienkami." }
+      - { text: "Prvý digitálny fotoaparát zostrojil inžinier Kodaku", why: "Steven Sasson ho postavil v roku 1975, vážil 3,6 kg." }
+      - { text: "Kodak v roku 2012 požiadal o ochranu pred veriteľmi", why: "Bankrotové konanie začal v januári 2012, skončil ho v roku 2013." }
+      - { text: "Blockbuster mal v roku 2000 možnosť kúpiť Netflix za 50 miliónov dolárov", why: "Ponuku odmietol; sám v roku 2010 požiadal o ochranu pred veriteľmi." }
+      - { text: "Posledná predajňa Blockbuster na svete je v Oregone", why: "Jediná zostala otvorená v meste Bend; posledná mimo USA zavrela v roku 2020 na Novom Zélande." }
+    wrong:
+      - { text: "Na konkurze v Decce bubnoval Ringo Starr", why: "Bubnoval ešte Pete Best." }
+      - { text: "Konkurz Beatles v Decce sa konal v Liverpoole", why: "Bol v štúdiu Decca v londýnskom West Hampsteade." }
+      - { text: "Prvý digitálny fotoaparát ukladal snímky na disketu", why: "Ukladal ich na audiokazetu." }
+      - { text: "Blockbuster v roku 2000 Netflix kúpil", why: "Ponuku odmietol – a Netflix ho neskôr prerástol." }
+      - { text: "Prvý digitálny fotoaparát mal rozlíšenie 1 megapixel", why: "Mal 100 × 100 pixelov, teda 0,01 megapixela." }
+
+  - id: preslapy-vlaky-ponorky
+    type: pick
+    prompt: "Ktoré tvrdenia o francúzskych vlakoch a španielskych ponorkách sú pravdivé?"
+    difficulty: 2
+    tags: [doprava, technika]
+    source: "https://www.npr.org/sections/thetwo-way/2014/05/22/314888843/too-beaucoup-france-s-new-trains-are-wider-than-its-platforms https://en.wikipedia.org/wiki/S-80_Plus-class_submarine"
+    correct:
+      - { text: "Nové francúzske regionálne vlaky boli o pár centimetrov širšie, než dovoľovali staré nástupištia", why: "Problém v roku 2014 odhalil satirický týždenník Le Canard enchaîné." }
+      - { text: "Vo Francúzsku museli upraviť asi 1 300 nástupíšť", why: "Správca trate poslal rozmery len nástupíšť mladších ako 30 rokov." }
+      - { text: "Španielske ponorky S-80 vyšli asi o 100 ton ťažšie", why: "Pri ponorke je to viac než dosť na to, aby sa bez úprav potopila." }
+      - { text: "Ponorky S-80 museli predĺžiť asi o 10 metrov", why: "Dlhší trup vyrovnal nadváhu." }
+      - { text: "Ponorky S-80 stavia štátna lodenica v Cartagene", why: "Firma Navantia ich stavia štyri pre španielske námorníctvo." }
+    wrong:
+      - { text: "Francúzske vlaky boli príliš vysoké do tunelov", why: "Problém bol v šírke pri nástupištiach." }
+      - { text: "Francúzske vlaky boli širšie o pol metra", why: "Len o niekoľko centimetrov." }
+      - { text: "Ponorky S-80 boli príliš ľahké a nevedeli sa ponoriť", why: "Boli naopak príliš ťažké." }
+      - { text: "Španielsko projekt S-80 zrušilo", why: "Prvú ponorku Isaac Peral spustili na vodu v roku 2021." }
+      - { text: "Francúzske vlaky museli vrátiť výrobcovi", why: "Vlaky zostali, prestavovali sa nástupištia." }
+
+  - id: preslapy-pepsi
+    type: pick
+    prompt: "Reklama Pepsi z roku 1996 ukazovala, že za zbierané Pepsi body sa dá získať stíhačka Harrier. Ktoré tvrdenia o tomto prípade sú pravdivé?"
+    difficulty: 2
+    tags: [reklama, súd]
+    source: https://en.wikipedia.org/wiki/Leonard_v._PepsiCo,_Inc.
+    correct:
+      - { text: "Body sa dali dokúpiť za 10 centov kus", why: "To si všimol 21-ročný študent a od investorov zohnal 700 000 dolárov." }
+      - { text: "Prípad skončil na súde", why: "Súd rozhodol, že nijaký rozumný človek nemohol ponuku brať vážne." }
+      - { text: "Stíhačka mala vtedy hodnotu vyše 37 miliónov dolárov", why: "Pepsi tvrdila, že reklama mala byť len vtipná." }
+      - { text: "Pepsi neskôr reklamu upravila a cenu stíhačky zvýšila", why: "V novej verzii stála 700 miliónov bodov." }
+      - { text: "O prípade natočil Netflix dokumentárny seriál", why: "Pepsi, Where's My Jet? vyšiel v novembri 2022." }
+    wrong:
+      - { text: "Študent stíhačku nakoniec dostal", why: "Pepsi odmietla a súd jej dal za pravdu." }
+      - { text: "Za body sa dali získať len nápoje", why: "Menili sa aj za tričká či kožené bundy." }
+      - { text: "Súdilo sa v Londýne", why: "Súdil federálny súd v New Yorku." }
+      - { text: "Reklama ponúkala vrtuľník Apache", why: "Bola to stíhačka Harrier s kolmým štartom." }
+      - { text: "Odvolací súd rozsudok zmenil", why: "Potvrdil ho a odvolal sa na pôvodné zdôvodnenie." }
+
+  - id: preslapy-britania
+    type: pick
+    prompt: "Ktoré z týchto prešľapov sa odohrali v Spojenom kráľovstve?"
+    difficulty: 1
+    tags: [geografia]
+    source: "https://en.wikipedia.org/wiki/Decca_audition https://en.wikipedia.org/wiki/20_Fenchurch_Street https://en.wikipedia.org/wiki/Sinclair_C5 https://en.wikipedia.org/wiki/Garden_Bridge https://en.wikipedia.org/wiki/Scottish_Parliament_Building https://en.wikipedia.org/wiki/Gimli_Glider https://en.wikipedia.org/wiki/Laufenburg,_Germany https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport https://en.wikipedia.org/wiki/Elbphilharmonie https://en.wikipedia.org/wiki/Olympic_Stadium_(Montreal)"
+    correct:
+      - { text: "Konkurz, po ktorom Decca odmietla Beatles", why: "Štúdio Decca v Londýne, 1. januára 1962." }
+      - { text: "Mrakodrap, ktorého odraz tavil autá", why: "20 Fenchurch Street, prezývaný Walkie-Talkie, v londýnskom City." }
+      - { text: "Elektrické vozidlo Sinclair C5, ktoré nikto nechcel", why: "Predstavili ho v januári 1985 v londýnskom Alexandra Palace." }
+      - { text: "Lávka cez rieku, ktorú za milióny nepostavili", why: "Garden Bridge mal viesť cez Temžu v Londýne." }
+      - { text: "Parlament, ktorého budova stála mnohonásobok odhadu", why: "Škótsky parlament v Edinburghu." }
+    wrong:
+      - { text: "Lietadlo, ktorému vo výške 12 km došlo palivo", why: "Stalo sa v Kanade; Boeing 767 núdzovo pristál v Gimli v Manitobe." }
+      - { text: "Most, ktorého polovice sa minuli o 54 cm", why: "Spája Nemecko a Švajčiarsko v Laufenburgu." }
+      - { text: "Opera, ktorá stála takmer 15-krát viac, než sa plánovalo", why: "Opera v Sydney v Austrálii." }
+      - { text: "Letisko, za ktoré ponúkli 10 000 eur", why: "Ciudad Real v Španielsku." }
+      - { text: "Predražená koncertná sieň na brehu Labe", why: "Elbphilharmonie v Hamburgu." }
+      - { text: "Olympijský štadión, ktorý splácali vyše 30 rokov", why: "Montreal v Kanade." }
+
+  - id: preslapy-sondy
+    type: pick
+    prompt: "Ktoré tvrdenia o nehodách vesmírnych sond sú pravdivé?"
+    difficulty: 3
+    tags: [vesmír]
+    source: "https://en.wikipedia.org/wiki/Genesis_(spacecraft) https://en.wikipedia.org/wiki/Schiaparelli_EDM https://en.wikipedia.org/wiki/Mariner_1"
+    correct:
+      - { text: "Snímač zrýchlenia v kapsule Genesis bol navrhnutý naopak", why: "Kontrola návrhu chybu nezachytila a snímač namontovali presne podľa chybného návrhu." }
+      - { text: "Kapsula Genesis viezla na Zem častice slnečného vetra", why: "Vedci z nich napriek havárii splnili hlavné ciele misie." }
+      - { text: "Modul Schiaparelli zapol „pristávacie“ systémy, keď bol ešte 3,7 km nad Marsom", why: "Brzdiace motory horeli asi 3 sekundy namiesto 30." }
+      - { text: "Schiaparelli bol spoločnou misiou Európy a Ruska", why: "Patril do programu ExoMars agentúr ESA a Roskosmos." }
+      - { text: "Mariner 1 mal ako prvá americká sonda preletieť okolo Venuše", why: "Riadiaci dôstojník ho však musel krátko po štarte zničiť." }
+    wrong:
+      - { text: "Kapsula Genesis dopadla do oceánu", why: "Narazila do púšte vo vojenskom priestore Dugway v Utahu." }
+      - { text: "Schiaparelli zničil neotvorený padák", why: "Padák sa otvoril, zlyhal až výpočet výšky." }
+      - { text: "Mariner 1 havaroval na Mesiaci", why: "Zničili ho krátko po štarte z Floridy." }
+      - { text: "Kapsula Genesis viezla vzorky hornín z Marsu", why: "Zbierala častice slnečného vetra." }
+      - { text: "Schiaparelli bol americký modul NASA", why: "Bol európsko-ruský; NASA len zverejnila snímku miesta dopadu." }
+
+  # ---------------------------------------------------------------- ORDER
+  - id: preslapy-rok-starsie
+    type: order
+    prompt: "Zoraď prešľapy podľa roku, keď sa stali (od najstaršieho)."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [história]
+    source: "https://en.wikipedia.org/wiki/Vasa_(ship) https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940) https://en.wikipedia.org/wiki/Hughes_H-4_Hercules https://en.wikipedia.org/wiki/Edsel https://en.wikipedia.org/wiki/Mariner_1"
+    items:
+      - { text: "Potopenie lode Vasa", value: 1628, why: "10. augusta, na prvej plavbe, ešte v štokholmskom prístave." }
+      - { text: "Zrútenie mosta Tacoma Narrows", value: 1940, why: "Zrútil sa 7. novembra vo vetre okolo 64 km/h." }
+      - { text: "Jediný let obrieho lietadla Spruce Goose", value: 1947, why: "2. novembra, trval 26 sekúnd." }
+      - { text: "Uvedenie automobilovej značky Edsel", value: 1957, why: "Ford ju uviedol 4. septembra, v deň nazvaný E Day." }
+      - { text: "Zničenie sondy Mariner 1", value: 1962, why: "22. júla, krátko po štarte k Venuši." }
+
+  - id: preslapy-rok-novsie
+    type: order
+    prompt: "Zoraď prešľapy podľa roku, keď sa stali (od najstaršieho)."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [história]
+    source: "https://en.wikipedia.org/wiki/Lake_Peigneur https://en.wikipedia.org/wiki/Gimli_Glider https://en.wikipedia.org/wiki/New_Coke https://en.wikipedia.org/wiki/Hubble_Space_Telescope https://en.wikipedia.org/wiki/Ariane_flight_V88 https://en.wikipedia.org/wiki/Mars_Climate_Orbiter"
+    items:
+      - { text: "Jazero Peigneur vytečie do soľnej bane", value: 1980, why: "20. novembra 1980 v Louisiane." }
+      - { text: "Boeingu 767 dôjde palivo vo výške 12 km", value: 1983, why: "23. júla; lietadlo doplachtilo na bývalú leteckú základňu v Gimli." }
+      - { text: "Coca-Cola uvedie New Coke", value: 1985, why: "23. apríla, rok pred storočnicou nápoja." }
+      - { text: "Štart Hubblovho teleskopu s chybným zrkadlom", value: 1990, why: "24. apríla na palube raketoplánu Discovery." }
+      - { text: "Výbuch rakety Ariane 5 pri prvom lete", value: 1996, why: "4. júna, 37 sekúnd po štarte." }
+      - { text: "Strata sondy Mars Climate Orbiter", value: 1999, why: "23. septembra pri navádzaní na obežnú dráhu Marsu." }
+
+  - id: preslapy-meskanie
+    type: order
+    prompt: "Zoraď podľa toho, o koľko rokov neskôr, než sa plánovalo, ich otvorili alebo dokončili (od najväčšieho meškania)."
+    direction: desc
+    unit: rokov
+    difficulty: 3
+    tags: [stavby]
+    source: "https://en.wikipedia.org/wiki/S-80_Plus-class_submarine https://en.wikipedia.org/wiki/Sydney_Opera_House https://en.wikipedia.org/wiki/Berlin_Brandenburg_Airport https://en.wikipedia.org/wiki/Elbphilharmonie https://en.wikipedia.org/wiki/Scottish_Parliament_Building"
+    items:
+      - { text: "Prvá španielska ponorka S-80", value: 12, why: "Do služby mala vstúpiť v roku 2011, vstúpila v roku 2023." }
+      - { text: "Opera v Sydney", value: 10, why: "Mala byť hotová na Deň Austrálie 1963, otvorili ju v októbri 1973." }
+      - { text: "Berlínske letisko BER", value: 9, why: "Plán počítal s rokom 2011, otvorili ho v októbri 2020." }
+      - { text: "Elbphilharmonie v Hamburgu", value: 7, why: "Mala byť hotová v roku 2010, otvorili ju v januári 2017." }
+      - { text: "Budova škótskeho parlamentu", value: 3, why: "Mala sa otvoriť v roku 2001, otvorili ju v roku 2004." }
+
+  - id: preslapy-naklady
+    type: order
+    prompt: "Zoraď tieto projekty podľa toho, koľko stáli (od najdrahšieho)."
+    direction: desc
+    unit: mil. €
+    difficulty: 2
+    tags: [peniaze, eurofondy]
+    source: "https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport https://en.wikipedia.org/wiki/Elbphilharmonie https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport https://eca.europa.eu/lists/ecadocuments/sr14_21/qjab14021enc.pdf https://telex.hu/english/2023/05/08/the-canopy-walkway-without-a-canopy-built-from-eu-funds"
+    items:
+      - { text: "Letisko Ciudad Real v Španielsku", value: 1100, why: "Asi 1,1 miliardy eur; po troch rokoch prevádzky ho zatvorili." }
+      - { text: "Koncertná sieň Elbphilharmonie v Hamburgu", value: 866, why: "866 miliónov eur; v roku 2007 počítali s 241 miliónmi." }
+      - { text: "Letisko Castellón v Španielsku", value: 150, why: "Asi 150 miliónov eur, keď ho v roku 2011 otvorili bez lietadiel." }
+      - { text: "Predĺženie dráhy letiska v Córdobe", value: 70, why: "Vyše 70 miliónov eur; podľa európskych audítorov bez analýzy potreby." }
+      - { text: "Chodník v korunách stromov v maďarskej obci Nyírmártonfalva", value: 0.16, why: "60 miliónov forintov z eurofondov, asi 161 000 eur." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: preslapy-ber-roky
+    type: number
+    prompt: "Koľko rokov po začiatku stavby otvorili berlínske letisko BER?"
+    answer: 14
+    unit: rokov
+    scale: linear
+    tolerance: 2
+    why: "Stavať začali v roku 2006, otvorili 31. októbra 2020 – pôvodne malo byť hotové za päť rokov."
+    difficulty: 2
+    tags: [letiská, nemecko]
+    source: https://en.wikipedia.org/wiki/Berlin_Brandenburg_Airport
+
+  - id: preslapy-vasa-metre
+    type: number
+    prompt: "Koľko metrov stihla loď Vasa preplávať na svojej prvej plavbe, kým sa potopila?"
+    answer: 1300
+    unit: m
+    scale: log
+    tolerance: 0.25
+    why: "Asi 1 300 metrov; potopila sa ešte v štokholmskom prístave pár minút po prvom silnejšom poryve vetra."
+    difficulty: 2
+    tags: [lode, história]
+    source: https://en.wikipedia.org/wiki/Vasa_(ship)
+
+  - id: preslapy-pisa-roky
+    type: number
+    prompt: "Koľko rokov trvala stavba šikmej veže v Pise?"
+    answer: 199
+    unit: rokov
+    scale: log
+    tolerance: 0.15
+    why: "Základy položili v roku 1173, zvonicu na vrchu dokončili v roku 1372; stavba stála takmer storočie pre vojny s Janovom, Luccou a Florenciou."
+    difficulty: 2
+    tags: [stavby, taliansko]
+    source: https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa
+
+  - id: preslapy-kodak-sekundy
+    type: number
+    prompt: "Koľko sekúnd trvalo prvému digitálnemu fotoaparátu (Kodak, 1975), kým uložil jednu snímku?"
+    answer: 23
+    unit: s
+    scale: log
+    tolerance: 0.3
+    why: "Snímku so 100 × 100 pixelmi zapisoval 23 sekúnd na audiokazetu; prístroj vážil 3,6 kg."
+    difficulty: 3
+    tags: [technika, fotografia]
+    source: https://en.wikipedia.org/wiki/Steven_Sasson
+
+  - id: preslapy-pepsi-body
+    type: number
+    prompt: "Za koľko Pepsi bodov ponúkala reklama Pepsi z roku 1996 stíhačku Harrier?"
+    answer: 7000000
+    unit: bodov
+    scale: log
+    tolerance: 0.3
+    why: "7 miliónov; keďže sa body dali dokúpiť po 10 centoch, stíhačka za vyše 37 miliónov dolárov by vyšla na 700 000 dolárov."
+    difficulty: 2
+    tags: [reklama, súd]
+    source: https://en.wikipedia.org/wiki/Leonard_v._PepsiCo,_Inc.
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: preslapy-mco-jednotky
+    type: choice
+    prompt: "Aká zámena zničila v roku 1999 sondu Mars Climate Orbiter?"
+    difficulty: 2
+    tags: [vesmír, jednotky]
+    source: https://en.wikipedia.org/wiki/Mars_Climate_Orbiter
+    correct: { text: "Libry-sila krát sekunda namiesto newtonsekúnd", why: "Pozemný program dodávateľa počítal impulz motorov v amerických jednotkách, druhý čakal metrické – chyba 4,45-násobná. NASA priznala, že chýbala kontrola." }
+    wrong:
+      - { text: "Míle namiesto kilometrov", why: "Vzdialenosti boli v poriadku, zle bol prepočítaný impulz zážihov motorov." }
+      - { text: "Stupne Fahrenheita namiesto Celzia", why: "Teplota s nehodou nesúvisela; sonda sa priblížila k Marsu na 57 km namiesto plánovaných 226." }
+      - { text: "Stopy namiesto metrov", why: "Nízka výška bola len dôsledok – príčinou bol zle prepočítaný impulz motorov." }
+
+  - id: preslapy-decca
+    type: choice
+    prompt: "Koho podpísalo vydavateľstvo Decca v roku 1962 namiesto Beatles?"
+    difficulty: 2
+    tags: [hudba]
+    source: "https://en.wikipedia.org/wiki/Decca_audition https://en.wikipedia.org/wiki/The_Rolling_Stones https://en.wikipedia.org/wiki/Gerry_and_the_Pacemakers https://en.wikipedia.org/wiki/The_Shadows"
+    correct: { text: "Brian Poole and the Tremeloes", why: "Mali konkurz v ten istý deň a boli miestni, takže vychádzali lacnejšie na cestovné." }
+    wrong:
+      - { text: "The Rolling Stones", why: "Tých Decca podpísala až neskôr – po tom, čo odmietla Beatles." }
+      - { text: "Gerry and the Pacemakers", why: "Rovnako ako Beatles ich viedol Brian Epstein a nahrávali pre Columbiu, ďalšiu značku EMI." }
+      - { text: "The Shadows", why: "Sprievodná kapela Cliffa Richarda; do roku 2007 piaty najúspešnejší interpret britskej hitparády." }
+
+  - id: preslapy-ariane
+    type: choice
+    prompt: "Prečo explodovala raketa Ariane 5 pri svojom prvom lete v roku 1996?"
+    difficulty: 1
+    tags: [vesmír, technika]
+    source: https://en.wikipedia.org/wiki/Ariane_flight_V88
+    correct: { text: "Číslo v softvéri sa nezmestilo do premennej", why: "64-bitové číslo sa nezmestilo do 16-bitovej premennej v kóde prevzatom z Ariane 4; navigácia sa vypla a raketa sa zničila." }
+    wrong:
+      - { text: "Do rakety udrel blesk", why: "Vyšetrovanie našlo príčinu v softvéri navigačného systému." }
+      - { text: "Z nádrže unikol kyslík", why: "Príčinou bolo zlyhanie navigačného softvéru; raketu potom zničil jej vlastný samodeštrukčný systém." }
+      - { text: "Zámena metrických a palcových jednotiek", why: "Jednotky boli v poriadku; zradila premenná s príliš malým rozsahom." }
+
+  - id: preslapy-spruce-goose
+    type: choice
+    prompt: "Z akého materiálu bolo hlavne postavené obrie lietadlo Spruce Goose (Smreková hus)?"
+    difficulty: 1
+    tags: [letectvo]
+    source: https://en.wikipedia.org/wiki/Hughes_H-4_Hercules
+    correct: { text: "Z brezového dreva", why: "Napriek prezývke bolo takmer celé z brezy, lisovanej technikou Duramold." }
+    wrong:
+      - { text: "Zo smrekového dreva", why: "Smrek je len v prezývke, ktorú lietadlu dali kritici." }
+      - { text: "Z hliníka", why: "Hliník počas vojny šetrili, preto stavali z dreva." }
+      - { text: "Z ocele", why: "Bolo z drevených dýh; až do roku 2019 malo najväčšie rozpätie krídel zo všetkých lietadiel, ktoré kedy vzlietli." }

@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: prezidenti-sr
     type: pick
@@ -27,28 +27,6 @@ questions:
       - { text: "Eduard Heger", why: "Bol predsedom vlády, prezidentom nikdy nebol." }
       - { text: "Alexander Dubček", why: "Viedol Federálne zhromaždenie, ale prezidentom nebol." }
       - { text: "Gustáv Husák", why: "Bol prezidentom Československa, nie Slovenskej republiky." }
-
-  - id: dvojeurove-pametne-mince
-    type: pick
-    prompt: Ktoré z týchto tém sa objavili na slovenských pamätných dvojeurových minciach?
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://sk.wikipedia.org/wiki/Slovensk%C3%A9_euromince
-    correct:
-      - { text: "1150. výročie misie Cyrila a Metoda", why: "Minca z roku 2013 pripomína príchod vierozvestcov na Veľkú Moravu." }
-      - { text: "200. výročie narodenia Ľudovíta Štúra", why: "Jedna z dvoch slovenských pamätných dvojeuroviek z roku 2015 (druhá pripomínala 30. výročie vlajky EÚ)." }
-      - { text: "550. výročie Academie Istropolitany", why: "Minca z roku 2017 pripomína prvú univerzitu na území Slovenska." }
-      - { text: "100. výročie úmrtia Milana Rastislava Štefánika", why: "Minca z roku 2019." }
-      - { text: "100. výročie narodenia Alexandra Dubčeka", why: "Minca z roku 2021." }
-      - { text: "Košický medzinárodný maratón", why: "Minca z roku 2024 oslavuje sto rokov najstaršieho maratónu v Európe." }
-      - { text: "Prvé predsedníctvo Slovenska v Rade EÚ", why: "Minca z roku 2016." }
-      - { text: "25. výročie samostatného Slovenska", why: "Minca z roku 2018." }
-    wrong:
-      - { text: "175. výročie narodenia Hviezdoslava", why: "Básnik sa na slovenskej pamätnej dvojeurovke zatiaľ neobjavil." }
-      - { text: "25. výročie letu Ivana Bellu do vesmíru", why: "Let na Mir z roku 1999 mincu nedostal." }
-      - { text: "100. výročie vzniku Československa", why: "V roku 2018 vyšla minca k výročiu samostatného Slovenska, nie ČSR." }
-      - { text: "150. výročie narodenia Štefana Baniča", why: "Baniča pripomína strieborná desaťeurová minca z roku 2020, nie dvojeurovka." }
-      - { text: "Vstup Slovenska do NATO", why: "Dvojeurovka z roku 2014 patrí vstupu do EÚ, nie do NATO." }
 
   - id: osobnosti-na-bankovkach
     type: pick
@@ -295,7 +273,7 @@ questions:
   - id: ivan-bella-tvrdenia
     type: pick
     prompt: Ktoré z týchto tvrdení o Ivanovi Bellovi, prvom Slovákovi vo vesmíre, sú pravdivé?
-    difficulty: 1
+    difficulty: 2
     source: https://sk.wikipedia.org/wiki/Ivan_Bella
     correct:
       - { text: "Narodil sa v Brezne", why: "Narodil sa 21. mája 1964." }
@@ -367,23 +345,6 @@ questions:
       - { text: "Andrej Kiska", value: 2014 }
       - { text: "Zuzana Čaputová", value: 2019 }
       - { text: "Peter Pellegrini", value: 2024 }
-
-  - id: poradie-vedci-narodenie
-    type: order
-    prompt: Zoraď vedcov a vynálezcov spojených so Slovenskom podľa roku narodenia od najstaršieho.
-    direction: asc
-    unit: rok narodenia
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Aurel_Stodola
-    items:
-      - { text: "Ján Andrej Segner", value: 1704 }
-      - { text: "Maximilián Hell", value: 1720 }
-      - { text: "Wolfgang Kempelen", value: 1734 }
-      - { text: "Štefan Anián Jedlík", value: 1800 }
-      - { text: "Jozef Maximilián Petzval", value: 1807 }
-      - { text: "Aurel Stodola", value: 1859 }
-      - { text: "Jozef Murgaš", value: 1864 }
-      - { text: "Štefan Banič", value: 1870 }
 
   - id: poradie-hudba-sport-narodenie
     type: order

@@ -5,7 +5,7 @@ category: tradicie
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- pick
   - id: vianoce-stedry-vecer
@@ -448,7 +448,7 @@ questions:
   - id: kraslice-techniky
     type: pick
     prompt: Ktoré z týchto techník patria medzi tradičné ľudové spôsoby zdobenia slovenských veľkonočných kraslíc?
-    difficulty: 3
+    difficulty: 2
     tags: [velka-noc, remesla]
     source: https://sk.wikipedia.org/wiki/Kraslica
     correct:
@@ -558,29 +558,6 @@ questions:
         value: 1213
         label: 13. december
 
-  - id: unesco-zapis-poradie
-    type: order
-    prompt: Zoraď tieto slovenské lokality a tradície podľa roku zápisu do celosvetového zoznamu UNESCO od najstaršieho.
-    direction: asc
-    unit: rok
-    difficulty: 3
-    tags: [unesco, tradicie]
-    asOf: "2026-11"
-    source: https://www.unesco.sk/en/intangible-cultural-heritage-of-Slovakia
-    items:
-      - text: Vlkolínec
-        value: 1993
-      - text: Terchovská muzika
-        value: 2013
-      - text: Gajdošská kultúra
-        value: 2015
-      - text: Horehronský viachlasný spev
-        value: 2017
-      - text: Modrotlač
-        value: 2018
-      - text: Drotárstvo
-        value: 2019
-
   # ---------------------------------------------------------------- number
   - id: vlkolinec-unesco-rok
     type: number
@@ -590,7 +567,7 @@ questions:
     scale: linear
     tolerance: 2
     why: Do Zoznamu svetového dedičstva ho zapísali v roku 1993.
-    difficulty: 1
+    difficulty: 3
     tags: [unesco, architektura]
     source: https://sk.wikipedia.org/wiki/Vlkol%C3%ADnec
 

@@ -4,7 +4,7 @@ description: "Kto naozaj lieta, kto má koľko nôh, kde kto žije, kto už vyhy
 category: zemepis
 lang: sk
 adult: false
-version: 2
+version: 3
 questions:
   # ---------------------------------------------------------------- PICK
   - id: zv-naozaj-lietaju
@@ -345,45 +345,6 @@ questions:
       - text: vtákopysk
         why: "Vyzerá ako vtip prírody, ale v Austrálii žije."
 
-  - id: zv-iucn-kriticky
-    type: pick
-    prompt: Ktoré z týchto zvierat sú v Červenom zozname IUCN vedené ako kriticky ohrozené?
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://en.wikipedia.org/wiki/Vaquita
-    note: "Status podľa infoboxov anglickej Wikipédie (IUCN 3.1). Ďalšie: en.wikipedia.org/wiki/Sumatran_orangutan, /Western_gorilla, /Black_rhinoceros, /Kākāpō, /African_penguin, /Gharial, /Polar_bear, /Cheetah, /Lion, /Koala, /Giraffe, /Tiger, /African_bush_elephant, /Chimpanzee"
-    tags: [ohrozene]
-    correct:
-      - text: sviňucha kalifornská (vakita)
-        why: "Najmenšia veľryba sveta, hynie najmä v rybárskych sieťach."
-      - text: orangutan sumatriansky
-        why: "Kriticky ohrozený je aj orangutan bornejský."
-      - text: gorila západná
-        why: "Kriticky ohrozená, rovnako ako gorila východná."
-      - text: nosorožec čierny
-        why: "Kriticky ohrozený je aj nosorožec jávsky."
-      - text: kakapo
-        why: "Nelietavý papagáj z Nového Zélandu."
-      - text: tučniak africký
-        why: "Kedysi veľmi početný; v roku 2023 klesol pod 10 000 párov a v roku 2024 ho IUCN preradila medzi kriticky ohrozené."
-      - text: gaviál
-        why: "Indický krokodíl s úzkym pyskom, kriticky ohrozený od roku 2007."
-    wrong:
-      - text: ľadový medveď
-        why: "Vedený ako zraniteľný, o stupeň lepšie ako ohrozený."
-      - text: gepard
-        why: "Ako druh je zraniteľný; kriticky ohrozený je len ázijský gepard."
-      - text: lev
-        why: "Zraniteľný."
-      - text: koala
-        why: "Podľa IUCN zraniteľná."
-      - text: pštros dvojprstý
-        why: "Najmenej dotknutý, napriek lovu pre perie v minulosti."
-      - text: tiger
-        why: "Ohrozený, no nie kriticky."
-      - text: šimpanz
-        why: "Ohrozený, no nie kriticky."
-
   - id: zv-telo-pravda
     type: pick
     prompt: Ktoré tvrdenia o tele zvierat sú pravdivé?
@@ -609,7 +570,7 @@ questions:
     type: order
     prompt: Zoraď vyhynuté zvieratá podľa roku, keď posledného jedinca naposledy spoľahlivo videli živého (od najdávnejšieho).
     direction: asc
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Steller%27s_sea_cow
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Aurochs, /Dodo, /Great_auk, /Quagga, /Thylacine, /Pyrenean_ibex"
     tags: [vyhynute]
@@ -713,20 +674,8 @@ questions:
     scale: linear
     tolerance: 10
     why: "1. septembra 1914 – z druhu, ktorý mal kedysi miliardy jedincov."
-    difficulty: 2
-    source: https://en.wikipedia.org/wiki/Martha_(passenger_pigeon)
-    tags: [vyhynute]
-
-  - id: zv-steller-roky
-    type: number
-    prompt: Koľko rokov prežila morská krava Stellerova od chvíle, keď ju v roku 1741 objavili Európania?
-    answer: 27
-    unit: rokov
-    scale: linear
-    tolerance: 5
-    why: "Pomalé zviera ľahko ulovili pre mäso, tuk a kožu; do roku 1768 zmizlo."
     difficulty: 3
-    source: https://en.wikipedia.org/wiki/Steller%27s_sea_cow
+    source: https://en.wikipedia.org/wiki/Martha_(passenger_pigeon)
     tags: [vyhynute]
 
   - id: zv-rybar-km

@@ -1,0 +1,895 @@
+id: svet-sport
+title: Šport vo svete
+description: Triatlon a päťboj, pravidlá a rozmery, olympiády a paralympiády, majstrovstvá sveta, Tour de France, Stanleyho pohár aj Super Bowl.
+category: sport
+lang: sk
+version: 3
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: triatlon-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o triatlone sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Triathlon
+    note: "Ďalší zdroj: en.wikipedia.org/wiki/Ironman_Triathlon"
+    tags: [triatlon, pravidlá]
+    correct:
+      - text: Olympijský triatlon tvorí 1,5 km plávania, 40 km na bicykli a 10 km behu
+        why: Tejto vzdialenosti sa hovorí olympijská alebo štandardná.
+      - text: Na olympiáde je triatlon od Sydney 2000
+        why: Do programu ho zaradili v septembri 1994, šesť rokov pred debutom.
+      - text: V Ironmane sa pláva 3,86 km
+        why: Pôvodne 2,4 míle; „Swim 2.4 miles!“ stálo v prvých pravidlách z Havaja.
+      - text: V Ironmane sa na bicykli jazdí vyše 180 km
+        why: Presne 180,2 km, teda 112 míľ.
+      - text: Ironman končí celým maratónom
+        why: 42,195 km behu po plávaní a 180 km na bicykli.
+      - text: Prvý Ironman sa konal v roku 1978 na Havaji
+        why: Na štart sa postavilo 15 mužov, do cieľa ich došlo 12.
+      - text: Šprintový triatlon má polovičné vzdialenosti olympijského
+        why: 750 m plávania, 20 km na bicykli a 5 km behu.
+      - text: Na väčšinu Ironmanov má pretekár limit 16 až 17 hodín
+        why: Štart býva o 7:00, takže posledným pretekárom tlieskajú okolo polnoci.
+    wrong:
+      - text: Triatlon sa začína behom a končí plávaním
+        why: Poradie je plávanie, bicykel a beh.
+      - text: V olympijskom triatlone sa pláva 3,8 km
+        why: To je Ironman; olympijská trať má 1,5 km.
+      - text: Na olympiáde je triatlon od Atlanty 1996
+        why: Debutoval až o štyri roky neskôr v Sydney.
+      - text: Ironman končí polmaratónom
+        why: Polmaratón je v polovičnom Ironmane 70.3, plný Ironman končí maratónom.
+      - text: V olympijskom triatlone sa na bicykli jazdí 90 km
+        why: Jazdí sa 40 km; 90 km má polovičný Ironman.
+
+  - id: moderny-patboj
+    type: pick
+    prompt: Ktoré disciplíny patrili alebo patria do moderného päťboja?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Modern_pentathlon
+    note: "Ďalší zdroj: en.wikipedia.org/wiki/Modern_pentathlon_at_the_2024_Summer_Olympics"
+    tags: [päťboj, olympiáda]
+    correct:
+      - text: šerm kordom
+        why: Bojuje sa na jeden zásah, kto trafí prvý, vyhráva.
+      - text: plávanie voľným spôsobom
+        why: V Paríži 2024 sa plávalo 200 m.
+      - text: parkúr na vylosovanom koni
+        why: Jazdec dostal neznámeho koňa; od roku 2025 jazdu v päťboji nahradila prekážková dráha.
+      - text: streľba z laserovej pištole
+        why: Spolu s behom tvorí záverečný laser-run.
+      - text: beh
+        why: Kto dobehne v laser-rune prvý, vyhral celý päťboj.
+      - text: prekážková dráha
+        why: Od roku 2025 nahradila jazdu na koni, na olympiáde debutuje v Los Angeles 2028.
+    wrong:
+      - text: lukostreľba
+        why: Strieľa sa z pištole, nie z luku.
+      - text: cyklistika
+        why: Bicykel patrí do triatlonu, nie do päťboja.
+      - text: veslovanie
+        why: Z vodných disciplín je v päťboji len plávanie.
+      - text: hod oštepom
+        why: Ten patril do antického päťboja, nie do moderného.
+      - text: zápasenie
+        why: Aj zápasenie bolo súčasťou antického päťboja spolu s behom, skokom, diskom a oštepom.
+      - text: skok do diaľky
+        why: Ďalšia disciplína antického päťboja; moderný vymyslel podľa legendy Coubertin pre jazdeckého vojaka.
+
+  - id: loh-hostitelia-viackrat
+    type: pick
+    prompt: Ktoré mestá usporiadali letnú olympiádu aspoň dvakrát?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Summer_Olympic_Games
+    tags: [olympiáda, hostitelia]
+    correct:
+      - text: Londýn
+        why: Trikrát – 1908, 1948 a 2012; ako prvé mesto v histórii.
+      - text: Paríž
+        why: V rokoch 1900, 1924 a 2024; storočnica tých druhých hier.
+      - text: Los Angeles
+        why: V rokoch 1932 a 1984, v roku 2028 bude hostiť tretíkrát.
+      - text: Atény
+        why: Prvé novodobé hry v roku 1896 a potom v roku 2004.
+      - text: Tokio
+        why: V rokoch 1964 a 2020, ako prvé ázijské mesto dvakrát.
+    wrong:
+      - text: Peking
+        why: Letnú olympiádu mal raz (2008), no v roku 2022 aj zimnú – ako prvé mesto oboje.
+      - text: Berlín
+        why: Len raz, v roku 1936.
+      - text: Rím
+        why: Len raz, v roku 1960; v tom istom roku tam boli aj prvé paralympijské hry.
+      - text: Mníchov
+        why: Len raz, v roku 1972.
+      - text: Moskva
+        why: Len raz, v roku 1980.
+      - text: Helsinki
+        why: Hostili v roku 1952; hry v roku 1940, presunuté z Tokia, sa pre vojnu nekonali.
+      - text: Sydney
+        why: Len raz, v roku 2000; Austrália mala aj Melbourne 1956 a v roku 2032 bude mať Brisbane.
+
+  - id: zoh-krajiny-viackrat
+    type: pick
+    prompt: Ktoré krajiny usporiadali zimnú olympiádu aspoň dvakrát?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Winter_Olympic_Games
+    tags: [olympiáda, hostitelia, zimné]
+    correct:
+      - text: USA
+        why: Štyrikrát – Lake Placid 1932 a 1980, Squaw Valley 1960, Salt Lake City 2002.
+      - text: Francúzsko
+        why: Chamonix 1924, Grenoble 1968, Albertville 1992.
+      - text: Taliansko
+        why: Cortina d'Ampezzo 1956, Turín 2006 a Miláno – Cortina 2026.
+      - text: Švajčiarsko
+        why: Dvakrát, v oboch prípadoch v St. Moritzi – 1928 a 1948.
+      - text: Rakúsko
+        why: Dvakrát Innsbruck – 1964 a 1976.
+      - text: Nórsko
+        why: Oslo 1952 a Lillehammer 1994.
+      - text: Japonsko
+        why: Sapporo 1972 a Nagano 1998.
+      - text: Kanada
+        why: Calgary 1988 a Vancouver 2010.
+    wrong:
+      - text: Nemecko
+        why: Len raz, Garmisch-Partenkirchen 1936.
+      - text: Švédsko
+        why: Zimnú olympiádu nemalo nikdy, hoci na zimných hrách získalo 73 zlatých.
+      - text: Rusko
+        why: Len raz, Soči 2014.
+      - text: Čína
+        why: Len raz, Peking 2022.
+      - text: Južná Kórea
+        why: Len raz, Pjongčang 2018.
+
+  - id: zoh-2026-sporty
+    type: pick
+    prompt: Ktoré z týchto športov boli v programe zimnej olympiády Miláno – Cortina 2026?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/2026_Winter_Olympics
+    note: "Ukážkové športy: en.wikipedia.org/wiki/Winter_Olympic_Games"
+    tags: [olympiáda, zimné, 2026]
+    correct:
+      - text: skialpinizmus
+        why: Úplná novinka, debutoval práve v roku 2026 s tromi disciplínami.
+      - text: curling
+        why: Bol už na prvých zimných hrách v Chamonix 1924.
+      - text: skeleton
+        why: Jazdí sa hlavou dopredu na bruchu.
+      - text: severská kombinácia
+        why: Skoky na lyžiach plus beh na lyžiach.
+      - text: short track
+        why: Rýchlokorčuľovanie na krátkej dráhe malo v roku 2026 deväť disciplín.
+      - text: biatlon
+        why: Jeho predchodca, vojenská hliadka, bol na hrách už v roku 1924.
+      - text: sánkovanie
+        why: Päť disciplín vrátane ženských dvojíc.
+    wrong:
+      - text: bandy
+        why: Hokej s loptičkou na veľkom ľade bol len ukážkovým športom v Osle 1952.
+      - text: preteky psích záprahov
+        why: Ukážkový šport v Lake Placid 1932.
+      - text: skijöring
+        why: Lyžovanie za ťažným zvieraťom, ukážkový šport v St. Moritzi 1928.
+      - text: zimný päťboj
+        why: Ukážka v roku 1948; mal beh na lyžiach, streľbu, zjazd, šerm a jazdu na koni.
+      - text: rýchlostné lyžovanie
+        why: Ukážkový šport v Albertville 1992, potom už nikdy.
+      - text: ice stock
+        why: Nemecký príbuzný curlingu, ukazovali ho v rokoch 1936 a 1964.
+
+  - id: pariz-2024-sporty
+    type: pick
+    prompt: Ktoré z týchto športov boli v programe letnej olympiády v Paríži 2024?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/2024_Summer_Olympics
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/2028_Summer_Olympics, /Karate_at_the_2020_Summer_Olympics, /Golf"
+    tags: [olympiáda, Paríž 2024]
+    correct:
+      - text: breaking
+        why: V Paríži mal olympijskú premiéru ako jediný úplne nový šport.
+      - text: skateboarding
+        why: Prvýkrát bol na hrách v Tokiu 2020.
+      - text: surfovanie
+        why: Surfovalo sa na Tahiti vo Francúzskej Polynézii, na druhom konci sveta.
+      - text: športové lezenie
+        why: Debutovalo v Tokiu, v Paríži sa rozdelilo na dve súťaže.
+      - text: golf
+        why: Na hry sa vrátil v roku 2016 po vyše sto rokoch.
+      - text: sedmičkové ragby
+        why: Na olympiáde je od roku 2016.
+      - text: moderný päťboj
+        why: V Paríži naposledy s jazdou na koni.
+    wrong:
+      - text: karate
+        why: Bolo na hrách len raz, v Tokiu 2020.
+      - text: baseball
+        why: V Paríži chýbal, vráti sa v Los Angeles 2028.
+      - text: kriket
+        why: Na hrách bol len v roku 1900, vráti sa v roku 2028.
+      - text: squash
+        why: Na olympiáde ešte nikdy nebol, prvýkrát bude v Los Angeles 2028.
+      - text: flag football
+        why: Bezkontaktný americký futbal debutuje až v roku 2028.
+      - text: lakros
+        why: Ako medailový šport bol na hrách naposledy v roku 1908, vráti sa v roku 2028.
+
+  - id: loh-vitazi-hodnotenia
+    type: pick
+    prompt: Ktoré výpravy aspoň raz vyhrali hodnotenie národov podľa počtu zlatých medailí na letnej olympiáde?
+    difficulty: 3
+    asOf: "2024"
+    source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
+    note: "Podľa počtu zlatých medailí; časť Medal leaders by year."
+    tags: [olympiáda, medaily]
+    correct:
+      - text: USA
+        why: Vyhrali 19 z 30 letných olympiád vrátane Paríža 2024.
+      - text: Sovietsky zväz
+        why: Šesťkrát, prvýkrát v Melbourne 1956.
+      - text: Čína
+        why: Raz, na domácej olympiáde v Pekingu 2008.
+      - text: Veľká Británia
+        why: Raz, na domácej olympiáde v Londýne 1908.
+      - text: Francúzsko
+        why: Raz, na domácej olympiáde v Paríži 1900.
+      - text: Nemecko
+        why: Raz, na domácej olympiáde v Berlíne 1936.
+      - text: Spoločný tím
+        why: Bývalé sovietske republiky súťažili spolu v Barcelone 1992 a vyhrali.
+    wrong:
+      - text: Grécko
+        why: V roku 1896 malo najviac medailí, no v počte zlatých skončilo druhé za USA.
+      - text: Švédsko
+        why: Na domácich hrách 1912 malo najviac medailí, no v počte zlatých bolo druhé.
+      - text: Japonsko
+        why: Nevyhralo ani na domácich hrách v Tokiu 1964 či 2020.
+      - text: Austrália
+        why: Nevyhrala ani doma v Sydney 2000.
+      - text: Maďarsko
+        why: Má 187 zlatých, ale hodnotenie žiadnej olympiády nevyhralo.
+      - text: Taliansko
+        why: Nevyhralo ani na domácej olympiáde v Ríme 1960.
+
+  - id: zoh-vitazi-hodnotenia
+    type: pick
+    prompt: Ktoré krajiny aspoň raz vyhrali hodnotenie národov podľa počtu zlatých medailí na zimnej olympiáde?
+    difficulty: 3
+    asOf: "2026-02"
+    source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
+    note: "Podľa počtu zlatých medailí; časť Medal leaders by year."
+    tags: [olympiáda, medaily, zimné]
+    correct:
+      - text: Nórsko
+        why: Vyhralo 11-krát (raz sa o prvenstvo delilo), naposledy štyrikrát po sebe, v roku 2026 s rekordnými 18 zlatými.
+      - text: Sovietsky zväz
+        why: Sedemkrát v rokoch 1956 až 1988.
+      - text: USA
+        why: Raz, na domácich hrách v Lake Placid 1932.
+      - text: Nemecko
+        why: Trikrát, v rokoch 1992, 1998 a 2006.
+      - text: Východné Nemecko
+        why: Raz, v Sarajeve 1984.
+      - text: Kanada
+        why: Raz, na domácich hrách vo Vancouveri 2010.
+      - text: Rusko
+        why: V Lillehammeri 1994, na prvých zimných hrách ako samostatná krajina.
+      - text: Švédsko
+        why: V roku 1948 sa o prvé miesto delilo s Nórskom.
+    wrong:
+      - text: Rakúsko
+        why: Má 76 zlatých, no hodnotenie zimnej olympiády nevyhralo nikdy.
+      - text: Švajčiarsko
+        why: Nevyhralo ani na dvoch domácich hrách v St. Moritzi.
+      - text: Holandsko
+        why: Má 63 zlatých, ale na celkové víťazstvo to nikdy nestačilo.
+      - text: Taliansko
+        why: Nevyhralo ani na troch domácich zimných olympiádach.
+      - text: Japonsko
+        why: Nevyhralo ani doma v Sappore či Nagane.
+
+  - id: ms-futbal-vitazi
+    type: pick
+    prompt: Ktoré krajiny vyhrali majstrovstvá sveta vo futbale mužov?
+    difficulty: 1
+    asOf: "2026-07"
+    source: https://en.wikipedia.org/wiki/FIFA_World_Cup
+    tags: [futbal, MS]
+    correct:
+      - text: Brazília
+        why: Rekordných päť titulov, naposledy v roku 2002.
+      - text: Nemecko
+        why: Štyri tituly, tri z nich ešte ako západné Nemecko.
+      - text: Taliansko
+        why: Štyri tituly, prvé dva v rokoch 1934 a 1938.
+      - text: Argentína
+        why: Tri tituly; v roku 2026 prehrala finále so Španielskom.
+      - text: Francúzsko
+        why: Vyhralo v rokoch 1998 a 2018.
+      - text: Uruguaj
+        why: Vyhral prvé MS v roku 1930 a potom aj v roku 1950.
+      - text: Španielsko
+        why: Vyhralo v rokoch 2010 a 2026, ani raz v Európe.
+      - text: Anglicko
+        why: Jediný titul získalo doma v roku 1966.
+    wrong:
+      - text: Holandsko
+        why: Trikrát prehralo finále – 1974, 1978 a 2010.
+      - text: Maďarsko
+        why: Dve prehraté finále, v rokoch 1938 a 1954.
+      - text: Československo
+        why: Dvakrát vo finále, v rokoch 1934 a 1962, zakaždým prehralo.
+      - text: Švédsko
+        why: Najďalej sa dostalo do finále na domácich MS v roku 1958.
+      - text: Chorvátsko
+        why: Finále v roku 2018 prehralo s Francúzskom.
+
+  - id: ms-futbal-hostitelia
+    type: pick
+    prompt: Ktoré krajiny usporiadali (aj spoločne s inými) majstrovstvá sveta vo futbale mužov aspoň dvakrát?
+    difficulty: 2
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/FIFA_World_Cup
+    tags: [futbal, MS, hostitelia]
+    correct:
+      - text: Mexiko
+        why: Trikrát – 1970, 1986 a spolu s USA a Kanadou 2026.
+      - text: USA
+        why: V roku 1994 a spoločne v roku 2026.
+      - text: Taliansko
+        why: V rokoch 1934 a 1990.
+      - text: Francúzsko
+        why: V rokoch 1938 a 1998.
+      - text: Brazília
+        why: V rokoch 1950 a 2014.
+      - text: Nemecko
+        why: V roku 1974 ešte ako západné Nemecko, potom v roku 2006.
+    wrong:
+      - text: Španielsko
+        why: Zatiaľ raz, v roku 1982; druhýkrát bude v roku 2030.
+      - text: Anglicko
+        why: Len raz, v roku 1966.
+      - text: Argentína
+        why: Zatiaľ raz, v roku 1978; v roku 2030 bude hostiť jeden úvodný zápas.
+      - text: Uruguaj
+        why: Prvé MS v roku 1930; v roku 2030 dostane jeden úvodný zápas.
+      - text: Kanada
+        why: Len raz, spoločne v roku 2026.
+      - text: Japonsko
+        why: Len raz, spolu s Južnou Kóreou v roku 2002.
+      - text: Švédsko
+        why: Len raz, v roku 1958.
+
+  - id: tenis-pravidla
+    type: pick
+    prompt: Ktoré tvrdenia o tenise a grandslamoch sú pravdivé?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Tennis_scoring_system
+    note: "Ďalší zdroj: en.wikipedia.org/wiki/Grand_Slam_(tennis)"
+    tags: [tenis, pravidlá]
+    correct:
+      - text: Body v geme sa počítajú 15, 30, 40
+        why: Pôvod tejto stupnice nie je jasný, teórie o nej sa písali už v 16. storočí.
+      - text: Nula sa po anglicky hlási „love“
+        why: Pravidlá americkej federácie USTA dovoľujú aj obyčajné „zero, one, two, three“.
+      - text: Wimbledon sa hrá na tráve
+        why: Je to najstarší grandslam, od roku 1877.
+      - text: Roland Garros sa hrá na antuke
+        why: Ako jediný z grandslamov.
+      - text: Australian Open sa do roku 1987 hral na tráve
+        why: Od roku 1988 sa hrá na tvrdom povrchu v Melbourne Parku.
+      - text: Na všetkých grandslamoch sa v rozhodujúcom sete pri 6:6 hrá tajbrejk do 10 bodov
+        why: Jednotné pravidlo platí od roku 2022.
+      - text: Zápas môže vyhrať aj hráč, ktorý uhral menej bodov
+        why: Vo Wimbledone 2010 vyhral Isner nad Mahutom, hoci Mahut uhral o 24 bodov viac.
+    wrong:
+      - text: US Open sa hrá na antuke
+        why: Na antuke sa hral len v rokoch 1975 až 1977, dnes je na tvrdom povrchu.
+      - text: Najstarší grandslam je US Open
+        why: US Open začal v roku 1881, Wimbledon o štyri roky skôr.
+      - text: Australian Open sa hrá v Sydney
+        why: Hrá sa v Melbourne.
+      - text: Bežný tajbrejk sa hrá do 10 bodov
+        why: Bežný tajbrejk sa hrá do 7 bodov s rozdielom dvoch; do 10 len v rozhodujúcom sete.
+      - text: Najdlhší set vo Wimbledone 2010 skončil 30:28
+        why: Piaty set zápasu Isner – Mahut skončil 70:68.
+
+  - id: paralympiada-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o paralympiáde sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Paralympic_Games
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/1960_Summer_Paralympics, /Goalball, /Sitting_volleyball, /Wheelchair_rugby, /Paralympic_sports"
+    tags: [paralympiáda, história]
+    correct:
+      - text: Prvé paralympijské hry boli v Ríme v roku 1960
+        why: Konali sa v tom istom meste ako olympiáda, prišlo 400 športovcov z 23 krajín.
+      - text: Paralympiáda vyrástla z hier v anglickom Stoke Mandeville
+        why: V roku 1948 tam súťažili britskí vojnoví veteráni.
+      - text: V goalballe hrajú tri proti trom loptou so zvončekmi
+        why: Lopta váži 1,25 kg a hráči ju počujú; všetci majú zakryté oči.
+      - text: Sedací volejbal vymysleli v Holandsku
+        why: V roku 1956 ako rehabilitáciu pre zranených vojakov.
+      - text: Ragby na vozíku vzniklo v Kanade
+        why: Vymysleli ho v roku 1976 vo Winnipegu.
+      - text: Prvá zimná paralympiáda bola vo Švédsku
+        why: V Örnsköldsviku v roku 1976.
+      - text: Predpona „para“ dnes znamená „vedľa“, teda hry popri olympiáde
+        why: Pôvodne vznikol názov spojením slov paraplegik a olympiáda.
+    wrong:
+      - text: Prvé paralympijské hry boli v Tokiu v roku 1964
+        why: Tokio malo druhé hry, prvé boli o štyri roky skôr v Ríme.
+      - text: Paralympiáda sa od začiatku vždy konala v meste olympiády
+        why: V roku 1968 bola v Tel Avive, kým olympiáda v Mexiku; v roku 1972 v Heidelbergu.
+      - text: V goalballe sa lopta kope
+        why: Hádže sa rukou, nikdy sa nekope.
+      - text: Sedací volejbal vymysleli v USA
+        why: Vymysleli ho v Holandsku; v USA vznikol obyčajný volejbal.
+      - text: Boccia je na paralympiáde od prvých hier v roku 1960
+        why: Pridali ju až v roku 1984.
+
+  - id: tour-de-france
+    type: pick
+    prompt: Ktoré tvrdenia o Tour de France sú pravdivé?
+    difficulty: 1
+    asOf: "2026-11"
+    source: https://en.wikipedia.org/wiki/Tour_de_France
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Giro_d%27Italia, /Vuelta_a_España"
+    tags: [cyklistika, Tour de France]
+    correct:
+      - text: Prvá Tour sa išla v roku 1903
+        why: V roku 2026 bol 113. ročník.
+      - text: Vznikla, aby sa lepšie predávali noviny
+        why: Vymysleli ju v denníku L'Auto, predchodcovi dnešného L'Équipe.
+      - text: Zelený dres nosí najlepší v bodovacej súťaži
+        why: Je to dres pre špurtérov.
+      - text: Bodkovaný dres nosí najlepší vrchár
+        why: Biely dres s červenými bodkami.
+      - text: Biely dres patrí najlepšiemu jazdcovi do 26 rokov
+        why: Súťaž mladých jazdcov.
+      - text: Bežne má 21 etáp
+        why: Jazdí sa počas 23 až 24 dní, spolu okolo 3 500 km.
+      - text: V roku 2024 nekončila v Paríži
+        why: Pre olympiádu skončila časovkou v Nice, prvýkrát mimo Paríža.
+      - text: Poslednému jazdcovi v celkovom poradí sa hovorí „červená lampa“
+        why: Lanterne rouge, podľa červeného svetla na konci vozidla.
+    wrong:
+      - text: Lídra pretekov spoznáte podľa ružového dresu
+        why: Ružový dres nosí líder Giro d'Italia, na Tour je to žltý.
+      - text: Červený dres nosí líder celkového poradia
+        why: To je Vuelta; na Tour bol červený dres za priebežné šprinty v rokoch 1984 – 1989.
+      - text: Jazdí sa každý rok bez prestávky od roku 1903
+        why: Počas oboch svetových vojen sa nejazdila.
+      - text: Bodkovaný dres nosí najlepší špurtér
+        why: Bodky patria vrchárom, špurtéri jazdia v zelenom.
+      - text: Biely dres patrí najlepšiemu jazdcovi do 23 rokov
+        why: Hranica je 26 rokov.
+
+  - id: stanley-cup-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o Stanleyho pohári sú pravdivé?
+    difficulty: 2
+    asOf: "2026-06"
+    source: https://en.wikipedia.org/wiki/Stanley_Cup
+    tags: [hokej, NHL]
+    correct:
+      - text: Pomenovali ho po generálnom guvernérovi Kanady
+        why: Lord Stanley z Prestonu ho daroval ako cenu pre najlepší amatérsky tím Kanady.
+      - text: Je to najstaršia trofej pre profesionálne kluby v Severnej Amerike
+        why: Objednali ho v roku 1892 a prvýkrát udelili v roku 1893.
+      - text: Na pohár sa gravírujú mená víťazných hráčov
+        why: Robí sa to každý rok od roku 1924, čo je pri trofejach nezvyčajné.
+      - text: V roku 1919 ho neudelili pre epidémiu španielskej chrípky
+        why: Je to jeden z len dvoch rokov bez víťaza.
+      - text: V roku 2005 ho neudelili pre výluku v NHL
+        why: Celá sezóna 2004/05 sa nehrala.
+      - text: Existujú v skutočnosti tri Stanleyho poháre
+        why: Pôvodná misa, slávnostný pohár a kópia v Sieni slávy v Toronte.
+      - text: Plné prstence s menami sa časom vymieňajú
+        why: Raz za 13 rokov sa horný prstenec odloží do trezoru Siene slávy.
+    wrong:
+      - text: Každý rok sa vyrába nový pohár
+        why: Pohár je stále ten istý, mení sa len prstenec s menami.
+      - text: Je z rýdzeho zlata
+        why: Pôvodná misa bola strieborná, dnešný pohár je zo zliatiny striebra a niklu.
+      - text: Daroval ho britský kráľ
+        why: Daroval ho Lord Stanley, generálny guvernér Kanady.
+      - text: Udeľuje sa každý rok bez výnimky od roku 1893
+        why: Nebol v rokoch 1919 a 2005.
+      - text: Mená sa naň gravírujú od prvého ročníka
+        why: Pravidelne až od roku 1924.
+
+  - id: super-bowl-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o Super Bowle sú pravdivé?
+    difficulty: 2
+    asOf: "2026-02"
+    source: https://en.wikipedia.org/wiki/Super_Bowl
+    tags: [americký futbal, NFL]
+    correct:
+      - text: Prvý Super Bowl sa hral v januári 1967
+        why: Spočiatku sa ani nevolal Super Bowl, oficiálny názov má od tretieho ročníka.
+      - text: Ročníky sa označujú rímskymi číslicami
+        why: Od piateho ročníka v januári 1971.
+      - text: Super Bowl v roku 2016 nemal rímsku číslicu
+        why: Namiesto „L“ sa volal Super Bowl 50.
+      - text: Víťaz dostane trofej Vinca Lombardiho
+        why: Trofej nesie meno Vinca Lombardiho, nie názov ligy.
+      - text: Najviac titulov, šesť, majú Pittsburgh a New England
+        why: Patriots majú aj najviac účastí vo finále – 12.
+      - text: Super Bowl LX vyhrali Seattle Seahawks
+        why: Seahawks porazili Patriots 29:13 a oplatili im prehru z roku 2015.
+      - text: Od roku 2022 sa hrá druhú nedeľu vo februári
+        why: Predtým sa hrával v januári a neskôr začiatkom februára.
+    wrong:
+      - text: Super Bowl LX vyhrali New England Patriots
+        why: Patriots prehrali so Seattlom 13:29.
+      - text: Najviac titulov majú Dallas Cowboys
+        why: Rekord šiestich titulov držia Steelers a Patriots.
+      - text: Prvý Super Bowl sa hral v roku 1950
+        why: Prvý sa hral v januári 1967.
+      - text: Víťaz dostane Stanleyho pohár
+        why: Stanleyho pohár je hokejový, v NFL je trofej Vinca Lombardiho.
+      - text: Super Bowl sa vždy hrá v januári
+        why: Od roku 2022 sa hrá druhú nedeľu vo februári.
+
+  - id: curling-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o curlingu sú pravdivé?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Curling
+    note: "Ďalší zdroj: en.wikipedia.org/wiki/Curling_at_the_Winter_Olympics"
+    tags: [curling, zimné, pravidlá]
+    correct:
+      - text: Tím má štyroch hráčov
+        why: V zmiešaných dvojiciach hrajú len dvaja.
+      - text: Každý hráč hodí v jednom ende dva kamene
+        why: Tím má osem kameňov, v jednom ende sa ich teda hodí šestnásť.
+      - text: Kamene sú zo žuly
+        why: Žula pochádza zo škótskeho ostrova Ailsa Craig a z lomu Trefor vo Walese.
+      - text: Zametanie znižuje trenie, takže kameň dôjde ďalej
+        why: Dvaja zametači idú vedľa kameňa a upravujú mu dráhu.
+      - text: Zápas má zvyčajne osem alebo desať endov
+        why: Pri remíze sa hrajú ďalšie endy.
+      - text: Curling pochádza zo Škótska
+        why: Hral sa tam už v neskorom stredoveku.
+      - text: Prezýva sa „šach na ľade“
+        why: Po anglicky aj „The Roaring Game“, hučiaca hra.
+      - text: Bol už na prvej zimnej olympiáde v Chamonix 1924
+        why: Výsledky z roku 1924 však MOV uznal za oficiálne až v roku 2006.
+    wrong:
+      - text: Kameň váži okolo 5 kg
+        why: Váži 17 až 20 kg.
+      - text: Zametanie kameň brzdí
+        why: Zametanie znižuje trenie, kameň tak ide ďalej a rovnejšie.
+      - text: Tím má šesť hráčov
+        why: Hrajú štyria.
+      - text: Kamene sú z liatiny
+        why: Sú zo žuly.
+      - text: Curling vymysleli v Kanade
+        why: Kanada je dnes veľmoc, ale šport pochádza zo Škótska.
+      - text: Zápas má tri tretiny po 20 minút
+        why: To je hokej; curling sa hrá na endy.
+
+  - id: bodove-hodnoty
+    type: pick
+    prompt: Ktoré bodové hodnoty sú správne?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Rugby_union
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/American_football, /Basketball, /Cricket, /Darts, /Maximum_break"
+    tags: [pravidlá, body]
+    correct:
+      - text: "Ragby: položenie lopty (try) za 5 bodov"
+        why: Nasledujúci výkop (konverzia) pridá ešte 2 body.
+      - text: "Ragby: trestný kop za 3 body"
+        why: Rovnako ako kop z hry (drop goal).
+      - text: "Americký futbal: touchdown za 6 bodov"
+        why: Šesť bodov platí od roku 1912.
+      - text: "Americký futbal: field goal za 3 body"
+        why: Od roku 1909, predtým mal vyššiu hodnotu.
+      - text: "Kriket: odpal cez hranicu ihriska bez dopadu za 6 behov"
+        why: Ak sa lopta po ceste dotkne zeme, sú to štyri behy.
+      - text: "Šípky: vnútorný stred terča za 50 bodov"
+        why: Zelený prstenec okolo neho je za 25.
+      - text: "Šípky: najviac 180 bodov tromi šípkami"
+        why: Tri šípky v trojitej dvadsiatke.
+      - text: "Snooker: maximálny brejk za 147 bodov"
+        why: 15 červených s 15 čiernymi dá 120 bodov a šesť farieb ďalších 27.
+    wrong:
+      - text: "Ragby: položenie lopty (try) za 3 body"
+        why: Try má 5 bodov, 3 dáva trestný kop.
+      - text: "Ragby: konverzia za 3 body"
+        why: Konverzia po try má 2 body.
+      - text: "Americký futbal: touchdown za 7 bodov"
+        why: Touchdown má 6, siedmy bod prináša až kop po ňom.
+      - text: "Kriket: odpal cez hranicu ihriska bez dopadu za 10 behov"
+        why: Je za šesť behov.
+      - text: "Šípky: vnútorný stred terča za 100 bodov"
+        why: Je za 50, vonkajší prstenec za 25.
+      - text: "Basketbal: trestný hod za 2 body"
+        why: Trestný hod je za 1 bod.
+
+  - id: bojove-umenia-japonsko
+    type: pick
+    prompt: Ktoré z týchto bojových umení a športov pochádzajú z Japonska?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Judo
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Sumo, /Kendo, /Aikido, /Jujutsu, /Taekwondo, /Capoeira, /Muay_Thai, /Sambo_(martial_art), /Savate, /Wushu_(sport), /Brazilian_jiu-jitsu"
+    tags: [bojové športy, pôvod]
+    correct:
+      - text: džudo
+        why: Názov znamená „jemná cesta“, na olympiáde je od Tokia 1964.
+      - text: sumo
+        why: Zápasí sa v kruhovom ringu dohjó.
+      - text: kendó
+        why: Šerm bambusovými mečmi šinai, vychádza zo šermu samurajov.
+      - text: aikido
+        why: Súťaže v aikide sú sporné, mnohí ich považujú za proti duchu umenia.
+      - text: džiu-džicu
+        why: Staré japonské umenie, z ktorého vychádza aj džudo.
+    wrong:
+      - text: taekwondo
+        why: Pochádza z Kórey, na olympiáde je od roku 2000.
+      - text: capoeira
+        why: Brazílska zmes boja, tanca a hudby.
+      - text: thajský box
+        why: Muay thai pochádza z Thajska.
+      - text: sambo
+        why: Sovietsky zápasnícky šport, oficiálne uznaný v roku 1938.
+      - text: savate
+        why: Francúzsky box; názov znamená „stará topánka“.
+      - text: wušu
+        why: Športová podoba čínskych bojových umení.
+      - text: brazílske džiu-džicu
+        why: Má japonské korene v džiu-džicu, no ako samostatný šport vzniklo v Brazílii.
+
+  - id: sporty-z-usa
+    type: pick
+    prompt: Ktoré z týchto športov vznikli v USA?
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Basketball
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Volleyball, /Softball, /Skateboarding, /American_football, /Golf, /Ice_hockey, /Handball, /Rugby_union, /Cricket, /Table_tennis"
+    tags: [pôvod]
+    correct:
+      - text: basketbal
+        why: Vymyslel ho James Naismith v roku 1891 v Springfielde; prvé koše boli košíky na broskyne.
+      - text: volejbal
+        why: Vymyslel ho William Morgan v roku 1895 v Holyoke a nazval ho „mintonette“.
+      - text: americký futbal
+        why: Prvý zápas hrali Princeton a Rutgers v roku 1869.
+      - text: softbal
+        why: Vznikol v roku 1887.
+      - text: skateboarding
+        why: Kalifornskí surfisti si chceli zajazdiť, aj keď neboli vlny.
+    wrong:
+      - text: golf
+        why: Pochádza zo Škótska z 15. storočia.
+      - text: ľadový hokej
+        why: Prvý organizovaný zápas sa hral v Montreale v roku 1875.
+      - text: hádzaná
+        why: Prvé pravidlá dnešnej hádzanej vznikli v roku 1917 v Berlíne.
+      - text: ragby
+        why: Vzniklo na škole v anglickom meste Rugby.
+      - text: kriket
+        why: Prvá istá zmienka je z juhovýchodného Anglicka zo 16. storočia.
+      - text: stolný tenis
+        why: Vznikol v 19. storočí v Anglicku.
+
+  # ---------------------------------------------------------------- ORDER
+  - id: grandslamy-vznik
+    type: order
+    prompt: Zoraď grandslamové turnaje od najstaršieho.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Grand_Slam_(tennis)
+    tags: [tenis, história]
+    items:
+      - { text: Wimbledon, value: 1877, why: "Najstarší tenisový turnaj na svete." }
+      - { text: US Open, value: 1881, why: "Na tráve sa hral až do roku 1974." }
+      - { text: Roland Garros, value: 1891, why: "Za grandslam sa počíta až od roku 1925." }
+      - { text: Australian Open, value: 1905, why: "Prvý ročník sa volal Australasian Championships." }
+
+  - id: hmotnost-lopt
+    type: order
+    prompt: Zoraď športové náčinie podľa hmotnosti od najťažšieho.
+    direction: desc
+    unit: g
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Basketball
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Ball_(association_football), /Hockey_puck, /Baseball_(ball), /Tennis_ball, /Golf_ball, /Table_tennis"
+    tags: [náčinie]
+    items:
+      - { text: basketbalová lopta mužov, value: 624, label: "asi 624 g", why: "22 uncí, veľkosť 7." }
+      - { text: futbalová lopta, value: 430, label: "410 – 450 g", why: "Obvod 68 až 70 cm." }
+      - { text: hokejový puk, value: 163, label: "156 – 170 g", why: "Tvrdá vulkanizovaná guma." }
+      - { text: baseballová loptička, value: 145, label: "142 – 149 g", why: "Kožený obal je zošitý červenou niťou." }
+      - { text: tenisová loptička, value: 58, label: "56 – 59,4 g", why: "Priemer 6,54 až 6,86 cm." }
+      - { text: golfová loptička, value: 46, label: "najviac 45,93 g", why: "Pravidlá určujú len hornú hranicu." }
+      - { text: pingpongová loptička, value: 2.7, label: "2,7 g", why: "Priemer 40 mm, od roku 2000." }
+
+  - id: dlzka-zapasu
+    type: order
+    prompt: Zoraď športy podľa riadneho hracieho času zápasu od najdlhšieho (bez nadstavenia a predĺženia).
+    direction: desc
+    unit: min
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Association_football
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Rugby_union, /Ice_hockey, /Basketball, /Futsal"
+    tags: [pravidlá, čas]
+    items:
+      - { text: futbal, value: 90, why: "Dva polčasy po 45 minút." }
+      - { text: ragby, value: 80, why: "Dva polčasy po 40 minút." }
+      - { text: ľadový hokej, value: 60, why: "Tri tretiny po 20 minút čistého času." }
+      - { text: basketbal v NBA, value: 48, why: "Štyri štvrtiny po 12 minút; podľa pravidiel FIBA sú po 10." }
+      - { text: futsal, value: 40, why: "Dva polčasy po 20 minút." }
+
+  - id: hraci-na-ihrisku
+    type: order
+    prompt: Zoraď športy podľa počtu hráčov jedného tímu na ihrisku od najviac.
+    direction: desc
+    unit: hráčov
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Australian_rules_football
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Rugby_union, /Association_football, /Baseball, /Handball, /Volleyball, /Basketball"
+    tags: [pravidlá, tímy]
+    items:
+      - { text: austrálsky futbal, value: 18, why: "Hrá sa na oválnom ihrisku, často na kriketovom štadióne." }
+      - { text: ragby, value: 15, why: "Ragbyová liga má len 13 hráčov." }
+      - { text: futbal, value: 11, why: "Rovnako ako kriket, pozemný hokej či americký futbal." }
+      - { text: baseball, value: 9, why: "Tímy sa striedajú v odpale a v poli." }
+      - { text: hádzaná, value: 7, why: "Šesť hráčov v poli a brankár." }
+      - { text: volejbal, value: 6, why: "Rovnako ako v ľadovom hokeji vrátane brankára." }
+      - { text: basketbal, value: 5, why: "Rovnako ako vo futsale." }
+
+  - id: loh-zlate-medaily
+    type: order
+    prompt: Zoraď krajiny podľa počtu zlatých medailí zo všetkých letných olympiád od najviac.
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    asOf: "2024"
+    source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
+    note: "Tabuľka bez predchodcov (Summer Olympics excluding precursors)."
+    tags: [olympiáda, medaily]
+    items:
+      - { text: USA, value: 1106, why: "Ako jediná krajina majú vyše tisíc zlatých." }
+      - { text: Sovietsky zväz, value: 395, why: "Na letných hrách súťažil len v rokoch 1952 až 1988." }
+      - { text: Francúzsko, value: 243, why: "Letné hry usporiadalo trikrát, vždy v Paríži." }
+      - { text: Taliansko, value: 229, why: "Letnú olympiádu usporiadalo len raz, v Ríme 1960." }
+      - { text: Maďarsko, value: 187, why: "Má viac zlatých než Austrália so 180." }
+
+  - id: zoh-zlate-medaily
+    type: order
+    prompt: Zoraď krajiny podľa počtu zlatých medailí zo všetkých zimných olympiád od najviac.
+    direction: desc
+    unit: zlatých
+    difficulty: 2
+    asOf: "2026-02"
+    source: https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table
+    note: "Tabuľka bez predchodcov (Winter Olympics excluding precursors), po hrách 2026."
+    tags: [olympiáda, medaily, zimné]
+    items:
+      - { text: Nórsko, value: 166, why: "Vedie historickú tabuľku zimných hier, kde sa jednotlivé nemecké tímy rátajú osobitne." }
+      - { text: USA, value: 126, why: "Zimnú olympiádu usporiadali už štyrikrát." }
+      - { text: Kanada, value: 82, why: "Zimnú olympiádu usporiadala dvakrát, v Calgary a vo Vancouveri." }
+      - { text: Švajčiarsko, value: 69, why: "Dvakrát hostilo hry v St. Moritzi." }
+      - { text: Taliansko, value: 52, why: "Zimnú olympiádu usporiadalo trikrát, naposledy v roku 2026." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: ironman-bicykel
+    type: number
+    prompt: Koľko kilometrov sa jazdí na bicykli v triatlone Ironman?
+    answer: 180
+    unit: km
+    scale: log
+    tolerance: 0.05
+    why: Presne 180,2 km (112 míľ); predtým 3,86 km plávania a potom celý maratón.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Ironman_Triathlon
+    tags: [triatlon]
+
+  - id: snooker-maximum
+    type: number
+    prompt: Koľko bodov má maximálny brejk v snookri?
+    answer: 147
+    unit: bodov
+    scale: linear
+    tolerance: 5
+    why: Všetkých 15 červených s 15 čiernymi dá 120 bodov a šesť farieb ďalších 27; do novembra 2026 ich v profesionálnych zápasoch padlo 247.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Maximum_break
+    tags: [snooker, body]
+
+  - id: curling-kamen
+    type: number
+    prompt: Koľko kilogramov môže najviac vážiť curlingový kameň?
+    answer: 20
+    unit: kg
+    scale: log
+    tolerance: 0.15
+    why: Pravidlá dovoľujú 38 až 44 libier, teda 17,24 až 19,96 kg žuly.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Curling
+    tags: [curling, náčinie]
+
+  - id: stanley-cup-hmotnost
+    type: number
+    prompt: Koľko kilogramov váži Stanleyho pohár?
+    answer: 16
+    unit: kg
+    scale: log
+    tolerance: 0.15
+    why: 34,5 libry, teda asi 15,6 kg pri výške takmer 90 cm – a hráči ho aj tak dvíhajú nad hlavu.
+    difficulty: 3
+    source: https://en.wikipedia.org/wiki/Stanley_Cup
+    tags: [hokej, NHL]
+
+  - id: tour-prvy-rocnik
+    type: number
+    prompt: V ktorom roku sa išla prvá Tour de France?
+    answer: 1903
+    unit: rok
+    scale: linear
+    tolerance: 5
+    why: Vymyslel ju denník L'Auto, aby predal viac novín; zrušili ju len počas dvoch svetových vojen.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Tour_de_France
+    tags: [cyklistika, história]
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: prva-zoh
+    type: choice
+    prompt: Kde sa konala prvá zimná olympiáda v roku 1924?
+    correct: { text: Chamonix, why: "Francúzske stredisko pod Mont Blancom; Fíni a Nóri tam spolu získali viac medailí než všetci ostatní." }
+    wrong:
+      - { text: St. Moritz, why: "Druhé zimné hry v roku 1928 a znova v roku 1948." }
+      - { text: Lake Placid, why: "Tretie hry v roku 1932, prvé mimo Európy." }
+      - { text: Oslo, why: "Hry v roku 1952, pred ktorými sa prvýkrát konala štafeta so zimnou olympijskou pochodňou." }
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Winter_Olympic_Games
+    tags: [olympiáda, zimné, história]
+
+  - id: giro-dres
+    type: choice
+    prompt: Akej farby je dres lídra cyklistických pretekov Giro d'Italia?
+    correct: { text: ružový, why: "Maglia rosa, podľa ružového papiera denníka La Gazzetta dello Sport, ktorý Giro v roku 1909 založil." }
+    wrong:
+      - { text: žltý, why: "Žltý nosí líder Tour de France." }
+      - { text: červený, why: "Červený nosí líder Vuelty." }
+      - { text: zelený, why: "Zelený patrí na Tour najlepšiemu v bodovacej súťaži." }
+    difficulty: 1
+    source: https://en.wikipedia.org/wiki/Giro_d%27Italia
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Tour_de_France, /Vuelta_a_España"
+    tags: [cyklistika]
+
+  - id: ms-2026-vitaz
+    type: choice
+    prompt: Kto vyhral majstrovstvá sveta vo futbale 2026 v USA, Mexiku a Kanade?
+    correct: { text: Španielsko, why: "Druhý titul po roku 2010 a druhý európsky titul vybojovaný v Amerike." }
+    wrong:
+      - { text: Argentína, why: "Prehrala finále, už štvrté vo svojej histórii." }
+      - { text: Anglicko, why: "Skončilo tretie." }
+      - { text: Francúzsko, why: "Skončilo štvrté." }
+    difficulty: 1
+    asOf: "2026-07"
+    source: https://en.wikipedia.org/wiki/2026_FIFA_World_Cup
+    tags: [futbal, MS]
+
+  - id: stanley-cup-najviac
+    type: choice
+    prompt: Ktorý klub vyhral Stanleyho pohár najviackrát?
+    correct: { text: Montreal Canadiens, why: "24 titulov, viac ako ktokoľvek iný." }
+    wrong:
+      - { text: Toronto Maple Leafs, why: "13 titulov, posledný v roku 1967." }
+      - { text: Detroit Red Wings, why: "11 titulov." }
+      - { text: Boston Bruins, why: "6 titulov a až 14 prehratých finále." }
+    difficulty: 2
+    asOf: "2026-06"
+    source: https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions
+    tags: [hokej, NHL]
