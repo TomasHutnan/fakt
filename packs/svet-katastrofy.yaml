@@ -264,7 +264,7 @@ questions:
       - { text: "Leží medzi Kazachstanom a Uzbekistanom", why: "Dnes ho tvorí severná a južná časť." }
       - { text: "Východná časť južného Aralu sa v roku 2014 úplne vysušila", why: "Satelitné snímky NASA to potvrdili prvýkrát v modernej histórii." }
       - { text: "Priehrada Kokaral z roku 2005 pomohla obnoviť severnú časť", why: "Hladina stúpla a vrátili sa ryby, takže rybolov je tam opäť možný." }
-      - { text: "Prístavné mesto Moynaq je dnes desiatky kilometrov od pobrežia", why: "Voda sa od mesta vzdialila o desiatky kilometrov." }
+      - { text: "Prístavné mesto Moynaq leží dnes ďaleko od pobrežia", why: "Voda sa od mesta vzdialila o desiatky kilometrov a viac." }
     wrong:
       - { text: "Voda zmizla po zemetrasení", why: "Zmiznutie spôsobilo odklonenie riek na zavlažovanie." }
       - { text: "Leží v Mongolsku", why: "Leží v strednej Ázii, medzi Kazachstanom a Uzbekistanom." }
@@ -359,7 +359,7 @@ questions:
     tags: [libanon, výbuch]
     source: https://en.wikipedia.org/wiki/2020_Beirut_explosion
     correct:
-      - { text: "Vybuchlo asi 2 750 ton dusičnanu amónneho", why: "Šlo o náklad, ktorý sa v prístave skladoval od roku 2014." }
+      - { text: "V prístave bolo uskladnených asi 2 750 ton dusičnanu amónneho", why: "Šlo o náklad, ktorý sa v prístave skladoval od roku 2014." }
       - { text: "Náklad pochádzal z lode Rhosus plaviacej sa pod moldavskou vlajkou", why: "Loď zakotvila v Bejrúte v roku 2013." }
       - { text: "Náklad bol v prístave uskladnený šesť rokov", why: "Bol vo sklade č. 12, bez primeraných bezpečnostných opatrení." }
       - { text: "Výbuch nasledoval po požiari v sklade č. 12", why: "V sklade bol dusičnan amónny a podľa zdroja aj ohňostroje." }
@@ -463,17 +463,17 @@ questions:
     tags: [životné prostredie]
     source: https://en.wikipedia.org/wiki/Aral_Sea
 
-  - id: katastrofy-st-helens-obete
+  - id: katastrofy-ropa-dni
     type: number
-    prompt: "Zhruba koľko ľudí zahynulo pri erupcii sopky Mount St. Helens 18. mája 1980?"
-    answer: 57
-    unit: ľudí
+    prompt: "Zhruba koľko dní unikala ropa z vrtu Macondo po výbuchu plošiny Deepwater Horizon v roku 2010?"
+    answer: 87
+    unit: dní
     scale: log
-    tolerance: 0.1
-    why: "Pri najničivejšej a ekonomicky najnákladnejšej erupcii v histórii súvislého územia USA zahynulo približne 57 ľudí."
+    tolerance: 0.15
+    why: "Ropa unikala 87 dní; vrt vyhlásili za zapečatený 19. septembra 2010."
     difficulty: 3
-    tags: [sopky, usa]
-    source: https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens
+    tags: [ropa]
+    source: https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill
 
   - id: katastrofy-tatry-kalamita
     type: number
