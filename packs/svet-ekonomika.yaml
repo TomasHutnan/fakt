@@ -10,7 +10,7 @@ questions:
   # ================================================================ PICK
   - id: ek-top10-hdp
     type: pick
-    prompt: Ktoré z týchto krajín patria medzi 10 najväčších ekonomík sveta podľa HDP v bežných cenách (Svetová banka)?
+    prompt: Ktoré z týchto krajín patria medzi 10 najväčších ekonomík sveta podľa HDP v bežných cenách (Svetová banka, 2025)?
     difficulty: 1
     asOf: "2025"
     tags: [HDP]
@@ -252,11 +252,10 @@ questions:
       - { text: Ekvádor, why: "Dolár používa od roku 2000." }
       - { text: Panama, why: "Používa dolár od roku 1904, vlastné balboy existujú len ako mince." }
       - { text: Salvádor, why: "Dolár je tu oficiálnou menou od roku 2001." }
-      - { text: Marshallove ostrovy, why: "Dolár používajú ako oficiálnu menu." }
-      - { text: Palau, why: "Dolár používa od roku 1944." }
+      - { text: Východný Timor, why: "Dolár používa ako oficiálnu menu a popri ňom razí vlastné centavo mince." }
     wrong:
       - { text: Honduras, why: "Má vlastnú lempiru, hoci dolár je rozšírený." }
-      - { text: Kostarika, why: "Platí colónom." }
+      - { text: Kostarika, why: "Platí kolónom." }
       - { text: Guatemala, why: "Platí quetzalom, ktorý je pomenovaný po vtákovi." }
       - { text: Mexiko, why: "Platí pesom." }
       - { text: Argentína, why: "Dolár tam ľudia používajú neoficiálne, no oficiálne platí peso." }
@@ -294,11 +293,11 @@ questions:
     tags: [hyperinflácia, história]
     source: "https://en.wikipedia.org/wiki/Hyperinflation"
     correct:
-      - { text: Maďarsko (1945 – 1946), why: "Najhoršia hyperinflácia v dejinách: v júli 1946 sa ceny zdvojnásobovali približne každých 15 hodín." }
-      - { text: Weimarské Nemecko (1923), why: "Najvyššia bankovka mala hodnotu 100 biliónov mariek." }
-      - { text: Zimbabwe (2008), why: "Vydalo bankovku s hodnotou 100 biliónov zimbabwianskych dolárov." }
+      - { text: Maďarsko, why: "V rokoch 1945 – 1946 najhoršia hyperinflácia v dejinách: v júli 1946 sa ceny zdvojnásobovali približne každých 15 hodín." }
+      - { text: Weimarské Nemecko, why: "V roku 1923 mala najvyššia bankovka hodnotu 100 biliónov mariek." }
+      - { text: Zimbabwe, why: "Koncom prvej dekády 21. storočia vydalo bankovku s hodnotou 100 biliónov zimbabwianskych dolárov." }
       - { text: Venezuela, why: "Hyperinflácia tam vypukla v druhej polovici desiatych rokov 21. storočia." }
-      - { text: Juhoslávia (1992 – 1994), why: "Hyperinflácia sprevádzala rozpad štátu a vojnu." }
+      - { text: Juhoslávia, why: "V rokoch 1992 – 1994 hyperinflácia sprevádzala rozpad štátu a vojnu." }
     wrong:
       - { text: Švajčiarsko, why: "Frank sa stal symbolom stability." }
       - { text: Japonsko, why: "Naopak, dlho ho trápila deflácia." }
