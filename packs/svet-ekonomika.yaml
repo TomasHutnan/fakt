@@ -36,7 +36,7 @@ questions:
 
   - id: ek-hdp-na-hlavu-nad-nemecko
     type: pick
-    prompt: Ktoré krajiny majú vyššie HDP na obyvateľa než Nemecko (Svetová banka, bežné ceny)?
+    prompt: Ktoré krajiny majú vyššie HDP na obyvateľa než Nemecko (Svetová banka, 2025, bežné ceny)?
     difficulty: 2
     asOf: "2025"
     tags: [HDP]
@@ -89,7 +89,7 @@ questions:
 
   - id: ek-brazilia-jednotka
     type: pick
-    prompt: Ktoré z týchto plodín sú podľa údajov FAO za rok 2024 plodinami, v ktorých je Brazília najväčším pestovateľom na svete?
+    prompt: Pri ktorých z týchto plodín je Brazília podľa údajov FAO za rok 2024 najväčším pestovateľom na svete?
     difficulty: 2
     asOf: "2024"
     tags: [poľnohospodárstvo]
@@ -192,7 +192,7 @@ questions:
       - { text: Rusko, why: "Veľký konzument, producent skôr malý." }
       - { text: Irán, why: "Pestuje ho pri Kaspickom mori, no do prvej päťky nepatrí." }
       - { text: Brazília, why: "Skôr káva než čaj." }
-      - { text: Argentína, why: "Pestuje čaj a maté, ale v malých objemoch." }
+      - { text: Argentína, why: "Pestuje čaj, no do prvej päťky nepatrí." }
 
   - id: ek-euro-mimo-eu
     type: pick
@@ -252,7 +252,7 @@ questions:
       - { text: Ekvádor, why: "Dolár používa od roku 2000." }
       - { text: Panama, why: "Používa dolár od roku 1904, vlastné balboy existujú len ako mince." }
       - { text: Salvádor, why: "Dolár je tu oficiálnou menou od roku 2001." }
-      - { text: Východný Timor, why: "Dolár používa ako oficiálnu menu a popri ňom razí vlastné centavo mince." }
+      - { text: Východný Timor, why: "Dolár používa ako oficiálnu menu a popri ňom razí vlastné mince centavo." }
     wrong:
       - { text: Honduras, why: "Má vlastnú lempiru, hoci dolár je rozšírený." }
       - { text: Kostarika, why: "Platí kolónom." }
@@ -300,7 +300,7 @@ questions:
       - { text: Juhoslávia, why: "V rokoch 1992 – 1994 hyperinflácia sprevádzala rozpad štátu a vojnu." }
     wrong:
       - { text: Švajčiarsko, why: "Frank sa stal symbolom stability." }
-      - { text: Japonsko, why: "Naopak, dlho ho trápila deflácia." }
+      - { text: Japonsko, why: "V posledných desaťročiach ho skôr trápila deflácia." }
       - { text: Nórsko, why: "Žiadna hyperinflácia v histórii." }
       - { text: Kanada, why: "Žiadna hyperinflácia v histórii." }
       - { text: Austrália, why: "Žiadna hyperinflácia v histórii." }
@@ -549,7 +549,7 @@ questions:
     unit: rok
     scale: linear
     tolerance: 3
-    why: "Prieplav sa otvoril v roku 1914 a dovtedy ho spravovali USA."
+    why: "Prieplav sa otvoril v roku 1914; USA ho postupne odovzdali Panamě do konca roka 1999."
     difficulty: 2
     source: "https://en.wikipedia.org/wiki/Panama_Canal"
     tags: [prieplav]
