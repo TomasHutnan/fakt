@@ -393,7 +393,7 @@ export class Hub {
     c.room = null;
     if (c.watcher) for (const x of room.clients) this.pushView(room, x);
     if (c.playerId && ![...room.clients].some((x) => x.playerId === c.playerId)) {
-      this.dispatch(room, { type: "connect", id: c.playerId, connected: false });
+      this.dispatch(room, { type: "connect", id: c.playerId, connected: false, now: Date.now() });
     }
   }
 

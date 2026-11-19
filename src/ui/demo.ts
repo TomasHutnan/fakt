@@ -230,5 +230,5 @@ export function demoRoom(screen: string): { view: RoomView; now: number; screen:
     if (screen === "room-reveal" || screen === "tv-reveal") act("jano", { type: "ready" });
     if (screen === "room-over" || screen === "tv-over") s = { ...s, phase: "over", players: s.players.map((p, i) => ({ ...p, score: [21, 19, 12, 14, 9][i] })) };
   }
-  return { view: viewFor(s, you), now: T0 + 23_000, screen: tv };
+  return { view: viewFor(s, you), now: T0 + 13_000, screen: tv };
 }

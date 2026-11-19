@@ -129,7 +129,8 @@ export interface RoundRecord {
   }[];
 }
 
-export function roundRecord(card: Card, results: Scored[]): RoundRecord {
+/** In a tie-break only the closest guess scores, so only it counts as a hit. */
+export function roundRecord(card: Card, results: Scored[], tiebreak = false): RoundRecord {
   return {
     type: card.type,
     results: results.map((r) => {
@@ -137,7 +138,7 @@ export function roundRecord(card: Card, results: Scored[]): RoundRecord {
       const base = { player: r.player, points: r.points };
       if (card.type === "pick" && a.type === "pick")
         return { ...base, status: a.status, found: a.picks.filter((i) => card.options[i].correct).length };
-      if (card.type === "number" && a.type === "number") return { ...base, hit: a.value != null && numberError(card, a.value) <= 1 };
+      if (card.type === "number" && a.type === "number") return { ...base, hit: a.value != null && numberError(card, a.value) <= 1 && (!tiebreak || r.points > 0) };
       if (card.type === "choice" && a.type === "choice") return { ...base, hit: !!card.options[a.option]?.correct };
       if (card.type === "order" && a.type === "order") return { ...base, hit: a.arrangement.every((item, pos) => card.solution[pos] === item) };
       return base;
@@ -179,7 +180,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
         p.hits++;
         if (round.type === "number") p.numberHits++;
         if (round.type === "order") p.orderHits++;
-      } else if (round.type === "choice") p.wrong++;
+      } else p.wrong++;
     }
   }
   const best = (f: (p: (typeof per)[number]) => number, min: number): { player: number; value: number } | null => {
@@ -208,7 +209,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
     }
   }
   const low = Math.min(...scores);
-  const last = scores.findIndex((s) => s === low);
-  if (!taken.has(last) && scores.some((s) => s > low)) out.push({ player: last, id: "moralny", value: low });
+  const last = scores.findIndex((s, i) => s === low && !taken.has(i));
+  if (last >= 0 && scores.some((s) => s > low)) out.push({ player: last, id: "moralny", value: low });
   return out;
 }

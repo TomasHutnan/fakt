@@ -146,4 +146,17 @@ describe("titles", () => {
     expect(roundRecord(number, [nm(0, 100)]).results[0].hit).toBe(true);
     expect(roundRecord(choice, [ch(0, 2)]).results[0].hit).toBe(false);
   });
+
+  it("titles: a player who misses every number card is not flawless; ties for last still get the consolation title", () => {
+    const rec = (hits: boolean[]): RoundRecord => ({ type: "number", results: hits.map((hit, player) => ({ player, points: hit ? 1 : 0, hit })) });
+    const t = titles([rec([false, true]), rec([false, true]), rec([false, true])], [0, 3]);
+    expect(t.find((x) => x.id === "neomylny")?.player).not.toBe(0);
+    const three = titles([rec([true, false, false])], [3, 0, 0]);
+    expect(three.map((x) => x.id)).toContain("moralny");
+  });
+
+  it("a tie-break loser within tolerance does not get a number hit", () => {
+    const r = roundRecord(number, [{ player: 0, answer: { type: "number", value: 101 }, points: 1 }, { player: 1, answer: { type: "number", value: 104 }, points: 0 }], true);
+    expect(r.results.map((x) => x.hit)).toEqual([true, false]);
+  });
 });
