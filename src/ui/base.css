@@ -305,7 +305,7 @@
 /* Full screen and leave: out of the way until pointed at. */
 :where(.tv-tools) { position: absolute; top: 4px; right: 4px; z-index: 5; display: flex; gap: 6px; opacity: 0.35; transition: opacity .2s; }
 :where(.tv-tools:hover, .tv-tools:focus-within) { opacity: 1; }
-.screen--tv > .topbar { margin-right: 15rem; }
+.screen--tv > :is(.topbar, .over__head) { margin-right: 15rem; }
 :where(.paused) { font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   :where(.timer__fill) { transition: none; }

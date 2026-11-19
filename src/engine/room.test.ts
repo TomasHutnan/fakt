@@ -666,6 +666,51 @@ describe("room rounds and game end", () => {
     expect(second.filter((k) => first.includes(k))).toEqual([]);
   });
 
+  it("tie-break reveal: only the closer leader wins and is named, nobody is called exact", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    sim.act("h", { type: "next" });
+    const n = sim.s.card as NumberCard;
+    const near = n.scale === "log" ? n.answer * (1 + n.tolerance / 4) : n.answer + n.tolerance / 4;
+    const farther = n.scale === "log" ? n.answer * (1 + n.tolerance / 2) : n.answer + n.tolerance / 2;
+    sim.act("h", { type: "submitNumber", value: near });
+    sim.act("p1", { type: "submitNumber", value: farther });
+    const v = viewFor(sim.s, "h");
+    expect(v.players[0].score - v.players[1].score).toBe(1);
+    expect(v.social).toEqual([{ kind: "near", players: [0] }]);
+    sim.act("h", { type: "next" });
+    const scores = viewFor(sim.s, "h").players.map((p) => p.score);
+    expect(scores[0]).toBeGreaterThan(scores[1]);
+  });
+
+  it("a player dropping out closes the question when everyone else has answered", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 3, pace: "none", lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    expect(sim.s.phase).toBe("question");
+    sim.raw({ type: "connect", id: "p2", connected: false, now: sim.now });
+    expect(sim.s.phase).toBe("reveal");
+  });
+
+  it("kicking a tied leader during the tie-break ends the game on the standings", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    answerOne(sim, "p2", card, "worst");
+    sim.act("h", { type: "next" });
+    expect(sim.s.tiebreak).toEqual(["h", "p1"]);
+    sim.act("h", { type: "kick", id: "p1" });
+    expect(sim.s.phase).toBe("over");
+    expect(sim.s.tiebreak).toBeNull();
+  });
+
   it("a tie for first goes to a tie-break that only the tied leaders answer", () => {
     const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
     sim.act("h", { type: "start" });

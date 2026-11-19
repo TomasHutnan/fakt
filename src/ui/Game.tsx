@@ -695,7 +695,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
         ))}
       </ul>
 
-      {multi && <SocialList lines={socialLines(card, s.results)} name={(i) => s.players[i]?.name ?? "?"} />}
+      {multi && <SocialList lines={socialLines(card, s.results, 2, !!s.tiebreak)} name={(i) => s.players[i]?.name ?? "?"} />}
 
       {full && <CardFoot card={card} />}
 

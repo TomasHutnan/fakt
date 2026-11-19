@@ -524,7 +524,7 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
         <CardFoot card={card} />
         <div class="actions">
           <button type="button" class="btn btn--primary btn--block" disabled={ready} onClick={() => send({ type: "ready" })}>
-            {ready ? sk.waitingOthers : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
+            {ready ? (view.paused ? sk.paused : sk.waitingOthers) : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
           </button>
           <Progress view={view} />
           {isController(view) && ready && (
@@ -553,6 +553,8 @@ function RoundResults({ view, card, turns }: { view: RoomView; card: Card; turns
   return (
     <ul class="results">
       {view.players.map((p, i) => {
+        // In a tie-break only the tied leaders played.
+        if (!answering(view, p.id)) return null;
         const t = byPlayer.get(i);
         return (
           <li class={`result${t && t.points > 0 ? " result--scored" : ""}${p.id === view.you ? " result--you" : ""}`} key={p.id}>
@@ -804,6 +806,8 @@ function TvBody({ view, now, onLeave, banner }: Inner) {
                 ))}
               </ul>
             )}
+            {card.type === "choice" && card.compare && <p class="q__hint">{sk.compareHint(card.compare)}</p>}
+            {card.type === "order" && <p class="q__hint">{sk.orderHint(card.direction)}</p>}
             {card.type === "order" && (
               <ul class="order-list">
                 {card.items.map((it) => (

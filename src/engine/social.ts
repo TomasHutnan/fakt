@@ -22,11 +22,12 @@ export type SocialLine =
   | { kind: "bigBust"; player: number; lost: number }
   | { kind: "untouched"; option: string }
   | { kind: "exact"; players: number[] }
+  | { kind: "near"; players: number[] }
   | { kind: "closest"; player: number }
   | { kind: "perfectOrder"; players: number[] };
 
 /** Up to `max` lines about one card, most remarkable first. Needs at least two answers. */
-export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[] {
+export function socialLines(card: Card, results: Scored[], max = 2, tiebreak = false): SocialLine[] {
   if (results.length < 2) return [];
   const lines: { line: SocialLine; weight: number }[] = [];
   const add = (line: SocialLine, weight: number) => lines.push({ line, weight });
@@ -74,8 +75,20 @@ export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[
       const errs = results
         .map((r) => ({ r, e: r.answer.type === "number" && r.answer.value != null ? numberError(card, r.answer.value) : Infinity }))
         .filter((x) => Number.isFinite(x.e));
-      const exact = errs.filter((x) => x.e <= 1);
+      if (tiebreak) {
+        // Only the closest guess counts in a tie-break: name just those, and say
+        // "exact" only when the guess really was the answer. A shared closest stays quiet.
+        if (!errs.length) break;
+        const best = Math.min(...errs.map((x) => x.e));
+        const top = errs.filter((x) => x.e === best).map((x) => x.r.player);
+        if (best === 0) add({ kind: "exact", players: top }, 8);
+        else if (top.length === 1 && errs.length >= 2) add({ kind: best <= 1 ? "near" : "closest", ...(best <= 1 ? { players: top } : { player: top[0] }) } as SocialLine, 8);
+        break;
+      }
+      const exact = errs.filter((x) => x.e === 0);
+      const near = errs.filter((x) => x.e > 0 && x.e <= 1);
       if (exact.length) add({ kind: "exact", players: exact.map((x) => x.r.player) }, 8);
+      else if (near.length) add({ kind: "near", players: near.map((x) => x.r.player) }, 7);
       else if (errs.length >= 2) {
         const best = Math.min(...errs.map((x) => x.e));
         const top = errs.filter((x) => x.e === best);
@@ -116,7 +129,8 @@ export interface RoundRecord {
   }[];
 }
 
-export function roundRecord(card: Card, results: Scored[]): RoundRecord {
+/** In a tie-break only the closest guess scores, so only it counts as a hit. */
+export function roundRecord(card: Card, results: Scored[], tiebreak = false): RoundRecord {
   return {
     type: card.type,
     results: results.map((r) => {
@@ -124,7 +138,7 @@ export function roundRecord(card: Card, results: Scored[]): RoundRecord {
       const base = { player: r.player, points: r.points };
       if (card.type === "pick" && a.type === "pick")
         return { ...base, status: a.status, found: a.picks.filter((i) => card.options[i].correct).length };
-      if (card.type === "number" && a.type === "number") return { ...base, hit: a.value != null && numberError(card, a.value) <= 1 };
+      if (card.type === "number" && a.type === "number") return { ...base, hit: a.value != null && numberError(card, a.value) <= 1 && (!tiebreak || r.points > 0) };
       if (card.type === "choice" && a.type === "choice") return { ...base, hit: !!card.options[a.option]?.correct };
       if (card.type === "order" && a.type === "order") return { ...base, hit: a.arrangement.every((item, pos) => card.solution[pos] === item) };
       return base;
@@ -166,7 +180,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
         p.hits++;
         if (round.type === "number") p.numberHits++;
         if (round.type === "order") p.orderHits++;
-      } else if (round.type === "choice") p.wrong++;
+      } else p.wrong++;
     }
   }
   const best = (f: (p: (typeof per)[number]) => number, min: number): { player: number; value: number } | null => {
@@ -195,7 +209,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
     }
   }
   const low = Math.min(...scores);
-  const last = scores.findIndex((s) => s === low);
-  if (!taken.has(last) && scores.some((s) => s > low)) out.push({ player: last, id: "moralny", value: low });
+  const last = scores.findIndex((s, i) => s === low && !taken.has(i));
+  if (last >= 0 && scores.some((s) => s > low)) out.push({ player: last, id: "moralny", value: low });
   return out;
 }

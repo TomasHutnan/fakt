@@ -146,7 +146,7 @@ export type ClientAction =
 export type RoomAction =
   | (ClientAction & { by: string; now: number; seed?: number })
   | { type: "join"; id: string; name: string }
-  | { type: "connect"; id: string; connected: boolean }
+  | { type: "connect"; id: string; connected: boolean; now?: number }
   | { type: "tick"; now: number };
 
 export interface CreateRoomInput {
@@ -269,7 +269,9 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
 
     case "connect": {
       if (!s.players.some((p) => p.id === a.id)) return s;
-      return { ...s, players: s.players.map((p) => (p.id === a.id ? { ...p, connected: a.connected } : p)) };
+      const next = { ...s, players: s.players.map((p) => (p.id === a.id ? { ...p, connected: a.connected } : p)) };
+      // Someone dropping out may leave everyone else done: do not wait for the absent.
+      return a.connected || a.now == null ? next : afterChange(next, a.now, packs);
     }
 
     case "tick":
@@ -294,6 +296,8 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         ready: s.ready.filter((id) => id !== a.id),
         tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
       };
+      // A tie-break needs two leaders: with fewer left the game ends on the standings.
+      if (next.tiebreak && next.tiebreak.length < 2 && next.phase === "question") return { ...nextCard(next, a.now, packs), tiebreak: null };
       return afterChange(next, a.now, packs);
     }
 
@@ -495,7 +499,7 @@ function closeQuestion(s: RoomState, now: number): RoomState {
       ? tiebreakPoints(card, results.map((r) => (r.answer.type === "number" ? (r.answer.value ?? NaN) : NaN)))
       : scoreCard(card, turns, s.settings.wipe, s.players.length);
   const scored = results.map((r, i) => ({ ...r, points: points[i] ?? 0 }));
-  const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })));
+  const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })), s.tiebreak != null);
   const round: RoomRound = { ...rec, results: rec.results.map((x) => ({ ...x, playerId: scored[x.player].playerId })) };
   const players = s.players.map((p) => ({
     ...p,
@@ -700,7 +704,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
 function roomSocial(s: RoomState): SocialLine[] {
   const index = new Map(s.players.map((p, i) => [p.id, i]));
   const scored = s.results.filter((r) => index.has(r.playerId)).map((r) => ({ player: index.get(r.playerId)!, answer: r.answer, points: r.points }));
-  return socialLines(s.card!, scored);
+  return socialLines(s.card!, scored, 2, s.tiebreak != null);
 }
 
 function roomTitles(s: RoomState): Title[] {

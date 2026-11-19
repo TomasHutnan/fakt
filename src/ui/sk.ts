@@ -310,6 +310,7 @@ export const sk = {
     bigBust: (who: string, lost: number) => `Najväčší pád: ${who}, mínus ${lost} ${plural(lost, "bod", "body", "bodov")}.`,
     untouched: (option: string) => `„${option}“ nikto nevybral, a bolo to správne.`,
     exact: (who: string) => `Presne trafené: ${who}.`,
+    near: (who: string) => `Skoro presne: ${who}.`,
     closest: (who: string) => `Najbližšie: ${who}.`,
     perfectOrder: (who: string) => `Presné poradie: ${who}.`,
   },
