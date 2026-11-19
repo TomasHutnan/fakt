@@ -1,0 +1,365 @@
+id: svet-stereotypy
+title: Stereotypy a zlozvyky
+description: "Pravda alebo mýtus? Známe predstavy o krajinách a ich zvykoch – čaj, zemiaky, cestoviny, pracovné hodiny, fajčenie – proti číslam z OECD, FAO a WHO."
+category: tradicie
+lang: sk
+license: CC0-1.0
+adult: false
+version: 2
+questions:
+  # ================================================================ PICK
+  - id: stereo-potvrdene-ciselami
+    type: pick
+    prompt: "Ktoré z týchto predstáv o krajinách sa v číslach potvrdzujú?"
+    difficulty: 1
+    tags: [stereotypy, jedlo, údaje]
+    asOf: "2022"
+    source: "https://en.wikipedia.org/wiki/Pasta https://en.wikipedia.org/wiki/List_of_countries_by_tea_consumption_per_capita https://en.wikipedia.org/wiki/Fallout_shelter https://en.wikipedia.org/wiki/Sauna https://www.fao.org/faostat/en/#data/FBS https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023 https://ghoapi.azureedge.net/api/M_Est_tob_curr"
+    correct:
+      - { text: "Taliani jedia najviac cestovín na obyvateľa", why: "V roku 2015 to bolo asi 23,5 kg na osobu; druhé bolo prekvapivo Tunisko so 16 kg." }
+      - { text: "Argentínčania jedia najviac hovädzieho na obyvateľa", why: "Podľa FAO bolo v roku 2022 v Argentíne k dispozícii okolo 46 kg hovädzieho na osobu, viac než kdekoľvek inde." }
+      - { text: "Turci pijú najviac čaju na obyvateľa", why: "Turecko vedie svetový rebríček s odstupom, asi 3,2 kg suchého čaju na osobu ročne (údaje za rok 2016)." }
+      - { text: "Švajčiari majú úkryty pre celé obyvateľstvo", why: "Švajčiarsko malo okolo roku 2006 v úkrytoch 8,6 milióna miest, čo je 114 % obyvateľov." }
+      - { text: "Vo Fínsku je aspoň jedna sauna na každých troch obyvateľov", why: "Oficiálne registre uvádzajú aspoň 2 milióny sáun pre 5,5 milióna obyvateľov; Fínska saunová spoločnosť odhaduje až 3,2 milióna." }
+    wrong:
+      - { text: "Nemci pracujú najviac hodín zo všetkých krajín OECD", why: "Naopak: v roku 2023 mali s 1 338 hodinami na pracovníka najmenej v zozname OECD." }
+      - { text: "Japonci pracujú ročne viac hodín než Američania", why: "Podľa OECD v roku 2023 asi 1 610 hodín oproti 1 804 hodinám v USA." }
+      - { text: "Briti pijú najviac čaju na obyvateľa", why: "Veľká Británia je v zozname z roku 2016 až štvrtá, za Tureckom, Írskom a Azerbajdžanom." }
+      - { text: "Íri jedia najviac zemiakov na obyvateľa", why: "Írsko je podľa FAO ďaleko od vrchu rebríčka; vedie Bielorusko so 167 kg na osobu." }
+      - { text: "Číňania pijú viac čaju na obyvateľa než Briti", why: "Podľa zoznamu z roku 2016 je to naopak: Briti vypijú na hlavu asi trikrát viac než Číňania." }
+      - { text: "Francúzi užívajú tabak najviac v celej Európe", why: "Podľa WHO je francúzsky podiel (28,6 %) vysoký, ale Srbsko (36,5 %) či Bulharsko (35,5 %) sú vyššie." }
+      - { text: "Japonci jedia najviac rýb na obyvateľa", why: "Japonsko má asi 45 kg ročne, no Island má 85 kg a Portugalsko 54 kg." }
+
+  - id: stereo-hodiny-pod-priemerom
+    type: pick
+    prompt: "Ktoré z týchto krajín odpracujú ročne v priemere na jedného pracovníka menej hodín, než je priemer OECD?"
+    difficulty: 2
+    tags: [stereotypy, práca, OECD]
+    asOf: "2023"
+    source: "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023"
+    correct:
+      - { text: "Nemecko", why: "1 338 hodín: najmenej zo všetkých krajín v zozname OECD, o viac než 400 hodín pod priemerom." }
+      - { text: "Dánsko", why: "1 374 hodín ročne, teda asi 370 hodín menej než priemer OECD (1 745)." }
+      - { text: "Holandsko", why: "Holanďania majú 1 447 hodín, lebo veľa ľudí pracuje na skrátený úväzok." }
+      - { text: "Francúzsko", why: "1 503 hodín; pracovný týždeň je tam zákonne 35 hodín." }
+      - { text: "Japonsko", why: "Napriek povesti workoholikov len asi 1 610 hodín, teda pod priemerom OECD." }
+      - { text: "Slovensko", why: "Okolo 1 624 hodín ročne, teda o vyše 100 hodín pod priemerom." }
+      - { text: "Španielsko", why: "Asi 1 645 hodín na pracovníka." }
+      - { text: "Švajčiarsko", why: "1 528 hodín: bohatá krajina s kratším pracovným časom." }
+    wrong:
+      - { text: "Mexiko", why: "Asi 2 228 hodín ročne: jedna z najvyšších hodnôt v OECD." }
+      - { text: "Grécko", why: "Okolo 1 893 hodín ročne, výrazne viac než v Nemecku." }
+      - { text: "Južná Kórea", why: "Asi 1 872 hodín, o 130 hodín viac než priemer OECD." }
+      - { text: "Poľsko", why: "Zhruba 1 806 hodín; pracuje sa tam o 470 hodín viac než v Nemecku." }
+      - { text: "Spojené štáty", why: "Asi 1 804 hodín ročne, o 60 hodín viac než priemer." }
+      - { text: "Česko", why: "Okolo 1 782 hodín, tesne nad priemerom OECD." }
+      - { text: "Čile", why: "Asi 1 953 hodín ročne." }
+      - { text: "Izrael", why: "Okolo 1 881 hodín ročne." }
+
+  - id: stereo-tabak-nad-stvrtinu
+    type: pick
+    prompt: "Ktoré z týchto krajín majú podľa odhadov WHO viac než štvrtinu dospelých, ktorí užívajú tabak?"
+    difficulty: 2
+    tags: [stereotypy, zdravie, WHO]
+    asOf: "2022"
+    source: "https://ghoapi.azureedge.net/api/M_Est_tob_curr"
+    correct:
+      - { text: "Francúzsko", why: "Odhad WHO pre rok 2022 je asi 28,6 % dospelých." }
+      - { text: "Grécko", why: "Asi 28,9 %: jedno z najvyšších čísel v EÚ." }
+      - { text: "Maďarsko", why: "Okolo 28,7 % dospelých." }
+      - { text: "Slovensko", why: "Odhad WHO je asi 27,7 %, teda viac než v Nemecku či Taliansku." }
+      - { text: "Česko", why: "Asi 26,7 % dospelých." }
+      - { text: "Turecko", why: "Asi 31,1 %." }
+      - { text: "Bulharsko", why: "Asi 35,5 %: medzi najvyššími v EÚ." }
+    wrong:
+      - { text: "Nemecko", why: "Asi 20,2 %." }
+      - { text: "Taliansko", why: "Asi 20,7 %." }
+      - { text: "Japonsko", why: "Asi 16,3 %: Japonsko už nepatrí medzi „fajčiarske“ krajiny." }
+      - { text: "Spojené kráľovstvo", why: "Asi 13,0 %." }
+      - { text: "Švédsko", why: "Asi 21,2 %, hoci sa tam užíva aj bezdymový tabak snus." }
+      - { text: "Holandsko", why: "Asi 20,2 %." }
+
+  - id: stereo-zemiaky-viac-nez-nemci
+    type: pick
+    prompt: "Ktoré z týchto krajín majú podľa FAO viac zemiakov na obyvateľa než Nemecko (asi 61 kg ročne)?"
+    difficulty: 2
+    tags: [stereotypy, jedlo, FAO]
+    asOf: "2022"
+    source: "https://www.fao.org/faostat/en/#data/FBS"
+    correct:
+      - { text: "Bielorusko", why: "Asi 167 kg na osobu: viac než dvojnásobok nemeckého čísla." }
+      - { text: "Ukrajina", why: "Asi 135 kg na osobu ročne." }
+      - { text: "Poľsko", why: "Asi 96 kg na osobu." }
+      - { text: "Belgicko", why: "Asi 86 kg: hranolky nie sú len vtip." }
+      - { text: "Írsko", why: "Asi 85 kg na osobu." }
+      - { text: "Rusko", why: "Asi 86 kg na osobu." }
+    wrong:
+      - { text: "Francúzsko", why: "Asi 50 kg." }
+      - { text: "Taliansko", why: "Asi 48 kg." }
+      - { text: "Slovensko", why: "Asi 47 kg na osobu." }
+      - { text: "Švajčiarsko", why: "Asi 45 kg." }
+      - { text: "Rakúsko", why: "Asi 45 kg." }
+      - { text: "Maďarsko", why: "Asi 36 kg: veľmi málo na krajinu s gulášom a langošom." }
+      - { text: "Nórsko", why: "Asi 37 kg." }
+
+  - id: stereo-caj-viac-nez-cina
+    type: pick
+    prompt: "Ktoré z týchto krajín vypijú podľa zoznamu z roku 2016 viac čaju na obyvateľa než Čína (asi 0,57 kg suchého čaju za rok)?"
+    difficulty: 2
+    tags: [stereotypy, nápoje]
+    asOf: "2016"
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_tea_consumption_per_capita"
+    correct:
+      - { text: "Turecko", why: "Asi 3,2 kg na osobu: prvé miesto s veľkým náskokom." }
+      - { text: "Írsko", why: "Asi 2,4 kg: Íri predbehli aj Britov." }
+      - { text: "Spojené kráľovstvo", why: "Asi 1,8 kg, ale to je len štvrté miesto." }
+      - { text: "Rusko", why: "Asi 1,4 kg; samovar nie je len dekorácia." }
+      - { text: "Poľsko", why: "Asi 1,0 kg na osobu." }
+      - { text: "Japonsko", why: "Asi 1,0 kg na osobu." }
+      - { text: "Holandsko", why: "Asi 0,8 kg." }
+      - { text: "Nemecko", why: "Asi 0,7 kg, teda viac než v Číne." }
+    wrong:
+      - { text: "India", why: "Asi 0,33 kg na osobu: India je veľký pestovateľ čaju, no obyvateľov je veľmi veľa." }
+      - { text: "Spojené štáty", why: "Asi 0,23 kg." }
+      - { text: "Francúzsko", why: "Asi 0,20 kg." }
+      - { text: "Taliansko", why: "Asi 0,14 kg." }
+      - { text: "Španielsko", why: "Asi 0,15 kg." }
+      - { text: "Slovensko", why: "Asi 0,36 kg." }
+      - { text: "Česko", why: "Asi 0,42 kg." }
+      - { text: "Švédsko", why: "Asi 0,29 kg." }
+
+  - id: stereo-ryby-viac-nez-japonsko
+    type: pick
+    prompt: "Ktoré z týchto krajín majú podľa FAO viac rýb a morských plodov na obyvateľa než Japonsko (asi 45 kg ročne)?"
+    difficulty: 1
+    tags: [stereotypy, jedlo, FAO]
+    asOf: "2022"
+    source: "https://ourworldindata.org/grapher/fish-and-seafood-consumption-per-capita"
+    correct:
+      - { text: "Island", why: "Asi 85 kg na osobu: takmer dvojnásobok Japonska." }
+      - { text: "Portugalsko", why: "Asi 54 kg; Portugalci milujú bacalhau (sušenú tresku)." }
+      - { text: "Južná Kórea", why: "Asi 53 kg na osobu." }
+      - { text: "Nórsko", why: "Asi 50 kg." }
+      - { text: "Malajzia", why: "Asi 52 kg na osobu." }
+    wrong:
+      - { text: "Čína", why: "Asi 42 kg: veľa, ale stále menej než Japonsko." }
+      - { text: "Španielsko", why: "Asi 37 kg." }
+      - { text: "Francúzsko", why: "Asi 33 kg." }
+      - { text: "Taliansko", why: "Asi 29 kg." }
+      - { text: "Spojené štáty", why: "Asi 22 kg." }
+      - { text: "Spojené kráľovstvo", why: "Asi 18 kg, hoci fish and chips je národné jedlo." }
+      - { text: "Nemecko", why: "Asi 13 kg." }
+      - { text: "Poľsko", why: "Asi 11 kg." }
+      - { text: "Slovensko", why: "Asi 11 kg na osobu." }
+
+  - id: stereo-maso-nad-sto-kg
+    type: pick
+    prompt: "Ktoré z týchto krajín mali podľa FAO v roku 2022 viac než 100 kg mäsa na obyvateľa (dostupného na spotrebu)?"
+    difficulty: 1
+    tags: [stereotypy, jedlo, FAO]
+    asOf: "2022"
+    source: "https://ourworldindata.org/grapher/meat-supply-per-person"
+    correct:
+      - { text: "Spojené štáty", why: "Asi 122 kg na osobu ročne." }
+      - { text: "Argentína", why: "Asi 114 kg: najmä hovädzie." }
+      - { text: "Austrália", why: "Asi 113 kg na osobu." }
+      - { text: "Izrael", why: "Asi 113 kg, väčšinou hydina." }
+      - { text: "Mongolsko", why: "Asi 132 kg na osobu: z toho viac než polovica je baranie a kozie." }
+    wrong:
+      - { text: "Nemecko", why: "Asi 71 kg na osobu." }
+      - { text: "Francúzsko", why: "Asi 83 kg." }
+      - { text: "Spojené kráľovstvo", why: "Asi 84 kg." }
+      - { text: "Taliansko", why: "Asi 72 kg." }
+      - { text: "Japonsko", why: "Výrazne menej než 100 kg." }
+      - { text: "Čína", why: "Asi 70 kg na osobu." }
+      - { text: "Poľsko", why: "Asi 87 kg." }
+      - { text: "Slovensko", why: "Výrazne menej než 100 kg." }
+      - { text: "India", why: "Len asi 8 kg na osobu; veľká časť obyvateľov je vegetariánska." }
+
+  - id: stereo-olivovy-olej
+    type: pick
+    prompt: "Ktoré z týchto krajín majú podľa FAO viac olivového oleja na obyvateľa než Francúzsko (asi 2 kg ročne)?"
+    difficulty: 1
+    tags: [stereotypy, jedlo, FAO]
+    asOf: "2022"
+    source: "https://www.fao.org/faostat/en/#data/FBS"
+    correct:
+      - { text: "Taliansko", why: "Asi 8,9 kg na osobu." }
+      - { text: "Španielsko", why: "Asi 8,7 kg na osobu." }
+      - { text: "Grécko", why: "Asi 6,7 kg." }
+      - { text: "Portugalsko", why: "Asi 4,8 kg na osobu." }
+      - { text: "Maroko", why: "Asi 3,9 kg." }
+      - { text: "Albánsko", why: "Asi 4,9 kg." }
+    wrong:
+      - { text: "Nemecko", why: "Asi 0,9 kg." }
+      - { text: "Česko", why: "Asi 0,4 kg." }
+      - { text: "Slovensko", why: "Asi 0,4 kg." }
+      - { text: "Poľsko", why: "Asi 0,5 kg." }
+      - { text: "Argentína", why: "Asi 0,2 kg." }
+      - { text: "Čína", why: "Asi 0,04 kg." }
+      - { text: "India", why: "Asi 0,04 kg." }
+      - { text: "Írsko", why: "Asi 1,1 kg." }
+
+  # ================================================================ ORDER
+  - id: stereo-poradie-hodiny
+    type: order
+    prompt: "Zoraď krajiny podľa priemerného počtu odpracovaných hodín ročne na jedného pracovníka (od najväčšieho počtu)."
+    direction: desc
+    unit: hodín ročne
+    difficulty: 1
+    asOf: "2023"
+    source: "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023"
+    items:
+      - { text: Mexiko, value: 2228, why: "Jeden z najdlhších pracovných rokov v OECD." }
+      - { text: Grécko, value: 1893, why: "O vyše 550 hodín ročne viac než v Nemecku." }
+      - { text: Spojené štáty, value: 1804, why: "Nad priemerom OECD (1 745)." }
+      - { text: Japonsko, value: 1610, why: "Pod priemerom OECD napriek povesti workoholikov." }
+      - { text: Francúzsko, value: 1503, why: "Zákonný týždeň má 35 hodín." }
+      - { text: Dánsko, value: 1374, why: "Najmenej hodín majú škandinávske krajiny a Nemecko." }
+
+  - id: stereo-poradie-tabak
+    type: order
+    prompt: "Zoraď krajiny podľa podielu dospelých užívajúcich tabak (odhad WHO, od najvyššieho)."
+    direction: desc
+    unit: "%"
+    difficulty: 2
+    asOf: "2022"
+    source: "https://ghoapi.azureedge.net/api/M_Est_tob_curr"
+    items:
+      - { text: Turecko, value: 31.1, why: "Takmer tretina dospelých." }
+      - { text: Francúzsko, value: 28.6, why: "Francúzska povesť fajčiarov sa čiastočne potvrdzuje." }
+      - { text: Nemecko, value: 20.2, why: "Nižšie než vo Francúzsku či v Turecku." }
+      - { text: Japonsko, value: 16.3, why: "Podiel tu v posledných desaťročiach klesol." }
+      - { text: Spojené kráľovstvo, value: 13.0, why: "Medzi najnižšími v Európe." }
+
+  - id: stereo-poradie-caj
+    type: order
+    prompt: "Zoraď krajiny podľa spotreby čaju na obyvateľa v roku 2016 (od najvyššej)."
+    direction: desc
+    unit: "kg na osobu ročne"
+    difficulty: 2
+    asOf: "2016"
+    source: "https://en.wikipedia.org/wiki/List_of_countries_by_tea_consumption_per_capita"
+    items:
+      - { text: Turecko, value: 3.16, why: "Prvé miesto s veľkým náskokom." }
+      - { text: Írsko, value: 2.36, why: "Írsko predbehlo Britov." }
+      - { text: Spojené kráľovstvo, value: 1.82, why: "Len štvrté miesto." }
+      - { text: Rusko, value: 1.38, why: "Čaj sa tam tradične pije zo samovaru." }
+      - { text: Japonsko, value: 0.97, why: "Pije sa najmä zelený čaj." }
+      - { text: Čína, value: 0.57, why: "Najväčší pestovateľ čaju, ale na osobu pijú len málo." }
+
+  - id: stereo-poradie-ryby
+    type: order
+    prompt: "Zoraď krajiny podľa množstva rýb a morských plodov na obyvateľa (od najväčšieho množstva)."
+    direction: desc
+    unit: "kg na osobu ročne"
+    difficulty: 2
+    asOf: "2022"
+    source: "https://ourworldindata.org/grapher/fish-and-seafood-consumption-per-capita"
+    items:
+      - { text: Island, value: 85.4, why: "Najviac rýb spomedzi európskych štátov." }
+      - { text: Portugalsko, value: 53.6, why: "Viac než Japonsko." }
+      - { text: Japonsko, value: 45.0, why: "Slávne sushi, ale nie prvé miesto." }
+      - { text: Francúzsko, value: 32.7, why: "Podstatne menej než v Portugalsku." }
+      - { text: Nemecko, value: 13.1, why: "Podstatne menej než v ostatných." }
+
+  - id: stereo-poradie-bravcove
+    type: order
+    prompt: "Zoraď krajiny podľa množstva bravčového mäsa na obyvateľa (od najväčšieho množstva)."
+    direction: desc
+    unit: "kg na osobu ročne"
+    difficulty: 2
+    asOf: "2022"
+    source: "https://www.fao.org/faostat/en/#data/FBS"
+    items:
+      - { text: Španielsko, value: 52.55, why: "Šunka, chorizo a ďalšie." }
+      - { text: Česko, value: 46.49, why: "Vepřo-knedlo-zelo vo veľkom." }
+      - { text: Slovensko, value: 42.38, why: "O pár kíl menej než v Česku." }
+      - { text: Nemecko, value: 38.72, why: "Menej než v Česku." }
+      - { text: Francúzsko, value: 32.89, why: "Asi 33 kg ročne." }
+      - { text: Grécko, value: 27.32, why: "Asi 27 kg ročne." }
+
+  # ================================================================ NUMBER
+  - id: stereo-nemecke-hodiny
+    type: number
+    prompt: "Koľko hodín v priemere odpracoval jeden pracovník v Nemecku v roku 2023 (OECD)?"
+    answer: 1338
+    unit: hodín
+    scale: log
+    tolerance: 0.05
+    asOf: "2023"
+    why: "Je to najmenej v zozname OECD. Priemer OECD je 1 745 hodín a pracovník v Mexiku odpracuje takmer o 900 hodín viac."
+    difficulty: 2
+    source: "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023"
+
+  - id: stereo-boas-slova
+    type: number
+    prompt: "Koľko inuitských slov pre sneh uviedol Franz Boas v roku 1911 ako príklad (z ktorého vznikol mýtus o desiatkach slov)?"
+    answer: 4
+    unit: slová
+    scale: linear
+    tolerance: 1
+    why: "Boas uviedol aput (sneh na zemi), qana (padajúci), piqsirpoq (vejúci) a qimuqsuq (závej); do roku 1978 sa z toho v populárnych textoch stalo 50."
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Eskimo_words_for_snow"
+
+  - id: stereo-cestoviny-taliansko
+    type: number
+    prompt: "Koľko kilogramov cestovín zjedol v roku 2015 v priemere jeden Talian?"
+    answer: 23.5
+    unit: kg
+    scale: log
+    tolerance: 0.15
+    asOf: "2015"
+    why: "Taliani sú v cestovinách prví: ešte pred Tuniskom (16 kg), Venezuelou (12 kg) a Gréckom (11 kg)."
+    difficulty: 2
+    source: "https://en.wikipedia.org/wiki/Pasta"
+
+  - id: stereo-argentina-hovadzie
+    type: number
+    prompt: "Koľko kilogramov hovädzieho mäsa pripadá podľa FAO v Argentíne na jedného obyvateľa za rok?"
+    answer: 46
+    unit: kg
+    scale: log
+    tolerance: 0.15
+    asOf: "2022"
+    why: "Je to svetové prvenstvo; Slovensko má okolo 7 kg a Nemecko okolo 14 kg."
+    difficulty: 2
+    source: "https://www.fao.org/faostat/en/#data/FBS"
+
+  - id: stereo-napoleon-vyska
+    type: number
+    prompt: "Aký vysoký bol Napoleon Bonaparte (v centimetroch)?"
+    answer: 168
+    unit: cm
+    scale: linear
+    tolerance: 3
+    why: "Britská tlač ho zosmiešňovala ako malého muža („Little Boney“), hoci mal priemernú výšku (asi 168 cm)."
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/Napoleon"
+
+  # ================================================================ CHOICE
+  - id: stereo-vikingske-prilby
+    type: choice
+    prompt: "Odkiaľ sa vzala predstava vikingov s rohatými prilbami?"
+    difficulty: 1
+    tags: [stereotypy, história, mýty]
+    source: "https://en.wikipedia.org/wiki/Horned_helmet"
+    correct: { text: "Z 19. storočia, najmä z Wagnerových opier", why: "Žiadna nájdená prilba z doby vikingov nemá rohy; jediné škandinávske rohaté prilby sú z doby bronzovej (Veksø)." }
+    wrong:
+      - { text: "Z archeologických nálezov prilieb z doby vikingov", why: "Žiadna nájdená prilba z tohto obdobia rohy nemá." }
+      - { text: "Z eposu Beowulf", why: "Beowulf opisuje prilby bez rohov." }
+      - { text: "Z reklamy 20. storočia", why: "Predstavu rozšírili už opery 19. storočia." }
+
+  - id: stereo-zemiaky-najviac
+    type: choice
+    prompt: "Ktorá z týchto krajín mala v roku 2022 podľa FAO najviac zemiakov na obyvateľa (dostupných na spotrebu)?"
+    difficulty: 2
+    tags: [stereotypy, jedlo, FAO]
+    asOf: "2022"
+    source: "https://www.fao.org/faostat/en/#data/FBS"
+    correct: { text: "Bielorusko", why: "Asi 167 kg na osobu: dvaapolkrát viac než v Nemecku." }
+    wrong:
+      - { text: "Írsko", why: "Asi 85 kg: výrazne menej než v Bielorusku." }
+      - { text: "Nemecko", why: "Asi 61 kg." }
+      - { text: "Poľsko", why: "Asi 96 kg, no ďaleko za Bieloruskom." }
