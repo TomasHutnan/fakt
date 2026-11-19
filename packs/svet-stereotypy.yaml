@@ -20,7 +20,7 @@ questions:
       - { text: "Argentínčania jedia najviac hovädzieho na obyvateľa", why: "Podľa FAO bolo v roku 2022 v Argentíne k dispozícii okolo 46 kg hovädzieho na osobu, viac než kdekoľvek inde." }
       - { text: "Turci pijú najviac čaju na obyvateľa", why: "Turecko vedie svetový rebríček s odstupom, asi 3,2 kg suchého čaju na osobu ročne (údaje za rok 2016)." }
       - { text: "Švajčiari majú úkryty pre celé obyvateľstvo", why: "Švajčiarsko malo okolo roku 2006 v úkrytoch 8,6 milióna miest, čo je 114 % obyvateľov." }
-      - { text: "Vo Fínsku je aspoň jedna sauna na každých troch obyvateľov", why: "Oficiálne registre uvádzajú aspoň 2 milióny sáun pre 5,5 milióna obyvateľov; Fínska sauna spoločnosť odhaduje až 3,2 milióna." }
+      - { text: "Vo Fínsku je aspoň jedna sauna na každých troch obyvateľov", why: "Oficiálne registre uvádzajú aspoň 2 milióny sáun pre 5,5 milióna obyvateľov; Fínska saunová spoločnosť odhaduje až 3,2 milióna." }
     wrong:
       - { text: "Nemci pracujú najviac hodín zo všetkých krajín OECD", why: "Naopak: v roku 2023 mali s 1 338 hodinami na pracovníka najmenej v zozname OECD." }
       - { text: "Japonci pracujú ročne viac hodín než Američania", why: "Podľa OECD v roku 2023 asi 1 610 hodín oproti 1 804 hodinám v USA." }
@@ -71,7 +71,6 @@ questions:
       - { text: "Česko", why: "Asi 26,7 % dospelých." }
       - { text: "Turecko", why: "Asi 31,1 %." }
       - { text: "Bulharsko", why: "Asi 35,5 %: medzi najvyššími v EÚ." }
-      - { text: "Rumunsko", why: "Asi 27,6 %." }
     wrong:
       - { text: "Nemecko", why: "Asi 20,2 %." }
       - { text: "Taliansko", why: "Asi 20,7 %." }
@@ -79,7 +78,6 @@ questions:
       - { text: "Spojené štáty", why: "Asi 16,8 %, výrazne pod európskym priemerom." }
       - { text: "Spojené kráľovstvo", why: "Asi 13,0 %." }
       - { text: "Švédsko", why: "Asi 21,2 %, hoci sa tam užíva aj bezdymový tabak snus." }
-      - { text: "Poľsko", why: "Asi 22,5 %." }
       - { text: "Holandsko", why: "Asi 20,2 %." }
 
   - id: stereo-zemiaky-viac-nez-nemci
@@ -142,7 +140,7 @@ questions:
     source: "https://ourworldindata.org/grapher/fish-and-seafood-consumption-per-capita"
     correct:
       - { text: "Island", why: "Asi 85 kg na osobu: takmer dvojnásobok Japonska." }
-      - { text: "Portugalsko", why: "Asi 54 kg; Portugalci milujú bakalao (sušenú tresku)." }
+      - { text: "Portugalsko", why: "Asi 54 kg; Portugalci milujú bakalhau (sušenú tresku)." }
       - { text: "Južná Kórea", why: "Asi 53 kg na osobu." }
       - { text: "Nórsko", why: "Asi 50 kg." }
       - { text: "Malajzia", why: "Asi 52 kg na osobu." }
@@ -189,8 +187,8 @@ questions:
     asOf: "2022"
     source: "https://www.fao.org/faostat/en/#data/FBS"
     correct:
-      - { text: "Taliansko", why: "Asi 8,9 kg na osobu: prvé miesto." }
-      - { text: "Španielsko", why: "Asi 8,7 kg na osobu, len tesne za Talianskom." }
+      - { text: "Taliansko", why: "Asi 8,9 kg na osobu; tesne pred Španielskom." }
+      - { text: "Španielsko", why: "Asi 8,7 kg na osobu, len o málo menej než v Taliansku." }
       - { text: "Grécko", why: "Asi 6,7 kg." }
       - { text: "Portugalsko", why: "Asi 4,8 kg na osobu." }
       - { text: "Maroko", why: "Asi 3,9 kg." }
@@ -219,11 +217,10 @@ questions:
       - { text: "Salisburský rezeň (Salisbury steak)", why: "Je to americké jedlo pomenované po lekárovi Jamesovi Salisburym; názov sa používa v USA od roku 1897." }
       - { text: "Švajčiarsky závin (Swiss roll, piškótová roláda)", why: "Podľa Wikipédie vznikla pravdepodobne inde v strednej Európe, azda v Rakúsku, nie vo Švajčiarsku." }
     wrong:
-      - { text: "Írska káva", why: "Podľa jednej verzie ju v rokoch 1942 – 1943 vymyslel kuchár Joe Sheridan na letisku Foynes v Írsku." }
-      - { text: "Cornwallský pastet (Cornish pasty)", why: "Skutočne pochádza z Cornwallu a má v EÚ chránené zemepisné označenie." }
       - { text: "Camembert", why: "Prvýkrát sa vyrobil koncom 18. storočia v obci Camembert v Normandii." }
       - { text: "Guláš", why: "Maďarský mäsový a zeleninový guláš pochádza z Maďarska." }
-      - { text: "Yorkshirsky puding", why: "Vymysleli ho kuchári na severe Anglicka, v Yorkshire, pri pečení mäsa." }
+      - { text: "Sachertorta", why: "Vymyslel ju v 19. storočí kuchár Franz Sacher, ktorý pracoval v Rakúskom cisárstve." }
+      - { text: "Yorkshirský puding", why: "Vymysleli ho kuchári na severe Anglicka, v Yorkshire, pri pečení mäsa." }
 
   # ================================================================ ORDER
   - id: stereo-poradie-hodiny
@@ -236,7 +233,7 @@ questions:
     source: "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023"
     items:
       - { text: Mexiko, value: 2228, why: "Najdlhší pracovný rok spomedzi krajín OECD." }
-      - { text: Grécko, value: 1893, why: "Viac než o 550 hodín ročne viac než v Nemecku." }
+      - { text: Grécko, value: 1893, why: "O vyše 550 hodín ročne viac než v Nemecku." }
       - { text: Spojené štáty, value: 1804, why: "Nad priemerom OECD (1 745)." }
       - { text: Japonsko, value: 1610, why: "Pod priemerom OECD napriek povesti workoholikov." }
       - { text: Francúzsko, value: 1503, why: "Zákonný týždeň má 35 hodín." }
@@ -253,8 +250,7 @@ questions:
     items:
       - { text: Turecko, value: 31.1, why: "Takmer tretina dospelých." }
       - { text: Francúzsko, value: 28.6, why: "Francúzska povesť fajčiarov sa čiastočne potvrdzuje." }
-      - { text: Španielsko, value: 24.9, why: "Pod štvrtinou." }
-      - { text: Nemecko, value: 20.2, why: "Nižšie než v celom strednom a južnom Európe." }
+      - { text: Nemecko, value: 20.2, why: "Nižšie než v celej strednej a južnej Európe." }
       - { text: Japonsko, value: 16.3, why: "Podiel tu v posledných desaťročiach klesol." }
       - { text: Spojené kráľovstvo, value: 13.0, why: "Medzi najnižšími v Európe." }
 
@@ -302,8 +298,8 @@ questions:
       - { text: Česko, value: 46.49, why: "Vepřo-knedlo-zelo vo veľkom." }
       - { text: Slovensko, value: 42.38, why: "O pár kíl menej než v Česku." }
       - { text: Nemecko, value: 38.72, why: "Menej než v Česku." }
-      - { text: Francúzsko, value: 32.89, why: "Francúzi jedia viac hovädzieho než bravčového." }
-      - { text: Grécko, value: 27.32, why: "Viac baraniny a hydiny." }
+      - { text: Francúzsko, value: 32.89, why: "Asi 33 kg ročne." }
+      - { text: Grécko, value: 27.32, why: "Asi 27 kg ročne." }
 
   # ================================================================ NUMBER
   - id: stereo-nemecke-hodiny
@@ -360,7 +356,7 @@ questions:
     unit: cm
     scale: linear
     tolerance: 3
-    why: "Bol priemerne vysoký. Britská tlač ho zosmiešňovala ako malého muža („Little Boney“), hoci mal priemernú výšku."
+    why: "Britská tlač ho zosmiešňovala ako malého muža („Little Boney“), hoci mal priemernú výšku (asi 168 cm)."
     difficulty: 1
     source: "https://en.wikipedia.org/wiki/Napoleon"
 
@@ -384,7 +380,7 @@ questions:
     tags: [stereotypy, jedlo, FAO]
     asOf: "2022"
     source: "https://www.fao.org/faostat/en/#data/FBS"
-    correct: { text: "Bielorusko", why: "Asi 167 kg na osobu: dvaapol krát viac než v Nemecku." }
+    correct: { text: "Bielorusko", why: "Asi 167 kg na osobu: dvaapolkrát viac než v Nemecku." }
     wrong:
       - { text: "Írsko", why: "Asi 85 kg; nie je ani v prvej desiatke." }
       - { text: "Nemecko", why: "Asi 61 kg." }
