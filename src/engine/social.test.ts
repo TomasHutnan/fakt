@@ -120,7 +120,7 @@ describe("titles", () => {
       ]),
     ];
     const t = titles(history, [22, 0, 8]);
-    expect(t).toContainEqual({ player: 1, id: "ikarus", value: 9 });
+    expect(t).toContainEqual({ player: 1, id: "smoliar", value: 9 });
     expect(t).toContainEqual({ player: 0, id: "vseved", value: 1 });
     expect(t).toContainEqual({ player: 2, id: "ostrostrelec", value: 1 });
     expect(new Set(t.map((x) => x.player)).size).toBe(t.length);
@@ -158,5 +158,30 @@ describe("titles", () => {
   it("a tie-break loser within tolerance does not get a number hit", () => {
     const r = roundRecord(number, [{ player: 0, answer: { type: "number", value: 101 }, points: 1 }, { player: 1, answer: { type: "number", value: 104 }, points: 0 }], true);
     expect(r.results.map((x) => x.hit)).toEqual([true, false]);
+  });
+
+  it("Opatrník counts auto-banked turns and turns with nothing picked", () => {
+    const pickRound = (found: number[]): RoundRecord => ({ type: "pick", results: found.map((f, player) => ({ player, points: f, status: "banked" as const, found: f, late: true })) });
+    const t = titles([pickRound([0, 5]), pickRound([1, 5])], [1, 10]);
+    expect(t).toContainEqual({ player: 0, id: "opatrnik", value: 2 });
+  });
+
+  it("Do poslednej sekundy: mostly taken at the deadline, never on one phone", () => {
+    const r = (late0: boolean, late1: boolean): RoundRecord => ({ type: "choice", results: [{ player: 0, points: 0, hit: false, late: late0 }, { player: 1, points: 1, hit: true, late: late1 }] });
+    const t = titles([r(true, false), r(true, false), r(true, true), r(false, false)], [0, 4]);
+    expect(t).toContainEqual({ player: 0, id: "poslednaSekunda", value: 3 });
+    // Two late of four is not "mostly"; too few is not enough either.
+    expect(titles([r(true, false), r(true, false), r(false, false), r(false, false)], [0, 4]).some((x) => x.id === "poslednaSekunda")).toBe(false);
+    expect(titles([r(true, false), r(true, false)], [0, 2]).some((x) => x.id === "poslednaSekunda")).toBe(false);
+    expect(titles([r(false, false), r(false, false), r(false, false)], [0, 3]).some((x) => x.id === "poslednaSekunda")).toBe(false);
+  });
+
+  it("Blesk: first to hand in, at least 3 times; one title per player, ties go to the earlier player", () => {
+    const r = (first: number): RoundRecord => ({ type: "number", results: [0, 1, 2].map((player) => ({ player, points: 0, hit: false, ...(player === first ? { first: true } : {}) })) });
+    const t = titles([r(1), r(1), r(1), r(2)], [0, 1, 1]);
+    expect(t).toContainEqual({ player: 1, id: "blesk", value: 3 });
+    expect(titles([r(1), r(1), r(2), r(2)], [0, 1, 1]).some((x) => x.id === "blesk")).toBe(false);
+    // Already holds a rarer title: the next best does not get a second one.
+    expect(new Set(t.map((x) => x.player)).size).toBe(t.length);
   });
 });

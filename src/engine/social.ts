@@ -126,6 +126,10 @@ export interface RoundRecord {
     found?: number;
     /** Number cards: within tolerance. Choice: right. Order: perfect. */
     hit?: boolean;
+    /** Rooms with a timer: the answer was taken at the deadline (draft, auto-banked pick or nothing sent). */
+    late?: boolean;
+    /** Rooms: first to hand in an answer on a non-pick card. */
+    first?: boolean;
   }[];
 }
 
@@ -146,7 +150,7 @@ export function roundRecord(card: Card, results: Scored[], tiebreak = false): Ro
   };
 }
 
-export type TitleId = "ikarus" | "vseved" | "ostrostrelec" | "hazarder" | "opatrnik" | "strateg" | "neomylny" | "moralny";
+export type TitleId = "smoliar" | "poslednaSekunda" | "blesk" | "vseved" | "ostrostrelec" | "hazarder" | "opatrnik" | "strateg" | "neomylny" | "moralny";
 
 export interface Title {
   player: number;
@@ -162,12 +166,14 @@ export interface Title {
 export function titles(history: RoundRecord[], scores: number[]): Title[] {
   const n = scores.length;
   if (n < 2 || history.length === 0) return [];
-  const per = Array.from({ length: n }, () => ({ busts: 0, maxLost: 0, completes: 0, hits: 0, numberHits: 0, orderHits: 0, banksLow: 0, wrong: 0, answered: 0 }));
+  const per = Array.from({ length: n }, () => ({ busts: 0, maxLost: 0, completes: 0, hits: 0, numberHits: 0, orderHits: 0, banksLow: 0, wrong: 0, answered: 0, late: 0, firsts: 0 }));
   for (const round of history) {
     for (const r of round.results) {
       const p = per[r.player];
       if (!p) continue;
       p.answered++;
+      if (r.late) p.late++;
+      if (r.first) p.firsts++;
       if (round.type === "pick") {
         if (r.status === "busted") {
           p.busts++;
@@ -175,6 +181,7 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
           if (r.points === 0) p.maxLost = Math.max(p.maxLost, pickPoints(r.found ?? 0));
         }
         if (r.status === "complete") p.completes++;
+        // Banked (also by the timer, or with nothing picked) after at most two right ones.
         if (r.status === "banked" && (r.found ?? 0) <= 2) p.banksLow++;
       } else if (r.hit) {
         p.hits++;
@@ -192,11 +199,14 @@ export function titles(history: RoundRecord[], scores: number[]): Title[] {
     return top;
   };
   const candidates: [TitleId, { player: number; value: number } | null][] = [
-    ["ikarus", best((p) => p.maxLost, 6)],
+    ["smoliar", best((p) => p.maxLost, 6)],
     ["vseved", best((p) => p.completes, 1)],
     ["ostrostrelec", best((p) => p.numberHits, 1)],
     ["strateg", best((p) => p.orderHits, 1)],
     ["hazarder", best((p) => p.busts, 2)],
+    // Mostly lets the timer run out: at least 3 times and in most of the cards they played.
+    ["poslednaSekunda", best((p) => (p.late >= 3 && p.late * 3 >= p.answered * 2 ? p.late : 0), 3)],
+    ["blesk", best((p) => p.firsts, 3)],
     ["opatrnik", best((p) => p.banksLow, 2)],
     ["neomylny", best((p) => (p.wrong === 0 && p.answered >= 3 ? p.answered : 0), 3)],
   ];

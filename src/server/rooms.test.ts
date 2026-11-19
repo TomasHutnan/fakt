@@ -611,6 +611,7 @@ describe("snapshots from disk", () => {
     for (const r of snap.rooms) {
       delete r.state.history;
       delete r.state.drafts;
+      delete r.state.submitted;
       delete r.state.packChoice;
       delete r.state.pickedBy;
       delete r.state.settings.lastPicks;

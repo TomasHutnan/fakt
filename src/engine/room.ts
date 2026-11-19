@@ -104,6 +104,8 @@ export interface RoomState {
    * Missing in snapshots saved before drafts existed.
    */
   drafts?: Record<string, Answer>;
+  /** Ids in the order they handed in a final answer to the current card. Missing in older snapshots. */
+  submitted?: string[];
   /** Server time (ms) when the question closes; null without a time limit. */
   deadline: number | null;
   /** Scored answers of the current card, filled at the reveal. */
@@ -447,7 +449,8 @@ function accepting(s: RoomState, a: { by: string; now: number }): boolean {
 }
 
 function answer(s: RoomState, id: string, ans: Answer, now: number, packs: Pack[]): RoomState {
-  return afterChange({ ...s, answers: { ...s.answers, [id]: ans } }, now, packs);
+  const submitted = s.submitted ?? [];
+  return afterChange({ ...s, answers: { ...s.answers, [id]: ans }, submitted: isFinal(ans) && !submitted.includes(id) ? [...submitted, id] : submitted }, now, packs);
 }
 
 /** Closes the question once everyone answered, or moves on once everyone is ready. */
@@ -477,6 +480,7 @@ function beginQuestion(s: RoomState, card: Card, now: number): RoomState {
     phase: "question",
     answers: {},
     drafts: {},
+    submitted: [],
     results: [],
     ready: [],
     deadline: secs == null ? null : now + secs * 1000,
@@ -500,13 +504,27 @@ function closeQuestion(s: RoomState, now: number): RoomState {
       : scoreCard(card, turns, s.settings.wipe, s.players.length);
   const scored = results.map((r, i) => ({ ...r, points: points[i] ?? 0 }));
   const rec = roundRecord(card, scored.map((r, i) => ({ player: i, answer: r.answer, points: r.points })), s.tiebreak != null);
-  const round: RoomRound = { ...rec, results: rec.results.map((x) => ({ ...x, playerId: scored[x.player].playerId })) };
+  // Timer rooms: whoever did not hand in a final answer was taken at the deadline. Speed never scores.
+  const timed = s.settings.pace !== "none";
+  const sent = s.submitted ?? [];
+  const firstId = card.type !== "pick" && s.players.length >= 2 ? (sent[0] ?? null) : null;
+  const recorded = rec.results.map((x) => {
+    const id = scored[x.player].playerId;
+    return { ...x, playerId: id, ...(timed && !isFinal(s.answers[id]) ? { late: true } : {}), ...(id === firstId ? { first: true } : {}) };
+  });
+  // Connected players who sent nothing and had no draft: a turn with nothing picked, or a miss.
+  const silent: RoomRound["results"] = !timed
+    ? []
+    : s.players
+        .filter((p) => p.connected && answers(s, p.id) && !scored.some((r) => r.playerId === p.id))
+        .map((p) => ({ player: -1, playerId: p.id, points: 0, late: true, ...(card.type === "pick" ? { status: "banked" as const, found: 0 } : { hit: false }) }));
+  const round: RoomRound = { type: rec.type, results: [...recorded, ...silent] };
   const players = s.players.map((p) => ({
     ...p,
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
   const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
-  return { ...s, drafts: {}, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
+  return { ...s, drafts: {}, submitted: [], players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
