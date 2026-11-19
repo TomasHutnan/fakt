@@ -5,7 +5,7 @@ category: tradicie
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: vinohradnicke-oblasti
     type: pick
@@ -316,20 +316,6 @@ questions:
       - { text: Slovenská bryndza má v EÚ štatút Zaručenej tradičnej špeciality, why: Má chránené zemepisné označenie (CHZO). }
       - { text: Paprika Žitava je v EÚ chránená ako zemepisné označenie (CHZO), why: Je to Chránené označenie pôvodu (CHOP). }
 
-  - id: vinohradnicke-rajony-poradie
-    type: order
-    prompt: Zoraď slovenské vinohradnícke oblasti od najväčšieho počtu vinohradníckych rajónov po najmenší.
-    direction: desc
-    unit: vinohradníckych rajónov
-    difficulty: 1
-    source: https://sk.wikipedia.org/wiki/Vinohradnícke_oblasti_Slovenska
-    items:
-      - { text: Malokarpatská vinohradnícka oblasť, value: 12 }
-      - { text: Nitrianska vinohradnícka oblasť, value: 9 }
-      - { text: Južnoslovenská vinohradnícka oblasť, value: 8 }
-      - { text: Stredoslovenská vinohradnícka oblasť, value: 7 }
-      - { text: Východoslovenská vinohradnícka oblasť, value: 4 }
-
   - id: sladkosti-napoje-vznik
     type: order
     prompt: Zoraď ikonické československé sladkosti a nápoje podľa roku, keď sa začali vyrábať alebo uviedli na trh, od najstaršieho.
@@ -343,22 +329,6 @@ questions:
       - { text: Kofola, value: 1960 }
       - { text: Horalky (pod týmto názvom), value: 1965 }
       - { text: Vinea, value: 1974 }
-
-  - id: eu-ochrana-poradie
-    type: order
-    prompt: Zoraď slovenské potraviny a liehoviny podľa roku zápisu do európskeho registra chránených označení od najstaršieho.
-    direction: asc
-    unit: rok zápisu
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://www.mpsr.sk/politikakvality/?go=8&offset=7
-    items:
-      - { text: Skalický trdelník, value: 2007 }
-      - { text: Slovenská bryndza, value: 2008 }
-      - { text: Oravský korbáčik, value: 2011 }
-      - { text: Bratislavský rožok, value: 2012 }
-      - { text: Paprika Žitava, value: 2014 }
-      - { text: Trenčianska borovička Juniperus, value: 2024 }
 
   - id: kofola-byliny
     type: number
@@ -392,18 +362,6 @@ questions:
     why: Receptúru namiešali v roku 1973 a vyrábať sa začala v roku 1974.
     difficulty: 2
     source: https://sk.wikipedia.org/wiki/Vinea
-
-  - id: najdlhsi-skalicky-trdelnik
-    type: number
-    prompt: Koľko centimetrov meral rekordný najdlhší skalický trdelník upečený na Trdlofeste v roku 2014?
-    answer: 208
-    unit: cm
-    scale: log
-    tolerance: 0.05
-    asOf: "2026-11"
-    why: Rekord z roku 2014 pekári v ďalšom roku už len potvrdili.
-    difficulty: 3
-    source: https://spectator.sme.sk/politics-and-society/c/skalica-sets-new-record-with-longest-trdelnik
 
   - id: prvy-chraneny-vyrobok-eu
     type: choice

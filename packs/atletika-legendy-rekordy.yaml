@@ -4,7 +4,7 @@ description: Bolt, Duplantis, Zátopek, Kratochvílová a svetové rekordy – o
 category: sport
 lang: sk
 defaultOn: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: pariz-2024-zlato
@@ -100,7 +100,7 @@ questions:
   - id: zrd-drzitelia-rekordu
     type: pick
     prompt: Kto z týchto žrdkárov niekedy držal svetový rekord mužov v skoku o žrdi?
-    difficulty: 2
+    difficulty: 3
     asOf: "2026-11"
     source: https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
     tags: [skok-o-zrdi, rekordy]
@@ -224,7 +224,7 @@ questions:
   - id: tokio-2025-krajiny-so-zlatom
     type: pick
     prompt: Ktoré krajiny získali na MS v atletike v Tokiu 2025 aspoň jednu zlatú medailu?
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/2025_World_Athletics_Championships
     tags: [majstrovstva-sveta, medaily]
     correct:
@@ -714,7 +714,7 @@ questions:
     tolerance: 0.05
     why: "Skočil ho v marci 2026 v Uppsale, bol to jeho 15. svetový rekord, o centimeter vyššie než 6,30 m z MS v Tokiu."
     asOf: "2026-11"
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Men%27s_pole_vault_world_record_progression
     tags: [skok-o-zrdi, rekordy]
 

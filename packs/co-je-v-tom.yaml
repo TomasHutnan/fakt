@@ -5,7 +5,7 @@ category: tradicie
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: bryndzove-halusky-suroviny
     type: pick
@@ -317,7 +317,7 @@ questions:
   - id: japonske-jedla
     type: pick
     prompt: Ktoré z týchto jedál patria do japonskej kuchyne?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/List_of_Japanese_dishes
     correct:
       - { text: tempura, why: "Vyprážanie v cestíčku priniesli do Japonska v 16. storočí portugalskí jezuiti." }
@@ -430,7 +430,7 @@ questions:
     scale: log
     tolerance: 0.05
     why: "Približne 485 °C na dne pece, pod klenbou okolo 430 °C; pečie sa 60 až 90 sekúnd."
-    difficulty: 2
+    difficulty: 3
     source: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R0097
 
   - id: pizza-napoletana-priemer
@@ -455,17 +455,6 @@ questions:
     why: "Okolo 2,69 milióna SHU; vyšľachtil ju Ed Currie, autor aj Carolina Reaper."
     difficulty: 3
     source: https://en.wikipedia.org/wiki/Pepper_X
-
-  - id: caesar-rok
-    type: number
-    prompt: V ktorom roku podľa tradície vymyslel Caesar Cardini šalát Caesar?
-    answer: 1924
-    unit: rok
-    scale: linear
-    tolerance: 5
-    why: "4. júla 1924, keď mu cez sviatok Dňa nezávislosti dochádzali v kuchyni zásoby."
-    difficulty: 2
-    source: https://en.wikipedia.org/wiki/Caesar_salad
 
   - id: wiener-schnitzel-hrubka
     type: number

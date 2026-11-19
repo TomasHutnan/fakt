@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 3
+version: 4
 questions:
   # ================================================================ PICK
   - id: leonardo-diela
@@ -524,7 +524,7 @@ questions:
     prompt: Zoraď vedcov podľa roku narodenia, od najstaršieho.
     direction: asc
     unit: rok narodenia
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Galileo_Galilei
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Isaac_Newton, /Charles_Darwin, /Nikola_Tesla, /Marie_Curie, /Albert_Einstein"
     items:
@@ -577,7 +577,7 @@ questions:
     scale: linear
     tolerance: 3
     why: "Celé prvé vydanie, 1 250 kusov, kníhkupci rozobrali hneď pri novembrovom predaji roku 1859."
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Charles_Darwin
 
   - id: magellan-okolo-sveta

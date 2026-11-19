@@ -4,7 +4,7 @@ description: Sezóna 2026 – Diamantová liga, Ultimate Championship v Budapeš
 category: sport
 lang: sk
 defaultOn: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: dl-finale-2026-vitazi
@@ -52,7 +52,7 @@ questions:
   - id: me-2026-zlato
     type: pick
     prompt: Kto získal individuálne zlato na ME v atletike 2026 v Birminghame?
-    difficulty: 1
+    difficulty: 2
     asOf: "2026-11"
     source: https://en.wikipedia.org/wiki/2026_European_Athletics_Championships
     tags: [me]
@@ -464,7 +464,7 @@ questions:
     tolerance: 1
     asOf: "2026-11"
     why: 14 mítingov sezóny od Číny po Zürich a dvojdňové finále v Bruseli; celkovo sa rozdalo 9,24 milióna dolárov.
-    difficulty: 1
+    difficulty: 2
     source: https://www.diamondleague.com/about/prize-money/
     tags: [diamantova-liga]
 

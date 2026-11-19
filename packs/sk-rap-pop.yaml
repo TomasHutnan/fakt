@@ -5,7 +5,7 @@ category: kultura
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   - id: elan-hity
     type: pick
@@ -269,56 +269,6 @@ questions:
       - { text: "Pár dní", why: "Pieseň Desmodu, ocenená Aurelom v roku 2005." }
       - { text: Horehronie, why: Pieseň Kristíny z Eurovízie. }
 
-  - id: albumy-2012
-    type: pick
-    prompt: Ktoré z týchto albumov vyšli v roku 2012?
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Peter_Bič_Project
-    asOf: "2026-11"
-    note: Roky vydania sú podľa slovenskej Wikipédie jednotlivých interpretov.
-    correct:
-      - { text: Say It Loud (Peter Bič Project), why: Debut skupiny z roku 2012. }
-      - { text: Vyzliecť si človeka (Sima Martausová), why: Debut Simy z roku 2012. }
-      - { text: Buldozér (Separ), why: Vyšiel 31. októbra 2012. }
-      - { text: "Don't Look Back (Celeste Buckingham)", why: "Vyšiel 20. apríla 2012, krátko pred jej sedemnástymi narodeninami." }
-      - { text: Na slnečnej strane sveta (Kristína), why: Tretí album speváčky. }
-      - { text: Rodina (IMT Smile), why: Album z roku 2012. }
-      - { text: St. Mary Huana Ganja (Horkýže Slíže), why: Album z roku 2012. }
-      - { text: Tajomstvá (Katarína Knechtová), why: Sólový album z roku 2012. }
-    wrong:
-      - { text: Nový človek (Majk Spirit), why: Vyšiel v novembri 2011. }
-      - { text: Fenomen (Rytmus), why: Vyšiel v decembri 2011. }
-      - { text: S.E.X.Y. (Tina), why: Album z roku 2011. }
-      - { text: Iný rozmer (Desmod), why: Album z roku 2011. }
-      - { text: "Dobrý deň, to som ja (Sima Martausová)", why: "Vyšiel až v roku 2013." }
-      - { text: "Where I Belong (Celeste Buckingham)", why: "Druhý album, z roku 2013." }
-      - { text: Navždy (Kontrafakt), why: Album z roku 2013. }
-      - { text: Pirát (Separ), why: Vyšiel v marci 2014. }
-
-  - id: albumy-2019
-    type: pick
-    prompt: Ktoré z týchto albumov vyšli v roku 2019?
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Kontrafakt_(hudobná_skupina)
-    asOf: "2026-11"
-    note: Roky vydania sú podľa slovenskej Wikipédie jednotlivých interpretov.
-    correct:
-      - { text: Real Newz (Kontrafakt), why: Prvý album Kontrafaktu po šiestich rokoch. }
-      - { text: Najvyšší čas (Elán), why: Posledný štúdiový album Elánu zatiaľ. }
-      - { text: Labyrint (Peter Bič Project), why: Štvrtý album skupiny. }
-      - { text: Len tak sa stíšim (Sima Martausová), why: Album z roku 2019. }
-      - { text: MDMS (DMS), why: Album DMS z leta 2019. }
-    wrong:
-      - { text: Nie som tu náhodou (Majk Spirit), why: Vyšiel v decembri 2018. }
-      - { text: Budeme to stále my (IMT Smile), why: Album z roku 2018. }
-      - { text: Prepáčte (DMS), why: Album z roku 2018. }
-      - { text: Dream (Peter Bič Project), why: Album z roku 2017. }
-      - { text: Svety (Katarína Knechtová), why: Album z roku 2020. }
-      - { text: Oslobodená (Sima Martausová), why: Album z roku 2020. }
-      - { text: Egotron (Ego), why: Album z roku 2020. }
-      - { text: KF ako Rolls (Kontrafakt), why: Album z roku 2021. }
-      - { text: Hlava (Peter Bič Project), why: Album z roku 2021. }
-
   - id: obcianske-mena
     type: pick
     prompt: Ktoré dvojice umelecké meno a občianske meno sú správne?
@@ -462,5 +412,5 @@ questions:
       - { text: Martina Šindlerová, why: Skončila druhá v prvom ročníku. }
       - { text: Mária Bundová, why: Skončila druhá v druhom ročníku. }
       - { text: Dominika Mirgová, why: Skončila druhá v treťom ročníku. }
-    difficulty: 3
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/SuperStar_Search_Slovakia

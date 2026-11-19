@@ -5,7 +5,7 @@ category: kultura
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   - id: filmy-spielberg
     type: pick
@@ -324,7 +324,7 @@ questions:
   - id: hity-90-rokov
     type: pick
     prompt: Ktoré z týchto svetových hitov vyšli pôvodne ako singel v 90. rokoch (1990 – 1999)?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Smells_Like_Teen_Spirit
     correct:
       - text: Nirvana – Smells Like Teen Spirit
@@ -536,34 +536,6 @@ questions:
       - text: Hra o tróny
         value: 2011
         why: Seriál mal premiéru 17. apríla 2011.
-
-  - id: order-eurovizia-vitazstva
-    type: order
-    prompt: Zoraď tieto krajiny od najväčšieho po najmenší počet víťazstiev na Eurovízii.
-    direction: desc
-    unit: víťazstiev
-    difficulty: 3
-    asOf: "2026-11"
-    source: https://en.wikipedia.org/wiki/List_of_Eurovision_Song_Contest_winners
-    items:
-      - text: Švédsko
-        value: 7
-        why: Vyhralo v rokoch 1974, 1984, 1991, 1999, 2012, 2015 a 2023.
-      - text: Spojené kráľovstvo
-        value: 5
-        why: Vyhralo v rokoch 1967, 1969, 1976, 1981 a 1997.
-      - text: Izrael
-        value: 4
-        why: Vyhral v rokoch 1978, 1979, 1998 a 2018.
-      - text: Taliansko
-        value: 3
-        why: Vyhralo v rokoch 1964, 1990 a 2021.
-      - text: Španielsko
-        value: 2
-        why: Vyhralo v rokoch 1968 a 1969.
-      - text: Bulharsko
-        value: 1
-        why: Vyhralo v roku 2026.
 
   - id: rok-prvy-star-wars
     type: number
