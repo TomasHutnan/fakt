@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 3
+version: 4
 questions:
   # ---------------------------------------------------------------- PICK
   - id: preslapy-softver
@@ -496,3 +496,100 @@ questions:
       - { text: "Zo smrekového dreva", why: "Smrek je len v prezývke, ktorú lietadlu dali kritici." }
       - { text: "Z hliníka", why: "Hliník počas vojny šetrili, preto stavali z dreva." }
       - { text: "Z ocele", why: "Bolo z drevených dýh; až do roku 2019 malo najväčšie rozpätie krídel zo všetkých lietadiel, ktoré kedy vzlietli." }
+
+  - id: preslapy-schabowski
+    type: pick
+    prompt: "Ktoré tvrdenia o tlačovke z 9. novembra 1989, po ktorej padol berlínsky múr, sú pravdivé?"
+    difficulty: 1
+    tags: [história, tlačová konferencia]
+    source: "https://en.wikipedia.org/wiki/G%C3%BCnter_Schabowski"
+    correct:
+      - { text: "Text o nových pravidlách cestovania dostal Schabowski krátko pred tlačovkou", why: "Podal mu ho Egon Krenz; text mal byť zverejnený až na druhý deň ráno." }
+      - { text: "Na otázku, odkedy pravidlá platia, odpovedal „okamžite, bezodkladne“", why: "Z textu usúdil, že platia hneď; hovorca východonemeckého vedenia sa pomýlil." }
+      - { text: "Pri rozhovore vedenia o tom texte Schabowski nebol", why: "Nebol ani pri tom, keď text čítal Krenz niekoľkým členom politbyra." }
+      - { text: "Východní Nemci sa o tom dozvedeli aj zo západonemeckej televízie", why: "Večerné správy ZDF a ARD ju odvysielali o 19:17 a 20:00 a západonemeckú televíziu sledovala väčšina NDR." }
+      - { text: "Prvý hraničný priechod otvoril dôstojník Stasi Harald Jäger", why: "Okolo 23:30 na Bornholmer Straße, keď dav vysoko prevýšil počet hraničiarov." }
+    wrong:
+      - { text: "Schabowski čítal poznámku hneď na začiatku tlačovky", why: "Prečítal ju až na jej konci." }
+      - { text: "Text o cestovaní sa podľa plánu zverejnil až ráno nasledujúceho dňa", why: "Mal byť zverejnený ráno, ale Schabowski ho prečítal už večer." }
+      - { text: "Hlavou štátu a strany bol vtedy stále Erich Honecker", why: "V októbri 1989 ho politbyro prinútilo odstúpiť a nahradil ho Egon Krenz." }
+      - { text: "Hranicu otvorili na pokyn vedenia strany", why: "Podľa Wikipédie sa rozhodol veliteľ priechodu Jäger, keď dav prevýšil hraničiarov." }
+      - { text: "Schabowski hneď vysvetlil, že platí len pre cesty do západného Nemecka", why: "Až neskôr si v texte všimol, že sa pravidlá týkajú aj Západného Berlína." }
+
+  - id: preslapy-ever-given
+    type: pick
+    prompt: "Ktoré tvrdenia o lodi Ever Given, ktorá v marci 2021 zablokovala Suezský prieplav, sú pravdivé?"
+    difficulty: 1
+    tags: [doprava, lode]
+    source: "https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction https://en.wikipedia.org/wiki/Ever_Given"
+    correct:
+      - { text: "Loď je dlhá 400 metrov", why: "Preto sa zaklinila pozdĺž prieplavu a jej prova aj záď zostali na opačných brehoch." }
+      - { text: "Prieplav bol zablokovaný šesť dní", why: "Od 23. do 29. marca 2021, kým loď uvoľnilo štrnásť remorkérov." }
+      - { text: "Pri nehode hral rolu silný vietor a piesočná búrka", why: "Vietor presiahol 40 uzlov, egyptské úrady však pripustili aj technické alebo ľudské chyby." }
+      - { text: "Loď pomohol uvoľniť vysoký príliv", why: "Remorkéry sa pustili do práce počas prílivu pri superúplnku." }
+      - { text: "Egypt a vlastník lode sa nakoniec dohodli na odškodnom 540 miliónov dolárov", why: "Pôvodne Egypt žiadal vyše 900 miliónov, potom 600 miliónov." }
+      - { text: "Loď bola v prevádzke spoločnosti Evergreen z Taiwanu", why: "Vlastnila ju japonská firma Shoei Kisen Kaisha." }
+    wrong:
+      - { text: "Loď museli pred uvoľnením vyložiť", why: "Vyloženie kontajnerov bolo len záložný plán; loď uvoľnili bez neho." }
+      - { text: "Pri nehode boli zranení členovia posádky", why: "Nikto sa nezranil." }
+      - { text: "Loď bola registrovaná v Egypte", why: "Plávala pod vlajkou Panamy." }
+      - { text: "Loď plávala do Singapuru", why: "Smerovala z Malajzie do Rotterdamu." }
+      - { text: "Prieplav sa po uvoľnení lode musel týždne opravovať", why: "Po kontrole ho vyhlásili za nepoškodený a plavba pokračovala ešte v ten deň." }
+
+  - id: preslapy-note7
+    type: pick
+    prompt: "Ktoré tvrdenia o telefóne Samsung Galaxy Note 7 z roku 2016 sú pravdivé?"
+    difficulty: 1
+    tags: [výrobky, technika]
+    source: "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_7"
+    correct:
+      - { text: "Samsung preskočil označenie Note 6", why: "Z Note 5 skočil na 7, aby sa číslo zhodovalo s radom Galaxy S7." }
+      - { text: "Prvé požiare spôsobila chyba v dizajne batérie", why: "Elektródy v batérii od Samsung SDI sa dali ľahko zohnúť a došlo ku skratu." }
+      - { text: "Aj náhradné telefóny začali horieť", why: "Aj batérie od iného dodávateľa mali chybu vo zváraní; Samsung ich preto vymenil druhýkrát." }
+      - { text: "Samsung telefón natrvalo ukončil 10. októbra 2016", why: "Teda približne sedem týždňov po začiatku predaja 19. augusta." }
+      - { text: "Americký úrad FAA zakázal Note 7 na palube lietadiel, aj keď bol vypnutý", why: "Zákaz platil od 14. októbra 2016; podobné zákazy vydali aj iné krajiny a aerolinky." }
+      - { text: "Samsung časť zásob neskôr predával ako Galaxy Note FE", why: "Upravená verzia s menšou batériou vyšla v roku 2017." }
+    wrong:
+      - { text: "Požiare spôsobil softvér, ktorý batériu prebíjal", why: "Samsung našiel príčinu vo výrobných chybách batérií." }
+      - { text: "Telefón stiahli po viac než roku predaja", why: "Skončil po približne siedmich týždňoch." }
+      - { text: "Samsung po výmene telefónov problém uzavrel", why: "Výmenou dostal ďalšie požiare a musel produkt úplne zrušiť." }
+      - { text: "Analytici Credit Suisse odhadli stratu tržieb na niekoľko miliónov dolárov", why: "Odhadovali najmenej 17 miliárd dolárov." }
+      - { text: "Samsung všetky vrátené telefóny zničil a nikdy ich nepredal", why: "V roku 2017 uviedol obnovenú verziu ako Note FE." }
+
+  - id: preslapy-pentium
+    type: choice
+    prompt: "V ktorej operácii sa v roku 1994 mýlil procesor Intel Pentium, takže ho Intel nakoniec stiahol?"
+    difficulty: 2
+    tags: [technika, počítače]
+    source: "https://en.wikipedia.org/wiki/Pentium_FDIV_bug"
+    correct: { text: "V delení desatinných čísel", why: "Chýbali hodnoty v tabuľke pre delenie. Chybu našiel matematik Thomas Nicely pri počítaní prvočíselných dvojíc; Intel si vyžiadal odpis 475 miliónov dolárov." }
+    wrong:
+      - { text: "V sčítaní", why: "Chyba sedela v tabuľke algoritmu pre delenie, nie v sčítaní." }
+      - { text: "V násobení", why: "Násobenie fungovalo správne; mýlilo sa delenie." }
+      - { text: "V ukladaní dát na pevný disk", why: "Procesor nemá s diskom nič spoločné; chyba bola v jednotke pre desatinné čísla." }
+
+  - id: preslapy-ever-given-dni
+    type: number
+    prompt: "Koľko dní blokovala loď Ever Given Suezský prieplav v marci 2021?"
+    answer: 6
+    unit: dní
+    scale: linear
+    tolerance: 1
+    why: "Od 23. do 29. marca 2021; loď bola dlhá 400 metrov a zaklinila sa pozdĺž prieplavu."
+    difficulty: 1
+    source: "https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction"
+    tags: [doprava]
+
+  - id: preslapy-rok-moderne
+    type: order
+    prompt: "Zoraď prešľapy podľa roku, keď sa stali (od najstaršieho)."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [história]
+    source: "https://en.wikipedia.org/wiki/G%C3%BCnter_Schabowski https://en.wikipedia.org/wiki/Pentium_FDIV_bug https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_7 https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction"
+    items:
+      - { text: "Omyl na tlačovke, po ktorom padol berlínsky múr", value: 1989, why: "9. novembra 1989." }
+      - { text: "Chyba v delení procesora Pentium", value: 1994, why: "Objavená v roku 1994, Intel procesory stiahol v decembri." }
+      - { text: "Stiahnutie horiaceho telefónu Galaxy Note 7", value: 2016, why: "Samsung ho ukončil 10. októbra 2016." }
+      - { text: "Zablokovanie Suezského prieplavu", value: 2021, why: "Od 23. do 29. marca 2021." }
