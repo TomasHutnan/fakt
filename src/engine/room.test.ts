@@ -708,6 +708,7 @@ describe("room rounds and game end", () => {
     expect(sim.s.tiebreak).toEqual(["h", "p1"]);
     sim.act("h", { type: "kick", id: "p1" });
     expect(sim.s.phase).toBe("over");
+    expect(sim.s.tiebreak).toBeNull();
   });
 
   it("a tie for first goes to a tie-break that only the tied leaders answer", () => {

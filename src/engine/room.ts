@@ -297,7 +297,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
       };
       // A tie-break needs two leaders: with fewer left the game ends on the standings.
-      if (next.tiebreak && next.tiebreak.length < 2 && next.phase === "question") return nextCard(next, a.now, packs);
+      if (next.tiebreak && next.tiebreak.length < 2 && next.phase === "question") return { ...nextCard(next, a.now, packs), tiebreak: null };
       return afterChange(next, a.now, packs);
     }
 
