@@ -1,0 +1,577 @@
+id: svet-prava-rovnost
+title: Práva a rovnosť
+description: "Volebné právo žien, manželstvo a trestnosť podľa zákonov, zrušenie otroctva, apartheid, občianske práva a ľudskoprávne dokumenty: dátumy, zákony a rozsudky."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+defaultOn: false
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: prava-zeny-pred-1920
+    type: pick
+    prompt: "Ktoré z týchto krajín dali ženám celoštátne volebné právo ešte pred rokom 1920?"
+    difficulty: 2
+    tags: [volebné právo, ženy]
+    source: "https://en.wikipedia.org/wiki/Timeline_of_women%27s_suffrage https://en.wikipedia.org/wiki/Women%27s_suffrage https://en.wikipedia.org/wiki/Women%27s_suffrage_in_the_United_States"
+    correct:
+      - { text: "Nový Zéland", why: "Ženy tam môžu voliť do parlamentu od roku 1893, ako v prvej samosprávnej krajine sveta." }
+      - { text: "Fínsko", why: "V roku 1906 získali ženy aj muži všeobecné volebné právo a právo kandidovať; bola to prvá európska krajina so ženským volebným právom (vtedy ako autonómne veľkokniežatstvo)." }
+      - { text: "Nórsko", why: "Ženy získali celoštátne volebné právo v roku 1913." }
+      - { text: "Dánsko", why: "Ženy získali plné volebné právo v roku 1915." }
+    wrong:
+      - { text: "Spojené štáty", why: "Celoštátne ho zaručil až 19. dodatok ústavy ratifikovaný v auguste 1920; niektoré štáty ho zaviedli skôr." }
+      - { text: "Francúzsko", why: "Ženy tu získali volebné právo v roku 1944." }
+      - { text: "Taliansko", why: "Volebné právo žien tu bolo zavedené v roku 1945." }
+      - { text: "Španielsko", why: "Ženy tu získali volebné právo v roku 1931." }
+      - { text: "Švajčiarsko", why: "Na celoštátnej úrovni ho zaviedlo referendum v roku 1971." }
+      - { text: "Lichtenštajnsko", why: "Ženy tu získali volebné právo v roku 1984." }
+
+  - id: prava-svajciarsko-zeny
+    type: pick
+    prompt: "Ktoré tvrdenia o volebnom práve žien vo Švajčiarsku sú pravdivé?"
+    difficulty: 3
+    tags: [volebné právo, Švajčiarsko]
+    source: "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_Switzerland https://en.wikipedia.org/wiki/Timeline_of_women%27s_suffrage"
+    correct:
+      - { text: "Celoštátne volebné právo žien schválilo referendum vo februári 1971", why: "V referende rozhodovali len muži, lebo ženy vtedy ešte nemali volebné právo." }
+      - { text: "Prvé celoštátne voľby, v ktorých ženy hlasovali, sa konali v októbri 1971", why: "Boli to voľby do Federálneho zhromaždenia z 31. októbra 1971." }
+      - { text: "Podobné celoštátne referendum z roku 1959 volebné právo žien zamietlo", why: "O dvanásť rokov neskôr vyšlo druhé referendum opačne." }
+      - { text: "Kantón Vaud zaviedol volebné právo žien na kantonálnej úrovni už v roku 1959", why: "Ako prvý kantón ho zaviedol 1. februára 1959." }
+      - { text: "Posledným kantónom so zákazom volebného práva žien bol Appenzell Innerrhoden", why: "Ide o kantón s najmenším počtom obyvateľov." }
+      - { text: "O Appenzelli Innerrhoden rozhodol v roku 1990 Spolkový súd", why: "Rozsudok z 27. novembra 1990 označil výlučne mužské hlasovanie v kantóne za protiústavné." }
+    wrong:
+      - { text: "Volebné právo žien zaviedla vláda v roku 1971 dekrétom bez referenda", why: "O zmene rozhodli voliči v referende." }
+      - { text: "Ženy získali celoštátne volebné právo už v roku 1920", why: "Stalo sa tak až v roku 1971." }
+      - { text: "Posledným kantónom bol Zürich", why: "Zürich ho zaviedol už v novembri 1970." }
+      - { text: "Appenzell Innerrhoden zaviedol volebné právo žien dobrovoľne v roku 1959", why: "V roku 1959 ho tamojší voliči odmietli; zmenil to až rozsudok z roku 1990." }
+      - { text: "Referendum z roku 1959 volebné právo žien schválilo", why: "Zamietlo ho." }
+      - { text: "Spolkový súd nariadil celoštátne volebné právo žien v roku 1971", why: "O celoštátnom volebnom práve rozhodlo referendum, súd rozhodoval až o kantóne Appenzell Innerrhoden." }
+
+  - id: prava-prve-premierky
+    type: pick
+    prompt: "Ktoré z týchto krajín mali ženu vo funkcii predsedníčky vlády pred rokom 1980?"
+    difficulty: 2
+    tags: [ženy, politika]
+    source: "https://en.wikipedia.org/wiki/List_of_elected_or_appointed_female_heads_of_state_or_government https://en.wikipedia.org/wiki/Sirimavo_Bandaranaike"
+    correct:
+      - { text: "Srí Lanka (vtedy Cejlón)", why: "Sirimavo Bandaranaiková sa stala premiérkou v roku 1960 a bola prvou ženou na svete, ktorú do tejto funkcie zvolili demokraticky." }
+      - { text: "India", why: "Indira Gándhíová sa stala premiérkou v januári 1966." }
+      - { text: "Izrael", why: "Golda Meirová sa stala premiérkou v marci 1969." }
+      - { text: "Spojené kráľovstvo", why: "Margaret Thatcherová sa stala premiérkou po voľbách v roku 1979." }
+    wrong:
+      - { text: "Francúzsko", why: "Prvou premiérkou bola Édith Cresson od mája 1991." }
+      - { text: "Poľsko", why: "Prvou premiérkou bola Hanna Suchocká od júla 1992." }
+      - { text: "Kanada", why: "Prvou premiérkou bola Kim Campbellová v roku 1993." }
+      - { text: "Nemecko", why: "Prvou kancelárkou bola Angela Merkelová od novembra 2005." }
+      - { text: "Slovensko", why: "Prvou premiérkou bola Iveta Radičová od júla 2010." }
+      - { text: "Austrália", why: "Prvou premiérkou bola Julia Gillardová od júna 2010." }
+      - { text: "Taliansko", why: "Prvou premiérkou bola Giorgia Meloniová od októbra 2022." }
+
+  - id: prava-manzelstvo-krajiny
+    type: pick
+    prompt: "Ktoré z týchto krajín umožňujú manželstvo osôb rovnakého pohlavia?"
+    difficulty: 1
+    asOf: "2026-11"
+    tags: [manželstvo, LGBT]
+    source: "https://en.wikipedia.org/wiki/Same-sex_marriage https://static.slov-lex.sk/static/SK/ZZ/1992/460/20251101.html"
+    correct:
+      - { text: "Holandsko", why: "Prvá krajina na svete: zákon platí od 1. apríla 2001." }
+      - { text: "Belgicko", why: "Zaviedlo ho v roku 2003." }
+      - { text: "Španielsko", why: "Zaviedlo ho v roku 2005." }
+      - { text: "Kanada", why: "Zaviedla ho celoštátne v roku 2005." }
+      - { text: "Južná Afrika", why: "Ako jediná krajina Afriky ho zaviedla v roku 2006." }
+      - { text: "Írsko", why: "Zaviedlo ho po referende v roku 2015." }
+      - { text: "Nemecko", why: "Zaviedlo ho v roku 2017." }
+      - { text: "Taiwan", why: "Ako prvý v Ázii ho zaviedol v roku 2019." }
+      - { text: "Rakúsko", why: "Zaviedlo ho v roku 2019." }
+      - { text: "Švajčiarsko", why: "Zaviedlo ho v roku 2022." }
+    wrong:
+      - { text: "Slovensko", why: "Ústava definuje manželstvo ako zväzok muža a ženy a registrované partnerstvo zákon nepozná." }
+      - { text: "Česko", why: "Páry rovnakého pohlavia tu môžu uzavrieť partnerstvo, no nie manželstvo." }
+      - { text: "Poľsko", why: "Manželstvo osôb rovnakého pohlavia tu zákon neumožňuje." }
+      - { text: "Maďarsko", why: "Manželstvo osôb rovnakého pohlavia tu zákon neumožňuje." }
+      - { text: "Taliansko", why: "Od roku 2016 tu existujú civilné zväzky, manželstvo však nie." }
+      - { text: "Rusko", why: "Manželstvo osôb rovnakého pohlavia tu zákon neumožňuje." }
+      - { text: "Čína", why: "Manželstvo osôb rovnakého pohlavia tu zákon neumožňuje." }
+
+  - id: prava-manzelstvo-prve
+    type: pick
+    prompt: "Ktoré tvrdenia o prvých krajinách s právnym uznaním párov rovnakého pohlavia sú pravdivé?"
+    difficulty: 2
+    tags: [manželstvo, LGBT]
+    source: "https://en.wikipedia.org/wiki/Same-sex_marriage https://en.wikipedia.org/wiki/Same-sex_union_legislation"
+    correct:
+      - { text: "Holandsko bolo prvou krajinou sveta s manželstvom osôb rovnakého pohlavia (2001)", why: "Zákon z roku 2000 nadobudol účinnosť 1. apríla 2001." }
+      - { text: "Južná Afrika bola prvou krajinou Afriky s takýmto manželstvom (2006)", why: "Dodnes je v Afrike jediná." }
+      - { text: "Argentína bola prvou krajinou Latinskej Ameriky s takýmto manželstvom (2010)", why: "Zákon prijali v júli 2010." }
+      - { text: "Taiwan bol prvým štátom Ázie s takýmto manželstvom (2019)", why: "Zákon platí od mája 2019." }
+      - { text: "Dánsko zaviedlo ako prvé na svete registrované partnerstvo (1989)", why: "Išlo o partnerstvo s väčšinou práv manželov, nie o manželstvo." }
+    wrong:
+      - { text: "Dánsko bolo prvou krajinou sveta s manželstvom osôb rovnakého pohlavia (1989)", why: "V roku 1989 zaviedlo registrované partnerstvo, manželstvo prišlo až neskôr." }
+      - { text: "Švédsko bolo prvou krajinou sveta s takýmto manželstvom (2001)", why: "Zaviedlo ho v roku 2009." }
+      - { text: "Spojené štáty boli prvou krajinou sveta s takýmto manželstvom (2015)", why: "V roku 2015 ho celoštátne zaviedol rozsudok Najvyššieho súdu, no iné krajiny ho mali skôr." }
+      - { text: "Brazília bola prvou krajinou Latinskej Ameriky s takýmto manželstvom (2013)", why: "Argentína ho zaviedla o tri roky skôr." }
+      - { text: "Japonsko bolo prvým štátom Ázie s takýmto manželstvom (2019)", why: "Prvým v Ázii bol Taiwan." }
+      - { text: "Keňa bola prvou krajinou Afriky s takýmto manželstvom (2010)", why: "Prvou v Afrike bola Južná Afrika." }
+
+  - id: prava-cesko-partnerstvo
+    type: pick
+    prompt: "Ktoré tvrdenia o právnej úprave párov rovnakého pohlavia v Česku sú pravdivé?"
+    difficulty: 3
+    asOf: "2026-11"
+    tags: [partnerstvo, Česko]
+    source: "https://cs.wikipedia.org/wiki/Registrované_partnerství_v_Česku https://en.wikipedia.org/wiki/LGBTQ_rights_in_the_Czech_Republic https://portal.gov.cz/app/zakony/zakonPar.jsp?page=0&idBiblio=62343&nr=115~2F2006&rpp=15"
+    correct:
+      - { text: "Zákon o registrovanom partnerstve (č. 115/2006 Zb.) nadobudol účinnosť 1. júla 2006", why: "Registrované partnerstvo tak malo v Česku právny základ od leta 2006." }
+      - { text: "Od 1. januára 2025 môžu páry rovnakého pohlavia uzavrieť partnerstvo podľa občianskeho zákonníka", why: "Ide o novú úpravu priamo v občianskom zákonníku." }
+      - { text: "Na toto partnerstvo sa primerane vzťahujú ustanovenia o manželstve", why: "Právnym termínom však zostáva partnerstvo, nie manželstvo." }
+      - { text: "Nové registrované partnerstvá sa od roku 2025 už neuzatvárajú", why: "Už uzavreté partnerstvá platia ďalej." }
+      - { text: "Zákaz individuálneho osvojenia dieťaťa osobou v registrovanom partnerstve zrušil v roku 2016 Ústavný súd", why: "Dovtedy takéto osvojenie zákon vylučoval." }
+    wrong:
+      - { text: "Od roku 2025 je v Česku zákonom povolené manželstvo osôb rovnakého pohlavia", why: "Návrh manželstva parlament zamietol; prijali kompromis vo forme partnerstva." }
+      - { text: "Registrované partnerstvo zaviedli v Česku v roku 1996", why: "Zákon nadobudol účinnosť v roku 2006." }
+      - { text: "Registrované partnerstvo vzniklo hneď po vstupe Česka do EÚ v roku 2004", why: "Zákon nadobudol účinnosť až v roku 2006." }
+      - { text: "Česko bolo prvou krajinou Európy s registrovaným partnerstvom", why: "Prvé bolo Dánsko v roku 1989." }
+      - { text: "Registrovaní partneri mohli od roku 2006 bez obmedzenia osvojiť dieťa", why: "Zákaz individuálneho osvojenia platil až do rozhodnutia Ústavného súdu v roku 2016." }
+      - { text: "Registrované partnerstvá sa v Česku od roku 2025 uzatvárajú v nezmenenej podobe ďalej", why: "Od roku 2025 sa nové už neuzatvárajú." }
+
+  - id: prava-slovensko-pravny-stav
+    type: pick
+    prompt: "Ktoré tvrdenia o právnom postavení párov rovnakého pohlavia na Slovensku sú pravdivé?"
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [manželstvo, Slovensko]
+    source: "https://static.slov-lex.sk/static/SK/ZZ/1992/460/20251101.html https://en.wikipedia.org/wiki/LGBTQ_rights_in_Slovakia"
+    correct:
+      - { text: "Ústava v čl. 41 ods. 1 definuje manželstvo ako jedinečný zväzok medzi mužom a ženou", why: "Znenie platí od ústavnej novely z roku 2014." }
+      - { text: "Vymedzenie manželstva ako zväzku muža a ženy doplnila do ústavy novela z roku 2014", why: "Novela (č. 161/2014 Z. z.) platí od 1. septembra 2014." }
+      - { text: "Slovenské právo nepozná registrované partnerstvo ani iný formálny zväzok párov rovnakého pohlavia", why: "Takéto páry nemajú osobitný právny status." }
+      - { text: "Parlament opakovane zamietol návrhy zákonov o partnerstve párov rovnakého pohlavia", why: "Návrhy zamietol napríklad v rokoch 2012, 2018, 2021 a 2022." }
+      - { text: "Pohlavný styk osôb rovnakého pohlavia je na Slovensku legálny", why: "Legálny je od roku 1962, ešte v Československu." }
+      - { text: "Ústava od novely z roku 2025 uznáva len biologicky určené pohlavie muža a ženy", why: "Ide o nový čl. 52a, ktorý doplnil ústavný zákon č. 255/2025 Z. z. účinný od 1. novembra 2025." }
+      - { text: "Osvojiť si maloleté dieťa môžu podľa ústavy najmä manželia, osamelá osoba len výnimočne", why: "Upravuje to čl. 41 ods. 5 v znení novely účinnej od 1. novembra 2025." }
+    wrong:
+      - { text: "Slovensko zaviedlo registrované partnerstvo v roku 2006", why: "V roku 2006 ho zaviedlo Česko." }
+      - { text: "Ústava Slovenskej republiky manželstvo vôbec nedefinuje", why: "Definuje ho v čl. 41 ods. 1." }
+      - { text: "Novela ústavy z roku 2025 umožnila osvojenie dieťaťa aj párom rovnakého pohlavia", why: "Naopak, osvojenie vyhradila najmä manželom, teda mužovi a žene." }
+      - { text: "Slovensko umožňuje manželstvo osôb rovnakého pohlavia od roku 2019", why: "Zákon ho neumožňuje." }
+      - { text: "Pohlavný styk osôb rovnakého pohlavia je na Slovensku trestný", why: "Nie je; legálny je od roku 1962." }
+      - { text: "Parlament schválil zákon o partnerstve párov rovnakého pohlavia v roku 2021", why: "Návrh z roku 2021 parlament zamietol." }
+      - { text: "Zákon o registrovanom partnerstve schválili v roku 2012 a platí dodnes", why: "Návrh z roku 2012 parlament zamietol." }
+
+  - id: prava-kriminalizacia-krajiny
+    type: pick
+    prompt: "V ktorých z týchto krajín je podľa databázy ILGA World dobrovoľný pohlavný styk osôb rovnakého pohlavia trestný?"
+    difficulty: 2
+    asOf: "2025-11"
+    tags: [trestnosť, ILGA]
+    source: "https://database.ilga.org/criminalisation-consensual-same-sex-sexual-acts https://en.wikipedia.org/wiki/Criminalization_of_homosexuality https://en.wikipedia.org/wiki/Decriminalization_of_same-sex_sexual_practices"
+    correct:
+      - { text: "Irán", why: "Zákon ho trestá vrátane trestu smrti." }
+      - { text: "Saudská Arábia", why: "Trestnosť vychádza z priameho uplatňovania islamského práva." }
+      - { text: "Keňa", why: "Trestný zákonník ho trestá odňatím slobody." }
+      - { text: "Ghana", why: "Trestný zákonník ho trestá odňatím slobody." }
+      - { text: "Malajzia", why: "Trestný zákonník ho trestá odňatím slobody." }
+      - { text: "Pakistan", why: "Trestný zákonník ho trestá odňatím slobody." }
+      - { text: "Bangladéš", why: "Trestný zákonník ho trestá odňatím slobody." }
+    wrong:
+      - { text: "Južná Afrika", why: "Ústavný súd zrušil trestnosť v roku 1998." }
+      - { text: "India", why: "Najvyšší súd zrušil trestnosť v roku 2018." }
+      - { text: "Turecko", why: "Dobrovoľný pohlavný styk osôb rovnakého pohlavia tu zákon netrestá." }
+      - { text: "Rusko", why: "Trestnosť zrušili v roku 1993." }
+      - { text: "Brazília", why: "Zákon ho netrestá." }
+      - { text: "Mexiko", why: "Zákon ho na celoštátnej úrovni netrestá." }
+      - { text: "Japonsko", why: "Zákon ho netrestá." }
+      - { text: "Thajsko", why: "Zákon ho netrestá." }
+
+  - id: prava-trest-smrti-ilga
+    type: pick
+    prompt: "V ktorých z týchto štátov môže podľa databázy ILGA World zákon uložiť trest smrti za dobrovoľný pohlavný styk osôb rovnakého pohlavia?"
+    difficulty: 3
+    asOf: "2025-11"
+    tags: [trestnosť, ILGA]
+    source: "https://database.ilga.org/criminalisation-consensual-same-sex-sexual-acts https://en.wikipedia.org/wiki/Capital_punishment_for_homosexuality"
+    correct:
+      - { text: "Irán", why: "Zákon trest smrti výslovne umožňuje." }
+      - { text: "Saudská Arábia", why: "Trest smrti vyplýva z uplatňovania islamského práva." }
+      - { text: "Jemen", why: "Zákon trest smrti výslovne umožňuje." }
+      - { text: "Brunej", why: "Trest smrti umožňuje šaríjský trestný zákonník." }
+      - { text: "Mauritánia", why: "Zákon trest smrti umožňuje." }
+      - { text: "Uganda", why: "Zákon z roku 2023 umožňuje trest smrti za vymedzené činy, ktoré nazýva zhoršená homosexualita." }
+    wrong:
+      - { text: "Turecko", why: "Zákon pohlavný styk osôb rovnakého pohlavia netrestá." }
+      - { text: "Čína", why: "Zákon ho netrestá." }
+      - { text: "Maroko", why: "Zákon stanovuje trest odňatia slobody, nie trest smrti." }
+      - { text: "Keňa", why: "Zákon stanovuje trest odňatia slobody, nie trest smrti." }
+      - { text: "Malajzia", why: "Zákon stanovuje trest odňatia slobody, nie trest smrti." }
+      - { text: "Senegal", why: "Zákon stanovuje trest odňatia slobody, nie trest smrti." }
+      - { text: "Južná Afrika", why: "Trestnosť tu zrušili v roku 1998." }
+
+  - id: prava-otroctvo-pred-usa
+    type: pick
+    prompt: "Ktoré z týchto krajín zrušili otroctvo skôr, než ho zrušili Spojené štáty 13. dodatkom ústavy v roku 1865?"
+    difficulty: 2
+    tags: [otroctvo]
+    source: "https://en.wikipedia.org/wiki/Timeline_of_abolition_of_slavery_and_serfdom https://en.wikipedia.org/wiki/Slavery_Abolition_Act_1833 https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution"
+    correct:
+      - { text: "Čile", why: "Otroctvo zrušilo v roku 1823." }
+      - { text: "Mexiko", why: "Posledných otrokov oslobodilo v roku 1829." }
+      - { text: "Británia", why: "Zákon z roku 1833 platil od 1. augusta 1834 vo väčšine britských kolónií." }
+    wrong:
+      - { text: "Kuba (vtedy španielska kolónia)", why: "Otroctvo tam zrušili v roku 1886." }
+      - { text: "Brazília", why: "Zrušila ho v roku 1888 ako posledná krajina Ameriky." }
+      - { text: "Katar", why: "Otroctvo tam zrušili v roku 1952." }
+      - { text: "Saudská Arábia", why: "Otroctvo tam zrušili v roku 1962." }
+      - { text: "Jemen (vtedy Severný Jemen)", why: "Otroctvo tam zrušili v roku 1962." }
+      - { text: "Omán", why: "Otroctvo tam zrušili v roku 1970." }
+      - { text: "Mauritánia", why: "Otroctvo tam oficiálne zrušili v roku 1981." }
+
+  - id: prava-otroctvo-fakty
+    type: pick
+    prompt: "Ktoré tvrdenia o zrušení otroctva sú pravdivé?"
+    difficulty: 1
+    tags: [otroctvo]
+    source: "https://en.wikipedia.org/wiki/Slavery_Abolition_Act_1833 https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution https://en.wikipedia.org/wiki/Lei_%C3%81urea https://en.wikipedia.org/wiki/Slavery_in_Mauritania"
+    correct:
+      - { text: "Britský zákon o zrušení otroctva z roku 1833 nadobudol účinnosť 1. augusta 1834", why: "Zákon dostal súhlas kráľa 28. augusta 1833." }
+      - { text: "13. dodatok ústavy USA bol ratifikovaný v decembri 1865", why: "Ratifikovalo ho potrebných 27 zo 36 vtedajších štátov, vyhlásený bol 18. decembra 1865." }
+      - { text: "Brazília zrušila otroctvo ako posledná krajina Ameriky", why: "Stalo sa tak zákonom Lei Áurea z 13. mája 1888." }
+      - { text: "Mauritánia ako posledná krajina sveta zrušila otroctvo oficiálne v roku 1981", why: "Zrušil ho prezidentský dekrét." }
+      - { text: "Otroctvo sa v Mauritánii stalo trestným činom až v roku 2007", why: "Parlament schválil zákon v auguste 2007." }
+    wrong:
+      - { text: "Brazília zrušila otroctvo v roku 1865", why: "Zrušila ho v roku 1888." }
+      - { text: "Spojené štáty zrušili otroctvo v roku 1888", why: "Stalo sa tak v roku 1865." }
+      - { text: "Britský zákon z roku 1807 zrušil otroctvo v celom Britskom impériu", why: "Zákon z roku 1807 zakázal obchod s otrokmi; otroctvo ako také zrušil až zákon z roku 1833." }
+      - { text: "Brazília bola prvou krajinou Ameriky, ktorá zrušila otroctvo", why: "Bola poslednou." }
+      - { text: "Otroctvo bolo vo všetkých štátoch sveta oficiálne zrušené do konca 19. storočia", why: "Mauritánia ho zrušila až v roku 1981." }
+      - { text: "13. dodatok ústavy USA bol ratifikovaný v roku 1920", why: "Ratifikovali ho v roku 1865." }
+
+  - id: prava-apartheid-fakty
+    type: pick
+    prompt: "Ktoré tvrdenia o apartheide v Juhoafrickej republike sú pravdivé?"
+    difficulty: 1
+    tags: [apartheid, JAR]
+    source: "https://en.wikipedia.org/wiki/Apartheid https://en.wikipedia.org/wiki/Nelson_Mandela"
+    correct:
+      - { text: "Apartheid bol systém rasovej segregácie, ktorý v JAR platil od roku 1948 do roku 1994", why: "Slovo znamená v afrikánčine „oddelenosť“." }
+      - { text: "Nelson Mandela strávil vo väzení 27 rokov", why: "V roku 1962 ho zatkli a v roku 1964 odsúdili na doživotie." }
+      - { text: "Mandelu prepustili z väzenia 11. februára 1990", why: "Prepustil ho prezident F. W. de Klerk." }
+      - { text: "Prvé všeobecné voľby bez rasových obmedzení sa v JAR konali v apríli 1994", why: "Hlasovať mohli ľudia všetkých rás." }
+      - { text: "Mandela sa stal prezidentom po týchto voľbách a funkcie sa ujal 10. mája 1994", why: "Bol prvým čiernym prezidentom JAR." }
+      - { text: "Pri masakri v Sharpeville v marci 1960 policajti zabili 69 ľudí", why: "Išlo o protest proti povinným preukazom pre černochov." }
+    wrong:
+      - { text: "Apartheid v JAR skončil v roku 1980", why: "Skončil v roku 1994." }
+      - { text: "Nelson Mandela strávil vo väzení sedem rokov", why: "Strávil tam 27 rokov." }
+      - { text: "Mandelu prepustili z väzenia v roku 1970", why: "Prepustili ho v roku 1990." }
+      - { text: "K masakru v Sharpeville došlo v roku 1976", why: "V roku 1976 bolo povstanie v Soweto; Sharpeville bol v roku 1960." }
+      - { text: "Apartheid zaviedli v JAR v roku 1910", why: "V roku 1910 vznikla Juhoafrická únia; apartheid platil od roku 1948." }
+
+  - id: prava-obcianske-prava-usa
+    type: pick
+    prompt: "Ktoré z týchto udalostí z hnutia za občianske práva v USA sú správne datované?"
+    difficulty: 1
+    tags: [občianske práva, USA]
+    source: "https://en.wikipedia.org/wiki/Rosa_Parks https://en.wikipedia.org/wiki/Brown_v._Board_of_Education https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964 https://en.wikipedia.org/wiki/Voting_Rights_Act_of_1965 https://en.wikipedia.org/wiki/Loving_v._Virginia"
+    correct:
+      - { text: "Rosa Parksová bola zatknutá v Montgomery 1. decembra 1955", why: "Odmietla uvoľniť miesto v autobuse; nasledoval bojkot montgomeryskej autobusovej dopravy." }
+      - { text: "Najvyšší súd vyhlásil rasovú segregáciu vo verejných školách za protiústavnú v roku 1954", why: "Rozsudok Brown v. Board of Education z 17. mája 1954 bol jednomyseľný." }
+      - { text: "Zákon o občianskych právach (Civil Rights Act) podpísali 2. júla 1964", why: "Zakázal diskrimináciu na základe rasy, farby pleti, náboženstva, pohlavia a národného pôvodu." }
+      - { text: "Zákon o volebných právach (Voting Rights Act) podpísali 6. augusta 1965", why: "Zakázal rasovo diskriminačné volebné praktiky." }
+      - { text: "Rozsudok Loving v. Virginia zrušil zákazy zmiešaných manželstiev v roku 1967", why: "Najvyšší súd rozhodol jednomyseľne 12. júna 1967." }
+    wrong:
+      - { text: "Rosa Parksová bola zatknutá v roku 1945", why: "Bola to udalosť z roku 1955." }
+      - { text: "Rozsudok Brown v. Board of Education vyšiel v roku 1964", why: "Vyšiel v roku 1954." }
+      - { text: "Zákon o občianskych právach podpísali v roku 1954", why: "Podpísali ho v roku 1964." }
+      - { text: "Zákon o volebných právach podpísali v roku 1975", why: "Podpísali ho v roku 1965." }
+      - { text: "Rozsudok Loving v. Virginia vyšiel v roku 1957", why: "Vyšiel v roku 1967." }
+      - { text: "Rozsudok Loving v. Virginia vyšiel pomerom hlasov 5 : 4", why: "Súd rozhodol jednomyseľne 9 : 0." }
+
+  - id: prava-vseobecna-deklaracia-fakty
+    type: pick
+    prompt: "Ktoré tvrdenia o Všeobecnej deklarácii ľudských práv sú pravdivé?"
+    difficulty: 1
+    tags: [OSN, ľudské práva]
+    source: "https://www.un.org/en/about-us/universal-declaration-of-human-rights https://en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights"
+    correct:
+      - { text: "Prijalo ju Valné zhromaždenie OSN 10. decembra 1948", why: "Deň prijatia sa pripomína ako Deň ľudských práv." }
+      - { text: "Prijali ju v Paríži", why: "Valné zhromaždenie zasadalo v paláci Chaillot." }
+      - { text: "Obsahuje 30 článkov", why: "Opisuje základné práva a slobody každého človeka." }
+      - { text: "Nie je právne záväznou zmluvou", why: "Je to vyhlásenie, z ktorého vychádzajú neskoršie záväzné zmluvy a ústavy." }
+      - { text: "Za jej prijatie hlasovalo 48 zo 58 vtedajších členských štátov OSN", why: "Nik nehlasoval proti, osem štátov sa zdržalo a dva nehlasovali." }
+      - { text: "Pri hlasovaní sa osem štátov zdržalo hlasovania", why: "Nik nehlasoval proti." }
+    wrong:
+      - { text: "Prijala ju Rada bezpečnosti OSN", why: "Prijalo ju Valné zhromaždenie." }
+      - { text: "Prijali ju v New Yorku v roku 1945", why: "Prijali ju v Paríži v roku 1948." }
+      - { text: "Je právne záväznou zmluvou, ktorú ratifikovali všetky štáty", why: "Je to nezáväzné vyhlásenie." }
+      - { text: "Obsahuje 50 článkov", why: "Obsahuje 30 článkov." }
+      - { text: "Pri hlasovaní bolo osem štátov proti", why: "Nik nehlasoval proti; osem štátov sa zdržalo." }
+      - { text: "Za jej prijatie hlasovali jednomyseľne všetky vtedajšie členské štáty", why: "Osem štátov sa zdržalo a dva nehlasovali." }
+
+  - id: prava-vseobecna-deklaracia-prava
+    type: pick
+    prompt: "Ktoré z týchto práv uvádza Všeobecná deklarácia ľudských práv z roku 1948?"
+    difficulty: 2
+    tags: [OSN, ľudské práva]
+    source: "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+    correct:
+      - { text: "Právo na život, slobodu a osobnú bezpečnosť", why: "Je to článok 3." }
+      - { text: "Zákaz otroctva a obchodu s otrokmi", why: "Je to článok 4." }
+      - { text: "Právo hľadať azyl pred prenasledovaním", why: "Je to článok 14." }
+      - { text: "Právo na štátnu príslušnosť", why: "Je to článok 15." }
+      - { text: "Právo uzavrieť manželstvo a založiť rodinu", why: "Je to článok 16; manželstvo musí vzniknúť s voľným a plným súhlasom snúbencov." }
+      - { text: "Právo vlastniť majetok", why: "Je to článok 17." }
+      - { text: "Sloboda pokojného zhromažďovania a združovania", why: "Je to článok 20." }
+      - { text: "Právo na odpočinok vrátane pravidelnej platenej dovolenky", why: "Je to článok 24." }
+      - { text: "Právo na vzdelanie, ktoré je aspoň v základných stupňoch bezplatné", why: "Je to článok 26." }
+    wrong:
+      - { text: "Právo vlastniť strelnú zbraň", why: "Deklarácia ho neuvádza." }
+      - { text: "Právo na bezplatný prístup na internet", why: "Deklarácia ho neuvádza." }
+      - { text: "Zrušenie trestu smrti", why: "Deklarácia sa o treste smrti výslovne nezmieňuje." }
+      - { text: "Bezplatné vysokoškolské štúdium pre všetkých", why: "Bezplatné má byť aspoň základné vzdelanie; vyššie má byť rovnako prístupné podľa schopností." }
+      - { text: "Právo odmietnuť vojenskú službu z presvedčenia", why: "Deklarácia ho výslovne neuvádza." }
+      - { text: "Právo na 35-hodinový pracovný týždeň", why: "Deklarácia hovorí len o primeranom obmedzení pracovného času." }
+
+  - id: prava-echr-fakty
+    type: pick
+    prompt: "Ktoré tvrdenia o Európskom dohovore o ľudských právach a Európskom súde pre ľudské práva (ESĽP) sú pravdivé?"
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [ESĽP, Rada Európy]
+    source: "https://en.wikipedia.org/wiki/European_Convention_on_Human_Rights https://en.wikipedia.org/wiki/Council_of_Europe https://en.wikipedia.org/wiki/European_Court_of_Human_Rights"
+    correct:
+      - { text: "Dohovor podpísali 4. novembra 1950 v Ríme", why: "Podpísali ho členské štáty novovzniknutej Rady Európy." }
+      - { text: "Dohovor nadobudol účinnosť 3. septembra 1953", why: "Platí od vtedy." }
+      - { text: "ESĽP sídli v Štrasburgu", why: "Sídli tam spolu s ďalšími orgánmi Rady Európy." }
+      - { text: "ESĽP je orgánom Rady Európy, nie Európskej únie", why: "Európska únia má vlastný Súdny dvor so sídlom v Luxemburgu." }
+      - { text: "Slovensko je členom Rady Európy od roku 1993", why: "Každý nový člen musí ratifikovať aj Európsky dohovor o ľudských právach." }
+      - { text: "Rusko bolo z Rady Európy vylúčené v roku 2022", why: "Bola to prvá krajina, ktorú z organizácie vylúčili." }
+    wrong:
+      - { text: "ESĽP je orgánom Európskej únie so sídlom v Luxemburgu", why: "Je orgánom Rady Európy so sídlom v Štrasburgu." }
+      - { text: "Dohovor podpísali v roku 1948 v Paríži", why: "Podpísali ho v roku 1950 v Ríme." }
+      - { text: "Slovensko vstúpilo do Rady Európy v roku 2004 spolu s Európskou úniou", why: "Do Rady Európy vstúpilo v roku 1993." }
+      - { text: "Členom Rady Európy je aj Bielorusko", why: "Bielorusko nie je jej členom." }
+      - { text: "Rozsudky ESĽP sú len nezáväzné odporúčania", why: "Pre dotknutý štát sú záväzné." }
+      - { text: "Rusko je dodnes členom Rady Európy", why: "Vylúčili ho v roku 2022." }
+
+  - id: prava-vc-slovensko
+    type: pick
+    prompt: "Ktoré tvrdenia o rozsudku Európskeho súdu pre ľudské práva vo veci V. C. proti Slovensku sú pravdivé?"
+    difficulty: 3
+    tags: [ESĽP, Slovensko]
+    source: "https://www.echr.coe.int/documents/d/echr/fs_roma_eng"
+    correct:
+      - { text: "Rozsudok vydal Európsky súd pre ľudské práva v Štrasburgu", why: "Prípad nesie číslo 18968/07." }
+      - { text: "Rozsudok je z 8. novembra 2011", why: "Súd v ňom rozhodoval o sťažnosti ženy rómskeho pôvodu." }
+      - { text: "Prípad sa týkal sterilizácie ženy vo verejnej nemocnici", why: "Sťažovateľka tvrdila, že nesúhlasila vedome a po poučení." }
+      - { text: "Súd uznal porušenie článku 3 Dohovoru, teda zákazu neľudského alebo ponižujúceho zaobchádzania", why: "Zdravotníci podľa súdu konali v hrubom nerešpekte k autonómii pacientky a k jej právu rozhodovať o sebe." }
+      - { text: "Súd uznal aj porušenie článku 8, teda práva na rešpektovanie súkromného a rodinného života", why: "Chýbali právne záruky, ktoré by zohľadňovali reprodukčné zdravie žien rómskeho pôvodu." }
+      - { text: "Súd nezistil dôkaz, že zdravotnícky personál mal úmysel sťažovateľku týrať", why: "Porušenie článku 3 zistil napriek tomu." }
+    wrong:
+      - { text: "Rozsudok vydal Súdny dvor Európskej únie v Luxemburgu", why: "Vydal ho Európsky súd pre ľudské práva v Štrasburgu." }
+      - { text: "Súd nezistil porušenie žiadneho článku Dohovoru", why: "Zistil porušenie článkov 3 a 8." }
+      - { text: "Rozsudok je z roku 1999", why: "Je z roku 2011." }
+      - { text: "Súd rozhodol o porušení práva na život (článok 2)", why: "Rozhodoval o článkoch 3 a 8." }
+      - { text: "Prípad sa týkal vyvlastnenia pozemkov", why: "Týkal sa sterilizácie." }
+      - { text: "Rozsudok vydal Ústavný súd Slovenskej republiky ako posledná inštancia", why: "Vydal ho Európsky súd pre ľudské práva." }
+
+  # ---------------------------------------------------------------- ORDER
+  - id: prava-poradie-volebne-pravo
+    type: order
+    prompt: "Zoraď od najstaršieho, kedy ženy získali volebné právo v týchto krajinách."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [volebné právo, ženy]
+    source: "https://en.wikipedia.org/wiki/Timeline_of_women%27s_suffrage https://en.wikipedia.org/wiki/Women%27s_suffrage_in_Switzerland"
+    items:
+      - { text: "Nový Zéland", value: 1893, why: "Prvá samosprávna krajina sveta so ženským volebným právom do parlamentu." }
+      - { text: "Fínsko", value: 1906, why: "Prvá európska krajina so ženským volebným právom." }
+      - { text: "Spojené štáty (19. dodatok ústavy)", value: 1920, why: "Dodatok ratifikovali v auguste 1920." }
+      - { text: "Francúzsko", value: 1944, why: "Zaviedlo ho nariadenie dočasnej vlády." }
+      - { text: "Švajčiarsko (celoštátne voľby)", value: 1971, why: "Zaviedlo ho referendum vo februári 1971." }
+      - { text: "Saudská Arábia (komunálne voľby)", value: 2015, why: "Ženy tam prvýkrát hlasovali a kandidovali v decembri 2015." }
+
+  - id: prava-poradie-otroctvo
+    type: order
+    prompt: "Zoraď od najstaršieho, kedy tieto krajiny zrušili otroctvo."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [otroctvo]
+    source: "https://en.wikipedia.org/wiki/Slavery_Abolition_Act_1833 https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution https://en.wikipedia.org/wiki/Lei_%C3%81urea https://en.wikipedia.org/wiki/Timeline_of_abolition_of_slavery_and_serfdom https://en.wikipedia.org/wiki/Slavery_in_Mauritania"
+    items:
+      - { text: "Británia", value: 1833, why: "Zákon dostal súhlas kráľa v roku 1833 a platil od roku 1834." }
+      - { text: "Spojené štáty", value: 1865, why: "13. dodatok ústavy ratifikovali v decembri 1865." }
+      - { text: "Brazília", value: 1888, why: "Posledná krajina Ameriky; zákon Lei Áurea z 13. mája 1888." }
+      - { text: "Saudská Arábia", value: 1962, why: "Otroctvo tam zrušili v roku 1962." }
+      - { text: "Mauritánia", value: 1981, why: "Posledná krajina sveta, ktorá otroctvo oficiálne zrušila." }
+
+  - id: prava-poradie-manzelstvo
+    type: order
+    prompt: "Zoraď od najstaršieho, kedy tieto krajiny zaviedli manželstvo osôb rovnakého pohlavia."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [manželstvo, LGBT]
+    source: "https://en.wikipedia.org/wiki/Same-sex_marriage https://en.wikipedia.org/wiki/Same-sex_marriage_in_the_Netherlands"
+    items:
+      - { text: "Holandsko", value: 2001, why: "Prvá krajina sveta; zákon platí od 1. apríla 2001." }
+      - { text: "Južná Afrika", value: 2006, why: "Prvá krajina Afriky." }
+      - { text: "Argentína", value: 2010, why: "Prvá krajina Latinskej Ameriky." }
+      - { text: "Spojené štáty", value: 2015, why: "Celoštátne ho zaviedol rozsudok Najvyššieho súdu v júni 2015." }
+      - { text: "Taiwan", value: 2019, why: "Prvý štát Ázie." }
+
+  - id: prava-poradie-obcianske-prava
+    type: order
+    prompt: "Zoraď od najstaršej tieto udalosti z hnutia za občianske práva v USA."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [občianske práva, USA]
+    source: "https://en.wikipedia.org/wiki/Brown_v._Board_of_Education https://en.wikipedia.org/wiki/Rosa_Parks https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964 https://en.wikipedia.org/wiki/Voting_Rights_Act_of_1965 https://en.wikipedia.org/wiki/Loving_v._Virginia"
+    items:
+      - { text: "Rozsudok Brown v. Board of Education", value: 1954, why: "Rasová segregácia vo verejných školách sa stala protiústavnou." }
+      - { text: "Zatknutie Rosy Parksovej v Montgomery", value: 1955, why: "Stalo sa 1. decembra 1955." }
+      - { text: "Zákon o občianskych právach (Civil Rights Act)", value: 1964, why: "Podpísali ho 2. júla 1964." }
+      - { text: "Zákon o volebných právach (Voting Rights Act)", value: 1965, why: "Podpísali ho 6. augusta 1965." }
+      - { text: "Rozsudok Loving v. Virginia", value: 1967, why: "Zrušil zákazy zmiešaných manželstiev; vyšiel 12. júna 1967." }
+
+  - id: prava-poradie-dekriminalizacia
+    type: order
+    prompt: "Zoraď od najstaršieho, kedy tieto krajiny zrušili trestnosť pohlavného styku osôb rovnakého pohlavia."
+    direction: asc
+    unit: rok
+    difficulty: 3
+    tags: [trestnosť, LGBT]
+    source: "https://en.wikipedia.org/wiki/Decriminalization_of_same-sex_sexual_practices https://en.wikipedia.org/wiki/LGBTQ_rights_in_Europe https://cs.wikipedia.org/wiki/LGBT_práva_v_Česku"
+    items:
+      - { text: "Francúzsko", value: 1791, why: "Zrušenie vyplynulo z nového trestného zákonníka po Veľkej francúzskej revolúcii." }
+      - { text: "Československo", value: 1962, why: "Trestný zákon z roku 1961 platil od 1. januára 1962." }
+      - { text: "Anglicko a Wales", value: 1967, why: "Zákon o sexuálnych deliktoch z roku 1967 zrušil trestnosť v súkromí, s podmienkami." }
+      - { text: "Južná Afrika", value: 1998, why: "Trestnosť zrušil Ústavný súd." }
+      - { text: "India", value: 2018, why: "Trestnosť zrušil Najvyšší súd v rozsudku Navtej Singh Johar." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: prava-pocet-krajin-manzelstvo
+    type: number
+    prompt: "V koľkých krajinách sveta je zhruba manželstvo osôb rovnakého pohlavia zákonne uzavierané a uznávané?"
+    answer: 38
+    unit: krajín
+    scale: linear
+    tolerance: 3
+    asOf: "2026-11"
+    why: "Podľa prehľadu na Wikipédii ide o približne 38 krajín; prvé bolo Holandsko (2001), medzi najnovšie patria Lichtenštajnsko a Thajsko (2025)."
+    difficulty: 2
+    tags: [manželstvo, LGBT]
+    source: "https://en.wikipedia.org/wiki/Same-sex_marriage"
+
+  - id: prava-pocet-clankov-vseobecna-deklaracia
+    type: number
+    prompt: "Koľko článkov má Všeobecná deklarácia ľudských práv z roku 1948?"
+    answer: 30
+    unit: článkov
+    scale: linear
+    tolerance: 3
+    why: "Má 30 článkov: od práva na život, slobodu a bezpečnosť až po pravidlá výkladu."
+    difficulty: 2
+    tags: [OSN, ľudské práva]
+    source: "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+
+  - id: prava-mandela-vazenie
+    type: number
+    prompt: "Koľko rokov strávil Nelson Mandela vo väzení?"
+    answer: 27
+    unit: rokov
+    scale: linear
+    tolerance: 2
+    why: "Zatkli ho v roku 1962 a väznený bol na Robben Island, v Pollsmoor a vo Victor Verster; prepustili ho 11. februára 1990."
+    difficulty: 1
+    tags: [apartheid, JAR]
+    source: "https://en.wikipedia.org/wiki/Nelson_Mandela"
+
+  - id: prava-svajciarsko-rok
+    type: number
+    prompt: "V ktorom roku získali ženy vo Švajčiarsku volebné právo na celoštátnej úrovni?"
+    answer: 1971
+    unit: rok
+    scale: linear
+    tolerance: 3
+    why: "Rozhodlo o tom referendum vo februári 1971, v ktorom hlasovali len muži."
+    difficulty: 2
+    tags: [volebné právo, Švajčiarsko]
+    source: "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_Switzerland"
+
+  - id: prava-cssr-volebne-pravo-rok
+    type: number
+    prompt: "V ktorom roku ženy v Československu prvýkrát volili do celoštátneho parlamentu?"
+    answer: 1920
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: "Ústava z roku 1920 zaručila volebné právo mužom aj ženám a prvé voľby do Národného zhromaždenia sa konali v apríli 1920; v komunálnych voľbách mohli ženy voliť už v roku 1919."
+    difficulty: 2
+    tags: [volebné právo, Československo]
+    source: "https://en.wikipedia.org/wiki/Timeline_of_women%27s_suffrage"
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: prava-prve-manzelstvo-krajina
+    type: choice
+    prompt: "Ktorá krajina ako prvá na svete umožnila manželstvo osôb rovnakého pohlavia?"
+    difficulty: 1
+    tags: [manželstvo, LGBT]
+    source: "https://en.wikipedia.org/wiki/Same-sex_marriage_in_the_Netherlands https://en.wikipedia.org/wiki/Same-sex_marriage"
+    correct: { text: "Holandsko", why: "Zákon z roku 2000 nadobudol účinnosť 1. apríla 2001." }
+    wrong:
+      - { text: "Dánsko", why: "V roku 1989 zaviedlo prvé registrované partnerstvo, no nie manželstvo." }
+      - { text: "Švédsko", why: "Manželstvo osôb rovnakého pohlavia zaviedlo v roku 2009." }
+      - { text: "Kanada", why: "Celoštátne ho zaviedla v roku 2005." }
+
+  - id: prava-prve-volebne-pravo-europa
+    type: choice
+    prompt: "Ktorá európska krajina ako prvá dala ženám volebné právo a právo kandidovať vo voľbách do parlamentu (1906)?"
+    difficulty: 2
+    tags: [volebné právo, ženy]
+    source: "https://en.wikipedia.org/wiki/Timeline_of_women%27s_suffrage https://en.wikipedia.org/wiki/Women%27s_suffrage"
+    correct: { text: "Fínsko", why: "V roku 1906 dostali ženy aj muži všeobecné volebné právo a právo kandidovať; v nasledujúcom roku zvolili prvé poslankyne." }
+    wrong:
+      - { text: "Nórsko", why: "Ženy tu získali celoštátne volebné právo v roku 1913." }
+      - { text: "Švédsko", why: "Ženy tu získali volebné právo v roku 1919." }
+      - { text: "Spojené kráľovstvo", why: "Volebné právo mali ženy od roku 1918 len s obmedzeniami; rovnaké ako muži ho dostali v roku 1928." }
+
+  - id: prava-saudska-arabia-vodicky
+    type: choice
+    prompt: "V ktorom roku Saudská Arábia zrušila zákaz šoférovania pre ženy?"
+    difficulty: 1
+    tags: [ženy, Saudská Arábia]
+    source: "https://en.wikipedia.org/wiki/Women_to_drive_movement https://en.wikipedia.org/wiki/Women%27s_rights_in_Saudi_Arabia"
+    correct: { text: "2018", why: "Kráľ nariadil zmenu v septembri 2017 a zákaz skončil 24. júna 2018." }
+    wrong:
+      - { text: "2005", why: "V tom roku k zrušeniu zákazu nedošlo." }
+      - { text: "2011", why: "V tom roku k zrušeniu zákazu nedošlo." }
+      - { text: "2015", why: "V tom roku ženy prvýkrát hlasovali v komunálnych voľbách, šoférovať ešte nesmeli." }
+
+  - id: prava-who-icd-1990
+    type: choice
+    prompt: "V ktorom roku Svetová zdravotnícka organizácia (WHO) prijala klasifikáciu chorôb ICD-10, ktorá už homosexualitu neuvádza ako chorobu?"
+    difficulty: 3
+    tags: [WHO, LGBT]
+    source: "https://en.wikipedia.org/wiki/ICD-10 https://en.wikipedia.org/wiki/International_Day_Against_Homophobia,_Biphobia_and_Transphobia"
+    correct: { text: "1990", why: "Svetové zdravotnícke zhromaždenie schválilo ICD-10 17. mája 1990; v platnosť vstúpila v roku 1993." }
+    wrong:
+      - { text: "1973", why: "V tom roku vyradila homosexualitu zo svojho manuálu DSM Americká psychiatrická asociácia, nie WHO." }
+      - { text: "1993", why: "V tom roku ICD-10 vstúpila v členských štátoch do platnosti; schválená bola už v roku 1990." }
+      - { text: "2019", why: "V tom roku schválilo Svetové zdravotnícke zhromaždenie ICD-11; homosexualitu už vtedy neuvádzala ani predošlá verzia." }
+
+  - id: prava-jar-prve-volby
+    type: choice
+    prompt: "V ktorom roku sa v Juhoafrickej republike konali prvé všeobecné voľby, v ktorých mohli hlasovať ľudia všetkých rás?"
+    difficulty: 1
+    tags: [apartheid, JAR]
+    source: "https://en.wikipedia.org/wiki/Apartheid https://en.wikipedia.org/wiki/Nelson_Mandela"
+    correct: { text: "1994", why: "Po voľbách v apríli 1994 sa Nelson Mandela stal prezidentom." }
+    wrong:
+      - { text: "1990", why: "V tom roku prepustili Nelsona Mandelu z väzenia." }
+      - { text: "1991", why: "V tom roku zrušili zákon o registrácii obyvateľstva podľa rás." }
+      - { text: "1999", why: "V tom roku sa Mandelovi skončilo funkčné obdobie." }
