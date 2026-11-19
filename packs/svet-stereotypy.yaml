@@ -27,7 +27,7 @@ questions:
       - { text: "Briti pijú najviac čaju na obyvateľa", why: "Veľká Británia je v zozname z roku 2016 až štvrtá, za Tureckom, Írskom a Azerbajdžanom." }
       - { text: "Íri jedia najviac zemiakov na obyvateľa", why: "Írsko je podľa FAO ďaleko od vrchu rebríčka; vedie Bielorusko so 167 kg na osobu." }
       - { text: "Číňania pijú viac čaju na obyvateľa než Briti", why: "Podľa zoznamu z roku 2016 je to naopak: Briti vypijú na hlavu asi trikrát viac než Číňania." }
-      - { text: "Francúzi fajčia najviac v celej Európe", why: "Podľa WHO je francúzsky podiel (28,6 %) vysoký, ale Srbsko (36,5 %) či Bulharsko (35,5 %) sú vyššie." }
+      - { text: "Francúzi užívajú tabak najviac v celej Európe", why: "Podľa WHO je francúzsky podiel (28,6 %) vysoký, ale Srbsko (36,5 %) či Bulharsko (35,5 %) sú vyššie." }
       - { text: "Japonci jedia najviac rýb na obyvateľa", why: "Japonsko má asi 45 kg ročne, no Island má 85 kg a Portugalsko 54 kg." }
 
   - id: stereo-hodiny-pod-priemerom
@@ -215,7 +215,7 @@ questions:
       - { text: Spojené štáty, value: 1804, why: "Nad priemerom OECD (1 745)." }
       - { text: Japonsko, value: 1610, why: "Pod priemerom OECD napriek povesti workoholikov." }
       - { text: Francúzsko, value: 1503, why: "Zákonný týždeň má 35 hodín." }
-      - { text: Dánsko, value: 1374, why: "Najmenej hodín patrí škandinávskym krajinám a Nemecku." }
+      - { text: Dánsko, value: 1374, why: "Najmenej hodín majú škandinávske krajiny a Nemecko." }
 
   - id: stereo-poradie-tabak
     type: order
