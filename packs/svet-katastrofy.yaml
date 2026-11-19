@@ -101,14 +101,14 @@ questions:
       - { text: "Plavila sa z Southamptonu do New Yorku", why: "Bola to jej prvá plavba." }
       - { text: "S ľadovcom sa zrazila v noci na 15. apríla 1912", why: "Strážny zbadal ľadovec o 23.40 lodného času 14. apríla." }
       - { text: "Mala 20 záchranných člnov", why: "Ich kapacita stačila na 1 178 ľudí." }
-      - { text: "Na palube bolo 2 208 ľudí", why: "Záchranné člny teda stačili len zhruba na polovicu z nich." }
+      - { text: "Na palube bolo približne 2 200 ľudí", why: "Záchranné člny teda stačili len zhruba na polovicu z nich." }
       - { text: "Postavili ju v Belfaste", why: "Postavila ju lodenica Harland and Wolff." }
       - { text: "Preživších vzala na palubu loď Carpathia", why: "Zachránila všetkých, ktorí sa dostali do záchranných člnov." }
       - { text: "Vrak našli v roku 1985", why: "Objavil ho Robert Ballard a potvrdilo sa, že sa loď pri potopení rozlomila." }
     wrong:
       - { text: "Plavba mala začať v Liverpoole", why: "Zapísaná bola v Liverpoole, ale plavbu začala v Southamptone." }
       - { text: "Mala smerovať do Bostonu", why: "Mala smerovať do New Yorku." }
-      - { text: "Záchranné člny stačili pre všetkých na palube", why: "Mali kapacitu len pre 1 178 z 2 208 ľudí." }
+      - { text: "Záchranné člny stačili pre všetkých na palube", why: "Mali kapacitu len pre 1 178 z približne 2 200 ľudí." }
       - { text: "Vrak objavili v 50. rokoch 20. storočia", why: "Vrak bol objavený až v roku 1985." }
       - { text: "Preživších zachránila loď Californian", why: "Californian dorazila, keď už preživších vzala na palubu Carpathia." }
 
@@ -123,7 +123,7 @@ questions:
       - { text: "Veterná kalamita vo Vysokých Tatrách (2004)", why: "Víchrica z 19. novembra 2004 poškodila les na ploche vyše 12 000 hektárov." }
       - { text: "Povodeň na východnom Slovensku (1998)", why: "Prívalová búrka 20. júla 1998 zasiahla 82 obcí, najviac Jarovnice." }
     wrong:
-      - { text: "Havária v Černobyle (1986)", why: "Černobyľ leží na Ukrajine, vtedy v Sovietskom zväze." }
+      - { text: "Havária vo Fukušime (2011)", why: "Stala sa v Japonsku." }
       - { text: "Únik červeného kalu v Ajke (2010)", why: "Stalo sa to v Maďarsku, v hlinikárni pri meste Ajka." }
       - { text: "Povodeň na Odre (1997)", why: "Zasiahla Poľsko, Česko a Nemecko, nie Slovensko." }
       - { text: "Výbuch v bejrútskom prístave (2020)", why: "Stal sa v Libanone." }
@@ -264,7 +264,7 @@ questions:
       - { text: "Leží medzi Kazachstanom a Uzbekistanom", why: "Dnes ho tvorí severná a južná časť." }
       - { text: "Východná časť južného Aralu sa v roku 2014 úplne vysušila", why: "Satelitné snímky NASA to potvrdili prvýkrát v modernej histórii." }
       - { text: "Priehrada Kokaral z roku 2005 pomohla obnoviť severnú časť", why: "Hladina stúpla a vrátili sa ryby, takže rybolov je tam opäť možný." }
-      - { text: "Prístavné mesto Moynaq je dnes desiatky kilometrov od pobrežia", why: "Voda ustúpila o 30 až 90 kilometrov." }
+      - { text: "Prístavné mesto Moynaq je dnes desiatky kilometrov od pobrežia", why: "Voda sa od mesta vzdialila o desiatky kilometrov." }
     wrong:
       - { text: "Voda zmizla po zemetrasení", why: "Zmiznutie spôsobilo odklonenie riek na zavlažovanie." }
       - { text: "Leží v Mongolsku", why: "Leží v strednej Ázii, medzi Kazachstanom a Uzbekistanom." }
@@ -320,7 +320,7 @@ questions:
     source: https://en.wikipedia.org/wiki/1755_Lisbon_earthquake
     correct:
       - { text: "Stalo sa 1. novembra, na sviatok Všetkých svätých", why: "Zemetrasenie prišlo ráno, približne o 9.40 miestneho času." }
-      - { text: "Po zemetrasení prišlo cunami a požiare", why: "Požiare vznikli aj od zhasnutých sviečok z cirkevného sviatku." }
+      - { text: "Po zemetrasení prišlo cunami a požiare", why: "Požiare vznikli aj od zapálených sviečok, ktoré v deň sviatku horeli v domoch a kostoloch." }
       - { text: "Epicentrum bolo v Atlantickom oceáne", why: "Bolo juhozápadne od mysu Svätého Vincenta." }
       - { text: "Voltaire o ňom napísal báseň", why: "Báseň o lisabonskej katastrofe spochybňovala myšlienku, že všetko je na svete zariadené k najlepšiemu." }
       - { text: "Obnovu mesta organizoval ministerský predseda markíz de Pombal", why: "Obnovená dolná časť mesta dostala pravidelnú sieť ulíc." }
@@ -344,7 +344,7 @@ questions:
       - { text: "Zasiahlo pobrežia 14 krajín", why: "Najviac Indonéziu, Srí Lanku, Indiu a Thajsko." }
       - { text: "Považuje sa za najsmrteľnejšie cunami v histórii", why: "Zahynulo vyše 200-tisíc ľudí." }
       - { text: "V Indickom oceáne vtedy nebol výstražný systém na cunami", why: "Takmer všetky obete boli zaskočené." }
-      - { text: "Výstražný systém pre Indický oceán vznikol začiatkom roku 2005", why: "Vytvorili ho v reakcii na túto katastrofu." }
+      - { text: "Po katastrofe vytvorili systém varovania pred cunami pre Indický oceán", why: "Vznikol v reakcii na túto katastrofu." }
     wrong:
       - { text: "Stalo sa v Tichom oceáne pri Japonsku", why: "Stalo sa v Indickom oceáne." }
       - { text: "Zasiahlo len Indonéziu", why: "Zasiahlo 14 krajín, aj vzdialené Somálsko." }
@@ -384,7 +384,7 @@ questions:
       - { text: "Najviac obetí si vyžiadalo zlyhanie hrádzí pri New Orleans", why: "Podľa vyšetrovateľov zlyhali pre chyby v konštrukcii protipovodňovej ochrany." }
       - { text: "Zaplavených bolo asi 80 % mesta New Orleans", why: "Zaplavené boli aj veľké oblasti okolitých okresov." }
       - { text: "New Orleans nariadilo prvú povinnú evakuáciu mesta v histórii", why: "Podľa správy NOAA mesto opustilo asi 80 % obyvateľov." }
-      - { text: "Podľa pripočítania inflácie ide o najnákladnejší hurikán v histórii", why: "Škody dosiahli približne 125 miliárd dolárov." }
+      - { text: "Po započítaní inflácie ide o najnákladnejší hurikán v histórii", why: "Škody v čase hurikánu sa odhadovali na približne 125 miliárd dolárov." }
     wrong:
       - { text: "Pri pobreží Louisiany dorazil ako hurikán 5. kategórie", why: "Piatu kategóriu mal nad otvoreným morom; pri pristátí bol slabší, 3. kategórie." }
       - { text: "Najviac zasiahol Houston", why: "Najviac zasiahol New Orleans a pobrežie Louisiany a Mississippi." }
@@ -477,7 +477,7 @@ questions:
 
   - id: katastrofy-tatry-kalamita
     type: number
-    prompt: "Na akej ploche (v hektároch) poškodila víchrica 19. novembra 2004 lesy vo Vysokých Tatrách? Číslo je zaokrúhlené na tisíce."
+    prompt: "Približne na akej ploche (v hektároch) poškodila víchrica 19. novembra 2004 lesy v Tatrách?"
     answer: 12000
     unit: ha
     scale: log
