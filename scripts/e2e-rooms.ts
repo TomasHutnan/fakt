@@ -151,21 +151,27 @@ async function playRoom(mode: "Mix" | "Klasika", pace: string) {
   let pauses = 0;
   for (let i = 0; i < 600; i++) {
     const phones = [host, zuzka, miro];
-    const did = await Promise.all(phones.map((p) => step(p).catch(() => true)));
+    // The host pauses the answers on show, the big screen says so, then it goes on. This
+    // must happen before the phones' "next" taps below: the room moves on as soon as all
+    // three have tapped (or the pace runs out), and then the reveal is gone. It cannot
+    // move on before the host taps, so seeing the host's reveal here is enough.
+    if (!pauses && (await host.locator(".q--reveal").count())) {
+      const pause = host.locator(".topbar__pause");
+      if (await pause.count()) {
+        await pause.click();
+        await tv.locator(".screen--tv-reveal .paused").waitFor({ timeout: 5000 }).catch(() => errors.push(`${mode}: tv does not show the pause`));
+        await zuzka.locator(".notice", { hasText: "pozastavil" }).waitFor({ timeout: 5000 }).catch(() => errors.push(`${mode}: zuzka does not see the pause`));
+        await host.locator(".topbar__pause[aria-pressed=true]").click();
+        await host.locator(".topbar__pause[aria-pressed=false]").waitFor();
+        pauses++;
+      }
+    }
+    const did =await Promise.all(phones.map((p) => step(p).catch(() => true)));
     if (await tv.locator(".screen--tv-reveal").count()) {
       if (!reveals++) {
         if (shots) await tv.screenshot({ path: join(shots, `tv-reveal-${mode}.png`) });
         await tvFits("reveal");
         if (pace !== "Bez limitu" && !(await tv.locator(".screen--tv-reveal .timer").count())) errors.push(`${mode}: no timer on the tv reveal`);
-        // The host pauses the answers on show, the big screen says so, then it goes on.
-        const pause = host.locator(".topbar__pause");
-        if (await pause.count()) {
-          await pause.click();
-          await tv.locator(".screen--tv-reveal .paused").waitFor({ timeout: 3000 }).catch(() => errors.push(`${mode}: tv does not show the pause`));
-          await zuzka.locator(".notice", { hasText: "pozastavil" }).waitFor({ timeout: 3000 }).catch(() => errors.push(`${mode}: zuzka does not see the pause`));
-          await host.locator(".topbar__pause").click();
-          pauses++;
-        }
       }
     }
     // Reload a phone in the middle of the game: it must rejoin its seat.
