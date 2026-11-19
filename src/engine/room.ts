@@ -295,6 +295,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         answers,
         drafts,
         results: s.results.filter((r) => r.playerId !== a.id),
+        submitted: (s.submitted ?? []).filter((id) => id !== a.id),
         ready: s.ready.filter((id) => id !== a.id),
         tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
       };
