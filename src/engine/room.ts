@@ -700,7 +700,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
 function roomSocial(s: RoomState): SocialLine[] {
   const index = new Map(s.players.map((p, i) => [p.id, i]));
   const scored = s.results.filter((r) => index.has(r.playerId)).map((r) => ({ player: index.get(r.playerId)!, answer: r.answer, points: r.points }));
-  return socialLines(s.card!, scored);
+  return socialLines(s.card!, scored, 2, s.tiebreak != null);
 }
 
 function roomTitles(s: RoomState): Title[] {

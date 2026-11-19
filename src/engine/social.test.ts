@@ -67,10 +67,25 @@ describe("social lines", () => {
   });
 
   it("number cards: exact hits beat the closest", () => {
-    expect(socialLines(number, [nm(0, 101), nm(1, 300)])[0]).toEqual({ kind: "exact", players: [0] });
+    expect(socialLines(number, [nm(0, 100), nm(1, 300)])[0]).toEqual({ kind: "exact", players: [0] });
+    // Within tolerance but not the answer: never called exact.
+    expect(socialLines(number, [nm(0, 101), nm(1, 300)])[0]).toEqual({ kind: "near", players: [0] });
     expect(socialLines(number, [nm(0, 150), nm(1, 300)])[0]).toEqual({ kind: "closest", player: 0 });
     // A tie for closest is not news.
     expect(socialLines(number, [nm(0, 200), nm(1, 50)])).toEqual([]);
+  });
+
+  it("tie-break: only the closest guess is named, and nobody is called exact unless they were", () => {
+    // Both within tolerance, one closer: only the closer one.
+    expect(socialLines(number, [nm(0, 101), nm(1, 104)], 2, true)).toEqual([{ kind: "near", players: [0] }]);
+    // Neither within tolerance, one closer.
+    expect(socialLines(number, [nm(0, 150), nm(1, 300)], 2, true)).toEqual([{ kind: "closest", player: 0 }]);
+    // One exact hit.
+    expect(socialLines(number, [nm(0, 100), nm(1, 101)], 2, true)).toEqual([{ kind: "exact", players: [0] }]);
+    // Both exact: shared.
+    expect(socialLines(number, [nm(0, 100), nm(1, 100)], 2, true)).toEqual([{ kind: "exact", players: [0, 1] }]);
+    // Equal distance, not exact: a shared win, nobody singled out.
+    expect(socialLines(number, [nm(0, 200), nm(1, 50)], 2, true)).toEqual([]);
   });
 
   it("order cards: perfect order", () => {

@@ -666,6 +666,26 @@ describe("room rounds and game end", () => {
     expect(second.filter((k) => first.includes(k))).toEqual([]);
   });
 
+  it("tie-break reveal: only the closer leader wins and is named, nobody is called exact", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    answerOne(sim, "h", card, "best");
+    answerOne(sim, "p1", card, "best");
+    sim.act("h", { type: "next" });
+    const n = sim.s.card as NumberCard;
+    const near = n.scale === "log" ? n.answer * (1 + n.tolerance / 4) : n.answer + n.tolerance / 4;
+    const farther = n.scale === "log" ? n.answer * (1 + n.tolerance / 2) : n.answer + n.tolerance / 2;
+    sim.act("h", { type: "submitNumber", value: near });
+    sim.act("p1", { type: "submitNumber", value: farther });
+    const v = viewFor(sim.s, "h");
+    expect(v.players[0].score - v.players[1].score).toBe(1);
+    expect(v.social).toEqual([{ kind: "near", players: [0] }]);
+    sim.act("h", { type: "next" });
+    const scores = viewFor(sim.s, "h").players.map((p) => p.score);
+    expect(scores[0]).toBeGreaterThan(scores[1]);
+  });
+
   it("a tie for first goes to a tie-break that only the tied leaders answer", () => {
     const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", rounds: 1, lastPicks: false });
     sim.act("h", { type: "start" });

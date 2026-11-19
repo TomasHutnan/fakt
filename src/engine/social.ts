@@ -22,11 +22,12 @@ export type SocialLine =
   | { kind: "bigBust"; player: number; lost: number }
   | { kind: "untouched"; option: string }
   | { kind: "exact"; players: number[] }
+  | { kind: "near"; players: number[] }
   | { kind: "closest"; player: number }
   | { kind: "perfectOrder"; players: number[] };
 
 /** Up to `max` lines about one card, most remarkable first. Needs at least two answers. */
-export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[] {
+export function socialLines(card: Card, results: Scored[], max = 2, tiebreak = false): SocialLine[] {
   if (results.length < 2) return [];
   const lines: { line: SocialLine; weight: number }[] = [];
   const add = (line: SocialLine, weight: number) => lines.push({ line, weight });
@@ -74,8 +75,20 @@ export function socialLines(card: Card, results: Scored[], max = 2): SocialLine[
       const errs = results
         .map((r) => ({ r, e: r.answer.type === "number" && r.answer.value != null ? numberError(card, r.answer.value) : Infinity }))
         .filter((x) => Number.isFinite(x.e));
-      const exact = errs.filter((x) => x.e <= 1);
+      if (tiebreak) {
+        // Only the closest guess counts in a tie-break: name just those, and say
+        // "exact" only when the guess really was the answer. A shared closest stays quiet.
+        if (!errs.length) break;
+        const best = Math.min(...errs.map((x) => x.e));
+        const top = errs.filter((x) => x.e === best).map((x) => x.r.player);
+        if (best === 0) add({ kind: "exact", players: top }, 8);
+        else if (top.length === 1 && errs.length >= 2) add({ kind: best <= 1 ? "near" : "closest", ...(best <= 1 ? { players: top } : { player: top[0] }) } as SocialLine, 8);
+        break;
+      }
+      const exact = errs.filter((x) => x.e === 0);
+      const near = errs.filter((x) => x.e > 0 && x.e <= 1);
       if (exact.length) add({ kind: "exact", players: exact.map((x) => x.r.player) }, 8);
+      else if (near.length) add({ kind: "near", players: near.map((x) => x.r.player) }, 7);
       else if (errs.length >= 2) {
         const best = Math.min(...errs.map((x) => x.e));
         const top = errs.filter((x) => x.e === best);
