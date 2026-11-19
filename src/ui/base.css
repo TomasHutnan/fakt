@@ -104,6 +104,11 @@
 }
 :where(.order-item__controls) { display: flex; gap: 6px; }
 :where(.order-item__why, .order-item .opt__who) { grid-column: 2 / -1; }
+/* Text-only item (big screen): the text takes the whole row. Higher specificity than the designs' grid columns. */
+.screen .order-item.order-item--static { grid-template-columns: minmax(0, 1fr); }
+.screen .order-item--static > .order-item__text { grid-column: 1 / -1; }
+:where(.score-row__gain) { font-size: 0.8em; font-weight: 600; opacity: 0.75; }
+:where(.standings-line) { margin: 4px 0 0; font-weight: 600; text-align: center; }
 /* Drag to reorder: the row follows the pointer (transform set from Game.tsx). */
 .order-item--draggable { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
 .order-list .order-item.order-item--drag {

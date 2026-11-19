@@ -49,7 +49,7 @@ Live at `fakt.hutnan.dev` on the owner's VPS; `main` builds the image, the owner
 ## Decisions (owner, 2026-11-13)
 
 - **Play**: one phone passed around, hand-over screen "pass to <name>, tap to continue". Multiplayer on own phones: see below. A team is simply entered as one player.
-- **Classic**: 10 options, 2–8 true (count hidden; setting shows it). Each player plays the whole card alone. k-th correct pick = k points; bank any time; wrong pick wipes the card (setting: only ends the turn). 10 rounds by default, target score as a setting.
+- **Classic**: 10 options, 2–6 true (count hidden; setting shows it). Each player plays the whole card alone. The k-th correct pick is worth min(k, 3) points (running total 1, 3, 6, 9, 12, 15); bank any time; wrong pick wipes the card (setting: only ends the turn). 10 rounds by default, target score as a setting.
 - **Answers**: shown to each player right after their turn, drawn in place on the grid they answered in (setting: everyone after the round).
 - **Formats**: pick, order (dragged), number guess (closeness solo, ranked in multiplayer), one of four, which is more (derived from order questions in Mix). Never free-text answers; no pictures/audio in the first year.
 - **Later modes**: Guess and bet, challenge link (after rooms work). Daily card, Teams, card-level content tags: not now. Bluff, typed list recall: dropped.

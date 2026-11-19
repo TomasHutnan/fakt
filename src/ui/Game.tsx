@@ -15,7 +15,7 @@ import {
   type GameState,
   type TurnResult,
 } from "../engine/game.ts";
-import { orderPoints, pickPoints } from "../engine/scoring.ts";
+import { nextPickWorth, orderPoints, pickPoints } from "../engine/scoring.ts";
 import { socialLines, titles } from "../engine/social.ts";
 import { QuickSettings } from "./QuickSettings.tsx";
 import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
@@ -190,7 +190,7 @@ function PickTurn({
         <span class="turnbar__points">
           <span class="turnbar__num">{points}</span> <span class="turnbar__unit">{sk.pointsUnit(points)}</span>
         </span>
-        {!over && <span class="turnbar__next">{sk.nextPickWorth(found + 1)}</span>}
+        {!over && <span class="turnbar__next">{sk.nextPickWorth(nextPickWorth(found))}</span>}
         {state.settings.showCorrectCount && <span class="turnbar__count">{sk.correctCount(card.correctCount)}</span>}
       </div>
       {!over && answer.picks.length === 0 && <p class="q__hint">{sk.pickHint}</p>}
@@ -278,12 +278,20 @@ export function OrderInput({
   items: cardItems,
   direction,
   onSubmit,
+  onDraft,
 }: {
   items: { text: string }[];
   direction: "asc" | "desc";
   onSubmit: (arrangement: number[]) => void;
+  /** Called with the current arrangement after each change (not for the starting order). */
+  onDraft?: (arrangement: number[]) => void;
 }) {
   const [arr, setArr] = useState(() => cardItems.map((_, i) => i));
+  const changed = useRef(false);
+  useEffect(() => {
+    if (changed.current) onDraft?.(arr);
+    changed.current = true;
+  }, [arr]);
   const [drag, setDrag] = useState<{ item: number; y: number } | null>(null);
   const list = useRef<HTMLOListElement>(null);
   const grab = useRef(0);
@@ -393,7 +401,18 @@ function NumberTurn({ card, state, dispatch }: { card: NumberCard; state: GameSt
 }
 
 /** Number guess field; `decimals` is the precision asked for. */
-export function NumberInput({ unit, decimals, onSubmit }: { unit?: string; decimals: number; onSubmit: (value: number) => void }) {
+export function NumberInput({
+  unit,
+  decimals,
+  onSubmit,
+  onDraft,
+}: {
+  unit?: string;
+  decimals: number;
+  onSubmit: (value: number) => void;
+  /** Called with the typed number whenever it is a valid one. */
+  onDraft?: (value: number) => void;
+}) {
   const [raw, setRaw] = useState("");
   const [error, setError] = useState(false);
   const submit = (e: Event) => {
@@ -416,8 +435,11 @@ export function NumberInput({ unit, decimals, onSubmit }: { unit?: string; decim
           aria-describedby="number-hint"
           value={raw}
           onInput={(e) => {
-            setRaw((e.target as HTMLInputElement).value);
+            const text = (e.target as HTMLInputElement).value;
+            setRaw(text);
             setError(false);
+            const v = parseNumber(text, decimals);
+            if (Number.isFinite(v)) onDraft?.(v);
           }}
         />
         {unit && <span class="number-input__unit">{unit}</span>}

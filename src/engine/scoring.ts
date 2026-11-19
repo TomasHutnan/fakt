@@ -17,9 +17,18 @@ export const POINTS = {
 
 export type WipeRule = "always" | "firstFree";
 
-/** k-th correct pick is worth k points: 1, 3, 6, 10, 15 … */
+/** The k-th correct pick is worth min(k, 3) points, so the running total goes 1, 3, 6, 9, 12, 15. */
+export const PICK_STEP_CAP = 3;
+
+/** Points the next correct pick adds after `found` correct ones. */
+export function nextPickWorth(found: number): number {
+  return Math.min(found + 1, PICK_STEP_CAP);
+}
+
 export function pickPoints(correctPicks: number): number {
-  return (correctPicks * (correctPicks + 1)) / 2;
+  let total = 0;
+  for (let k = 1; k <= correctPicks; k++) total += Math.min(k, PICK_STEP_CAP);
+  return total;
 }
 
 export function pickTurnPoints(card: PickCard, picks: number[], wipe: WipeRule): number {

@@ -105,7 +105,7 @@ describe("titles", () => {
       ]),
     ];
     const t = titles(history, [22, 0, 8]);
-    expect(t).toContainEqual({ player: 1, id: "ikarus", value: 10 });
+    expect(t).toContainEqual({ player: 1, id: "ikarus", value: 9 });
     expect(t).toContainEqual({ player: 0, id: "vseved", value: 1 });
     expect(t).toContainEqual({ player: 2, id: "ostrostrelec", value: 1 });
     expect(new Set(t.map((x) => x.player)).size).toBe(t.length);
