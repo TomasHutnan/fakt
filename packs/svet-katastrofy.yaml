@@ -38,7 +38,7 @@ questions:
     source: https://en.wikipedia.org/wiki/Chernobyl_disaster
     correct:
       - { text: "Výbuch nastal v reaktore č. 4 počas bezpečnostného testu", why: "Test mal overiť, ako dlho dokáže dobiehajúca turbína napájať čerpadlá pri výpadku prúdu." }
-      - { text: "Mesto Pripiať evakuovali až ráno po výbuchu", why: "K výbuchu došlo 26. apríla 1986 a evakuáciu nariadili skoro ráno 27. apríla." }
+      - { text: "Mesto Pripiať evakuovali až nasledujúci deň po výbuchu", why: "K výbuchu došlo 26. apríla 1986 a evakuácia sa uskutočnila 27. apríla." }
       - { text: "Sovietske úrady informovali verejnosť až po tom, čo radiáciu zaznamenali vo Švédsku", why: "Zvýšená radiácia spustila poplach v jadrovej elektrárni Forsmark vo Švédsku; verejnosť sa o havárii dozvedela až o dva dni." }
       - { text: "Nad zničeným reaktorom dostavali v rokoch 2016 až 2018 nový ochranný kryt", why: "Nový kryt prekryl starý betónový sarkofág, ktorý vznikol v mesiacoch po nehode." }
       - { text: "Elektráreň stojí na území dnešnej Ukrajiny", why: "Vtedy bola súčasťou Sovietskeho zväzu." }
@@ -49,7 +49,7 @@ questions:
       - { text: "Havária nastala v roku 1989", why: "Nastala 26. apríla 1986." }
       - { text: "Zakázaná zóna mala od prvého dňa polomer 30 km", why: "Najprv mala polomer 10 km a až neskôr ju rozšírili na 30 km." }
       - { text: "Sovietska televízia o výbuchu informovala hneď prvé ráno", why: "Vláda sa k havárii verejne priznala až dva dni po nej." }
-      - { text: "Pripiať evakuovali v priebehu hodiny po výbuchu", why: "Obyvateľom sa nič nehlásilo celú noc; evakuáciu nariadili až ráno nasledujúceho dňa." }
+      - { text: "Pripiať evakuovali v priebehu hodiny po výbuchu", why: "Obyvateľov v noci nikto nevaroval; evakuácia sa uskutočnila až nasledujúci deň." }
 
   - id: katastrofy-bhopal
     type: pick
@@ -117,7 +117,7 @@ questions:
     prompt: "Ktoré z týchto katastrof zasiahli územie dnešného Slovenska?"
     difficulty: 1
     tags: [slovensko, katastrofy]
-    source: "https://sk.wikipedia.org/wiki/Hav%C3%A1ria_jadrovej_elektr%C3%A1rne_A1 https://sk.wikipedia.org/wiki/Tatransk%C3%BD_n%C3%A1rodn%C3%BD_park https://sk.wikipedia.org/wiki/Povode%C5%88_na_v%C3%BDchodnom_Slovensku_(1998) https://en.wikipedia.org/wiki/Ajka_alumina_plant_accident https://en.wikipedia.org/wiki/1997_Central_European_flood https://en.wikipedia.org/wiki/Chernobyl_disaster https://en.wikipedia.org/wiki/2020_Beirut_explosion https://en.wikipedia.org/wiki/Halifax_Explosion https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill https://en.wikipedia.org/wiki/Aral_Sea"
+    source: "https://sk.wikipedia.org/wiki/Hav%C3%A1ria_jadrovej_elektr%C3%A1rne_A1 https://sk.wikipedia.org/wiki/Tatransk%C3%BD_n%C3%A1rodn%C3%BD_park https://sk.wikipedia.org/wiki/Povode%C5%88_na_v%C3%BDchodnom_Slovensku_(1998) https://en.wikipedia.org/wiki/Ajka_alumina_plant_accident https://en.wikipedia.org/wiki/Chernobyl_disaster https://en.wikipedia.org/wiki/2020_Beirut_explosion https://en.wikipedia.org/wiki/Halifax_Explosion https://en.wikipedia.org/wiki/Deepwater_Horizon_oil_spill https://en.wikipedia.org/wiki/Aral_Sea"
     correct:
       - { text: "Havária v jadrovej elektrárni A1 v Jaslovských Bohuniciach (1977)", why: "Ide o najzávažnejšiu jadrovú nehodu v bývalom Československu." }
       - { text: "Veterná kalamita vo Vysokých Tatrách (2004)", why: "Víchrica z 19. novembra 2004 poškodila les na ploche vyše 12 000 hektárov." }
@@ -125,7 +125,7 @@ questions:
     wrong:
       - { text: "Havária vo Fukušime (2011)", why: "Stala sa v Japonsku." }
       - { text: "Únik červeného kalu v Ajke (2010)", why: "Stalo sa to v Maďarsku, v hlinikárni pri meste Ajka." }
-      - { text: "Povodeň na Odre (1997)", why: "Zasiahla Poľsko, Česko a Nemecko, nie Slovensko." }
+      - { text: "Lisabonské zemetrasenie (1755)", why: "Stalo sa v Portugalsku." }
       - { text: "Výbuch v bejrútskom prístave (2020)", why: "Stal sa v Libanone." }
       - { text: "Výbuch v prístave Halifax (1917)", why: "Stal sa v kanadskom Novom Škótsku." }
       - { text: "Únik ropy z plošiny Deepwater Horizon (2010)", why: "Stal sa v Mexickom zálive." }
@@ -362,7 +362,7 @@ questions:
       - { text: "Vybuchlo asi 2 750 ton dusičnanu amónneho", why: "Šlo o náklad, ktorý sa v prístave skladoval od roku 2014." }
       - { text: "Náklad pochádzal z lode Rhosus plaviacej sa pod moldavskou vlajkou", why: "Loď zakotvila v Bejrúte v roku 2013." }
       - { text: "Náklad bol v prístave uskladnený šesť rokov", why: "Bol vo sklade č. 12, bez primeraných bezpečnostných opatrení." }
-      - { text: "Výbuch nasledoval po požiari v susednom sklade", why: "Požiar zasiahol sklad pred hlavnou explóziou." }
+      - { text: "Výbuch nasledoval po požiari v sklade č. 12", why: "V sklade bol dusičnan amónny a podľa zdroja aj ohňostroje." }
       - { text: "Výbuch bolo cítiť až na Cypre", why: "Cyprus leží na druhej strane Stredozemného mora." }
       - { text: "Americký geologický ústav (USGS) ho zaznamenal ako seizmickú udalosť s magnitúdou 3,3", why: "Je to jeden z najsilnejších nejadrových výbuchov, aké kedy zaznamenali." }
     wrong:
