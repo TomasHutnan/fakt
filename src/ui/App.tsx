@@ -147,6 +147,24 @@ export function App() {
     setGame(next);
   };
 
+  // A finished room game: remember its cards as seen on this phone too, like a one-phone game does.
+  useEffect(() => {
+    if (!client || demo) return;
+    let merged = "";
+    return client.subscribe((st) => {
+      const v = st.view;
+      if (!v || v.phase !== "over" || v.you == null || !Array.isArray(v.played) || v.played.length === 0) return;
+      const sig = `${v.code}:${v.played.join(",")}`;
+      if (sig === merged) return;
+      merged = sig;
+      setSeen((prev) => {
+        const all = Array.from(new Set([...prev, ...v.played]));
+        persist(KEYS.seen, all);
+        return all;
+      });
+    });
+  }, [client]);
+
   function storeSeat(next: StoredSeat | null) {
     setSeat(next);
     persist(KEYS.room, next);

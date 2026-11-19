@@ -386,6 +386,10 @@ describe("playing through the hub", () => {
       { type: "submitOrder", arrangement: { length: 4 } },
       { type: "submitNumber", value: "5" },
       { type: "submitChoice", option: 1.5 },
+      { type: "draft" },
+      { type: "draft", arrangement: "abc", value: "5", option: {} },
+      { type: "draft", arrangement: { length: 4 } },
+      { type: "draft", value: 1e999 },
       { type: "kick", id: { toString: 1 } },
       { type: "kick", id: null },
     ]) {
@@ -606,6 +610,7 @@ describe("snapshots from disk", () => {
     const snap = JSON.parse(JSON.stringify(hub.snapshot()));
     for (const r of snap.rooms) {
       delete r.state.history;
+      delete r.state.drafts;
       delete r.state.packChoice;
       delete r.state.pickedBy;
       delete r.state.settings.lastPicks;

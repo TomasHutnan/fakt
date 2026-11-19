@@ -98,6 +98,12 @@ export interface RoomState {
   phase: RoomPhase;
   /** Answers to the current card by player id. */
   answers: Record<string, Answer>;
+  /**
+   * Unsubmitted order, number and choice answers (what a phone currently shows), by player id.
+   * Never shown to anyone; scored when the question closes for players without a submitted answer.
+   * Missing in snapshots saved before drafts existed.
+   */
+  drafts?: Record<string, Answer>;
   /** Server time (ms) when the question closes; null without a time limit. */
   deadline: number | null;
   /** Scored answers of the current card, filled at the reveal. */
@@ -126,6 +132,8 @@ export type ClientAction =
   | { type: "submitOrder"; arrangement: number[] }
   | { type: "submitNumber"; value: number }
   | { type: "submitChoice"; option: number }
+  /** The phone's current unsent answer (one of the three fields, matching the card); scored if time runs out. */
+  | { type: "draft"; arrangement?: number[]; value?: number; option?: number }
   | { type: "close" }
   | { type: "ready" }
   | { type: "next" }
@@ -169,6 +177,7 @@ export function createRoom(input: CreateRoomInput): RoomState | null {
     card: null,
     phase: "lobby",
     answers: {},
+    drafts: {},
     deadline: null,
     results: [],
     ready: [],
@@ -275,10 +284,12 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
     case "kick": {
       if (typeof a.id !== "string" || a.by !== controllerId(s) || a.id === a.by || !s.players.some((p) => p.id === a.id)) return s;
       const { [a.id]: _gone, ...answers } = s.answers;
+      const { [a.id]: _draft, ...drafts } = s.drafts ?? {};
       const next: RoomState = {
         ...s,
         players: s.players.filter((p) => p.id !== a.id),
         answers,
+        drafts,
         results: s.results.filter((r) => r.playerId !== a.id),
         ready: s.ready.filter((id) => id !== a.id),
         tiebreak: s.tiebreak ? s.tiebreak.filter((id) => id !== a.id) : null,
@@ -323,6 +334,13 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       const valid = Array.isArray(arr) && arr.length === n && new Set(arr).size === n && arr.every((i) => Number.isInteger(i) && i >= 0 && i < n);
       if (!valid) return s;
       return answer(s, a.by, { type: "order", arrangement: arr.slice() }, a.now, packs);
+    }
+
+    case "draft": {
+      if (!accepting(s, a) || !s.card || s.answers[a.by]) return s;
+      const d = validDraft(s.card, a);
+      if (!d) return s;
+      return { ...s, drafts: { ...(s.drafts ?? {}), [a.by]: d } };
     }
 
     case "submitNumber":
@@ -381,6 +399,7 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
         card: null,
         phase: "lobby",
         answers: {},
+        drafts: {},
         deadline: null,
         results: [],
         ready: [],
@@ -397,6 +416,20 @@ export function reduceRoom(s: RoomState, a: RoomAction, packs: Pack[]): RoomStat
       // Unknown actions (e.g. from a newer or broken client) change nothing.
       return s;
   }
+}
+
+/** A draft that would be a valid submitted answer to this card, or null. */
+function validDraft(card: Card, a: { arrangement?: unknown; value?: unknown; option?: unknown }): Answer | null {
+  if (card.type === "order") {
+    const n = card.items.length;
+    const arr = a.arrangement;
+    const ok = Array.isArray(arr) && arr.length === n && new Set(arr).size === n && arr.every((i) => Number.isInteger(i) && i >= 0 && i < n);
+    return ok ? { type: "order", arrangement: (arr as number[]).slice() } : null;
+  }
+  if (card.type === "number") return typeof a.value === "number" && Number.isFinite(a.value) ? { type: "number", value: a.value } : null;
+  if (card.type === "choice")
+    return typeof a.option === "number" && Number.isInteger(a.option) && a.option >= 0 && a.option < card.options.length ? { type: "choice", option: a.option } : null;
+  return null;
 }
 
 function isPlayer(s: RoomState, id: string): boolean {
@@ -439,18 +472,19 @@ function beginQuestion(s: RoomState, card: Card, now: number): RoomState {
     card,
     phase: "question",
     answers: {},
+    drafts: {},
     results: [],
     ready: [],
     deadline: secs == null ? null : now + secs * 1000,
   };
 }
 
-/** Scores the card: unfinished pick turns are banked; players without an answer score nothing. */
+/** Scores the card: unfinished pick turns are banked; a draft stands in for an answer never sent; the rest score nothing. */
 function closeQuestion(s: RoomState, now: number): RoomState {
   const card = s.card!;
   const results: RoomResult[] = [];
   for (const p of s.players) {
-    let a = s.answers[p.id];
+    let a = s.answers[p.id] ?? (answers(s, p.id) ? s.drafts?.[p.id] : undefined);
     if (!a) continue;
     if (a.type === "pick" && a.status === "playing") a = { ...a, status: "banked" };
     results.push({ playerId: p.id, answer: a, points: 0 });
@@ -468,7 +502,7 @@ function closeQuestion(s: RoomState, now: number): RoomState {
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
   const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
-  return { ...s, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
+  return { ...s, drafts: {}, players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
@@ -627,6 +661,8 @@ export interface RoomView {
   tiebreak: string[] | null;
   /** The host paused the answers on show. */
   paused: boolean;
+  /** Game over: keys of the cards played, so every phone can remember them as seen. */
+  played: string[];
   /** Big screens watching the room (filled in by the server). */
   screens?: number;
 }
@@ -657,6 +693,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     titles: s.phase === "over" ? roomTitles(s) : [],
     tiebreak: s.tiebreak,
     paused: s.phase === "reveal" && s.paused != null,
+    played: s.phase === "over" ? s.played : [],
   };
 }
 

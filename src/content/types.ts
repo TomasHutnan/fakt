@@ -30,7 +30,7 @@ interface QuestionBase {
   note?: string;
 }
 
-/** Many options, some true. The game shows 10 with 2–8 true. */
+/** Many options, some true. The game shows 10 with 2–6 true. */
 export interface PickQuestion extends QuestionBase {
   type: "pick";
   correct: Option[];
