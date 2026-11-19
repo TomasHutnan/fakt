@@ -20,7 +20,7 @@ questions:
       - { text: "Výbuch v bejrútskom prístave (2020)", why: "Dusičnan amónny bol šesť rokov uskladnený bez dostatočných bezpečnostných opatrení." }
       - { text: "Výbuch v prístave Halifax (1917)", why: "Spôsobila ho zrážka lodí, z ktorých jedna viezla výbušniny." }
       - { text: "Únik ropy z plošiny Deepwater Horizon (2010)", why: "Vrt vybuchol po tom, čo sa z neho prudko uvoľnil metán." }
-      - { text: "Zmiznutie Aralského mora", why: "Rieky, ktoré ho napájali, odklonili na zavlažovanie polí." }
+      - { text: "Vysychanie Aralského mora", why: "Rieky, ktoré ho napájali, odklonili na zavlažovanie polí." }
     wrong:
       - { text: "Erupcia Vezuvu (79)", why: "Prírodná udalosť: sopka pochovala Pompeje a Herculaneum." }
       - { text: "Erupcia sopky Tambora (1815)", why: "Prírodná udalosť, po ktorej nasledoval rok 1816 bez leta." }
@@ -40,7 +40,7 @@ questions:
       - { text: "Výbuch nastal v reaktore č. 4 počas bezpečnostného testu", why: "Test mal overiť, ako dlho dokáže dobiehajúca turbína napájať čerpadlá pri výpadku prúdu." }
       - { text: "Mesto Pripiať evakuovali až nasledujúci deň po výbuchu", why: "K výbuchu došlo 26. apríla 1986 a evakuácia sa uskutočnila 27. apríla." }
       - { text: "Sovietske úrady informovali verejnosť až po tom, čo radiáciu zaznamenali vo Švédsku", why: "Zvýšená radiácia spustila poplach v jadrovej elektrárni Forsmark vo Švédsku; verejnosť sa o havárii dozvedela až o dva dni." }
-      - { text: "Nad zničeným reaktorom dostavali v rokoch 2016 až 2018 nový ochranný kryt", why: "Nový kryt prekryl starý betónový sarkofág, ktorý vznikol v mesiacoch po nehode." }
+      - { text: "Nad zničeným reaktorom postavili nový ochranný kryt", why: "Nový kryt prekryl starý betónový sarkofág, ktorý vznikol v mesiacoch po nehode, a má umožniť odstránenie trosiek reaktora." }
       - { text: "Elektráreň stojí na území dnešnej Ukrajiny", why: "Vtedy bola súčasťou Sovietskeho zväzu." }
       - { text: "Dostala najvyšší, siedmy stupeň na stupnici INES", why: "Ide o stupeň veľkej havárie; rovnako ju hodnotia aj Fukušimu." }
     wrong:
@@ -282,7 +282,7 @@ questions:
       - { text: "Deepwater Horizon explodovala 20. apríla 2010", why: "Plošina bola v Mexickom zálive pri vrte Macondo." }
       - { text: "Pri výbuchu Deepwater Horizon zahynulo 11 pracovníkov", why: "Ďalších 17 bolo zranených." }
       - { text: "Ropa z vrtu Macondo unikala 87 dní", why: "Vrt vyhlásili za zapečatený 19. septembra 2010." }
-      - { text: "Deepwater Horizon sa považuje za najväčší únik ropy do mora v histórii", why: "Bol väčší než predchádzajúci rekordér, únik Ixtoc I." }
+      - { text: "Deepwater Horizon sa považuje za najväčší únik ropy do mora v histórii ropného priemyslu", why: "Bol väčší než predchádzajúci rekordér, únik Ixtoc I." }
       - { text: "Exxon Valdez nasadol na útes v Prince William Sound na Aljaške", why: "Stalo sa to 24. marca 1989." }
       - { text: "BP sa v roku 2016 dohodla na pokute a vyrovnaní 20,8 miliardy dolárov", why: "Ide o najväčšie vyrovnanie za škody na životnom prostredí v histórii USA." }
     wrong:
