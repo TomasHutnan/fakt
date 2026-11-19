@@ -146,9 +146,9 @@ questions:
     source: "https://static.slov-lex.sk/static/SK/ZZ/1992/460/20251101.html https://en.wikipedia.org/wiki/LGBTQ_rights_in_Slovakia"
     correct:
       - { text: "Ústava v čl. 41 ods. 1 definuje manželstvo ako jedinečný zväzok medzi mužom a ženou", why: "Znenie platí od ústavnej novely z roku 2014." }
-      - { text: "Túto definíciu manželstva doplnila ústavná novela z roku 2014", why: "Novela (č. 161/2014 Z. z.) platí od 1. septembra 2014." }
+      - { text: "Vymedzenie manželstva ako zväzku muža a ženy doplnila do ústavy novela z roku 2014", why: "Novela (č. 161/2014 Z. z.) platí od 1. septembra 2014." }
       - { text: "Slovenské právo nepozná registrované partnerstvo ani iný formálny zväzok párov rovnakého pohlavia", why: "Takéto páry nemajú osobitný právny status." }
-      - { text: "Parlament opakovane zamietol návrhy zákonov o registrovanom partnerstve", why: "Návrhy zamietol napríklad v rokoch 2012, 2018, 2021 a 2022." }
+      - { text: "Parlament opakovane zamietol návrhy zákonov o partnerstve párov rovnakého pohlavia", why: "Návrhy zamietol napríklad v rokoch 2012, 2018, 2021 a 2022." }
       - { text: "Pohlavný styk osôb rovnakého pohlavia je na Slovensku legálny", why: "Legálny je od roku 1962, ešte v Československu." }
       - { text: "Ústava od novely z roku 2025 uznáva len biologicky určené pohlavie muža a ženy", why: "Ide o nový čl. 52a, ktorý doplnil ústavný zákon č. 255/2025 Z. z. účinný od 1. novembra 2025." }
       - { text: "Osvojiť si maloleté dieťa môžu podľa ústavy najmä manželia, osamelá osoba len výnimočne", why: "Upravuje to čl. 41 ods. 5 v znení novely účinnej od 1. novembra 2025." }
@@ -158,7 +158,7 @@ questions:
       - { text: "Novela ústavy z roku 2025 umožnila osvojenie dieťaťa aj párom rovnakého pohlavia", why: "Naopak, osvojenie vyhradila najmä manželom, teda mužovi a žene." }
       - { text: "Slovensko umožňuje manželstvo osôb rovnakého pohlavia od roku 2019", why: "Zákon ho neumožňuje." }
       - { text: "Pohlavný styk osôb rovnakého pohlavia je na Slovensku trestný", why: "Nie je; legálny je od roku 1962." }
-      - { text: "Parlament schválil zákon o registrovanom partnerstve v roku 2021", why: "Návrh z roku 2021 parlament zamietol." }
+      - { text: "Parlament schválil zákon o partnerstve párov rovnakého pohlavia v roku 2021", why: "Návrh z roku 2021 parlament zamietol." }
       - { text: "Zákon o registrovanom partnerstve schválili v roku 2012 a platí dodnes", why: "Návrh z roku 2012 parlament zamietol." }
 
   - id: prava-kriminalizacia-krajiny
