@@ -524,6 +524,39 @@ describe("room card formats", () => {
     }
   });
 
+  it("history marks who was taken at the deadline and who handed in first, only with a timer", () => {
+    const sim = mix();
+    const card = until(sim, (c) => c.type === "choice") as Extract<Card, { type: "choice" }>;
+    const right = card.options.findIndex((o) => o.correct);
+    sim.act("p1", { type: "submitChoice", option: right });
+    sim.act("h", { type: "draft", option: right });
+    sim.advance(120_000);
+    const last = sim.s.history[sim.s.history.length - 1].results;
+    expect(last.find((r) => r.playerId === "p1")).toMatchObject({ first: true });
+    expect(last.find((r) => r.playerId === "p1")!.late).toBeUndefined();
+    expect(last.find((r) => r.playerId === "h")).toMatchObject({ late: true });
+    // p2 sent nothing and had no draft: a late miss.
+    expect(last.find((r) => r.playerId === "p2")).toMatchObject({ late: true, hit: false });
+    const noTimer = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "none", rounds: 2 });
+    noTimer.act("h", { type: "start" });
+    noTimer.answerAll("best");
+    expect(noTimer.s.history[0].results.every((r) => r.late === undefined)).toBe(true);
+  });
+
+  it("a pick turn closed by the timer is banked and late; a silent player counts as banked with nothing", () => {
+    const sim = new Sim(["Jano", "Zuzka", "Miro"], { mode: "classic", pace: "fast", rounds: 3 });
+    sim.act("h", { type: "start" });
+    const card = sim.s.card as PickCard;
+    sim.act("h", { type: "pick", option: card.options.findIndex((o) => o.correct) });
+    sim.advance(120_000);
+    const res = sim.s.history[0].results;
+    expect(res.find((r) => r.playerId === "h")).toMatchObject({ status: "banked", found: 1, late: true });
+    expect(res.filter((r) => r.playerId !== "h")).toEqual([
+      expect.objectContaining({ status: "banked", found: 0, late: true, points: 0 }),
+      expect.objectContaining({ status: "banked", found: 0, late: true, points: 0 }),
+    ]);
+  });
+
   it("drafts: a submitted answer wins, the last draft counts, bad drafts are refused", () => {
     const sim = mix();
     const card = until(sim, (c) => c.type === "order") as OrderCard;
@@ -922,6 +955,7 @@ describe("comeback rules in rooms", () => {
     sim.answerAll("best");
     sim.act("h", { type: "next" });
     expect(sim.s.round).toBe(2);
+    sim.act("h", { type: "start" });
     const card = sim.s.card as PickCard;
     sim.act("h", { type: "pick", option: card.options.findIndex((o) => o.correct) });
     expect(viewFor(sim.s, "h").mine).toMatchObject({ points: 1 });
