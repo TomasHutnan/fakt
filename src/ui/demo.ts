@@ -160,12 +160,12 @@ export function demoState(screen: DemoScreen): GameState | null {
 
 // Room demo states (?demo=room-…, ?demo=tv-…): views as a device would get them.
 
-export type RoomDemo = "room-lobby" | "room-packpick" | "room-pick" | "room-number" | "room-reveal" | "room-over" | "tv-lobby" | "tv-question" | "tv-reveal";
-export const ROOM_DEMOS: RoomDemo[] = ["room-lobby", "room-packpick", "room-pick", "room-number", "room-reveal", "room-over", "tv-lobby", "tv-question", "tv-reveal"];
+export type RoomDemo = "room-choice" | "room-order" | "room-tiebreak" | "room-tiebreak-reveal" | "tv-over" | "tv-tiebreak" | "room-lobby" | "room-packpick" | "room-pick" | "room-number" | "room-reveal" | "room-over" | "tv-lobby" | "tv-question" | "tv-reveal";
+export const ROOM_DEMOS: RoomDemo[] = ["room-choice", "room-order", "room-tiebreak", "room-tiebreak-reveal", "tv-over", "tv-tiebreak", "room-lobby", "room-packpick", "room-pick", "room-number", "room-reveal", "room-over", "tv-lobby", "tv-question", "tv-reveal"];
 
 const T0 = 1_800_000_000_000;
 
-function roomWith(type: "pick" | "number"): { s: RoomState; packs: Pack[] } {
+function roomWith(type: "pick" | "number" | "choice" | "order"): { s: RoomState; packs: Pack[] } {
   const pack: Pack = { ...DEMO_PACK, questions: DEMO_PACK.questions.filter((q) => q.type === type) };
   const packs = [pack];
   let s = createRoom({
@@ -185,7 +185,8 @@ function roomWith(type: "pick" | "number"): { s: RoomState; packs: Pack[] } {
 export function demoRoom(screen: string): { view: RoomView; now: number; screen: boolean } {
   const tv = screen.startsWith("tv-");
   const you = tv ? null : "zuzka";
-  const kind = screen === "room-number" ? "number" : "pick";
+  const kind: "pick" | "number" | "choice" | "order" =
+    screen === "room-number" || screen.includes("tiebreak") ? "number" : screen === "room-choice" ? "choice" : screen === "room-order" ? "order" : "pick";
   let { s, packs } = roomWith(kind);
   const act = (by: string, a: ClientAction) => (s = reduceRoom(s, { ...a, by, now: T0 } as never, packs));
   if (screen === "room-packpick") {
@@ -214,11 +215,20 @@ export function demoRoom(screen: string): { view: RoomView; now: number; screen:
         act("peta", { type: "pick", option: right[3] });
         act("peta", { type: "bank" });
       }
+    } else if (kind === "choice") {
+      act("jano", { type: "submitChoice", option: 0 });
+    } else if (kind === "order") {
+      act("jano", { type: "submitOrder", arrangement: [0, 1, 2, 3] });
+    } else if (screen.includes("tiebreak")) {
+      // Jano and Zuzka share the lead; only they answer the extra card.
+      s = { ...s, tiebreak: ["jano", "zuzka"], players: s.players.map((p) => ({ ...p, score: p.id === "jano" || p.id === "zuzka" ? 14 : 8 })) };
+      act("jano", { type: "submitNumber", value: 215000 });
+      if (screen === "room-tiebreak-reveal") act("zuzka", { type: "submitNumber", value: 260000 });
     } else {
       act("jano", { type: "submitNumber", value: 200000 });
     }
     if (screen === "room-reveal" || screen === "tv-reveal") act("jano", { type: "ready" });
-    if (screen === "room-over") s = { ...s, phase: "over", players: s.players.map((p, i) => ({ ...p, score: [21, 19, 12, 14, 9][i] })) };
+    if (screen === "room-over" || screen === "tv-over") s = { ...s, phase: "over", players: s.players.map((p, i) => ({ ...p, score: [21, 19, 12, 14, 9][i] })) };
   }
   return { view: viewFor(s, you), now: T0 + 23_000, screen: tv };
 }
