@@ -6,7 +6,7 @@ lang: sk
 adult: false
 defaultOn: false
 warnings: [gross]
-version: 1
+version: 2
 questions:
   - id: zj-krajiny-europa
     type: pick
@@ -419,7 +419,7 @@ questions:
     prompt: Zoraď tieto udalosti od najstaršej.
     direction: asc
     unit: rok
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Fugu
     note: "Ďalšie zdroje: en.wikipedia.org/wiki/Haggis, /Surströmming, /Casu_martzu, /Carolina_Reaper, /Dog_meat_consumption_in_South_Korea"
     items:
@@ -498,7 +498,7 @@ questions:
     scale: linear
     tolerance: 2
     why: Na Filipínach sa balut inkubuje zvyčajne 14 až 18 dní, vo Vietname až 21 dní.
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Balut_(food)
 
   - id: zj-kiviak-pocet
@@ -509,7 +509,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: Vtáky aj so zobákmi a perím kvasia v koži asi tri mesiace.
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Kiviak
 
   - id: zj-escamoles

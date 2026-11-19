@@ -5,13 +5,13 @@ category: veda
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- pick
   - id: vesmir-mesiace
     type: pick
     prompt: Ktoré z týchto telies sú mesiace planét Slnečnej sústavy?
-    difficulty: 1
+    difficulty: 2
     tags: [vesmír]
     source: https://en.wikipedia.org/wiki/List_of_natural_satellites
     correct:

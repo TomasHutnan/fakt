@@ -6,7 +6,7 @@ lang: sk
 adult: false
 defaultOn: false
 warnings: [vulgar]
-version: 1
+version: 2
 questions:
   - id: dd-postavy-komnata
     type: pick
@@ -478,7 +478,7 @@ questions:
     scale: log
     tolerance: 0.1
     why: "Prispelo 363 ľudí, už za prvých 24 hodín sa vyzbieralo 2 700 €."
-    difficulty: 2
+    difficulty: 3
     source: https://www.hithit.com/en/project/1943/dano-drevo-a-turnaj-mekyho-zbirku-dokoncenie-filmu
 
   - id: dd-prvy-diel-rok
@@ -500,7 +500,7 @@ questions:
     scale: linear
     tolerance: 2
     why: "Slovo „kôň“ v tvaroch kôň, koňa, koňom a kone je v titulkoch prvého filmu 11-krát, od „Ty kôň“ po „Kim ešte stále si kôň?“."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a tajomná komnata (titulky, počet výskytov)"
     tags: [pocet]
 
@@ -548,7 +548,7 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Gábor, Gábora, Gáborov: 63-krát, väčšinou v skandovaní fanúšikov „Gábor! Gábor!“. V prvom filme je Chvostnatý Gábor spomenutý dvakrát."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov)"
     tags: [pocet]
 
@@ -560,6 +560,6 @@ questions:
     scale: log
     tolerance: 0.2
     why: "Žbirka, Žbirku, Žbirkov, Žbirkom: 50-krát, bez názvov jeho skladieb, ktoré vo filme hrajú. V prvom filme ani raz."
-    difficulty: 2
+    difficulty: 3
     source: "Dano Drevo a turnaj Mekyho Žbirku (titulky, počet výskytov; bez názvov skladieb v hranatých zátvorkách)"
     tags: [pocet]

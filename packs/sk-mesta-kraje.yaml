@@ -5,7 +5,7 @@ category: zemepis
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: susedia-slovenska
     type: pick
@@ -364,22 +364,6 @@ questions:
       - { text: Trnava, value: 63184 }
       - { text: Trenčín, value: 54104 }
 
-  - id: poradie-stredne-mesta
-    type: order
-    prompt: Zoraď mestá podľa počtu obyvateľov od najväčšieho.
-    direction: desc
-    unit: obyvateľov
-    difficulty: 3
-    source: https://sk.wikipedia.org/wiki/Zoznam_miest_na_Slovensku
-    asOf: "2025-12"
-    items:
-      - { text: Martin, value: 50153 }
-      - { text: Poprad, value: 48034 }
-      - { text: Prievidza, value: 41959 }
-      - { text: Zvolen, value: 38747 }
-      - { text: Považská Bystrica, value: 36690 }
-      - { text: Nové Zámky, value: 35628 }
-
   - id: poradie-kraje-rozloha
     type: order
     prompt: Zoraď kraje podľa rozlohy od najväčšieho.
@@ -400,7 +384,7 @@ questions:
     prompt: Zoraď kraje podľa počtu obyvateľov od najľudnatejšieho.
     direction: desc
     unit: obyvateľov
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Regions_of_Slovakia
     asOf: "2025"
     items:

@@ -5,7 +5,7 @@ category: zemepis
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- pick
   - id: ryby-povodne
@@ -151,7 +151,7 @@ questions:
   - id: vtaky-hniezdia
     type: pick
     prompt: Ktoré z týchto vtákov hniezdia na Slovensku?
-    difficulty: 2
+    difficulty: 1
     tags: [vtáky]
     source: https://sk.wikipedia.org/wiki/Zoznam_vtákov_na_Slovensku
     correct:
@@ -562,22 +562,6 @@ questions:
       - { text: Ipeľ, value: 232.5 }
       - { text: Nitra, value: 197 }
       - { text: Poprad, value: 169 }
-
-  - id: np-rok
-    type: order
-    prompt: Zoraď národné parky od najstaršieho (rok vyhlásenia).
-    direction: asc
-    unit: rok
-    difficulty: 3
-    tags: [chránené územia]
-    source: https://en.wikipedia.org/wiki/National_parks_of_Slovakia
-    items:
-      - { text: Tatranský národný park, value: 1949 }
-      - { text: Pieniny, value: 1967 }
-      - { text: Nízke Tatry, value: 1978 }
-      - { text: Malá Fatra, value: 1988 }
-      - { text: Poloniny, value: 1997 }
-      - { text: Slovenský kras, value: 2002 }
 
   - id: plesa-vyska
     type: order

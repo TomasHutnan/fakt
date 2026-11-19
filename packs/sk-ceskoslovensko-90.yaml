@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: nezna-revolucia-1989
     type: pick
@@ -335,40 +335,6 @@ questions:
       - text: hra The Sims
         why: Prvý diel simulátora života vyšiel až vo februári 2000.
 
-  - id: hokej-lillehammer-1994
-    type: pick
-    prompt: Ktorí z týchto hokejistov boli na súpiske Slovenska na prvej olympiáde samostatnej krajiny v Lillehammeri 1994?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Slovakia_at_the_1994_Winter_Olympics
-    correct:
-      - text: Peter Šťastný
-        why: Bol kapitánom historicky prvého olympijského tímu samostatného Slovenska.
-      - text: Žigmund Pálffy
-        why: Bol najproduktívnejším hráčom slovenského tímu (3 góly a 7 asistencií).
-      - text: Miroslav Šatan
-        why: Vtedy 19-ročný útočník patril k mladým tvárám tímu trénera Júliusa Šuplera.
-      - text: Róbert Petrovický
-        why: Útočník bol na súpiske trénera Júliusa Šuplera.
-      - text: Oto Haščák
-        why: Útočník bol na súpiske pre Lillehammer 1994.
-      - text: Róbert Švehla
-        why: Obranca patril k oporám slovenského výberu.
-      - text: Jaromír Dragan
-        why: Bol jedným z brankárov, spolu s Eduardom Hartmannom a Miroslavom Michalekom.
-    wrong:
-      - text: Pavol Demitra
-        why: Na súpiske pre Lillehammer 1994 nefiguroval.
-      - text: Marián Hossa
-        why: V čase olympiády mal necelých 15 rokov.
-      - text: Zdeno Chára
-        why: V čase Lillehammeru mal 16 rokov a na olympiáde ešte neštartoval.
-      - text: Ľubomír Višňovský
-        why: V roku 1994 mal 17 rokov a do olympijského výberu sa ešte nedostal.
-      - text: Jozef Stümpel
-        why: Na súpiske pre Lillehammer 1994 nefiguroval.
-      - text: Marián Gáborík
-        why: Počas ZOH 1994 mal iba 11 rokov.
-
   - id: pocitace-a-hry-80-90
     type: pick
     prompt: Ktoré z týchto počítačov, konzol alebo hier vyšli ešte pred koncom 90. rokov (do roku 1999 vrátane)?
@@ -489,7 +455,7 @@ questions:
     scale: log
     tolerance: 0.1
     why: Pri vtedajšej priemernej mzde okolo 3 070 Kčs to bolo takmer 28 mesačných platov.
-    difficulty: 2
+    difficulty: 3
     source: https://www.skoda-storyboard.com/en/press-releases/skoda-favorit-1987-1994-the-dawn-of-the-modern-era/
 
   - id: obyvatelia-sr-1993
@@ -501,7 +467,7 @@ questions:
     tolerance: 0.05
     asOf: "2026-11"
     why: Slovensko malo v roku 1993 približne 5,3 milióna obyvateľov.
-    difficulty: 3
+    difficulty: 2
     source: https://sk.wikipedia.org/wiki/Demografia_Slovenska
 
   - id: oscar-film-90

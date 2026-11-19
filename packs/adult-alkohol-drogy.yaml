@@ -5,7 +5,7 @@ category: tradicie
 lang: sk
 adult: true
 warnings: [drugs]
-version: 1
+version: 2
 questions:
   # ---------- PICK ----------
   - id: destilaty
@@ -387,40 +387,57 @@ questions:
       - text: Pilsner Urquell má okolo 7 % alkoholu
         why: Má 4,4 %.
 
-  - id: oktoberfest-pivovary
+  - id: pivo-dejiny-fakty
     type: pick
-    prompt: Ktoré pivovary smú variť pivo pre Oktoberfest v Mníchove?
-    difficulty: 1
-    asOf: "2026-11"
-    source: https://en.wikipedia.org/wiki/Oktoberfest
+    prompt: Ktoré z týchto tvrdení o histórii piva sú pravdivé?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Beer
     correct:
-      - text: Augustiner
-        why: Jeden zo šiestich mníchovských pivovarov.
-      - text: Hacker-Pschorr
-        why: Druhý z mníchovskej šestky.
-      - text: Löwenbräu
-        why: Pivovar s levom v logu.
-      - text: Paulaner
-        why: Patrí k najznámejším.
-      - text: Spaten
-        why: Ďalší z mníchovských pivovarov.
-      - text: Hofbräu München
-        why: Tiež jeden zo šiestich.
+      - text: Robotníci stavajúci egyptské pyramídy dostávali denne štyri až päť litrov piva
+        why: Pivo bolo zároveň jedlom aj občerstvením.
+      - text: Mezopotámska báseň Hymnus na Ninkasi obsahuje recept na pivo
+        why: Patrí k najstarším písomným zmienkam o pive.
+      - text: Bavorský zákon čistoty piva pochádza z roku 1516
+        why: Vydal ho vojvoda Viliam IV.
+      - text: Zákon čistoty z roku 1516 nespomína kvasnice
+        why: Povoľoval vodu, chmeľ a jačmenný slad; kvasnice sa používali, hoci o nich ešte nevedeli.
+      - text: Pivo je najrozšírenejší alkoholický nápoj na svete
+        why: Vypije sa ho viac než vína či liehovín.
     wrong:
-      - text: Erdinger
-        why: Je z mesta Erding pri Mníchove, nie z Mníchova.
-      - text: Weihenstephan
-        why: Z Freisingu, nie Mníchov.
-      - text: Beck's
-        why: Z Brém.
-      - text: Warsteiner
-        why: Zo Sauerlandu, nie Mníchov.
-      - text: Krombacher
-        why: Nemecký, ale z iného regiónu.
-      - text: Bitburger
-        why: Z mesta Bitburg v Porýní-Falcku.
-      - text: Radeberger
-        why: Zo Saska.
+      - text: Egyptskí robotníci dostávali pivo len počas sviatkov
+        why: Dostávali ho denne, ako súčasť stravy.
+      - text: Zákon čistoty piva vydal Napoleon
+        why: Vydal ho bavorský vojvoda Viliam IV. v roku 1516.
+      - text: Zákon čistoty z roku 1516 povoľoval do piva aj cukor a korenie
+        why: Povoľoval len vodu, chmeľ a jačmenný slad.
+      - text: Najstaršia známa pivná báseň pochádza z Írska
+        why: Hymnus na Ninkasi je z Mezopotámie.
+      - text: Najrozšírenejší alkoholický nápoj na svete je víno
+        why: Pivo ho predbieha.
+      - text: Zákon čistoty piva vznikol až v 19. storočí
+        why: Pochádza z roku 1516.
+
+  - id: pivo-pyramidy-liter
+    type: number
+    prompt: Koľko decilitrov piva dostával denne robotník pri stavbe egyptských pyramíd? (Pivo bolo súčasť stravy.)
+    answer: 45
+    unit: dl
+    scale: log
+    tolerance: 0.25
+    why: Denná dávka bola štyri až päť litrov, teda asi 45 dl, aj keď to bolo oveľa slabšie pivo než dnešné.
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Beer
+
+  - id: pivo-cistota-suroviny
+    type: choice
+    prompt: Ktoré suroviny povoľoval pôvodný bavorský zákon čistoty piva z roku 1516?
+    difficulty: 2
+    source: https://en.wikipedia.org/wiki/Reinheitsgebot
+    correct: { text: "voda, chmeľ a jačmenný slad", why: "Presne tri suroviny; kvasnice zákon nespomínal." }
+    wrong:
+      - { text: "voda, chmeľ a cukor", why: "Cukor zákon nepovoľoval." }
+      - { text: "voda, ryža a chmeľ", why: "Ryža nie je v zákone, tam bol jačmeň." }
+      - { text: "voda, med a koriandr", why: "Také pivá sa varili inde, zákon ich nepovoľoval." }
 
   - id: borovicka-pravda
     type: pick
@@ -591,7 +608,7 @@ questions:
     scale: log
     tolerance: 0.15
     why: Nájom stál 45 libier ročne a podpísal sa 31. decembra 1759.
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Guinness
 
   - id: absint-legalny-ch

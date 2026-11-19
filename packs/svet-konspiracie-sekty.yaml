@@ -5,14 +5,14 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ================================================================ KONŠPIRÁCIE
   # ---------------------------------------------------------------- pick
   - id: kons-realne-alebo-teoria
     type: pick
     prompt: "Ktoré z týchto vecí sa naozaj stali alebo naozaj existovali (sú doložené odtajnenými dokumentmi či vyšetrovaním), hoci znejú ako konšpirácia?"
-    difficulty: 1
+    difficulty: 2
     tags: [konšpirácie]
     source: "https://en.wikipedia.org/wiki/MKUltra https://en.wikipedia.org/wiki/Operation_Northwoods https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study https://en.wikipedia.org/wiki/COINTELPRO https://en.wikipedia.org/wiki/Operation_Paperclip https://en.wikipedia.org/wiki/Operation_Sea-Spray"
     correct:
@@ -52,27 +52,6 @@ questions:
       - { text: "Protokoly sionských mudrcov", why: "Antisemitský podvrh prvýkrát vydaný v Rusku v roku 1903." }
       - { text: "Spoločnosť plochej Zeme", why: "Samuel Shenton ju založil v roku 1956 v anglickom Doveri." }
 
-  - id: kons-autori-teorii
-    type: pick
-    prompt: "Ktorí z týchto ľudí vymysleli alebo spopularizovali nejakú konšpiračnú či pseudovednú teóriu?"
-    difficulty: 3
-    tags: [konšpirácie, osobnosti]
-    source: "https://en.wikipedia.org/wiki/Modern_flat_Earth_beliefs https://en.wikipedia.org/wiki/Phantom_time_conspiracy_theory https://en.wikipedia.org/wiki/Bielefeld_conspiracy https://en.wikipedia.org/wiki/Birds_Aren%27t_Real https://en.wikipedia.org/wiki/Reptilian_conspiracy_theory https://en.wikipedia.org/wiki/The_Protocols_of_the_Elders_of_Zion https://en.wikipedia.org/wiki/Comet_Hale%E2%80%93Bopp"
-    correct:
-      - { text: "Samuel Rowbotham", why: "Anglický autor z 19. storočia, z ktorého pokusu z roku 1838 vychádza moderná viera v plochú Zem." }
-      - { text: "Samuel Shenton", why: "V roku 1956 založil Spoločnosť plochej Zeme (Flat Earth Society)." }
-      - { text: "Heribert Illig", why: "Tvrdil, že 297 rokov stredoveku (614 – 911) je vymyslených; vyvrátené." }
-      - { text: "Achim Held", why: "Študent, ktorý v roku 1994 na Usenete prvý napísal, že Bielefeld neexistuje." }
-      - { text: "Peter McIndoe", why: "Autor satirickej teórie Birds Aren't Real (2017)." }
-      - { text: "David Icke", why: "Spopularizoval teóriu, že svetu vládnu plazí mimozemšťania v ľudskej podobe." }
-    wrong:
-      - { text: "Eratosthenes", why: "Naopak, ako prvý známy človek zmeral obvod guľatej Zeme." }
-      - { text: "Philip Graves", why: "Novinár The Times, ktorý v roku 1921 ako prvý verejne odhalil Protokoly sionských mudrcov ako podvrh." }
-      - { text: "Angela Merkelová", why: "Z teórie o Bielefelde si v roku 2012 len uťahovala („ak vôbec existuje“)." }
-      - { text: "Alan Hale", why: "Astronóm, spoluobjaviteľ kométy Hale-Bopp, ktorý verejne kritizoval vedeckú negramotnosť okolo nej." }
-      - { text: "Robert McNamara", why: "Bývalý americký minister obrany; v roku 2003 priznal, že druhý incident v Tonkinskom zálive sa nestal." }
-      - { text: "Thomas Bopp", why: "Amatérsky astronóm, druhý spoluobjaviteľ kométy Hale-Bopp." }
-
   - id: kons-mimozemstania
     type: pick
     prompt: "Ktoré z týchto konšpiračných teórií (všetky vyvrátené) tvrdia, že sú v hre mimozemšťania?"
@@ -110,29 +89,6 @@ questions:
       - { text: "Oblasť 51 bola zrušená v roku 1991", why: "Základňa sa používa od roku 1955 dodnes." }
       - { text: "CIA odtajnila v Oblasti 51 pitvu mimozemšťana", why: "Odtajnené dokumenty opisujú históriu testov lietadiel, nič mimozemské." }
       - { text: "Udalosť v Roswelli sa stala v roku 1957", why: "Stalo sa to v roku 1947." }
-
-  - id: kons-ppp-2013-nad-20
-    type: pick
-    prompt: "Prieskum PPP z roku 2013 sa pýtal amerických voličov na konšpiračné teórie. Ktorým tvrdeniam verilo aspoň 20 % opýtaných?"
-    difficulty: 2
-    tags: [konšpirácie, prieskumy]
-    asOf: "2013"
-    source: https://www.publicpolicypolling.com/wp-content/uploads/2017/09/PPP_Release_National_ConspiracyTheories_040213.pdf
-    correct:
-      - { text: "Za vraždou Kennedyho stojí väčšie sprisahanie", why: "51 % – najrozšírenejšia teória v prieskume; 25 % verilo, že Oswald konal sám." }
-      - { text: "Globálne otepľovanie je podvod", why: "37 %; vedecký konsenzus o otepľovaní je jednoznačný." }
-      - { text: "Tajná elita chystá Nový svetový poriadok", why: "28 % opýtaných." }
-      - { text: "Saddám Husajn sa podieľal na útokoch 11. septembra", why: "28 %, ďalších 22 % si nebolo istých." }
-      - { text: "V Roswelli havarovalo UFO a vláda to tají", why: "21 %; ďalších 32 % si nebolo istých." }
-      - { text: "Detské očkovanie súvisí s autizmom", why: "20 %; vedecké štúdie súvislosť vyvrátili." }
-    wrong:
-      - { text: "Pristátie na Mesiaci bolo sfalšované", why: "Len 7 %, 84 % to odmietlo." }
-      - { text: "Svetu vládnu plazí ľudia", why: "4 %, najmenej zo všetkých teórií v prieskume." }
-      - { text: "Paul McCartney zomrel v roku 1966", why: "5 %." }
-      - { text: "Chemtrails sú chemikálie, ktoré vláda rozprašuje", why: "5 %." }
-      - { text: "Vláda pridáva fluór do vody zo zlovoľných dôvodov", why: "9 %." }
-      - { text: "Televízne vysielanie obsahuje technológiu na ovládanie mysle", why: "15 %." }
-      - { text: "Usáma bin Ládin stále žije", why: "6 % v roku 2013; bin Ládina zabili americké jednotky v roku 2011." }
 
   - id: kons-pokusy-bez-suhlasu
     type: pick
@@ -390,7 +346,7 @@ questions:
   - id: sekty-vodcovia
     type: pick
     prompt: "Ktorí z týchto ľudí založili alebo viedli sektu či nové náboženské hnutie?"
-    difficulty: 1
+    difficulty: 2
     tags: [sekty, osobnosti]
     source: "https://en.wikipedia.org/wiki/Jim_Jones https://en.wikipedia.org/wiki/David_Koresh https://en.wikipedia.org/wiki/Marshall_Applewhite https://en.wikipedia.org/wiki/L._Ron_Hubbard https://en.wikipedia.org/wiki/Shoko_Asahara https://en.wikipedia.org/wiki/Ra%C3%ABl https://en.wikipedia.org/wiki/Unification_Church https://en.wikipedia.org/wiki/NXIVM https://en.wikipedia.org/wiki/Charles_Manson https://en.wikipedia.org/wiki/Jonestown"
     correct:
@@ -542,22 +498,6 @@ questions:
       - { text: "Rád slnečného chrámu (1994 – 1997)", value: 74, why: "Spolu 74 mŕtvych vo Švajčiarsku, Francúzsku a Quebecu." }
       - { text: "Heaven's Gate (1997)", value: 39, why: "Všetkých 39 aktívnych členov." }
       - { text: "Sarín v tokijskom metre (1995)", value: 14, why: "14 mŕtvych a asi 1 000 ľudí s dočasnými problémami so zrakom." }
-
-  - id: sekty-zalozenie-poradie
-    type: order
-    prompt: "Zoraď tieto hnutia podľa roku založenia (od najstaršieho)."
-    direction: asc
-    unit: rok
-    difficulty: 3
-    tags: [sekty, história]
-    source: "https://en.wikipedia.org/wiki/Scientology https://en.wikipedia.org/wiki/Unification_Church https://en.wikipedia.org/wiki/Peoples_Temple https://en.wikipedia.org/wiki/The_Family_International https://en.wikipedia.org/wiki/Ra%C3%ABlism https://en.wikipedia.org/wiki/NXIVM"
-    items:
-      - { text: "Scientologická cirkev", value: 1953, why: "Hubbard ju založil v roku 1953, po knihe Dianetika z roku 1950." }
-      - { text: "Hnutie zjednotenia", value: 1954, why: "Sun Mjong Mun, Soul, 1. mája 1954." }
-      - { text: "Chrám ľudu", value: 1955, why: "Jim Jones, Indianapolis, 1955." }
-      - { text: "Deti Božie", value: 1968, why: "David Berg, Huntington Beach, 1968." }
-      - { text: "Raeliáni", value: 1974, why: "Raël, Francúzsko, 19. septembra 1974." }
-      - { text: "NXIVM", value: 1998, why: "Keith Raniere, štát New York, 1998." }
 
   # ---------------------------------------------------------------- number
   - id: sekty-heavens-gate-pocet

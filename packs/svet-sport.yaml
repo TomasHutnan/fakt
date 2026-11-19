@@ -3,7 +3,7 @@ title: Šport vo svete
 description: Triatlon a päťboj, pravidlá a rozmery, olympiády a paralympiády, majstrovstvá sveta, Tour de France, Stanleyho pohár aj Super Bowl.
 category: sport
 lang: sk
-version: 2
+version: 3
 questions:
   # ---------------------------------------------------------------- PICK
   - id: triatlon-fakty
@@ -399,43 +399,6 @@ questions:
       - text: Najdlhší set vo Wimbledone 2010 skončil 30:28
         why: Piaty set zápasu Isner – Mahut skončil 70:68.
 
-  - id: paralympijske-sporty-pariz
-    type: pick
-    prompt: Ktoré z týchto športov boli v programe paralympiády v Paríži 2024?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Paralympic_sports
-    tags: [paralympiáda, Paríž 2024]
-    correct:
-      - text: goalball
-        why: Šport pre nevidiacich, ktorý nemá obdobu medzi bežnými športmi.
-      - text: boccia
-        why: Pôvodne pre ľudí s detskou mozgovou obrnou, paralympijská od roku 1984.
-      - text: ragby na vozíku
-        why: Pôvodne sa mu hovorilo murderball, na hrách je od roku 2000.
-      - text: sedací volejbal
-        why: Medailovým športom je na paralympiáde od roku 1980.
-      - text: futbal nevidiacich
-        why: Päť hráčov na strane, na hrách od roku 2004.
-      - text: paratriatlon
-        why: Na paralympiáde od Ria 2016.
-      - text: taekwondo
-        why: Na paralympiáde od Tokia 2020.
-      - text: bedminton
-        why: Tiež novinka z Tokia 2020.
-    wrong:
-      - text: snooker
-        why: Bol na paralympiádach v rokoch 1960 až 1988, potom zmizol.
-      - text: jachting
-        why: Na hrách bol v rokoch 2000 až 2016.
-      - text: futbal sedem na sedem
-        why: Hral sa v rokoch 1984 až 2016.
-      - text: dartchery
-        why: Kombinácia lukostreľby a šípok, na hrách v rokoch 1960 až 1980.
-      - text: paralezenie
-        why: Na paralympiáde bude prvýkrát až v Los Angeles 2028.
-      - text: zápasenie
-        why: Na paralympiádach bolo len v rokoch 1980 a 1984.
-
   - id: paralympiada-fakty
     type: pick
     prompt: Ktoré tvrdenia o paralympiáde sú pravdivé?
@@ -651,42 +614,6 @@ questions:
       - text: "Basketbal: trestný hod za 2 body"
         why: Trestný hod je za 1 bod.
 
-  - id: rozmery-ihrisk
-    type: pick
-    prompt: Ktoré rozmery sú uvedené správne?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Association_football
-    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Basketball, /Volleyball, /Handball, /Hockey_puck"
-    tags: [pravidlá, rozmery]
-    correct:
-      - text: Basketbalový kôš je vo výške 3,05 m
-        why: Presne 10 stôp nad palubovkou.
-      - text: Futbalová bránka je široká 7,32 m
-        why: 24 stôp medzi vnútornými hranami žrdí.
-      - text: Futbalová bránka je vysoká 2,44 m
-        why: Spodná hrana brvna je 8 stôp nad zemou.
-      - text: Volejbalová sieť mužov je vo výške 2,43 m
-        why: Ženy majú sieť nižšie, vo výške 2,24 m.
-      - text: Volejbalové ihrisko meria 18 × 9 m
-        why: Sieť ho delí na dve štvorcové polovice.
-      - text: Hádzanárske ihrisko meria 40 × 20 m
-        why: Bránky obkolesuje 6-metrové územie.
-      - text: Hokejový puk je hrubý 2,54 cm
-        why: Presne jeden palec.
-    wrong:
-      - text: Basketbalový kôš je vo výške 3,5 m
-        why: Je to 3,05 m.
-      - text: Futbalová bránka je široká 8 m
-        why: Je široká 7,32 m, teda 8 yardov.
-      - text: Volejbalová sieť je pre ženy aj mužov rovnako vysoko
-        why: Ženská sieť je o 19 cm nižšie.
-      - text: Hokejový puk má priemer 10 cm
-        why: Má 3 palce, teda 7,6 cm.
-      - text: Hádzanárske ihrisko je rovnako veľké ako futbalové
-        why: Má 40 × 20 m, futbalové je niekoľkonásobne väčšie.
-      - text: Trojkový oblúk v medzinárodnom basketbale je 7,5 m od koša
-        why: Je 6,75 m od koša.
-
   - id: bojove-umenia-japonsko
     type: pick
     prompt: Ktoré z týchto bojových umení a športov pochádzajú z Japonska?
@@ -863,7 +790,7 @@ questions:
     scale: log
     tolerance: 0.05
     why: Presne 180,2 km (112 míľ); predtým 3,86 km plávania a potom celý maratón.
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Ironman_Triathlon
     tags: [triatlon]
 
@@ -875,7 +802,7 @@ questions:
     scale: linear
     tolerance: 5
     why: Všetkých 15 červených s 15 čiernymi dá 120 bodov a šesť farieb ďalších 27; do novembra 2026 ich v profesionálnych zápasoch padlo 247.
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/Maximum_break
     tags: [snooker, body]
 
@@ -914,19 +841,6 @@ questions:
     difficulty: 2
     source: https://en.wikipedia.org/wiki/Tour_de_France
     tags: [cyklistika, história]
-
-  - id: paralympiada-1960-sportovci
-    type: number
-    prompt: Koľko športovcov štartovalo na prvej paralympiáde v Ríme v roku 1960?
-    answer: 400
-    unit: športovcov
-    scale: log
-    tolerance: 0.25
-    why: Prišli z 23 krajín a všetci mali poranenie miechy; v Tokiu 2020 ich bolo 4 520.
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/1960_Summer_Paralympics
-    note: "Počet z Tokia 2020: en.wikipedia.org/wiki/Paralympic_Games"
-    tags: [paralympiáda, história]
 
   # ---------------------------------------------------------------- CHOICE
   - id: prva-zoh

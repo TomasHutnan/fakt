@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   - id: unesco-slovensko
     type: pick
@@ -563,35 +563,6 @@ questions:
       - { text: Vznik samostatnej Slovenskej republiky, value: 1993 }
       - { text: Zavedenie eura, value: 2009 }
 
-  - id: poradie-narodenia
-    type: order
-    prompt: Zoraď osobnosti podľa roku narodenia od najstaršej.
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr
-    note: Ďalšie zdroje - en.wikipedia.org/wiki/Jozef_Murga%C5%A1, %C5%A0tefan_Bani%C4%8D, Milan_Rastislav_%C5%A0tef%C3%A1nik, Alexander_Dub%C4%8Dek.
-    items:
-      - { text: Ľudovít Štúr, value: 1815 }
-      - { text: Jozef Murgaš, value: 1864 }
-      - { text: Štefan Banič, value: 1870 }
-      - { text: M. R. Štefánik, value: 1880 }
-      - { text: Alexander Dubček, value: 1921 }
-
-  - id: poradie-prve-zmienky-hradov
-    type: order
-    prompt: Zoraď hrady podľa najstaršej písomnej zmienky.
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Bojnice_Castle
-    note: Ďalšie zdroje - sk.wikipedia.org/wiki/Spi%C5%A1sk%C3%BD_hrad (1209), en.wikipedia.org/wiki/Orava_Castle.
-    items:
-      - { text: Bojnice, value: 1113 }
-      - { text: Spišský hrad, value: 1209 }
-      - { text: Oravský hrad, value: 1267 }
-      - { text: Krásna Hôrka, value: 1333 }
-
   - id: rok-kodifikacia
     type: number
     prompt: V ktorom roku sa Štúr, Hurban a Hodža dohodli na novej spisovnej slovenčine?
@@ -633,7 +604,7 @@ questions:
     scale: linear
     tolerance: 5
     why: Príčina požiaru nie je známa a odvtedy je hrad ruinou.
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/Spi%C5%A1_Castle
 
   - id: devin-sutok

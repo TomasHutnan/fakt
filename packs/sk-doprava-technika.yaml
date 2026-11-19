@@ -5,13 +5,13 @@ category: veda
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- pick
   - id: vw-bratislava-modely
     type: pick
     prompt: Ktoré z týchto áut sa sériovo vyrábali alebo vyrábajú v bratislavskom závode Volkswagen Slovakia?
-    difficulty: 1
+    difficulty: 2
     asOf: "2026-11"
     tags: [autá, Bratislava]
     source: https://sk.wikipedia.org/wiki/Volkswagen_Slovakia
@@ -110,44 +110,6 @@ questions:
       - text: Prievidza
         why: Miestnu MHD zabezpečujú autobusy.
 
-  - id: bratislava-elektricky-mc
-    type: pick
-    prompt: Ktorými z týchto bratislavských mestských častí prechádzajú linky električiek?
-    difficulty: 2
-    asOf: "2026-11"
-    tags: [Bratislava, MHD, električky]
-    source: https://sk.wikipedia.org/wiki/Električková_doprava_v_Bratislave
-    correct:
-      - text: Staré Mesto
-        why: Električky jazdia cez centrum, napríklad linka 1 okolo Hlavnej stanice.
-      - text: Nové Mesto
-        why: Linka 4 tadiaľ prechádza cez stanicu Nové Mesto.
-      - text: Ružinov
-        why: Linka 9 tu končí na zastávke Astronomická.
-      - text: Rača
-        why: Linka 3 vedie do Rače, ku konečnej Komisárky.
-      - text: Karlova Ves
-        why: Linka 9 končí v Karlovej Vsi na zastávke Kútiky.
-      - text: Dúbravka
-        why: Linka 4 končí v Dúbravke, Pri kríži.
-      - text: Petržalka
-        why: Linka 3 vedie cez Starý most do Petržalky, na konečnú Južné mesto.
-    wrong:
-      - text: Vrakuňa
-        why: Električková trať do Vrakune nevedie.
-      - text: Podunajské Biskupice
-        why: Električky tu nejazdia.
-      - text: Devínska Nová Ves
-        why: Električkové koľajnice tam nevedú, hoci tam stojí veľký závod.
-      - text: Lamač
-        why: Električky tu nejazdia.
-      - text: Vajnory
-        why: Električky tu nejazdia.
-      - text: Záhorská Bystrica
-        why: Električky tu nejazdia.
-      - text: Devín
-        why: Električky tu nejazdia.
-
   - id: mosty-cez-dunaj-bratislava
     type: pick
     prompt: Ktoré z týchto mostov v Bratislave vedú cez Dunaj?
@@ -179,44 +141,6 @@ questions:
         why: Je pri obci Medveďov na južnom Slovensku.
       - text: Kolonádový most
         why: Stojí v Piešťanoch a vedie cez Váh.
-
-  - id: tunely-v-prevadzke
-    type: pick
-    prompt: Ktoré z týchto cestných a diaľničných tunelov na Slovensku sú už v prevádzke?
-    difficulty: 2
-    asOf: "2026-11"
-    tags: [diaľnice, tunely]
-    source: https://sk.wikipedia.org/wiki/Zoznam_cestných_tunelov_na_Slovensku
-    correct:
-      - text: Višňové
-        why: Najdlhší slovenský cestný tunel na D1 odovzdali do užívania 22. decembra 2025.
-      - text: Branisko
-        why: Tunel na D1 medzi Beharovcami a Širokým je v prevádzke.
-      - text: Čebrať
-        why: Tunel na D1 medzi Hubovou a Ivachnovou je v prevádzke.
-      - text: Sitina
-        why: Mestský tunel na D2 v Bratislave medzi Poliankami a Mlynskou dolinou.
-      - text: Ovčiarsko
-        why: Tunel na D1 pri Žiline medzi Hričovským Podhradím a Lietavskou Lúčkou.
-      - text: Považský Chlmec
-        why: Tunel na D3 pri Žiline medzi Strážovom a Brodnom.
-      - text: Prešov
-        why: Tunel na D1 pri Prešove (západ – juh) je v prevádzke.
-      - text: Bikoš
-        why: Tunel na severnom obchvate Prešova, R4, je v prevádzke.
-      - text: Horelica
-        why: Tunel na D3 pri Čadci, 605 metrov dlhý.
-    wrong:
-      - text: Karpaty
-        why: Plánovaný takmer jedenásťkilometrový tunel na D4 pod Malými Karpatmi zatiaľ nestojí.
-      - text: Korbeľka
-        why: Plánovaný tunel na D1 medzi Turanmi a Hubovou.
-      - text: Havran
-        why: Plánovaný tunel na D1 medzi Turanmi a Hubovou.
-      - text: Soroška
-        why: Plánovaný tunel na R2 pri Rožňave sa zatiaľ nestavia.
-      - text: Okruhliak
-        why: Tunel na severnom obchvate Prešova, R4, je zatiaľ vo výstavbe.
 
   - id: zeleznice-historicke
     type: pick

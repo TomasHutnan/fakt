@@ -5,7 +5,7 @@ category: historia
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ---------------------------------------------------------------- PICK
   - id: preslapy-softver
@@ -107,31 +107,10 @@ questions:
       - { text: "Na mieste mosta Tacoma už nikdy nepostavili nový", why: "Nový most otvorili na tom istom mieste v roku 1950." }
       - { text: "Most Millennium otvorili presne načas", why: "Otvorili ho 10. júna 2000 s mesačným oneskorením." }
 
-  - id: preslapy-letiska
-    type: pick
-    prompt: "Ktoré tvrdenia o letiskách, z ktorých takmer nikto nelietal, sú pravdivé?"
-    difficulty: 3
-    tags: [letiská, eurofondy]
-    source: "https://eca.europa.eu/lists/ecadocuments/sr14_21/qjab14021enc.pdf https://en.wikipedia.org/wiki/Ciudad_Real_Central_Airport https://en.wikipedia.org/wiki/Castell%C3%B3n%E2%80%93Costa_Azahar_Airport"
-    note: "Európsky dvor audítorov, osobitná správa č. 21/2014: Infraštruktúra letísk financovaná EÚ."
-    correct:
-      - { text: "Súkromné letisko Ciudad Real južne od Madridu stálo asi 1,1 miliardy eur", why: "Po troch rokoch prevádzky ho v apríli 2012 zatvorili na vyše sedem rokov." }
-      - { text: "Za letisko Ciudad Real ponúkla čínska firma 10 000 eur", why: "Súd ponuku v roku 2015 odmietol ako príliš nízku." }
-      - { text: "Letisko Castellón slávnostne otvorili bez jedinej leteckej spoločnosti", why: "Stalo sa to v marci 2011; prvý komerčný let pristál až v septembri 2015." }
-      - { text: "Pred letiskom Castellón stojí 24 metrov vysoká socha", why: "Stála asi 375 000 dolárov." }
-      - { text: "Predĺženú dráhu gréckeho letiska Kastoria nevyužilo lietadlo, pre ktoré ju postavili", why: "Predĺženie stálo 16,5 milióna eur, z toho 5,6 milióna z fondov EÚ." }
-      - { text: "Nové nákladné terminály letiska v Solúne zostali prázdne", why: "Obe nové budovy stáli prázdne ešte pri kontrole európskych audítorov." }
-    wrong:
-      - { text: "Letisko Ciudad Real napokon predali za 10 000 eur", why: "Ponuku súd odmietol; letisko predali až v roku 2016 inej firme." }
-      - { text: "Z letiska Castellón nikdy nevzlietol pravidelný let", why: "Ryanair odtiaľ začal lietať do Londýna a Bristolu v septembri 2015." }
-      - { text: "Európski audítori kontrolovali aj letiská v Nemecku", why: "Audit pokryl 20 letísk v Estónsku, Grécku, Španielsku, Taliansku a Poľsku." }
-      - { text: "Audítori zistili, že všetky kontrolované letiská sú ziskové", why: "Sedem z 20 kontrolovaných letísk nebolo ziskových." }
-      - { text: "Letisko Ciudad Real nieslo meno po Picassovi", why: "Volalo sa aj Letisko Don Quijote." }
-
   - id: preslapy-produkty
     type: pick
     prompt: "Ktoré tvrdenia o výrobkoch, ktoré prepadli, sú pravdivé?"
-    difficulty: 1
+    difficulty: 2
     tags: [výrobky, technika]
     source: "https://en.wikipedia.org/wiki/Microsoft_Kin https://en.wikipedia.org/wiki/Quibi https://en.wikipedia.org/wiki/Virtual_Boy https://en.wikipedia.org/wiki/Sinclair_C5 https://en.wikipedia.org/wiki/Fire_Phone https://en.wikipedia.org/wiki/Juicero https://en.wikipedia.org/wiki/Edsel https://en.wikipedia.org/wiki/Zune https://en.wikipedia.org/wiki/N-Gage_(device) https://en.wikipedia.org/wiki/Google%2B"
     correct:
@@ -378,22 +357,6 @@ questions:
       - { text: "Výbuch rakety Ariane 5 pri prvom lete", value: 1996, why: "4. júna, 37 sekúnd po štarte." }
       - { text: "Strata sondy Mars Climate Orbiter", value: 1999, why: "23. septembra pri navádzaní na obežnú dráhu Marsu." }
 
-  - id: preslapy-ako-dlho
-    type: order
-    prompt: "Zoraď podľa toho, ako dlho vydržali v prevádzke alebo na trhu (od najkratšieho)."
-    direction: asc
-    unit: dní
-    difficulty: 3
-    tags: [výrobky, stavby]
-    source: "https://en.wikipedia.org/wiki/Millennium_Bridge,_London https://en.wikipedia.org/wiki/Microsoft_Kin https://en.wikipedia.org/wiki/New_Coke https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940) https://en.wikipedia.org/wiki/Quibi"
-    note: "Most Millennium: otvorený 10. 6. 2000, po dvoch dňoch obmedzenej prevádzky zatvorený. New Coke: od uvedenia po ohlásenie návratu pôvodnej receptúry. Tacoma: 1. 7. – 7. 11. 1940. Quibi: 6. 4. – asi 1. 12. 2020."
-    items:
-      - { text: "Most Millennium v Londýne pred zatvorením", value: 2, why: "Po dvoch dňoch ho zatvorili takmer na dva roky." }
-      - { text: "Telefóny Microsoft Kin", value: 48, why: "Microsoft ich stiahol 30. júna 2010." }
-      - { text: "New Coke ako jediná Coca-Cola", value: 79, why: "Od 23. apríla do 11. júla 1985, keď ohlásili návrat pôvodnej receptúry." }
-      - { text: "Most Tacoma Narrows", value: 129, why: "Od 1. júla do 7. novembra 1940." }
-      - { text: "Streamovacia služba Quibi", value: 239, why: "Od 6. apríla do začiatku decembra 2020." }
-
   - id: preslapy-meskanie
     type: order
     prompt: "Zoraď podľa toho, o koľko rokov neskôr, než sa plánovalo, ich otvorili alebo dokončili (od najväčšieho meškania)."
@@ -472,18 +435,6 @@ questions:
     difficulty: 3
     tags: [technika, fotografia]
     source: https://en.wikipedia.org/wiki/Steven_Sasson
-
-  - id: preslapy-cordoba-cestujuci
-    type: number
-    prompt: "Letisku v španielskej Córdobe predĺžili z verejných peňazí aj eurofondov dráhu. Koľko cestujúcich ním prešlo v roku 2013?"
-    answer: 6955
-    unit: cestujúcich
-    scale: log
-    tolerance: 0.3
-    why: "Len 6 955, hoci prognóza počítala so 179 000; európski audítori to uvádzajú ako príklad zbytočnej investície."
-    difficulty: 3
-    tags: [letiská, eurofondy]
-    source: https://eca.europa.eu/lists/ecadocuments/sr14_21/qjab14021enc.pdf
 
   - id: preslapy-pepsi-body
     type: number

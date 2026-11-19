@@ -3,12 +3,12 @@ title: Svet a zemepis
 description: Hlavné mestá, susedia, rieky, vrchy, vlajky, meny a slávne pamiatky z celého sveta.
 category: zemepis
 lang: sk
-version: 2
+version: 3
 questions:
   - id: hlavne-mesta-miesanie
     type: pick
     prompt: Ktoré z týchto miest sú hlavnými mestami svojich štátov?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/List_of_national_capitals
     correct:
       - text: Canberra
@@ -621,7 +621,7 @@ questions:
   - id: choice-machu-picchu
     type: choice
     prompt: V ktorej krajine leží inkské mesto Machu Picchu?
-    difficulty: 2
+    difficulty: 1
     source: https://en.wikipedia.org/wiki/Machu_Picchu
     correct: { text: "Peru", why: "Leží v regióne Cusco, asi 80 km severozápadne od mesta Cusco." }
     wrong:

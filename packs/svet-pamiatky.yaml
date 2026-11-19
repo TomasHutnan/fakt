@@ -5,7 +5,7 @@ category: zemepis
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ================================================================ ZÁZRAKY SVETA
   - id: pam-novych-7-zazrakov
@@ -56,30 +56,6 @@ questions:
       - { text: "Perzepolis", why: "Ceremoniálne hlavné mesto Achaimenovskej ríše; v kanonickom zozname nie je." }
       - { text: "Alhambra", why: "Stredoveký maurský palác, až príliš mladý na zoznam z antiky." }
       - { text: "Terakotová armáda", why: "Pochádza z čínskej hrobky cisára Čchin Š’-chuang-tiho, nie zo stredomorského zoznamu." }
-
-  - id: pam-nove-zazraky-prirody
-    type: pick
-    prompt: "Ktoré z týchto prírodných miest vyhrali anketu Nových sedem divov prírody (výsledky 2011)?"
-    difficulty: 3
-    tags: [zázraky, príroda]
-    source: "https://en.wikipedia.org/wiki/New7Wonders_of_Nature"
-    correct:
-      - { text: "Amazonský dažďový prales", why: "Rozprestiera sa cez osem štátov a Francúzsku Guyanu." }
-      - { text: "Zátoka Ha Long", why: "Vietnamská zátoka s tisíckami vápencových ostrovčekov." }
-      - { text: "Ostrov Čedžu", why: "Sopečný ostrov v Južnej Kórei." }
-      - { text: "Vodopády Iguazú", why: "Ležia na hranici Argentíny a Brazílie." }
-      - { text: "Podzemná rieka Puerto Princesa", why: "Jaskynná rieka na filipínskom ostrove Palawan." }
-      - { text: "Ostrov Komodo", why: "Domov najväčšieho žijúceho druhu jašterice, draka komodského." }
-      - { text: "Stolová hora", why: "Dominanta Kapského Mesta v Juhoafrickej republike." }
-    wrong:
-      - { text: "Veľký bariérový útes", why: "Bol medzi 28 finalistami, no medzi siedmich sa nedostal." }
-      - { text: "Grand Canyon", why: "Finalista, ktorý medzi víťazov nepatril." }
-      - { text: "Uluru", why: "Ikonický austrálsky monolit bol finalistom, ale neuspel." }
-      - { text: "Kilimandžáro", why: "Najvyššia hora Afriky bola finalistom, ale neuspela." }
-      - { text: "Matterhorn", why: "Finalista z hraníc Švajčiarska a Talianska bez víťazstva." }
-      - { text: "Mŕtve more", why: "Finalista, ktorý medzi víťazov nepatril." }
-      - { text: "Fundyjský záliv", why: "Kanadská zátoka s extrémnymi prílivmi bola finalistom, ale neuspela." }
-      - { text: "Mazurské jazerá", why: "Poľský finalista bez víťazstva." }
 
   # ================================================================ KDE TO STOJÍ
   - id: pam-lat-amerika
@@ -312,32 +288,6 @@ questions:
       - { text: "Neuschwanstein", why: "Zámok, ale nie rekordná výška." }
 
   # ================================================================ UNESCO
-  - id: pam-unesco-krajiny-35
-    type: pick
-    prompt: "Ktoré z týchto krajín majú v zozname svetového dedičstva UNESCO aspoň 35 lokalít?"
-    difficulty: 3
-    tags: [UNESCO, štatistika]
-    asOf: "2026-07"
-    source: "https://en.wikipedia.org/wiki/World_Heritage_Site"
-    correct:
-      - { text: "Taliansko", why: "Vedie so 62 lokalitami." }
-      - { text: "Čína", why: "Má 61 lokalít." }
-      - { text: "Francúzsko", why: "Má 56 lokalít." }
-      - { text: "Nemecko", why: "Má 55 lokalít." }
-      - { text: "Španielsko", why: "Má 50 lokalít." }
-      - { text: "India", why: "Má 45 lokalít." }
-      - { text: "Mexiko", why: "Má 36 lokalít, najviac v Amerike." }
-      - { text: "Spojené kráľovstvo", why: "Má presne 35 lokalít." }
-    wrong:
-      - { text: "Rusko", why: "Má 33 lokalít, teda tesne pod hranicou." }
-      - { text: "Irán", why: "Má 30 lokalít." }
-      - { text: "Japonsko", why: "Má 27 lokalít." }
-      - { text: "USA", why: "Má 27 lokalít." }
-      - { text: "Brazília", why: "Má 26 lokalít." }
-      - { text: "Grécko", why: "Má 21 lokalít, hoci je kolískou antiky." }
-      - { text: "Turecko", why: "Má 22 lokalít." }
-      - { text: "Austrália", why: "Má 21 lokalít." }
-
   - id: pam-unesco-prekvapenia
     type: pick
     prompt: "Ktoré z týchto miest nečakane patria do zoznamu svetového dedičstva UNESCO?"
@@ -379,32 +329,6 @@ questions:
       - { text: "Borobudur", why: "Celý na ostrove Jáva v Indonézii." }
       - { text: "Vodopády Iguazú", why: "UNESCO ich zapísalo ako dve samostatné lokality, argentínsku (1984) a brazílsku (1986)." }
       - { text: "Akropola v Aténach", why: "Leží celá v Grécku." }
-
-  - id: pam-unesco-ohrozene
-    type: pick
-    prompt: "Ktoré z týchto lokalít sú dnes na zozname svetového dedičstva v ohrození?"
-    difficulty: 3
-    tags: [UNESCO, ohrozené]
-    asOf: "2026-05"
-    source: "https://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger"
-    correct:
-      - { text: "Staré mesto Aleppo", why: "Na zozname je od roku 2013 kvôli sýrskej občianskej vojne." }
-      - { text: "Starý Jeruzalem a jeho hradby", why: "Na zozname je od roku 1982." }
-      - { text: "Timbuktu", why: "Pamiatky mesta poškodili islamistické skupiny." }
-      - { text: "Katedrála svätej Sofie v Kyjeve", why: "Na zozname ju drží vojna na Ukrajine." }
-      - { text: "Historické centrum Ľvova", why: "Ohrozené vojnou na Ukrajine." }
-      - { text: "Mesto Potosí", why: "Banícka hora Cerro Rico je od ťažby dierava a nestabilná." }
-      - { text: "Národný park Virunga", why: "Na zozname je od roku 1994; ohrozujú ho pytliactvo a násilie v regióne." }
-      - { text: "Staré mesto Saná", why: "Ohrozené občianskou vojnou v Jemene." }
-    wrong:
-      - { text: "Angkor", why: "Zo zoznamu ohrozených zmizol už v roku 2004." }
-      - { text: "Dubrovník", why: "Po vojne v 90. rokoch bol na zozname len v rokoch 1991 – 1998." }
-      - { text: "Galapágy", why: "Ohrozené boli v rokoch 2007 – 2010." }
-      - { text: "Yellowstonský národný park", why: "Na zozname bol v rokoch 1995 – 2003." }
-      - { text: "Kotorský záliv", why: "Po zemetrasení z roku 1979 ohrozený, no do roku 2003." }
-      - { text: "Kolínsky dóm", why: "V rokoch 2004 – 2006 ho ohrozoval plán výškovej budovy neďaleko." }
-      - { text: "Belizský bariérový útes", why: "Ohrozený bol v rokoch 2009 – 2018." }
-      - { text: "Liverpool – námorné obchodné mesto", why: "Zo zoznamu UNESCO ho úplne vyškrtli v roku 2021." }
 
   - id: pam-najnavstevovanejsie-muzea
     type: pick
@@ -491,7 +415,7 @@ questions:
     prompt: "Zoraď múzeá podľa návštevnosti v roku 2025, od najnavštevovanejšieho."
     direction: desc
     unit: mil. návštevníkov
-    difficulty: 2
+    difficulty: 3
     asOf: "2025"
     tags: [múzeá, návštevnosť]
     source: "https://en.wikipedia.org/wiki/List_of_most-visited_museums"
@@ -542,7 +466,7 @@ questions:
     tolerance: 0.05
     asOf: "2026-07"
     why: "Rozložené na 173 krajín; z nich 991 je kultúrnych, 240 prírodných a 42 zmiešaných."
-    difficulty: 2
+    difficulty: 3
     source: https://en.wikipedia.org/wiki/World_Heritage_Site
 
   - id: pam-pocet-unesco-slovensko

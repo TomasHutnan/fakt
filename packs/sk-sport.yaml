@@ -3,7 +3,7 @@ title: Šport
 description: Hokej, futbal, olympijské zlato, tenis a Peter Sagan – slovenský šport od Gotenburgu po Atlantu.
 category: sport
 lang: sk
-version: 1
+version: 2
 questions:
   # ---------------------------------------------------------------- PICK
   - id: stanley-cup-slovaci
@@ -215,39 +215,6 @@ questions:
       - text: MS 1998 vo Francúzsku
         why: Nepostúpilo.
 
-  - id: hantuchova-uspechy
-    type: pick
-    prompt: Ktoré z týchto úspechov dosiahla Daniela Hantuchová?
-    difficulty: 3
-    source: https://en.wikipedia.org/wiki/Daniela_Hantuchov%C3%A1
-    tags: [tenis]
-    correct:
-      - text: titul v miešanej štvorhre na Wimbledone 2001
-        why: Prvý grandslamový titul.
-      - text: titul v miešanej štvorhre na Australian Open 2002
-        why: Hneď o rok neskôr.
-      - text: titul v miešanej štvorhre na Roland Garros 2005
-        why: Tretí mixový titul.
-      - text: titul v miešanej štvorhre na US Open 2005
-        why: Spolu štyri mixové grandslamy.
-      - text: titul vo Fed Cupe 2002
-        why: S družstvom Slovenska.
-      - text: semifinále dvojhry na Australian Open 2008
-        why: Jej najlepší grandslamový výsledok v singli.
-      - text: svetová pätka v rebríčku
-        why: Najvyššie na 5. mieste od 27. januára 2003.
-    wrong:
-      - text: titul v ženskej štvorhre na Australian Open
-        why: Dve finále (2002, 2009), ani jedno nevyhrala.
-      - text: titul v ženskej štvorhre na Roland Garros
-        why: Finále 2006 prehrala.
-      - text: finále dvojhry na Wimbledone
-        why: Nikdy sa do neho nedostala.
-      - text: miesto svetovej jednotky
-        why: Najlepšie bola piata.
-      - text: olympijská medaila
-        why: Na Hrách 2012 skončila v 3. kole dvojhry.
-
   - id: cibulkova-fakty
     type: pick
     prompt: Ktoré tvrdenia o kariére Dominiky Cibulkovej sú pravdivé?
@@ -348,7 +315,7 @@ questions:
   - id: sagan-vitazstva
     type: pick
     prompt: Ktoré z týchto víťazstiev a úspechov patria Petrovi Saganovi?
-    difficulty: 1
+    difficulty: 2
     source: https://en.wikipedia.org/wiki/List_of_career_achievements_by_Peter_Sagan
     tags: [cyklistika, sagan]
     correct:
