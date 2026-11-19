@@ -43,15 +43,15 @@ questions:
       - { text: "Holandsko", why: "Holanďania majú 1 447 hodín, lebo veľa ľudí pracuje na skrátený úväzok." }
       - { text: "Francúzsko", why: "1 503 hodín; pracovný týždeň je tam zákonne 35 hodín." }
       - { text: "Japonsko", why: "Napriek povesti workoholikov len asi 1 610 hodín, teda pod priemerom OECD." }
-      - { text: "Slovensko", why: "Okolo 1 624 hodín ročne, teda o vyše 100 pod priemerom." }
+      - { text: "Slovensko", why: "Okolo 1 624 hodín ročne, teda o vyše 100 hodín pod priemerom." }
       - { text: "Španielsko", why: "Asi 1 645 hodín na pracovníka." }
       - { text: "Švajčiarsko", why: "1 528 hodín: bohatá krajina s kratším pracovným časom." }
     wrong:
       - { text: "Mexiko", why: "Asi 2 228 hodín ročne: najviac z krajín OECD." }
       - { text: "Grécko", why: "Okolo 1 893 hodín ročne, výrazne viac než v Nemecku." }
-      - { text: "Južná Kórea", why: "Asi 1 872 hodín, o 130 viac než priemer OECD." }
+      - { text: "Južná Kórea", why: "Asi 1 872 hodín, o 130 hodín viac než priemer OECD." }
       - { text: "Poľsko", why: "Zhruba 1 806 hodín; pracuje sa tam o 470 hodín viac než v Nemecku." }
-      - { text: "Spojené štáty", why: "Asi 1 804 hodín ročne, o 60 viac než priemer." }
+      - { text: "Spojené štáty", why: "Asi 1 804 hodín ročne, o 60 hodín viac než priemer." }
       - { text: "Česko", why: "Okolo 1 782 hodín, tesne nad priemerom OECD." }
       - { text: "Čile", why: "Asi 1 953 hodín ročne." }
       - { text: "Izrael", why: "Okolo 1 881 hodín ročne." }
@@ -90,9 +90,9 @@ questions:
     correct:
       - { text: "Bielorusko", why: "Asi 167 kg na osobu: viac než dvojnásobok nemeckého čísla." }
       - { text: "Ukrajina", why: "Asi 135 kg na osobu ročne." }
-      - { text: "Poľsko", why: "Asi 96 kg: štvrté miesto na svete." }
+      - { text: "Poľsko", why: "Asi 96 kg na osobu." }
       - { text: "Belgicko", why: "Asi 86 kg: hranolky nie sú len vtip." }
-      - { text: "Írsko", why: "Asi 85 kg: zemiaky z Írska nie sú len spomienka na hladomor." }
+      - { text: "Írsko", why: "Asi 85 kg na osobu." }
       - { text: "Rusko", why: "Asi 86 kg na osobu." }
     wrong:
       - { text: "Francúzsko", why: "Asi 50 kg." }
@@ -204,7 +204,7 @@ questions:
   # ================================================================ ORDER
   - id: stereo-poradie-hodiny
     type: order
-    prompt: "Zoraď krajiny podľa priemerného počtu odpracovaných hodín ročne na jedného pracovníka (od najviac)."
+    prompt: "Zoraď krajiny podľa priemerného počtu odpracovaných hodín ročne na jedného pracovníka (od najväčšieho počtu)."
     direction: desc
     unit: hodín ročne
     difficulty: 1
@@ -251,7 +251,7 @@ questions:
 
   - id: stereo-poradie-ryby
     type: order
-    prompt: "Zoraď krajiny podľa množstva rýb a morských plodov na obyvateľa (od najviac)."
+    prompt: "Zoraď krajiny podľa množstva rýb a morských plodov na obyvateľa (od najväčšieho množstva)."
     direction: desc
     unit: "kg na osobu ročne"
     difficulty: 2
@@ -261,12 +261,12 @@ questions:
       - { text: Island, value: 85.4, why: "Najviac rýb spomedzi európskych štátov." }
       - { text: Portugalsko, value: 53.6, why: "Viac než Japonsko." }
       - { text: Japonsko, value: 45.0, why: "Slávne sushi, ale nie prvé miesto." }
-      - { text: Francúzsko, value: 32.7, why: "Menej než v Španielsku." }
+      - { text: Francúzsko, value: 32.7, why: "Podstatne menej než v Portugalsku." }
       - { text: Nemecko, value: 13.1, why: "Podstatne menej než v ostatných." }
 
   - id: stereo-poradie-bravcove
     type: order
-    prompt: "Zoraď krajiny podľa množstva bravčového mäsa na obyvateľa (od najviac)."
+    prompt: "Zoraď krajiny podľa množstva bravčového mäsa na obyvateľa (od najväčšieho množstva)."
     direction: desc
     unit: "kg na osobu ročne"
     difficulty: 2
@@ -363,4 +363,4 @@ questions:
     wrong:
       - { text: "Írsko", why: "Asi 85 kg: výrazne menej než v Bielorusku." }
       - { text: "Nemecko", why: "Asi 61 kg." }
-      - { text: "Poľsko", why: "Asi 96 kg: štvrté miesto, no ďaleko za Bieloruskom." }
+      - { text: "Poľsko", why: "Asi 96 kg, no ďaleko za Bieloruskom." }
