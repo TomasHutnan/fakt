@@ -25,7 +25,7 @@ questions:
       - { text: "Nemci pracujú najviac hodín zo všetkých krajín OECD", why: "Naopak: v roku 2023 mali s 1 338 hodinami na pracovníka najmenej v zozname OECD." }
       - { text: "Japonci pracujú ročne viac hodín než Američania", why: "Podľa OECD v roku 2023 asi 1 610 hodín oproti 1 804 hodinám v USA." }
       - { text: "Briti pijú najviac čaju na obyvateľa", why: "Vo Veľkej Británii je to len štvrté miesto za Tureckom, Írskom a Azerbajdžanom." }
-      - { text: "Íri jedia najviac zemiakov na obyvateľa", why: "Írsko je podľa FAO až okolo 12. miesta; vedie Bielorusko so 167 kg na osobu." }
+      - { text: "Íri jedia najviac zemiakov na obyvateľa", why: "Írsko je podľa FAO ďaleko od vrchu rebríčka; vedie Bielorusko so 167 kg na osobu." }
       - { text: "Číňania pijú viac čaju na obyvateľa než Briti", why: "Je to naopak: Briti vypijú na hlavu asi trikrát viac než Číňania." }
       - { text: "Francúzi fajčia najviac v celej Európe", why: "Podľa WHO je francúzsky podiel (28,6 %) vysoký, ale Srbsko (36,5 %) či Bulharsko (35,5 %) sú vyššie." }
       - { text: "Japonci jedia najviac rýb na obyvateľa", why: "Japonsko má asi 45 kg ročne, no Island má 85 kg a Portugalsko 54 kg." }
@@ -94,16 +94,14 @@ questions:
       - { text: "Belgicko", why: "Asi 86 kg: hranolky nie sú len vtip." }
       - { text: "Írsko", why: "Asi 85 kg: zemiaky z Írska nie sú len spomienka na hladomor." }
       - { text: "Rusko", why: "Asi 86 kg na osobu." }
-      - { text: "Portugalsko", why: "Asi 66 kg, tesne nad Nemeckom." }
     wrong:
       - { text: "Francúzsko", why: "Asi 50 kg." }
       - { text: "Taliansko", why: "Asi 48 kg." }
       - { text: "Slovensko", why: "Asi 47 kg na osobu." }
       - { text: "Švajčiarsko", why: "Asi 45 kg." }
       - { text: "Rakúsko", why: "Asi 45 kg." }
-      - { text: "Maďarsko", why: "Asi 36 kg: veľmi málo na krajinu s gulášom a lángošom." }
+      - { text: "Maďarsko", why: "Asi 36 kg: veľmi málo na krajinu s gulášom a langošom." }
       - { text: "Nórsko", why: "Asi 37 kg." }
-      - { text: "Grécko", why: "Asi 58 kg: tesne pod Nemeckom." }
 
   - id: stereo-caj-viac-nez-cina
     type: pick
@@ -140,7 +138,7 @@ questions:
     source: "https://ourworldindata.org/grapher/fish-and-seafood-consumption-per-capita"
     correct:
       - { text: "Island", why: "Asi 85 kg na osobu: takmer dvojnásobok Japonska." }
-      - { text: "Portugalsko", why: "Asi 54 kg; Portugalci milujú bakalhau (sušenú tresku)." }
+      - { text: "Portugalsko", why: "Asi 54 kg; Portugalci milujú bacalhau (sušenú tresku)." }
       - { text: "Južná Kórea", why: "Asi 53 kg na osobu." }
       - { text: "Nórsko", why: "Asi 50 kg." }
       - { text: "Malajzia", why: "Asi 52 kg na osobu." }
@@ -187,8 +185,8 @@ questions:
     asOf: "2022"
     source: "https://www.fao.org/faostat/en/#data/FBS"
     correct:
-      - { text: "Taliansko", why: "Asi 8,9 kg na osobu; tesne pred Španielskom." }
-      - { text: "Španielsko", why: "Asi 8,7 kg na osobu, len o málo menej než v Taliansku." }
+      - { text: "Taliansko", why: "Asi 8,9 kg na osobu." }
+      - { text: "Španielsko", why: "Asi 8,7 kg na osobu." }
       - { text: "Grécko", why: "Asi 6,7 kg." }
       - { text: "Portugalsko", why: "Asi 4,8 kg na osobu." }
       - { text: "Maroko", why: "Asi 3,9 kg." }
@@ -202,25 +200,6 @@ questions:
       - { text: "Čína", why: "Asi 0,04 kg." }
       - { text: "India", why: "Asi 0,04 kg." }
       - { text: "Írsko", why: "Asi 1,1 kg." }
-
-  - id: stereo-jedla-s-klamlivym-nazvom
-    type: pick
-    prompt: "Ktoré z týchto jedál majú v názve krajinu alebo mesto, odkiaľ pravdepodobne nepochádzajú?"
-    difficulty: 2
-    tags: [stereotypy, jedlo, pôvod]
-    source: "https://en.wikipedia.org/wiki/Hawaiian_pizza https://en.wikipedia.org/wiki/German_chocolate_cake https://en.wikipedia.org/wiki/Caesar_salad https://en.wikipedia.org/wiki/Russian_dressing https://en.wikipedia.org/wiki/Salisbury_steak https://en.wikipedia.org/wiki/Swiss_roll https://en.wikipedia.org/wiki/Irish_coffee https://en.wikipedia.org/wiki/Pasty https://en.wikipedia.org/wiki/Camembert https://en.wikipedia.org/wiki/Goulash https://en.wikipedia.org/wiki/Yorkshire_pudding"
-    correct:
-      - { text: "Havajská pizza", why: "Vymyslel ju Grék Sam Panopoulos v kanadskom Ontariu v roku 1962." }
-      - { text: "Nemecká čokoládová torta (German chocolate cake)", why: "Vznikla v Dallase v USA; Nemec v nej nie je: názov je po Američanovi Samuelovi Germanovi, ktorý vyrobil čokoládu na pečenie." }
-      - { text: "Cézarov šalát", why: "Vznikol 4. júla 1924 v Tijuane v Mexiku a pomenoval ho kuchár Caesar Cardini; Július Caesar s tým nemá nič spoločné." }
-      - { text: "Ruský dresing (Russian dressing)", why: "Je to americká omáčka z majonézy a kečupu; prvé zmienky pochádzajú z USA z roku 1900." }
-      - { text: "Salisburský rezeň (Salisbury steak)", why: "Je to americké jedlo pomenované po lekárovi Jamesovi Salisburym; názov sa používa v USA od roku 1897." }
-      - { text: "Švajčiarsky závin (Swiss roll, piškótová roláda)", why: "Podľa Wikipédie vznikla pravdepodobne inde v strednej Európe, azda v Rakúsku, nie vo Švajčiarsku." }
-    wrong:
-      - { text: "Camembert", why: "Prvýkrát sa vyrobil koncom 18. storočia v obci Camembert v Normandii." }
-      - { text: "Guláš", why: "Maďarský mäsový a zeleninový guláš pochádza z Maďarska." }
-      - { text: "Sachertorta", why: "Vymyslel ju v 19. storočí kuchár Franz Sacher, ktorý pracoval v Rakúskom cisárstve." }
-      - { text: "Yorkshirský puding", why: "Vymysleli ho kuchári na severe Anglicka, v Yorkshire, pri pečení mäsa." }
 
   # ================================================================ ORDER
   - id: stereo-poradie-hodiny
@@ -310,7 +289,7 @@ questions:
     scale: log
     tolerance: 0.05
     asOf: "2023"
-    why: "Je to najmenej v zozname OECD. Priemer OECD je 1 745 hodín a Mexičan pracuje takmer o 900 hodín viac."
+    why: "Je to najmenej v zozname OECD. Priemer OECD je 1 745 hodín a pracovník v Mexiku odpracuje takmer o 900 hodín viac."
     difficulty: 2
     source: "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_HW@DF_AVG_ANN_HRS_WKD,1.0/all?startPeriod=2023&endPeriod=2023"
 
@@ -382,6 +361,6 @@ questions:
     source: "https://www.fao.org/faostat/en/#data/FBS"
     correct: { text: "Bielorusko", why: "Asi 167 kg na osobu: dvaapolkrát viac než v Nemecku." }
     wrong:
-      - { text: "Írsko", why: "Asi 85 kg; nie je ani v prvej desiatke." }
+      - { text: "Írsko", why: "Asi 85 kg: výrazne menej než v Bielorusku." }
       - { text: "Nemecko", why: "Asi 61 kg." }
       - { text: "Poľsko", why: "Asi 96 kg: štvrté miesto, no ďaleko za Bieloruskom." }
