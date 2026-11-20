@@ -518,7 +518,7 @@ questions:
         why: Rover, ktorý pristál v kráteri Jezero vo februári 2021.
     wrong:
       - text: Mariner 4
-        why: V roku 1965 preletela popri Marse a odfotila ho.
+        why: V roku 1965 preletel popri Marse a odfotil ho.
       - text: Mars Reconnaissance Orbiter
         why: Obieha okolo Marsu, na povrch nepristál.
       - text: MAVEN
