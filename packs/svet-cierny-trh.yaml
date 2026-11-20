@@ -36,7 +36,7 @@ questions:
     difficulty: 2
     asOf: "2026-10"
     tags: [drogy, ópium, afganistan]
-    source: "https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf https://www.unodc.org/unodc/en/press/releases/2026/October/new-unodc-survey_-afghanistan-opium-production-resumes-with-fivefold-year-on-year-increase.html https://en.wikipedia.org/wiki/Opium_production_in_Afghanistan"
+    source: "https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf https://www.unodc.org/unodc/en/press/releases/2026/October/new-unodc-survey_-afghanistan-opium-production-resumes-with-fivefold-year-on-year-increase.html https://www.app.com.pk/?p=1299887"
     correct:
       - { text: "Afganistan dodával do roku 2022 asi 80 % svetovej nelegálnej výroby ópia", why: "Bol hlavným zdrojom heroínu na svete." }
       - { text: "Vláda Talibanu zakázala pestovanie maku v apríli 2022", why: "Zákaz vyhlásili ešte počas jarnej úrody." }
@@ -78,54 +78,54 @@ questions:
     difficulty: 1
     asOf: "2025-01"
     tags: [silk-road, internet, súd]
-    source: "https://en.wikipedia.org/wiki/Silk_Road_(marketplace) https://en.wikipedia.org/wiki/Ross_Ulbricht https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present"
+    source: "https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf https://ice.gov/news/releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-life-federal-prison-creating https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present https://www.aljazeera.com/economy/2025/1/22/trump-pardons-ross-ulbricht-creator-of-dark-web-marketplace-silk-road"
     correct:
       - { text: "Fungoval ako skrytá služba v anonymizačnej sieti Tor", why: "Tor skrýval umiestnenie servera aj používateľov." }
       - { text: "Všetky transakcie sa platili bitcoinmi", why: "Kryptomena pomáhala chrániť identitu používateľov." }
-      - { text: "Spustili ho vo februári 2011 a FBI ho zavrela v októbri 2013", why: "Zákrok v októbri 2013 priniesol aj zatknutie Rossa Ulbrichta." }
-      - { text: "Ross Ulbricht bol v roku 2015 odsúdený na dvojité doživotie plus 40 rokov bez možnosti podmienečného prepustenia", why: "Trest mu vyhlásili v New Yorku 29. mája 2015, po odsúdení na všetkých bodoch obžaloby vo februári 2015." }
+      - { text: "Spustili ho v roku 2011 a v októbri 2013 ho úrady zavreli", why: "Zákrok v októbri 2013 priniesol aj zatknutie Rossa Ulbrichta." }
+      - { text: "Ross Ulbricht bol v roku 2015 odsúdený na doživotie bez možnosti podmienečného prepustenia", why: "Trest mu vyhlásili v New Yorku 29. mája 2015, po tom, čo ho porota vo februári 2015 uznala za vinného v siedmich bodoch obžaloby." }
       - { text: "Odvolací súd v roku 2017 odsúdenie aj trest potvrdil", why: "Druhý odvolací okruh USA vydal rozhodnutie v máji 2017." }
       - { text: "Prezident USA ho v januári 2025 omilostil", why: "Plné a bezpodmienečné omilostenie je zapísané v zozname udelených milostí ministerstva spravodlivosti USA z 21. januára 2025." }
     wrong:
       - { text: "Fungoval na bežnom webe bez šifrovania", why: "Používal sieť Tor." }
       - { text: "Platilo sa výlučne kreditnými kartami", why: "Platilo sa bitcoinmi." }
-      - { text: "Ulbrichta v roku 2015 oslobodili", why: "Porota ho uznala za vinného vo všetkých bodoch obžaloby." }
+      - { text: "Ulbrichta v roku 2015 oslobodili", why: "Porota ho vo februári 2015 uznala za vinného v siedmich bodoch obžaloby." }
       - { text: "Odvolací súd v roku 2017 jeho trest zrušil", why: "Odsúdenie aj trest potvrdil." }
-      - { text: "Trest mu v roku 2015 určili na 10 rokov väzenia", why: "Dostal dvojité doživotie plus 40 rokov." }
+      - { text: "Trest mu v roku 2015 určili na 10 rokov väzenia", why: "Dostal doživotný trest." }
 
   - id: cierny-trh-capone
     type: pick
     prompt: "Ktoré tvrdenia o odsúdení Ala Capona v roku 1931 sú pravdivé?"
     difficulty: 2
     tags: [prohibícia, usa, súd]
-    source: https://en.wikipedia.org/wiki/Al_Capone
+    source: "https://www.fbi.gov/history/famous-cases/al-capone https://themobmuseum.org/blog/capone-tax-evasion-trial-jury-finds-chicago-mobster-guilty-on-5-of-22-counts/ https://prohibition.themobmuseum.org/the-history/enforcing-the-prohibition-laws/prohibition-mob-bosses-tripped-tax-laws/"
     correct:
       - { text: "Uznali ho za vinného z daňových únikov", why: "Porota ho v októbri 1931 odsúdila v piatich bodoch obžaloby." }
-      - { text: "Súd mu v októbri 1931 uložil 11 rokov väzenia", why: "K trestu pribudla aj pokuta 50 000 dolárov a povinnosť doplatiť dane." }
-      - { text: "Obžaloba pôvodne mala 22 bodov", why: "Odsúdený bol v piatich." }
-      - { text: "Kľúčom k odsúdeniu bolo dokázať jeho príjem, nielen luxusný život", why: "Najcennejším dôkazom bol list jeho právnika, v ktorom priznal zdaniteľný príjem." }
-      - { text: "Americký najvyšší súd už v roku 1927 rozhodol, že aj nezákonný príjem sa zdaňuje", why: "Rozhodnutie vo veci United States v. Sullivan umožnilo obvinenia z daňových únikov." }
+      - { text: "Súd mu v roku 1931 uložil 11 rokov väzenia", why: "K trestu pribudla aj pokuta 50 000 dolárov a povinnosť doplatiť dane." }
+      - { text: "Obžaloba mala vyše dvadsať bodov", why: "Odsúdený bol len v piatich." }
+      - { text: "Kľúčom k odsúdeniu bolo dokázať jeho príjem, nielen luxusný život", why: "Obžaloba sa opierala aj o list jeho bývalého právnika, ktorý opisoval Caponeho príjem, hoci nikdy nepodal daňové priznanie." }
+      - { text: "Americký najvyšší súd už v roku 1927 rozhodol, že aj nezákonný príjem sa zdaňuje", why: "Rozhodnutie vo veci Sullivan umožnilo vyšetrovateľom z ministerstva financií stíhať gangstrov za daňové úniky." }
       - { text: "Neskôr si trest odpykával aj v Alcatraze", why: "Do Atlanty ho poslali v roku 1932, potom ho previezli do nového väzenia Alcatraz." }
     wrong:
       - { text: "Odsúdili ho za vraždy pri masakri na Valentína 1929", why: "Za ten čin nebol nikdy odsúdený." }
       - { text: "Dostal doživotný trest", why: "Dostal 11 rokov." }
       - { text: "Odsúdili ho za pašovanie alkoholu", why: "Odsúdený bol za daňové úniky." }
       - { text: "Celý trest si odpykal v Chicagu", why: "Sedel v Atlante a v Alcatraze." }
-      - { text: "Pôvodná obžaloba obsahovala len päť bodov", why: "Mala 22 bodov." }
+      - { text: "Pôvodná obžaloba obsahovala len päť bodov", why: "Mala vyše dvadsať bodov." }
 
   - id: cierny-trh-rum-pasovanie
     type: pick
     prompt: "Ktoré tvrdenia o pašovaní alkoholu do USA počas prohibície sú pravdivé?"
     difficulty: 1
     tags: [prohibícia, pašovanie]
-    source: https://en.wikipedia.org/wiki/Rum-running
+    source: "https://prohibition.themobmuseum.org/the-history/the-rise-of-organized-crime/rum-running/ https://www.hmdb.org/m.asp?m=234682 https://clickondetroit.com/all-about-michigan/2018/12/05/how-rum-running-became-one-of-detroits-biggest-industries-during-prohibition-era"
     correct:
-      - { text: "Alkohol sa pašoval aj z Kanady", why: "Veľký objem prechádzal hranicou pri Windsore a Detroite." }
-      - { text: "Rum viezli z Bahám na Floridu", why: "Pašeráci ho prevážali najmä z ostrova Bimini." }
-      - { text: "Veľké lode kotvili tesne za hranicou amerických pobrežných vôd", why: "Vtedy platil limit tri míle." }
+      - { text: "Alkohol sa pašoval aj z Kanady", why: "Veľký objem prechádzal cez rieku Detroit z kanadského Windsoru." }
+      - { text: "Alkohol putoval do USA aj cez Bahamy", why: "Nassau a ostrov Bimini slúžili ako sklady a prekladiská pre pašerákov." }
+      - { text: "Veľké lode kotvili za hranicou amerických pobrežných vôd", why: "V medzinárodných vodách sa im pobrežná stráž nemohla ľahko dostať." }
       - { text: "Rad kotviacich lodí sa volal Rum Row", why: "Zákazníci k nim chodili po tovar rýchlymi člnmi." }
-      - { text: "Pobrežná stráž USA proti pašerákom aktívne zasahovala", why: "V roku 1923 napríklad zadržala pašerácku loď Tomoka." }
-      - { text: "Časť tovaru dopravovali aj hydroplány", why: "Lietadlá mohli pristáť pri lodiach a rýchlo prepraviť náklad." }
+      - { text: "Pobrežná stráž USA proti pašerákom aktívne zasahovala", why: "V roku 1923 napríklad zadržala pašerácku loď Tomoka, bývalú loď pašeráka Billa McCoya." }
+      - { text: "Kupujúci chodili k lodiam rýchlymi kontaktnými člnmi", why: "Člny s kupcami sa pripájali k lodiam a rýchlo mizli k brehu." }
     wrong:
       - { text: "Alkohol sa pašoval výlučne po súši z Mexika", why: "Hlavnými cestami boli aj Kanada, Bahamy a more." }
       - { text: "Lode kotvili priamo v amerických prístavoch", why: "Čakali za hranicou pobrežných vôd." }
@@ -138,20 +138,20 @@ questions:
     prompt: "Ktoré tvrdenia o nacistickej falšovateľskej akcii Bernhard počas druhej svetovej vojny sú pravdivé?"
     difficulty: 2
     tags: [falzifikáty, druhá svetová vojna]
-    source: https://en.wikipedia.org/wiki/Operation_Bernhard
+    source: "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard https://www.guinnessworldrecords.com/world-records/65625-greatest-banknote-forgery"
     correct:
       - { text: "Falšovali sa britské bankovky", why: "Šlo o bankovky libry šterlingov." }
       - { text: "Pracovali na tom väzni z koncentračného tábora Sachsenhausen", why: "Dohliadal na nich dôstojník SS Bernhard Krüger." }
-      - { text: "Pôvodným plánom bolo zhadzovať bankovky nad Britániou a oslabiť jej ekonomiku", why: "Neskôr sa cieľ zmenil na financovanie nemeckej spravodajskej činnosti." }
-      - { text: "Odhady množstva vytlačených bankoviek sa pohybujú od 132,6 do 300 miliónov libier", why: "Presný objem sa nepodarilo spoľahlivo určiť." }
+      - { text: "Cieľom bolo zaplaviť Britániu falošnými bankovkami a oslabiť jej ekonomiku", why: "Plán zhodiť peniaze nad Londýnom sa opustil; bankovky sa používali na platenie agentov a nákupy zlata." }
+      - { text: "Nominálna hodnota vytlačených falzifikátov sa odhaduje na vyše 130 miliónov libier", why: "Išlo o viac než deväť miliónov bankoviek po 5, 10, 20 a 50 libier." }
       - { text: "Časť bankoviek a zariadenia esesáci pri konci vojny hodili do rakúskych jazier", why: "Napríklad do jazera Toplitzsee." }
-      - { text: "Tlač v Sachsenhausene sa skončila na prelome februára a marca 1945", why: "Väzňov potom presunuli do Rakúska." }
+      - { text: "Väzňov koncom vojny presunuli do Rakúska a Američania ich oslobodili 6. mája 1945", why: "Dovtedy pokračovala výroba falzifikátov." }
     wrong:
       - { text: "Falšovali sa americké doláre", why: "Cieľom boli britské libry." }
       - { text: "Akciu viedol Sovietsky zväz", why: "Išlo o akciu nacistického Nemecka." }
       - { text: "Falšovali sa iba mince", why: "Falšovali sa papierové bankovky." }
-      - { text: "Operácia skončila už v roku 1940", why: "Tlač pokračovala do roku 1945." }
-      - { text: "Falošné bankovky sa do obehu nikdy nedostali", why: "Na konci vojny bolo v obehu falzifikátov za 15 až 20 miliónov libier a Bank of England v roku 1943 prestala vydávať bankovky od 10 libier." }
+      - { text: "Operácia skončila už v roku 1940", why: "Výroba pokračovala až do konca vojny v roku 1945." }
+      - { text: "Falošné bankovky sa do obehu nikdy nedostali", why: "Po odhalení falzifikátov v roku 1943 stiahla Bank of England z obehu všetky bankovky s nominálnou hodnotou nad 5 libier." }
 
   - id: cierny-trh-wildlife-skupiny
     type: pick
@@ -179,39 +179,38 @@ questions:
     difficulty: 2
     asOf: "2026-11"
     tags: [cites, voľne žijúce zvieratá]
-    source: "https://en.wikipedia.org/wiki/CITES https://en.wikipedia.org/wiki/Pangolin https://en.wikipedia.org/wiki/Ivory_trade"
+    source: "https://www.env.go.jp/nature/kisho/kisei/en/cites/ https://www.bundesumweltministerium.de/en/topics/species-protection/international-species-protection/cites https://old.wti.org.in/?p=993 https://www.ebsco.com/research-starters/science/ivory-trade/ https://www.federalregister.gov/documents/2016/06/06/2016-13173/endangered-and-threatened-wildlife-and-plants-revision-of-the-section-4d-rule-for-the-african"
     correct:
-      - { text: "Text dohovoru dohodli vo Washingtone 3. marca 1973", why: "Preto sa mu hovorí aj Washingtonský dohovor." }
-      - { text: "Do platnosti vstúpil 1. júla 1975", why: "Stalo sa to po desiatej ratifikácii." }
+      - { text: "Dohovor prijali vo Washingtone 3. marca 1973", why: "Preto sa mu hovorí aj Washingtonský dohovor." }
+      - { text: "Do platnosti vstúpil 1. júla 1975", why: "Platí od roku 1975." }
       - { text: "Týka sa zvierat aj rastlín", why: "Názov dohovoru hovorí o voľne žijúcej faune a flóre." }
-      - { text: "Všetky druhy pangolínov sú v prílohe I", why: "Príloha I zakazuje medzinárodný obchod okrem nekomerčných účelov s povolením." }
-      - { text: "Zmluvných strán je viac než 180", why: "Zoznam uvádza 185 strán." }
+      - { text: "Všetky druhy pangolínov sú v prílohe I", why: "Od roku 2016 je medzinárodný komerčný obchod s nimi zakázaný." }
+      - { text: "Zmluvných strán je viac než 180", why: "Nemecké ministerstvo životného prostredia uvádza 184 strán, ktoré pokrývajú takmer 95 % štátov sveta." }
       - { text: "Po preradení afrických slonov do prílohy I začal v januári 1990 platiť zákaz medzinárodného obchodu so slonovinou", why: "Rozhodnutie prijali na stretnutí strán v októbri 1989." }
     wrong:
-      - { text: "Dohovor vstúpil do platnosti v roku 1995", why: "Platí od roku 1975." }
-      - { text: "Zakazuje akýkoľvek obchod s voľne žijúcimi druhmi", why: "Pri mnohých druhoch obchod povoľuje, ale reguluje ho, napríklad v prílohe II." }
+      - { text: "Dohovor vstúpil do platnosti v roku 1995", why: "Platí od 1. júla 1975." }
+      - { text: "Zakazuje akýkoľvek obchod s voľne žijúcimi druhmi", why: "Pri mnohých druhoch obchod povoľuje, ale reguluje ho, najmä v prílohe II." }
       - { text: "Týka sa len zvierat, nie rastlín", why: "Chráni aj rastliny." }
       - { text: "Dohovor podpísali len európske štáty", why: "Zmluvnými stranami sú štáty z celého sveta." }
-      - { text: "Pangolíny patria do prílohy III s menšou ochranou", why: "Všetky druhy sú v prílohe I." }
+      - { text: "Pangolíny patria do prílohy III s menšou ochranou", why: "Všetkých osem druhov preradili do prílohy I v roku 2016." }
 
   - id: cierny-trh-tuzex
     type: pick
     prompt: "Ktoré tvrdenia o Tuzexe v socialistickom Československu sú pravdivé?"
     difficulty: 1
     tags: [československo, tuzex, bony]
-    source: https://en.wikipedia.org/wiki/Tuzex
+    source: "https://www.seznamzpravy.cz/clanek/magazin-historie-veklsaci-tuzex-bony-269109 https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954 https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/1992/304"
     correct:
-      - { text: "Boli to štátne obchody", why: "Tuzex fungoval od roku 1957 do roku 1992." }
-      - { text: "Neplatilo sa v nich bežnými korunami, ale poukazmi, takzvanými bonmi", why: "Bony sa dali kúpiť v bankách za zahraničnú menu." }
-      - { text: "Ponúkali západný a ťažko dostupný tovar", why: "Okrem cigariet zo Západu tam predávali aj kvalitnejšie oblečenie, napríklad džínsy." }
-      - { text: "Bony predávali na ulici aj veksláci", why: "Išlo o neoficiálny obchod, formálne nezákonný, ale tolerovaný." }
-      - { text: "V roku 1988 mal Tuzex približne 170 predajní", why: "Predávali tovar za 250 miliónov dolárov." }
-      - { text: "Predaj bonov skončil v roku 1992", why: "Po roku 1989 mohli ľudia cestovať a legálne meniť meny, takže záujem klesol." }
+      - { text: "Boli to štátne obchody", why: "Podnik zahraničného obchodu Tuzex vznikol vyhláškou ministerstva v roku 1957." }
+      - { text: "Neplatilo sa v nich bežnými korunami, ale poukazmi, takzvanými bonmi", why: "Bony sa dali dostať výmenou zahraničnej meny v štátnej banke." }
+      - { text: "Ponúkali západný a ťažko dostupný tovar", why: "Predávali tam napríklad džínsy, cigarety a elektroniku zo Západu." }
+      - { text: "Bony predávali na ulici aj veksláci", why: "Štát ich oficiálne odsudzoval, ale často tolerovali ich činnosť." }
+      - { text: "V roku 1988 mal Tuzex približne 170 predajní", why: "Podľa webu Tuzexu mal v tom roku obrat vyše 250 miliónov dolárov." }
+      - { text: "Predaj bonov skončil v roku 1992", why: "Po roku 1989 sa prešlo na konvertibilnú menu a od roku 1992 sa tovar predával za bežné koruny." }
     wrong:
       - { text: "Tuzex bol súkromný reťazec západných firiem", why: "Bol to štátny podnik zahraničného obchodu." }
-      - { text: "V Tuzexe sa dalo platiť bežnými československými korunami", why: "Prijímal len bony." }
-      - { text: "Bony sa dali kedykoľvek vymeniť späť za zahraničnú menu", why: "Späť na devízy sa vymeniť nedali." }
-      - { text: "Predajne mali len v Prahe", why: "V roku 1988 ich bolo približne 170 a patrila k nim aj Bratislava." }
+      - { text: "V Tuzexe sa dalo platiť bežnými československými korunami", why: "Platilo sa bonmi alebo zahraničnou menou." }
+      - { text: "Predajne mali len v Prahe", why: "V roku 1988 ich bolo približne 170 po celom Československu." }
       - { text: "Tuzex vznikol až po Nežnej revolúcii v roku 1989", why: "Vznikol v roku 1957." }
 
   - id: cierny-trh-opiove-vojny
@@ -219,20 +218,20 @@ questions:
     prompt: "Ktoré tvrdenia o opiových vojnách v 19. storočí sú pravdivé?"
     difficulty: 1
     tags: [dejiny, pašovanie, čína]
-    source: "https://en.wikipedia.org/wiki/First_Opium_War https://en.wikipedia.org/wiki/Second_Opium_War"
+    source: "https://www.ebsco.com/research-starters/history/opium-wars https://en.wikipedia.org/wiki/First_Opium_War"
     correct:
-      - { text: "Prvá opiová vojna sa viedla v rokoch 1839 až 1842", why: "Trvala od septembra 1839 do augusta 1842." }
+      - { text: "Prvá opiová vojna sa viedla v rokoch 1839 až 1842", why: "Skončila sa v auguste 1842 Nankinskou zmluvou." }
       - { text: "Bojovala Británia proti Číne", why: "Čína vtedy bola pod vládou dynastie Čching." }
-      - { text: "Čína po prvej vojne postúpila Británii ostrov Hongkong", why: "Stalo sa tak Nankinskou zmluvou z 29. augusta 1842." }
-      - { text: "Čínsky cisár poslal do Kantonu komisára Lin Zexua, aby zastavil obchod s ópiom", why: "Stalo sa tak v roku 1839." }
-      - { text: "Ópium bolo v 19. storočí najziskovejším tovarom britského obchodu", why: "Vojna sa viedla o obchod, ktorý Čína zakázala." }
+      - { text: "Čína po prvej vojne postúpila Británii ostrov Hongkong", why: "Stalo sa tak Nankinskou zmluvou z augusta 1842." }
+      - { text: "Čína poverila komisára Lin Zexua, aby potlačil obchod s ópiom a zničil jeho zásoby", why: "Zásah čínskych úradov bol jednou z priamych príčin vojny." }
+      - { text: "Britskí obchodníci predávali v Číne ópium z Indie", why: "Kupovali za ne striebro, aby si mohli zaplatiť za čínsky čaj." }
       - { text: "Druhá opiová vojna sa viedla v rokoch 1856 až 1860", why: "Británia v nej bojovala spolu s Francúzskom." }
     wrong:
       - { text: "Opiové vojny sa viedli medzi Čínou a Japonskom", why: "Viedla ich Čína s Britániou, v druhej vojne aj s Francúzskom." }
       - { text: "Hongkong získalo po prvej vojne Francúzsko", why: "Pripadol Británii." }
-      - { text: "Čínsky cisár ópium pred vojnou legalizoval a zdanil", why: "Cisár takéto návrhy odmietol a obchod chcel zastaviť." }
+      - { text: "Čínske úrady ópium pred vojnou legalizovali a zdanili", why: "Čína obchod s ópiom zakazovala a pred vojnou ho potláčala." }
       - { text: "Druhá opiová vojna sa viedla v 20. storočí", why: "Trvala v rokoch 1856 až 1860." }
-      - { text: "Britský obchod s ópiom bol zanedbateľný", why: "Patril k najziskovejším tovarom Británie v 19. storočí." }
+      - { text: "Obchod s ópiom nemal na čínsku ekonomiku žiadny vplyv", why: "Odliv striebra a rozšírená závislosť primäli čínske úrady k zásahu." }
 
   # ---------------------------------------------------------------- ORDER
   - id: cierny-trh-poradie-uzivatelia
@@ -258,11 +257,11 @@ questions:
     unit: rok
     difficulty: 2
     tags: [silk-road, súd]
-    source: "https://en.wikipedia.org/wiki/Silk_Road_(marketplace) https://en.wikipedia.org/wiki/Ross_Ulbricht"
+    source: "https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf https://ice.gov/news/releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-life-federal-prison-creating https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present"
     items:
-      - { text: "Spustenie trhoviska Silk Road", value: 2011, why: "Stalo sa vo februári 2011." }
+      - { text: "Spustenie trhoviska Silk Road", value: 2011, why: "Úrady uvádzajú začiatok prevádzky v roku 2011." }
       - { text: "FBI zatvorila Silk Road a zatkla Rossa Ulbrichta", value: 2013, why: "Stalo sa v októbri 2013." }
-      - { text: "Odsúdenie Ulbrichta na dvojité doživotie plus 40 rokov", value: 2015, why: "Trest mu vyhlásili 29. mája 2015." }
+      - { text: "Odsúdenie Ulbrichta na doživotie", value: 2015, why: "Trest mu vyhlásili 29. mája 2015." }
       - { text: "Omilostenie Ulbrichta prezidentom USA", value: 2025, why: "Stalo sa 21. januára 2025." }
 
   - id: cierny-trh-poradie-prohibicia
@@ -272,12 +271,12 @@ questions:
     unit: rok
     difficulty: 1
     tags: [prohibícia, usa]
-    source: "https://en.wikipedia.org/wiki/Prohibition_in_the_United_States https://en.wikipedia.org/wiki/Al_Capone https://en.wikipedia.org/wiki/Wall_Street_Crash_of_1929"
+    source: "https://prohibition.themobmuseum.org/the-history/the-rise-of-organized-crime/rum-running/ https://www.federalreservehistory.org/essays/stock-market-crash-of-1929 https://www.fbi.gov/history/famous-cases/al-capone https://constitutioncenter.org/blog/five-interesting-facts-about-prohibitions-end-in-1933"
     items:
-      - { text: "Začiatok celoštátnej prohibície v USA", value: 1920, why: "Vstúpil do platnosti zákaz výroby a predaja alkoholu." }
+      - { text: "Začiatok celoštátnej prohibície v USA", value: 1920, why: "Zákaz vstúpil do platnosti 17. januára 1920." }
       - { text: "Krach na newyorskej burze", value: 1929, why: "Začal sa v októbri 1929." }
       - { text: "Odsúdenie Ala Capona za daňové úniky", value: 1931, why: "Stalo sa v októbri 1931." }
-      - { text: "Koniec prohibície", value: 1933, why: "Zrušil ju 21. dodatok k ústave z decembra 1933." }
+      - { text: "Koniec prohibície", value: 1933, why: "Zrušil ju 21. dodatok k ústave, ratifikovaný 5. decembra 1933." }
 
   - id: cierny-trh-poradie-falosne-euro
     type: order
@@ -352,15 +351,15 @@ questions:
 
   - id: cierny-trh-slony-pokles
     type: number
-    prompt: "Koľko afrických slonov zostalo podľa odhadov v roku 1989, keď ich v roku 1979 bolo asi 1,3 milióna?"
-    answer: 600000
+    prompt: "Koľko afrických slonov žilo podľa najčastejšie uvádzaného odhadu v roku 1979, predtým než pytliactvo pre slonovinu prudko vzrástlo?"
+    answer: 1300000
     unit: slonov
     scale: log
     tolerance: 0.15
-    why: "Za desať rokov sa počet zmenšil približne na polovicu, najmä pre pytliactvo kvôli slonovine; v tom istom roku CITES rozhodol o zákaze medzinárodného obchodu s ňou."
+    why: "Do konca 80. rokov sa počet podľa odhadov znížil na 600 až 750 tisíc, najmä pre pytliactvo kvôli slonovine; v októbri 1989 CITES preradil africké slony do prílohy I."
     difficulty: 2
     tags: [slonovina, cites]
-    source: https://en.wikipedia.org/wiki/Ivory_trade
+    source: "https://www.nationalgeographic.com/animals/article/elephants-samburu-reserve-kenya-iain-douglas-hamilton https://www.ebsco.com/research-starters/science/ivory-trade/ https://e360.yale.edu/features/for-a-defender-of-elephants-chinas-ivory-ban-comes-just-in-time-iain-douglas-hamilton"
 
   - id: cierny-trh-tuzex-predajne
     type: number
@@ -369,10 +368,10 @@ questions:
     unit: predajní
     scale: log
     tolerance: 0.1
-    why: "V roku 1961 ich bolo 14; v roku 1988 predali tovar za asi 250 miliónov dolárov, z toho dve tretiny tvoril západný dovoz."
+    why: "Podľa webu Tuzexu stálo v roku 1988 po celom Československu približne 170 predajní a obrat prekročil 250 miliónov dolárov."
     difficulty: 3
     tags: [tuzex, československo]
-    source: https://en.wikipedia.org/wiki/Tuzex
+    source: "https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954"
 
   - id: cierny-trh-pridely-britania
     type: number
@@ -381,10 +380,10 @@ questions:
     unit: rok
     scale: linear
     tolerance: 1
-    why: "Prídely mäsa skončili 4. júla 1954, takmer deväť rokov po vojne; počas nich fungoval čierny trh s prídelovým tovarom."
+    why: "Mäso ako posledné prestalo byť prídelové o polnoci 3. na 4. júla 1954, takmer deväť rokov po vojne; počas prídelov fungoval čierny trh."
     difficulty: 2
     tags: [vojna, prídely]
-    source: https://en.wikipedia.org/wiki/Rationing_in_the_United_Kingdom
+    source: "https://www.iwm.org.uk/history/second-world-war/home-front/rationing https://api.parliament.uk/historic-hansard/commons/1954/apr/28/slaughterhouses-bill-lords https://blog.bham.ac.uk/culturalcalendar/2024/07/04/70th-anniversary-of-the-end-of-food-rationing-in-the-uk/"
 
   - id: cierny-trh-kokain-vyroba-tony
     type: number
@@ -445,7 +444,7 @@ questions:
     difficulty: 1
     asOf: "2025-01"
     tags: [silk-road]
-    source: "https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present https://en.wikipedia.org/wiki/Ross_Ulbricht"
+    source: "https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present https://www.aljazeera.com/economy/2025/1/22/trump-pardons-ross-ulbricht-creator-of-dark-web-marketplace-silk-road https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf"
     correct: { text: "Prezident USA ho omilostil", why: "Plné a bezpodmienečné omilostenie udelil 21. januára 2025 Donald Trump." }
     wrong:
       - { text: "Odvolací súd ho zrušil", why: "Odvolací súd trest potvrdil už v roku 2017." }
@@ -457,7 +456,7 @@ questions:
     prompt: "Za čo odsúdil americký súd v roku 1931 Ala Capona?"
     difficulty: 1
     tags: [prohibícia, usa]
-    source: https://en.wikipedia.org/wiki/Al_Capone
+    source: "https://www.fbi.gov/history/famous-cases/al-capone https://themobmuseum.org/blog/capone-tax-evasion-trial-jury-finds-chicago-mobster-guilty-on-5-of-22-counts/"
     correct: { text: "Za daňové úniky", why: "Dostal 11 rokov väzenia, pokutu aj povinnosť doplatiť dane." }
     wrong:
       - { text: "Za vraždu", why: "Za vraždu odsúdený nebol." }
@@ -482,8 +481,8 @@ questions:
     prompt: "Z akého materiálu je nosorožčí roh?"
     difficulty: 1
     tags: [nosorožce, pytliactvo]
-    source: https://en.wikipedia.org/wiki/Rhinoceros
-    correct: { text: "Z keratínu", why: "Je to rovnaký materiál ako vlasy a nechty; dobrý dôkaz o liečivých účinkoch neexistuje." }
+    source: "https://animals.sandiegozoo.org/animals/rhinoceros https://wildnet.org/news/study-confirms-rhino-horn-has-no-medicinal-value/"
+    correct: { text: "Z keratínu", why: "Je to rovnaký materiál ako vlasy a nechty; liečivé účinky nemá." }
     wrong:
       - { text: "Z kosti", why: "Roh nie je kostný, na rozdiel od parohov jeleňa." }
       - { text: "Zo slonoviny", why: "Slonovina je zubovina klov sloníc a slonov." }
@@ -494,21 +493,21 @@ questions:
     prompt: "Kto bol v socialistickom Československu vekslák?"
     difficulty: 1
     tags: [československo, tuzex]
-    source: https://en.wikipedia.org/wiki/Tuzex
-    correct: { text: "Neoficiálny obchodník s devízami a tuzexovými bonmi", why: "Meno pochádza z nemeckého Wechsel, teda výmena." }
+    source: "https://www.seznamzpravy.cz/clanek/magazin-historie-veklsaci-tuzex-bony-269109 https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954"
+    correct: { text: "Neoficiálny obchodník s devízami a tuzexovými bonmi", why: "Veksláci neoficiálne menili valuty a prepredávali bony pred Tuzexmi." }
     wrong:
       - { text: "Predavač v obchode Tuzex", why: "Predavači Tuzexu boli zamestnancami štátneho podniku." }
       - { text: "Colník na hraničnom priechode", why: "Colníci štátu pašerákov naopak stíhali." }
-      - { text: "Bankový úradník pri výmene mien", why: "Štátne banky predávali bony oficiálne, vekslák robil neoficiálny obchod." }
+      - { text: "Bankový úradník pri výmene mien", why: "Štátne banky menili valuty oficiálne, vekslák robil neoficiálny obchod." }
 
   - id: cierny-trh-bernhard-jazero
     type: choice
     prompt: "Do ktorého z týchto rakúskych jazier esesáci pri konci vojny hodili časť falošných britských bankoviek a tlačiarenského zariadenia?"
     difficulty: 3
     tags: [falzifikáty, druhá svetová vojna]
-    source: https://en.wikipedia.org/wiki/Operation_Bernhard
-    correct: { text: "Toplitzsee", why: "Truhlice s bankovkami z neho potápači vyťahovali pri prieskumoch v rokoch 1958 a 1963." }
+    source: "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard https://www.guinnessworldrecords.com/world-records/65625-greatest-banknote-forgery"
+    correct: { text: "Toplitzsee", why: "V roku 1959 noviny informovali, že potápač v ňom našiel debny s falošnými päťlibrovkami." }
     wrong:
-      - { text: "Neusiedlersee", why: "Falošné bankovky z operácie Bernhard sa tam nenašli." }
-      - { text: "Wörthersee", why: "Falošné bankovky z operácie Bernhard sa tam nenašli." }
-      - { text: "Attersee", why: "Falošné bankovky z operácie Bernhard sa tam nenašli." }
+      - { text: "Neusiedlersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
+      - { text: "Wörthersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
+      - { text: "Attersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
