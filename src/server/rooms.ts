@@ -442,7 +442,7 @@ export class Hub {
   private pushView(room: Room, c: Client): void {
     let screens = 0;
     for (const x of room.clients) if (x.watcher) screens++;
-    const view = JSON.stringify({ ...viewFor(room.state, c.playerId), screens });
+    const view = JSON.stringify({ ...viewFor(room.state, c.playerId, room.packs), screens });
     if (view === c.lastView) return;
     c.lastView = view;
     c.conn.send(`{"t":"view","now":${Date.now()},"view":${view}}`);

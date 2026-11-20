@@ -4,7 +4,8 @@ import type { Card } from "../engine/cards.ts";
 import type { TurnResult } from "../engine/game.ts";
 import { nextPickWorth, pickPoints } from "../engine/scoring.ts";
 import type { ClientAction, HiddenCard, MyAnswer, PlayerView, RoomView } from "../engine/room.ts";
-import type { ClientState, RoomClient } from "../net/client.ts";
+import { timerShare } from "./timer.ts";
+import { CONNECT_TIMEOUT_MS, type ClientState, type RoomClient } from "../net/client.ts";
 import { CardAnswer, CardFoot, CardHead, describe, NumberInput, OrderInput } from "./Game.tsx";
 import { QuickSettings } from "./QuickSettings.tsx";
 import { PackPicker, SocialList, TitleList } from "./Comeback.tsx";
@@ -32,6 +33,14 @@ export interface RoomBodyProps {
 export function RoomScreen({ client, onLeave, onBack }: { client: RoomClient; onLeave: () => void; onBack: () => void }) {
   const [state, setState] = useState<ClientState>(client.state);
   useEffect(() => client.subscribe(setState), [client]);
+  // A first connection that never opens: offer a retry instead of waiting forever.
+  const [stuck, setStuck] = useState(false);
+  const waiting = !state.view && !state.error;
+  useEffect(() => {
+    if (!waiting || stuck) return;
+    const t = setTimeout(() => setStuck(true), CONNECT_TIMEOUT_MS);
+    return () => clearTimeout(t);
+  }, [waiting, stuck, client]);
   useWakeLock();
   const screen = state.you == null && state.view != null && state.view.you == null;
 
@@ -44,6 +53,23 @@ export function RoomScreen({ client, onLeave, onBack }: { client: RoomClient; on
           </p>
           <div class="actions">
             <button type="button" class="btn btn--primary btn--block" onClick={onBack}>
+              {sk.back}
+            </button>
+          </div>
+        </div>
+      );
+    }
+    if (stuck) {
+      return (
+        <div class="screen screen--room">
+          <p class="error" role="alert">
+            {sk.connectTimeout}
+          </p>
+          <div class="actions">
+            <button type="button" class="btn btn--primary btn--block" onClick={() => (setStuck(false), client.reconnect())}>
+              {sk.tryAgain}
+            </button>
+            <button type="button" class="btn btn--block" onClick={onBack}>
               {sk.back}
             </button>
           </div>
@@ -262,14 +288,14 @@ function useSecondsLeft(deadline: number | null, now: () => number): number | nu
 function Timer({ view, now }: { view: RoomView; now: () => number }) {
   const left = useSecondsLeft(view.deadline, now);
   const total = useRef<number | null>(null);
-  // The full length is the first value seen for this deadline.
+  // Fallback when the server sent no full length: the first value seen for this deadline.
   const key = useRef<number | null>(null);
   if (key.current !== view.deadline) {
     key.current = view.deadline;
     total.current = left;
   }
   if (left == null) return <span class="topbar__meta">{sk.noLimit}</span>;
-  const share = total.current ? left / total.current : 0;
+  const share = timerShare(view.deadline!, view.span, now(), total.current);
   return (
     <span class={`timer${left <= 5 ? " timer--low" : ""}`} role="timer" aria-label={sk.timeLeft(left)}>
       <span class="timer__bar" aria-hidden="true">
@@ -524,7 +550,7 @@ function RoomReveal({ view, send, now, onLeave, banner }: Inner) {
         <CardFoot card={card} />
         <div class="actions">
           <button type="button" class="btn btn--primary btn--block" disabled={ready} onClick={() => send({ type: "ready" })}>
-            {ready ? (view.paused ? sk.paused : sk.waitingOthers) : view.lastRound ? (toTiebreak(view) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
+            {ready ? (view.paused ? sk.paused : sk.waitingOthers) : view.lastRound ? (toTiebreak(view) && view.canTiebreak ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
           </button>
           <Progress view={view} />
           {isController(view) && ready && (
@@ -586,7 +612,7 @@ function Standings({ view, gains }: { view: RoomView; gains?: boolean }) {
           <li class={`score-row${rank === 1 ? " score-row--leader" : ""}`} key={p.id}>
             <span class="score-row__rank">{rank}.</span>
             <span class="score-row__name">
-              <Avatar player={p} /> {p.name}
+              <Avatar player={p} /> <span class="score-row__text">{p.name}</span>
             </span>
             <span class="score-row__score">
               {gains && (gained.get(p.id) ?? 0) > 0 && <span class="score-row__gain">+{gained.get(p.id)} </span>}
@@ -928,6 +954,7 @@ export function JoinScreen({
   const [name, setName] = useState(initialName);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [timedOut, setTimedOut] = useState(false);
   const client = useRef<RoomClient | null>(null);
   useEffect(() => () => client.current?.close(), []);
 
@@ -941,14 +968,27 @@ export function JoinScreen({
   };
   const submit = (e: Event) => {
     e.preventDefault();
+    if (busy) return;
     const c = cleanCode();
     if (c.length !== 4) return setError(sk.roomErrors.noRoom);
     if (!name.trim()) return setError(sk.roomErrors.badName);
+    client.current?.close();
     setBusy(true);
     setError(null);
+    setTimedOut(false);
     const rc = makeClient(c, name.trim());
     client.current = rc;
+    // The socket may never open (bad network, server down): stop waiting and let the user retry.
+    const timer = setTimeout(() => {
+      off();
+      rc.close();
+      if (client.current === rc) client.current = null;
+      setBusy(false);
+      setError(sk.connectTimeout);
+      setTimedOut(true);
+    }, CONNECT_TIMEOUT_MS);
     const off = rc.subscribe((st) => {
+      if (st.you || st.error) clearTimeout(timer);
       if (st.you) {
         off();
         client.current = null;
@@ -1006,7 +1046,7 @@ export function JoinScreen({
         <p class="field__hint">{sk.privacy}</p>
         <div class="actions">
           <button type="submit" class="btn btn--primary btn--block" disabled={busy}>
-            {busy ? sk.connecting : sk.enter}
+            {busy ? sk.connecting : timedOut ? sk.tryAgain : sk.enter}
           </button>
         </div>
         <div class="stack join-watch">
