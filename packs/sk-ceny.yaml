@@ -1,0 +1,520 @@
+id: sk-ceny
+title: Ceny kedysi a dnes
+description: "Koľko stál rožok, chlieb, benzín či Favorit v roku 1989, ako sa menili mzdy a na čo si dnes zarobíš rýchlejšie."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ PICK
+  - id: ceny-1989-pod-5-kcs
+    type: pick
+    prompt: Ktoré z týchto vecí stáli v roku 1989 v Československu menej ako 5 Kčs (za uvedené množstvo)?
+    difficulty: 2
+    asOf: "1989"
+    tags: [1989, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani"
+    correct:
+      - { text: "tmavý chlieb (1 kg)", why: "2,80 Kčs. Chlieb štát dotoval, a tak sa jeho cena roky nemenila." }
+      - { text: "polotučné mlieko (1 l)", why: "2,00 Kčs; mlieko sa trvalo predávalo pod nákladmi." }
+      - { text: "konzumné zemiaky (1 kg)", why: "1,60 Kčs." }
+      - { text: "rožok (1 ks)", why: "Približne 30 halierov." }
+      - { text: "pivo 10° (0,5 l)", why: "Okolo 2,50 Kčs." }
+    wrong:
+      - { text: "maslo (125 g)", why: "Presne 5 Kčs, teda nie menej ako 5." }
+      - { text: "jablká (1 kg)", why: "6 Kčs." }
+      - { text: "kryštálový cukor (1 kg)", why: "7,30 Kčs." }
+      - { text: "pivo Prazdroj 12° (0,5 l)", why: "Okolo 6 Kčs, teda viac než dvojnásobok ceny desiatky." }
+      - { text: "mliečna čokoláda (100 g)", why: "11 Kčs." }
+      - { text: "benzín Super (1 l)", why: "9 Kčs; benzín bol po zdražení z roku 1981 drahý voči mzdám." }
+      - { text: "10 čerstvých vajec", why: "13 Kčs." }
+      - { text: "kurča (1 kg)", why: "30 Kčs." }
+
+  - id: ceny-1989-nad-1000-kcs
+    type: pick
+    prompt: Ktoré z týchto vecí stáli v roku 1989 viac ako 1 000 Kčs?
+    difficulty: 1
+    asOf: "1989"
+    tags: [1989, spotrebiče]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct:
+      - { text: "Škoda Favorit", why: "84 600 Kčs, teda približne 27 priemerných mesačných miezd." }
+      - { text: "farebný televízor", why: "Okolo 13 000 Kčs, zhruba štyri priemerné mzdy." }
+      - { text: "kombinovaná chladnička s mrazničkou", why: "Okolo 5 780 Kčs; dnes na ňu stačí 8 pracovných dní." }
+    wrong:
+      - { text: "1 m² bytu (nehnuteľnosť na bývanie)", why: "Podľa štatistiky okolo 650 Kčs za m²; ceny určoval štát." }
+      - { text: "dámske kožené lodičky", why: "Okolo 270 Kčs, no aj to bolo 15 hodín práce." }
+      - { text: "pánska košeľa", why: "Okolo 131 Kčs." }
+      - { text: "detská vychádzková obuv", why: "Okolo 115 Kčs." }
+      - { text: "trvanlivá saláma (1 kg)", why: "60 Kčs, hoci na ňu bolo treba odpracovať vyše troch hodín." }
+      - { text: "bravčové karé (1 kg)", why: "46 Kčs." }
+      - { text: "benzín Super (1 l)", why: "9 Kčs." }
+
+  - id: ceny-praca-dlhsie-dnes
+    type: pick
+    prompt: Na ktoré z týchto vecí musí priemerne zarábajúci Slovák v roku 2023 pracovať dlhšie než v roku 1989?
+    difficulty: 3
+    asOf: "2023"
+    tags: [kúpna sila, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct:
+      - { text: "tmavý chlieb (1 kg)", why: "V roku 1989 to bolo 9 minút práce, v roku 2023 už 18." }
+      - { text: "polotučné mlieko (1 l)", why: "7 minút kedysi, 9 minút dnes." }
+      - { text: "eidamská tehla (1 kg)", why: "1 hodina 17 minút kedysi, 1 hodina 28 minút dnes." }
+      - { text: "konzumné zemiaky (1 kg)", why: "5 minút kedysi, 9 minút dnes." }
+    wrong:
+      - { text: "bravčové karé (1 kg)", why: "Z 2 hodín 35 minút na 52 minút." }
+      - { text: "kurča (1 kg)", why: "Z 1 hodiny 41 minút na 28 minút." }
+      - { text: "trvanlivá saláma (1 kg)", why: "Z 3 hodín 22 minút na 1 hodinu 33 minút." }
+      - { text: "10 čerstvých vajec", why: "Zo 44 minút na 23 minút." }
+      - { text: "maslo (125 g)", why: "Zo 17 minút na 13 minút." }
+      - { text: "jablká (1 kg)", why: "Z 20 minút na 10 minút." }
+      - { text: "kryštálový cukor (1 kg)", why: "Z 25 minút na 11 minút." }
+      - { text: "mliečna čokoláda (100 g)", why: "Z 37 minút na 11 minút." }
+      - { text: "televízor (farebný vtedy, LCD dnes)", why: "Zo 4 mesiacov práce na 9 dní." }
+
+  - id: ceny-praca-pod-hodinu-2023
+    type: pick
+    prompt: Ktoré z týchto vecí si dnes (2023) priemerne zarábajúci Slovák kúpi za menej ako jednu hodinu práce?
+    difficulty: 2
+    asOf: "2023"
+    tags: [kúpna sila, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct:
+      - { text: "bravčové karé (1 kg)", why: "Zhruba 52 minút práce." }
+      - { text: "kurča (1 kg)", why: "Zhruba 28 minút práce." }
+      - { text: "tmavý chlieb (1 kg)", why: "Zhruba 18 minút práce." }
+      - { text: "10 čerstvých vajec", why: "Zhruba 23 minút práce." }
+      - { text: "maslo (125 g)", why: "Zhruba 13 minút práce." }
+    wrong:
+      - { text: "trvanlivá saláma (1 kg)", why: "Okolo 1 hodiny 33 minút." }
+      - { text: "eidamská tehla (1 kg)", why: "Okolo 1 hodiny 28 minút." }
+      - { text: "dámske kožené lodičky", why: "Okolo 7 hodín práce." }
+      - { text: "pánska košeľa", why: "Okolo 4 hodín práce." }
+      - { text: "detská vychádzková obuv", why: "Okolo 4 hodín práce." }
+      - { text: "kombinovaná chladnička s mrazničkou", why: "Okolo 8 pracovných dní." }
+      - { text: "LCD televízor", why: "Okolo 9 pracovných dní." }
+
+  - id: ceny-praca-pod-hodinu-1989
+    type: pick
+    prompt: Ktoré z týchto vecí si v roku 1989 priemerne zarábajúci Slovák kúpil za menej ako jednu hodinu práce?
+    difficulty: 2
+    asOf: "1989"
+    tags: [kúpna sila, 1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct:
+      - { text: "tmavý chlieb (1 kg)", why: "Okolo 9 minút práce." }
+      - { text: "polotučné mlieko (1 l)", why: "Okolo 7 minút práce." }
+      - { text: "konzumné zemiaky (1 kg)", why: "Okolo 5 minút práce." }
+      - { text: "10 čerstvých vajec", why: "Okolo 44 minút práce." }
+      - { text: "mliečna čokoláda (100 g)", why: "Okolo 37 minút práce." }
+    wrong:
+      - { text: "eidamská tehla (1 kg)", why: "Okolo 1 hodiny 17 minút." }
+      - { text: "kurča (1 kg)", why: "Okolo 1 hodiny 41 minút." }
+      - { text: "bravčové karé (1 kg)", why: "Okolo 2 hodín 35 minút." }
+      - { text: "trvanlivá saláma (1 kg)", why: "Okolo 3 hodín 22 minút." }
+      - { text: "detská vychádzková obuv", why: "Okolo 6 hodín práce." }
+      - { text: "pánska košeľa", why: "Okolo 7 hodín práce." }
+      - { text: "dámske kožené lodičky", why: "Okolo 15 hodín práce." }
+
+  - id: ceny-1989-kg-nad-20
+    type: pick
+    prompt: Ktoré z týchto potravín stáli v roku 1989 viac ako 20 Kčs za kilogram?
+    difficulty: 2
+    asOf: "1989"
+    tags: [1989, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani"
+    correct:
+      - { text: "trvanlivá saláma", why: "60 Kčs za kg, najdrahšia z bežných potravín." }
+      - { text: "bravčové karé", why: "46 Kčs za kg." }
+      - { text: "kurča", why: "30 Kčs za kg; hydina bola vtedy drahá." }
+      - { text: "eidamská tehla", why: "23 Kčs za kg." }
+      - { text: "jemné párky", why: "Okolo 25 Kčs za kg." }
+    wrong:
+      - { text: "kryštálový cukor", why: "7,30 Kčs za kg." }
+      - { text: "kockový cukor", why: "Okolo 8 Kčs za kg." }
+      - { text: "jablká", why: "6 Kčs za kg." }
+      - { text: "tmavý chlieb", why: "2,80 Kčs za kg." }
+      - { text: "konzumné zemiaky", why: "1,60 Kčs za kg." }
+
+  - id: ceny-minimalna-mzda-nad-500
+    type: pick
+    prompt: V ktorých rokoch bola mesačná minimálna mzda na Slovensku vyššia ako 500 €?
+    difficulty: 3
+    asOf: "2023"
+    tags: [mzdy, minimálna mzda]
+    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+    correct:
+      - { text: "2019", why: "520 €." }
+      - { text: "2020", why: "580 €." }
+      - { text: "2021", why: "623 €." }
+      - { text: "2022", why: "646 €." }
+      - { text: "2023", why: "700 €, a to dohodou tripartity; dovtedy vždy rozhodla vláda alebo vzorec." }
+    wrong:
+      - { text: "2018", why: "480 €, tesne pod hranicou." }
+      - { text: "2017", why: "435 €." }
+      - { text: "2016", why: "405 €." }
+      - { text: "2015", why: "380 €." }
+      - { text: "2012", why: "327,20 €." }
+      - { text: "2009", why: "295,50 €, prvý rok v eurách." }
+
+  - id: ceny-priemerna-mzda-nad-1000
+    type: pick
+    prompt: V ktorých rokoch bola priemerná mesačná mzda na Slovensku (ŠÚ SR) vyššia ako 1 000 € (staršie roky v prepočte na euro)?
+    difficulty: 2
+    asOf: "2025"
+    tags: [mzdy]
+    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/ https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne https://podnikam.sk/priemerna-mesacna-mzda-v-roku-2013-bola-824-eur/"
+    correct:
+      - { text: "2018", why: "1 013 €; tisícku prekročila prvýkrát práve vtedy." }
+      - { text: "2020", why: "Približne 1 133 €." }
+      - { text: "2024", why: "1 524 €." }
+      - { text: "2025", why: "Približne 1 620 €." }
+    wrong:
+      - { text: "1989", why: "3 142 Kčs, v prepočte približne 104 €." }
+      - { text: "1993", why: "Necelých 179 €, prvý rok samostatného Slovenska." }
+      - { text: "2000", why: "Približne 379 €." }
+      - { text: "2013", why: "824 €." }
+      - { text: "2014", why: "858 €." }
+      - { text: "2015", why: "883 €." }
+
+  - id: ceny-benzin-nad-125
+    type: pick
+    prompt: Kedy stál liter 95-oktánového benzínu na Slovensku viac ako 1,25 € (staršie ceny v prepočte na euro)?
+    difficulty: 3
+    asOf: "2012-04"
+    tags: [benzín]
+    source: "https://sita.sk/ceny-benzinu-vzrastli-za-15-rokov-viac-ako-dvojnasobne/"
+    correct:
+      - { text: "september 2005", why: "Ceny vtedy prelomili 40 Sk (1,33 €)." }
+      - { text: "september 2006", why: "40,47 Sk, teda 1,34 €." }
+      - { text: "koniec roka 2007", why: "38,90 Sk, teda 1,29 €." }
+      - { text: "koniec roka 2010", why: "1,320 €." }
+      - { text: "koniec roka 2011", why: "1,456 €." }
+      - { text: "apríl 2012", why: "1,573 € za liter podľa týždennej štatistiky ŠÚ SR." }
+    wrong:
+      - { text: "január 1997", why: "22,39 Sk, teda 0,74 €." }
+      - { text: "začiatok roka 2000", why: "Cena vtedy prvýkrát prekročila 30 Sk, čo je približne 1 €." }
+      - { text: "koniec roka 2008", why: "30,27 Sk, teda 1,005 €; benzín po vrchole z rokov 2006 – 2007 výrazne zlacnel." }
+      - { text: "koniec roka 2009", why: "1,178 €." }
+
+  - id: ceny-2023-pod-2-eura
+    type: pick
+    prompt: Ktoré z týchto vecí stáli na Slovensku v 1. – 3. štvrťroku 2023 menej ako 2 € (za uvedené množstvo)?
+    difficulty: 2
+    asOf: "2023"
+    tags: [2023, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct:
+      - { text: "konzumné zemiaky (1 kg)", why: "1,17 €." }
+      - { text: "kryštálový cukor (1 kg)", why: "1,44 €." }
+      - { text: "polotučné mlieko (1 l)", why: "1,18 €." }
+      - { text: "jablká (1 kg)", why: "1,36 €." }
+      - { text: "benzín 95 (1 l)", why: "1,60 €." }
+    wrong:
+      - { text: "tmavý chlieb (1 kg)", why: "2,28 €." }
+      - { text: "10 čerstvých vajec", why: "3,02 €." }
+      - { text: "kurča (1 kg)", why: "3,63 €." }
+      - { text: "bravčové karé (1 kg)", why: "6,75 €." }
+      - { text: "eidamská tehla (1 kg)", why: "11,40 €." }
+      - { text: "trvanlivá saláma (1 kg)", why: "12,11 €." }
+
+  # ================================================================ ORDER
+  - id: ceny-order-1989-drahe-veci
+    type: order
+    prompt: Zoraď tieto veci podľa ceny v roku 1989 (v Kčs, za uvedené množstvo) od najdrahšej.
+    direction: desc
+    unit: Kčs
+    difficulty: 1
+    asOf: "1989"
+    tags: [1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    items:
+      - { text: "Škoda Favorit", value: 84600, why: "Približne 27 priemerných miezd." }
+      - { text: "farebný televízor", value: 13000, why: "Zhruba štyri priemerné mzdy." }
+      - { text: "kombinovaná chladnička s mrazničkou", value: 5780, why: "Dnes stojí ten istý typ spotrebiča zlomok mzdy." }
+      - { text: "1 m² bytu", value: 650, why: "Štatistická cena nehnuteľnosti na bývanie; ceny určoval štát." }
+      - { text: "dámske kožené lodičky", value: 270, why: "Pätnásť hodín práce." }
+      - { text: "pánska košeľa", value: 131, why: "Sedem hodín práce." }
+
+  - id: ceny-order-1989-kg
+    type: order
+    prompt: Zoraď potraviny podľa ceny v roku 1989 (Kčs za 1 kg) od najdrahšej.
+    direction: desc
+    unit: Kčs za kg
+    difficulty: 2
+    asOf: "1989"
+    tags: [1989, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    items:
+      - { text: "trvanlivá saláma", value: 60, why: "Vyše troch hodín práce na kilo." }
+      - { text: "bravčové karé", value: 46, why: "Vyše 16-násobok ceny chleba." }
+      - { text: "kurča", value: 30, why: "Hydina bola drahšia, než by sme čakali." }
+      - { text: "eidamská tehla", value: 23, why: "Oproti mzde je dnes dokonca o chlp drahšia (1 h 28 min namiesto 1 h 17 min)." }
+      - { text: "kryštálový cukor", value: 7.3, why: "Dnes stojí okolo 1,44 €." }
+      - { text: "jablká", value: 6, why: "Dnes okolo 1,36 €." }
+      - { text: "tmavý chlieb", value: 2.8, why: "Bol lacný, ale sotva dostupnejší ako dnes." }
+      - { text: "konzumné zemiaky", value: 1.6, why: "Najlacnejšie z tohto zoznamu." }
+
+  - id: ceny-order-benzin-roky
+    type: order
+    prompt: Zoraď obdobia podľa priemernej ceny litra 95-oktánového benzínu na Slovensku (v € za liter, staršie ceny v prepočte) od najdrahšieho.
+    direction: desc
+    unit: € za liter
+    difficulty: 3
+    asOf: "2012-04"
+    tags: [benzín]
+    source: "https://sita.sk/ceny-benzinu-vzrastli-za-15-rokov-viac-ako-dvojnasobne/"
+    items:
+      - { text: "koniec roka 2011", value: 1.456, why: "Najdrahší z vybraných." }
+      - { text: "september 2006", value: 1.34, why: "40,47 Sk za liter." }
+      - { text: "koniec roka 2007", value: 1.29, why: "38,90 Sk za liter." }
+      - { text: "koniec roka 2009", value: 1.178, why: "Prvý rok v eurách." }
+      - { text: "koniec roka 2008", value: 1.005, why: "30,27 Sk; po vrchole z rokov 2006 – 2007 benzín zlacnel." }
+      - { text: "január 1997", value: 0.74, why: "22,39 Sk za liter." }
+
+  - id: ceny-order-praca-1989
+    type: order
+    prompt: Zoraď tovary podľa toho, ako dlho musel v roku 1989 priemerný Slovák pracovať, aby si ich kúpil (od najdlhšieho času).
+    direction: desc
+    unit: min.
+    difficulty: 2
+    asOf: "1989"
+    tags: [kúpna sila, 1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    items:
+      - { text: "1 kg trvanlivej salámy", value: 202, why: "3 hodiny 22 minút." }
+      - { text: "1 kg bravčového karé", value: 155, why: "2 hodiny 35 minút." }
+      - { text: "1 kg kurčaťa", value: 101, why: "1 hodina 41 minút." }
+      - { text: "10 vajec", value: 44, why: "44 minút." }
+      - { text: "100 g mliečnej čokolády", value: 37, why: "37 minút." }
+      - { text: "1 kg tmavého chleba", value: 9, why: "Za celý chlieb stačilo 9 minút." }
+
+  - id: ceny-order-2023-kg
+    type: order
+    prompt: Zoraď potraviny podľa ceny na Slovensku v 1. – 3. štvrťroku 2023 (€ za 1 kg) od najdrahšej.
+    direction: desc
+    unit: € za kg
+    difficulty: 2
+    asOf: "2023"
+    tags: [2023, potraviny]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    items:
+      - { text: "trvanlivá saláma", value: 12.11, why: "Aj dnes najdrahšia z bežných potravín." }
+      - { text: "bravčové karé", value: 6.75, why: "V roku 1989 to bolo 46 Kčs." }
+      - { text: "kurča", value: 3.63, why: "V roku 1989 to bolo 30 Kčs." }
+      - { text: "tmavý chlieb", value: 2.28, why: "V roku 1989 to bolo 2,80 Kčs." }
+      - { text: "kryštálový cukor", value: 1.44, why: "V roku 1989 to bolo 7,30 Kčs." }
+      - { text: "konzumné zemiaky", value: 1.17, why: "V roku 1989 to bolo 1,60 Kčs." }
+
+  # ================================================================ NUMBER
+  - id: ceny-cislo-favorit
+    type: number
+    prompt: Koľko Kčs stála v roku 1989 nová Škoda Favorit?
+    answer: 84600
+    unit: Kčs
+    scale: log
+    tolerance: 0.15
+    asOf: "1989"
+    why: "Podľa ŠÚ SR približne 27 priemerných mesačných miezd; dnes na Fabiu stačí asi 12,5 mzdy."
+    difficulty: 2
+    tags: [autá, 1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+
+  - id: ceny-cislo-mzda-1989
+    type: number
+    prompt: Koľko Kčs mesačne zarábal v roku 1989 v priemere zamestnanec na Slovensku?
+    answer: 3142
+    unit: Kčs
+    scale: log
+    tolerance: 0.1
+    asOf: "1989"
+    why: "Po prepočte konverzným kurzom to bolo okolo 104 €."
+    difficulty: 2
+    tags: [mzdy, 1989]
+    source: "https://sita.sk/vofinanciach/od-revolucie-si-mozeme-dovolit-viac-na-chlieb-vsak-robime-dlhsie/ https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/"
+
+  - id: ceny-cislo-mzda-2024
+    type: number
+    prompt: Koľko eur bola v roku 2024 priemerná mesačná nominálna mzda zamestnanca v hospodárstve Slovenska (ŠÚ SR)?
+    answer: 1524
+    unit: €
+    scale: log
+    tolerance: 0.05
+    asOf: "2024"
+    why: "O 6,6 % viac ako v roku 2023; o rok neskôr už okolo 1 620 €."
+    difficulty: 2
+    tags: [mzdy]
+    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/"
+
+  - id: ceny-cislo-minimalna-2026
+    type: number
+    prompt: Koľko eur mesačne je minimálna mzda na Slovensku v roku 2026?
+    answer: 915
+    unit: €
+    scale: log
+    tolerance: 0.05
+    asOf: "2026"
+    why: "O 99 € viac ako v roku 2025 (816 €); výšku určuje automat ako 60 % priemernej mzdy."
+    difficulty: 2
+    tags: [mzdy, minimálna mzda]
+    source: "https://www.employment.gov.sk/sk/uvodna-stranka/informacie-media/aktuality/historicky-narast-minimalnej-mzdy-je-realitou-roku-2026-je-minimalna-mzda-vo-vyske-915-eur.html"
+
+  - id: ceny-cislo-minimalna-2000
+    type: number
+    prompt: Koľko slovenských korún mesačne bola minimálna mzda od 1. októbra 2000?
+    answer: 4400
+    unit: Sk
+    scale: log
+    tolerance: 0.15
+    asOf: "2000"
+    why: "V prepočte kurzom 30,126 Sk/€ je to 146,05 €; od januára 2000 platilo 4 000 Sk."
+    difficulty: 3
+    tags: [mzdy, minimálna mzda]
+    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+
+  - id: ceny-cislo-benzin-1997
+    type: number
+    prompt: Koľko slovenských korún stál v januári 1997 liter 95-oktánového benzínu?
+    answer: 22.39
+    unit: Sk
+    scale: log
+    tolerance: 0.1
+    asOf: "1997-01"
+    why: "Teda 0,74 €; na začiatku roka 2000 cena prekročila 30 Sk a v roku 2005 40 Sk."
+    difficulty: 3
+    tags: [benzín]
+    source: "https://sita.sk/ceny-benzinu-vzrastli-za-15-rokov-viac-ako-dvojnasobne/"
+
+  - id: ceny-cislo-kurz
+    type: number
+    prompt: Koľko slovenských korún sa rovnalo jednému euru pri prechode na euro (nezvratný konverzný kurz)?
+    answer: 30.126
+    unit: Sk
+    scale: linear
+    tolerance: 0.5
+    asOf: "2009-01"
+    why: "Pri zavedení eura 1. januára 2009 sa používal kurz 30,126 Sk za 1 €."
+    difficulty: 2
+    tags: [euro]
+    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+
+  - id: ceny-cislo-rozok-halierov
+    type: number
+    prompt: Koľko halierov stál v roku 1989 rožok?
+    answer: 30
+    unit: halierov
+    scale: log
+    tolerance: 0.4
+    asOf: "1989"
+    why: "Približne 30 halierov, teda za korunu si dostal tri rožky."
+    difficulty: 1
+    tags: [1989, potraviny]
+    source: "https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani https://www.arecenze.cz/clanky/ceny-potravin-za-socialismu-mleko-za-2-koruny-i-rohliky-za-par-haleru-regaly-byly-prazdne-podle-lidi-vsak-bylo-lip/"
+
+  - id: ceny-cislo-rozky-za-mzdu
+    type: number
+    prompt: Priemerná mesačná mzda na Slovensku v roku 1989 bola 3 142 Kčs a rožok stál 30 halierov. Koľko rožkov by si za ňu kúpil?
+    answer: 10473
+    unit: rožkov
+    scale: log
+    tolerance: 0.2
+    asOf: "1989"
+    note: "Výpočet: 3 142 Kčs ÷ 0,30 Kčs."
+    why: "Okolo 10 500 rožkov, teda približne 350 denne."
+    difficulty: 2
+    tags: [1989, kúpna sila]
+    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/ https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani"
+
+  - id: ceny-cislo-kino-2024
+    type: number
+    prompt: Koľko eur stál v roku 2024 v priemere lístok do slovenských kín?
+    answer: 7.1
+    unit: €
+    scale: log
+    tolerance: 0.1
+    asOf: "2024"
+    why: "Podľa ÚFD približne 7,1 €; tržby kín vtedy dosiahli 38,66 milióna €."
+    difficulty: 2
+    tags: [kino]
+    source: "https://www.mediaguru.cz/clanky/2025/03/kino-na-slovensku-roste-pomohly-lokalni-filmy"
+
+  - id: ceny-cislo-znamka-2026
+    type: number
+    prompt: Koľko eurocentov stojí od januára 2026 obyčajný list 2. triedy do 50 g (poštová známka Slovenskej pošty)?
+    answer: 140
+    unit: eurocentov
+    scale: log
+    tolerance: 0.15
+    asOf: "2026-01"
+    why: "Od 1. januára 2025 to bolo 1,20 € a predtým 1,00 €."
+    difficulty: 2
+    tags: [pošta]
+    source: "https://www.podnikajte.sk/e-commerce/postovne-od-1-1-2026-zmeny-v-cenniku"
+
+  - id: ceny-cislo-byt-1989
+    type: number
+    prompt: Koľko Kčs stál podľa štatistiky v roku 1989 jeden štvorcový meter nehnuteľnosti určenej na bývanie?
+    answer: 650
+    unit: Kčs
+    scale: log
+    tolerance: 0.3
+    asOf: "1989"
+    why: "Teda asi päť dní práce; v roku 2023 išlo o 2 527 € za m², čo je približne 40 pracovných dní."
+    difficulty: 3
+    tags: [bývanie, 1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+
+  # ================================================================ CHOICE
+  - id: ceny-vyber-minimalna-2009
+    type: choice
+    prompt: Aká bola mesačná minimálna mzda na Slovensku v roku 2009, v prvom roku s eurom?
+    difficulty: 3
+    asOf: "2009"
+    tags: [mzdy, minimálna mzda]
+    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+    correct: { text: "295,50 €", why: "Približne o 10 % viac než 8 100 Sk z roku 2008 (268,87 € v prepočte kurzom 30,126)." }
+    wrong:
+      - { text: "268,87 €", why: "Toľko bolo 8 100 Sk z roku 2008 po prepočte kurzom 30,126." }
+      - { text: "307,70 €", why: "Takú vysokú ju stanovili až na rok 2010." }
+      - { text: "240,00 €", why: "Pod úrovňou z roku 2008, ktorá po prepočte bola vyše 268 €." }
+
+  - id: ceny-vyber-televizor-1989
+    type: choice
+    prompt: Približne koľko mesiacov priemernej práce stál v roku 1989 farebný televízor?
+    difficulty: 2
+    asOf: "1989"
+    tags: [kúpna sila, 1989]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct: { text: "štyri mesiace", why: "Okolo 13 000 Kčs; dnes stačí na LCD televízor 9 pracovných dní." }
+    wrong:
+      - { text: "dva týždne", why: "Dnes by to bolo približne 9 pracovných dní, ale v roku 1989 išlo o oveľa viac." }
+      - { text: "jeden mesiac", why: "To by stálo okolo 3 100 Kčs." }
+      - { text: "dva roky", why: "Približne toľko práce stál Favorit (27 miezd)." }
+
+  - id: ceny-vyber-favorit-mesiace
+    type: choice
+    prompt: Približne koľko priemerných mesačných miezd stála v roku 1989 nová Škoda Favorit?
+    difficulty: 2
+    asOf: "1989"
+    tags: [autá, kúpna sila]
+    source: "https://www.noviny.sk/slovensko/858384-zoznam-bol-zivot-pred-rokom-1989-drahsi-ci-lacnejsi-takto-sa-zmenili-ceny-tovarov"
+    correct: { text: "27", why: "84 600 Kčs ÷ 3 142 Kčs je približne 27 miezd." }
+    wrong:
+      - { text: "12,5", why: "Toľko miezd stála v roku 2022 Škoda Fabia." }
+      - { text: "6", why: "Šesť miezd je asi 18 900 Kčs, teda zhruba televízor a chladnička dokopy." }
+      - { text: "60", why: "Zhruba päť rokov práce; Favorit bol drahý, ale nie až tak." }
+
+  - id: ceny-vyber-tisicka-prvy-rok
+    type: choice
+    prompt: V ktorom roku prekročila priemerná mesačná mzda na Slovensku prvýkrát 1 000 €?
+    difficulty: 2
+    asOf: "2018"
+    tags: [mzdy]
+    source: "https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne"
+    correct: { text: "2018", why: "Priemer vtedy dosiahol 1 013 €." }
+    wrong:
+      - { text: "2014", why: "Vtedy priemerná mzda dosahovala 858 €." }
+      - { text: "2016", why: "Tisíc eur ešte chýbalo." }
+      - { text: "2020", why: "Vtedy už bola okolo 1 133 €, tisíc eur prekročila skôr." }
