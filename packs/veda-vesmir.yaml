@@ -5,7 +5,7 @@ category: veda
 lang: sk
 license: CC0-1.0
 adult: false
-version: 2
+version: 3
 questions:
   # ---------------------------------------------------------------- pick
   - id: vesmir-mesiace
@@ -492,3 +492,398 @@ questions:
       - text: Merkúr
         value: 4879
         why: Priemer 4 879 km.
+
+  # ---------------------------------------------------------------- expansion (v3)
+  - id: mars-pristatia
+    type: pick
+    prompt: Ktoré z týchto sond a prístrojov úspešne pristáli na povrchu Marsu?
+    difficulty: 2
+    tags: [vesmír, Mars]
+    asOf: "2026-11"
+    source: https://science.nasa.gov/mission/viking/viking-50-years-on-mars/
+    correct:
+      - text: Viking 1
+        why: Pristál 20. júla 1976, ako prvý americký úspešný pristávací modul na Marse.
+      - text: Pathfinder
+        why: Pristál 4. júla 1997 a vyložil malý rover Sojourner.
+      - text: Spirit
+        why: Rover, ktorý pristál v januári 2004.
+      - text: Opportunity
+        why: Rover, ktorý pristál v januári 2004 a pracoval na Marse približne 15 rokov.
+      - text: Phoenix
+        why: Pristál v roku 2008 pri severnom póle Marsu a kopal v ľade.
+      - text: Curiosity
+        why: Rover, ktorý pristál v kráteri Gale v auguste 2012.
+      - text: Perseverance
+        why: Rover, ktorý pristál v kráteri Jezero vo februári 2021.
+    wrong:
+      - text: Mariner 4
+        why: V roku 1965 preletela popri Marse a odfotila ho.
+      - text: Mars Reconnaissance Orbiter
+        why: Obieha okolo Marsu, na povrch nepristál.
+      - text: MAVEN
+        why: Orbiter, ktorý skúma atmosféru Marsu z obežnej dráhy.
+      - text: Mars Polar Lander
+        why: V roku 1999 pri pristávaní zanikol, nepristál úspešne.
+      - text: Cassini
+        why: Mierila k Saturnu, nie k Marsu.
+      - text: Voyager 2
+        why: Preletela popri vonkajších planétach, k Marsu nemierila.
+
+  - id: ludia-vo-vesmire
+    type: pick
+    prompt: Ktorí z týchto ľudí skutočne boli vo vesmíre?
+    difficulty: 1
+    tags: [vesmír, história, Slovensko]
+    source: https://english.radio.cz/soyuz-28-and-cosmic-brothers-8554278
+    correct:
+      - text: Jurij Gagarin
+        why: Prvý človek vo vesmíre, v roku 1961.
+      - text: Valentina Tereškovová
+        why: Prvá žena vo vesmíre, v roku 1963.
+      - text: Neil Armstrong
+        why: Veliteľ Apolla 11 a prvý človek na Mesiaci.
+      - text: Vladimír Remek
+        why: V roku 1978 letel na Sojuze 28 ako prvý Čechoslovák a prvý človek vo vesmíre mimo USA a ZSSR.
+      - text: Ivan Bella
+        why: Prvý slovenský kozmonaut, letel v roku 1999.
+      - text: William Shatner
+        why: Kapitán Kirk zo Star Treku letel v roku 2021 s Blue Origin ako 90-ročný.
+    wrong:
+      - text: Wernher von Braun
+        why: Konštruktér rakiet Saturn V, sám do vesmíru nikdy neletel.
+      - text: Sergej Koroľov
+        why: Hlavný konštruktér sovietskeho vesmírneho programu, sám do vesmíru neletel.
+      - text: Carl Sagan
+        why: Astronóm a popularizátor vedy, do vesmíru neletel.
+      - text: Neil deGrasse Tyson
+        why: Astrofyzik a popularizátor, do vesmíru neletel.
+      - text: Walt Disney
+        why: Vo vesmíre nikdy nebol.
+      - text: Jules Verne
+        why: Vo vesmíre bol iba v románoch.
+
+  - id: prvky-podla-miest
+    type: pick
+    prompt: Ktoré z týchto prvkov sú pomenované po krajine, kontinente alebo inom mieste na Zemi?
+    difficulty: 2
+    tags: [chémia]
+    source: https://sciencenotes.org/elements-named-after-places/
+    correct:
+      - text: polónium
+        why: Pomenované po Poľsku, rodisku Marie Curie-Skłodowskej.
+      - text: francium
+        why: Pomenované po Francúzsku.
+      - text: germánium
+        why: Pomenované po Nemecku (latinsky Germania).
+      - text: amerícium
+        why: Pomenované po Amerike.
+      - text: európium
+        why: Pomenované po Európe.
+      - text: berkélium
+        why: Pomenované po Kalifornskej univerzite v Berkeley.
+      - text: ytterbium
+        why: Pomenované po švédskej obci Ytterby.
+    wrong:
+      - text: platina
+        why: Názov vychádza zo španielskeho platina, "striebierko", nie z miesta.
+      - text: kobalt
+        why: Názov vychádza z nemeckého škriatka Kobolda, nie z miesta.
+      - text: urán
+        why: Pomenovaný po planéte Urán, nie po zemskom mieste.
+      - text: titán
+        why: Pomenovaný po gréckych Titanoch, nie po mieste.
+      - text: argón
+        why: Z gréckeho argos, "nečinný", nie z miesta.
+      - text: einsteinium
+        why: Pomenované po človeku, Albertovi Einsteinovi.
+
+  - id: zakladne-jednotky-si
+    type: pick
+    prompt: Ktoré z týchto jednotiek patria medzi sedem základných jednotiek sústavy SI?
+    difficulty: 2
+    tags: [fyzika]
+    source: https://www.nist.gov/pml/owm/metric-si/si-units
+    correct:
+      - text: meter
+        why: Základná jednotka dĺžky.
+      - text: kilogram
+        why: Základná jednotka hmotnosti.
+      - text: sekunda
+        why: Základná jednotka času.
+      - text: ampér
+        why: Základná jednotka elektrického prúdu.
+      - text: kelvin
+        why: Základná jednotka teploty.
+      - text: mól
+        why: Základná jednotka látkového množstva.
+      - text: kandela
+        why: Základná jednotka svietivosti.
+    wrong:
+      - text: newton
+        why: Odvodená jednotka sily.
+      - text: joule
+        why: Odvodená jednotka energie.
+      - text: watt
+        why: Odvodená jednotka výkonu.
+      - text: stupeň Celzia
+        why: Odvodená jednotka teploty; základná je kelvin.
+      - text: liter
+        why: Mimo sústavy SI, je povolený na používanie spolu s ňou.
+      - text: hertz
+        why: Odvodená jednotka frekvencie.
+
+  - id: prvky-nie-zluceniny
+    type: pick
+    prompt: Ktoré z týchto látok sú čisté chemické prvky, nie zlúčeniny ani zliatiny?
+    difficulty: 1
+    tags: [chémia]
+    source: https://en.wikipedia.org/wiki/List_of_chemical_elements
+    correct:
+      - text: zlato
+        why: Prvok Au.
+      - text: železo
+        why: Prvok Fe.
+      - text: meď
+        why: Prvok Cu.
+      - text: hélium
+        why: Prvok He, vzácny plyn.
+      - text: síra
+        why: Prvok S.
+      - text: cín
+        why: Prvok Sn.
+    wrong:
+      - text: voda
+        why: Zlúčenina vodíka a kyslíka, H2O.
+      - text: kuchynská soľ
+        why: Zlúčenina sodíka a chlóru, NaCl.
+      - text: mosadz
+        why: Zliatina medi a zinku.
+      - text: oceľ
+        why: Zliatina železa a uhlíka.
+      - text: bronz
+        why: Zliatina medi a cínu.
+      - text: oxid uhličitý
+        why: Zlúčenina uhlíka a kyslíka, CO2.
+
+  - id: skleniove-plyny
+    type: pick
+    prompt: Ktoré z týchto plynov patria medzi skleníkové plyny?
+    difficulty: 2
+    tags: [chémia, životné prostredie]
+    source: https://www.epa.gov/ghgemissions/overview-greenhouse-gases
+    correct:
+      - text: oxid uhličitý
+        why: Hlavný skleníkový plyn, ktorý vzniká napríklad pri spaľovaní fosílnych palív.
+      - text: metán
+        why: Vzniká napríklad pri chove hovädzieho dobytka a pri ťažbe zemného plynu.
+      - text: oxid dusný
+        why: Skleníkový plyn, ktorý vzniká napríklad pri hnojení pôdy.
+      - text: vodná para
+        why: Zosilňuje skleníkový efekt a jej množstvo v atmosfére rastie s oteplením.
+      - text: fluorid sírový (SF6)
+        why: Je to fluórovaný plyn, ktorý sa používa napríklad v rozvodniach, a zároveň veľmi silný skleníkový plyn.
+    wrong:
+      - text: dusík
+        why: Tvorí 78 % atmosféry, ale skleníkový plyn nie je.
+      - text: kyslík
+        why: Tvorí 21 % atmosféry, ale skleníkový plyn nie je.
+      - text: argón
+        why: Vzácny plyn, skleníkový plyn nie je.
+      - text: hélium
+        why: Vzácny plyn, skleníkový plyn nie je.
+      - text: neón
+        why: Vzácny plyn, skleníkový plyn nie je.
+
+  - id: magnet-kovy
+    type: pick
+    prompt: Ktoré z týchto kovov priťahuje magnet?
+    difficulty: 2
+    tags: [fyzika, chémia]
+    source: https://www.britannica.com/science/How-do-the-Curie-temperatures-of-iron-cobalt-nickel-and-gadolinium-differ
+    correct:
+      - text: železo
+        why: Feromagnetický kov, magnet ho priťahuje.
+      - text: nikel
+        why: Feromagnetický kov, magnet ho priťahuje.
+      - text: kobalt
+        why: Feromagnetický kov, magnet ho priťahuje.
+    wrong:
+      - text: hliník
+        why: Nie je feromagnetický, magnet ho prakticky nepriťahuje.
+      - text: meď
+        why: Magnet ju nepriťahuje.
+      - text: zlato
+        why: Magnet ho nepriťahuje.
+      - text: striebro
+        why: Magnet ho nepriťahuje.
+      - text: olovo
+        why: Magnet ho nepriťahuje.
+      - text: zinok
+        why: Magnet ho nepriťahuje.
+      - text: cín
+        why: Magnet ho nepriťahuje.
+
+  - id: trpaslicie-planety
+    type: pick
+    prompt: Ktoré z týchto telies sú podľa NASA trpasličie planéty?
+    difficulty: 2
+    tags: [vesmír, planéty]
+    asOf: "2026-11"
+    source: https://science.nasa.gov/dwarf-planets/
+    correct:
+      - text: Pluto
+        why: Do roku 2006 sa považovalo za deviatu planétu.
+      - text: Ceres
+        why: Nachádza sa v hlavnom páse planétok medzi Marsom a Jupiterom.
+      - text: Eris
+        why: Trpasličia planéta, ktorá je približne rovnako veľká ako Pluto.
+      - text: Haumea
+        why: Jedna z piatich trpasličích planét NASA.
+      - text: Makemake
+        why: Jedna z piatich trpasličích planét NASA.
+    wrong:
+      - text: Charon
+        why: Najväčší mesiac Pluta.
+      - text: Titan
+        why: Mesiac Saturnu.
+      - text: Halleyova kométa
+        why: Kométa, nie trpasličia planéta.
+      - text: Sedna
+        why: Veľké vzdialené teleso, no NASA ho medzi päť trpasličích planét nepočíta.
+      - text: Vesta
+        why: Veľká planétka, NASA ju medzi päť trpasličích planét nepočíta.
+
+  # -- order
+  - id: planety-vzdialenost
+    type: order
+    prompt: Zoraď planéty podľa priemernej vzdialenosti od Slnka od najbližšej.
+    direction: asc
+    unit: mil. km
+    difficulty: 1
+    tags: [vesmír, planéty]
+    source: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    items:
+      - { text: Merkúr, value: 57.9, why: "Je najbližšie k Slnku, v priemere 57,9 milióna km." }
+      - { text: Venuša, value: 108.2, why: "V priemere 108,2 milióna km od Slnka." }
+      - { text: Zem, value: 149.6, why: "V priemere 149,6 milióna km, teda 1 astronomická jednotka." }
+      - { text: Mars, value: 228.0, why: "V priemere 228 miliónov km od Slnka." }
+      - { text: Jupiter, value: 778.5, why: "V priemere 778,5 milióna km od Slnka." }
+      - { text: Saturn, value: 1432.0, why: "V priemere 1 432 miliónov km od Slnka." }
+      - { text: Urán, value: 2867.0, why: "V priemere 2 867 miliónov km od Slnka." }
+      - { text: Neptún, value: 4515.0, why: "Najvzdialenejšia planéta, v priemere 4 515 miliónov km." }
+
+  - id: vedecke-objavy-roky
+    type: order
+    prompt: Zoraď tieto vedecké udalosti od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [vedci, história]
+    source: https://royalsociety.org/about-us/who-we-are/history/
+    items:
+      - { text: Newton vydáva Principia, value: 1687, why: "Dielo vyšlo roku 1687 pod patronátom Kráľovskej spoločnosti." }
+      - { text: Röntgen objavuje röntgenové žiarenie, value: 1895, why: "Objav z roku 1895 mu priniesol prvú Nobelovu cenu za fyziku." }
+      - { text: Einsteinova špeciálna teória relativity, value: 1905, why: "Vyšla v roku 1905, v jeho zázračnom roku." }
+      - { text: Fleming si všíma účinky plesne (penicilín), value: 1928, why: "V roku 1928 si všimol, že pleseň na kultúre stafylokokov ničí baktérie." }
+      - { text: Watson a Crick opisujú štruktúru DNA, value: 1953, why: "Dvojitá špirála DNA bola opísaná v roku 1953." }
+
+  - id: kozmicke-udalosti-roky
+    type: order
+    prompt: Zoraď tieto kozmické udalosti od najstaršej.
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [vesmír, história]
+    source: https://english.radio.cz/soyuz-28-and-cosmic-brothers-8554278
+    items:
+      - { text: Gagarin letí do vesmíru, value: 1961, why: "Prvý let človeka do vesmíru, 12. apríla 1961." }
+      - { text: Armstrong kráča po Mesiaci, value: 1969, why: "Apollo 11, júl 1969." }
+      - { text: Remek letí do vesmíru, value: 1978, why: "Prvý Čechoslovák vo vesmíre, marec 1978." }
+      - { text: Bella letí na stanicu Mir, value: 1999, why: "Prvý Slovák vo vesmíre, február 1999." }
+
+  # -- number
+  - id: rychlost-svetla
+    type: number
+    prompt: Akou rýchlosťou sa šíri svetlo vo vákuu, v km/s?
+    answer: 299792
+    unit: km/s
+    scale: log
+    tolerance: 0.05
+    why: Presná hodnota je 299 792 458 metrov za sekundu a je daná definíciou metra.
+    difficulty: 2
+    tags: [fyzika]
+    source: https://www.nist.gov/si-redefinition/meet-constants
+
+  - id: rok-mars
+    type: number
+    prompt: Koľko pozemských dní trvá jeden obeh Marsu okolo Slnka?
+    answer: 687
+    unit: dní
+    scale: log
+    tolerance: 0.05
+    why: Marsovský rok trvá približne 687 pozemských dní, takmer dvakrát dlhšie než ten náš.
+    difficulty: 2
+    tags: [vesmír, planéty]
+    source: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+
+  - id: iss-rychlost
+    type: number
+    prompt: Akou rýchlosťou v km/h obieha Zem Medzinárodná vesmírna stanica?
+    answer: 28000
+    unit: km/h
+    scale: log
+    tolerance: 0.05
+    why: Stanica letí rýchlosťou asi päť míľ za sekundu, teda približne 28 000 km/h, a Zem obletí asi za 90 minút.
+    difficulty: 3
+    tags: [vesmír]
+    source: https://www.nasa.gov/international-space-station/space-station-facts-and-figures/
+
+  # -- choice
+  - id: atmosfera-hlavny-plyn
+    type: choice
+    prompt: Ktorý plyn tvorí najväčšiu časť zemskej atmosféry?
+    difficulty: 1
+    tags: [chémia, Zem]
+    source: https://www.noaa.gov/jetstream/atmosphere
+    correct: { text: dusík, why: "Tvorí asi 78 % suchého vzduchu." }
+    wrong:
+      - { text: kyslík, why: "Tvorí asi 21 % suchého vzduchu." }
+      - { text: oxid uhličitý, why: "Tvorí iba asi 0,04 % vzduchu." }
+      - { text: argón, why: "Je tretí najčastejší plyn, tvorí menej než 1 %." }
+
+  - id: najhorucejsia-planeta
+    type: choice
+    prompt: Ktorá planéta Slnečnej sústavy má najvyššiu priemernú teplotu povrchu?
+    difficulty: 2
+    tags: [vesmír, planéty]
+    source: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    correct: { text: Venuša, why: "Priemerne 464 °C vďaka hustej atmosfére z oxidu uhličitého, hoci je ďalej od Slnka ako Merkúr." }
+    wrong:
+      - { text: Merkúr, why: "Je najbližšie k Slnku, no priemerne má iba 167 °C, lebo nemá atmosféru, ktorá by teplo držala." }
+      - { text: Zem, why: "Priemerná teplota povrchu je asi 15 °C." }
+      - { text: Mars, why: "Priemerná teplota povrchu je asi −65 °C." }
+
+  - id: prvy-cechoslovak
+    type: choice
+    prompt: Kto bol prvým československým kozmonautom?
+    difficulty: 2
+    tags: [vesmír, Slovensko]
+    source: https://english.radio.cz/soyuz-28-and-cosmic-brothers-8554278
+    correct: { text: Vladimír Remek, why: "V marci 1978 letel na Sojuze 28 a stal sa prvým človekom vo vesmíre mimo USA a ZSSR." }
+    wrong:
+      - { text: Ivan Bella, why: "Prvý slovenský kozmonaut, letel až v roku 1999." }
+      - { text: Jurij Gagarin, why: "Prvý človek vo vesmíre, Sovietsky zväz." }
+      - { text: Mirosław Hermaszewski, why: "Prvý Poliak vo vesmíre." }
+
+  - id: najblizsia-hviezda
+    type: choice
+    prompt: Ktorá hviezda je Slnku najbližšie (okrem neho samotného)?
+    difficulty: 2
+    tags: [vesmír, hviezdy]
+    source: https://svs.gsfc.nasa.gov/20377
+    correct: { text: Proxima Centauri, why: "Červený trpaslík vzdialený asi 4,2 svetelného roka." }
+    wrong:
+      - { text: Sírius, why: "Najjasnejšia hviezda nočnej oblohy, vzdialená asi 8,6 svetelného roka." }
+      - { text: Polárka, why: "Vzdialená stovky svetelných rokov." }
+      - { text: Betelgeuze, why: "Červený nadobor vzdialený stovky svetelných rokov." }
