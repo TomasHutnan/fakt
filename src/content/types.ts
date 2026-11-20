@@ -69,7 +69,7 @@ export type Question = PickQuestion | OrderQuestion | NumberQuestion | ChoiceQue
 export type QuestionType = Question["type"];
 
 /** Topic sections of the pack list, in display order. 18+ and imported packs get their own sections. */
-export const CATEGORIES = ["kultura", "historia", "zemepis", "veda", "tradicie", "sport"] as const;
+export const CATEGORIES = ["kultura", "historia", "spolocnost", "peniaze", "zemepis", "veda", "jedlo", "tradicie", "sport"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 export const CONTENT_WARNINGS = ["vulgar", "sexual", "drugs", "dark-humor", "racism", "abuse", "gross"] as const;
