@@ -968,6 +968,7 @@ export function JoinScreen({
   };
   const submit = (e: Event) => {
     e.preventDefault();
+    if (busy) return;
     const c = cleanCode();
     if (c.length !== 4) return setError(sk.roomErrors.noRoom);
     if (!name.trim()) return setError(sk.roomErrors.badName);

@@ -98,6 +98,7 @@ export class RoomClient {
     this.retries = 0;
     const old = this.ws;
     this.ws = null;
+    if (this.pingTimer) clearInterval(this.pingTimer);
     old?.close();
     this.open();
   }
