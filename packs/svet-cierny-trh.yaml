@@ -1,0 +1,513 @@
+id: svet-cierny-trh
+title: Čierny trh
+description: "Svetový trh s drogami podľa OSN, rekordné zaistenia, Silk Road, prohibícia, falzifikáty, pašovanie živočíchov, tuzexové bony a veksláci."
+category: historia
+lang: sk
+license: CC0-1.0
+adult: false
+defaultOn: false
+warnings: [drugs]
+version: 1
+questions:
+  # ---------------------------------------------------------------- PICK
+  - id: cierny-trh-kokain-trh
+    type: pick
+    prompt: "Ktoré tvrdenia o svetovom trhu s kokaínom sú podľa Svetovej správy o drogách OSN (UNODC) z roku 2026 pravdivé?"
+    difficulty: 2
+    asOf: "2026-06"
+    tags: [drogy, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+    correct:
+      - { text: "Potenciálna výroba čistého kokaínu je od roku 2014 viac než štvornásobná", why: "UNODC ju v roku 2024 odhaduje na približne 4 100 ton." }
+      - { text: "Kolumbia sa podieľa asi 40 % na svetových zaisteniach kokaínu", why: "Správa uvádza 966 ton, teda 40 % svetového súčtu." }
+      - { text: "Asi 64 % svetových zaistení kokaínu sa urobilo v Južnej Amerike", why: "Je to najvyšší podiel od roku 1984." }
+      - { text: "Kokaín užilo za rok 2024 odhadom 25 miliónov ľudí", why: "Je to o 38 % viac než pred desiatimi rokmi." }
+      - { text: "Okolo 70 % užívateľov žije na americkom kontinente, v západnej a strednej Európe a v Austrálii a na Novom Zélande", why: "Ide o dlhodobo najsilnejšie trhy; v Afrike a Ázii sa trh rozrastá." }
+    wrong:
+      - { text: "Výroba kokaínu od roku 2014 klesla na polovicu", why: "Vzrástla viac než štvornásobne." }
+      - { text: "Najviac kokaínu sa zaisťuje v Ázii", why: "Najväčší podiel zaistení, asi 64 %, pripadá na Južnú Ameriku." }
+      - { text: "Kokaín užíva viac ľudí než konope", why: "Konope užilo okolo 256 miliónov ľudí, kokaín okolo 25 miliónov." }
+      - { text: "Väčšina užívateľov kokaínu žije v Ázii", why: "Hlavnými trhmi sú Amerika, západná a stredná Európa a Oceánia." }
+      - { text: "Kolumbia zaisťuje menej než 5 % svetového množstva", why: "Podľa správy je to asi 40 %." }
+
+  - id: cierny-trh-opium-presun
+    type: pick
+    prompt: "Ktoré tvrdenia o svetovej výrobe ópia v posledných rokoch sú podľa UNODC pravdivé?"
+    difficulty: 2
+    asOf: "2026-10"
+    tags: [drogy, ópium, afganistan]
+    source: "https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf https://www.unodc.org/unodc/en/press/releases/2026/October/new-unodc-survey_-afghanistan-opium-production-resumes-with-fivefold-year-on-year-increase.html https://www.app.com.pk/?p=1299887"
+    correct:
+      - { text: "Afganistan dodával do roku 2022 asi 80 % svetovej nelegálnej výroby ópia", why: "Bol hlavným zdrojom heroínu na svete." }
+      - { text: "Vláda Talibanu zakázala pestovanie maku v apríli 2022", why: "Zákaz vyhlásili ešte počas jarnej úrody." }
+      - { text: "V rokoch 2023 až 2025 sa výroba ópia v Afganistane prepadla asi o 95 % oproti predchádzajúcim rokom", why: "Podľa Svetovej správy o drogách 2026 ide o pokles oproti predchádzajúcim ročným objemom." }
+      - { text: "V roku 2025 bolo Mjanmarsko najväčším známym producentom ópia", why: "Jeho výroba vzrástla zo zhruba 420 ton v roku 2021 na vyše 1 000 ton v roku 2025." }
+      - { text: "Rast výroby v Mjanmarsku UNODC spája s vnútorným konfliktom, nie s úbytkom v Afganistane", why: "Podľa správy nie je dôkaz, že Mjanmarsko nahrádza afganskú produkciu." }
+      - { text: "Podľa prieskumu UNODC z októbra 2026 sa výroba ópia v Afganistane obnovila a vzrástla na takmer 1 500 ton", why: "V roku 2025 to bolo asi 300 ton; plocha vzrástla z 10 000 na viac než 43 000 hektárov." }
+      - { text: "Ani po náraste v roku 2026 sa Afganistan nevrátil na úroveň spred zákazu", why: "UNODC uvádza, že pestovanie aj výroba zostávajú pod úrovňou spred zákazu z roku 2022." }
+    wrong:
+      - { text: "V roku 2025 bola najväčším producentom ópia Kolumbia", why: "Kolumbia je známa pestovaním koky, nie maku." }
+      - { text: "V rokoch 2023 až 2025 výroba ópia v Afganistane vzrástla", why: "Zrútila sa asi o 95 %." }
+      - { text: "Mexiko prevzalo od Afganistanu úlohu najväčšieho producenta", why: "Plocha pestovania v Mexiku podľa UNODC klesla." }
+      - { text: "Podľa UNODC sa v roku 2026 výroba ópia v Afganistane ešte viac prepadla", why: "Prieskum z októbra 2026 ukazuje opačný trend, výrazný nárast." }
+      - { text: "Afganistan dodával do roku 2022 len asi 10 % svetového ópia", why: "Bolo to približne 80 %." }
+
+  - id: cierny-trh-rekordne-zaistenia
+    type: pick
+    prompt: "Ktoré z týchto zaistení uvádzajú úrady alebo UNODC?"
+    difficulty: 2
+    asOf: "2024-01"
+    tags: [zaistenia, kokaín, colníci]
+    source: "https://www.cbp.gov/newsroom/local-media-release/us-customs-and-border-protection-seizes-msc-gayane-following-record https://www.unodc.org/documents/data-and-analysis/cocaine/Global_cocaine_report_2023.pdf https://www.brusselstimes.com/880668/new-record-116-tonnes-of-cocaine-seized-in-antwerp-port-last-year https://www.ica.gov.sg/about-ica/news-and-publications/media-room/national-parks-board-works-with-singapore-customs-and-immigration-checkpoints-authority-to-seize-11.9-tonnes-of-pangolin-scales-and-8.8-tonnes-of-elephant-ivory"
+    correct:
+      - { text: "Philadelphia 2019: asi 20 ton kokaínu na kontajnerovej lodi", why: "Americký CBP ho označil za rekordné zaistenie a loď MSC Gayane zhabal." }
+      - { text: "Antverpy 2023: približne 116 ton kokaínu za rok", why: "Belgickí colníci tak prekonali rekord 110 ton z roku 2022." }
+      - { text: "Hamburg 2021: jedno zaistenie približne 16 ton kokaínu", why: "UNODC ho uvádza v Globálnej správe o kokaíne 2023." }
+      - { text: "Singapur 2019: 11,9 tony šupín pangolínov v jednej zásielke", why: "Singapurské úrady hodnotu zásielky odhadli na 35,7 milióna dolárov." }
+      - { text: "Singapur 2019: 8,8 tony slonoviny v tej istej zásielke", why: "Bolo to najväčšie zaistenie slonoviny v Singapure." }
+    wrong:
+      - { text: "Philadelphia 2019: asi 200 kg kokaínu", why: "Americký CBP uvádza približne 20 ton." }
+      - { text: "Antverpy 2023: len 11,6 tony kokaínu za rok", why: "Belgickí colníci zaistili približne 116 ton." }
+      - { text: "Hamburg 2021: 1,6 tony kokaínu", why: "UNODC uvádza zaistenie približne 16 ton." }
+      - { text: "Singapur 2019: 88 ton slonoviny v jednej zásielke", why: "Zásielka mala 8,8 tony slonoviny." }
+      - { text: "Singapur 2019: 1,19 tony šupín pangolínov", why: "Úrady zaistili 11,9 tony." }
+
+  - id: cierny-trh-silk-road
+    type: pick
+    prompt: "Ktoré tvrdenia o internetovom trhovisku Silk Road a jeho zakladateľovi sú pravdivé?"
+    difficulty: 1
+    asOf: "2025-01"
+    tags: [silk-road, internet, súd]
+    source: "https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf https://ice.gov/news/releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-life-federal-prison-creating https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present https://www.aljazeera.com/economy/2025/1/22/trump-pardons-ross-ulbricht-creator-of-dark-web-marketplace-silk-road"
+    correct:
+      - { text: "Fungoval ako skrytá služba v anonymizačnej sieti Tor", why: "Tor skrýval umiestnenie servera aj používateľov." }
+      - { text: "Všetky transakcie sa platili bitcoinmi", why: "Kryptomena pomáhala chrániť identitu používateľov." }
+      - { text: "Spustili ho v roku 2011 a v októbri 2013 ho úrady zavreli", why: "Zákrok v októbri 2013 priniesol aj zatknutie Rossa Ulbrichta." }
+      - { text: "Ross Ulbricht bol v roku 2015 odsúdený na doživotie bez možnosti podmienečného prepustenia", why: "Trest mu vyhlásili v New Yorku 29. mája 2015, po tom, čo ho porota vo februári 2015 uznala za vinného v siedmich bodoch obžaloby." }
+      - { text: "Odvolací súd v roku 2017 odsúdenie aj trest potvrdil", why: "Druhý odvolací okruh USA vydal rozhodnutie v máji 2017." }
+      - { text: "Prezident USA ho v januári 2025 omilostil", why: "Plné a bezpodmienečné omilostenie je zapísané v zozname udelených milostí ministerstva spravodlivosti USA z 21. januára 2025." }
+    wrong:
+      - { text: "Fungoval na bežnom webe bez šifrovania", why: "Používal sieť Tor." }
+      - { text: "Platilo sa výlučne kreditnými kartami", why: "Platilo sa bitcoinmi." }
+      - { text: "Ulbrichta v roku 2015 oslobodili", why: "Porota ho vo februári 2015 uznala za vinného v siedmich bodoch obžaloby." }
+      - { text: "Odvolací súd v roku 2017 jeho trest zrušil", why: "Odsúdenie aj trest potvrdil." }
+      - { text: "Trest mu v roku 2015 určili na 10 rokov väzenia", why: "Dostal doživotný trest." }
+
+  - id: cierny-trh-capone
+    type: pick
+    prompt: "Ktoré tvrdenia o odsúdení Ala Capona v roku 1931 sú pravdivé?"
+    difficulty: 2
+    tags: [prohibícia, usa, súd]
+    source: "https://www.fbi.gov/history/famous-cases/al-capone https://themobmuseum.org/blog/capone-tax-evasion-trial-jury-finds-chicago-mobster-guilty-on-5-of-22-counts/ https://prohibition.themobmuseum.org/the-history/enforcing-the-prohibition-laws/prohibition-mob-bosses-tripped-tax-laws/"
+    correct:
+      - { text: "Uznali ho za vinného z daňových únikov", why: "Porota ho v októbri 1931 odsúdila v piatich bodoch obžaloby." }
+      - { text: "Súd mu v roku 1931 uložil 11 rokov väzenia", why: "K trestu pribudla aj pokuta 50 000 dolárov a povinnosť doplatiť dane." }
+      - { text: "Obžaloba mala vyše dvadsať bodov", why: "Odsúdený bol len v piatich." }
+      - { text: "Kľúčom k odsúdeniu bolo dokázať jeho príjem, nielen luxusný život", why: "Obžaloba sa opierala aj o list jeho bývalého právnika, ktorý opisoval Caponeho príjem, hoci nikdy nepodal daňové priznanie." }
+      - { text: "Americký najvyšší súd už v roku 1927 rozhodol, že aj nezákonný príjem sa zdaňuje", why: "Rozhodnutie vo veci Sullivan umožnilo vyšetrovateľom z ministerstva financií stíhať gangstrov za daňové úniky." }
+      - { text: "Neskôr si trest odpykával aj v Alcatraze", why: "Do Atlanty ho poslali v roku 1932, potom ho previezli do nového väzenia Alcatraz." }
+    wrong:
+      - { text: "Odsúdili ho za vraždy pri masakri na Valentína 1929", why: "Za ten čin nebol nikdy odsúdený." }
+      - { text: "Dostal doživotný trest", why: "Dostal 11 rokov." }
+      - { text: "Odsúdili ho za pašovanie alkoholu", why: "Odsúdený bol za daňové úniky." }
+      - { text: "Celý trest si odpykal v Chicagu", why: "Sedel v Atlante a v Alcatraze." }
+      - { text: "Pôvodná obžaloba obsahovala len päť bodov", why: "Mala vyše dvadsať bodov." }
+
+  - id: cierny-trh-rum-pasovanie
+    type: pick
+    prompt: "Ktoré tvrdenia o pašovaní alkoholu do USA počas prohibície sú pravdivé?"
+    difficulty: 1
+    tags: [prohibícia, pašovanie]
+    source: "https://prohibition.themobmuseum.org/the-history/the-rise-of-organized-crime/rum-running/ https://www.hmdb.org/m.asp?m=234682 https://clickondetroit.com/all-about-michigan/2018/12/05/how-rum-running-became-one-of-detroits-biggest-industries-during-prohibition-era"
+    correct:
+      - { text: "Alkohol sa pašoval aj z Kanady", why: "Veľký objem prechádzal cez rieku Detroit z kanadského Windsoru." }
+      - { text: "Alkohol putoval do USA aj cez Bahamy", why: "Nassau a ostrov Bimini slúžili ako sklady a prekladiská pre pašerákov." }
+      - { text: "Veľké lode kotvili za hranicou amerických pobrežných vôd", why: "V medzinárodných vodách sa im pobrežná stráž nemohla ľahko dostať." }
+      - { text: "Rad kotviacich lodí sa volal Rum Row", why: "Zákazníci k nim chodili po tovar rýchlymi člnmi." }
+      - { text: "Pobrežná stráž USA proti pašerákom aktívne zasahovala", why: "V roku 1923 napríklad zadržala pašerácku loď Tomoka, bývalú loď pašeráka Billa McCoya." }
+      - { text: "Kupujúci chodili k lodiam rýchlymi kontaktnými člnmi", why: "Člny s kupcami sa pripájali k lodiam a rýchlo mizli k brehu." }
+    wrong:
+      - { text: "Alkohol sa pašoval výlučne po súši z Mexika", why: "Hlavnými cestami boli aj Kanada, Bahamy a more." }
+      - { text: "Lode kotvili priamo v amerických prístavoch", why: "Čakali za hranicou pobrežných vôd." }
+      - { text: "Pobrežná stráž USA pašerákov vôbec nesledovala", why: "Zasahovala proti nim, napríklad v roku 1923 zadržala loď Tomoka." }
+      - { text: "Rum Row bol názov nočného klubu v Chicagu", why: "Takto sa volal rad lodí s pašovaným alkoholom pri pobreží." }
+      - { text: "Pašovanie sa skončilo hneď v roku 1920", why: "Pokračovalo celú prohibíciu až do roku 1933." }
+
+  - id: cierny-trh-falosne-libry
+    type: pick
+    prompt: "Ktoré tvrdenia o nacistickej falšovateľskej akcii Bernhard počas druhej svetovej vojny sú pravdivé?"
+    difficulty: 2
+    tags: [falzifikáty, druhá svetová vojna]
+    source: "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard https://www.guinnessworldrecords.com/world-records/65625-greatest-banknote-forgery"
+    correct:
+      - { text: "Falšovali sa britské bankovky", why: "Šlo o bankovky libry šterlingov." }
+      - { text: "Pracovali na tom väzni z koncentračného tábora Sachsenhausen", why: "Dohliadal na nich dôstojník SS Bernhard Krüger." }
+      - { text: "Cieľom bolo zaplaviť Britániu falošnými bankovkami a oslabiť jej ekonomiku", why: "Plán zhodiť peniaze nad Londýnom sa opustil; bankovky sa používali na platenie agentov a nákupy zlata." }
+      - { text: "Nominálna hodnota vytlačených falzifikátov sa odhaduje na vyše 130 miliónov libier", why: "Išlo o viac než deväť miliónov bankoviek po 5, 10, 20 a 50 libier." }
+      - { text: "Časť bankoviek a zariadenia esesáci pri konci vojny hodili do rakúskych jazier", why: "Napríklad do jazera Toplitzsee." }
+      - { text: "Väzňov koncom vojny presunuli do Rakúska a Američania ich oslobodili 6. mája 1945", why: "Dovtedy pokračovala výroba falzifikátov." }
+    wrong:
+      - { text: "Falšovali sa americké doláre", why: "Cieľom boli britské libry." }
+      - { text: "Akciu viedol Sovietsky zväz", why: "Išlo o akciu nacistického Nemecka." }
+      - { text: "Falšovali sa iba mince", why: "Falšovali sa papierové bankovky." }
+      - { text: "Operácia skončila už v roku 1940", why: "Výroba pokračovala až do konca vojny v roku 1945." }
+      - { text: "Falošné bankovky sa do obehu nikdy nedostali", why: "Po odhalení falzifikátov v roku 1943 Bank of England zareagovala stiahnutím bankoviek s hodnotou nad 5 libier z obehu." }
+
+  - id: cierny-trh-wildlife-skupiny
+    type: pick
+    prompt: "Ktoré tri skupiny živočíchov mali v rokoch 2015 až 2021 podľa UNODC najväčší podiel na zaisteniach nelegálne obchodovaných zvierat (štandardizovaný index zaistení)?"
+    difficulty: 3
+    asOf: "2024"
+    tags: [voľne žijúce zvieratá, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/wildlife/2024/Wildlife2024_Final.pdf
+    correct:
+      - { text: "Nosorožce", why: "Mali asi 29 % z indexu živočíchov." }
+      - { text: "Pangolíny", why: "Asi 28 %; ich šupiny sa obchodujú pre tradičnú medicínu." }
+      - { text: "Slony", why: "Asi 15 %, najmä slonovina." }
+    wrong:
+      - { text: "Krokodílovité", why: "Asi 5 %." }
+      - { text: "Úhory", why: "Asi 5 %." }
+      - { text: "Korytnačky (vodné aj suchozemské)", why: "Asi 2 %." }
+      - { text: "Hady", why: "Asi 2 %." }
+      - { text: "Papagáje a kakaduovité vtáky", why: "Asi 2 %." }
+      - { text: "Šelmy", why: "Asi 2 %." }
+      - { text: "Morské koníky", why: "Asi 2 %." }
+
+  - id: cierny-trh-cites
+    type: pick
+    prompt: "Ktoré tvrdenia o dohovore CITES o obchode s ohrozenými druhmi sú pravdivé?"
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [cites, voľne žijúce zvieratá]
+    source: "https://www.env.go.jp/nature/kisho/kisei/en/cites/ https://www.bundesumweltministerium.de/en/topics/species-protection/international-species-protection/cites https://old.wti.org.in/?p=993 https://www.ebsco.com/research-starters/science/ivory-trade/ https://www.federalregister.gov/documents/2016/06/06/2016-13173/endangered-and-threatened-wildlife-and-plants-revision-of-the-section-4d-rule-for-the-african"
+    correct:
+      - { text: "Dohovor prijali vo Washingtone 3. marca 1973", why: "Preto sa mu hovorí aj Washingtonský dohovor." }
+      - { text: "Do platnosti vstúpil 1. júla 1975", why: "Platí od roku 1975." }
+      - { text: "Týka sa zvierat aj rastlín", why: "Názov dohovoru hovorí o voľne žijúcej faune a flóre." }
+      - { text: "Všetky druhy pangolínov sú v prílohe I", why: "Od januára 2017 je medzinárodný komerčný obchod s nimi zakázaný." }
+      - { text: "Zmluvných strán je viac než 180", why: "Nemecké ministerstvo životného prostredia uvádza 184 strán, ktoré pokrývajú takmer 95 % štátov sveta." }
+      - { text: "Po preradení afrických slonov do prílohy I začal v januári 1990 platiť zákaz medzinárodného obchodu so slonovinou", why: "Rozhodnutie prijali na stretnutí strán v októbri 1989." }
+    wrong:
+      - { text: "Dohovor vstúpil do platnosti v roku 1995", why: "Platí od 1. júla 1975." }
+      - { text: "Zakazuje akýkoľvek obchod s voľne žijúcimi druhmi", why: "Pri mnohých druhoch obchod povoľuje, ale reguluje ho, najmä v prílohe II." }
+      - { text: "Týka sa len zvierat, nie rastlín", why: "Chráni aj rastliny." }
+      - { text: "Dohovor podpísali len európske štáty", why: "Zmluvnými stranami sú štáty z celého sveta." }
+      - { text: "Pangolíny patria do prílohy III s menšou ochranou", why: "Všetkých osem druhov preradili do prílohy I v roku 2016." }
+
+  - id: cierny-trh-tuzex
+    type: pick
+    prompt: "Ktoré tvrdenia o Tuzexe v socialistickom Československu sú pravdivé?"
+    difficulty: 1
+    tags: [československo, tuzex, bony]
+    source: "https://www.seznamzpravy.cz/clanek/magazin-historie-veklsaci-tuzex-bony-269109 https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954 https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/1992/304"
+    correct:
+      - { text: "Boli to štátne obchody", why: "Podnik zahraničného obchodu Tuzex vznikol vyhláškou ministerstva v roku 1957." }
+      - { text: "Neplatilo sa v nich bežnými korunami, ale poukazmi, takzvanými bonmi", why: "Bony sa dali dostať výmenou zahraničnej meny v štátnej banke." }
+      - { text: "Ponúkali západný a ťažko dostupný tovar", why: "Predávali tam napríklad džínsy, cigarety a elektroniku zo Západu." }
+      - { text: "Bony predávali na ulici aj veksláci", why: "Štát ich oficiálne odsudzoval, ale často tolerovali ich činnosť." }
+      - { text: "V roku 1988 mal Tuzex približne 170 predajní", why: "Podľa webu Tuzexu mal v tom roku obrat vyše 250 miliónov dolárov." }
+      - { text: "Tuzex prestal predávať tovar za bony v roku 1992", why: "Po roku 1989 sa prešlo na konvertibilnú menu a od roku 1992 sa tovar predával za bežné koruny." }
+    wrong:
+      - { text: "Tuzex bol súkromný reťazec západných firiem", why: "Bol to štátny podnik zahraničného obchodu." }
+      - { text: "V Tuzexe sa dalo platiť bežnými československými korunami", why: "Platilo sa bonmi alebo zahraničnou menou." }
+      - { text: "Predajne mali len v Prahe", why: "V roku 1988 ich bolo približne 170 po celom Československu." }
+      - { text: "Tuzex vznikol až po Nežnej revolúcii v roku 1989", why: "Vznikol v roku 1957." }
+
+  - id: cierny-trh-opiove-vojny
+    type: pick
+    prompt: "Ktoré tvrdenia o opiových vojnách v 19. storočí sú pravdivé?"
+    difficulty: 1
+    tags: [dejiny, pašovanie, čína]
+    source: "https://www.ebsco.com/research-starters/history/opium-wars https://en.wikipedia.org/wiki/First_Opium_War"
+    correct:
+      - { text: "Prvá opiová vojna sa viedla v rokoch 1839 až 1842", why: "Skončila sa v auguste 1842 Nankinskou zmluvou." }
+      - { text: "Bojovala Británia proti Číne", why: "Čína vtedy bola pod vládou dynastie Čching." }
+      - { text: "Čína po prvej vojne postúpila Británii ostrov Hongkong", why: "Stalo sa tak Nankinskou zmluvou z augusta 1842." }
+      - { text: "Čína poverila komisára Lin Zexua, aby potlačil obchod s ópiom a zničil jeho zásoby", why: "Zásah čínskych úradov bol jednou z priamych príčin vojny." }
+      - { text: "Britskí obchodníci predávali v Číne ópium z Indie", why: "Kupovali za ne striebro, aby si mohli zaplatiť za čínsky čaj." }
+      - { text: "Druhá opiová vojna sa viedla v rokoch 1856 až 1860", why: "Británia v nej bojovala spolu s Francúzskom." }
+    wrong:
+      - { text: "Opiové vojny sa viedli medzi Čínou a Japonskom", why: "Viedla ich Čína s Britániou, v druhej vojne aj s Francúzskom." }
+      - { text: "Hongkong získalo po prvej vojne Francúzsko", why: "Pripadol Británii." }
+      - { text: "Čínske úrady ópium pred vojnou legalizovali a zdanili", why: "Čína obchod s ópiom zakazovala a pred vojnou ho potláčala." }
+      - { text: "Druhá opiová vojna sa viedla v 20. storočí", why: "Trvala v rokoch 1856 až 1860." }
+      - { text: "Obchod s ópiom nemal na čínsku ekonomiku žiadny vplyv", why: "Odliv striebra a rozšírená závislosť primäli čínske úrady k zásahu." }
+
+  # ---------------------------------------------------------------- ORDER
+  - id: cierny-trh-poradie-uzivatelia
+    type: order
+    prompt: "Zoraď typy drog podľa odhadovaného počtu ľudí, ktorí ich užili v roku 2024, od najvyššieho."
+    direction: desc
+    unit: mil. ľudí
+    difficulty: 2
+    asOf: "2026-06"
+    tags: [drogy, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+    items:
+      - { text: "Konope", value: 256, why: "Konope je podľa UNODC najpoužívanejšia droga na svete." }
+      - { text: "Opioidy", value: 63, why: "Patria sem aj lieky na predpis zneužívané mimo liečby." }
+      - { text: "Amfetamíny", value: 32, why: "Metamfetamín sa užíva častejšie než amfetamín." }
+      - { text: "Kokaín", value: 25, why: "Je to o 38 % viac než pred desiatimi rokmi." }
+      - { text: "Extáza", value: 21, why: "Najväčšie trhy sú vo východnej a juhovýchodnej Ázii, západnej a strednej Európe a Severnej Amerike." }
+
+  - id: cierny-trh-poradie-silk-road
+    type: order
+    prompt: "Zoraď udalosti okolo Silk Road od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 2
+    tags: [silk-road, súd]
+    source: "https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf https://ice.gov/news/releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-life-federal-prison-creating https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present"
+    items:
+      - { text: "Spustenie trhoviska Silk Road", value: 2011, why: "Úrady uvádzajú začiatok prevádzky v roku 2011." }
+      - { text: "FBI zatvorila Silk Road a zatkla Rossa Ulbrichta", value: 2013, why: "Stalo sa v októbri 2013." }
+      - { text: "Odsúdenie Ulbrichta na doživotie", value: 2015, why: "Trest mu vyhlásili 29. mája 2015." }
+      - { text: "Omilostenie Ulbrichta prezidentom USA", value: 2025, why: "Stalo sa 21. januára 2025." }
+
+  - id: cierny-trh-poradie-prohibicia
+    type: order
+    prompt: "Zoraď udalosti z čias americkej prohibície od najstaršej."
+    direction: asc
+    unit: rok
+    difficulty: 1
+    tags: [prohibícia, usa]
+    source: "https://prohibition.themobmuseum.org/the-history/the-rise-of-organized-crime/rum-running/ https://www.federalreservehistory.org/essays/stock-market-crash-of-1929 https://www.fbi.gov/history/famous-cases/al-capone https://constitutioncenter.org/blog/five-interesting-facts-about-prohibitions-end-in-1933"
+    items:
+      - { text: "Začiatok celoštátnej prohibície v USA", value: 1920, why: "Zákaz vstúpil do platnosti 17. januára 1920." }
+      - { text: "Krach na newyorskej burze", value: 1929, why: "Začal sa v októbri 1929." }
+      - { text: "Odsúdenie Ala Capona za daňové úniky", value: 1931, why: "Stalo sa v októbri 1931." }
+      - { text: "Koniec prohibície", value: 1933, why: "Zrušil ju 21. dodatok k ústave, ratifikovaný 5. decembra 1933." }
+
+  - id: cierny-trh-poradie-falosne-euro
+    type: order
+    prompt: "Zoraď eurové bankovky podľa podielu na falošných bankovkách stiahnutých z obehu v roku 2025, od najvyššieho."
+    direction: desc
+    unit: "% falzifikátov"
+    difficulty: 2
+    asOf: "2025"
+    tags: [falzifikáty, euro, ecb]
+    source: https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260227~66abdc6895.en.html
+    items:
+      - { text: "50 €", value: 53.2, why: "Spolu s 20 € tvorí asi 80 % všetkých falzifikátov." }
+      - { text: "20 €", value: 27.0, why: "Druhá najčastejšie falšovaná bankovka." }
+      - { text: "100 €", value: 7.9, why: "Tretia v poradí." }
+      - { text: "10 €", value: 6.4, why: "Tvorí 6,4 % falzifikátov." }
+      - { text: "200 €", value: 3.3, why: "Tvorí 3,3 % falzifikátov." }
+      - { text: "5 €", value: 1.4, why: "Podľa ECB je to jedna z najmenej falšovaných bankoviek." }
+      - { text: "500 €", value: 0.8, why: "Najmenej falšovaná bankovka, podiel 0,8 %." }
+
+  # ---------------------------------------------------------------- NUMBER
+  - id: cierny-trh-uzivatelia-spolu
+    type: number
+    prompt: "Koľko miliónov ľudí na svete užilo podľa UNODC v roku 2024 aspoň raz za rok nejakú drogu?"
+    answer: 331
+    unit: miliónov ľudí
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-06"
+    why: "Podľa Svetovej správy o drogách 2026 ide o 6,2 % ľudí vo veku 15 až 64 rokov; je to o 34 % viac než pred desiatimi rokmi, čiastočne vďaka rastu populácie."
+    difficulty: 2
+    tags: [drogy, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+
+  - id: cierny-trh-koka-kolumbia-ha
+    type: number
+    prompt: "Na koľkých hektároch sa podľa UNODC pestoval v roku 2023 kokový ker v Kolumbii?"
+    answer: 253000
+    unit: hektárov
+    scale: log
+    tolerance: 0.1
+    asOf: "2023"
+    why: "Podľa prieskumu UNODC z októbra 2024 sa plocha zväčšila o 10 % na 253 000 hektárov; celosvetovo to bolo v roku 2022 približne 355 000 hektárov."
+    difficulty: 3
+    tags: [drogy, koka, kolumbia]
+    source: "https://www.unodc.org/unodc/press/releases/2024/October/colombia_-potential-cocaine-production-increased-by-53-per-cent-in-2023--according-to-new-unodc-survey.html https://www.unodc.org/documents/crop-monitoring/Colombia/Colombia_survey_report_EN_2023.pdf"
+
+  - id: cierny-trh-polopotapacie-lode
+    type: number
+    prompt: "Koľko polopotápacích plavidiel s drogami zaistilo kolumbijské námorníctvo v rokoch 1993 až 2023?"
+    answer: 228
+    unit: plavidiel
+    scale: log
+    tolerance: 0.2
+    asOf: "2023"
+    why: "UNODC to uvádza v Svetovej správe o drogách 2026; plavidlá s nízkym profilom zvyčajne vyrábajú z dreva alebo sklolaminátu."
+    difficulty: 3
+    tags: [kokaín, zaistenia]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+
+  - id: cierny-trh-falosne-euro-pocet
+    type: number
+    prompt: "Zhruba koľko falošných eurových bankoviek stiahli v roku 2025 z obehu?"
+    answer: 444000
+    unit: bankoviek
+    scale: log
+    tolerance: 0.1
+    asOf: "2025"
+    why: "ECB uvádza 444 000 kusov, o 20 % menej než v predchádzajúcom roku; na milión pravých bankoviek v obehu pripadlo 14 falzifikátov."
+    difficulty: 2
+    tags: [falzifikáty, euro, ecb]
+    source: https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260227~66abdc6895.en.html
+
+  - id: cierny-trh-slony-pokles
+    type: number
+    prompt: "Koľko afrických slonov žilo podľa najčastejšie uvádzaného odhadu v roku 1979, predtým než pytliactvo pre slonovinu prudko vzrástlo?"
+    answer: 1300000
+    unit: slonov
+    scale: log
+    tolerance: 0.15
+    why: "Do konca 80. rokov sa počet podľa odhadov znížil na 600 až 750 tisíc, najmä pre pytliactvo kvôli slonovine; v októbri 1989 CITES preradil africké slony do prílohy I."
+    difficulty: 2
+    tags: [slonovina, cites]
+    source: "https://www.nationalgeographic.com/animals/article/elephants-samburu-reserve-kenya-iain-douglas-hamilton https://www.ebsco.com/research-starters/science/ivory-trade/ https://e360.yale.edu/features/for-a-defender-of-elephants-chinas-ivory-ban-comes-just-in-time-iain-douglas-hamilton"
+
+  - id: cierny-trh-tuzex-predajne
+    type: number
+    prompt: "Koľko predajní mal Tuzex v roku 1988?"
+    answer: 170
+    unit: predajní
+    scale: log
+    tolerance: 0.1
+    why: "Podľa webu Tuzexu stálo v roku 1988 po celom Československu približne 170 predajní a obrat prekročil 250 miliónov dolárov."
+    difficulty: 3
+    tags: [tuzex, československo]
+    source: "https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954"
+
+  - id: cierny-trh-pridely-britania
+    type: number
+    prompt: "V ktorom roku sa v Británii skončilo prídelové zásobovanie potravinami, ktoré sa zaviedlo za druhej svetovej vojny?"
+    answer: 1954
+    unit: rok
+    scale: linear
+    tolerance: 1
+    why: "Mäso ako posledné prestalo byť prídelové o polnoci 3. na 4. júla 1954, takmer deväť rokov po vojne; počas prídelov fungoval čierny trh."
+    difficulty: 2
+    tags: [vojna, prídely]
+    source: "https://www.iwm.org.uk/history/second-world-war/home-front/rationing https://api.parliament.uk/historic-hansard/commons/1954/apr/28/slaughterhouses-bill-lords https://blog.bham.ac.uk/culturalcalendar/2024/07/04/70th-anniversary-of-the-end-of-food-rationing-in-the-uk/"
+
+  - id: cierny-trh-kokain-vyroba-tony
+    type: number
+    prompt: "Koľko ton čistého kokaínu sa podľa odhadu UNODC mohlo vyrobiť na svete v roku 2024?"
+    answer: 4100
+    unit: ton
+    scale: log
+    tolerance: 0.15
+    asOf: "2026-06"
+    why: "UNODC uvádza približne 4 100 ton (rozpätie odhadu 3 800 až 4 700 ton), viac než štvornásobok oproti roku 2014."
+    difficulty: 3
+    tags: [kokaín, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+
+  - id: cierny-trh-antverpy-tony
+    type: number
+    prompt: "Koľko ton kokaínu zaistili belgickí colníci v antverpskom prístave v rekordnom roku 2023?"
+    answer: 116
+    unit: ton
+    scale: log
+    tolerance: 0.1
+    asOf: "2023"
+    why: "Podľa výročných údajov belgických colníkov to bol rekord, ktorý prekonal 110 ton z roku 2022."
+    difficulty: 3
+    tags: [kokaín, zaistenia, colníci]
+    source: https://www.brusselstimes.com/880668/new-record-116-tonnes-of-cocaine-seized-in-antwerp-port-last-year
+
+  # ---------------------------------------------------------------- CHOICE
+  - id: cierny-trh-najrozsirenejsia-droga
+    type: choice
+    prompt: "Ktorá droga je podľa UNODC najrozšírenejšia na svete?"
+    difficulty: 1
+    asOf: "2026-06"
+    tags: [drogy, unodc]
+    source: https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf
+    correct: { text: "Konope", why: "Užilo ho odhadom 256 miliónov ľudí; UNODC ho označuje za najpoužívanejšiu aj najviac pašovanú drogu." }
+    wrong:
+      - { text: "Kokaín", why: "Užilo ho odhadom 25 miliónov ľudí." }
+      - { text: "Opioidy", why: "Užilo ich odhadom 63 miliónov ľudí." }
+      - { text: "Amfetamíny", why: "Užilo ich odhadom 32 miliónov ľudí." }
+
+  - id: cierny-trh-koka-krajina
+    type: choice
+    prompt: "V ktorej krajine sa podľa UNODC pestuje najviac koky?"
+    difficulty: 1
+    asOf: "2023"
+    tags: [drogy, koka]
+    source: "https://www.unodc.org/unodc/press/releases/2024/October/colombia_-potential-cocaine-production-increased-by-53-per-cent-in-2023--according-to-new-unodc-survey.html https://www.unodc.org/documents/crop-monitoring/Colombia/Colombia_survey_report_EN_2023.pdf"
+    correct: { text: "Kolumbia", why: "V roku 2023 mala 253 000 hektárov koky; v roku 2022 to bolo 230 000 z celosvetových asi 355 000 hektárov." }
+    wrong:
+      - { text: "Peru", why: "Je významným pestovateľom, no plochu má podstatne menšiu než Kolumbia." }
+      - { text: "Bolívia", why: "Pestuje kokový ker, ale na menšej ploche než Kolumbia a Peru." }
+      - { text: "Mexiko", why: "Je významnou tranzitnou krajinou pre kokaín, nepatrí však medzi hlavných pestovateľov koky." }
+
+  - id: cierny-trh-ulbricht-milost
+    type: choice
+    prompt: "Čo sa stalo v januári 2025 s doživotným trestom zakladateľa Silk Road Rossa Ulbrichta?"
+    difficulty: 1
+    asOf: "2025-01"
+    tags: [silk-road]
+    source: "https://www.justice.gov/pardon/clemency-grants-president-donald-j-trump-2025-present https://www.aljazeera.com/economy/2025/1/22/trump-pardons-ross-ulbricht-creator-of-dark-web-marketplace-silk-road https://www.supremecourt.gov/DocketPDF/17/17-950/24860/20171222095925240_Ulbricht%20cert%20appendix.pdf"
+    correct: { text: "Prezident USA ho omilostil", why: "Plné a bezpodmienečné omilostenie udelil 21. januára 2025 Donald Trump." }
+    wrong:
+      - { text: "Odvolací súd ho zrušil", why: "Odvolací súd trest potvrdil už v roku 2017." }
+      - { text: "Premenili ho na 20 rokov väzenia", why: "Trest nebol znížený; skončil omilostením." }
+      - { text: "Nastúpil trest smrti", why: "Americký súd mu trest smrti neuložil." }
+
+  - id: cierny-trh-capone-dovod
+    type: choice
+    prompt: "Za čo odsúdil americký súd v roku 1931 Ala Capona?"
+    difficulty: 1
+    tags: [prohibícia, usa]
+    source: "https://www.fbi.gov/history/famous-cases/al-capone https://themobmuseum.org/blog/capone-tax-evasion-trial-jury-finds-chicago-mobster-guilty-on-5-of-22-counts/"
+    correct: { text: "Za daňové úniky", why: "Dostal 11 rokov väzenia, pokutu aj povinnosť doplatiť dane." }
+    wrong:
+      - { text: "Za vraždu", why: "Za vraždu odsúdený nebol." }
+      - { text: "Za podplácanie policajtov", why: "Odsúdili ho za daňové úniky." }
+      - { text: "Za pašovanie zbraní", why: "Odsúdili ho za daňové úniky." }
+
+  - id: cierny-trh-falosne-euro-nominaly
+    type: choice
+    prompt: "Ktoré dve eurové bankovky sa podľa ECB falšujú najčastejšie?"
+    difficulty: 1
+    asOf: "2025"
+    tags: [falzifikáty, euro, ecb]
+    source: https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260227~66abdc6895.en.html
+    correct: { text: "20 € a 50 €", why: "Spolu tvorili v roku 2025 asi 80 % všetkých falzifikátov." }
+    wrong:
+      - { text: "5 € a 10 €", why: "Spolu tvoria len asi 8 %." }
+      - { text: "100 € a 200 €", why: "Spolu tvoria asi 11 %." }
+      - { text: "200 € a 500 €", why: "Spolu tvoria asi 4 %." }
+
+  - id: cierny-trh-nosorozec-roh
+    type: choice
+    prompt: "Z akého materiálu je nosorožčí roh?"
+    difficulty: 1
+    tags: [nosorožce, pytliactvo]
+    source: "https://animals.sandiegozoo.org/animals/rhinoceros https://wildnet.org/news/study-confirms-rhino-horn-has-no-medicinal-value/"
+    correct: { text: "Z keratínu", why: "Je to rovnaký materiál ako vlasy a nechty; liečivé účinky nemá." }
+    wrong:
+      - { text: "Z kosti", why: "Roh nie je kostný, na rozdiel od parohov jeleňa." }
+      - { text: "Zo slonoviny", why: "Slonovina je zubovina klov sloníc a slonov." }
+      - { text: "Z chrupavky", why: "Je z keratínu." }
+
+  - id: cierny-trh-vekslak
+    type: choice
+    prompt: "Kto bol v socialistickom Československu vekslák?"
+    difficulty: 1
+    tags: [československo, tuzex]
+    source: "https://www.seznamzpravy.cz/clanek/magazin-historie-veklsaci-tuzex-bony-269109 https://www.seznamzpravy.cz/clanek/dziny-sustaky-kazetak-facko-walkman-hity-socialistickych-vanoc-84954"
+    correct: { text: "Neoficiálny obchodník s devízami a tuzexovými bonmi", why: "Veksláci neoficiálne menili valuty a prepredávali bony pred Tuzexmi." }
+    wrong:
+      - { text: "Predavač v obchode Tuzex", why: "Predavači Tuzexu boli zamestnancami štátneho podniku." }
+      - { text: "Colník na hraničnom priechode", why: "Colníci štátu pašerákov naopak stíhali." }
+      - { text: "Bankový úradník pri výmene mien", why: "Štátne banky menili valuty oficiálne, vekslák robil neoficiálny obchod." }
+
+  - id: cierny-trh-bernhard-jazero
+    type: choice
+    prompt: "Do ktorého z týchto rakúskych jazier esesáci pri konci vojny hodili časť falošných britských bankoviek a tlačiarenského zariadenia?"
+    difficulty: 3
+    tags: [falzifikáty, druhá svetová vojna]
+    source: "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard https://www.guinnessworldrecords.com/world-records/65625-greatest-banknote-forgery"
+    correct: { text: "Toplitzsee", why: "V roku 1959 noviny informovali, že potápač v ňom našiel debny s falošnými päťlibrovkami." }
+    wrong:
+      - { text: "Neusiedlersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
+      - { text: "Wörthersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
+      - { text: "Attersee", why: "Esesáci zariadenie a bankovky potopili v jazere Toplitzsee, nie tu." }
