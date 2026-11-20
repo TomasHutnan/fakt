@@ -151,7 +151,7 @@ questions:
       - { text: "Akciu viedol Sovietsky zväz", why: "Išlo o akciu nacistického Nemecka." }
       - { text: "Falšovali sa iba mince", why: "Falšovali sa papierové bankovky." }
       - { text: "Operácia skončila už v roku 1940", why: "Výroba pokračovala až do konca vojny v roku 1945." }
-      - { text: "Falošné bankovky sa do obehu nikdy nedostali", why: "Po odhalení falzifikátov v roku 1943 stiahla Bank of England z obehu všetky bankovky s nominálnou hodnotou nad 5 libier." }
+      - { text: "Falošné bankovky sa do obehu nikdy nedostali", why: "Po odhalení falzifikátov v roku 1943 Bank of England zareagovala stiahnutím bankoviek s hodnotou nad 5 libier z obehu." }
 
   - id: cierny-trh-wildlife-skupiny
     type: pick
@@ -184,7 +184,7 @@ questions:
       - { text: "Dohovor prijali vo Washingtone 3. marca 1973", why: "Preto sa mu hovorí aj Washingtonský dohovor." }
       - { text: "Do platnosti vstúpil 1. júla 1975", why: "Platí od roku 1975." }
       - { text: "Týka sa zvierat aj rastlín", why: "Názov dohovoru hovorí o voľne žijúcej faune a flóre." }
-      - { text: "Všetky druhy pangolínov sú v prílohe I", why: "Od roku 2016 je medzinárodný komerčný obchod s nimi zakázaný." }
+      - { text: "Všetky druhy pangolínov sú v prílohe I", why: "Od januára 2017 je medzinárodný komerčný obchod s nimi zakázaný." }
       - { text: "Zmluvných strán je viac než 180", why: "Nemecké ministerstvo životného prostredia uvádza 184 strán, ktoré pokrývajú takmer 95 % štátov sveta." }
       - { text: "Po preradení afrických slonov do prílohy I začal v januári 1990 platiť zákaz medzinárodného obchodu so slonovinou", why: "Rozhodnutie prijali na stretnutí strán v októbri 1989." }
     wrong:
@@ -206,7 +206,7 @@ questions:
       - { text: "Ponúkali západný a ťažko dostupný tovar", why: "Predávali tam napríklad džínsy, cigarety a elektroniku zo Západu." }
       - { text: "Bony predávali na ulici aj veksláci", why: "Štát ich oficiálne odsudzoval, ale často tolerovali ich činnosť." }
       - { text: "V roku 1988 mal Tuzex približne 170 predajní", why: "Podľa webu Tuzexu mal v tom roku obrat vyše 250 miliónov dolárov." }
-      - { text: "Predaj bonov skončil v roku 1992", why: "Po roku 1989 sa prešlo na konvertibilnú menu a od roku 1992 sa tovar predával za bežné koruny." }
+      - { text: "Tuzex prestal predávať tovar za bony v roku 1992", why: "Po roku 1989 sa prešlo na konvertibilnú menu a od roku 1992 sa tovar predával za bežné koruny." }
     wrong:
       - { text: "Tuzex bol súkromný reťazec západných firiem", why: "Bol to štátny podnik zahraničného obchodu." }
       - { text: "V Tuzexe sa dalo platiť bežnými československými korunami", why: "Platilo sa bonmi alebo zahraničnou menou." }
