@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { onByDefault, type Pack } from "../content/types.ts";
 import { validatePack } from "../content/validate.ts";
 import { makeCard, numberDecimals, makeCompareCard, type NumberCard, type PickCard } from "./cards.ts";
-import { currentPlayer, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
+import { currentPlayer, headsToTiebreak, DEFAULT_SETTINGS, newGame, reduce, scoreCard, standings, type GameState, type Settings } from "./game.ts";
 import { createRng } from "./rng.ts";
 import { packOptions } from "./comeback.ts";
 import { tiebreakKey, tiebreakPoints, tiedLeaders } from "./tiebreak.ts";
@@ -523,6 +523,11 @@ describe("tie-break", () => {
     // Only played ones left: one of them rather than none.
     expect(tiebreakKey([], 0, [pack], ["test"], ["test/n1"], 1)).toBe("test/n1");
     expect(tiebreakKey([], 0, [pack], [], [], 1)).toBeNull();
+    // The label only promises a tie-break when a number question exists.
+    const tied = { players: [{ score: 3 }, { score: 3 }], tiebreak: null, deck: [], deckPos: 0, played: [], seed: 1 } as unknown as Parameters<typeof headsToTiebreak>[0];
+    const withIds = (ids: string[]) => ({ ...tied, settings: { packIds: ids } }) as unknown as Parameters<typeof headsToTiebreak>[0];
+    expect(headsToTiebreak(withIds(["test"]), [pack])).toBe(true);
+    expect(headsToTiebreak(withIds([]), [pack])).toBe(false);
   });
 
   it("only the tied leaders play it, and the game ends after it either way", () => {

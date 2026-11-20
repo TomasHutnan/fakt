@@ -360,6 +360,30 @@ describe("room questions", () => {
     expect(viewFor(sim.s, "h").paused).toBe(false);
   });
 
+  it("the view carries the full length of the countdown, also after a pause and resume", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast", rounds: 3 });
+    sim.act("h", { type: "start" });
+    expect(viewFor(sim.s, "p1").span).toBe(ANSWER_SECONDS.fast.pick * 1000);
+    sim.answerAll("best");
+    const full = REVEAL_SECONDS.fast.pick * 1000;
+    expect(viewFor(sim.s, "p1").span).toBe(full);
+    sim.now += 4000;
+    sim.act("h", { type: "pause" });
+    sim.act("h", { type: "resume" });
+    const v = viewFor(sim.s, "p1");
+    expect(v.deadline).toBe(sim.now + full - 4000);
+    expect(v.span).toBe(full);
+  });
+
+  it("a tie-break is only announced when the packs hold a number question", () => {
+    const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", rounds: 1, lastPicks: false });
+    sim.act("h", { type: "start" });
+    expect(viewFor(sim.s, "h", PACKS).canTiebreak).toBe(true);
+    expect(viewFor(sim.s, "h").canTiebreak).toBe(true);
+    const noNumbers = [{ ...PACK, questions: PACK.questions.filter((q) => q.type !== "number") }];
+    expect(viewFor(sim.s, "h", noNumbers).canTiebreak).toBe(false);
+  });
+
   it("after a pause the clock gets back what was left, at least a few seconds", () => {
     const sim = new Sim(["Jano", "Zuzka"], { mode: "classic", pace: "fast", rounds: 3 });
     sim.act("h", { type: "start" });

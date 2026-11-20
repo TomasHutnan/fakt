@@ -43,7 +43,7 @@
 [data-design="zvyraznovac"] .verdict--banked .verdict__title,
 [data-design="zvyraznovac"] .verdict--complete .verdict__title,
 [data-design="zvyraznovac"] .result--scored .result__points,
-[data-design="zvyraznovac"] .score-row--leader .score-row__name,
+[data-design="zvyraznovac"] .score-row--leader .score-row__text,
 [data-design="zvyraznovac"] .number-reveal__value {
   color: var(--hl-ink);
   background-image:

@@ -108,7 +108,7 @@ function GameInner({ state, dispatch, onQuit, onPlayAgain, packs }: Props) {
           </div>
         </div>
       )}
-      {s.phase === "reveal" ? <Reveal state={s} dispatch={dispatch} /> : <Turn key={`${s.round}-${s.turn}`} state={s} dispatch={dispatch} />}
+      {s.phase === "reveal" ? <Reveal state={s} dispatch={dispatch} packs={packs} /> : <Turn key={`${s.round}-${s.turn}`} state={s} dispatch={dispatch} />}
     </div>
   );
 }
@@ -663,7 +663,7 @@ export function CardFoot({ card }: { card: Card }) {
   );
 }
 
-function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) => void }) {
+function Reveal({ state, dispatch, packs }: { state: GameState; dispatch: (a: Action) => void; packs: Pack[] }) {
   const s = state;
   const card = s.card;
   const over = useMemo(() => !!s.tiebreak || isFinalRound(s), [s]);
@@ -701,7 +701,7 @@ function Reveal({ state, dispatch }: { state: GameState; dispatch: (a: Action) =
 
       <div class="actions">
         <button type="button" class="btn btn--primary btn--block" onClick={() => dispatch({ type: "nextRound" })}>
-          {over ? (headsToTiebreak(s) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
+          {over ? (headsToTiebreak(s, packs) ? sk.toTiebreak : sk.finalResults) : sk.nextRound}
         </button>
       </div>
     </section>
@@ -889,7 +889,9 @@ function GameOver({
           {table.map((e) => (
             <li class={`score-row${e.rank === 1 ? " score-row--leader" : ""}`}>
               <span class="score-row__rank">{e.rank}.</span>
-              <span class="score-row__name">{e.player.name}</span>
+              <span class="score-row__name">
+                <span class="score-row__text">{e.player.name}</span>
+              </span>
               <span class="score-row__score">{e.player.score}</span>
             </li>
           ))}

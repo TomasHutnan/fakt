@@ -331,8 +331,11 @@ function startTiebreak(s: GameState, packs: Pack[]): GameState | null {
 }
 
 /** The finished round will lead to a tie-break (scores at the reveal already include the round). */
-export function headsToTiebreak(s: Pick<GameState, "players" | "tiebreak">): boolean {
-  return !s.tiebreak && tiedLeaders(s.players.map((p) => p.score)).length > 0;
+export function headsToTiebreak(s: Pick<GameState, "players" | "tiebreak"> & Partial<Pick<GameState, "deck" | "deckPos" | "settings" | "played" | "seed">>, packs?: Pack[]): boolean {
+  if (s.tiebreak || tiedLeaders(s.players.map((p) => p.score)).length === 0) return false;
+  // Without a number question in the enabled packs the game just ends.
+  if (!packs || !s.deck || s.deckPos == null || !s.settings || !s.played || s.seed == null) return true;
+  return tiebreakKey(s.deck, s.deckPos + 1, packs, s.settings.packIds, s.played, s.seed) != null;
 }
 
 function finishTurn(s: GameState, packs: Pack[]): GameState {

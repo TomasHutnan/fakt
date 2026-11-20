@@ -108,6 +108,8 @@ export interface RoomState {
   submitted?: string[];
   /** Server time (ms) when the question closes; null without a time limit. */
   deadline: number | null;
+  /** Full length (ms) of the running countdown, so a bar can show the share left; missing in older snapshots. */
+  span?: number | null;
   /** Scored answers of the current card, filled at the reveal. */
   results: RoomResult[];
   /** Players who tapped "next" on the reveal. */
@@ -485,6 +487,7 @@ function beginQuestion(s: RoomState, card: Card, now: number): RoomState {
     results: [],
     ready: [],
     deadline: secs == null ? null : now + secs * 1000,
+    span: secs == null ? null : secs * 1000,
   };
 }
 
@@ -525,7 +528,7 @@ function closeQuestion(s: RoomState, now: number): RoomState {
     score: p.score + (scored.find((r) => r.playerId === p.id)?.points ?? 0),
   }));
   const secs = s.settings.pace === "none" ? null : REVEAL_SECONDS[s.settings.pace][kindOf(card)];
-  return { ...s, drafts: {}, submitted: [], players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, ready: [], paused: null };
+  return { ...s, drafts: {}, submitted: [], players, results: scored, history: [...(s.history ?? []), round], phase: "reveal", deadline: secs == null ? null : now + secs * 1000, span: secs == null ? null : secs * 1000, ready: [], paused: null };
 }
 
 function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
@@ -556,6 +559,7 @@ function nextCard(s: RoomState, now: number, packs: Pack[]): RoomState {
         results: [],
         ready: [],
         deadline: secs == null ? null : now + secs * 1000,
+        span: secs == null ? null : secs * 1000,
       };
     }
   }
@@ -672,6 +676,8 @@ export interface RoomView {
   card: HiddenCard | null;
   full: Card | null;
   deadline: number | null;
+  /** Full length (ms) of the countdown behind `deadline`; null when unknown. */
+  span: number | null;
   mine: MyAnswer | null;
   results: RoomResult[];
   packChoice: RoomState["packChoice"];
@@ -682,6 +688,8 @@ export interface RoomView {
   titles: Title[];
   /** Tie-break: ids of the players who answer. */
   tiebreak: string[] | null;
+  /** A tie for the lead would go to a tie-break: the enabled packs hold a number question (always true when the packs are not given to `viewFor`). */
+  canTiebreak: boolean;
   /** The host paused the answers on show. */
   paused: boolean;
   /** Game over: keys of the cards played, so every phone can remember them as seen. */
@@ -690,7 +698,7 @@ export interface RoomView {
   screens?: number;
 }
 
-export function viewFor(s: RoomState, you: string | null): RoomView {
+export function viewFor(s: RoomState, you: string | null, packs?: Pack[]): RoomView {
   const question = s.phase === "question" && s.card != null;
   const reveal = s.phase === "reveal" && s.card != null;
   const { packIds, ...settings } = s.settings;
@@ -708,6 +716,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     card: question ? hideCard(s.card!, s.settings.showCorrectCount) : null,
     full: reveal ? s.card : null,
     deadline: question || reveal || s.phase === "choosePack" ? s.deadline : null,
+    span: s.span ?? null,
     mine: question && you ? myAnswer(s, you) : null,
     results: reveal ? s.results : [],
     packChoice: s.phase === "choosePack" ? s.packChoice : null,
@@ -715,6 +724,7 @@ export function viewFor(s: RoomState, you: string | null): RoomView {
     social: reveal ? roomSocial(s) : [],
     titles: s.phase === "over" ? roomTitles(s) : [],
     tiebreak: s.tiebreak,
+    canTiebreak: !packs || tiebreakKey(s.deck, s.deckPos + 1, packs, s.settings.packIds, [...s.seen, ...s.played], s.seed) != null,
     paused: s.phase === "reveal" && s.paused != null,
     played: s.phase === "over" ? s.played : [],
   };

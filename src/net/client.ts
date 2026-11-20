@@ -27,6 +27,16 @@ export interface ClientState {
 /** Errors after which reconnecting cannot help. */
 const FATAL: ErrorCode[] = ["proto", "noRoom", "kicked", "expired", "full", "nameTaken", "badName", "needName", "noQuestions", "badPacks", "busy", "invalid"];
 
+/** How long a first connection may take before the UI offers a retry. */
+export const CONNECT_TIMEOUT_MS = 12_000;
+
+/** Errors after which this device no longer has a seat in the room (a seat that cannot be rejoined). */
+const DEAD_SEAT: ErrorCode[] = ["noRoom", "kicked", "expired", "needName"];
+
+export function seatIsDead(error: ErrorCode | null): boolean {
+  return error != null && DEAD_SEAT.includes(error);
+}
+
 export function roomUrl(): string {
   return `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}${WS_PATH}`;
 }
@@ -78,6 +88,18 @@ export class RoomClient {
     if (this.pingTimer) clearInterval(this.pingTimer);
     this.ws?.close(1000, "bye");
     this.ws = null;
+  }
+
+  /** Drops the current socket and tries again right away (after a connection that never opened). */
+  reconnect(): void {
+    if (this.stopped) return;
+    if (this.retryTimer) clearTimeout(this.retryTimer);
+    this.retryTimer = null;
+    this.retries = 0;
+    const old = this.ws;
+    this.ws = null;
+    old?.close();
+    this.open();
   }
 
   private set(patch: Partial<ClientState>): void {

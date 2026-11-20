@@ -207,6 +207,8 @@ export const sk = {
   enter: "Vstúpiť",
   privacy: "Bez registrácie. Prezývka a odpovede sú na serveri len počas hry.",
   connecting: "Pripájam sa…",
+  connectTimeout: "Server neodpovedá. Skontroluj pripojenie na internet a skús to znova.",
+  tryAgain: "Skúsiť znova",
   reconnecting: "Spojenie sa prerušilo, pripájam znova…",
   roomErrors: {
     proto: "Aplikácia sa medzitým aktualizovala. Obnov stránku a skús to znova.",

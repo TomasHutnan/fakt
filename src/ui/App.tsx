@@ -11,7 +11,7 @@ import { PrefsContext, type Prefs } from "./QuickSettings.tsx";
 import { loadBuiltInPacks } from "./packs.ts";
 import { Home, Packs, Rules, SettingsScreen, Setup } from "./Screens.tsx";
 import { JoinScreen, RoomBody, RoomScreen } from "./Room.tsx";
-import { RoomClient, type StoredSeat } from "../net/client.ts";
+import { RoomClient, seatIsDead, type StoredSeat } from "../net/client.ts";
 import { isCode, normalizeCode, PROTOCOL, type ClientMessage } from "../net/protocol.ts";
 import type { RoomSettings } from "../engine/room.ts";
 import { demoRoom } from "./demo.ts";
@@ -162,6 +162,18 @@ export function App() {
         persist(KEYS.seen, all);
         return all;
       });
+    });
+  }, [client]);
+
+  // The server says the room is gone or the seat is invalid: forget the seat so home does not offer it.
+  useEffect(() => {
+    if (!client) return;
+    return client.subscribe((st) => {
+      // Only the seat of this very room (a failed look at another code must not drop it).
+      if (seatIsDead(st.error) && load<StoredSeat | null>(KEYS.room, null)?.code === st.code) {
+        setSeat(null);
+        persist(KEYS.room, null);
+      }
     });
   }, [client]);
 
