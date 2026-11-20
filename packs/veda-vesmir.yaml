@@ -535,7 +535,7 @@ questions:
     prompt: Ktorí z týchto ľudí skutočne boli vo vesmíre?
     difficulty: 1
     tags: [vesmír, história, Slovensko]
-    source: https://english.radio.cz/soyuz-28-and-cosmic-brothers-8554278
+    source: "https://www.nasa.gov/image-article/april-1961-first-human-entered-space/ (Gagarin) ; https://www.space.com/21571-valentina-tereshkova.html ; https://www.nasa.gov/apollo-11/ (Armstrong) ; https://english.radio.cz/soyuz-28-and-cosmic-brothers-8554278 (Remek) ; http://www.astronautix.com/b/bella.html ; https://www.space.com/william-shatner-blue-origin-crew-launch-success"
     correct:
       - text: Jurij Gagarin
         why: Prvý človek vo vesmíre, v roku 1961.
@@ -638,7 +638,7 @@ questions:
     prompt: Ktoré z týchto látok sú čisté chemické prvky, nie zlúčeniny ani zliatiny?
     difficulty: 1
     tags: [chémia]
-    source: https://en.wikipedia.org/wiki/List_of_chemical_elements
+    source: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON (periodic table of elements: Au, Fe, Cu, He, S, Sn)"
     correct:
       - text: zlato
         why: Prvok Au.
@@ -700,7 +700,7 @@ questions:
     prompt: Ktoré z týchto kovov priťahuje magnet?
     difficulty: 2
     tags: [fyzika, chémia]
-    source: https://www.britannica.com/science/How-do-the-Curie-temperatures-of-iron-cobalt-nickel-and-gadolinium-differ
+    source: "http://hyperphysics.phy-astr.gsu.edu/hbase/Solids/ferro.html ; http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/magprop.html"
     correct:
       - text: železo
         why: Feromagnetický kov, magnet ho priťahuje.
