@@ -5,7 +5,7 @@ category: peniaze
 lang: sk
 license: CC0-1.0
 adult: false
-version: 1
+version: 2
 questions:
   # ================================================================ PICK
   - id: ceny-1989-pod-5-kcs
@@ -144,7 +144,7 @@ questions:
     difficulty: 3
     asOf: "2023"
     tags: [mzdy, minimálna mzda]
-    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+    source: "https://static.slov-lex.sk/static/SK/ZZ/2008/422/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2011/343/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2014/297/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2015/279/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2016/280/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2017/278/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2018/300/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2019/324/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2021/352/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2022/300/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2020/294/20201031.html https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
     correct:
       - { text: "2019", why: "520 €." }
       - { text: "2020", why: "580 €." }
@@ -165,19 +165,20 @@ questions:
     difficulty: 2
     asOf: "2025"
     tags: [mzdy]
-    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/ https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne https://podnikam.sk/priemerna-mesacna-mzda-v-roku-2013-bola-824-eur/"
+    source: "https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne https://sita.sk/vofinanciach/od-revolucie-si-mozeme-dovolit-viac-na-chlieb-vsak-robime-dlhsie/ https://podnikam.sk/priemerna-mesacna-mzda-v-roku-2013-bola-824-eur/ https://podnikam.sk/v-minulom-roku-bola-priemerna-mzda-na-slovensku-883-eur-3/ https://sita.sk/vofinanciach/slovaci-zarabaju-v-priemere-1133-eur-platy-sa-nezvysili-len-v-dvoch-odvetviach/ https://sita.sk/vofinanciach/slovenski-zamestnanci-si-polepsili-mzdy-vzrastli-najviac-za-posledne-roky-pomohol-pokles-inflacie/ https://www.podnikajte.sk/zamestnanci-a-hr/priemerna-mesacna-mzda-2025-vyska-dosledky https://nbs.sk/_img/documents/_publikacie/vyrocnasprava/svk2001/vs2001_kap02.pdf https://sita.sk/verte-ci-nie-mzdy-slovakov-stupli-za-15-rokov-o-126-percent/"
     correct:
       - { text: "2018", why: "1 013 €; tisícku prekročila prvýkrát práve vtedy." }
-      - { text: "2020", why: "Približne 1 133 €." }
+      - { text: "2020", why: "1 133 €." }
       - { text: "2024", why: "1 524 €." }
-      - { text: "2025", why: "Približne 1 620 €." }
+      - { text: "2025", why: "1 620 €." }
     wrong:
-      - { text: "1989", why: "3 142 Kčs, v prepočte približne 104 €." }
+      - { text: "1989", why: "3 142 Kčs, v prepočte konverzným kurzom 30,126 Sk/€ približne 104 €." }
       - { text: "1993", why: "Necelých 179 €, prvý rok samostatného Slovenska." }
-      - { text: "2000", why: "Približne 379 €." }
+      - { text: "2000", why: "11 430 Sk, v prepočte kurzom 30,126 Sk/€ približne 379 €." }
       - { text: "2013", why: "824 €." }
       - { text: "2014", why: "858 €." }
       - { text: "2015", why: "883 €." }
+      - { text: "2017", why: "Tisíc eur ešte chýbalo; priemer ju prekročil prvýkrát až o rok neskôr, v roku 2018." }
 
   - id: ceny-benzin-nad-125
     type: pick
@@ -330,7 +331,7 @@ questions:
     scale: log
     tolerance: 0.1
     asOf: "1989"
-    why: "Po prepočte konverzným kurzom to bolo okolo 104 €."
+    why: "Po prepočte konverzným kurzom 30,126 Sk/€ to bolo okolo 104 €."
     difficulty: 2
     tags: [mzdy, 1989]
     source: "https://sita.sk/vofinanciach/od-revolucie-si-mozeme-dovolit-viac-na-chlieb-vsak-robime-dlhsie/ https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/"
@@ -346,7 +347,7 @@ questions:
     why: "O 6,6 % viac ako v roku 2023; o rok neskôr už okolo 1 620 €."
     difficulty: 2
     tags: [mzdy]
-    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/"
+    source: "https://sita.sk/vofinanciach/slovenski-zamestnanci-si-polepsili-mzdy-vzrastli-najviac-za-posledne-roky-pomohol-pokles-inflacie/ https://www.podnikajte.sk/zamestnanci-a-hr/priemerna-mesacna-mzda-2025-vyska-dosledky"
 
   - id: ceny-cislo-minimalna-2026
     type: number
@@ -369,10 +370,10 @@ questions:
     scale: log
     tolerance: 0.15
     asOf: "2000"
-    why: "V prepočte kurzom 30,126 Sk/€ je to 146,05 €; od januára 2000 platilo 4 000 Sk."
+    why: "V prepočte kurzom 30,126 Sk/€ je to 146,05 €."
     difficulty: 3
     tags: [mzdy, minimálna mzda]
-    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+    source: "https://static.slov-lex.sk/static/SK/ZZ/2000/298/vyhlasene_znenie.html"
 
   - id: ceny-cislo-benzin-1997
     type: number
@@ -398,7 +399,7 @@ questions:
     why: "Pri zavedení eura 1. januára 2009 sa používal kurz 30,126 Sk za 1 €."
     difficulty: 2
     tags: [euro]
-    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
+    source: "https://www.ecb.europa.eu/euro/changeover/slovakia/html/index.en.html"
 
   - id: ceny-cislo-rozok-halierov
     type: number
@@ -425,20 +426,20 @@ questions:
     why: "Okolo 10 500 rožkov, teda približne 350 denne."
     difficulty: 2
     tags: [1989, kúpna sila]
-    source: "https://www.startitup.sk/slovaci-v-roku-1989-zarabali-v-prepocte-104-eur-pozri-sa-co-si-za-to-vtedy-mohli-dovolit-tabulka/ https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani"
+    source: "https://sita.sk/vofinanciach/od-revolucie-si-mozeme-dovolit-viac-na-chlieb-vsak-robime-dlhsie/ https://tn.nova.cz/zpravodajstvi/clanek/283406-kolik-staly-potraviny-v-roce-1989-a-nyni-velke-srovnani"
 
   - id: ceny-cislo-kino-2024
     type: number
     prompt: Koľko eur stál v roku 2024 v priemere lístok do slovenských kín?
-    answer: 7.1
+    answer: 7.11
     unit: €
     scale: log
     tolerance: 0.1
     asOf: "2024"
-    why: "Podľa ÚFD približne 7,1 €; tržby kín vtedy dosiahli 38,66 milióna €."
+    why: "Priemerná cena vstupenky bola 7,11 € (správa o návštevnosti kín); tržby kín vtedy dosiahli 38,66 milióna €."
     difficulty: 2
     tags: [kino]
-    source: "https://www.mediaguru.cz/clanky/2025/03/kino-na-slovensku-roste-pomohly-lokalni-filmy"
+    source: "https://www.teraz.sk/slovensko/v-roku-2025-prislo-na-slovenske-filmy/971094-clanok.html https://www.mediaguru.cz/clanky/2025/03/kino-na-slovensku-roste-pomohly-lokalni-filmy"
 
   - id: ceny-cislo-znamka-2026
     type: number
@@ -451,7 +452,7 @@ questions:
     why: "Od 1. januára 2025 to bolo 1,20 € a predtým 1,00 €."
     difficulty: 2
     tags: [pošta]
-    source: "https://www.podnikajte.sk/e-commerce/postovne-od-1-1-2026-zmeny-v-cenniku"
+    source: "https://static.slov-lex.sk/pdf/prilohy/SK/OP/2025/24/20260101_5801979-2.pdf https://static.slov-lex.sk/pdf/prilohy/SK/OP/2024/17/20250101_5680543-2.pdf https://www.podnikajte.sk/e-commerce/postovne-od-1-1-2026-zmeny-v-cenniku"
 
   - id: ceny-cislo-byt-1989
     type: number
@@ -473,11 +474,11 @@ questions:
     difficulty: 3
     asOf: "2009"
     tags: [mzdy, minimálna mzda]
-    source: "https://www.podnikajte.sk/pracovne-pravo-bozp/minimalna-mzda-na-slovensku-vyvoj-1993-2023"
-    correct: { text: "295,50 €", why: "Približne o 10 % viac než 8 100 Sk z roku 2008 (268,87 € v prepočte kurzom 30,126)." }
+    source: "https://static.slov-lex.sk/static/SK/ZZ/2008/422/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2009/441/vyhlasene_znenie.html https://static.slov-lex.sk/static/SK/ZZ/2007/663/vyhlasene_znenie.html"
+    correct: { text: "295,50 €", why: "Približne o 10 % viac než 8 100 Sk z roku 2008 (268,87 € v prepočte kurzom 30,126); suma je z nariadenia vlády č. 422/2008 Z. z." }
     wrong:
       - { text: "268,87 €", why: "Toľko bolo 8 100 Sk z roku 2008 po prepočte kurzom 30,126." }
-      - { text: "307,70 €", why: "Takú vysokú ju stanovili až na rok 2010." }
+      - { text: "307,70 €", why: "Takú vysokú ju stanovilo nariadenie vlády až na rok 2010." }
       - { text: "240,00 €", why: "Pod úrovňou z roku 2008, ktorá po prepočte bola vyše 268 €." }
 
   - id: ceny-vyber-televizor-1989
@@ -512,7 +513,7 @@ questions:
     difficulty: 2
     asOf: "2018"
     tags: [mzdy]
-    source: "https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne"
+    source: "https://www.noviny.sk/ekonomika/848880-priemerna-mzda-od-vzniku-sr-vzrastla-viac-ako-sedemnasobne https://podnikam.sk/priemerna-mesacna-mzda-v-roku-2013-bola-824-eur/ https://sita.sk/vofinanciach/slovaci-zarabaju-v-priemere-1133-eur-platy-sa-nezvysili-len-v-dvoch-odvetviach/"
     correct: { text: "2018", why: "Priemer vtedy dosiahol 1 013 €." }
     wrong:
       - { text: "2014", why: "Vtedy priemerná mzda dosahovala 858 €." }
