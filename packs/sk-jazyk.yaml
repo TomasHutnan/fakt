@@ -280,7 +280,7 @@ questions:
     note: "Slová overené v slovníkoch ÚJĽŠ SAV (KSSJ, PSP). Ďalší zdroj: sk.wikipedia.org/wiki/Ä"
     tags: [pravopis, ä]
     correct:
-      - { text: mäso, why: "Ä sa píše len po perných spoluhláskach p, b, m, v; tu po m." }
+      - { text: mäso, why: "Ä sa píše len po p, b, m, v; tu po m." }
       - { text: pamäť, why: "Po m sa píše ä." }
       - { text: deväť, why: "Po v sa píše ä." }
       - { text: päsť, why: "Po p sa píše ä." }
