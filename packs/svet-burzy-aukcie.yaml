@@ -55,7 +55,7 @@ questions:
     tags: [indexy]
     source: "https://www.nasdaq.com/solutions/nasdaq-100 https://www.lseg.com/en/ftse-russell/indices/uk https://indexes.nikkei.co.jp/en/nkave/index/profile?idx=nk225 https://www.hsi.com.hk/eng/indexes/all-indexes/hsi"
     correct:
-      - { text: Dow Jones Industrial Average, why: "Najstarší a najznámejší index Wall Street; sleduje 30 veľkých firiem." }
+      - { text: Dow Jones Industrial Average, why: "Najznámejší index Wall Street (od roku 1896); sleduje 30 veľkých firiem." }
       - { text: S&P 500, why: "Zahŕňa 500 veľkých amerických firiem a je hlavným ukazovateľom trhu." }
       - { text: Nasdaq-100, why: "Veľké firmy z burzy Nasdaq, najmä technologické." }
       - { text: Russell 2000, why: "Americké malé firmy." }
@@ -101,7 +101,7 @@ questions:
     correct:
       - { text: Lehman Brothers, why: "V septembri 2008 vyhlásila bankrot, čo odštartovalo najhoršiu fázu krízy." }
       - { text: Bear Stearns, why: "V jarných mesiacoch 2008 ju s pomocou Fedu prevzala JPMorgan Chase." }
-      - { text: Washington Mutual, why: "V septembri 2008 ju zavrel FDIC; šlo o najväčší zlyhaný americký bankový subjekt." }
+      - { text: Washington Mutual, why: "V septembri 2008 ju zavreli regulátori (FDIC prevzala správu); bol to najväčší krach americkej banky." }
       - { text: Merrill Lynch, why: "V septembri 2008 sa predala Bank of America." }
     wrong:
       - { text: JPMorgan Chase, why: "Naopak, kupovala: prevzala Bear Stearns aj bankové aktíva Washington Mutual." }
@@ -128,7 +128,7 @@ questions:
       - { text: Hang Seng, why: "Hlavný index burzy v Hongkongu." }
       - { text: S&P 500, why: "Index 500 veľkých amerických firiem." }
       - { text: Nasdaq-100, why: "Veľké firmy z americkej burzy Nasdaq." }
-      - { text: Bovespa, why: "Hlavný index brazílskej burzy v São Paulu." }
+      - { text: Bovespa, why: "Hlavný index brazílskej burzy v São Paule." }
       - { text: Sensex, why: "Index burzy v Bombaji (India)." }
 
   - id: ba-nyse-firmy
@@ -167,7 +167,7 @@ questions:
       - { text: Klimt – Portrét Elisabeth Lederer (2025), value: 236.4, why: "Druhé najdrahšie dielo na aukcii." }
       - { text: Warhol – Shot Sage Blue Marilyn (2022), value: 195, why: "Najdrahšie americké dielo na aukcii." }
       - { text: Munch – Výkrik v pastelovej verzii (2012), value: 119.9, why: "V čase predaja najdrahšie dielo na aukcii." }
-      - { text: Van Gogh – Portrét doktora Gacheta (1990), value: 82.5, why: "Dodnes rekord pre Van Gogha na aukcii." }
+      - { text: Van Gogh – Portrét doktora Gacheta (1990), value: 82.5, why: "V roku 1990 najdrahší obraz sveta." }
 
   - id: ba-order-zberatelske
     type: order
@@ -219,7 +219,7 @@ questions:
     tolerance: 3
     difficulty: 2
     tags: [bitcoin]
-    why: "Strop je 21 miliónov; odmena za ťažbu sa pravidelne polovičí, až kým sa vydávanie nezastaví."
+    why: "Strop je 21 miliónov; odmena za ťažbu sa pravidelne znižuje na polovicu, až kým sa vydávanie nezastaví."
     source: "https://bitcoin.org/en/faq"
 
   - id: ba-cierny-pondelok-1987
@@ -231,7 +231,7 @@ questions:
     tolerance: 3
     difficulty: 2
     tags: [krachy]
-    why: "O 22,6 percenta (508 bodov), čo je dodnes najväčší jednodňový pokles v modernej histórii indexu."
+    why: "O 22,6 percenta (508 bodov), čo je dodnes najväčší jednodňový percentuálny pokles v modernej histórii indexu."
     source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1987"
 
   - id: ba-cullinan
@@ -279,7 +279,7 @@ questions:
     tolerance: 0.25
     difficulty: 3
     tags: [aukcie, zberatelstvo]
-    why: "Okolo 8,3 milióna dolárov; v roku 2014 išla za 9,5 milióna, takže pri druhom predaji stratila na cene."
+    why: "Okolo 8,3 milióna dolárov; v roku 2014 išla za 9,5 milióna, takže pri ďalšom predaji stratila na cene."
     source: "https://www.npr.org/2021/06/08/1002985432/british-guiana-1-cent-stamp-falls-well-short-of-anticipated-auction-bounty"
 
   - id: ba-dow-1932-pod-vrcholom
@@ -313,7 +313,7 @@ questions:
     difficulty: 1
     tags: [bitcoin]
     source: "https://guinnessworldrecords.com/world-records/696240-first-commercial-bitcoin-transaction"
-    correct: { text: Dve veľké pizze, why: "Programátor Laszlo Hanyecz na fóre ponúkol 10 000 BTC za dve pizze; 22. máj sa od vtedy oslavuje ako Bitcoin Pizza Day." }
+    correct: { text: Dve veľké pizze, why: "Programátor Laszlo Hanyecz na fóre ponúkol 10 000 BTC za dve pizze; 22. máj sa odvtedy oslavuje ako Bitcoin Pizza Day." }
     wrong:
       - { text: Použité auto, why: "Také veľké nákupy prišli o roky neskôr." }
       - { text: Tonu zlata, why: "Zlato sa za bitcoin v tom čase nekupovalo." }
