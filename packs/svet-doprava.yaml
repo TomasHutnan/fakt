@@ -24,14 +24,14 @@ questions:
       - text: Dallas/Fort Worth
         why: Tretie najrušnejšie letisko sveta, obrovský prestupný uzol amerických aerolínií.
       - text: Londýn Heathrow
-        why: Štvrté najrušnejšie letisko sveta.
+        why: Jedno z piatich najrušnejších letísk sveta.
       - text: Tokio Haneda
         why: Hlavné letisko japonskej metropoly, v prvej päťke sveta.
     wrong:
       - text: Frankfurt
         why: Veľký európsky uzol, ale do prvej päťky sa nedostal.
       - text: Amsterdam Schiphol
-        why: Rušné, no v svetovom poradí ďaleko za prvou päťkou.
+        why: Rušné, no vo svetovom poradí ďaleko za prvou päťkou.
       - text: Singapur Changi
         why: Slávne svojou kvalitou, počtom cestujúcich však nepatrí do prvej päťky.
       - text: Hongkong
@@ -39,7 +39,7 @@ questions:
       - text: Madrid Barajas
         why: Najväčšie letisko Španielska, do svetovej prvej päťky ale nepatrí.
       - text: Viedeň Schwechat
-        why: Najbližšie veľké letisko pre Slovákov, v svetovom rebríčku je však hlboko pod prvou päťkou.
+        why: Najbližšie veľké letisko pre Slovákov, vo svetovom rebríčku je však hlboko pod prvou päťkou.
       - text: Bratislava (M. R. Štefánika)
         why: Je to malé letisko; od prvej päťky ho delia desiatky miliónov cestujúcich.
 
@@ -117,7 +117,7 @@ questions:
     note: Zoznam ponuky Airbusu (A220, A320, A330, A350, A380). Boeing má vlastnú ponuku https://www.boeing.com/commercial .
     correct:
       - text: A380
-        why: Najväčšie osobné lietadlo sveta s dvomi plnými poschodiami.
+        why: Najväčšie osobné lietadlo sveta s dvoma plnými poschodiami.
       - text: A350
         why: Moderné dvojmotorové dopravné lietadlo s dlhým doletom.
       - text: A320
@@ -197,8 +197,8 @@ questions:
         why: Bol to britsko-francúzsky projekt.
       - text: Mohol prepraviť viac ako 400 cestujúcich
         why: Mal len asi 100 miest.
-      - text: Spotreboval menej paliva ako Boeing 747
-        why: Spotreboval ho asi štyrikrát viac.
+      - text: Letel približne rovnako rýchlo ako bežné osobné lietadlá
+        why: Letel dvojnásobkom rýchlosti zvuku.
       - text: Posledný let absolvoval v roku 2010
         why: Posledný let bol v roku 2003.
       - text: Prvý komerčný let do USA mal až v 90. rokoch
@@ -279,8 +279,8 @@ questions:
     correct:
       - text: Prieplav prvýkrát otvorili pre plavbu v novembri 1869
         why: Presne 17. novembra 1869.
-      - text: Dnes má dĺžku približne 193 km
-        why: Po rozšírení v roku 2015 meria 193,3 km, pôvodne 164 km.
+      - text: Po rozšírení v roku 2015 má dĺžku približne 193 km
+        why: Meria 193,3 km, pri otvorení v roku 1869 to bolo 164 km.
       - text: Je najkratšou plavebnou trasou medzi Európou a Áziou
         why: Preto ho blokáda v roku 2021 tak citeľne zasiahla.
       - text: Ever Given uviazla v prieplave 23. marca 2021
@@ -419,7 +419,7 @@ questions:
     correct:
       - text: Lærdalský tunel v Nórsku je najdlhší cestný tunel sveta
         why: Má 24,5 km a otvorili ho v novembri 2000.
-      - text: Lamanšský tunel je najdlhší podmorský tunel sveta
+      - text: Lamanšský tunel má najdlhší podmorský úsek na svete
         why: Pod morom vedie asi 37 km.
       - text: Tunel pod Mont Blancom otvorili v roku 1965
         why: Cestný tunel dlhý 11,6 km medzi Francúzskom a Talianskom.
@@ -465,8 +465,8 @@ questions:
         why: Dosiahol ho francúzsky TGV.
       - text: Rekord 603 km/h dosiahol čínsky maglev
         why: Dosiahol ho japonský maglev.
-      - text: Predošlý rekord TGV padol v roku 1981
-        why: Predošlý rekord je z roku 1990.
+      - text: Predošlý rekord z roku 1990 patril nemeckému ICE
+        why: Patril francúzskej súprave TGV Atlantique.
       - text: Maglev s rekordom 603 km/h jazdí v pravidelnej prevádzke medzi Tokiom a Osakou
         why: Medzi Tokiom a Osakou jazdia klasické Šinkansen, nie maglev.
       - text: Rekord 574,8 km/h dosiahol maglev
@@ -480,7 +480,7 @@ questions:
     source: https://pancanal.com/en/history-of-the-panama-canal/
     note: Otvorenie a loď SS Ancon - https://pancanal.com/en/panama-canal-turns-90/ .
     correct:
-      - text: Prvá loď ním prešla 15. augusta 1914
+      - text: Prvý oficiálny prejazd sa uskutočnil 15. augusta 1914
         why: Bola to loď SS Ancon.
       - text: Meria približne 80 km
         why: Spája Atlantik s Tichým oceánom.
@@ -488,7 +488,7 @@ questions:
         why: Jazero leží 26 metrov nad morom.
       - text: Zdymadlá Gatún ležia na atlantickej strane
         why: Zdymadlá Pedro Miguel a Miraflores sú na tichomorskej.
-      - text: Komory zdymadiel sú dlhé približne 305 metrov
+      - text: Komory pôvodných zdymadiel sú dlhé približne 305 metrov
         why: Majú rozmery 33,53 × 304,8 metra.
       - text: Úsek Culebra Cut meria približne 13,7 km
         why: Vykopali ho cez horniny pohoria Cordillera Central.
@@ -524,7 +524,7 @@ questions:
       - text: Qantas lieta aj z Dallasu do Melbourne, plánovaný čas 17 hodín 35 minút
         why: Piata najdlhšia linka rebríčka.
       - text: Linka Auckland - Dauha bola kedysi najdlhšou na svete
-        why: Obnovili ju v roku 2024; lieta ju Qatar Airways.
+        why: Lieta ju Qatar Airways na A350-900.
     wrong:
       - text: Najdlhšiu linku sveta lieta Emirates
         why: Lieta ju Singapore Airlines.
@@ -588,7 +588,7 @@ questions:
 
   - id: vyrobene-lietadla
     type: order
-    prompt: Zoraď tieto lietadlá podľa počtu vyrobených kusov, od najviac vyrobeného.
+    prompt: Zoraď tieto lietadlá podľa počtu vyrobených kusov (pri A380 dodaných), od najviac vyrobeného.
     direction: desc
     unit: ks
     difficulty: 3
