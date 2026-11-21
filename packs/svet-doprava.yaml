@@ -1,0 +1,683 @@
+id: svet-doprava
+title: Doprava vo svete
+description: Letiská, lietadlá, metro, tunely, mosty, prieplavy a rýchle vlaky z celého sveta.
+category: veda
+lang: sk
+license: CC0-1.0
+adult: false
+version: 2
+questions:
+  # ---------------------------------------------------------------- pick
+  - id: letiska-top5-2024
+    type: pick
+    prompt: Ktoré z týchto letísk patrili v roku 2024 medzi päť najvyťaženejších na svete podľa počtu cestujúcich?
+    difficulty: 2
+    tags: [letiská]
+    asOf: "2024"
+    source: https://blog.aci.aero/airport-economics/busiest-airports-in-the-world-2024/
+    note: Poradie podľa ACI World (2024). Prvé tri miesta potvrdzuje aj https://aci.aero/2025/04/14/the-busiest-airports-in-the-world-defy-global-uncertainty-and-hold-top-rankings/ .
+    correct:
+      - text: Atlanta (Hartsfield-Jackson)
+        why: Najrušnejšie letisko sveta, v roku 2024 cez 108 miliónov cestujúcich.
+      - text: Dubaj (DXB)
+        why: Druhé najrušnejšie letisko sveta.
+      - text: Dallas/Fort Worth
+        why: Tretie najrušnejšie letisko sveta, obrovský prestupný uzol amerických aerolínií.
+      - text: Londýn Heathrow
+        why: Jedno z piatich najrušnejších letísk sveta.
+      - text: Tokio Haneda
+        why: Hlavné letisko japonskej metropoly, v prvej päťke sveta.
+    wrong:
+      - text: Frankfurt
+        why: Veľký európsky uzol, ale do prvej päťky sa nedostal.
+      - text: Amsterdam Schiphol
+        why: Rušné, no vo svetovom poradí ďaleko za prvou päťkou.
+      - text: Singapur Changi
+        why: Slávne svojou kvalitou, počtom cestujúcich však nepatrí do prvej päťky.
+      - text: Hongkong
+        why: Číslo jedna je v nákladnej doprave, nie v počte cestujúcich.
+      - text: Madrid Barajas
+        why: Najväčšie letisko Španielska, ale do svetovej prvej päťky nepatrí.
+      - text: Viedeň Schwechat
+        why: Najbližšie veľké letisko pre Slovákov, vo svetovom rebríčku je však hlboko pod prvou päťkou.
+      - text: Bratislava (M. R. Štefánika)
+        why: Je to malé letisko; od prvej päťky ho delia desiatky miliónov cestujúcich.
+
+  - id: letiska-aci-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o letiskách podľa rebríčkov ACI World za rok 2024 sú pravdivé?
+    difficulty: 3
+    tags: [letiská]
+    asOf: "2024"
+    source: https://blog.aci.aero/airport-economics/busiest-airports-in-the-world-2024/
+    note: Medzinárodnú dopravu (Dubaj 92,3 mil.) a poradie za Dubajom opisuje https://moodiedavittreport.com/dubai-tops-airport-international-passenger-traffic-rankings-atlanta-busiest-overall ; Pudong a top 10 - https://aci.aero/2025/04/14/the-busiest-airports-in-the-world-defy-global-uncertainty-and-hold-top-rankings/ .
+    correct:
+      - text: Dubaj bol najrušnejším letiskom sveta v medzinárodnej doprave
+        why: Obslúžil 92,3 milióna medzinárodných cestujúcich.
+      - text: Druhým najrušnejším letiskom v medzinárodnej doprave bol Heathrow
+        why: V tomto rebríčku skončil hneď za Dubajom, pred Inčchonom, Changi a Schipholom.
+      - text: Najviac tovaru sa prepravilo cez Hongkong
+        why: Číslo jedna v nákladnej doprave, pred Šanghajom Pchu-tung a Memphisom.
+      - text: Šanghaj Pchu-tung sa posunul z 21. na 10. miesto
+        why: Bol to najväčší skok v prvej desiatke.
+      - text: Celosvetovo prešlo letiskami približne 9,4 miliardy cestujúcich (predbežné údaje)
+        why: O 8,4 % viac ako v roku 2023 a o 2,7 % viac ako v roku 2019.
+    wrong:
+      - text: Dubaj bol najrušnejším letiskom sveta v celkovom počte cestujúcich
+        why: V celkovom počte bola prvá Atlanta, Dubaj druhý.
+      - text: Najviac tovaru sa prepravilo cez Memphis
+        why: Memphis je v nákladnej doprave tretí.
+      - text: Frankfurt sa dostal do svetovej prvej päťky
+        why: V prvej päťke sú Atlanta, Dubaj, Dallas/Fort Worth, Heathrow a Haneda.
+      - text: Počet cestujúcich vo svete ostal pod úrovňou roku 2019
+        why: Rok 2024 bol o 2,7 % nad rokom 2019.
+      - text: Najrušnejšie letisko Európy leží v Bratislave
+        why: Bratislava je malé letisko, ďaleko od európskej špičky.
+      - text: Prvá desiatka letísk obslúžila viac ako polovicu všetkých cestujúcich sveta
+        why: Desať najrušnejších letísk obslúžilo 855 miliónov cestujúcich, teda len okolo 9 % svetovej dopravy.
+
+  - id: kody-letisk
+    type: pick
+    prompt: Ktoré z týchto trojpísmenových kódov IATA sú správne priradené letisku?
+    difficulty: 2
+    tags: [letiská]
+    source: https://www.bts.aero/en/
+    note: BTS - oficiálna stránka letiska Bratislava; ATL, DXB, LHR, HND - https://blog.aci.aero/airport-economics/busiest-airports-in-the-world-2024/ ; SIN, JFK - https://www.flightradar24.com/blog/flight-tracking-news/tracking-the-worlds-five-longest-flights/ .
+    correct:
+      - text: BTS - Bratislava
+        why: Letisko M. R. Štefánika, ktoré používa kód BTS.
+      - text: ATL - Atlanta
+        why: Najrušnejšie letisko sveta.
+      - text: DXB - Dubaj
+        why: Druhé najrušnejšie letisko sveta a číslo jedna v medzinárodnej doprave.
+      - text: LHR - Londýn Heathrow
+        why: Najznámejšie z londýnskych letísk.
+      - text: HND - Tokio Haneda
+        why: Hlavné letisko japonskej metropoly.
+      - text: SIN - Singapur Changi
+        why: Odtiaľ vychádza najdlhšia pravidelná linka na svete.
+    wrong:
+      - text: BTS - Budapešť
+        why: Budapešť má kód BUD.
+      - text: LHR - Los Angeles
+        why: Los Angeles má kód LAX.
+      - text: JFK - Frankfurt
+        why: JFK je letisko Johna F. Kennedyho v New Yorku.
+      - text: HND - Hongkong
+        why: Hongkong má kód HKG.
+      - text: DXB - Dauha
+        why: Dauha má kód DOH, DXB je Dubaj.
+
+  - id: airbus-lietadla
+    type: pick
+    prompt: Ktoré z týchto lietadiel patria do ponuky Airbusu (vyrába alebo vyrábal ich)?
+    difficulty: 1
+    tags: [lietadlá]
+    source: https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft
+    note: Zoznam ponuky Airbusu (A220, A320, A330, A350, A380). Boeing má vlastnú ponuku https://www.boeing.com/commercial .
+    correct:
+      - text: A380
+        why: Najväčšie osobné lietadlo sveta s dvoma plnými poschodiami.
+      - text: A350
+        why: Moderné dvojmotorové dopravné lietadlo s dlhým doletom.
+      - text: A320
+        why: Najznámejšie úzkotrupé lietadlo, na ktorom lietajú aj mnohé nízkonákladové aerolínie.
+      - text: A330
+        why: Dvojmotorové širokotrupé lietadlo, dnes ako A330neo.
+      - text: A220
+        why: Menšie úzkotrupé lietadlo, pôvodne vyvinuté pod značkou Bombardier CSeries.
+    wrong:
+      - text: "737"
+        why: Boeing 737, najznámejší konkurent A320.
+      - text: "747"
+        why: Boeing 747, slávny „jumbo jet“.
+      - text: "777"
+        why: Boeing 777, širokotrupé lietadlo pre dlhé lety.
+      - text: "787"
+        why: Boeing 787 Dreamliner, širokotrupé lietadlo.
+      - text: Embraer E190
+        why: Regionálne lietadlo brazílskej firmy Embraer.
+      - text: Tu-154
+        why: Tupolev Tu-154, sovietske trojmotorové lietadlo.
+
+  - id: lietadla-uz-sa-nevyrabaju
+    type: pick
+    prompt: Ktoré z týchto lietadiel sa už nevyrábajú?
+    difficulty: 2
+    tags: [lietadlá]
+    source: https://www.airbus.com/en/newsroom/stories/2021-12-the-a380-emirates-and-flying-public-a-winning-combination
+    note: A380 - Airbus (posledný kus 16. 12. 2021); 747 - https://boeing.mediaroom.com/2023-01-31-Boeing,-Atlas-Air-Celebrate-Delivery-of-Final-747,-an-Airplane-that-Transformed-Aviation-and-Global-Air-Travel ; 757 - https://boeing.mediaroom.com/2005-04-28-Boeing-Closes-Chapter-in-Aviation-History-with-Final-757-Delivery ; A340 - https://www.ainonline.com/aviation-news/air-transport/2011-11-10/airbus-terminates-a340 ; Tu-154 - https://aviationnews.eu/news/2013/02/roll-out-last-soviet-era-tu-154-airliner/ ; ponuka Airbusu a Boeingu - https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft , https://www.boeing.com/commercial .
+    asOf: "2026-11"
+    correct:
+      - text: Airbus A380
+        why: Posledný kus dostal Emirates v decembri 2021.
+      - text: Boeing 747
+        why: Posledný kus odovzdali v januári 2023 spoločnosti Atlas Air.
+      - text: Boeing 757
+        why: Posledný kus odovzdali v apríli 2005 spoločnosti Shanghai Airlines.
+      - text: Airbus A340
+        why: Airbus ukončil výrobu štvormotorového A340 v roku 2011.
+      - text: Tupolev Tu-154
+        why: Posledný kus postavili v Samare vo februári 2013.
+    wrong:
+      - text: Boeing 737
+        why: Vyrába sa naďalej, ako rad 737 MAX.
+      - text: Boeing 777
+        why: Vyrába sa naďalej, pripravuje sa aj verzia 777X.
+      - text: Boeing 787
+        why: Vyrába sa naďalej.
+      - text: Airbus A320
+        why: Vyrába sa naďalej, ako A320neo.
+      - text: Airbus A350
+        why: Vyrába sa naďalej.
+      - text: Airbus A330
+        why: Vyrába sa naďalej, ako A330neo.
+
+  - id: concorde-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o nadzvukovom lietadle Concorde sú pravdivé?
+    difficulty: 2
+    tags: [lietadlá]
+    source: https://www.npr.org/2023/11/24/1211551109/concorde-last-flight-2003
+    correct:
+      - text: Z New Yorku do Londýna preletel približne za 3,5 hodiny
+        why: Atlantik prekonal dvojnásobne rýchlejšie ako bežné lietadlo.
+      - text: Letel dvojnásobkom rýchlosti zvuku
+        why: Prekračoval zvukovú bariéru nad Atlantikom.
+      - text: Bol spoločným projektom Británie a Francúzska
+        why: Preto sa spája s dvoma aerolíniami.
+      - text: Lietali s ním British Airways a Air France
+        why: Spoločnosti z oboch krajín projektu.
+      - text: Prvý komerčný let do USA mal v máji 1976
+        why: Z Londýna pristál na letisku Dulles pri Washingtone.
+      - text: Naposledy letel 26. novembra 2003
+        why: Z Heathrow pristál v Bristole.
+    wrong:
+      - text: Vyrobila ho americká firma Boeing
+        why: Bol to britsko-francúzsky projekt.
+      - text: Mohol prepraviť viac ako 400 cestujúcich
+        why: Mal len asi 100 miest.
+      - text: Letel približne rovnako rýchlo ako bežné osobné lietadlá
+        why: Letel dvojnásobkom rýchlosti zvuku.
+      - text: Posledný let absolvoval v roku 2010
+        why: Posledný let bol v roku 2003.
+      - text: Prvý komerčný let do USA mal až v 90. rokoch
+        why: Do USA letel už v máji 1976.
+
+  - id: tenerife-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o najtragickejšej nehode v histórii letectva (zrážka dvoch lietadiel na Kanárskych ostrovoch) sú pravdivé?
+    difficulty: 2
+    tags: [nehody]
+    asOf: "2026-11"
+    source: https://www.faa.gov/lessons_learned/transport_airplane/accidents/PH-BUF
+    note: Opis nehody podľa americkej leteckej správy FAA (Lessons Learned).
+    correct:
+      - text: Išlo o dva Boeingy 747
+        why: Lietadlá spoločností KLM a Pan Am.
+      - text: Lietadlá presmerovali na Tenerife pre bombu na letisku na Gran Canarii
+        why: Cieľové letisko Las Palmas bolo po výbuchu dočasne neprístupné.
+      - text: K zrážke došlo na dráhe, nie vo vzduchu
+        why: Jedno lietadlo sa rozbiehalo na vzlet a druhé pojazdovalo po tej istej dráhe.
+      - text: Zahynulo 583 ľudí
+        why: Šlo o najtragickejšiu nehodu v histórii letectva.
+      - text: Z lietadla KLM neprežil nikto
+        why: Zahynulo všetkých 248 ľudí na palube.
+      - text: Z lietadla Pan Am prežilo 61 ľudí
+        why: Zvyšných 335 obetí bolo na palube Pan Am.
+    wrong:
+      - text: Lietadlá sa zrazili vo vzduchu nad oceánom
+        why: Zrazili sa na dráhe letiska.
+      - text: Zrážka sa stala na letisku Las Palmas na Gran Canarii
+        why: Stala sa na Tenerife, na Gran Canarii bola bomba.
+      - text: Jedným z lietadiel bol Concorde
+        why: Boli to dva Boeingy 747.
+      - text: Z lietadla Pan Am neprežil nikto
+        why: Prežilo 61 ľudí.
+      - text: Nehoda sa stala v roku 1987
+        why: Stala sa v roku 1977.
+
+  - id: prieplavy-umele
+    type: pick
+    prompt: Ktoré z týchto vodných ciest vykopali ľudia (sú to umelé prieplavy)?
+    difficulty: 1
+    tags: [lode, prieplavy]
+    source: https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalCharacteristics.aspx
+    note: Panamský prieplav https://pancanal.com/en/panama-canal-turns-90/ , Korintský https://www.visitgreece.gr/en/experiences/activities/sport-activities/corinth-canal , Kielský https://www.hafen-hamburg.de/en/portofhamburg/kiel-canal/ .
+    correct:
+      - text: Suezský prieplav
+        why: Spája Stredozemné a Červené more.
+      - text: Panamský prieplav
+        why: Spája Atlantik s Tichým oceánom.
+      - text: Kielský prieplav
+        why: Spája Severné a Baltské more cez Nemecko.
+      - text: Korintský prieplav
+        why: Úzky zárez cez šiju v Grécku.
+    wrong:
+      - text: Gibraltársky prieliv
+        why: Prirodzený prieliv medzi Španielskom a Marokom.
+      - text: Bospor
+        why: Prirodzený prieliv cez Istanbul.
+      - text: Dardanely
+        why: Prirodzený prieliv medzi Egejským a Marmarským morom.
+      - text: Lamanšský prieliv
+        why: Prirodzený prieliv medzi Britániou a Francúzskom (pod ním vedie tunel, nie prieplav).
+      - text: Magalhãesov prieliv
+        why: Prirodzený prieliv pri južnom cípe Južnej Ameriky.
+      - text: Ormuzský prieliv
+        why: Prirodzený prieliv medzi Perzským a Ománskym zálivom.
+      - text: Beringov prieliv
+        why: Prirodzený prieliv medzi Áziou a Amerikou.
+
+  - id: suez-ever-given
+    type: pick
+    prompt: Ktoré tvrdenia o Suezskom prieplave a lodi Ever Given sú pravdivé?
+    difficulty: 2
+    tags: [prieplavy, lode]
+    asOf: "2021"
+    source: https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalCharacteristics.aspx
+    note: Ever Given - https://www.aljazeera.com/news/2021/3/29/traffic-in-suez-canal-resumes-after-stranded-ship-refloated .
+    correct:
+      - text: Prieplav prvýkrát otvorili pre plavbu v novembri 1869
+        why: Presne 17. novembra 1869.
+      - text: Po rozšírení v roku 2015 má dĺžku približne 193 km
+        why: Meria 193,3 km, pri otvorení v roku 1869 to bolo 164 km.
+      - text: Je najkratšou plavebnou trasou medzi Európou a Áziou
+        why: Preto blokáda v roku 2021 tak citeľne zasiahla svetový obchod.
+      - text: Ever Given uviazla v prieplave 23. marca 2021
+        why: V silnom vetre sa zasekla šikmo naprieč jeho južnou časťou.
+      - text: Ever Given mala dĺžku 400 metrov
+        why: Obrovská kontajnerová loď.
+      - text: Kým loď uvoľnili, čakalo na prejazd aspoň 369 lodí
+        why: Loď uvoľnili 29. marca po bagrovaní a práci remorkérov.
+    wrong:
+      - text: Prieplav otvorili v roku 1914
+        why: V roku 1914 otvorili Panamský prieplav.
+      - text: Suezský prieplav spája Atlantik s Tichým oceánom
+        why: Spája Stredozemné a Červené more.
+      - text: Prieplav bol po uviaznutí Ever Given uzavretý dva mesiace
+        why: Blokáda trvala necelý týždeň.
+      - text: Má dĺžku približne 80 km
+        why: Takú dĺžku má Panamský prieplav.
+      - text: Loď Ever Given blokovala prieplav tri týždne
+        why: Trvalo to takmer týždeň.
+
+  - id: metro-mesta
+    type: pick
+    prompt: Ktoré z týchto európskych miest majú metro (podzemnú dráhu)?
+    difficulty: 2
+    tags: [metro]
+    asOf: "2026-11"
+    source: https://www.urbanrail.net/eu/euromet.htm
+    note: Zoznam európskych metier podľa UrbanRail.net, bez ľahkých električkových systémov; roky otvorenia z jednotlivých stránok UrbanRail.net (Praha, Varšava, Kyjev, Sofia, Lisabon, Atény, Viedeň).
+    correct:
+      - text: Budapešť
+        why: Najstaršie metro na európskej pevnine, otvorené 1896.
+      - text: Praha
+        why: Prvý úsek metra otvorili v roku 1974.
+      - text: Viedeň
+        why: Dnešné metro (U-Bahn) vzniklo postupne od 70. rokov.
+      - text: Varšava
+        why: Prvú linku otvorili v apríli 1995.
+      - text: Sofia
+        why: Prvá linka sa otvorila v roku 1998.
+      - text: Kyjev
+        why: Prvý úsek otvorili v roku 1960.
+      - text: Atény
+        why: Jedna linka vychádza z prvej gréckej železnice z roku 1869, dve moderné pribudli neskôr.
+      - text: Lisabon
+        why: Prvý úsek otvorili v roku 1959.
+    wrong:
+      - text: Bratislava
+        why: Metro v meste nie je, jazdia električky, trolejbusy a autobusy.
+      - text: Brno
+        why: Druhé najväčšie české mesto jazdí na električkách a trolejbusoch, metro nemá.
+      - text: Zürich
+        why: Má električky a S-Bahn, metro nie.
+      - text: Ženeva
+        why: Doprava stojí na električkách a trolejbusoch, nie na metre.
+      - text: Edinburgh
+        why: Jazdí tu električka, metro nie.
+      - text: Krakov
+        why: Veľké poľské mesto bez metra.
+      - text: Ľubľana
+        why: Slovinské hlavné mesto metro nemá.
+
+  - id: metro-pred-1910
+    type: pick
+    prompt: Ktoré z týchto miest mali podzemnú dráhu (metro) už pred rokom 1910?
+    difficulty: 3
+    tags: [metro]
+    source: https://www.urbanrail.net/eu/uk/lon/london.htm
+    note: Londýn a Glasgow - UrbanRail.net (Londýn); Budapešť https://www.urbanrail.net/eu/hu/budapest/budapest.htm ; Paríž https://www.urbanrail.net/eu/fr/paris/paris.htm ; Berlín https://www.urbanrail.net/eu/de/b/berlin.htm ; New York https://www.asme.org/about-asme/engineering-history/landmarks/31-interborough-rapid-transit-system ; Madrid https://www.urbanrail.net/eu/es/mad/madrid.htm ; Moskva https://www.urbanrail.net/eu/ru/mos/moskva.htm ; Praha, Varšava, Kyjev, Sofia, Lisabon na ich stránkach UrbanRail.net.
+    correct:
+      - text: Londýn
+        why: Prvá podzemná dráha sveta z roku 1863.
+      - text: Budapešť
+        why: Prvé elektrické metro na európskej pevnine, 1896.
+      - text: Glasgow
+        why: Podzemku ťahanú lanom otvorili v roku 1896.
+      - text: Paríž
+        why: Prvú linku metra otvorili v roku 1900.
+      - text: Berlín
+        why: Prvá linka U-Bahnu je z roku 1902.
+      - text: New York
+        why: Prvá linka metra otvorená 27. októbra 1904.
+    wrong:
+      - text: Madrid
+        why: Najstaršia linka je z roku 1919.
+      - text: Moskva
+        why: Prvá linka sa otvorila 15. mája 1935.
+      - text: Praha
+        why: Prvý úsek metra otvorili až v roku 1974.
+      - text: Kyjev
+        why: Prvý úsek otvorili v roku 1960.
+      - text: Lisabon
+        why: Prvý úsek otvorili v roku 1959.
+      - text: Varšava
+        why: Prvú linku otvorili až v roku 1995.
+      - text: Sofia
+        why: Prvá linka sa otvorila v roku 1998.
+
+  - id: tunely-zeleznicne
+    type: pick
+    prompt: Ktoré z týchto tunelov sú železničné (jazdia nimi vlaky)?
+    difficulty: 2
+    tags: [tunely]
+    source: https://www.railway-technology.com/projects/gotthard-base-tunnel/
+    note: Gotthardský, Lötschbergský a Cenerský bázový tunel - railway-technology.com; Lamanšský https://www.getlinkgroup.com/uk/the-channel-tunnel/ ; Seikan https://structurae.net/en/structures/seikan-tunnel ; cestné tunely - https://www.vegvesen.no/en/road-projects/project/e16lardalstunnelen/ , https://tunnelmb.net/public/files/301/08-2024-carta-dei-servizi-ing.pdf , https://structurae.net/structures/eiksund-tunnel , https://www.newsd.admin.ch/newsd/message/attachments/21556.pdf .
+    correct:
+      - text: Gotthardský bázový tunel
+        why: Alpský tunel vo Švajčiarsku, pod horou vedú vlaky.
+      - text: Lamanšský tunel
+        why: Vlaky Eurostar aj prepravné vlaky Le Shuttle s autami a kamiónmi.
+      - text: Tunel Seikan
+        why: Spája japonské ostrovy Honšú a Hokkaidó.
+      - text: Lötschbergský bázový tunel
+        why: Švajčiarsky železničný tunel dlhý 34,6 km.
+      - text: Cenerský bázový tunel
+        why: Dopĺňa Gotthardský tunel, dlhý 15,4 km.
+    wrong:
+      - text: Lærdalský tunel
+        why: Nórsky cestný tunel pre autá.
+      - text: Tunel pod Mont Blancom
+        why: Cestný tunel medzi Francúzskom a Talianskom.
+      - text: Tunel Eiksund
+        why: Nórsky cestný tunel pod fjordom.
+      - text: Gotthardský tunel z roku 1980
+        why: Cestný tunel pre autá medzi Göschenenom a Airolom.
+      - text: Tunel Gran Sasso
+        why: Úsek talianskej diaľnice A24.
+
+  - id: tunely-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o slávnych tuneloch sú pravdivé?
+    difficulty: 3
+    tags: [tunely]
+    asOf: "2026-11"
+    source: https://www.vegvesen.no/en/road-projects/project/e16lardalstunnelen/
+    note: Mont Blanc - https://tunnelmb.net/public/files/301/08-2024-carta-dei-servizi-ing.pdf ; Gotthard (cestný) - https://www.newsd.admin.ch/newsd/message/attachments/21556.pdf ; Eiksund - https://structurae.net/structures/eiksund-tunnel ; Lamanšský - https://www.getlinkgroup.com/uk/the-channel-tunnel/ ; Cenerský - https://www.railway-technology.com/projects/gotthard-base-tunnel/ .
+    correct:
+      - text: Lærdalský tunel v Nórsku je najdlhší cestný tunel sveta
+        why: Má 24,5 km a otvorili ho v novembri 2000.
+      - text: Lamanšský tunel má najdlhší podmorský úsek na svete
+        why: Pod morom vedie asi 37 km.
+      - text: Tunel pod Mont Blancom otvorili v roku 1965
+        why: Cestný tunel dlhý 11,6 km medzi Francúzskom a Talianskom.
+      - text: Gotthardský cestný tunel má približne 16,9 km
+        why: Otvorili ho v septembri 1980.
+      - text: Cenerský bázový tunel otvorili v roku 2020
+        why: Dopĺňa Gotthardský tunel na osi cez Alpy.
+      - text: Tunel Eiksund v Nórsku vedie pod fjordom a má asi 7,8 km
+        why: Otvorili ho v roku 2008, najhlbšie leží 287 m pod hladinou mora.
+    wrong:
+      - text: Lærdalský tunel je železničný tunel
+        why: Je to cestný tunel pre autá.
+      - text: Lamanšský tunel má približne 100 km
+        why: Má okolo 50 km, z toho asi 37 km pod morom.
+      - text: Tunel pod Mont Blancom spája Švajčiarsko a Taliansko
+        why: Spája francúzske Chamonix s talianskym Courmayeurom.
+      - text: Gotthardský cestný tunel otvorili v roku 2016
+        why: V roku 2016 otvorili bázový železničný tunel, cestný je z roku 1980.
+      - text: Cenerský tunel je najdlhší tunel na svete
+        why: Má 15,4 km, ďaleko za Gotthardským (57 km).
+
+  - id: vlaky-rekordy-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o rýchlostných rekordoch vlakov sú pravdivé?
+    difficulty: 3
+    tags: [vlaky]
+    asOf: "2026-11"
+    source: https://www.alstom.com/press-releases-news/2007/4/alstom-rff-and-sncf-set-a-new-world-rail-speed-record-of-574kmh
+    note: Maglev - https://www.guinnessworldrecords.com/world-records/fastest-maglev-train/ .
+    correct:
+      - text: Rekord 574,8 km/h z roku 2007 padol na francúzskej trati LGV Est
+        why: Pri obci Le Chemin, v apríli 2007.
+      - text: Vlak, ktorý ho dosiahol, niesol označenie V150
+        why: Špeciálne upravená súprava TGV.
+      - text: Predošlý rekord klasického vlaku mali Francúzi od mája 1990
+        why: Súprava TGV Atlantique vtedy dosiahla 515,3 km/h.
+      - text: Maglev s rekordom 603 km/h prevádzkuje Central Japan Railway
+        why: Rekord dosiahla súprava série L0 21. apríla 2015.
+      - text: Maglev dosiahol rekord v japonskej prefektúre Jamanaši
+        why: Na trati Yamanashi Maglev Line.
+    wrong:
+      - text: Rekord 574,8 km/h dosiahlo nemecké ICE
+        why: Dosiahol ho francúzsky TGV.
+      - text: Rekord 603 km/h dosiahol čínsky maglev
+        why: Dosiahol ho japonský maglev.
+      - text: Predošlý rekord z roku 1990 patril nemeckému ICE
+        why: Patril francúzskej súprave TGV Atlantique.
+      - text: Maglev s rekordom 603 km/h jazdí v pravidelnej prevádzke medzi Tokiom a Osakou
+        why: Medzi Tokiom a Osakou jazdia klasické Šinkansen, nie maglev.
+      - text: Rekord 574,8 km/h dosiahol maglev
+        why: Rekord vlaku na kolesách dosiahol TGV.
+
+  - id: panamsky-prieplav-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o Panamskom prieplave sú pravdivé?
+    difficulty: 2
+    tags: [prieplavy]
+    source: https://pancanal.com/en/history-of-the-panama-canal/
+    note: Otvorenie a loď SS Ancon - https://pancanal.com/en/panama-canal-turns-90/ .
+    correct:
+      - text: Prvý oficiálny prejazd sa uskutočnil 15. augusta 1914
+        why: Bola to loď SS Ancon.
+      - text: Meria približne 80 km
+        why: Spája Atlantik s Tichým oceánom.
+      - text: Lode v ňom vyťahujú zdymadlá na úroveň jazera Gatún
+        why: Jazero leží 26 metrov nad morom.
+      - text: Zdymadlá Gatún ležia na atlantickej strane
+        why: Zdymadlá Pedro Miguel a Miraflores sú na tichomorskej.
+      - text: Komory pôvodných zdymadiel sú dlhé približne 305 metrov
+        why: Majú rozmery 33,53 × 304,8 metra.
+      - text: Úsek Culebra Cut meria približne 13,7 km
+        why: Vykopali ho cez horniny pohoria Cordillera Central.
+    wrong:
+      - text: Otvorili ho v roku 1869
+        why: V roku 1869 otvorili Suezský prieplav.
+      - text: Meria približne 193 km
+        why: Takú dĺžku má Suezský prieplav.
+      - text: Nemá žiadne zdymadlá, lode plávajú stále na úrovni mora
+        why: Používa systém zdymadiel.
+      - text: Zdymadlá Gatún ležia na tichomorskej strane
+        why: Ležia na atlantickej strane.
+      - text: Prvá loď išla z tichomorskej strany na atlantickú
+        why: SS Ancon vyplávala z atlantického vstupu v Cristóbale.
+
+  - id: najdlhsie-lety-tvrdenia
+    type: pick
+    prompt: Ktoré tvrdenia o najdlhších pravidelných letoch sveta (rebríček z leta 2025) sú pravdivé?
+    difficulty: 3
+    tags: [letecké linky]
+    asOf: "2025-10"
+    source: https://www.oag.com/blog/exploring-the-worlds-10-longest-non-stop-airline-routes
+    note: Druhý zdroj https://www.flightradar24.com/blog/flight-tracking-news/tracking-the-worlds-five-longest-flights/ (október 2025).
+    correct:
+      - text: Najdlhšiu linku, New York (JFK) - Singapur, lieta Singapore Airlines
+        why: Má asi 15 332 km a lieta sa na A350-900.
+      - text: Linka Newark - Singapur je druhá najdlhšia a len o 3 km kratšia
+        why: Aj ju lieta Singapore Airlines.
+      - text: Let z New Yorku do Singapuru trvá v priemere asi 18 hodín 40 minút
+        why: Smer proti vetru je dlhší.
+      - text: Qantas lieta z Perthu do Londýna na Boeingu 787-9
+        why: Plánovaný čas letu je 17 hodín 45 minút.
+      - text: Qantas lieta aj z Dallasu do Melbourne, plánovaný čas 17 hodín 35 minút
+        why: Piata najdlhšia linka rebríčka.
+      - text: Linka Auckland - Dauha bola kedysi najdlhšou na svete
+        why: Lieta ju Qatar Airways.
+    wrong:
+      - text: Najdlhšiu linku sveta lieta Emirates
+        why: Lieta ju Singapore Airlines.
+      - text: Najdlhšia linka sveta vedie z Perthu do Londýna
+        why: Perth - Londýn je až štvrtá.
+      - text: Let z New Yorku do Singapuru trvá približne 10 hodín
+        why: Trvá takmer 19 hodín.
+      - text: Linku Auckland - New York lieta Air New Zealand na Airbuse A380
+        why: Používa Boeing 787-9.
+      - text: Linka Perth - Londýn bola v roku 2024 bez zmien celý rok
+        why: Dočasne ju pozastavili pre napätie na Blízkom východe.
+
+  # ---------------------------------------------------------------- order
+  - id: najdlhsie-zeleznicne-tunely
+    type: order
+    prompt: Zoraď tieto železničné tunely od najdlhšieho.
+    direction: desc
+    unit: km
+    difficulty: 3
+    tags: [tunely]
+    asOf: "2026-11"
+    source: https://www.guinnessworldrecords.com/world-records/longest-rail-tunnel
+    note: Seikan - https://structurae.net/en/structures/seikan-tunnel ; Lamanšský tunel - https://www.getlinkgroup.com/uk/the-channel-tunnel/ (3 tunely po 50 km); Lötschberg - https://www.railway-technology.com/projects/gotthard-base-tunnel/ .
+    items:
+      - { text: Gotthardský bázový tunel (Švajčiarsko), value: 57, why: "Najdlhší železničný tunel sveta, otvorený 2016." }
+      - { text: Tunel Seikan (Japonsko), value: 53.85, why: "Spája Honšú a Hokkaidó, dlhý 53,85 km." }
+      - { text: Lamanšský tunel (Francúzsko - Británia), value: 50, why: "Okolo 50 km, z toho asi 37 km pod morom." }
+      - { text: Lötschbergský bázový tunel (Švajčiarsko), value: 34.6, why: "Menší brat Gotthardu, dlhý 34,6 km." }
+
+  - id: rekordy-rychlost-vlakov
+    type: order
+    prompt: Zoraď tieto vlaky podľa najvyššej rýchlosti, ktorú dosiahli, od najrýchlejšieho.
+    direction: desc
+    unit: km/h
+    difficulty: 3
+    tags: [vlaky]
+    asOf: "2026-11"
+    source: https://www.guinnessworldrecords.com/world-records/fastest-maglev-train/
+    note: TGV 2007 a 1990 - https://www.alstom.com/press-releases-news/2007/4/alstom-rff-and-sncf-set-a-new-world-rail-speed-record-of-574kmh ; Šinkansen - https://www.asme.org/about-asme/who-we-are/engineering-history/landmarks/211-tokaido-shinkansen (okolo 210 km/h pri otvorení).
+    items:
+      - { text: Japonský maglev L0, value: 603, why: "Vznášajúci sa vlak, rekord z roku 2015, najrýchlejší vlak vôbec." }
+      - { text: Francúzske TGV V150, value: 574.8, why: "Rekord vlaku na kolesách z roku 2007." }
+      - { text: Francúzske TGV Atlantique, value: 515.3, why: "Rekord z roku 1990, ktorý trval do roku 2007." }
+      - { text: Japonský Šinkansen pri otvorení, value: 210, why: "Prvá vysokorýchlostná trať sveta, jazdila približne 210 km/h." }
+
+  - id: dlzky-prieplavov
+    type: order
+    prompt: Zoraď tieto prieplavy od najdlhšieho.
+    direction: desc
+    unit: km
+    difficulty: 2
+    tags: [prieplavy]
+    asOf: "2026-11"
+    source: https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalCharacteristics.aspx
+    note: Kielský - https://mykn.kuehne-nagel.com/news/article/anchored-in-history-the-kiel-canal-02-Oct-2024 (asi 98 km); Panamský - https://pancanal.com/en/history-of-the-panama-canal/ (asi 80 km); Korintský - https://www.visitgreece.gr/en/experiences/activities/sport-activities/corinth-canal (6 346 m).
+    items:
+      - { text: Suezský prieplav (Egypt), value: 193.3, why: "Po rozšírení v roku 2015 meria 193,3 km." }
+      - { text: Kielský prieplav (Nemecko), value: 98, why: "Spája Severné a Baltské more, asi 98 km." }
+      - { text: Panamský prieplav (Panama), value: 80, why: "Asi 80 km medzi Atlantikom a Pacifikom." }
+      - { text: Korintský prieplav (Grécko), value: 6.3, why: "Úzky zárez dlhý 6 346 m." }
+
+  - id: vyrobene-lietadla
+    type: order
+    prompt: Zoraď tieto lietadlá podľa počtu vyrobených kusov (pri A380 dodaných), od najviac vyrobeného.
+    direction: desc
+    unit: ks
+    difficulty: 3
+    tags: [lietadlá]
+    source: https://boeing.mediaroom.com/2023-01-31-Boeing,-Atlas-Air-Celebrate-Delivery-of-Final-747,-an-Airplane-that-Transformed-Aviation-and-Global-Air-Travel
+    note: 757 - https://boeing.mediaroom.com/2005-04-28-Boeing-Closes-Chapter-in-Aviation-History-with-Final-757-Delivery (1 050. kus); A340 - https://www.ainonline.com/aviation-news/air-transport/2011-11-10/airbus-terminates-a340 (377 vyrobených); A380 - https://www.airbus.com/en/newsroom/stories/2021-12-the-a380-emirates-and-flying-public-a-winning-combination (251. dodaný kus).
+    items:
+      - { text: Boeing 747, value: 1574, why: "Továreň v Everette vyrobila 1 574 lietadiel, posledné odovzdali v januári 2023." }
+      - { text: Boeing 757, value: 1050, why: "Posledný, 1 050. kus odovzdali v apríli 2005." }
+      - { text: Airbus A340, value: 377, why: "Štvormotorové lietadlo, výrobu ukončili v roku 2011." }
+      - { text: Airbus A380, value: 251, why: "Najväčšie osobné lietadlo, posledný, 251. kus dostal Emirates v decembri 2021." }
+
+  # ---------------------------------------------------------------- number
+  - id: atlanta-cestujuci
+    type: number
+    prompt: Koľko miliónov cestujúcich odbavilo v roku 2024 najrušnejšie letisko sveta, Atlanta?
+    answer: 108
+    unit: miliónov
+    scale: log
+    tolerance: 0.05
+    asOf: "2024"
+    why: Podľa ACI World to bolo tesne cez 108 miliónov.
+    difficulty: 2
+    tags: [letiská]
+    source: https://moodiedavittreport.com/dubai-tops-airport-international-passenger-traffic-rankings-atlanta-busiest-overall
+    note: Údaj ACI World 2024; poradie potvrdzuje https://aci.aero/2025/04/14/the-busiest-airports-in-the-world-defy-global-uncertainty-and-hold-top-rankings/ .
+
+  - id: concorde-rekord-minuty
+    type: number
+    prompt: Za koľko minút preletel Concorde v roku 1996 z New Yorku do Londýna, čo je dodnes najrýchlejší prelet Atlantiku osobným lietadlom?
+    answer: 173
+    unit: minút
+    scale: log
+    tolerance: 0.1
+    asOf: "2026-11"
+    why: British Airways Concorde to zvládol za 2 hodiny 52 minút a 59 sekúnd.
+    difficulty: 3
+    tags: [lietadlá]
+    source: https://www.npr.org/2023/11/24/1211551109/concorde-last-flight-2003
+
+  - id: holandsko-bicykle
+    type: number
+    prompt: Približne koľko miliónov bicyklov je podľa OSN v Holandsku, ktoré má asi 18 miliónov obyvateľov?
+    answer: 22
+    unit: miliónov
+    scale: log
+    tolerance: 0.1
+    asOf: "2018"
+    why: Bicyklov je v Holandsku viac ako ľudí; číslo je z roku 2018.
+    difficulty: 2
+    tags: [bicykle]
+    source: https://www.unep.org/en/news-and-stories/story/fridayfact-netherlands-home-more-bicycles-people
+
+  - id: canakkale-rozpatie
+    type: number
+    prompt: Koľko metrov meria hlavné rozpätie mosta Çanakkale 1915 v Turecku, najdlhšieho visutého mosta sveta?
+    answer: 2023
+    unit: metrov
+    scale: log
+    tolerance: 0.05
+    asOf: "2026-11"
+    why: Číslo 2023 je zámer, pripomína 100. výročie vzniku Tureckej republiky.
+    difficulty: 3
+    tags: [mosty]
+    source: https://www.guinnessworldrecords.com/world-records/longest-bridge-cable-suspension-bridge
+
+  # ---------------------------------------------------------------- choice
+  - id: prve-metro-pevnina
+    type: choice
+    prompt: Ktoré mesto otvorilo v roku 1896 prvé metro na európskej pevnine (mimo Británie)?
+    difficulty: 2
+    tags: [metro]
+    source: https://www.urbanrail.net/eu/hu/budapest/budapest.htm
+    note: Druhý zdroj UNESCO https://whc.unesco.org/en/list/400/ (Millennium Underground Railway, prvá na kontinentálnej Európe).
+    correct: { text: Budapešť, why: "Linka M1 bola prvou elektrickou podzemnou dráhou na európskej pevnine." }
+    wrong:
+      - { text: Berlín, why: "Prvú linku U-Bahnu otvorili až v roku 1902." }
+      - { text: Paríž, why: "Metro otvorili o štyri roky neskôr, v roku 1900." }
+      - { text: Praha, why: "Metro otvorili až v roku 1974." }
+
+  - id: prva-vysokorychlostna
+    type: choice
+    prompt: Ktorá krajina otvorila prvú vysokorýchlostnú železnicu sveta (v roku 1964)?
+    difficulty: 1
+    tags: [vlaky]
+    source: https://www.asme.org/about-asme/who-we-are/engineering-history/landmarks/211-tokaido-shinkansen
+    correct: { text: Japonsko, why: "Šinkansen Tokio - Šin-Ósaka bol prvým vysokorýchlostným systémom sveta." }
+    wrong:
+      - { text: Francúzsko, why: "Slávne TGV prišlo až po japonskom Šinkansene." }
+      - { text: Nemecko, why: "Nemecké ICE prišlo až po japonskom Šinkansene." }
+      - { text: Čína, why: "Čínske vysokorýchlostné trate pribudli až o desaťročia neskôr." }
