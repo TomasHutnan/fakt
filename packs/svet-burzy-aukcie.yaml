@@ -278,7 +278,7 @@ questions:
       - { text: "V októbri 2018 sa v Sotheby's v Londýne predal za 1 042 000 libier", why: "To je okolo 1,4 milióna dolárov." }
       - { text: "Skartovačka ukrytá v ráme sa spustila hneď po konci dražby", why: "Obraz sa čiastočne rozrezal." }
       - { text: "Po rozrezaní dostal názov Love is in the Bin", why: "Banksy dielo premenoval." }
-      - { text: "V roku 2021 sa predal znova a Sotheby's ho vydražilo za približne 25,4 milióna dolárov", why: "Bol to rekord pre tohto umelca." }
+      - { text: "V roku 2021 sa v Sotheby's predal znova za približne 25,4 milióna dolárov", why: "Bol to rekord pre tohto umelca." }
       - { text: "Banksy na Instagrame potvrdil, že obraz sa naozaj skartoval a aukčný dom o tom nevedel", why: "Aukčný dom tvrdí to isté." }
     wrong:
       - { text: "Obraz po dražbe rozrezala galéria na žiadosť kupujúceho", why: "Skartovačka bola zabudovaná priamo v ráme." }
