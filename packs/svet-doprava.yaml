@@ -37,7 +37,7 @@ questions:
       - text: Hongkong
         why: Číslo jedna je v nákladnej doprave, nie v počte cestujúcich.
       - text: Madrid Barajas
-        why: Najväčšie letisko Španielska, do svetovej prvej päťky ale nepatrí.
+        why: Najväčšie letisko Španielska, ale do svetovej prvej päťky nepatrí.
       - text: Viedeň Schwechat
         why: Najbližšie veľké letisko pre Slovákov, vo svetovom rebríčku je však hlboko pod prvou päťkou.
       - text: Bratislava (M. R. Štefánika)
@@ -110,7 +110,7 @@ questions:
 
   - id: airbus-lietadla
     type: pick
-    prompt: Ktoré z týchto lietadiel postavil Airbus?
+    prompt: Ktoré z týchto lietadiel patria do ponuky Airbusu (vyrába alebo vyrábal ich)?
     difficulty: 1
     tags: [lietadlá]
     source: https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft
@@ -209,12 +209,13 @@ questions:
     prompt: Ktoré tvrdenia o najtragickejšej nehode v histórii letectva (zrážka dvoch lietadiel na Kanárskych ostrovoch) sú pravdivé?
     difficulty: 2
     tags: [nehody]
+    asOf: "2026-11"
     source: https://www.faa.gov/lessons_learned/transport_airplane/accidents/PH-BUF
     note: Opis nehody podľa americkej leteckej správy FAA (Lessons Learned).
     correct:
       - text: Išlo o dva Boeingy 747
         why: Lietadlá spoločností KLM a Pan Am.
-      - text: Lietadlá presmerovali na Tenerife kvôli bombe na letisku na Gran Canarii
+      - text: Lietadlá presmerovali na Tenerife pre bombu na letisku na Gran Canarii
         why: Cieľové letisko Las Palmas bolo po výbuchu dočasne neprístupné.
       - text: K zrážke došlo na dráhe, nie vo vzduchu
         why: Jedno lietadlo sa rozbiehalo na vzlet a druhé pojazdovalo po tej istej dráhe.
@@ -282,7 +283,7 @@ questions:
       - text: Po rozšírení v roku 2015 má dĺžku približne 193 km
         why: Meria 193,3 km, pri otvorení v roku 1869 to bolo 164 km.
       - text: Je najkratšou plavebnou trasou medzi Európou a Áziou
-        why: Preto ho blokáda v roku 2021 tak citeľne zasiahla.
+        why: Preto blokáda v roku 2021 tak citeľne zasiahla svetový obchod.
       - text: Ever Given uviazla v prieplave 23. marca 2021
         why: V silnom vetre sa zasekla šikmo naprieč jeho južnou časťou.
       - text: Ever Given mala dĺžku 400 metrov
