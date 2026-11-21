@@ -3,7 +3,7 @@ title: Slovenčina a nárečia
 description: Písmená, pravopis, prevzaté slová, nárečia a rozdiely oproti češtine.
 category: tradicie
 lang: sk
-version: 2
+version: 3
 questions:
   # ---------- pick ----------
   - id: abeceda-pismena
@@ -251,46 +251,48 @@ questions:
 
   - id: pravopis-y
     type: pick
-    prompt: "Ktoré z týchto slov sa píšu s y alebo ý?"
+    prompt: "Do ktorých slov patrí na miesto _ ypsilon (y alebo ý)?"
     difficulty: 1
     source: https://www.startitup.sk/na-banalnej-doplnovacke-y-i-zlyha-vacsina-slovakov/
+    note: "Ďalší zdroj: slovnik.juls.savba.sk (Pravidlá slovenského pravopisu)"
     tags: [pravopis]
     correct:
-      - { text: rytier, why: "Vybrané slovo po r." }
-      - { text: lysý, why: "Slovo, v ktorom sa po l píše y." }
-      - { text: pytliak, why: "Vybrané slovo po p." }
-      - { text: zvyk, why: "Vybrané slovo po v." }
-      - { text: sýty, why: "Vybrané slovo po s." }
-      - { text: rým, why: "Vybrané slovo po r." }
-      - { text: Bytča, why: "Mesto, vybrané slovo po b." }
-      - { text: sychravý, why: "Vybrané slovo po s." }
+      - { text: "r_tier", why: "Rytier, vybrané slovo po r." }
+      - { text: "l_sý", why: "Lysý, vybrané slovo po l." }
+      - { text: "p_tliak", why: "Pytliak, vybrané slovo po p." }
+      - { text: "zv_k", why: "Zvyk, vybrané slovo po v." }
+      - { text: "s_chravý", why: "Sychravý, vybrané slovo po s." }
+      - { text: "B_tča", why: "Bytča, mesto medzi vybranými slovami po b." }
+      - { text: "B_strica", why: "Bystrica, od slova bystrý, vybrané slovo po b." }
+      - { text: "p_ramída", why: "Pyramída, cudzie slovo, ktoré sa píše s y." }
     wrong:
-      - { text: Rím, why: "Hlavné mesto Talianska sa píše s i." }
-      - { text: dobiť, why: "Ako zbiť sa píše s i, s y je dobyť, teda zmocniť sa." }
-      - { text: zaľúbení, why: "Životné prídavné mená mužského rodu majú v nominatíve množného čísla í (zaľúbení muži)." }
-      - { text: mi, why: "Je to tvar zámena ja, s y sa píše len zámeno my." }
+      - { text: "b_cykel", why: "Bicykel sa píše s i, hoci po b." }
+      - { text: "s_rup", why: "Sirup sa píše s i, s y je len syr." }
+      - { text: "p_vo", why: "Pivo sa píše s i, nie je to vybrané slovo." }
+      - { text: "v_dlička", why: "Vidlička sa píše s i; po v je y napríklad vo vydra alebo vysoký." }
+      - { text: "l_pa", why: "Lipa sa píše s i, s y je lyže alebo lysý." }
 
   - id: pravopis-ae
     type: pick
     prompt: "Ktoré z týchto slov sú napísané správne?"
     difficulty: 2
-    source: https://sk.wikipedia.org/wiki/%C3%84
+    source: https://slovnik.juls.savba.sk/?w=p%C3%A4s%C5%A5&s=exact&c=Xe8d&cs=&d=kssj4&d=psp
+    note: "Slová overené v slovníkoch ÚJĽŠ SAV (KSSJ, PSP). Ďalší zdroj: sk.wikipedia.org/wiki/Ä"
     tags: [pravopis, ä]
     correct:
-      - { text: mäso, why: "Ä sa píše po m." }
+      - { text: mäso, why: "Ä sa píše len po perných spoluhláskach p, b, m, v; tu po m." }
       - { text: pamäť, why: "Po m sa píše ä." }
       - { text: deväť, why: "Po v sa píše ä." }
+      - { text: päsť, why: "Po p sa píše ä." }
       - { text: svätý, why: "Po v sa píše ä." }
-      - { text: väzeň, why: "Po v sa píše ä." }
-      - { text: hovädo, why: "Po v sa píše ä." }
-      - { text: opäť, why: "Po p sa píše ä." }
-      - { text: späť, why: "Po p sa píše ä." }
+      - { text: pamiatka, why: "Hoci pamäť má ä, pamiatka má dvojhlásku ia." }
+      - { text: meno, why: "Obyčajné e, ä tu nie je." }
     wrong:
-      - { text: meso, why: "Správne mäso." }
-      - { text: pamet, why: "Správne pamäť." }
-      - { text: devet, why: "Správne deväť." }
-      - { text: vezeň, why: "Správne väzeň." }
-      - { text: hovedo, why: "Správne hovädo." }
+      - { text: pämiatka, why: "Správne pamiatka, ä je len v slove pamäť." }
+      - { text: pečäť, why: "Správne pečať: po č sa ä nepíše, len po p, b, m, v." }
+      - { text: mäno, why: "Správne meno." }
+      - { text: väža, why: "Správne veža." }
+      - { text: devet, why: "Správne deväť, devet je po česky." }
 
   - id: sk-bez-cs
     type: pick
