@@ -60,7 +60,7 @@ questions:
         why: Číslo jedna v nákladnej doprave, pred Šanghajom Pchu-tung a Memphisom.
       - text: Šanghaj Pchu-tung sa posunul z 21. na 10. miesto
         why: Bol to najväčší skok v prvej desiatke.
-      - text: Celosvetovo prešlo letiskami približne 9,4 miliardy cestujúcich
+      - text: Celosvetovo prešlo letiskami približne 9,4 miliardy cestujúcich (predbežné údaje)
         why: O 8,4 % viac ako v roku 2023 a o 2,7 % viac ako v roku 2019.
     wrong:
       - text: Dubaj bol najrušnejším letiskom sveta v celkovom počte cestujúcich
@@ -127,22 +127,22 @@ questions:
       - text: A220
         why: Menšie úzkotrupé lietadlo, pôvodne vyvinuté pod značkou Bombardier CSeries.
     wrong:
-      - text: Boeing 737
-        why: Najznámejší konkurent A320.
-      - text: Boeing 747
-        why: Slávny „jumbo jet“ od Boeingu.
-      - text: Boeing 777
-        why: Širokotrupé lietadlo Boeingu pre dlhé lety.
-      - text: Boeing 787
-        why: Dreamliner, širokotrupé lietadlo Boeingu.
+      - text: "737"
+        why: Boeing 737, najznámejší konkurent A320.
+      - text: "747"
+        why: Boeing 747, slávny „jumbo jet“.
+      - text: "777"
+        why: Boeing 777, širokotrupé lietadlo pre dlhé lety.
+      - text: "787"
+        why: Boeing 787 Dreamliner, širokotrupé lietadlo.
       - text: Embraer E190
         why: Regionálne lietadlo brazílskej firmy Embraer.
-      - text: Tupolev Tu-154
-        why: Sovietske trojmotorové lietadlo.
+      - text: Tu-154
+        why: Tupolev Tu-154, sovietske trojmotorové lietadlo.
 
   - id: lietadla-uz-sa-nevyrabaju
     type: pick
-    prompt: Ktoré z týchto lietadiel sa už nevyrábajú, výrobu výrobca ukončil?
+    prompt: Ktoré z týchto lietadiel sa už nevyrábajú?
     difficulty: 2
     tags: [lietadlá]
     source: https://www.airbus.com/en/newsroom/stories/2021-12-the-a380-emirates-and-flying-public-a-winning-combination
@@ -206,7 +206,7 @@ questions:
 
   - id: tenerife-tvrdenia
     type: pick
-    prompt: Ktoré tvrdenia o zrážke dvoch lietadiel na letisku na Tenerife 27. marca 1977 sú pravdivé?
+    prompt: Ktoré tvrdenia o najtragickejšej nehode v histórii letectva (zrážka dvoch lietadiel na Kanárskych ostrovoch) sú pravdivé?
     difficulty: 2
     tags: [nehody]
     source: https://www.faa.gov/lessons_learned/transport_airplane/accidents/PH-BUF
@@ -410,7 +410,7 @@ questions:
 
   - id: tunely-tvrdenia
     type: pick
-    prompt: Ktoré tvrdenia o cestných a podmorských tuneloch sú pravdivé?
+    prompt: Ktoré tvrdenia o slávnych tuneloch sú pravdivé?
     difficulty: 3
     tags: [tunely]
     asOf: "2026-11"
@@ -524,7 +524,7 @@ questions:
       - text: Qantas lieta aj z Dallasu do Melbourne, plánovaný čas 17 hodín 35 minút
         why: Piata najdlhšia linka rebríčka.
       - text: Linka Auckland - Dauha bola kedysi najdlhšou na svete
-        why: Lieta ju Qatar Airways na A350-900.
+        why: Lieta ju Qatar Airways.
     wrong:
       - text: Najdlhšiu linku sveta lieta Emirates
         why: Lieta ju Singapore Airlines.
@@ -565,10 +565,10 @@ questions:
     source: https://www.guinnessworldrecords.com/world-records/fastest-maglev-train/
     note: TGV 2007 a 1990 - https://www.alstom.com/press-releases-news/2007/4/alstom-rff-and-sncf-set-a-new-world-rail-speed-record-of-574kmh ; Šinkansen - https://www.asme.org/about-asme/who-we-are/engineering-history/landmarks/211-tokaido-shinkansen (okolo 210 km/h pri otvorení).
     items:
-      - { text: Japonský maglev L0 (rekord 2015), value: 603, why: "Vznášajúci sa vlak, najrýchlejší vlak vôbec." }
-      - { text: Francúzske TGV V150 (rekord 2007), value: 574.8, why: "Rekord vlaku na kolesách." }
-      - { text: Francúzske TGV Atlantique (rekord 1990), value: 515.3, why: "Predošlý rekord, ktorý trval do roku 2007." }
-      - { text: Japonský Šinkansen pri otvorení (1964), value: 210, why: "Prvá vysokorýchlostná trať sveta, jazdila približne 210 km/h." }
+      - { text: Japonský maglev L0, value: 603, why: "Vznášajúci sa vlak, rekord z roku 2015, najrýchlejší vlak vôbec." }
+      - { text: Francúzske TGV V150, value: 574.8, why: "Rekord vlaku na kolesách z roku 2007." }
+      - { text: Francúzske TGV Atlantique, value: 515.3, why: "Rekord z roku 1990, ktorý trval do roku 2007." }
+      - { text: Japonský Šinkansen pri otvorení, value: 210, why: "Prvá vysokorýchlostná trať sveta, jazdila približne 210 km/h." }
 
   - id: dlzky-prieplavov
     type: order
