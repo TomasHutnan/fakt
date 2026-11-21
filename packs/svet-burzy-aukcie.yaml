@@ -165,9 +165,9 @@ questions:
       - { text: "Na Čierny pondelok 28. októbra 1929 Dow klesol takmer o 13 percent", why: "Tak to uvádza história Fedu." }
       - { text: "Na Čierny utorok 29. októbra 1929 Dow klesol takmer o 12 percent", why: "Nasledoval ďalší pád hneď druhý deň." }
       - { text: "Do polovice novembra 1929 Dow stratil takmer polovicu hodnoty", why: "A pád tým ešte nekončil." }
-      - { text: "Na úroveň z roku 1929 sa Dow vrátil až v novembri 1954", why: "Trvalo to viac ako štvrťstoročie." }
+      - { text: "Na vrchol z roku 1929 sa Dow vrátil až v novembri 1954", why: "Trvalo to viac ako štvrťstoročie." }
     wrong:
-      - { text: "Na úroveň z roku 1929 sa Dow vrátil už v roku 1931", why: "Vrchol z roku 1929 prekonal až v novembri 1954." }
+      - { text: "Na vrchol z roku 1929 sa Dow vrátil už v roku 1931", why: "Vrchol z roku 1929 prekonal až v novembri 1954." }
       - { text: "Najnižšiu hodnotu dosiahol Dow už v novembri 1929", why: "Dno prišlo až v lete 1932, keď Dow klesol na 41,22 bodu." }
       - { text: "Počas celého krachu Dow klesol len asi o 10 percent", why: "Do roku 1932 stratil 89 percent hodnoty." }
       - { text: "Ekonóm Irving Fisher krátko pred krachom varoval pred prehriatym trhom", why: "Naopak, vyhlásil, že ceny akcií sú na „trvalo vysokej náhornej plošine“." }
@@ -181,9 +181,9 @@ questions:
     source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1987"
     correct:
       - { text: "Dow Jones klesol v jedinom dni o 22,6 percenta (508 bodov)", why: "Je to najväčší jednodňový percentuálny pokles v dejinách indexu." }
-      - { text: "Pred krachom Dow za sedem mesiacov vyskočil o 44 percent", why: "Preto sa už hovorilo o bubline." }
+      - { text: "Do konca augusta 1987 Dow za sedem mesiacov vyskočil o 44 percent", why: "Preto sa už hovorilo o bubline." }
       - { text: "Burzy v Ázii sa prepadli skôr, než sa otvorili americké", why: "Reťazová reakcia išla okolo sveta." }
-      - { text: "Novozélandská burza klesla o 60 percent", why: "Bol to najťažší prípad." }
+      - { text: "Novozélandská burza počas krachu klesla o 60 percent", why: "Bol to najťažší prípad." }
       - { text: "Pád zrýchlil populárny produkt „portfolio insurance“", why: "Prvé straty vyvolali ďalší predaj." }
       - { text: "Po krachu burzy zaviedli pravidlá na dočasné prerušenie obchodovania", why: "Volajú sa circuit breakers." }
     wrong:
@@ -219,10 +219,10 @@ questions:
     source: "https://bitcoin.org/en/faq https://guinnessworldrecords.com/world-records/696240-first-commercial-bitcoin-transaction"
     correct:
       - { text: "Bitcoinov môže existovať najviac 21 miliónov", why: "Vydávanie sa po dosiahnutí stropu úplne zastaví." }
-      - { text: "Počet nových bitcoinov za rok sa automaticky znižuje na polovicu", why: "Deje sa to v pravidelných intervaloch." }
+      - { text: "Počet nových bitcoinov vytvorených za rok sa v čase automaticky zmenšuje na polovicu", why: "Až kým vydávanie úplne neskončí." }
       - { text: "Prvá známa obchodná transakcia s bitcoinom bola 22. mája 2010", why: "Programátor Laszlo Hanyecz za ňu dostal dve pizze." }
       - { text: "Hanyecz ponúkol 10 000 bitcoinov za dve veľké pizze", why: "Vtedy mali tie bitcoiny hodnotu okolo 41 dolárov." }
-      - { text: "Pizze objednal za Hanycza iný užívateľ fóra Bitcointalk a zaplatil 25 dolárov", why: "Hanyecz mu poslal bitcoiny." }
+      - { text: "Pizze pre Hanyecza objednal iný používateľ fóra Bitcointalk a zaplatil 25 dolárov", why: "Hanyecz mu poslal bitcoiny." }
     wrong:
       - { text: "Bitcoinov môže existovať najviac 210 miliónov", why: "Strop je 21 miliónov." }
       - { text: "Prvá obchodná transakcia s bitcoinom bola kúpa auta", why: "Boli to dve pizze." }
@@ -239,14 +239,14 @@ questions:
     correct:
       - { text: "Jeden metrický karát má 0,2 gramu", why: "Teda 200 miligramov." }
       - { text: "Diamant Cullinan mal v surovom stave 3 106 karátov", why: "Je to najväčší nájdený surový diamant kvality drahokamu." }
-      - { text: "Cullinan našli v roku 1905 v bani pri Pretórii v Južnej Afrike", why: "Pomenovali ho po majiteľovi bane Thomasovi Cullinanovi." }
-      - { text: "Koh-i-Noor mal pôvodne 793 karátov", why: "Dnes má po prerezávaní asi 106 karátov." }
+      - { text: "Cullinan našli v roku 1905 v bani pri Pretórii v Južnej Afrike", why: "Šlo o baňu Premier." }
       - { text: "Koh-i-Noor sa našiel v Indii", why: "V bani Kollur v Ándhrapradéši." }
+      - { text: "Cullinan je pomenovaný po majiteľovi bane, Thomasovi Cullinanovi", why: "Našli ho v januári 1905." }
     wrong:
       - { text: "Jeden metrický karát váži jeden gram", why: "Karát má len 0,2 gramu." }
       - { text: "Cullinan mal v surovom stave 310 karátov", why: "Mal desaťkrát viac: 3 106 karátov." }
       - { text: "Cullinan našli v Brazílii", why: "Našli ho v Južnej Afrike." }
-      - { text: "Koh-i-Noor váži dnes 793 karátov", why: "Toľko mal pôvodne; dnes má asi 106 karátov." }
+      - { text: "Koh-i-Noor sa našiel na Sibíri", why: "Podľa histórie diamantov pochádza z Indie." }
       - { text: "Hmotnosť diamantov sa meria v unciach", why: "Meria sa v karátoch." }
 
   - id: ba-pravda-zberatelske
@@ -297,7 +297,7 @@ questions:
       - { text: "Salvator Mundi prekonal rekord Picassových Les Femmes d'Alger z roku 2015", why: "Picasso mal 179 miliónov, Leonardo 450,3 milióna dolárov." }
       - { text: "Salvator Mundi predal v roku 2017 ruský miliardár Dmitrij Rybolovlev, ktorý ho v roku 2013 kúpil za 127,5 milióna dolárov", why: "Išlo o súkromný predaj z roku 2013." }
       - { text: "Uhlenhaut Coupé je jedno z dvoch postavených áut a predalo sa 5. mája 2022 v Stuttgarte", why: "Aukcia sa konala v múzeu Mercedes-Benz." }
-      - { text: "Cena Uhlenhaut Coupé prekonala predošlý rekord pre auto o viac ako 90 miliónov eur", why: "Predošlý rekord pre auto bol pod 45 miliónmi eur." }
+      - { text: "Podľa RM Sotheby's cena Uhlenhaut Coupé prekonala predošlý rekord pre auto o viac ako 90 miliónov eur", why: "Tak to uvádza aukčný dom v tlačovej správe." }
       - { text: "Klimtov Portrét Elisabeth Lederer vrátili po vojne v roku 1948 jej bratovi", why: "Obraz zhabali nacisti a vrátili ho Erichovi Ledererovi." }
       - { text: "Warholova Marilyn prekonala predošlý rekord amerického umelca, Basquiata", why: "Basquiat mal 110,5 milióna dolárov z roku 2017." }
     wrong:
@@ -348,10 +348,10 @@ questions:
     asOf: "2026-10"
     tags: [kovy]
     source: "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-November-2026.pdf"
-    note: "Svetová banka (Pink Sheet, 3. novembra 2026), priemer za október 2026: zlato 4 105, platina 1 621 a striebro 57,0 USD za trójsku uncu, meď 14 508 USD za tonu. Prepočítané na kilogramy (1 troyská unca = 31,1035 g)."
+    note: "Svetová banka (Pink Sheet, 3. novembra 2026), priemer za október 2026: zlato 4 105, platina 1 621 a striebro 57,0 USD za trójsku uncu, meď 14 508 USD za tonu. Prepočítané na kilogramy (1 trójska unca = 31,1035 g)."
     items:
-      - { text: Zlato, value: 131978, why: "Okolo 4 105 USD za trójsku uncu." }
-      - { text: Platina, value: 52119, why: "Okolo 1 621 USD za trójsku uncu." }
+      - { text: Zlato, value: 131979, why: "Okolo 4 105 USD za trójsku uncu." }
+      - { text: Platina, value: 52116, why: "Okolo 1 621 USD za trójsku uncu." }
       - { text: Striebro, value: 1833, why: "Okolo 57 USD za trójsku uncu." }
       - { text: Meď, value: 14.5, why: "Okolo 14 500 USD za tonu, teda 14,5 USD za kilogram." }
 
@@ -368,7 +368,7 @@ questions:
       - { text: "Čierny pondelok 1987 (19. október)", value: 22.6, why: "Najväčší jednodňový percentuálny pokles v dejinách indexu." }
       - { text: "Prvý čierny deň 1929 (pondelok 28. október)", value: 12.8, why: "Takmer 13 percent." }
       - { text: "Čierny utorok 1929 (29. október)", value: 11.7, why: "Takmer 12 percent." }
-      - { text: "Piatok pred krachom 1987 (16. október)", value: 4.6, why: "Predohra Čierneho pondelka; rolujúce výpredaje spojené s expiráciou opcií." }
+      - { text: "Piatok pred krachom 1987 (16. október)", value: 4.6, why: "Predohra Čierneho pondelka; postupné výpredaje a expirácia opcií v ten deň." }
 
   # ================================================================ NUMBER
   - id: ba-salvator-mundi
