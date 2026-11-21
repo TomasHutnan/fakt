@@ -41,7 +41,7 @@ questions:
       - text: Viedeň Schwechat
         why: Najbližšie veľké letisko pre Slovákov, v svetovom rebríčku je však hlboko pod prvou päťkou.
       - text: Bratislava (M. R. Štefánika)
-        why: Aj s lietadlami lowcostov je to len zlomok percenta z objemu najväčších letísk.
+        why: Je to malé letisko; od prvej päťky ho delia desiatky miliónov cestujúcich.
 
   - id: airbus-lietadla
     type: pick
@@ -63,7 +63,7 @@ questions:
         why: Menšie úzkotrupé lietadlo, pôvodne vyvinuté pod značkou Bombardier CSeries.
     wrong:
       - text: Boeing 737
-        why: Najznámejší konkurent A320 a flagship Boeingu.
+        why: Najznámejší konkurent A320, úzkotrupé lietadlo Boeingu.
       - text: Boeing 747
         why: Slávny „jumbo jet“, ktorý vyrábal Boeing do roku 2023.
       - text: Boeing 777
@@ -129,7 +129,7 @@ questions:
       - text: Kyjev
         why: Metro funguje od roku 1960.
       - text: Atény
-        why: Metro je v meste pomerne mladé a ukrýva nálezy z antiky.
+        why: Prvá linka je z 19. storočia, dnešné metro s nálezmi z antiky vzniklo najmä v roku 2000.
       - text: Lisabon
         why: Portugalské hlavné mesto má vlastné metro.
     wrong:
@@ -153,6 +153,7 @@ questions:
     prompt: Ktoré z týchto tunelov sú železničné (jazdia nimi vlaky)?
     difficulty: 2
     tags: [tunely]
+    asOf: "2026-11"
     source: https://www.railway-technology.com/projects/gotthard-base-tunnel/
     note: Gotthardský a Lötschbergský bázový a Cenerský tunel podľa railway-technology.com; Lamanšský tunel https://www.getlinkgroup.com/uk/the-channel-tunnel/ ; Seikan https://structurae.net/en/structures/seikan-tunnel ; Lærdal https://www.vegvesen.no/en/road-projects/project/e16lardalstunnelen/ .
     correct:
@@ -171,8 +172,8 @@ questions:
         why: Nórsky cestný tunel dlhý 24,5 km, najdlhší cestný tunel sveta.
       - text: Tunel pod Mont Blancom
         why: Cestný tunel medzi Francúzskom a Talianskom.
-      - text: Arlberský cestný tunel
-        why: Rakúsky cestný tunel pod horským priesmykom Arlberg.
+      - text: Tunel Zhongnanshan (Čína)
+        why: Čínsky cestný tunel dlhý okolo 18 km.
       - text: Tunel Eiksund
         why: Nórsky cestný tunel pod fjordom.
       - text: Tunel Gran Sasso
@@ -209,7 +210,7 @@ questions:
       - { text: Japonský maglev L0 (rekord 2015), value: 603, why: "Vznášajúci sa vlak, najrýchlejší vlak vôbec." }
       - { text: Francúzske TGV V150 (rekord 2007), value: 574.8, why: "Rekord vlaku na kolesách." }
       - { text: Francúzske TGV Atlantique (rekord 1990), value: 515.3, why: "Predošlý rekord, ktorý trval do roku 2007." }
-      - { text: Japonský Šinkansen pri otvorení (1964), value: 210, why: "Prvá vysokorýchlostná trať sveta jazdila približne 210 km/h." }
+      - { text: Japonský Šinkansen pri otvorení (1964), value: 210, why: "Na prvej vysokorýchlostnej trati sveta jazdili vlaky približne 210 km/h." }
 
   # ---------------------------------------------------------------- number
   - id: a380-vyrobenych
@@ -339,8 +340,8 @@ questions:
     correct: { text: Airbus A380, why: "Emirates dostal 16. decembra 2021 svoj 123. a celkovo posledný, 251. kus." }
     wrong:
       - { text: Boeing 747, why: "Posledný kus odovzdali až v januári 2023 pre Atlas Air." }
-      - { text: Boeing 737, why: "Dodnes sa vyrába v veľkých počtoch." }
-      - { text: Airbus A320, why: "Dodnes sa vyrába v veľkých počtoch." }
+      - { text: Boeing 737, why: "Vyrába sa naďalej vo veľkých počtoch." }
+      - { text: Airbus A320, why: "Vyrába sa naďalej vo veľkých počtoch." }
 
   - id: concorde-cas
     type: choice
@@ -351,8 +352,8 @@ questions:
     correct: { text: "asi 3,5 hodiny", why: "Concorde preletel Atlantik dvojnásobnou rýchlosťou zvuku, čím čas skrátil na polovicu." }
     wrong:
       - { text: "asi 1,5 hodiny", why: "Aj pri rýchlosti Concorde je to príliš málo na 5 500 km." }
-      - { text: asi 6 hodín, why: "Tak dlho letí bežné lietadlo." }
-      - { text: asi 9 hodín, why: "Tak dlho trvá let bežným lietadlom v opačnom smere proti vetru." }
+      - { text: asi 6 hodín, why: "Zhruba tak dlho by let trval pri nižšej rýchlosti, ale Concorde bol rýchlejší." }
+      - { text: asi 8 hodín, why: "Tak dlho trvá let bežným lietadlom." }
 
   - id: concorde-koniec
     type: choice
@@ -374,7 +375,7 @@ questions:
     source: https://www.faa.gov/lessons_learned/transport_airplane/accidents/PH-BUF
     correct: { text: Tenerife, why: "Lietadlá tam presmerovali kvôli bombovému útoku na letisku Las Palmas." }
     wrong:
-      - { text: Gran Canaria, why: "Kvôli výbuchu bomby na letisku Las Palmas sa tam nemohli lietadlá vrátiť." }
+      - { text: Gran Canaria, why: "Tam leteli, no pre výbuch bomby na letisku Las Palmas ich presmerovali inam." }
       - { text: Madeira, why: "Ostrov patrí Portugalsku, nehoda sa stala na Kanárskych ostrovoch." }
       - { text: Mallorca, why: "Ostrov patrí Španielsku, nehoda sa stala na Kanárskych ostrovoch." }
 
@@ -397,7 +398,7 @@ questions:
     tags: [metro]
     source: https://www.urbanrail.net/eu/hu/budapest/budapest.htm
     note: Druhý zdroj UNESCO https://whc.unesco.org/en/list/400/ (Millennium Underground Railway, prvá na kontinentálnej Európe).
-    correct: { text: Budapešť, why: "Linka M1 s 4,4 km bola prvou elektrickou podzemnou dráhou na európskej pevnine." }
+    correct: { text: Budapešť, why: "Linka M1 bola prvou elektrickou podzemnou dráhou na európskej pevnine." }
     wrong:
       - { text: Viedeň, why: "Dnešné metro vo Viedni je oveľa mladšie." }
       - { text: Paríž, why: "Metro otvorili o štyri roky neskôr, v roku 1900." }
