@@ -1,0 +1,392 @@
+id: svet-burzy-aukcie
+title: Burzy, aukcie a drahé veci
+description: "Wall Street a jej krachy, bitcoinová pizza, rekordné aukcie obrazov, áut a zberateľských kúskov."
+category: peniaze
+lang: sk
+license: CC0-1.0
+adult: false
+version: 1
+questions:
+  # ================================================================ PICK
+  - id: ba-nad-10-mil
+    type: pick
+    prompt: Ktoré z týchto vecí sa niekedy predali za viac ako 10 miliónov dolárov (aukcia, ceny v čase predaja)?
+    difficulty: 2
+    tags: [aukcie]
+    source: "https://www.npr.org/2022/05/09/1096617152/a-warhol-marilyn-brings-a-record-auction-price-195-million https://rmsothebys.com/media-center/press-releases/rm-sotheby-s-announces-the-sale-of-the-most-valuable-car-in-the-world-the-1955-mercedes-benz-300-slr-uhlenhaut-coupé-is-sold-for-135-000-000"
+    correct:
+      - { text: Warholova Marilyn (Shot Sage Blue Marilyn), why: "V máji 2022 išla v Christie's za 195 miliónov dolárov." }
+      - { text: Mercedes 300 SLR Uhlenhaut Coupé, why: "V máji 2022 sa predal za 135 miliónov eur, čo z neho spravilo najdrahšie auto sveta." }
+      - { text: Karta Mickeyho Mantlea z roku 1952, why: "V auguste 2022 sa v Heritage Auctions predala za 12,6 milióna dolárov." }
+      - { text: Zlatá minca Double Eagle z roku 1933, why: "V júni 2021 išla v Sotheby's za 18,9 milióna dolárov." }
+      - { text: Banksyho rozrezaný obraz Love is in the Bin, why: "V októbri 2021 sa predal za 18,6 milióna libier, teda približne 25,4 milióna dolárov." }
+      - { text: Van Goghov Portrét doktora Gacheta, why: "V roku 1990 sa predal za 82,5 milióna dolárov a dlho bol najdrahším obrazom sveta." }
+      - { text: Klimtov Portrét Elisabeth Lederer, why: "V novembri 2025 sa predal za 236,4 milióna dolárov." }
+    wrong:
+      - { text: Karta Honusa Wagnera T206, why: "Rekord z roku 2022 bol 7,25 milióna dolárov, a to v súkromnom predaji." }
+      - { text: Britská Guyana 1c magenta (najdrahšia známka), why: "V roku 2021 sa v Sotheby's predala za 8,3 milióna dolárov, teda pod hranicou 10 miliónov." }
+      - { text: Cattelanov banán prilepený lepiacou páskou na stene, why: "V novembri 2024 sa predal za 6,2 milióna dolárov." }
+      - { text: Banksyho Girl with Balloon pri skartovaní v roku 2018, why: "Vtedy sa predala za približne 1,4 milióna dolárov; skartovaním jej hodnota stúpla až neskôr." }
+
+  - id: ba-obrazy-nad-100-mil
+    type: pick
+    prompt: Ktoré z týchto diel sa predali na aukcii za viac ako 100 miliónov dolárov?
+    difficulty: 2
+    tags: [aukcie, umenie]
+    source: "https://www.npr.org/sections/thetwo-way/2017/11/16/564527819/da-vinci-portrait-of-christ-sells-for-record-shattering-450-million https://www.npr.org/2022/05/09/1096617152/a-warhol-marilyn-brings-a-record-auction-price-195-million https://www.sothebys.com/en/articles/the-new-york-sales-november-2025-breuer-results"
+    correct:
+      - { text: Leonardov Salvator Mundi, why: "V roku 2017 išiel v Christie's za 450,3 milióna dolárov, čo je doteraz rekord." }
+      - { text: Klimtov Portrét Elisabeth Lederer, why: "V novembri 2025 sa predal za 236,4 milióna dolárov." }
+      - { text: Warholova Shot Sage Blue Marilyn, why: "195 miliónov dolárov v máji 2022." }
+      - { text: Picassove Les Femmes d'Alger (verzia O), why: "179,4 milióna dolárov v roku 2015." }
+      - { text: Munchov Výkrik (pastelová verzia), why: "V roku 2012 sa v Sotheby's predal za 119,9 milióna dolárov." }
+      - { text: Basquiatov obraz bez názvu z roku 1982 (lebka), why: "V roku 2017 sa predal za 110,5 milióna dolárov." }
+    wrong:
+      - { text: Van Goghov Portrét doktora Gacheta, why: "V roku 1990 sa predal za 82,5 milióna dolárov, teda pod stovkou." }
+      - { text: Banksyho Love is in the Bin, why: "Približne 25,4 milióna dolárov v roku 2021." }
+      - { text: Cattelanov Comedian (banán), why: "Asi 6,2 milióna dolárov." }
+      - { text: Banksyho Girl with Balloon v roku 2018, why: "Približne 1,4 milióna dolárov." }
+      - { text: Mona Lisa, why: "Nikdy sa nepredávala; patrí francúzskemu štátu a visí v Louvri." }
+
+  - id: ba-americke-indexy
+    type: pick
+    prompt: Ktoré z týchto burzových indexov patria americkým akciovým trhom?
+    difficulty: 2
+    tags: [indexy]
+    source: "https://www.nasdaq.com/solutions/nasdaq-100 https://www.lseg.com/en/ftse-russell/indices/uk https://indexes.nikkei.co.jp/en/nkave/index/profile?idx=nk225 https://www.hsi.com.hk/eng/indexes/all-indexes/hsi"
+    correct:
+      - { text: Dow Jones Industrial Average, why: "Najstarší a najznámejší index Wall Street; sleduje 30 veľkých firiem." }
+      - { text: S&P 500, why: "Zahŕňa 500 veľkých amerických firiem a je hlavným ukazovateľom trhu." }
+      - { text: Nasdaq-100, why: "Veľké firmy z burzy Nasdaq, najmä technologické." }
+      - { text: Russell 2000, why: "Americké malé firmy." }
+    wrong:
+      - { text: FTSE 100, why: "100 najväčších firiem londýnskej burzy." }
+      - { text: Nikkei 225, why: "Hlavný index tokijskej burzy." }
+      - { text: Hang Seng, why: "Hlavný index hongkonskej burzy." }
+      - { text: DAX, why: "Nemecký index z Frankfurtu; od roku 2021 má 40 firiem." }
+      - { text: CAC 40, why: "Francúzsky index z Paríža." }
+      - { text: IBEX 35, why: "Španielsky index z Madridu." }
+      - { text: SMI, why: "Švajčiarsky index." }
+
+  - id: ba-nasdaq-vs-nyse
+    type: pick
+    prompt: Ktoré z týchto firiem majú akcie kótované na burze Nasdaq (a nie na NYSE)?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [burzy, firmy]
+    source: "https://stockanalysis.com/stocks/aapl/ https://stockanalysis.com/stocks/ko/ https://www.nasdaq.com/solutions/nasdaq-100"
+    correct:
+      - { text: Apple, why: "Kótovaná na Nasdaq pod značkou AAPL." }
+      - { text: Microsoft, why: "Nasdaq, značka MSFT." }
+      - { text: Amazon, why: "Nasdaq, značka AMZN." }
+      - { text: Nvidia, why: "Nasdaq, značka NVDA." }
+      - { text: Tesla, why: "Nasdaq, značka TSLA." }
+      - { text: Netflix, why: "Nasdaq, značka NFLX." }
+      - { text: Starbucks, why: "Nasdaq, značka SBUX." }
+      - { text: PepsiCo, why: "Nasdaq, značka PEP, no jej veľký rival je inde." }
+    wrong:
+      - { text: Coca-Cola, why: "Kótovaná na NYSE (KO)." }
+      - { text: Disney, why: "NYSE (DIS)." }
+      - { text: McDonald's, why: "NYSE (MCD)." }
+      - { text: Nike, why: "NYSE (NKE)." }
+      - { text: Ford, why: "NYSE (F)." }
+      - { text: Boeing, why: "NYSE (BA)." }
+
+  - id: ba-banky-2008
+    type: pick
+    prompt: Ktoré z týchto bánk či investičných bánk v roku 2008 skrachovali alebo ich v núdzi odkúpil rival?
+    difficulty: 2
+    tags: [krízy, banky]
+    source: "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath https://www.cfr.org/timelines/us-financial-crisis"
+    correct:
+      - { text: Lehman Brothers, why: "V septembri 2008 vyhlásila bankrot, čo odštartovalo najhoršiu fázu krízy." }
+      - { text: Bear Stearns, why: "V jarných mesiacoch 2008 ju s pomocou Fedu prevzala JPMorgan Chase." }
+      - { text: Washington Mutual, why: "V septembri 2008 ju zavrel FDIC; šlo o najväčší zlyhaný americký bankový subjekt." }
+      - { text: Merrill Lynch, why: "V septembri 2008 sa predala Bank of America." }
+    wrong:
+      - { text: JPMorgan Chase, why: "Naopak, kupovala: prevzala Bear Stearns aj bankové aktíva Washington Mutual." }
+      - { text: Bank of America, why: "Kúpila Merrill Lynch." }
+      - { text: Goldman Sachs, why: "Prežila bez bankrotu aj bez predaja." }
+      - { text: Morgan Stanley, why: "Prežila ako samostatná firma." }
+      - { text: HSBC, why: "Veľká britská banka; v roku 2008 nezbankrotovala ani sa nepredala." }
+      - { text: Barclays, why: "Kúpila americké aktíva Lehmanu, sama zostala nezávislá." }
+
+  - id: ba-europske-indexy
+    type: pick
+    prompt: Ktoré z týchto burzových indexov patria európskym burzám?
+    difficulty: 2
+    tags: [indexy]
+    source: "https://www.lseg.com/en/ftse-russell/indices/uk https://indexes.nikkei.co.jp/en/nkave/index/profile?idx=nk225 https://www.hsi.com.hk/eng/indexes/all-indexes/hsi https://www.nasdaq.com/solutions/nasdaq-100"
+    correct:
+      - { text: FTSE 100, why: "Index londýnskej burzy so 100 najväčšími kótovanými firmami; Briti mu hovoria Footsie." }
+      - { text: DAX, why: "Frankfurtský index; od roku 2021 sleduje 40 firiem, hoci názov ostal." }
+      - { text: CAC 40, why: "Hlavný index parížskej burzy." }
+      - { text: IBEX 35, why: "Hlavný španielsky index z Madridu." }
+      - { text: SMI, why: "Index najväčších švajčiarskych firiem." }
+    wrong:
+      - { text: Nikkei 225, why: "Hlavný index tokijskej burzy." }
+      - { text: Hang Seng, why: "Hlavný index burzy v Hongkongu." }
+      - { text: S&P 500, why: "Index 500 veľkých amerických firiem." }
+      - { text: Nasdaq-100, why: "Veľké firmy z americkej burzy Nasdaq." }
+      - { text: Bovespa, why: "Hlavný index brazílskej burzy v São Paulu." }
+      - { text: Sensex, why: "Index burzy v Bombaji (India)." }
+
+  - id: ba-nyse-firmy
+    type: pick
+    prompt: Ktoré z týchto firiem majú akcie kótované na newyorskej burze NYSE (a nie na Nasdaq)?
+    difficulty: 2
+    asOf: "2026-11"
+    tags: [burzy, firmy]
+    source: "https://stockanalysis.com/stocks/v/ https://stockanalysis.com/stocks/googl/ https://www.nasdaq.com/solutions/nasdaq-100"
+    correct:
+      - { text: Visa, why: "NYSE, značka V." }
+      - { text: JPMorgan Chase, why: "NYSE, značka JPM." }
+      - { text: Exxon Mobil, why: "NYSE, značka XOM." }
+      - { text: IBM, why: "NYSE, značka IBM." }
+      - { text: McDonald's, why: "NYSE, značka MCD." }
+      - { text: Boeing, why: "NYSE, značka BA." }
+    wrong:
+      - { text: Alphabet (Google), why: "Nasdaq, značka GOOGL." }
+      - { text: Meta (Facebook), why: "Nasdaq, značka META." }
+      - { text: Costco, why: "Nasdaq, značka COST." }
+      - { text: Netflix, why: "Nasdaq, značka NFLX." }
+      - { text: Tesla, why: "Nasdaq, značka TSLA." }
+      - { text: Nvidia, why: "Nasdaq, značka NVDA." }
+
+  # ================================================================ ORDER
+  - id: ba-order-obrazy
+    type: order
+    prompt: Zoraď diela podľa ceny na aukcii od najdrahšieho.
+    direction: desc
+    unit: mil. USD
+    difficulty: 2
+    tags: [aukcie, umenie]
+    source: "https://www.npr.org/sections/thetwo-way/2017/11/16/564527819/da-vinci-portrait-of-christ-sells-for-record-shattering-450-million https://www.sothebys.com/en/articles/the-new-york-sales-november-2025-breuer-results https://www.npr.org/2022/05/09/1096617152/a-warhol-marilyn-brings-a-record-auction-price-195-million https://www.npr.org/2012/05/02/151894486/the-scream-scoops-record-119m-at-n-y-auction"
+    items:
+      - { text: Leonardo – Salvator Mundi (2017), value: 450.3, why: "Najdrahšie dielo predané na aukcii." }
+      - { text: Klimt – Portrét Elisabeth Lederer (2025), value: 236.4, why: "Druhé najdrahšie dielo na aukcii." }
+      - { text: Warhol – Shot Sage Blue Marilyn (2022), value: 195, why: "Najdrahšie americké dielo na aukcii." }
+      - { text: Munch – Výkrik v pastelovej verzii (2012), value: 119.9, why: "V čase predaja najdrahšie dielo na aukcii." }
+      - { text: Van Gogh – Portrét doktora Gacheta (1990), value: 82.5, why: "Dodnes rekord pre Van Gogha na aukcii." }
+
+  - id: ba-order-zberatelske
+    type: order
+    prompt: Zoraď tieto zberateľské a kuriózne kúsky podľa ceny od najdrahšieho (poslednej aukčnej alebo rekordnej).
+    direction: desc
+    unit: mil. USD
+    difficulty: 2
+    tags: [aukcie, zberatelstvo]
+    source: "https://www.npr.org/2021/10/14/1046134451/banksy-shredded-auction-sold-record https://www.aljazeera.com/economy/2021/6/8/us-double-eagle-gold-coin-sells-for-record-smashing-18-9-million https://bleacherreport.com/articles/10046875-mickey-mantle-1952-topps-card-sells-for-126m-to-shatter-725m-honus-wagner-record https://www.npr.org/2021/06/08/1002985432/british-guiana-1-cent-stamp-falls-well-short-of-anticipated-auction-bounty https://www.npr.org/2024/11/21/nx-s1-5199568/a-duct-taped-banana-sells-for-6-2-million-at-an-art-auction"
+    items:
+      - { text: Banksyho Love is in the Bin (2021), value: 25.4, why: "18,6 milióna libier." }
+      - { text: Minca Double Eagle z roku 1933 (2021), value: 18.9, why: "Najdrahšia minca sveta." }
+      - { text: Karta Mickeyho Mantlea z roku 1952 (2022), value: 12.6, why: "Rekord pre športovú zberateľskú kartu v čase predaja." }
+      - { text: Známka Britská Guyana 1c magenta (2021), value: 8.3, why: "Najdrahšia známka sveta." }
+      - { text: Karta Honusa Wagnera T206 (2022), value: 7.25, why: "Súkromný predaj, nie aukcia." }
+      - { text: Cattelanov banán na lepiacej páske (2024), value: 6.2, why: "Kúpil ho kryptopodnikateľ; banán sa mení, kúpil sa certifikát." }
+
+  # ================================================================ NUMBER
+  - id: ba-salvator-mundi
+    type: number
+    prompt: Za koľko miliónov dolárov sa v roku 2017 na aukcii predal Leonardov obraz Salvator Mundi?
+    answer: 450
+    unit: mil. USD
+    scale: log
+    tolerance: 0.15
+    difficulty: 2
+    tags: [aukcie, umenie]
+    why: "Presne 450,3 milióna dolárov v Christie's v New Yorku; je to doteraz najdrahší obraz predaný na aukcii."
+    source: "https://www.npr.org/sections/thetwo-way/2017/11/16/564527819/da-vinci-portrait-of-christ-sells-for-record-shattering-450-million"
+
+  - id: ba-bitcoin-pizza
+    type: number
+    prompt: Koľko bitcoinov dal Laszlo Hanyecz v máji 2010 za dve pizze?
+    answer: 10000
+    unit: BTC
+    scale: log
+    tolerance: 0.2
+    difficulty: 2
+    tags: [bitcoin]
+    why: "Bolo to 10 000 bitcoinov a bola to prvá známa obchodná transakcia s bitcoinom. Dnes by tá suma stála stovky miliónov dolárov."
+    source: "https://guinnessworldrecords.com/world-records/696240-first-commercial-bitcoin-transaction"
+
+  - id: ba-bitcoin-21-milionov
+    type: number
+    prompt: Koľko bitcoinov môže existovať najviac, kým sa ich vydávanie úplne zastaví? (v miliónoch)
+    answer: 21
+    unit: mil. BTC
+    scale: linear
+    tolerance: 3
+    difficulty: 2
+    tags: [bitcoin]
+    why: "Strop je 21 miliónov; odmena za ťažbu sa pravidelne polovičí, až kým sa vydávanie nezastaví."
+    source: "https://bitcoin.org/en/faq"
+
+  - id: ba-cierny-pondelok-1987
+    type: number
+    prompt: O koľko percent spadol index Dow Jones v jedinom dni Čierneho pondelka 19. októbra 1987?
+    answer: 23
+    unit: "%"
+    scale: linear
+    tolerance: 3
+    difficulty: 2
+    tags: [krachy]
+    why: "O 22,6 percenta (508 bodov), čo je dodnes najväčší jednodňový pokles v modernej histórii indexu."
+    source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1987"
+
+  - id: ba-cullinan
+    type: number
+    prompt: Koľko karátov mal najväčší nájdený surový diamant kvality drahokamu, Cullinan (1905, Južná Afrika)?
+    answer: 3106
+    unit: karátov
+    scale: log
+    tolerance: 0.2
+    difficulty: 3
+    tags: [diamanty]
+    why: "Mal 3 106 karátov (asi 621 gramov); rozrezali ho na desiatky kameňov, väčšie sú v britských korunovačných klenotoch."
+    source: "https://www.mining-technology.com/features/featurethe-ten-biggest-diamonds-ever-found-4757140/"
+
+  - id: ba-karat-mg
+    type: number
+    prompt: Koľko miligramov váži jeden metrický karát, jednotka hmotnosti diamantov?
+    answer: 200
+    unit: mg
+    scale: log
+    tolerance: 0.2
+    difficulty: 2
+    tags: [diamanty]
+    why: "Jeden karát je dve desatiny gramu (0,2 g). Karát na meranie zlata sa týka čistoty, nie hmotnosti."
+    source: "https://www.gia.edu/diamond-quality-factor"
+
+  - id: ba-uhlenhaut
+    type: number
+    prompt: Za koľko miliónov eur sa v roku 2022 predal Mercedes 300 SLR Uhlenhaut Coupé, najdrahšie auto sveta?
+    answer: 135
+    unit: mil. eur
+    scale: log
+    tolerance: 0.15
+    difficulty: 2
+    tags: [aukcie, autá]
+    why: "135 miliónov eur (okolo 143 miliónov dolárov); výťažok išiel na štipendiá."
+    source: "https://rmsothebys.com/media-center/press-releases/rm-sotheby-s-announces-the-sale-of-the-most-valuable-car-in-the-world-the-1955-mercedes-benz-300-slr-uhlenhaut-coupé-is-sold-for-135-000-000"
+
+  - id: ba-magenta
+    type: number
+    prompt: Za koľko miliónov dolárov sa v roku 2021 predala najdrahšia známka sveta, britskoguyanská 1c magenta?
+    answer: 8
+    unit: mil. USD
+    scale: log
+    tolerance: 0.25
+    difficulty: 3
+    tags: [aukcie, zberatelstvo]
+    why: "Okolo 8,3 milióna dolárov; v roku 2014 išla za 9,5 milióna, takže pri druhom predaji stratila na cene."
+    source: "https://www.npr.org/2021/06/08/1002985432/british-guiana-1-cent-stamp-falls-well-short-of-anticipated-auction-bounty"
+
+  - id: ba-dow-1932-pod-vrcholom
+    type: number
+    prompt: O koľko percent bol index Dow Jones v lete 1932 pod svojím vrcholom zo septembra 1929?
+    answer: 89
+    unit: "%"
+    scale: linear
+    tolerance: 4
+    difficulty: 2
+    tags: [krachy]
+    why: "Dow spadol z 381,17 bodu na 41,22 bodu (8. júla 1932), teda o 89 percent."
+    source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929"
+
+  - id: ba-dow-1954
+    type: number
+    prompt: V ktorom roku sa Dow Jones po krachu 1929 prvýkrát vrátil na svoje maximum z roku 1929?
+    answer: 1954
+    unit: rok
+    scale: linear
+    tolerance: 3
+    difficulty: 3
+    tags: [krachy]
+    why: "Vrchol z roku 1929 prekonal až 23. novembra 1954, teda po viac ako štvrťstoročí."
+    source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929"
+
+  # ================================================================ CHOICE
+  - id: ba-pizza-co
+    type: choice
+    prompt: Čo si niekto v máji 2010 kúpil za 10 000 bitcoinov v jednej z prvých reálnych transakcií s bitcoinom?
+    difficulty: 1
+    tags: [bitcoin]
+    source: "https://guinnessworldrecords.com/world-records/696240-first-commercial-bitcoin-transaction"
+    correct: { text: Dve veľké pizze, why: "Programátor Laszlo Hanyecz na fóre ponúkol 10 000 BTC za dve pizze; 22. máj sa od vtedy oslavuje ako Bitcoin Pizza Day." }
+    wrong:
+      - { text: Použité auto, why: "Také veľké nákupy prišli o roky neskôr." }
+      - { text: Tonu zlata, why: "Zlato sa za bitcoin v tom čase nekupovalo." }
+      - { text: Šálku kávy, why: "Za kávu by dal Hanyecz oveľa menej." }
+
+  - id: ba-prva-burza
+    type: choice
+    prompt: V ktorom meste sa od roku 1602 pravidelne obchodovalo s akciami Holandskej východoindickej spoločnosti (VOC)?
+    difficulty: 2
+    tags: [burzy, historia]
+    source: "https://www.euronext.com/en/about/media/bell-ceremony-archive/417th-anniversary-amsterdam-exchange"
+    correct: { text: Amsterdam, why: "VOC bola prvou firmou, ktorej akcie sa verejne a pravidelne obchodovali; Amsterdam sa pokladá za prvú moderne fungujúcu burzu." }
+    wrong:
+      - { text: Londýn, why: "Londýnska burza vznikla o desaťročia neskôr." }
+      - { text: New York, why: "Wall Street sa formovala až koncom 18. storočia." }
+      - { text: Benátky, why: "Benátky mali veľký obchod, ale nie VOC." }
+
+  - id: ba-banksy-skartovanie
+    type: choice
+    prompt: Čo sa stalo s Banksyho obrazom Girl with Balloon hneď po jeho vydražení v Sotheby's v roku 2018?
+    difficulty: 1
+    tags: [aukcie, umenie]
+    source: "https://www.npr.org/2021/10/14/1046134451/banksy-shredded-auction-sold-record"
+    correct: { text: Rám ho čiastočne rozrezal skartovačkou, why: "Skartovačka ukrytá v ráme sa spustila hneď po zaklepnutí; obraz sa premenoval na Love is in the Bin." }
+    wrong:
+      - { text: Ukradli ho z miestnosti, why: "Zostal v Sotheby's a neskôr sa predal ešte raz." }
+      - { text: Zhorel pri požiari, why: "Banksy použil mechanizmus, nie oheň." }
+      - { text: Kupujúci ho vrátil, why: "Predaj platil a obraz neskôr zdražel." }
+
+  - id: ba-salvator-autor
+    type: choice
+    prompt: Kto namaľoval Salvator Mundi, obraz, ktorý sa v roku 2017 predal za 450,3 milióna dolárov?
+    difficulty: 1
+    tags: [aukcie, umenie]
+    source: "https://www.npr.org/sections/thetwo-way/2017/11/16/564527819/da-vinci-portrait-of-christ-sells-for-record-shattering-450-million"
+    correct: { text: Leonardo da Vinci, why: "Je to jeden z posledných známych Leonardových obrazov v súkromných rukách." }
+    wrong:
+      - { text: Michelangelo, why: "Slávny súčasník, ale autor je iný." }
+      - { text: Rembrandt, why: "Holandský majster o storočie neskôr." }
+      - { text: Raffael, why: "Aj on tvoril v renesancii, ale autorom nie je." }
+
+  - id: ba-bear-stearns
+    type: choice
+    prompt: Ktorú investičnú banku na jar 2008 prevzala JPMorgan Chase s pomocou Federálneho rezervného systému?
+    difficulty: 2
+    tags: [krízy, banky]
+    source: "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath"
+    correct: { text: Bear Stearns, why: "Predaná v núdzi na jar 2008, pred pádom Lehmanu." }
+    wrong:
+      - { text: Lehman Brothers, why: "Vyhlásila bankrot v septembri 2008; nikto ju nezachránil." }
+      - { text: Goldman Sachs, why: "Prežila ako samostatná firma." }
+      - { text: Citigroup, why: "Mala štátnu pomoc, ale nikto ju neprevzal." }
+
+  - id: ba-cierny-utorok
+    type: choice
+    prompt: Ako sa nazýva 29. október 1929, deň, keď Dow Jones klesol o takmer 12 percent?
+    difficulty: 1
+    tags: [krachy]
+    source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1929"
+    correct: { text: Čierny utorok, why: "Deň predtým (28. októbra) bol Čierny pondelok, keď Dow klesol takmer o 13 percent." }
+    wrong:
+      - { text: Čierny pondelok, why: "Tak sa volá 28. október 1929, ale aj 19. október 1987." }
+      - { text: Čierny piatok, why: "Tak sa volajú iné udalosti, nie krach z 29. októbra." }
+      - { text: Čierna streda, why: "Tak sa nazýva iný deň z histórie trhov." }
+
+  - id: ba-circuit-breakers
+    type: choice
+    prompt: Čo burzy v USA zaviedli po krachoch z roku 1987 a 1989, aby zastavili paniku pri veľkých poklesoch?
+    difficulty: 2
+    tags: [krachy]
+    source: "https://www.federalreservehistory.org/essays/stock-market-crash-of-1987"
+    correct: { text: Prerušenie obchodovania pri veľkom poklese (circuit breakers), why: "Burza obchodovanie dočasne zastaví, aby mali investori čas vychladnúť." }
+    wrong:
+      - { text: Zákaz predaja akcií na celý týždeň, why: "Také pravidlo neexistuje; ide o krátke pauzy podľa veľkosti poklesu." }
+      - { text: Povinné ranné zvonenie pre všetkých obchodníkov, why: "Zvon sa používa len na otvorenie a zatvorenie, nie ako poistka." }
+      - { text: Zrušenie všetkých príkazov z predošlého dňa, why: "Príkazy sa tak nerušia." }
