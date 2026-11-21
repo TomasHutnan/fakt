@@ -3,7 +3,7 @@ title: Šport vo svete
 description: Triatlon a päťboj, pravidlá a rozmery, olympiády a paralympiády, majstrovstvá sveta, Tour de France, Stanleyho pohár aj Super Bowl.
 category: sport
 lang: sk
-version: 3
+version: 4
 questions:
   # ---------------------------------------------------------------- PICK
   - id: triatlon-fakty
@@ -44,37 +44,33 @@ questions:
 
   - id: moderny-patboj
     type: pick
-    prompt: Ktoré disciplíny patrili alebo patria do moderného päťboja?
+    prompt: Z ktorých piatich disciplín sa skladal moderný päťboj až po olympiádu v Paríži 2024?
     difficulty: 2
-    source: https://en.wikipedia.org/wiki/Modern_pentathlon
-    note: "Ďalší zdroj: en.wikipedia.org/wiki/Modern_pentathlon_at_the_2024_Summer_Olympics"
+    source: https://www.uipmworld.org/sport/uipm-modern-pentathlon
+    note: "Ďalšie zdroje: en.wikipedia.org/wiki/Modern_pentathlon, en.wikipedia.org/wiki/Modern_pentathlon_at_the_2024_Summer_Olympics"
     tags: [päťboj, olympiáda]
     correct:
       - text: šerm kordom
         why: Bojuje sa na jeden zásah, kto trafí prvý, vyhráva.
       - text: plávanie voľným spôsobom
         why: V Paríži 2024 sa plávalo 200 m.
-      - text: parkúr na vylosovanom koni
-        why: Jazdec dostal neznámeho koňa; od roku 2025 jazdu v päťboji nahradila prekážková dráha.
-      - text: streľba z laserovej pištole
-        why: Spolu s behom tvorí záverečný laser-run.
+      - text: jazda na vylosovanom koni
+        why: Jazdec dostal neznámeho koňa; od roku 2025 jazdu nahradila prekážková dráha.
+      - text: streľba z pištole
+        why: Od roku 2011 sa strieľa laserovou pištoľou, spolu s behom tvorí záverečný laser-run.
       - text: beh
         why: Kto dobehne v laser-rune prvý, vyhral celý päťboj.
-      - text: prekážková dráha
-        why: Od roku 2025 nahradila jazdu na koni, na olympiáde debutuje v Los Angeles 2028.
     wrong:
+      - text: prekážková dráha
+        why: Jazdu na koni nahradila až od roku 2025, na olympiáde debutuje v Los Angeles 2028.
       - text: lukostreľba
         why: Strieľa sa z pištole, nie z luku.
       - text: cyklistika
         why: Bicykel patrí do triatlonu, nie do päťboja.
-      - text: veslovanie
-        why: Z vodných disciplín je v päťboji len plávanie.
       - text: hod oštepom
         why: Ten patril do antického päťboja, nie do moderného.
       - text: zápasenie
         why: Aj zápasenie bolo súčasťou antického päťboja spolu s behom, skokom, diskom a oštepom.
-      - text: skok do diaľky
-        why: Ďalšia disciplína antického päťboja; moderný vymyslel podľa legendy Coubertin pre jazdeckého vojaka.
 
   - id: loh-hostitelia-viackrat
     type: pick
