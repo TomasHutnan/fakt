@@ -266,11 +266,11 @@ questions:
       - { text: "B_strica", why: "Bystrica, od slova bystrý, vybrané slovo po b." }
       - { text: "p_ramída", why: "Pyramída, cudzie slovo, ktoré sa píše s y." }
     wrong:
-      - { text: "b_cykel", why: "Bicykel sa píše s i, hoci po b." }
-      - { text: "s_rup", why: "Sirup sa píše s i, s y je len syr." }
+      - { text: "b_cykel", why: "Bicykel sa píše s i, nie je medzi vybranými slovami po b." }
+      - { text: "s_rup", why: "Sirup sa píše s i, hoci syr sa píše s y." }
       - { text: "p_vo", why: "Pivo sa píše s i, nie je to vybrané slovo." }
-      - { text: "v_dlička", why: "Vidlička sa píše s i; po v je y napríklad vo vydra alebo vysoký." }
-      - { text: "l_pa", why: "Lipa sa píše s i, s y je lyže alebo lysý." }
+      - { text: "v_dlička", why: "Vidlička sa píše s i; po v je y napríklad v slovách vydra alebo vysoký." }
+      - { text: "l_pa", why: "Lipa sa píše s i; po l je y napríklad v slovách lyže alebo lysý." }
 
   - id: pravopis-ae
     type: pick
@@ -288,11 +288,11 @@ questions:
       - { text: pamiatka, why: "Hoci pamäť má ä, pamiatka má dvojhlásku ia." }
       - { text: meno, why: "Obyčajné e, ä tu nie je." }
     wrong:
-      - { text: pämiatka, why: "Správne pamiatka, ä je len v slove pamäť." }
+      - { text: pämiatka, why: "Správne pamiatka; ä je v slove pamäť, nie v pamiatke." }
       - { text: pečäť, why: "Správne pečať: po č sa ä nepíše, len po p, b, m, v." }
       - { text: mäno, why: "Správne meno." }
       - { text: väža, why: "Správne veža." }
-      - { text: devet, why: "Správne deväť, devet je po česky." }
+      - { text: devet, why: "Správne deväť; po česky je to devět." }
 
   - id: sk-bez-cs
     type: pick
