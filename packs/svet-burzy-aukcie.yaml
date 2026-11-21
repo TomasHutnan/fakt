@@ -26,7 +26,7 @@ questions:
       - { text: Karta Honusa Wagnera T206, why: "Rekord z roku 2022 bol 7,25 milióna dolárov, a to v súkromnom predaji." }
       - { text: Britská Guyana 1c magenta (najdrahšia známka), why: "V roku 2021 sa v Sotheby's predala za 8,3 milióna dolárov, teda pod hranicou 10 miliónov." }
       - { text: Cattelanov banán prilepený lepiacou páskou na stene, why: "V novembri 2024 sa predal za 6,2 milióna dolárov." }
-      - { text: Banksyho Girl with Balloon pri skartovaní v roku 2018, why: "Vtedy sa predala za približne 1,4 milióna dolárov; skartovaním jej hodnota stúpla až neskôr." }
+      - { text: Banksyho Girl with Balloon pri skartovaní v roku 2018, why: "Vtedy sa predal za približne 1,4 milióna dolárov; skartovaním jeho hodnota stúpla až neskôr." }
 
   - id: ba-obrazy-nad-100-mil
     type: pick
@@ -255,7 +255,7 @@ questions:
     tolerance: 0.2
     difficulty: 2
     tags: [diamanty]
-    why: "Jeden karát je dve desatiny gramu (0,2 g). Karát na meranie zlata sa týka čistoty, nie hmotnosti."
+    why: "Jeden karát predstavuje dve desatiny gramu (0,2 g). Karát na meranie zlata sa týka čistoty, nie hmotnosti."
     source: "https://www.gia.edu/diamond-quality-factor"
 
   - id: ba-uhlenhaut
@@ -337,7 +337,7 @@ questions:
     difficulty: 1
     tags: [aukcie, umenie]
     source: "https://www.npr.org/2021/10/14/1046134451/banksy-shredded-auction-sold-record"
-    correct: { text: Rám ho čiastočne rozrezal skartovačkou, why: "Skartovačka ukrytá v ráme sa spustila hneď po zaklepnutí; obraz sa premenoval na Love is in the Bin." }
+    correct: { text: Rám ho čiastočne rozrezal skartovačkou, why: "Skartovačka ukrytá v ráme sa spustila hneď po odklepnutí; obraz sa premenoval na Love is in the Bin." }
     wrong:
       - { text: Ukradli ho z miestnosti, why: "Zostal v Sotheby's a neskôr sa predal ešte raz." }
       - { text: Zhorel pri požiari, why: "Banksy použil mechanizmus, nie oheň." }
