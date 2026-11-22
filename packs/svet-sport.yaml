@@ -739,7 +739,7 @@ questions:
         why: Jazdci súťažia s koníkom na palici, nie s pravým koňom.
       - text: Najviac jazdcov sú dievčatá medzi 12 a 18 rokmi
         why: Je to šport hlavne dospievajúcich dievčat.
-      - text: Fínska asociácia hobbyhorsingu vznikla v roku 2004
+      - text: Fínski nadšenci hobbyhorsingu sa začali združovať už v roku 2004
         why: Naplno sa však šport rozbehol až okolo roku 2016.
       - text: O hobbyhorsingu nakrútili film Hobbyhorse Revolution
         why: Fínsky dokument z roku 2017 priblížil komunitu širokej verejnosti.
@@ -1036,7 +1036,7 @@ questions:
   - id: hobbyhorsing-krajina
     type: choice
     prompt: V ktorej krajine vznikol hobbyhorsing, šport, v ktorom sa skáče cez prekážky na koníkovi na palici?
-    correct: { text: Fínsko, why: "Fínska asociácia hobbyhorsingu vznikla v roku 2004, majstrovstvá sa konajú v Seinäjoki." }
+    correct: { text: Fínsko, why: "Nadšenci sa tam združovali od roku 2004, majstrovstvá sa konajú v Seinäjoki." }
     wrong:
       - { text: Írsko, why: "Hobbyhorse sa objavuje v írskej literatúre aj ľudových tradíciách, ale ako súťažný šport nie." }
       - { text: Nemecko, why: "Koník na palici sa tam objavuje na umeleckých dielach z 16. storočia, ako šport tam nevznikol." }
