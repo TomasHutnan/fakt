@@ -699,11 +699,11 @@ questions:
       - text: Ak hráč na ťahu nemá legálny ťah a jeho kráľ nie je v šachu, partia je remíza
         why: Takejto pozícii sa hovorí pat.
       - text: Ak sa trikrát zopakuje tá istá pozícia, hráč môže žiadať remízu
-        why: Pozícia sa nemusí opakovať za sebou a po pätnásobnom opakovaní je remíza automatická.
+        why: Pozícia sa nemusí opakovať za sebou a po päťnásobnom opakovaní je remíza automatická.
       - text: Po 50 ťahoch každého hráča bez ťahu pešiakom a bez vzatia figúry možno žiadať remízu
         why: Je to pravidlo 50 ťahov; po 75 ťahoch je remíza automatická.
-      - text: Ak sa hráč úmyselne dotkne vlastnej figúry, musí s ňou ťahať
-        why: Platí pravidlo dotknutá figúra, ťah, ak je s ňou možný.
+      - text: Platí pravidlo „dotknutá figúra – ťahaná figúra“
+        why: Kto sa úmyselne dotkne vlastnej figúry, musí s ňou ťahať, ak je to možné; len upraviť ju smie po ohlásení j’adoube.
       - text: Kráľa nemožno vziať, partia sa končí matom
         why: Ťah, po ktorom by vlastný kráľ ostal v šachu, je neplatný, takže na vzatie kráľa nikdy nedôjde.
     wrong:
@@ -722,7 +722,7 @@ questions:
       - text: Prvý ťahá čierny
         why: Prvý ťahá biely.
       - text: Ak sa dotknete figúry, môžete si to rozmyslieť, kým ju nepustíte na políčko
-        why: Platí dotknutá figúra, ťah; figúru možno len upraviť, ak to hráč vopred oznámi (j’adoube).
+        why: Platí „dotknutá figúra – ťahaná figúra“; figúru možno len upraviť, ak to hráč vopred oznámi (j’adoube).
       - text: Hráči sa nikdy nemôžu dohodnúť na remíze
         why: Remízu dohodou pravidlá FIDE poznajú; zakázať ju môže len poriadok konkrétneho turnaja.
 
@@ -744,7 +744,7 @@ questions:
       - text: O hobbyhorsingu nakrútili film Hobbyhorse Revolution
         why: Fínsky dokument z roku 2017 priblížil komunitu širokej verejnosti.
       - text: Fínske majstrovstvá sa konajú v meste Seinäjoki
-        why: Prvé boli v roku 2012, dnes na ne chodia stovky jazdcov a tisíce divákov.
+        why: Chodia na ne stovky jazdcov a tisíce divákov; prvé fínske majstrovstvá boli v roku 2012.
       - text: Vo Fínsku má hobbyhorsing vyše 10 000 nadšencov
         why: Fínsko je pre jazdcov na koníkoch na palici zasľúbená krajina.
       - text: Hobbyhorsing sa rozšíril aj do Ruska, Francúzska či Holandska
@@ -1032,19 +1032,6 @@ questions:
     source: https://www.chess.com/article/view/steinitz-the-official-world-chess-champion
     note: "Ďalšie zdroje: his.fide.com/2026/05/08/chess-in-the-19th-century-milestones-of-1886/ (FIDE vznikla 1924), en.wikipedia.org/wiki/World_Chess_Championship"
     tags: [sach, história]
-
-  - id: deep-blue
-    type: choice
-    prompt: V ktorom roku porazil počítač Deep Blue od IBM úradujúceho majstra sveta Garriho Kasparova v zápase?
-    correct: { text: "1997", why: "V máji 1997 vyhral šesťpartiový zápas v New Yorku 3,5 : 2,5." }
-    wrong:
-      - { text: "1996", why: "V prvom zápase vyhral Kasparov 4 : 2, Deep Blue vyhral len jednu partiu." }
-      - { text: "1985", why: "V tomto roku Kasparov porazil Karpova a stal sa majstrom sveta." }
-      - { text: "2000", why: "Kasparov vtedy prišiel o titul, ale proti Vladimirovi Kramnikovi, nie počítaču." }
-    difficulty: 1
-    source: https://www.ibm.com/history/deep-blue
-    note: "Ďalšie zdroje: chess.com/terms/deep-blue-chess-computer, en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov"
-    tags: [sach, počítače]
 
   - id: hobbyhorsing-krajina
     type: choice
