@@ -686,15 +686,15 @@ questions:
     correct:
       - text: Prvý ťahá biely
         why: Hráč so svetlými figúrami začína a potom sa striedajú.
-      - text: Pešiak, ktorý dôjde na poslednú radu, sa môže premeniť na jazdca
+      - text: Pešiak, ktorý dôjde na posledný rad, sa môže premeniť na jazdca
         why: Premena pešiaka je povolená na dámu, vežu, strelca aj jazdca.
       - text: Pešiak sa môže premeniť aj na figúru, ktorú hráč predtým nestratil
         why: Pravidlá výslovne hovoria, že výber nie je obmedzený na vzaté figúry; môžete mať aj tri dámy.
       - text: Pešiaka, ktorý práve postúpil o dve polia, možno vziať mimochodom
         why: Len hneď v nasledujúcom ťahu, potom možnosť zaniká.
-      - text: Rošáda nie je možná, ak kráľ alebo veža už predtým ťahali
+      - text: Rošáda s vežou nie je možná, ak kráľ alebo táto veža už predtým ťahali
         why: Právo na rošádu sa stratí po prvom ťahu kráľa alebo danej veže.
-      - text: Rošádovať sa nedá, ak kráľ prechádza poľom, ktoré napáda súper
+      - text: Rošáda sa nedá urobiť, ak kráľ prechádza poľom, ktoré napáda súper
         why: Kráľ nesmie byť v šachu, prejsť napadnutým poľom ani na ňom skončiť.
       - text: Ak hráč na ťahu nemá legálny ťah a jeho kráľ nie je v šachu, partia je remíza
         why: Takejto pozícii sa hovorí pat.
@@ -702,27 +702,27 @@ questions:
         why: Pozícia sa nemusí opakovať za sebou a po pätnásobnom opakovaní je remíza automatická.
       - text: Po 50 ťahoch každého hráča bez ťahu pešiakom a bez vzatia figúry možno žiadať remízu
         why: Je to pravidlo 50 ťahov; po 75 ťahoch je remíza automatická.
-      - text: Ak sa hráč dotkne vlastnej figúry, musí s ňou ťahať
+      - text: Ak sa hráč úmyselne dotkne vlastnej figúry, musí s ňou ťahať
         why: Platí pravidlo dotknutá figúra, ťah, ak je s ňou možný.
       - text: Kráľa nemožno vziať, partia sa končí matom
         why: Ťah, po ktorom by vlastný kráľ ostal v šachu, je neplatný, takže na vzatie kráľa nikdy nedôjde.
     wrong:
       - text: Pat je výhra pre hráča, ktorý ho spôsobil
-        why: Pat je remíza, preto sa pri prevahe dá zachrániť aj prehratá pozícia.
-      - text: Kráľ môže rošádovať aj vtedy, keď je v šachu
+        why: Pat je remíza, preto sa dá zachrániť aj pozícia s menším materiálom.
+      - text: Kráľ môže urobiť rošádu aj vtedy, keď je v šachu
         why: V šachu rošáda nie je dovolená.
       - text: Pešiak sa môže premeniť na kráľa
         why: Premena je len na dámu, vežu, strelca alebo jazdca.
-      - text: Pešiak sa môže na poslednej rade premeniť až po tom, čo súper povolí
+      - text: Pešiak sa môže na poslednom rade premeniť až vtedy, keď to súper povolí
         why: Hráč si figúru vyberá sám, súhlas súpera netreba.
-      - text: Po trojnásobnom opakovaní pozície sa partia musí končiť remízou bez nároku hráča
+      - text: Po trojnásobnom opakovaní pozície sa partia musí skončiť remízou, aj keď o ňu nikto nežiada
         why: Pri troch opakovaniach treba remízu žiadať; automatická je až pri piatich.
       - text: Rošáda sa smie zahrať cez vlastnú figúru, ak je len jedna
         why: Medzi kráľom a vežou nesmie stáť žiadna figúra.
       - text: Prvý ťahá čierny
         why: Prvý ťahá biely.
       - text: Ak sa dotknete figúry, môžete si to rozmyslieť, kým ju nepustíte na políčko
-        why: Platí dotknutá figúra, ťah; výnimkou je len poprosenie o úpravu figúry (J’adoube).
+        why: Platí dotknutá figúra, ťah; figúru možno len upraviť, ak to hráč vopred oznámi (j’adoube).
       - text: Hráči sa nikdy nemôžu dohodnúť na remíze
         why: Remízu dohodou pravidlá FIDE poznajú; zakázať ju môže len poriadok konkrétneho turnaja.
 
@@ -758,8 +758,8 @@ questions:
         why: Väčšina jazdcov sú dievčatá a mladé ženy.
       - text: Súťažiaci sa pohybujú na motorových koníkoch
         why: Poháňa ich len vlastná sila a fantázia.
-      - text: Fínske majstrovstvá organizuje hokejový zväz
-        why: Organizuje ich Fínska jazdecká federácia.
+      - text: Na súťažiach sa jazdí na živých poníkoch
+        why: Jazdí sa na koníkoch na palici a „kone“ poháňajú vlastné nohy jazdcov.
 
   # ---------------------------------------------------------------- ORDER
   - id: grandslamy-vznik
@@ -874,11 +874,11 @@ questions:
     tags: [sach, rebríček]
     items:
       - { text: Magnus Carlsen, value: 2823, why: "Číslo jedna v rebríčku, hoci titul majstra sveta už neobhajuje." }
-      - { text: Hikaru Nakamura, value: 2792, why: "Americký veľmajster, známy aj ako streamer a blitzový špecialista." }
+      - { text: Hikaru Nakamura, value: 2792, why: "Americký veľmajster, známy aj ako streamer a špecialista na bleskový šach." }
       - { text: Fabiano Caruana, value: 2783, why: "Americký veľmajster, vyzývateľ o titul majstra sveta v roku 2018." }
       - { text: Nodirbek Abdusattorov, value: 2772, why: "Uzbek z mladej generácie, ktorá tlačí na veteránov." }
       - { text: Anish Giri, value: 2747, why: "Holanďan, ktorý patrí k svetovej špičke už od mladosti." }
-      - { text: Viswanathan Anand, value: 2739, why: "Viacnásobný majster sveta, ročník 1969, stále hrá v svetovej elite." }
+      - { text: Viswanathan Anand, value: 2739, why: "Viacnásobný majster sveta, ročník 1969, stále hrá vo svetovej elite." }
       - { text: Gukesh Dommaraju, value: 2710, why: "Majster sveta od roku 2024 je v rebríčku až 26." }
 
   # ---------------------------------------------------------------- NUMBER
@@ -1027,7 +1027,7 @@ questions:
     wrong:
       - { text: "1851", why: "Londýnsky turnaj, ktorý vyhral Adolf Anderssen; o oficiálny titul sa ešte nehralo." }
       - { text: "1924", why: "V tomto roku vznikla medzinárodná šachová federácia FIDE." }
-      - { text: "1948", why: "Turnaj, ktorý vyhral Michail Botvinnik, boli prvé majstrovstvá sveta pod FIDE." }
+      - { text: "1948", why: "Michail Botvinnik vtedy vyhral prvé majstrovstvá sveta pod FIDE." }
     difficulty: 3
     source: https://www.chess.com/article/view/steinitz-the-official-world-chess-champion
     note: "Ďalšie zdroje: his.fide.com/2026/05/08/chess-in-the-19th-century-milestones-of-1886/ (FIDE vznikla 1924), en.wikipedia.org/wiki/World_Chess_Championship"
