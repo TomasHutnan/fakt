@@ -36,9 +36,9 @@ questions:
     note: "Ďalší zdroj: tyden.cz/rubriky/marketing/video-prvni-zamilovana-reklama-kterou-uvedla-kofola-v-roce-2001_385902.html (české znenie „Když ji miluješ, není co řešit“)."
     correct:
       - { text: "Keď ju miluješ, nie je čo riešiť", why: "Český originál „Když ji miluješ, není co řešit“ sa prvýkrát objavil v spote z roku 2001." }
-      - { text: "Ja nemusím, ja už ho vidím", why: "Hláška z vianočnej reklamy s prasiatkom, ktorá je „notoricky známa dodnes“." }
+      - { text: "Ja nemusím, ja už ho vidím", why: "Slogan z vianočnej reklamy s prasiatkom, ktorý je podľa Stratégií „notoricky známy dodnes“." }
       - { text: "Láska nie je žiadna veda. Kofola to už vie 50 rokov", why: "Kampaň k 50. výročiu značky; spot režíroval Jakub Kohák." }
-      - { text: "Keď slová nestačia, pomôže láska", why: "Kampaň od agentúry Satchi & Satchi Praha." }
+      - { text: "Keď slová nestačia, pomôže láska", why: "Kampaň od agentúry Saatchi & Saatchi Praha." }
     wrong:
       - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
       - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
@@ -121,7 +121,7 @@ questions:
       - { text: "Connecting People", why: "Slogan Nokie od roku 1992." }
       - { text: "Every little helps", why: "Slogan britského reťazca Tesco." }
       - { text: "Haribo macht Kinder froh und Erwachsene ebenso", why: "Slogan Haribo; druhá polovica o dospelých pribudla v polovici 60. rokov." }
-      - { text: "Just Do It", why: "Slogan Nike, ktorý vymyslel Dan Wieden pre svoju novú agentúru." }
+      - { text: "Just Do It", why: "Slogan Nike, ktorý vymyslel Dan Wieden." }
     wrong:
       - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta, a ten je slovenský." }
       - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile na Slovensku, preklad „Life is for sharing“." }
@@ -137,14 +137,14 @@ questions:
     source: https://strategie.hnonline.sk/news/marketing/781679-kofola-toto-su-reklamy-ktore-ked-milujete-nie-je-co-riesit
     note: "Ďalší zdroj: tyden.cz/rubriky/marketing/video-prvni-zamilovana-reklama-kterou-uvedla-kofola-v-roce-2001_385902.html"
     correct:
-      - { text: "Vianočná kampaň s prasiatkom je z roku 2004", why: "Stratégie ju datujú do roku 2004; bola taká obľúbená, že ju nasadzovali niekoľko Vianoc po sebe." }
+      - { text: "Hláška „Ja nemusím, ja už ho vidím“ pochádza z vianočnej reklamy s prasiatkom", why: "Stratégie píšu, že vianočná kampaň s prasiatkom bola taká obľúbená, že ju nasadzovali niekoľko rokov po sebe." }
       - { text: "Slogan „Keď ju miluješ, nie je čo riešiť“ vymysleli na brainstormingu v agentúre Euro RSCG", why: "Prvý spot s ním vznikol v roku 2001 a v televízii bežal od konca mája." }
       - { text: "Kampaň Kofotiny z roku 2009 bojovala proti napodobeninám Kofoly", why: "Pre kontroverzný názov sa dostala pred Komisiu Rady pre reklamu." }
       - { text: "Spot k 50. výročiu značky režíroval Jakub Kohák", why: "Spot Láska nie je žiadna veda. Kofola to už vie 50 rokov pripravila agentúra Kaspen Jung von Matt." }
       - { text: "V kampani Neriešenie sa objavila hojdajúca sa panda a pes hrajúci na klavíri", why: "Kampaň od agentúry TRIAD Advertising bola známa bizarnými gifmi." }
       - { text: "Kampaň Neslýchané festivaly z roku 2012 spojila Kofolu s hudobnými festivalmi", why: "Pripravila ju agentúra Kaspen/Jung von Matt a spájala maňušky s festivalmi." }
     wrong:
-      - { text: "Vianočný spot s prasiatkom je z roku 2014", why: "Stratégie ho datujú do roku 2004." }
+      - { text: "Hlavným hrdinom vianočného spotu Kofoly bol sob", why: "Kofola je spájaná s vianočným prasiatkom." }
       - { text: "Slogan „Keď ju miluješ, nie je čo riešiť“ vznikol až v roku 2011", why: "Prvý spot s ním je z roku 2001." }
       - { text: "Spot k 50. výročiu režíroval Jan Svěrák", why: "Režíroval ho Jakub Kohák." }
       - { text: "Kampaň Neriešenie vymyslela agentúra Wiktor Leo Burnett", why: "Pripravila ju agentúra TRIAD Advertising; Wiktor Leo Burnett robil Kofotiny." }
@@ -162,19 +162,19 @@ questions:
       - { text: "Chlapca nakreslil Radek Pilař, ktorý dal neskôr podobu aj Rumcajsovi", why: "Pilař namaľoval aj zbojníka Rumcajsa." }
       - { text: "Prvé večerníčky boli hrané, kreslený sa objavil až v októbri 1967", why: "Prvým kresleným bol dodnes obľúbený cyklus Pohádky ovčí babičky." }
       - { text: "Pred Večerníčkom vysielala Československá televízia nedeľný program Stříbrné zrcátko", why: "Začal sa vysielať o dva roky skôr, v roku 1963." }
-      - { text: "Zvučka mala kritikov, lebo Večerníček rozhadzuje papiere a jazdí na bicykli bez prilby", why: "Niektorým divákom vadilo aj to, že auto riadi bez vodičáku." }
+      - { text: "Zvučka mala kritikov, lebo Večerníček rozhadzuje papiere a jazdí na bicykli bez prilby", why: "Niektorým divákom prekážalo aj to, že auto riadi bez vodičského preukazu." }
       - { text: "Večerníček je najdlhšie vysielaná detská relácia v bývalom Československu", why: "Tvrdí to Slovenská televízia (STVR) na svojej stránke." }
-      - { text: "Hlas komety v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová namluvila kométu v rozprávke Kluk a kometa z 2. januára 1965." }
+      - { text: "Hlas komety v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová prepožičala hlas kométe v rozprávke Kluk a kometa z 2. januára 1965." }
     wrong:
-      - { text: "Prvé večerníčky boli kreslené", why: "Prvé boli hrané a vyprávané; kreslený sa objavil až v októbri 1967." }
+      - { text: "Prvé večerníčky boli kreslené", why: "Prvé boli hrané a rozprávané; kreslený sa objavil až v októbri 1967." }
       - { text: "Chlapca s papierovou čiapkou nakreslil Jiří Trnka", why: "Nakreslil ho Radek Pilař." }
-      - { text: "Pozdravy „dobrý večer“ a „dobrou noc“ namluvila Jiřina Bohdalová", why: "Namluvil ich Michal Citavý; Bohdalová hovorila kométu v prvej rozprávke." }
+      - { text: "Pozdravy „dobrý večer“ a „dobrou noc“ nahovorila Jiřina Bohdalová", why: "Nahovoril ich Michal Citavý; Bohdalová prepožičala hlas kométe v prvej rozprávke." }
       - { text: "Zvučka bola od začiatku farebná", why: "Pôvodne bola čiernobiela, neskôr ju nahradila farebná." }
       - { text: "Pravidelné vysielanie Večerníčka sa začalo v 70. rokoch", why: "Začalo sa 2. januára 1965; v 70. rokoch sa Večerníček prvýkrát objavil vo farbe." }
 
   - id: markiza-prvy-vecer
     type: pick
-    prompt: Ktoré tvrdenia o prvom vysielacom večere TV Markíza (31. augusta 1996) sú pravdivé?
+    prompt: Ktoré tvrdenia o TV Markíza a jej prvom vysielacom večere (31. augusta 1996) sú pravdivé?
     difficulty: 2
     source: https://strategie.hnonline.sk/news/media/780660-velky-retro-special-markiza-oslavuje-18-narodeniny-takto-vyzerala-kedysi
     note: "Stratégie, 31. 8. 2014; prvý program a chronológia seriálov podľa Markízy."
@@ -223,7 +223,7 @@ questions:
       - { text: "Skok sa konal 14. októbra 2012", why: "Dátum uvádza popis snímky v NBC News." }
       - { text: "Baumgartner vyskočil z výšky približne 24 míľ", why: "Skočil z kapsuly ako rakúsky parašutista." }
       - { text: "Pristál v púšti pri meste Roswell v Novom Mexiku", why: "Pristál po viac než deviatich minútach." }
-      - { text: "Rekord padol na troch frontoch", why: "Najvyšší skok, najdlhší voľný pád a najvyššia vertikálna rýchlosť." }
+      - { text: "Rekord padol na troch frontoch", why: "Najvyšší skok, najdlhšia vzdialenosť voľného pádu a najvyššia vertikálna rýchlosť." }
       - { text: "Jeho voľný pád bol o pár sekúnd kratší než rekord Joea Kittingera z roku 1960", why: "Kittingerov čas zostal teda nepokorený." }
       - { text: "Ako prvý človek prekonal rýchlosť zvuku len v špeciálnom obleku", why: "Napísala to agentúra AP v správe, ktorú prebralo NPR." }
       - { text: "Oficiálna rýchlosť vyšla neskôr vyššia než predbežná", why: "Predbežne 833,9 mph, po spracovaní 843,6 mph." }
@@ -247,7 +247,7 @@ questions:
       - { text: "Zlatý Bažant v roku 2015 po siedmich rokoch vymenil reklamnú agentúru", why: "Istropolitanu Ogilvy nahradil Wiktor Leo Burnett." }
       - { text: "Šariš sa v roku 2021 rozlúčil so sloganom „Srdcom východniar“", why: "Nový slogan „S iskrou v srdci“ mal osloviť všetkých Slovákov." }
       - { text: "Rajec Bylinka mal v lete 2015 v televíznom spote svetlušky", why: "Na jar 2015 bol hrdinom spotu pre pramenitú vodu medveď." }
-      - { text: "Orange v roku 2009 nahradil vízie „budúcnosť je jasná, budúcnosť je Orange“ novým sloganom", why: "Nový slogan znel „spolu dokážeme viac“." }
+      - { text: "Orange v roku 2009 nahradil víziu „Budúcnosť je jasná, budúcnosť je Orange“ novým sloganom", why: "Nový slogan znel „spolu dokážeme viac“." }
       - { text: "Budiš v roku 2005 skrátil slogan na „božská chuť“", why: "Pôvodne znel „božská chuť minerálky“." }
     wrong:
       - { text: "Billa nahradila rodinku v reklame slovenským šéfkuchárom", why: "Bol to taliansky šéfkuchár." }
@@ -293,7 +293,7 @@ questions:
       - { text: "Haribo oslovovalo dospelých sloganom od roku 1933", why: "Dospelých pridali v polovici 60. rokov." }
       - { text: "Nokia mala slogan „Connecting People“ od svojho založenia v roku 1865", why: "Slogan sa stal sloganom Nokie v roku 1992." }
       - { text: "Slogan „Every Little Helps“ vymyslelo Tesco v 70. rokoch", why: "Vznikol v roku 1993." }
-      - { text: "Slogan „Just Do It“ vymyslel zakladateľ Nike Phil Knight", why: "Vymyslel ho Dan Wieden pre svoju novú agentúru, ktorej prvým klientom bolo Nike." }
+      - { text: "Slogan „Just Do It“ vymyslel zakladateľ Nike Phil Knight", why: "Vymyslel ho Dan Wieden pre Nike, prvého klienta jeho agentúry." }
       - { text: "Haribo vysielalo prvú televíznu reklamu v 80. rokoch", why: "Na nemeckej televízii sa Haribo objavilo prvýkrát v roku 1962." }
 
   # ---------- Zoraď ----------
@@ -314,7 +314,7 @@ questions:
 
   - id: poradie-super-bowl-spoty
     type: order
-    prompt: Zoraď slávne spoty z Super Bowlu od najstaršieho po najnovší.
+    prompt: Zoraď slávne spoty zo Super Bowlu od najstaršieho po najnovší.
     direction: asc
     unit: rok
     difficulty: 3
@@ -387,7 +387,7 @@ questions:
 
   - id: cislo-vecernicek-hlas
     type: number
-    prompt: Koľko rokov mal chlapec, ktorý v roku 1965 namluvil pozdravy „dobrý večer“ a „dobrou noc“ do zvučky Večerníčka?
+    prompt: Koľko rokov mal chlapec, ktorý nahovoril pozdravy „dobrý večer“ a „dobrou noc“ do zvučky Večerníčka?
     answer: 6
     unit: rokov
     scale: linear
