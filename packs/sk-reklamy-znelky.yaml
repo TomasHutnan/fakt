@@ -13,8 +13,7 @@ questions:
     source: https://strategie.hnonline.sk/news/marketing/781675-nova-kampan-zlaty-bazant-chce-byt-tradicny-no-zaroven-ako-startup
     note: "Ďalšie zdroje: strategie.hnonline.sk/news/marketing/772487-odstartovala-kampan-saris-srdcom-vychodniar (14. 5. 2009), opive.sk/srdcom-vychodniar-saris-uz-nechce-byt-len-vychodniarske-pivo/ (20. 4. 2021)."
     correct:
-      - { text: "To najlepšie, čo doma máme", why: "Starší slogan Zlatého Bažanta od agentúry Creative Department, ešte pred „Svetovým slovenským pivom“." }
-      - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta od agentúry Istropolitana Ogilvy; v roku 2015 ho vystriedal nový." }
+      - { text: "To najlepšie, čo doma máme", why: "Starší slogan Zlatého Bažanta od agentúry Creative Department." }
       - { text: "Na zdravie, Slovensko!", why: "Nový slogan Zlatého Bažanta z apríla 2015; podľa značky ide o tradičný prípitok pre všetkých Slovákov." }
       - { text: "Srdcom východniar", why: "Slogan Šarišu z kampane, ktorá odštartovala v máji 2009." }
       - { text: "S iskrou v srdci", why: "Nový slogan Šarišu z roku 2021, ktorým sa pivovar rozlúčil so „Srdcom východniar“." }
@@ -37,7 +36,6 @@ questions:
     correct:
       - { text: "Keď ju miluješ, nie je čo riešiť", why: "Český originál „Když ji miluješ, není co řešit“ sa prvýkrát objavil v spote z roku 2001." }
       - { text: "Ja nemusím, ja už ho vidím", why: "Hláška z vianočnej reklamy s prasiatkom; Stratégie ju označujú za notoricky známu dodnes." }
-      - { text: "Láska nie je žiadna veda. Kofola to už vie 50 rokov", why: "Kampaň k 50. výročiu značky; spot režíroval Jakub Kohák." }
       - { text: "Keď slová nestačia, pomôže láska", why: "Kampaň od agentúry Saatchi & Saatchi Praha." }
     wrong:
       - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
@@ -57,7 +55,6 @@ questions:
     note: "Ďalší zdroj: strategie.hnonline.sk/news/media/771692-t-mobile-uvadza-novy-slogan-zazime-to-spolu (14. 1. 2009)."
     correct:
       - { text: "Spolu dokážeme viac", why: "Nový slogan Orangeu z februára 2009." }
-      - { text: "Budúcnosť je jasná, budúcnosť je Orange", why: "Doterajšia vízia Orangeu, ktorú v roku 2009 nahradilo „spolu dokážeme viac“." }
       - { text: "Zažime to spolu", why: "Slovenský ekvivalent medzinárodného „Life is for sharing“, T-Mobile ho uviedol v roku 2009." }
     wrong:
       - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne z roku 2021, nie operátora." }
@@ -99,8 +96,7 @@ questions:
     correct:
       - { text: "Chuť patentovaná prírodou", why: "Sprievodný slogan Rajca." }
       - { text: "Kúzlo patentované prírodou", why: "Malá obmena rajeckého sloganu v kampani pre Rajec Bylinka z leta 2015." }
-      - { text: "božská chuť", why: "Slogan Budišu skrátený v roku 2005 z pôvodného znenia „božská chuť minerálky“." }
-      - { text: "božská chuť minerálky", why: "Pôvodné znenie sloganu Budišu, v roku 2005 ho skrátili." }
+      - { text: "božská chuť", why: "Slogan Budišu, v roku 2005 skrátený z dlhšieho znenia." }
     wrong:
       - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
       - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
@@ -108,25 +104,6 @@ questions:
       - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa." }
       - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
       - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu." }
-      - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne." }
-
-  - id: slogany-svetove-znacky
-    type: pick
-    prompt: Ktoré z týchto sloganov patria svetovým značkám?
-    difficulty: 1
-    source: https://mcdonalds.mediaroom.com/2003-09-02-McDonalds-Unveils-im-lovin-it-Worldwide-Brand-Campaign
-    note: "Ďalšie zdroje: haribo.com/en/about-us/history, blogs.windows.com/devices/2011/01/31/10-things-you-didnt-know-about-nokia-part-2/, marketing.museum/tesco-marketing-history-how-a-market-trader-built-britains-most-powerful-retail-brand/, npr.org/2022/10/06/1127032721/nike-just-do-it-slogan-success-dan-wieden-kennedy-dies"
-    correct:
-      - { text: "i'm lovin' it", why: "Slogan McDonald's, nemecky „ich liebe es“; svetová kampaň z roku 2003." }
-      - { text: "Connecting People", why: "Slogan Nokie od roku 1992." }
-      - { text: "Every Little Helps", why: "Slogan britského reťazca Tesco." }
-      - { text: "Haribo macht Kinder froh und Erwachsene ebenso", why: "Slogan Haribo; druhá polovica o dospelých pribudla v polovici 60. rokov." }
-      - { text: "Just Do It", why: "Slogan Nike, ktorý vymyslel Dan Wieden." }
-    wrong:
-      - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta, a ten je slovenský." }
-      - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile na Slovensku, preklad „Life is for sharing“." }
-      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
-      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu na Slovensku." }
       - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne." }
 
   # ---------- Kampane a príbehy: pick ----------
@@ -164,7 +141,7 @@ questions:
       - { text: "Prvé večerníčky boli hrané a rozprávané", why: "Podľa ČT24 bola prvou večerníčkovou rozprávkou Kluk a kometa, ktorú Československá televízia uviedla 2. januára 1965." }
       - { text: "Pred Večerníčkom vysielala Československá televízia nedeľný program Stříbrné zrcátko", why: "Začal sa vysielať o dva roky skôr, v roku 1963." }
       - { text: "Zvučka mala kritikov, lebo Večerníček rozhadzuje papiere a jazdí na bicykli bez prilby", why: "Niektorým divákom prekážalo aj to, že auto riadi bez vodičského preukazu." }
-      - { text: "Podľa STVR je Večerníček najdlhšie vysielanou televíznou reláciou", why: "Tvrdí to Slovenská televízia (STVR) v článku o Večerníčku." }
+      - { text: "Podľa STVR je Večerníček najdlhšie vysielanou detskou reláciou na území Československa", why: "Tak to uvádza STVR v článku k 60. výročiu relácie." }
       - { text: "Hlas kométy v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová prepožičala hlas kométe v rozprávke Kluk a kometa z 2. januára 1965." }
     wrong:
       - { text: "Prvé večerníčky boli kreslené", why: "Podľa ČT24 boli prvé večerníčky hrané a rozprávané." }
