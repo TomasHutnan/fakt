@@ -26,7 +26,7 @@ questions:
       - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile z roku 2009." }
       - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
       - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne z roku 2021." }
-      - { text: "Every little helps", why: "Slogan britského reťazca Tesco." }
+      - { text: "Every Little Helps", why: "Slogan britského reťazca Tesco." }
 
   - id: slogany-kofola
     type: pick
@@ -36,7 +36,7 @@ questions:
     note: "Ďalší zdroj: tyden.cz/rubriky/marketing/video-prvni-zamilovana-reklama-kterou-uvedla-kofola-v-roce-2001_385902.html (české znenie „Když ji miluješ, není co řešit“)."
     correct:
       - { text: "Keď ju miluješ, nie je čo riešiť", why: "Český originál „Když ji miluješ, není co řešit“ sa prvýkrát objavil v spote z roku 2001." }
-      - { text: "Ja nemusím, ja už ho vidím", why: "Slogan z vianočnej reklamy s prasiatkom, ktorý je podľa Stratégií „notoricky známy dodnes“." }
+      - { text: "Ja nemusím, ja už ho vidím", why: "Hláška z vianočnej reklamy s prasiatkom; Stratégie ju označujú za notoricky známu dodnes." }
       - { text: "Láska nie je žiadna veda. Kofola to už vie 50 rokov", why: "Kampaň k 50. výročiu značky; spot režíroval Jakub Kohák." }
       - { text: "Keď slová nestačia, pomôže láska", why: "Kampaň od agentúry Saatchi & Saatchi Praha." }
     wrong:
@@ -47,7 +47,7 @@ questions:
       - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa." }
       - { text: "Spolu dokážeme viac", why: "Slogan operátora Orange." }
       - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
-      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL, do ktorej patrí Slovnaft." }
+      - { text: "Connecting People", why: "Slogan Nokie." }
 
   - id: slogany-operatori
     type: pick
@@ -67,7 +67,7 @@ questions:
       - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
       - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
       - { text: "božská chuť", why: "Slogan minerálky Budiš." }
-      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL." }
+      - { text: "Just Do It", why: "Slogan Nike." }
 
   - id: slogany-obchody-banka
     type: pick
@@ -79,7 +79,7 @@ questions:
       - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa z jesene 2012." }
       - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu z jeho prvej televíznej kampane na Slovensku (2015)." }
       - { text: "Budúcnosť je vaša", why: "Nový claim Slovenskej sporiteľne z augusta 2021." }
-      - { text: "Every little helps", why: "Slogan britského reťazca Tesco, zavedený v roku 1993." }
+      - { text: "Every Little Helps", why: "Slogan britského reťazca Tesco, zavedený v roku 1993." }
     wrong:
       - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile." }
       - { text: "Spolu dokážeme viac", why: "Slogan operátora Orange." }
@@ -87,7 +87,7 @@ questions:
       - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
       - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
       - { text: "božská chuť", why: "Slogan minerálky Budiš." }
-      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL." }
+      - { text: "Connecting People", why: "Slogan Nokie." }
       - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
 
   - id: slogany-mineralky
@@ -119,7 +119,7 @@ questions:
     correct:
       - { text: "i'm lovin' it", why: "Slogan McDonald's, nemecky „ich liebe es“; svetová kampaň z roku 2003." }
       - { text: "Connecting People", why: "Slogan Nokie od roku 1992." }
-      - { text: "Every little helps", why: "Slogan britského reťazca Tesco." }
+      - { text: "Every Little Helps", why: "Slogan britského reťazca Tesco." }
       - { text: "Haribo macht Kinder froh und Erwachsene ebenso", why: "Slogan Haribo; druhá polovica o dospelých pribudla v polovici 60. rokov." }
       - { text: "Just Do It", why: "Slogan Nike, ktorý vymyslel Dan Wieden." }
     wrong:
@@ -154,23 +154,24 @@ questions:
     type: pick
     prompt: Ktoré tvrdenia o Večerníčku a jeho slávnej zvučke sú pravdivé?
     difficulty: 2
+    asOf: "2025"
     source: https://ct24.ceskatelevize.cz/clanek/kultura/vecernicek-slavi-sedesate-narozeniny-356728
     note: "Ďalší zdroj: stvr.sk/novinky/osobnosti/456145/vecernicek-ma-tajomstvo-ktore-pozna-malokto-dedusko-s-psikom-prisiel-az-neskor"
     correct:
       - { text: "Úplne prvé vysielanie ešte nemalo typickú zvučku s chlapcom v čiapke", why: "Pravidelne sa začal vysielať 2. januára 1965, „tehdy ještě bez své typické znělky“." }
       - { text: "Zvučka vznikla v lete 1965 v réžii Václava Bedřicha", why: "Pracovalo sa na nej v júli a auguste 1965." }
       - { text: "Chlapca nakreslil Radek Pilař, ktorý dal neskôr podobu aj Rumcajsovi", why: "Pilař namaľoval aj zbojníka Rumcajsa." }
-      - { text: "Prvé večerníčky boli hrané, kreslený sa objavil až v októbri 1967", why: "Prvým kresleným bol dodnes obľúbený cyklus Pohádky ovčí babičky." }
+      - { text: "Prvé večerníčky boli hrané a rozprávané", why: "Podľa ČT24 bola prvou večerníčkovou rozprávkou Kluk a kometa, ktorú Československá televízia uviedla 2. januára 1965." }
       - { text: "Pred Večerníčkom vysielala Československá televízia nedeľný program Stříbrné zrcátko", why: "Začal sa vysielať o dva roky skôr, v roku 1963." }
       - { text: "Zvučka mala kritikov, lebo Večerníček rozhadzuje papiere a jazdí na bicykli bez prilby", why: "Niektorým divákom prekážalo aj to, že auto riadi bez vodičského preukazu." }
-      - { text: "Večerníček je najdlhšie vysielaná detská relácia v bývalom Československu", why: "Tvrdí to Slovenská televízia (STVR) na svojej stránke." }
-      - { text: "Hlas komety v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová prepožičala hlas kométe v rozprávke Kluk a kometa z 2. januára 1965." }
+      - { text: "Podľa STVR je Večerníček najdlhšie vysielanou televíznou reláciou", why: "Tvrdí to Slovenská televízia (STVR) v článku o Večerníčku." }
+      - { text: "Hlas kométy v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová prepožičala hlas kométe v rozprávke Kluk a kometa z 2. januára 1965." }
     wrong:
-      - { text: "Prvé večerníčky boli kreslené", why: "Prvé boli hrané a rozprávané; kreslený sa objavil až v októbri 1967." }
+      - { text: "Prvé večerníčky boli kreslené", why: "Podľa ČT24 boli prvé večerníčky hrané a rozprávané." }
       - { text: "Chlapca s papierovou čiapkou nakreslil Jiří Trnka", why: "Nakreslil ho Radek Pilař." }
       - { text: "Pozdravy „dobrý večer“ a „dobrou noc“ nahovorila Jiřina Bohdalová", why: "Nahovoril ich Michal Citavý; Bohdalová prepožičala hlas kométe v prvej rozprávke." }
       - { text: "Zvučka bola od začiatku farebná", why: "Pôvodne bola čiernobiela, neskôr ju nahradila farebná." }
-      - { text: "Pravidelné vysielanie Večerníčka sa začalo v 70. rokoch", why: "Začalo sa 2. januára 1965; v 70. rokoch sa Večerníček prvýkrát objavil vo farbe." }
+      - { text: "Pravidelné vysielanie Večerníčka sa začalo v 70. rokoch", why: "Začalo sa 2. januára 1965." }
 
   - id: markiza-prvy-vecer
     type: pick
@@ -182,7 +183,7 @@ questions:
       - { text: "Program otvorila o 19.00 strihová šou A sme tu!", why: "Moderovali ju Zdena Studenková a Maroš Kramár." }
       - { text: "Prvým filmom bola komédia Bláznivá strela", why: "Vysielala sa o 20.30, hrali v nej Leslie Nielsen a Priscilla Presley." }
       - { text: "O 22.00 išiel akčný film Cliffhanger so Sylvesterom Stallonom", why: "Americký film z roku 1993." }
-      - { text: "Večer končil o polnoci hororom Hellraiser", why: "Britský horor z roku 1987." }
+      - { text: "Večer sa skončil o polnoci hororom Hellraiser", why: "Britský horor z roku 1987." }
       - { text: "Prvým seriálom v zozname vlastnej tvorby Markízy je Silvánovci", why: "Markíza ho uvádza s rokom 1996." }
       - { text: "Pavol Rusko stál na čele televízie do apríla 2000", why: "Po ňom ju viedol Vladimír Repčík." }
       - { text: "Logo sa výraznejšie zmenilo v roku 2008", why: "Prvé logo používala od štartu v roku 1996." }
@@ -260,21 +261,20 @@ questions:
     type: pick
     prompt: Ktoré tvrdenia o reklamách počas Super Bowlu sú pravdivé?
     difficulty: 3
+    asOf: "2021-02"
     source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
     note: "Yahoo Sports, 5. 2. 2021; ceny podľa údajov Superbowl-ads.com a Variety."
     correct:
       - { text: "Priemerný 30-sekundový spot stál v Super Bowle I v roku 1967 medzi 37 500 a 42 500 dolármi", why: "Údaj z webu Superbowl-ads.com." }
-      - { text: "Spot s Joeom Namathom a Farrah Fawcett pre Noxzemu z roku 1974 patrí medzi prvé „veľké“ reklamy", why: "Výroba stála 42 000 dolárov a vysielanie 103 500." }
       - { text: "Spot Coca-Coly s Mean Joe Greenom z roku 1980 bežal za priemernú cenu 222 000 dolárov", why: "Pre Super Bowl XIV s publikom 76,24 milióna divákov." }
-      - { text: "Apple vyrobil spot „1984“ približne za 370 000 dolárov", why: "Vysielanie stálo ďalších zhruba 525 000 dolárov." }
-      - { text: "Cena spotu prekročila milión dolárov v 90. rokoch", why: "Medzi slávne reklamy tej doby patrí Pepsi s Cindy Crawford či Whassup? od Bud Light." }
+      - { text: "Apple vyrobil spot „1984“ približne za 370 000 dolárov", why: "Vysielanie stálo podľa Yahoo Sports ďalších zhruba 525 000 dolárov." }
+      - { text: "Cena spotu prekročila milión dolárov v 90. rokoch", why: "Medzi slávne reklamy tej doby patrí Pepsi s Cindy Crawford či McDonald's s Michaelom Jordanom a Larrym Birdom." }
       - { text: "Prvá reklama Pepsi s Cindy Crawford z roku 1992 stála 850 000 dolárov", why: "Údaj sa týka vysielania v Super Bowle." }
       - { text: "Najdrahšou reklamou k roku 2021 bol trailer MGM k filmu No Time to Die", why: "Podľa Variety stál zhruba 5,69 milióna dolárov." }
     wrong:
       - { text: "Spot v prvom Super Bowle v roku 1967 stál milión dolárov", why: "Stál od 37 500 do 42 500 dolárov." }
       - { text: "Spot s Mean Joe Greenom bol reklama na Pepsi", why: "Bol to spot Coca-Coly." }
       - { text: "Cena spotu prekročila milión dolárov až po roku 2000", why: "Cez milión sa dostala už v 90. rokoch." }
-      - { text: "Noxzema nasadila v roku 1974 do spotu Joa Montanu", why: "Hrali v ňom Joe Namath a Farrah Fawcett." }
       - { text: "Apple vyrobil spot „1984“ za 37 miliónov dolárov", why: "Výroba stála okolo 370 000 dolárov." }
 
   - id: svetove-slogany-fakty
@@ -287,14 +287,14 @@ questions:
       - { text: "Haribo začínalo so sloganom „Haribo macht Kinder froh“ a dospelých doplnilo až v polovici 60. rokov", why: "Slogan z 30. rokov rozšírili o „und Erwachsene ebenso“." }
       - { text: "Nokia používa slogan „Connecting People“ od roku 1992", why: "Podľa blogu samotnej Nokie sa ním stal v roku 1992." }
       - { text: "Slogan „Every Little Helps“ vznikol v roku 1993 v agentúre Lowe Howard-Spink", why: "Tesco ním spojilo reklamu s reálnymi zlepšeniami v obchodoch." }
-      - { text: "Dan Wieden povedal, že „Just Do It“ upravil z posledných slov odsúdeného na smrť", why: "Väzeň vraj povedal „Let's do it“; Wieden zmenil „let's“ na „just“, aby mu nemusel dávať kredit." }
+      - { text: "Dan Wieden povedal, že „Just Do It“ upravil z posledných slov odsúdeného na smrť", why: "Väzeň vraj povedal „Let's do it“; Wieden zmenil „let's“ na „just“, aby mu nemusel pripisovať zásluhu." }
       - { text: "V roku 2010 použil Apple vo videu k iPhonu slovné spojenie „connecting people“ a Nokia sa vyjadrila, že je polichotená", why: "Nokia to napísala na blogu pod názvom „Connecting People, we're flattered“." }
     wrong:
       - { text: "Haribo oslovovalo dospelých sloganom od roku 1933", why: "Dospelých pridali v polovici 60. rokov." }
       - { text: "Nokia mala slogan „Connecting People“ od svojho založenia v roku 1865", why: "Slogan sa stal sloganom Nokie v roku 1992." }
       - { text: "Slogan „Every Little Helps“ vymyslelo Tesco v 70. rokoch", why: "Vznikol v roku 1993." }
       - { text: "Slogan „Just Do It“ vymyslel zakladateľ Nike Phil Knight", why: "Vymyslel ho Dan Wieden pre Nike, prvého klienta jeho agentúry." }
-      - { text: "Haribo vysielalo prvú televíznu reklamu v 80. rokoch", why: "Na nemeckej televízii sa Haribo objavilo prvýkrát v roku 1962." }
+      - { text: "Haribo vysielalo prvú televíznu reklamu v 80. rokoch", why: "V nemeckej televízii sa Haribo objavilo prvýkrát v roku 1962." }
 
   # ---------- Zoraď ----------
   - id: poradie-slogany-roky
@@ -314,13 +314,13 @@ questions:
 
   - id: poradie-super-bowl-spoty
     type: order
-    prompt: Zoraď slávne spoty zo Super Bowlu od najstaršieho po najnovší.
+    prompt: Zoraď tieto reklamné míľniky okolo Super Bowlu od najstaršieho po najnovší.
     direction: asc
     unit: rok
     difficulty: 3
     source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
     items:
-      - { text: "Noxzema: Namath a Fawcett", value: 1974, why: "Spot v Super Bowle VIII z roku 1974 patrí medzi prvé „veľké“ reklamy." }
+      - { text: "Prvý Super Bowl a jeho reklamy", value: 1967, why: "Yahoo Sports uvádza, že priemerný 30-sekundový spot v Super Bowle I stál 37 500 až 42 500 dolárov." }
       - { text: "Coca-Cola: Mean Joe Greene", value: 1980, why: "Slávna reklama bežala v roku 1980." }
       - { text: "Apple: spot podľa Orwella", value: 1984, why: "Spot „1984“ išiel v Super Bowle v roku 1984." }
       - { text: "Pepsi: prvý spot s Cindy Crawford", value: 1992, why: "Jej prvá reklama pre Pepsi bežala v roku 1992." }
