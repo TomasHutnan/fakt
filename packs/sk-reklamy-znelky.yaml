@@ -257,26 +257,6 @@ questions:
       - { text: "Slogan T-Mobilu „Zažime to spolu“ je prekladom „Connecting People“", why: "Je to ekvivalent „Life is for sharing“." }
       - { text: "Budiš v roku 2005 predĺžil slogan na „božská chuť minerálky“", why: "Naopak ho skrátil." }
 
-  - id: super-bowl-reklamy-fakty
-    type: pick
-    prompt: Ktoré tvrdenia o reklamách počas Super Bowlu sú pravdivé?
-    difficulty: 3
-    asOf: "2021-02"
-    source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
-    note: "Yahoo Sports, 5. 2. 2021; ceny podľa údajov Superbowl-ads.com a Variety."
-    correct:
-      - { text: "Priemerný 30-sekundový spot stál v Super Bowle I v roku 1967 medzi 37 500 a 42 500 dolármi", why: "Údaj z webu Superbowl-ads.com." }
-      - { text: "Spot Coca-Coly s Mean Joe Greenom z roku 1980 bežal za priemernú cenu 222 000 dolárov", why: "Pre Super Bowl XIV s publikom 76,24 milióna divákov." }
-      - { text: "Apple vyrobil spot „1984“ približne za 370 000 dolárov", why: "Vysielanie stálo podľa Yahoo Sports ďalších zhruba 525 000 dolárov." }
-      - { text: "Cena spotu prekročila milión dolárov v 90. rokoch", why: "Medzi slávne reklamy tej doby patrí Pepsi s Cindy Crawford či McDonald's s Michaelom Jordanom a Larrym Birdom." }
-      - { text: "Prvá reklama Pepsi s Cindy Crawford z roku 1992 stála 850 000 dolárov", why: "Údaj sa týka vysielania v Super Bowle." }
-      - { text: "Najdrahšou reklamou k roku 2021 bol trailer MGM k filmu No Time to Die", why: "Podľa Variety stál zhruba 5,69 milióna dolárov." }
-    wrong:
-      - { text: "Spot v prvom Super Bowle v roku 1967 stál milión dolárov", why: "Stál od 37 500 do 42 500 dolárov." }
-      - { text: "Spot s Mean Joe Greenom bol reklama na Pepsi", why: "Bol to spot Coca-Coly." }
-      - { text: "Cena spotu prekročila milión dolárov až po roku 2000", why: "Cez milión sa dostala už v 90. rokoch." }
-      - { text: "Apple vyrobil spot „1984“ za 37 miliónov dolárov", why: "Výroba stála okolo 370 000 dolárov." }
-
   - id: svetove-slogany-fakty
     type: pick
     prompt: Ktoré tvrdenia o slávnych svetových sloganoch sú pravdivé?
@@ -297,34 +277,6 @@ questions:
       - { text: "Haribo vysielalo prvú televíznu reklamu v 80. rokoch", why: "V nemeckej televízii sa Haribo objavilo prvýkrát v roku 1962." }
 
   # ---------- Zoraď ----------
-  - id: poradie-slogany-roky
-    type: order
-    prompt: Zoraď slovenské slogany od najstaršieho po najnovší podľa roku, keď sa objavili.
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://strategie.hnonline.sk/news/marketing/781675-nova-kampan-zlaty-bazant-chce-byt-tradicny-no-zaroven-ako-startup
-    note: "Ďalšie zdroje: tyden.cz (Kofola 2001), strategie.hnonline.sk (Šariš 2009, Billa 2012, Slovenská sporiteľňa 2021)."
-    items:
-      - { text: "Kofola: Keď ju miluješ, nie je čo riešiť", value: 2001, why: "Prvý spot s ním vznikol v roku 2001 v agentúre Euro RSCG." }
-      - { text: "Šariš: Srdcom východniar", value: 2009, why: "Kampaň odštartovala v máji 2009." }
-      - { text: "Billa: Presne podľa mojej chuti", value: 2012, why: "Uviedla ho spolu s talianskym šéfkuchárom v septembri 2012." }
-      - { text: "Zlatý Bažant: Na zdravie, Slovensko!", value: 2015, why: "Nový slogan z apríla 2015." }
-      - { text: "Slovenská sporiteľňa: Budúcnosť je vaša", value: 2021, why: "Nový claim po troch rokoch, august 2021." }
-
-  - id: poradie-super-bowl-spoty
-    type: order
-    prompt: Zoraď tieto reklamné míľniky okolo Super Bowlu od najstaršieho po najnovší.
-    direction: asc
-    unit: rok
-    difficulty: 3
-    source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
-    items:
-      - { text: "Prvý Super Bowl a jeho reklamy", value: 1967, why: "Yahoo Sports uvádza, že priemerný 30-sekundový spot v Super Bowle I stál 37 500 až 42 500 dolárov." }
-      - { text: "Coca-Cola: Mean Joe Greene", value: 1980, why: "Slávna reklama bežala v roku 1980." }
-      - { text: "Apple: spot podľa Orwella", value: 1984, why: "Spot „1984“ išiel v Super Bowle v roku 1984." }
-      - { text: "Pepsi: prvý spot s Cindy Crawford", value: 1992, why: "Jej prvá reklama pre Pepsi bežala v roku 1992." }
-
   - id: poradie-udalosti-reklamy
     type: order
     prompt: Zoraď tieto reklamné udalosti od najstaršej po najnovšiu.
