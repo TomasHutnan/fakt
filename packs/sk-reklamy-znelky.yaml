@@ -1,0 +1,431 @@
+id: sk-reklamy-znelky
+title: Reklamy a znelky
+description: Slogany, vianočné spoty, Večerníček, prvý večer Markízy a slávne reklamné kúsky zo sveta.
+category: kultura
+lang: sk
+version: 1
+questions:
+  # ---------- Slogany: pick ----------
+  - id: slogany-slovenske-piva
+    type: pick
+    prompt: Ktoré z týchto sloganov používali slovenské pivá Zlatý Bažant a Šariš?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/marketing/781675-nova-kampan-zlaty-bazant-chce-byt-tradicny-no-zaroven-ako-startup
+    note: "Ďalšie zdroje: strategie.hnonline.sk/news/marketing/772487-odstartovala-kampan-saris-srdcom-vychodniar (14. 5. 2009), opive.sk/srdcom-vychodniar-saris-uz-nechce-byt-len-vychodniarske-pivo/ (20. 4. 2021)."
+    correct:
+      - { text: "To najlepšie, čo doma máme", why: "Starší slogan Zlatého Bažanta od agentúry Creative Department, ešte pred „Svetovým slovenským pivom“." }
+      - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta od agentúry Istropolitana Ogilvy; v roku 2015 ho vystriedal nový." }
+      - { text: "Na zdravie, Slovensko!", why: "Nový slogan Zlatého Bažanta z apríla 2015; podľa značky ide o tradičný prípitok pre všetkých Slovákov." }
+      - { text: "Srdcom východniar", why: "Slogan Šarišu z kampane, ktorá odštartovala v máji 2009." }
+      - { text: "S iskrou v srdci", why: "Nový slogan Šarišu z roku 2021, ktorým sa pivovar rozlúčil so „Srdcom východniar“." }
+    wrong:
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu z televíznej kampane z roku 2015." }
+      - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa z roku 2012." }
+      - { text: "Spolu dokážeme viac", why: "Slogan operátora Orange z roku 2009." }
+      - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile z roku 2009." }
+      - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
+      - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne z roku 2021." }
+      - { text: "Every little helps", why: "Slogan britského reťazca Tesco." }
+
+  - id: slogany-kofola
+    type: pick
+    prompt: Ktoré z týchto viet boli sloganmi alebo hlavnými odkazmi reklám Kofoly?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/marketing/781679-kofola-toto-su-reklamy-ktore-ked-milujete-nie-je-co-riesit
+    note: "Ďalší zdroj: tyden.cz/rubriky/marketing/video-prvni-zamilovana-reklama-kterou-uvedla-kofola-v-roce-2001_385902.html (české znenie „Když ji miluješ, není co řešit“)."
+    correct:
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Český originál „Když ji miluješ, není co řešit“ sa prvýkrát objavil v spote z roku 2001." }
+      - { text: "Ja nemusím, ja už ho vidím", why: "Hláška z vianočnej reklamy s prasiatkom, ktorá je „notoricky známa dodnes“." }
+      - { text: "Láska nie je žiadna veda. Kofola to už vie 50 rokov", why: "Kampaň k 50. výročiu značky; spot režíroval Jakub Kohák." }
+      - { text: "Keď slová nestačia, pomôže láska", why: "Kampaň od agentúry Satchi & Satchi Praha." }
+    wrong:
+      - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
+      - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
+      - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu." }
+      - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa." }
+      - { text: "Spolu dokážeme viac", why: "Slogan operátora Orange." }
+      - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
+      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL, do ktorej patrí Slovnaft." }
+
+  - id: slogany-operatori
+    type: pick
+    prompt: Ktoré z týchto viet používali mobilní operátori Orange a T-Mobile na Slovensku?
+    difficulty: 2
+    source: https://zive.aktuality.sk/clanok/82633/orange-veri-ze-spolu-dokazeme-viac-a-predstavuje-svoju-novu-kampan/
+    note: "Ďalší zdroj: strategie.hnonline.sk/news/media/771692-t-mobile-uvadza-novy-slogan-zazime-to-spolu (14. 1. 2009)."
+    correct:
+      - { text: "Spolu dokážeme viac", why: "Nový slogan Orangeu z februára 2009." }
+      - { text: "Budúcnosť je jasná, budúcnosť je Orange", why: "Doterajšia vízia Orangeu, ktorú v roku 2009 nahradilo „spolu dokážeme viac“." }
+      - { text: "Zažime to spolu", why: "Slovenský ekvivalent medzinárodného „Life is for sharing“, T-Mobile ho uviedol v roku 2009." }
+    wrong:
+      - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne z roku 2021, nie operátora." }
+      - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu." }
+      - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
+      - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
+      - { text: "božská chuť", why: "Slogan minerálky Budiš." }
+      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL." }
+
+  - id: slogany-obchody-banka
+    type: pick
+    prompt: Ktoré z týchto sloganov patria obchodným reťazcom alebo banke?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/tlacove-spravy/785927-billa-chuti-kazdemu
+    note: "Ďalšie zdroje: strategie.hnonline.sk/news/marketing/781759-kaufland-prvykrat-v-televizii-spusta-kampan-z-lasky-k-slovensku-video, strategie.hnonline.sk/news/marketing/6977991-slovenska-sporitelna-prichadza-s-novym-konceptom-buducnost-je-vasa-znie-posolstvo-kampane, marketing.museum/tesco-marketing-history-how-a-market-trader-built-britains-most-powerful-retail-brand/"
+    correct:
+      - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa z jesene 2012." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu z jeho prvej televíznej kampane na Slovensku (2015)." }
+      - { text: "Budúcnosť je vaša", why: "Nový claim Slovenskej sporiteľne z augusta 2021." }
+      - { text: "Every little helps", why: "Slogan britského reťazca Tesco, zavedený v roku 1993." }
+    wrong:
+      - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile." }
+      - { text: "Spolu dokážeme viac", why: "Slogan operátora Orange." }
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
+      - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
+      - { text: "Chuť patentovaná prírodou", why: "Slogan minerálky Rajec." }
+      - { text: "božská chuť", why: "Slogan minerálky Budiš." }
+      - { text: "Dynamika bez hraníc", why: "Slogan skupiny MOL." }
+      - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
+
+  - id: slogany-mineralky
+    type: pick
+    prompt: Ktoré z týchto sloganov používali slovenské minerálky a pramenité vody Rajec a Budiš?
+    difficulty: 3
+    source: https://strategie.hnonline.sk/news/media/763173-budis-inovuje
+    note: "Ďalší zdroj: bratislavskyvecernik.sk/2015/07/06/predstavujeme-rajec-bylinka-ma-novu-reklamu-svetlusky-v-lone-prirody/"
+    correct:
+      - { text: "Chuť patentovaná prírodou", why: "Sprievodný slogan Rajca." }
+      - { text: "Kúzlo patentované prírodou", why: "Malá obmena rajeckého sloganu v kampani pre Rajec Bylinka z leta 2015." }
+      - { text: "božská chuť", why: "Slogan Budišu skrátený v roku 2005 z pôvodného znenia „božská chuť minerálky“." }
+      - { text: "božská chuť minerálky", why: "Pôvodné znenie sloganu Budišu, v roku 2005 ho skrátili." }
+    wrong:
+      - { text: "Na zdravie, Slovensko!", why: "Slogan Zlatého Bažanta." }
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
+      - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile." }
+      - { text: "Presne podľa mojej chuti", why: "Slogan reťazca Billa." }
+      - { text: "Srdcom východniar", why: "Slogan piva Šariš." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu." }
+      - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne." }
+
+  - id: slogany-svetove-znacky
+    type: pick
+    prompt: Ktoré z týchto sloganov patria svetovým značkám?
+    difficulty: 1
+    source: https://mcdonalds.mediaroom.com/2003-09-02-McDonalds-Unveils-im-lovin-it-Worldwide-Brand-Campaign
+    note: "Ďalšie zdroje: haribo.com/en/about-us/history, blogs.windows.com/devices/2011/01/31/10-things-you-didnt-know-about-nokia-part-2/, marketing.museum/tesco-marketing-history-how-a-market-trader-built-britains-most-powerful-retail-brand/, npr.org/2022/10/06/1127032721/nike-just-do-it-slogan-success-dan-wieden-kennedy-dies"
+    correct:
+      - { text: "i'm lovin' it", why: "Slogan McDonald's, nemecky „ich liebe es“; svetová kampaň z roku 2003." }
+      - { text: "Connecting People", why: "Slogan Nokie od roku 1992." }
+      - { text: "Every little helps", why: "Slogan britského reťazca Tesco." }
+      - { text: "Haribo macht Kinder froh und Erwachsene ebenso", why: "Slogan Haribo; druhá polovica o dospelých pribudla v polovici 60. rokov." }
+      - { text: "Just Do It", why: "Slogan Nike, ktorý vymyslel Dan Wieden pre svoju novú agentúru." }
+    wrong:
+      - { text: "Svetové slovenské pivo", why: "Slogan Zlatého Bažanta, a ten je slovenský." }
+      - { text: "Zažime to spolu", why: "Slogan operátora T-Mobile na Slovensku, preklad „Life is for sharing“." }
+      - { text: "Keď ju miluješ, nie je čo riešiť", why: "Slogan Kofoly." }
+      - { text: "Z lásky k Slovensku", why: "Slogan Kauflandu na Slovensku." }
+      - { text: "Budúcnosť je vaša", why: "Claim Slovenskej sporiteľne." }
+
+  # ---------- Kampane a príbehy: pick ----------
+  - id: kofola-reklamy-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o reklamách Kofoly sú pravdivé?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/marketing/781679-kofola-toto-su-reklamy-ktore-ked-milujete-nie-je-co-riesit
+    note: "Ďalší zdroj: tyden.cz/rubriky/marketing/video-prvni-zamilovana-reklama-kterou-uvedla-kofola-v-roce-2001_385902.html"
+    correct:
+      - { text: "Vianočná kampaň s prasiatkom je z roku 2004", why: "Stratégie ju datujú do roku 2004; bola taká obľúbená, že ju nasadzovali niekoľko Vianoc po sebe." }
+      - { text: "Slogan „Keď ju miluješ, nie je čo riešiť“ vymysleli na brainstormingu v agentúre Euro RSCG", why: "Prvý spot s ním vznikol v roku 2001 a v televízii bežal od konca mája." }
+      - { text: "Kampaň Kofotiny z roku 2009 bojovala proti napodobeninám Kofoly", why: "Pre kontroverzný názov sa dostala pred Komisiu Rady pre reklamu." }
+      - { text: "Spot k 50. výročiu značky režíroval Jakub Kohák", why: "Spot Láska nie je žiadna veda. Kofola to už vie 50 rokov pripravila agentúra Kaspen Jung von Matt." }
+      - { text: "V kampani Neriešenie sa objavila hojdajúca sa panda a pes hrajúci na klavíri", why: "Kampaň od agentúry TRIAD Advertising bola známa bizarnými gifmi." }
+      - { text: "Kampaň Neslýchané festivaly z roku 2012 spojila Kofolu s hudobnými festivalmi", why: "Pripravila ju agentúra Kaspen/Jung von Matt a spájala maňušky s festivalmi." }
+    wrong:
+      - { text: "Vianočný spot s prasiatkom je z roku 2014", why: "Stratégie ho datujú do roku 2004." }
+      - { text: "Slogan „Keď ju miluješ, nie je čo riešiť“ vznikol až v roku 2011", why: "Prvý spot s ním je z roku 2001." }
+      - { text: "Spot k 50. výročiu režíroval Jan Svěrák", why: "Režíroval ho Jakub Kohák." }
+      - { text: "Kampaň Neriešenie vymyslela agentúra Wiktor Leo Burnett", why: "Pripravila ju agentúra TRIAD Advertising; Wiktor Leo Burnett robil Kofotiny." }
+      - { text: "Kampaň Neslýchané festivaly spojila Kofolu s lyžiarskymi strediskami", why: "Spájala ju s hudobnými festivalmi." }
+
+  - id: vecernicek-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o Večerníčku a jeho slávnej zvučke sú pravdivé?
+    difficulty: 2
+    source: https://ct24.ceskatelevize.cz/clanek/kultura/vecernicek-slavi-sedesate-narozeniny-356728
+    note: "Ďalší zdroj: stvr.sk/novinky/osobnosti/456145/vecernicek-ma-tajomstvo-ktore-pozna-malokto-dedusko-s-psikom-prisiel-az-neskor"
+    correct:
+      - { text: "Úplne prvé vysielanie ešte nemalo typickú zvučku s chlapcom v čiapke", why: "Pravidelne sa začal vysielať 2. januára 1965, „tehdy ještě bez své typické znělky“." }
+      - { text: "Zvučka vznikla v lete 1965 v réžii Václava Bedřicha", why: "Pracovalo sa na nej v júli a auguste 1965." }
+      - { text: "Chlapca nakreslil Radek Pilař, ktorý dal neskôr podobu aj Rumcajsovi", why: "Pilař namaľoval aj zbojníka Rumcajsa." }
+      - { text: "Prvé večerníčky boli hrané, kreslený sa objavil až v októbri 1967", why: "Prvým kresleným bol dodnes obľúbený cyklus Pohádky ovčí babičky." }
+      - { text: "Pred Večerníčkom vysielala Československá televízia nedeľný program Stříbrné zrcátko", why: "Začal sa vysielať o dva roky skôr, v roku 1963." }
+      - { text: "Zvučka mala kritikov, lebo Večerníček rozhadzuje papiere a jazdí na bicykli bez prilby", why: "Niektorým divákom vadilo aj to, že auto riadi bez vodičáku." }
+      - { text: "Večerníček je najdlhšie vysielaná detská relácia v bývalom Československu", why: "Tvrdí to Slovenská televízia (STVR) na svojej stránke." }
+      - { text: "Hlas komety v prvej večerníčkovej rozprávke patril Jiřine Bohdalovej", why: "Bohdalová namluvila kométu v rozprávke Kluk a kometa z 2. januára 1965." }
+    wrong:
+      - { text: "Prvé večerníčky boli kreslené", why: "Prvé boli hrané a vyprávané; kreslený sa objavil až v októbri 1967." }
+      - { text: "Chlapca s papierovou čiapkou nakreslil Jiří Trnka", why: "Nakreslil ho Radek Pilař." }
+      - { text: "Pozdravy „dobrý večer“ a „dobrou noc“ namluvila Jiřina Bohdalová", why: "Namluvil ich Michal Citavý; Bohdalová hovorila kométu v prvej rozprávke." }
+      - { text: "Zvučka bola od začiatku farebná", why: "Pôvodne bola čiernobiela, neskôr ju nahradila farebná." }
+      - { text: "Pravidelné vysielanie Večerníčka sa začalo v 70. rokoch", why: "Začalo sa 2. januára 1965; v 70. rokoch sa Večerníček prvýkrát objavil vo farbe." }
+
+  - id: markiza-prvy-vecer
+    type: pick
+    prompt: Ktoré tvrdenia o prvom vysielacom večere TV Markíza (31. augusta 1996) sú pravdivé?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/media/780660-velky-retro-special-markiza-oslavuje-18-narodeniny-takto-vyzerala-kedysi
+    note: "Stratégie, 31. 8. 2014; prvý program a chronológia seriálov podľa Markízy."
+    correct:
+      - { text: "Program otvorila o 19.00 strihová šou A sme tu!", why: "Moderovali ju Zdena Studenková a Maroš Kramár." }
+      - { text: "Prvým filmom bola komédia Bláznivá strela", why: "Vysielala sa o 20.30, hrali v nej Leslie Nielsen a Priscilla Presley." }
+      - { text: "O 22.00 išiel akčný film Cliffhanger so Sylvesterom Stallonom", why: "Americký film z roku 1993." }
+      - { text: "Večer končil o polnoci hororom Hellraiser", why: "Britský horor z roku 1987." }
+      - { text: "Prvým seriálom v zozname vlastnej tvorby Markízy je Silvánovci", why: "Markíza ho uvádza s rokom 1996." }
+      - { text: "Pavol Rusko stál na čele televízie do apríla 2000", why: "Po ňom ju viedol Vladimír Repčík." }
+      - { text: "Logo sa výraznejšie zmenilo v roku 2008", why: "Prvé logo používala od štartu v roku 1996." }
+    wrong:
+      - { text: "Program otvoril sitkom Susedia", why: "Susedia začali až v roku 2006." }
+      - { text: "Vysielanie sa začalo o 20.00", why: "Prvý program začal o 19.00 šou A sme tu!" }
+      - { text: "Prvým filmom bol Obchod na korze", why: "Prvým filmom bola americká komédia Bláznivá strela." }
+      - { text: "Pavol Rusko viedol Markízu do roku 2010", why: "Do apríla 2000; po ňom nasledoval Vladimír Repčík." }
+      - { text: "Logo sa výrazne zmenilo v roku 2020", why: "Výraznejšia zmena loga bola v roku 2008." }
+
+  - id: coca-cola-santa-mytus
+    type: pick
+    prompt: Ktoré tvrdenia o Santa Clausovi z reklám Coca-Coly sú pravdivé?
+    difficulty: 1
+    source: https://www.coca-colacompany.com/about-us/history/haddon-sundblom-and-the-coca-cola-santas
+    note: "Coca-Cola Company, História: Four Things You Never Knew About Santa Claus and Coca-Cola."
+    correct:
+      - { text: "Sundblomov Santa debutoval v reklamách v časopise The Saturday Evening Post v roku 1931", why: "Coca-Cola poverila ilustrátora Haddona Sundbloma, rodáka z Michiganu." }
+      - { text: "Sundblom sa inšpiroval básňou Clementa Clarka Moora Návšteva svätého Mikuláša", why: "Z Moorovho opisu vznikol milý, priateľský, príjemne bucľatý a ľudský Santa." }
+      - { text: "Santa mal červený kabát už pred Sundblomom", why: "Podľa firmy sa Santa v červenom objavil už pred jeho obrazmi." }
+      - { text: "Sundblomov Santa sa v reklamách objavoval od roku 1931 do roku 1964", why: "Doručoval hračky, čítal listy a pil Coca-Colu." }
+      - { text: "Pred rokom 1931 kreslili Santu aj ako vysokého vychudnutého muža či strašidelného škriatka", why: "Nosil aj biskupský plášť a severskú kožušinu." }
+      - { text: "Thomas Nast nakreslil Santu v roku 1862 ako malú škriatkovskú postavu na strane Únie", why: "Obrázok vyšiel v časopise Harper's Weekly." }
+      - { text: "Vianočné reklamy začala Coca-Cola robiť už v 20. rokoch 20. storočia", why: "Najprv to boli nákupné reklamy v časopisoch a prvý Santa v nich vyzeral prísne." }
+    wrong:
+      - { text: "Santa je oblečený na červeno, lebo je to farba Coca-Coly", why: "Červený kabát mal už pred Sundblomom." }
+      - { text: "Sundblom namaľoval poslednú verziu Santu v roku 1980", why: "Poslednú verziu namaľoval v roku 1964." }
+      - { text: "Prvé vianočné reklamy Coca-Coly vyšli až v 60. rokoch", why: "Vianočné reklamy sa objavili už v 20. rokoch." }
+      - { text: "Sundblom sa pri Santovi inšpiroval Dickensovou Vianočnou koledou", why: "Inšpiroval sa Moorovou básňou „A Visit From St. Nicholas“." }
+
+  - id: red-bull-stratos-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o skoku Felixa Baumgartnera z kampane Red Bull Stratos sú pravdivé?
+    difficulty: 2
+    source: https://www.nbcnews.com/id/wbna50700999
+    note: "Ďalší zdroj: npr.org/sections/thetwo-way/2012/10/14/162905829/jumping-from-the-top-of-the-world-skydiver-breaks-sound-barrier"
+    correct:
+      - { text: "Skok sa konal 14. októbra 2012", why: "Dátum uvádza popis snímky v NBC News." }
+      - { text: "Baumgartner vyskočil z výšky približne 24 míľ", why: "Skočil z kapsuly ako rakúsky parašutista." }
+      - { text: "Pristál v púšti pri meste Roswell v Novom Mexiku", why: "Pristál po viac než deviatich minútach." }
+      - { text: "Rekord padol na troch frontoch", why: "Najvyšší skok, najdlhší voľný pád a najvyššia vertikálna rýchlosť." }
+      - { text: "Jeho voľný pád bol o pár sekúnd kratší než rekord Joea Kittingera z roku 1960", why: "Kittingerov čas zostal teda nepokorený." }
+      - { text: "Ako prvý človek prekonal rýchlosť zvuku len v špeciálnom obleku", why: "Napísala to agentúra AP v správe, ktorú prebralo NPR." }
+      - { text: "Oficiálna rýchlosť vyšla neskôr vyššia než predbežná", why: "Predbežne 833,9 mph, po spracovaní 843,6 mph." }
+    wrong:
+      - { text: "Pristál v rakúskych Alpách", why: "Pristál v púšti pri Roswelli v Novom Mexiku." }
+      - { text: "Skočil z výšky okolo 10 kilometrov ako bežný parašutista", why: "Skočil z asi 24 míľ, zo stratosféry." }
+      - { text: "Jeho voľný pád trval dlhšie než Kittingerov rekord", why: "Bol o pár sekúnd kratší." }
+      - { text: "Joe Kittinger skočil zo stratosféry v roku 1980", why: "Jeho rekord je z roku 1960." }
+      - { text: "Baumgartner je americký parašutista", why: "NBC News ho uvádza ako rakúskeho parašutistu." }
+
+  - id: slovenske-kampane-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o slovenských reklamných kampaniach sú pravdivé?
+    difficulty: 3
+    source: https://strategie.hnonline.sk/news/marketing/781675-nova-kampan-zlaty-bazant-chce-byt-tradicny-no-zaroven-ako-startup
+    note: "Ďalšie zdroje: strategie.hnonline.sk (Billa 785927, T-Mobile 771692, Kaufland 781759, Šariš 772487, Budiš 763173), zive.aktuality.sk/clanok/82633/, bratislavskyvecernik.sk/2015/07/06/predstavujeme-rajec-bylinka-ma-novu-reklamu-svetlusky-v-lone-prirody/, opive.sk/srdcom-vychodniar-saris-uz-nechce-byt-len-vychodniarske-pivo/"
+    correct:
+      - { text: "Billa v roku 2012 nahradila v reklame šťastnú rodinku talianskym šéfkuchárom", why: "Šéfkuchár Giuseppe Daddio radil, ako chutne variť z bežných potravín." }
+      - { text: "Slogan T-Mobilu „Zažime to spolu“ je slovenským ekvivalentom „Life is for sharing“", why: "Vychádzalo to zo zmeny identity celej skupiny Deutsche Telekom." }
+      - { text: "Kaufland mal na Slovensku prvýkrát reklamu v televízii v roku 2015", why: "V Česku bežala obdobná kampaň „Z lásky k Česku“." }
+      - { text: "Zlatý Bažant v roku 2015 po siedmich rokoch vymenil reklamnú agentúru", why: "Istropolitanu Ogilvy nahradil Wiktor Leo Burnett." }
+      - { text: "Šariš sa v roku 2021 rozlúčil so sloganom „Srdcom východniar“", why: "Nový slogan „S iskrou v srdci“ mal osloviť všetkých Slovákov." }
+      - { text: "Rajec Bylinka mal v lete 2015 v televíznom spote svetlušky", why: "Na jar 2015 bol hrdinom spotu pre pramenitú vodu medveď." }
+      - { text: "Orange v roku 2009 nahradil vízie „budúcnosť je jasná, budúcnosť je Orange“ novým sloganom", why: "Nový slogan znel „spolu dokážeme viac“." }
+      - { text: "Budiš v roku 2005 skrátil slogan na „božská chuť“", why: "Pôvodne znel „božská chuť minerálky“." }
+    wrong:
+      - { text: "Billa nahradila rodinku v reklame slovenským šéfkuchárom", why: "Bol to taliansky šéfkuchár." }
+      - { text: "Kaufland vysielal na Slovensku televízne spoty už v 90. rokoch", why: "Prvú televíznu kampaň spustil v roku 2015." }
+      - { text: "Zlatý Bažant zostal v roku 2015 pri agentúre Istropolitana Ogilvy", why: "Po siedmich rokoch prešiel k Wiktor Leo Burnett." }
+      - { text: "Slogan T-Mobilu „Zažime to spolu“ je prekladom „Connecting People“", why: "Je to ekvivalent „Life is for sharing“." }
+      - { text: "Budiš v roku 2005 predĺžil slogan na „božská chuť minerálky“", why: "Naopak ho skrátil." }
+
+  - id: super-bowl-reklamy-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o reklamách počas Super Bowlu sú pravdivé?
+    difficulty: 3
+    source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
+    note: "Yahoo Sports, 5. 2. 2021; ceny podľa údajov Superbowl-ads.com a Variety."
+    correct:
+      - { text: "Priemerný 30-sekundový spot stál v Super Bowle I v roku 1967 medzi 37 500 a 42 500 dolármi", why: "Údaj z webu Superbowl-ads.com." }
+      - { text: "Spot s Joeom Namathom a Farrah Fawcett pre Noxzemu z roku 1974 patrí medzi prvé „veľké“ reklamy", why: "Výroba stála 42 000 dolárov a vysielanie 103 500." }
+      - { text: "Spot Coca-Coly s Mean Joe Greenom z roku 1980 bežal za priemernú cenu 222 000 dolárov", why: "Pre Super Bowl XIV s publikom 76,24 milióna divákov." }
+      - { text: "Apple vyrobil spot „1984“ približne za 370 000 dolárov", why: "Vysielanie stálo ďalších zhruba 525 000 dolárov." }
+      - { text: "Cena spotu prekročila milión dolárov v 90. rokoch", why: "Medzi slávne reklamy tej doby patrí Pepsi s Cindy Crawford či Whassup? od Bud Light." }
+      - { text: "Prvá reklama Pepsi s Cindy Crawford z roku 1992 stála 850 000 dolárov", why: "Údaj sa týka vysielania v Super Bowle." }
+      - { text: "Najdrahšou reklamou k roku 2021 bol trailer MGM k filmu No Time to Die", why: "Podľa Variety stál zhruba 5,69 milióna dolárov." }
+    wrong:
+      - { text: "Spot v prvom Super Bowle v roku 1967 stál milión dolárov", why: "Stál od 37 500 do 42 500 dolárov." }
+      - { text: "Spot s Mean Joe Greenom bol reklama na Pepsi", why: "Bol to spot Coca-Coly." }
+      - { text: "Cena spotu prekročila milión dolárov až po roku 2000", why: "Cez milión sa dostala už v 90. rokoch." }
+      - { text: "Noxzema nasadila v roku 1974 do spotu Joa Montanu", why: "Hrali v ňom Joe Namath a Farrah Fawcett." }
+      - { text: "Apple vyrobil spot „1984“ za 37 miliónov dolárov", why: "Výroba stála okolo 370 000 dolárov." }
+
+  - id: svetove-slogany-fakty
+    type: pick
+    prompt: Ktoré tvrdenia o slávnych svetových sloganoch sú pravdivé?
+    difficulty: 2
+    source: https://www.haribo.com/en/about-us/history
+    note: "Ďalšie zdroje: blogs.windows.com/devices/2011/01/31/10-things-you-didnt-know-about-nokia-part-2/, blogs.windows.com/devices/2010/06/11/connecting-people-were-flattered/, marketing.museum/tesco-marketing-history-how-a-market-trader-built-britains-most-powerful-retail-brand/, npr.org/2022/10/06/1127032721/nike-just-do-it-slogan-success-dan-wieden-kennedy-dies"
+    correct:
+      - { text: "Haribo začínalo so sloganom „Haribo macht Kinder froh“ a dospelých doplnilo až v polovici 60. rokov", why: "Slogan z 30. rokov rozšírili o „und Erwachsene ebenso“." }
+      - { text: "Nokia používa slogan „Connecting People“ od roku 1992", why: "Podľa blogu samotnej Nokie sa ním stal v roku 1992." }
+      - { text: "Slogan „Every Little Helps“ vznikol v roku 1993 v agentúre Lowe Howard-Spink", why: "Tesco ním spojilo reklamu s reálnymi zlepšeniami v obchodoch." }
+      - { text: "Dan Wieden povedal, že „Just Do It“ upravil z posledných slov odsúdeného na smrť", why: "Väzeň vraj povedal „Let's do it“; Wieden zmenil „let's“ na „just“, aby mu nemusel dávať kredit." }
+      - { text: "V roku 2010 použil Apple vo videu k iPhonu slovné spojenie „connecting people“ a Nokia sa vyjadrila, že je polichotená", why: "Nokia to napísala na blogu pod názvom „Connecting People, we're flattered“." }
+    wrong:
+      - { text: "Haribo oslovovalo dospelých sloganom od roku 1933", why: "Dospelých pridali v polovici 60. rokov." }
+      - { text: "Nokia mala slogan „Connecting People“ od svojho založenia v roku 1865", why: "Slogan sa stal sloganom Nokie v roku 1992." }
+      - { text: "Slogan „Every Little Helps“ vymyslelo Tesco v 70. rokoch", why: "Vznikol v roku 1993." }
+      - { text: "Slogan „Just Do It“ vymyslel zakladateľ Nike Phil Knight", why: "Vymyslel ho Dan Wieden pre svoju novú agentúru, ktorej prvým klientom bolo Nike." }
+      - { text: "Haribo vysielalo prvú televíznu reklamu v 80. rokoch", why: "Na nemeckej televízii sa Haribo objavilo prvýkrát v roku 1962." }
+
+  # ---------- Zoraď ----------
+  - id: poradie-slogany-roky
+    type: order
+    prompt: Zoraď slovenské slogany od najstaršieho po najnovší podľa roku, keď sa objavili.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://strategie.hnonline.sk/news/marketing/781675-nova-kampan-zlaty-bazant-chce-byt-tradicny-no-zaroven-ako-startup
+    note: "Ďalšie zdroje: tyden.cz (Kofola 2001), strategie.hnonline.sk (Šariš 2009, Billa 2012, Slovenská sporiteľňa 2021)."
+    items:
+      - { text: "Kofola: Keď ju miluješ, nie je čo riešiť", value: 2001, why: "Prvý spot s ním vznikol v roku 2001 v agentúre Euro RSCG." }
+      - { text: "Šariš: Srdcom východniar", value: 2009, why: "Kampaň odštartovala v máji 2009." }
+      - { text: "Billa: Presne podľa mojej chuti", value: 2012, why: "Uviedla ho spolu s talianskym šéfkuchárom v septembri 2012." }
+      - { text: "Zlatý Bažant: Na zdravie, Slovensko!", value: 2015, why: "Nový slogan z apríla 2015." }
+      - { text: "Slovenská sporiteľňa: Budúcnosť je vaša", value: 2021, why: "Nový claim po troch rokoch, august 2021." }
+
+  - id: poradie-super-bowl-spoty
+    type: order
+    prompt: Zoraď slávne spoty z Super Bowlu od najstaršieho po najnovší.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
+    items:
+      - { text: "Noxzema: Namath a Fawcett", value: 1974, why: "Spot v Super Bowle VIII z roku 1974 patrí medzi prvé „veľké“ reklamy." }
+      - { text: "Coca-Cola: Mean Joe Greene", value: 1980, why: "Slávna reklama bežala v roku 1980." }
+      - { text: "Apple: spot podľa Orwella", value: 1984, why: "Spot „1984“ išiel v Super Bowle v roku 1984." }
+      - { text: "Pepsi: prvý spot s Cindy Crawford", value: 1992, why: "Jej prvá reklama pre Pepsi bežala v roku 1992." }
+
+  - id: poradie-udalosti-reklamy
+    type: order
+    prompt: Zoraď tieto reklamné udalosti od najstaršej po najnovšiu.
+    direction: asc
+    unit: rok
+    difficulty: 3
+    source: https://www.coca-colacompany.com/about-us/history/haddon-sundblom-and-the-coca-cola-santas
+    note: "Ďalšie zdroje: haribo.com/en/about-us/history (1962), blogs.windows.com/devices/2011/01/31/10-things-you-didnt-know-about-nokia-part-2/ (1992), marketing.museum (Tesco 1993), nbcnews.com/id/wbna50700999 (Stratos 2012)."
+    items:
+      - { text: "Sundblomov Santa Claus v reklamách Coca-Coly", value: 1931, why: "Santa debutoval v reklamách v roku 1931." }
+      - { text: "Prvá televízna reklama Haribo v Nemecku", value: 1962, why: "Nemecká televízia ju vysielala prvýkrát v roku 1962." }
+      - { text: "Slogan Connecting People sa stal sloganom Nokie", value: 1992, why: "Nokia ho uvádza od roku 1992." }
+      - { text: "Slogan Every Little Helps zavedený v Tescu", value: 1993, why: "Vznikol v roku 1993 v agentúre Lowe Howard-Spink." }
+      - { text: "Skok Felixa Baumgartnera v kampani Red Bull Stratos", value: 2012, why: "Skok sa konal 14. októbra 2012." }
+
+  # ---------- Číslo ----------
+  - id: cislo-stratos-rychlost
+    type: number
+    prompt: Akou najvyššou rýchlosťou, v kilometroch za hodinu, padal Felix Baumgartner pri skoku Red Bull Stratos?
+    answer: 1358
+    unit: km/h
+    scale: log
+    tolerance: 0.08
+    why: "Oficiálne údaje hovoria o 843,6 mph, teda 1 357,6 km/h, čo je Mach 1,25."
+    difficulty: 2
+    source: https://www.nbcnews.com/id/wbna50700999
+
+  - id: cislo-super-bowl-2018
+    type: number
+    prompt: Koľko miliónov dolárov zaplatili firmy v roku 2018 za 30-sekundový spot počas Super Bowlu?
+    answer: 5.2
+    unit: mil. USD
+    scale: log
+    tolerance: 0.15
+    why: "Yahoo Sports uvádza, že za tretiu Pepsi reklamu s Cindy Crawford v roku 2018 zaplatili 5,2 milióna dolárov."
+    difficulty: 3
+    source: https://sports.yahoo.com/super-bowl-lv-how-price-of-commercials-rose-over-the-years-213153197.html
+
+  - id: cislo-mcdonalds-zakaznici
+    type: number
+    prompt: Koľko miliónov zákazníkov denne malo McDonald's v čase štartu celosvetovej kampane „i'm lovin' it“?
+    answer: 47
+    unit: mil. zákazníkov
+    scale: log
+    tolerance: 0.15
+    why: "Tlačová správa z 2. septembra 2003 hovorí o 47 miliónoch denných zákazníkov vo viac než 100 krajinách."
+    difficulty: 3
+    source: https://mcdonalds.mediaroom.com/2003-09-02-McDonalds-Unveils-im-lovin-it-Worldwide-Brand-Campaign
+
+  - id: cislo-dedusko-vecernicek
+    type: number
+    prompt: V ktorom roku sa v slovenskej televízii prvýkrát objavil Deduško Večerníček?
+    answer: 1977
+    unit: rok
+    scale: linear
+    tolerance: 2
+    why: "Slovenská televízia (STVR) uvádza, že známy deduško v zvučke prišiel v roku 1977."
+    difficulty: 3
+    source: https://www.stvr.sk/novinky/osobnosti/456145/vecernicek-ma-tajomstvo-ktore-pozna-malokto-dedusko-s-psikom-prisiel-az-neskor
+
+  - id: cislo-vecernicek-hlas
+    type: number
+    prompt: Koľko rokov mal chlapec, ktorý v roku 1965 namluvil pozdravy „dobrý večer“ a „dobrou noc“ do zvučky Večerníčka?
+    answer: 6
+    unit: rokov
+    scale: linear
+    tolerance: 1
+    why: "Michal Citavý mal vtedy šesť rokov; v štúdiu pozdrav niekoľkokrát zopakoval a vybrali ho."
+    difficulty: 3
+    source: https://ct24.ceskatelevize.cz/clanek/kultura/vecernicek-slavi-sedesate-narozeniny-356728
+
+  # ---------- Jedna zo štyroch ----------
+  - id: vyber-billa-sefkuchar
+    type: choice
+    prompt: Ktorý reťazec v roku 2012 vymenil šťastnú rodinku v reklamách za talianskeho šéfkuchára Giuseppeho Daddia?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/tlacove-spravy/785927-billa-chuti-kazdemu
+    correct: { text: Billa, why: "Spolu so sloganom „Presne podľa mojej chuti“ mu tvár dal taliansky šéfkuchár Giuseppe Daddio." }
+    wrong:
+      - { text: Kaufland, why: "Jeho slogan z televíznej kampane 2015 je „Z lásky k Slovensku“." }
+      - { text: Slovenská sporiteľňa, why: "Banka, jej claim z roku 2021 je „Budúcnosť je vaša“." }
+      - { text: Orange, why: "Operátor so sloganom „Spolu dokážeme viac“." }
+
+  - id: vyber-tmobile-slogan
+    type: choice
+    prompt: Ktorá značka na Slovensku používala v roku 2009 slogan „Zažime to spolu“?
+    difficulty: 2
+    source: https://strategie.hnonline.sk/news/media/771692-t-mobile-uvadza-novy-slogan-zazime-to-spolu
+    correct: { text: T-Mobile, why: "Slovenský ekvivalent medzinárodného „Life is for sharing“." }
+    wrong:
+      - { text: Orange, why: "V roku 2009 uviedol slogan „Spolu dokážeme viac“." }
+      - { text: Billa, why: "Mala slogan „Presne podľa mojej chuti“." }
+      - { text: Kofola, why: "Používala slogan „Keď ju miluješ, nie je čo riešiť“." }
+
+  - id: vyber-mcdonalds-mesto
+    type: choice
+    prompt: Z ktorého mesta McDonald's v roku 2003 odštartoval celosvetovú kampaň „i'm lovin' it“?
+    difficulty: 2
+    source: https://mcdonalds.mediaroom.com/2003-09-02-McDonalds-Unveils-im-lovin-it-Worldwide-Brand-Campaign
+    correct: { text: Mníchov, why: "Tlačová správa z 2. septembra 2003 je datovaná Munich, Germany; spoty bežali najprv v Nemecku a v USA ich plánovali od 29. septembra." }
+    wrong:
+      - { text: New York, why: "Do USA prišla kampaň neskôr; podľa správy ju tam plánovali na 29. septembra." }
+      - { text: Londýn, why: "Kampaň odštartovala z Mníchova a spoty bežali najprv v Nemecku." }
+      - { text: Paríž, why: "Kampaň odštartovala z Mníchova, nie z Paríža." }
